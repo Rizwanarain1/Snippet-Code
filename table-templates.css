@@ -1,0 +1,304 @@
+/* Template Categories */
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.category-btn {
+    padding: 0.8rem 1.8rem;
+    background-color: var(--card-bg);
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.category-btn.active, .category-btn:hover {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 10px 0 rgba(124, 58, 237, 0.3);
+}
+
+/* Template Grid */
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.template-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s;
+    border: 1px solid #f1f5f9;
+}
+
+.template-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+.template-preview {
+    height: 220px;
+    background-color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.template-preview.table {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.template-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.template-info {
+    padding: 1.8rem;
+}
+
+.template-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.template-info p {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.template-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.template-actions .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+.template-actions .btn-outline {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    box-shadow: none;
+}
+
+.template-actions .btn-outline:hover {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 10px 0 rgba(124, 58, 237, 0.3);
+}
+
+/* Live Preview Styles */
+.live-preview {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid #f1f5f9;
+}
+
+.preview-container {
+    min-height: 220px;
+    border: 2px dashed #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    background-color: #f8fafc;
+}
+
+/* Preview specific styles */
+.preview-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.preview-table th, .preview-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.preview-table th {
+    background-color: #f8fafc;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.preview-table tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.preview-table tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Code Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow: auto;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 5% auto;
+    width: 85%;
+    max-width: 1000px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: modalOpen 0.5s;
+    overflow: hidden;
+}
+
+@keyframes modalOpen {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.modal-header {
+    padding: 1.8rem 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+.modal-header h3 {
+    font-weight: 600;
+}
+
+.close-modal {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--accent);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.code-tabs {
+    display: flex;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 1.5rem;
+}
+
+.code-tab {
+    padding: 0.8rem 1.8rem;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+    font-weight: 500;
+    color: var(--gray);
+}
+
+.code-tab.active {
+    border-bottom: 3px solid var(--primary);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.code-content {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    padding: 1.8rem;
+    border-radius: 12px;
+    overflow-x: auto;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    max-height: 450px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.code-content pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.copy-notification {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: var(--success);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    display: none;
+    font-weight: 500;
+}
+
+/* Active navigation link */
+nav ul li a.active {
+    color: var(--primary);
+}
+
+nav ul li a.active::after {
+    width: 100%;
+}
