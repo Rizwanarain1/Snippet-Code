@@ -93,7 +93,7 @@ header {
     font-size: 2rem;
 }
 
-/* Navigation Styles */
+/* Navigation Styles - DESKTOP */
 nav ul {
     display: flex;
     list-style: none;
@@ -135,18 +135,19 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-/* Toggle Button */
+/* Toggle Button - YAHAN MAINAY FIX KIYA HAI */
 .menu-toggle {
-    display: none;
+    display: none; /* Default: hidden on desktop */
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 21px;
+    width: 35px;
+    height: 25px;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
     z-index: 1001;
+    position: relative;
 }
 
 .menu-toggle span {
@@ -161,6 +162,7 @@ nav ul li a:hover::after {
 
 .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
+    background: var(--primary);
 }
 
 .menu-toggle.active span:nth-child(2) {
@@ -169,6 +171,7 @@ nav ul li a:hover::after {
 
 .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
+    background: var(--primary);
 }
 
 /* Hero Section */
@@ -593,7 +596,7 @@ footer::before {
     z-index: 2;
 }
 
-/* Responsive Design - YAHAN MAINAY FIX KIYA HAI */
+/* Responsive Design - YAHAN MAINAY TOGGLE BUTTON FIX KIYA HAI */
 @media (max-width: 1024px) {
     .hero h1 {
         font-size: 3.2rem;
@@ -609,12 +612,18 @@ footer::before {
         padding: 1rem 0;
     }
 
-    /* Mobile Navigation - FIXED VERSION */
+    /* Toggle Button - AB SHOW HOGA */
     .menu-toggle {
-        display: flex;
+        display: flex !important; /* Important use kiya taake zaroor show ho */
     }
 
+    /* Desktop navigation hide karo */
     nav ul {
+        display: none;
+    }
+
+    /* Mobile Navigation - FIXED */
+    .mobile-nav {
         position: fixed;
         top: 0;
         right: -100%;
@@ -631,29 +640,38 @@ footer::before {
         opacity: 0;
         visibility: hidden;
         transform: translateX(100%);
+        display: flex;
     }
 
-    nav ul.active {
+    .mobile-nav.active {
         right: 0;
         opacity: 1;
         visibility: visible;
         transform: translateX(0);
     }
 
-    nav ul li {
+    .mobile-nav li {
         margin: 0;
         width: 100%;
         border-bottom: 1px solid #f1f5f9;
     }
 
-    nav ul li:last-child {
+    .mobile-nav li:last-child {
         border-bottom: none;
     }
 
-    nav ul li a {
+    .mobile-nav li a {
         padding: 1rem 0;
         font-size: 1.1rem;
         width: 100%;
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+    }
+
+    .mobile-nav li a:hover {
+        color: var(--primary);
     }
 
     .hero {
@@ -718,6 +736,11 @@ footer::before {
 
     .logo i {
         font-size: 1.7rem;
+    }
+
+    .menu-toggle {
+        width: 30px;
+        height: 21px;
     }
 
     .hero h1 {
