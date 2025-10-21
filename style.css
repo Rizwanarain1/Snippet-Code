@@ -593,7 +593,7 @@ footer::before {
     z-index: 2;
 }
 
-/* Responsive Design */
+/* Responsive Design - YAHAN MAINAY FIX KIYA HAI */
 @media (max-width: 1024px) {
     .hero h1 {
         font-size: 3.2rem;
@@ -609,7 +609,7 @@ footer::before {
         padding: 1rem 0;
     }
 
-    /* Mobile Navigation */
+    /* Mobile Navigation - FIXED VERSION */
     .menu-toggle {
         display: flex;
     }
@@ -625,12 +625,19 @@ footer::before {
         align-items: flex-start;
         padding: 100px 2rem 2rem;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease-in-out;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         gap: 0;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100%);
     }
 
     nav ul.active {
         right: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
     }
 
     nav ul li {
