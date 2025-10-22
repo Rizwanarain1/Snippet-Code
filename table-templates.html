@@ -15,29 +15,29 @@
     <!-- Header with Navigation -->
     <header>
       <div class="container">
-        <div class="header-content">
-          <div class="logo">
-            <i class="fas fa-cube"></i>
-            SnippetCodeHub
+          <div class="header-content">
+              <div class="logo">
+                  <i class="fas fa-cube"></i>
+                  SnippetCodeHub
+              </div>
+              <button class="menu-toggle">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </button>
+              <nav>
+                  <ul>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Features</a></li>
+                      <li><a href="#">Services</a></li>
+                      <li><a href="#">Resources</a></li>
+                      <li><a href="#">Contact</a></li>
+                  </ul>
+              </nav>
           </div>
-          <button class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <nav>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Resources</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
       </div>
-    </header>
+  </header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -50,7 +50,7 @@
         <div class="hero-buttons">
             <a href="nav-templates.html" class="btn">Navigation SnippetCodes</a>
             <a href="footer-templates.html" class="btn">Footer SnippetCode</a>
-            <a href="table-templates.html" class="btn">Table SnippetCode</a>
+            <a href="table-templates.html" class="btn active">Table SnippetCode</a>
         </div>
       </div>
     </section>
@@ -64,37 +64,54 @@
         </div>
 
         <div class="categories">
-          <button class="category-btn active">All</button>
-          <button class="category-btn">Modern</button>
-          <button class="category-btn">Striped</button>
-          <button class="category-btn">Dark</button>
-          <button class="category-btn">Responsive</button>
-        </div>
-
-        <!-- Live Preview Section -->
-        <div class="live-preview">
-          <h3>Live Preview</h3>
-          <div class="preview-container" id="table-preview">
-            <p>Select a table template to see the preview here</p>
-          </div>
+          <button class="category-btn active" data-category="all">All</button>
+          <button class="category-btn" data-category="modern">Modern</button>
+          <button class="category-btn" data-category="striped">Striped</button>
+          <button class="category-btn" data-category="dark">Dark</button>
+          <button class="category-btn" data-category="minimal">Minimal</button>
+          <button class="category-btn" data-category="colorful">Colorful</button>
+          <button class="category-btn" data-category="elegant">Elegant</button>
         </div>
 
         <div class="template-grid">
-          <!-- Template 1 -->
-          <div class="template-card">
-            <div class="template-preview table">
-              <h3>Modern Table</h3>
+          <!-- Template 1 - Modern Table -->
+          <div class="template-card" data-categories="modern">
+            <div class="template-preview">
+              <table class="preview-table modern-preview">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>John Doe</td>
+                    <td>Frontend Developer</td>
+                    <td>Engineering</td>
+                    <td><span class="status active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td>Jane Smith</td>
+                    <td>UX Designer</td>
+                    <td>Design</td>
+                    <td><span class="status active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td>Robert Johnson</td>
+                    <td>Backend Developer</td>
+                    <td>Engineering</td>
+                    <td><span class="status inactive">Inactive</span></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div class="template-info">
               <h3>Modern Table</h3>
               <p>Clean table design with subtle shadows and hover effects.</p>
               <div class="template-actions">
-                <button
-                  class="btn btn-outline preview-btn"
-                  data-template="table1"
-                >
-                  Preview
-                </button>
                 <button class="btn code-btn" data-template="table1">
                   Get Code
                 </button>
@@ -102,21 +119,50 @@
             </div>
           </div>
 
-          <!-- Template 2 -->
-          <div class="template-card">
-            <div class="template-preview table">
-              <h3>Striped Table</h3>
+          <!-- Template 2 - Striped Table -->
+          <div class="template-card" data-categories="striped">
+            <div class="template-preview">
+              <table class="preview-table striped-preview">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>MacBook Pro</td>
+                    <td>Laptop</td>
+                    <td>$2,499</td>
+                    <td>In Stock</td>
+                  </tr>
+                  <tr>
+                    <td>iPhone 14</td>
+                    <td>Smartphone</td>
+                    <td>$999</td>
+                    <td>In Stock</td>
+                  </tr>
+                  <tr>
+                    <td>iPad Air</td>
+                    <td>Tablet</td>
+                    <td>$749</td>
+                    <td>Low Stock</td>
+                  </tr>
+                  <tr>
+                    <td>Apple Watch</td>
+                    <td>Wearable</td>
+                    <td>$399</td>
+                    <td>Out of Stock</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div class="template-info">
               <h3>Striped Table</h3>
               <p>Table with alternating row colors and modern styling.</p>
               <div class="template-actions">
-                <button
-                  class="btn btn-outline preview-btn"
-                  data-template="table2"
-                >
-                  Preview
-                </button>
                 <button class="btn code-btn" data-template="table2">
                   Get Code
                 </button>
@@ -124,24 +170,297 @@
             </div>
           </div>
 
-          <!-- Template 3 -->
-          <div class="template-card">
-            <div class="template-preview table">
-              <h3>Dark Table</h3>
+          <!-- Template 3 - Dark Table -->
+          <div class="template-card" data-categories="dark">
+            <div class="template-preview dark-preview">
+              <table class="preview-table">
+                <thead>
+                  <tr>
+                    <th>Project</th>
+                    <th>Team</th>
+                    <th>Progress</th>
+                    <th>Deadline</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Website Redesign</td>
+                    <td>Design Team</td>
+                    <td>
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                        <span>75%</span>
+                      </div>
+                    </td>
+                    <td>Dec 15, 2023</td>
+                  </tr>
+                  <tr>
+                    <td>Mobile App</td>
+                    <td>Dev Team</td>
+                    <td>
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                        <span>45%</span>
+                      </div>
+                    </td>
+                    <td>Jan 30, 2024</td>
+                  </tr>
+                  <tr>
+                    <td>API Integration</td>
+                    <td>Backend Team</td>
+                    <td>
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                        <span>90%</span>
+                      </div>
+                    </td>
+                    <td>Nov 25, 2023</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div class="template-info">
               <h3>Dark Table</h3>
-              <p>
-                Elegant dark table design with light text and accent colors.
-              </p>
+              <p>Elegant dark table design with light text and accent colors.</p>
               <div class="template-actions">
-                <button
-                  class="btn btn-outline preview-btn"
-                  data-template="table3"
-                >
-                  Preview
-                </button>
                 <button class="btn code-btn" data-template="table3">
+                  Get Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 4 - Minimal Table -->
+          <div class="template-card" data-categories="minimal">
+            <div class="template-preview">
+              <table class="preview-table minimal-preview">
+                <thead>
+                  <tr>
+                    <th>Task</th>
+                    <th>Assignee</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Design Homepage</td>
+                    <td>Sarah Wilson</td>
+                    <td>Nov 30, 2023</td>
+                    <td><span class="priority high">High</span></td>
+                  </tr>
+                  <tr>
+                    <td>Fix Login Bug</td>
+                    <td>Mike Chen</td>
+                    <td>Nov 25, 2023</td>
+                    <td><span class="priority medium">Medium</span></td>
+                  </tr>
+                  <tr>
+                    <td>Write Documentation</td>
+                    <td>Emily Davis</td>
+                    <td>Dec 10, 2023</td>
+                    <td><span class="priority low">Low</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="template-info">
+              <h3>Minimal Table</h3>
+              <p>Clean and minimal design with focus on content.</p>
+              <div class="template-actions">
+                <button class="btn code-btn" data-template="table4">
+                  Get Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 5 - Colorful Table -->
+          <div class="template-card" data-categories="colorful">
+            <div class="template-preview colorful-preview">
+              <table class="preview-table">
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th>Sales</th>
+                    <th>Growth</th>
+                    <th>Trend</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Electronics</td>
+                    <td>$12,430</td>
+                    <td>+15%</td>
+                    <td><i class="fas fa-arrow-up trend-up"></i></td>
+                  </tr>
+                  <tr>
+                    <td>Fashion</td>
+                    <td>$8,920</td>
+                    <td>+8%</td>
+                    <td><i class="fas fa-arrow-up trend-up"></i></td>
+                  </tr>
+                  <tr>
+                    <td>Home & Garden</td>
+                    <td>$5,670</td>
+                    <td>-3%</td>
+                    <td><i class="fas fa-arrow-down trend-down"></i></td>
+                  </tr>
+                  <tr>
+                    <td>Sports</td>
+                    <td>$3,210</td>
+                    <td>+22%</td>
+                    <td><i class="fas fa-arrow-up trend-up"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="template-info">
+              <h3>Colorful Table</h3>
+              <p>Vibrant table with colorful headers and status indicators.</p>
+              <div class="template-actions">
+                <button class="btn code-btn" data-template="table5">
+                  Get Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 6 - Elegant Table -->
+          <div class="template-card" data-categories="elegant">
+            <div class="template-preview elegant-preview">
+              <table class="preview-table">
+                <thead>
+                  <tr>
+                    <th>Client</th>
+                    <th>Project</th>
+                    <th>Budget</th>
+                    <th>Timeline</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>TechCorp Inc.</td>
+                    <td>E-commerce Platform</td>
+                    <td>$50,000</td>
+                    <td>6 months</td>
+                  </tr>
+                  <tr>
+                    <td>Global Bank</td>
+                    <td>Mobile Banking App</td>
+                    <td>$75,000</td>
+                    <td>8 months</td>
+                  </tr>
+                  <tr>
+                    <td>HealthPlus</td>
+                    <td>Patient Portal</td>
+                    <td>$35,000</td>
+                    <td>4 months</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="template-info">
+              <h3>Elegant Table</h3>
+              <p>Sophisticated design with gradient headers and subtle animations.</p>
+              <div class="template-actions">
+                <button class="btn code-btn" data-template="table6">
+                  Get Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 7 - Card Table -->
+          <div class="template-card" data-categories="modern minimal">
+            <div class="template-preview">
+              <table class="preview-table card-preview">
+                <thead>
+                  <tr>
+                    <th>Employee</th>
+                    <th>Role</th>
+                    <th>Hours</th>
+                    <th>Performance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Alex Thompson</td>
+                    <td>Developer</td>
+                    <td>40h</td>
+                    <td><div class="performance excellent">Excellent</div></td>
+                  </tr>
+                  <tr>
+                    <td>Maria Garcia</td>
+                    <td>Designer</td>
+                    <td>38h</td>
+                    <td><div class="performance good">Good</div></td>
+                  </tr>
+                  <tr>
+                    <td>David Kim</td>
+                    <td>Manager</td>
+                    <td>42h</td>
+                    <td><div class="performance excellent">Excellent</div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="template-info">
+              <h3>Card Table</h3>
+              <p>Table with card-like styling and performance indicators.</p>
+              <div class="template-actions">
+                <button class="btn code-btn" data-template="table7">
+                  Get Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 8 - Gradient Table -->
+          <div class="template-card" data-categories="colorful modern">
+            <div class="template-preview gradient-preview">
+              <table class="preview-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Status</th>
+                    <th>Users</th>
+                    <th>Rating</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Dark Mode</td>
+                    <td><span class="badge live">Live</span></td>
+                    <td>15,432</td>
+                    <td>4.8/5</td>
+                  </tr>
+                  <tr>
+                    <td>AI Assistant</td>
+                    <td><span class="badge beta">Beta</span></td>
+                    <td>8,765</td>
+                    <td>4.5/5</td>
+                  </tr>
+                  <tr>
+                    <td>Mobile App</td>
+                    <td><span class="badge development">Dev</span></td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="template-info">
+              <h3>Gradient Table</h3>
+              <p>Modern table with gradient backgrounds and status badges.</p>
+              <div class="template-actions">
+                <button class="btn code-btn" data-template="table8">
                   Get Code
                 </button>
               </div>

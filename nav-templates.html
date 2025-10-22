@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navigation Templates - TemplateHub</title>
+    <title>Navigation Templates - SnippetCodeHub</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,27 +15,27 @@
     <!-- Header with Navigation -->
     <header>
       <div class="container">
-        <div class="header-content">
-          <div class="logo">
-            <i class="fas fa-cube"></i>
-            SnippetCodeHub
+          <div class="header-content">
+              <div class="logo">
+                  <i class="fas fa-cube"></i>
+                  SnippetCodeHub
+              </div>
+              <button class="menu-toggle">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </button>
+              <nav>
+                  <ul>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Features</a></li>
+                      <li><a href="#">Services</a></li>
+                      <li><a href="#">Resources</a></li>
+                      <li><a href="#">Contact</a></li>
+                  </ul>
+              </nav>
           </div>
-          <button class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <nav>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Resources</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
       </div>
     </header>
 
@@ -64,40 +64,36 @@
         </div>
 
         <div class="categories">
-          <button class="category-btn active">All</button>
-          <button class="category-btn">Glassmorphism</button>
-          <button class="category-btn">Minimal</button>
-          <button class="category-btn">Sidebar</button>
-          <button class="category-btn">Dark Mode</button>
-        </div>
-
-        <!-- Live Preview Section -->
-        <div class="live-preview">
-          <h3>Live Preview</h3>
-          <div class="preview-container" id="nav-preview">
-            <p>Select a navigation template to see the preview here</p>
-          </div>
+          <button class="category-btn active" data-category="all">All</button>
+          <button class="category-btn" data-category="glassmorphism">Glassmorphism</button>
+          <button class="category-btn" data-category="minimal">Minimal</button>
+          <button class="category-btn" data-category="sidebar">Sidebar</button>
+          <button class="category-btn" data-category="dark">Dark Mode</button>
+          <button class="category-btn" data-category="modern">Modern</button>
         </div>
 
         <div class="template-grid">
-          <!-- Template 1 -->
-          <div class="template-card">
-            <div class="template-preview nav">
-              <h3>Glassmorphism Nav</h3>
+          <!-- Template 1 - Glassmorphism Nav -->
+          <div class="template-card" data-category="glassmorphism">
+            <div class="template-preview">
+              <div class="live-preview-mini">
+                <div class="preview-nav-mini glassmorphism">
+                  <div class="nav-container-mini">
+                    <div class="nav-logo-mini">Brand</div>
+                    <div class="nav-menu-mini">
+                      <a href="#">Home</a>
+                      <a href="#">Features</a>
+                      <a href="#">Pricing</a>
+                    </div>
+                    <button class="nav-btn-mini">Get Started</button>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="template-info">
               <h3>Glassmorphism Navigation</h3>
-              <p>
-                Modern glassmorphism design with blur effect and gradient
-                accents.
-              </p>
+              <p>Modern glassmorphism design with blur effect and gradient accents.</p>
               <div class="template-actions">
-                <button
-                  class="btn btn-outline preview-btn"
-                  data-template="nav1"
-                >
-                  Preview
-                </button>
                 <button class="btn code-btn" data-template="nav1">
                   Get Code
                 </button>
@@ -105,24 +101,27 @@
             </div>
           </div>
 
-          <!-- Template 2 -->
-          <div class="template-card">
-            <div class="template-preview nav">
-              <h3>Minimal Navbar</h3>
+          <!-- Template 2 - Minimal Nav -->
+          <div class="template-card" data-category="minimal">
+            <div class="template-preview">
+              <div class="live-preview-mini">
+                <div class="preview-nav-mini minimal">
+                  <div class="nav-container-mini">
+                    <div class="nav-logo-mini">Minimal</div>
+                    <div class="nav-menu-mini">
+                      <a href="#">Home</a>
+                      <a href="#">Products</a>
+                      <a href="#">Blog</a>
+                      <a href="#">Contact</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="template-info">
               <h3>Minimal Navigation</h3>
-              <p>
-                Clean and minimal design with subtle animations and hover
-                effects.
-              </p>
+              <p>Clean and minimal design with subtle animations and hover effects.</p>
               <div class="template-actions">
-                <button
-                  class="btn btn-outline preview-btn"
-                  data-template="nav2"
-                >
-                  Preview
-                </button>
                 <button class="btn code-btn" data-template="nav2">
                   Get Code
                 </button>
@@ -130,22 +129,199 @@
             </div>
           </div>
 
-          <!-- Template 3 -->
-          <div class="template-card">
-            <div class="template-preview nav">
-              <h3>Dark Sidebar</h3>
+          <!-- Template 3 - Dark Sidebar -->
+          <div class="template-card" data-category="sidebar">
+            <div class="template-preview">
+              <div class="live-preview-mini">
+                <div class="preview-sidebar-mini dark">
+                  <div class="sidebar-header-mini">
+                    <h4>Dashboard</h4>
+                  </div>
+                  <div class="sidebar-menu-mini">
+                    <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+                    <a href="#"><i class="fas fa-chart-bar"></i> Analytics</a>
+                    <a href="#"><i class="fas fa-users"></i> Users</a>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="template-info">
               <h3>Dark Sidebar</h3>
               <p>Elegant dark sidebar with icons and smooth transitions.</p>
               <div class="template-actions">
-                <button
-                  class="btn btn-outline preview-btn"
-                  data-template="nav3"
-                >
-                  Preview
-                </button>
                 <button class="btn code-btn" data-template="nav3">
+                  Get Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 4 - Modern Nav -->
+          <div class="template-card" data-category="modern">
+            <div class="template-preview">
+              <div class="live-preview-mini">
+                <div class="preview-nav-mini modern">
+                  <div class="nav-container-mini">
+                    <div class="nav-logo-mini">Modern</div>
+                    <div class="nav-menu-mini">
+                      <a href="#">Home</a>
+                      <a href="#">About</a>
+                      <a href="#">Services</a>
+                      <a href="#">Contact</a>
+                    </div>
+                    <div class="nav-actions-mini">
+                      <button class="nav-btn-mini outline">Login</button>
+                      <button class="nav-btn-mini">Sign Up</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="template-info">
+              <h3>Modern Navigation</h3>
+              <p>Contemporary design with dual buttons and clean layout.</p>
+              <div class="template-actions">
+                <button class="btn code-btn" data-template="nav4">
+                  Get Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 5 - Dark Nav -->
+          <div class="template-card" data-category="dark">
+            <div class="template-preview">
+              <div class="live-preview-mini">
+                <div class="preview-nav-mini darknav">
+                  <div class="nav-container-mini">
+                    <div class="nav-logo-mini">DarkApp</div>
+                    <div class="nav-menu-mini">
+                      <a href="#">Home</a>
+                      <a href="#">Features</a>
+                      <a href="#">Pricing</a>
+                      <a href="#">About</a>
+                    </div>
+                    <button class="nav-btn-mini">Get Started</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="template-info">
+              <h3>Dark Navigation</h3>
+              <p>Sophisticated dark theme navigation with modern aesthetics.</p>
+              <div class="template-actions">
+                <button class="btn code-btn" data-template="nav5">
+                  Get Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 6 - Gradient Nav -->
+          <div class="template-card" data-category="modern">
+            <div class="template-preview">
+              <div class="live-preview-mini">
+                <div class="preview-nav-mini gradient">
+                  <div class="nav-container-mini">
+                    <div class="nav-logo-mini">Gradient</div>
+                    <div class="nav-menu-mini">
+                      <a href="#">Home</a>
+                      <a href="#">Products</a>
+                      <a href="#">Solutions</a>
+                      <a href="#">Contact</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="template-info">
+              <h3>Gradient Navigation</h3>
+              <p>Vibrant gradient background with modern typography.</p>
+              <div class="template-actions">
+                <button class="btn code-btn" data-template="nav6">
+                  Get Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 7 - Centered Nav -->
+          <div class="template-card" data-category="minimal">
+            <div class="template-preview">
+              <div class="live-preview-mini">
+                <div class="preview-nav-mini centered">
+                  <div class="nav-container-mini">
+                    <div class="nav-logo-mini">Centered</div>
+                    <div class="nav-menu-mini">
+                      <a href="#">Home</a>
+                      <a href="#">Work</a>
+                      <a href="#">About</a>
+                      <a href="#">Contact</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="template-info">
+              <h3>Centered Navigation</h3>
+              <p>Centered layout with elegant spacing and hover effects.</p>
+              <div class="template-actions">
+                <button class="btn code-btn" data-template="nav7">
+                  Get Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 8 - Transparent Nav -->
+          <div class="template-card" data-category="modern">
+            <div class="template-preview">
+              <div class="live-preview-mini">
+                <div class="preview-nav-mini transparent">
+                  <div class="nav-container-mini">
+                    <div class="nav-logo-mini">Transparent</div>
+                    <div class="nav-menu-mini">
+                      <a href="#">Home</a>
+                      <a href="#">Services</a>
+                      <a href="#">Portfolio</a>
+                      <a href="#">Contact</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="template-info">
+              <h3>Transparent Navigation</h3>
+              <p>Clean transparent design perfect for hero sections.</p>
+              <div class="template-actions">
+                <button class="btn code-btn" data-template="nav8">
+                  Get Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Template 9 - Mobile Nav -->
+          <div class="template-card" data-category="modern">
+            <div class="template-preview">
+              <div class="live-preview-mini">
+                <div class="preview-nav-mini mobile">
+                  <div class="nav-container-mini">
+                    <div class="nav-logo-mini">Mobile</div>
+                    <button class="nav-hamburger-mini">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="template-info">
+              <h3>Mobile Navigation</h3>
+              <p>Mobile-first design with hamburger menu and responsive layout.</p>
+              <div class="template-actions">
+                <button class="btn code-btn" data-template="nav9">
                   Get Code
                 </button>
               </div>
@@ -164,23 +340,15 @@
         </div>
         <div class="modal-body">
           <div class="code-tabs">
-            <div class="code-tab active" data-tab="html">HTML</div>
-            <div class="code-tab" data-tab="css">CSS</div>
-            <div class="code-tab" data-tab="js">JavaScript</div>
+            <button class="code-tab active" data-tab="html">HTML</button>
+            <button class="code-tab" data-tab="css">CSS</button>
+            <button class="code-tab" data-tab="js">JavaScript</button>
           </div>
           <div class="code-content">
-            <button class="copy-btn" data-target="html-code">Copy</button>
-            <pre
-              id="html-code"
-            ><code class="language-html">&lt;!-- HTML code will appear here --&gt;</code></pre>
-            <pre
-              id="css-code"
-              style="display: none"
-            ><code class="language-css">/* CSS code will appear here */</code></pre>
-            <pre
-              id="js-code"
-              style="display: none"
-            ><code class="language-js">// JavaScript code will appear here</code></pre>
+            <button class="copy-btn" id="copyButton">Copy Code</button>
+            <pre id="html-code"><code class="language-html">&lt;!-- Select a template to view code --&gt;</code></pre>
+            <pre id="css-code" style="display: none"><code class="language-css">/* Select a template to view code */</code></pre>
+            <pre id="js-code" style="display: none"><code class="language-js">// Select a template to view code</code></pre>
           </div>
         </div>
       </div>
@@ -231,14 +399,14 @@
           <div class="footer-column">
             <h4>Contact Us</h4>
             <ul>
-              <li><i class="fas fa-envelope"></i> hello@templatehub.com</li>
+              <li><i class="fas fa-envelope"></i> hello@snippetcodehub.com</li>
               <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
               <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
             </ul>
           </div>
         </div>
         <div class="copyright">
-          <p>&copy; 2023 TemplateHub. All rights reserved.</p>
+          <p>&copy; 2023 SnippetCodeHub. All rights reserved.</p>
         </div>
       </div>
     </footer>
