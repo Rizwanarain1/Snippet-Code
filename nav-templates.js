@@ -1,5 +1,11 @@
 // Extended template code data with 9 navigation templates
 const templateCodes = {
+    
+    // ====================================================================
+    // TEMPLATE 1: GLASSMORPHISM NAVIGATION
+    // Features: Glass effect, gradient buttons, hover animations
+    // Category: Glassmorphism
+    // ====================================================================
     nav1: {
         name: "Glassmorphism Navigation",
         category: "glassmorphism",
@@ -115,6 +121,12 @@ const templateCodes = {
 }`,
         js: `// Mobile menu functionality can be added here`
     },
+
+    // ====================================================================
+    // TEMPLATE 2: MINIMAL NAVIGATION  
+    // Features: Clean design, green accent, simple hover effects
+    // Category: Minimal
+    // ====================================================================
     nav2: {
         name: "Minimal Navigation",
         category: "minimal",
@@ -192,6 +204,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this navigation`
     },
+
+    // ====================================================================
+    // TEMPLATE 3: DARK SIDEBAR
+    // Features: Dark theme, gradient background, active state indicator
+    // Category: Sidebar
+    // ====================================================================
     nav3: {
         name: "Dark Sidebar",
         category: "sidebar",
@@ -288,6 +306,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this sidebar`
     },
+
+    // ====================================================================
+    // TEMPLATE 4: MODERN NAVIGATION
+    // Features: Dark background, yellow accent, dual buttons
+    // Category: Modern
+    // ====================================================================
     nav4: {
         name: "Modern Navigation",
         category: "modern",
@@ -407,6 +431,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this navigation`
     },
+
+    // ====================================================================
+    // TEMPLATE 5: DARK NAVIGATION
+    // Features: Deep dark theme, purple gradient button
+    // Category: Dark
+    // ====================================================================
     nav5: {
         name: "Dark Navigation",
         category: "dark",
@@ -501,6 +531,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this navigation`
     },
+
+    // ====================================================================
+    // TEMPLATE 6: GRADIENT NAVIGATION
+    // Features: Purple to blue gradient background
+    // Category: Modern
+    // ====================================================================
     nav6: {
         name: "Gradient Navigation",
         category: "modern",
@@ -578,6 +614,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this navigation`
     },
+
+    // ====================================================================
+    // TEMPLATE 7: CENTERED NAVIGATION
+    // Features: Centered layout, vertical arrangement
+    // Category: Minimal
+    // ====================================================================
     nav7: {
         name: "Centered Navigation",
         category: "minimal",
@@ -643,6 +685,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this navigation`
     },
+
+    // ====================================================================
+    // TEMPLATE 8: TRANSPARENT NAVIGATION
+    // Features: Transparent background, absolute positioning
+    // Category: Modern
+    // ====================================================================
     nav8: {
         name: "Transparent Navigation",
         category: "modern",
@@ -714,6 +762,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this navigation`
     },
+
+    // ====================================================================
+    // TEMPLATE 9: MOBILE NAVIGATION
+    // Features: Hamburger menu, responsive design
+    // Category: Modern
+    // ====================================================================
     nav9: {
         name: "Mobile Navigation",
         category: "modern",
@@ -824,6 +878,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });`
     }
 };
+
+// ====================================================================
+// MAIN FUNCTIONALITY - NAVIGATION TEMPLATES GALLERY
+// Handles modal, code preview, copy functionality and filtering
+// ====================================================================
 
 // Fixed navigation templates functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -966,236 +1025,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-// COMPLETELY FIXED Navigation Templates Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('codeModal');
-    const codeBtns = document.querySelectorAll('.code-btn');
-    const closeModal = document.querySelector('.close-modal');
-    const codeTabs = document.querySelectorAll('.code-tab');
-    const htmlCode = document.getElementById('html-code');
-    const cssCode = document.getElementById('css-code');
-    const jsCode = document.getElementById('js-code');
-    const copyBtn = document.getElementById('copyButton');
-    const copyNotification = document.getElementById('copyNotification');
-    const categoryBtns = document.querySelectorAll('.category-btn');
-
-    let currentTemplate = null;
-    let currentTab = 'html';
-
-    // Open modal with template code
-    codeBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const templateId = btn.getAttribute('data-template');
-            if (templateCodes[templateId]) {
-                currentTemplate = templateCodes[templateId];
-                
-                // Update code content
-                htmlCode.querySelector('code').textContent = currentTemplate.html;
-                cssCode.querySelector('code').textContent = currentTemplate.css;
-                jsCode.querySelector('code').textContent = currentTemplate.js;
-                
-                // Reset to HTML tab
-                showTab('html');
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    });
-
-    // Close modal
-    closeModal.addEventListener('click', () => {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    });
-
-    // Close modal when clicking outside
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
-
-    // Switch between code tabs
-    codeTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const tabId = tab.getAttribute('data-tab');
-            showTab(tabId);
-        });
-    });
-
-    function showTab(tabId) {
-        // Remove active class from all tabs
-        codeTabs.forEach(tab => tab.classList.remove('active'));
-        
-        // Add active class to clicked tab
-        document.querySelector(`.code-tab[data-tab="${tabId}"]`).classList.add('active');
-        
-        // Hide all code content
-        document.querySelectorAll('.code-content pre').forEach(pre => {
-            pre.style.display = 'none';
-        });
-        
-        // Show selected code content
-        document.getElementById(`${tabId}-code`).style.display = 'block';
-        currentTab = tabId;
-    }
-
-    // COPY CODE FUNCTION - COMPLETELY FIXED
-    copyBtn.addEventListener('click', function() {
-        if (!currentTemplate) {
-            alert('Please select a template first!');
-            return;
-        }
-        
-        let textToCopy = '';
-        
-        // Get the correct code based on current tab
-        if (currentTab === 'html') {
-            textToCopy = currentTemplate.html;
-        } else if (currentTab === 'css') {
-            textToCopy = currentTemplate.css;
-        } else if (currentTab === 'js') {
-            textToCopy = currentTemplate.js;
-        }
-        
-        // Create a temporary textarea element
-        const textArea = document.createElement('textarea');
-        textArea.value = textToCopy;
-        textArea.style.position = 'fixed';
-        textArea.style.left = '-999999px';
-        textArea.style.top = '-999999px';
-        document.body.appendChild(textArea);
-        
-        // Select and copy the text
-        textArea.focus();
-        textArea.select();
-        
-        try {
-            const successful = document.execCommand('copy');
-            if (successful) {
-                showCopyNotification();
-            } else {
-                alert('Failed to copy code. Please try again.');
-            }
-        } catch (err) {
-            console.error('Copy failed:', err);
-            alert('Copy failed: ' + err);
-        }
-        
-        // Clean up
-        document.body.removeChild(textArea);
-    });
-
-    function showCopyNotification() {
-        copyNotification.style.display = 'block';
-        setTimeout(() => {
-            copyNotification.style.display = 'none';
-        }, 2000);
-    }
-
-    // Category filtering
-    categoryBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from all buttons
-            categoryBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            btn.classList.add('active');
-            
-            const category = btn.getAttribute('data-category');
-            filterTemplates(category);
-        });
-    });
-
-    function filterTemplates(category) {
-        const templateCards = document.querySelectorAll('.template-card');
-        
-        templateCards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-            
-            if (category === 'all' || cardCategory === category) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
-
-    // Close modal on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
-});
-
-// COPY CODE FUNCTION - WITH BEAUTIFUL FEEDBACK
-copyBtn.addEventListener('click', function() {
-    if (!currentTemplate) {
-        alert('Please select a template first!');
-        return;
-    }
-    
-    let textToCopy = '';
-    
-    // Get the correct code based on current tab
-    if (currentTab === 'html') {
-        textToCopy = currentTemplate.html;
-    } else if (currentTab === 'css') {
-        textToCopy = currentTemplate.css;
-    } else if (currentTab === 'js') {
-        textToCopy = currentTemplate.js;
-    }
-    
-    // Create a temporary textarea element
-    const textArea = document.createElement('textarea');
-    textArea.value = textToCopy;
-    textArea.style.position = 'fixed';
-    textArea.style.left = '-999999px';
-    textArea.style.top = '-999999px';
-    document.body.appendChild(textArea);
-    
-    // Select and copy the text
-    textArea.focus();
-    textArea.select();
-    
-    try {
-        const successful = document.execCommand('copy');
-        if (successful) {
-            // Add beautiful feedback
-            copyBtn.classList.add('copied');
-            copyBtn.innerHTML = '<span>✅ Copied!</span>';
-            
-            // Show beautiful notification
-            showCopyNotification();
-            
-            // Reset button after 2 seconds
-            setTimeout(() => {
-                copyBtn.classList.remove('copied');
-                copyBtn.innerHTML = '<span>📋 Copy Code</span>';
-            }, 2000);
-            
-        } else {
-            alert('Failed to copy code. Please try again.');
-        }
-    } catch (err) {
-        console.error('Copy failed:', err);
-        alert('Copy failed: ' + err);
-    }
-    
-    // Clean up
-    document.body.removeChild(textArea);
-});
-
-function showCopyNotification() {
-    const notification = document.getElementById('copyNotification');
-    notification.style.display = 'flex';
-    
-    // Reset animation by re-adding it
-    notification.style.animation = 'none';
-    setTimeout(() => {
-        notification.style.animation = 'notificationSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), notificationSlideOut 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 2s forwards';
-    }, 10);
-}

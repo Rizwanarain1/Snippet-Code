@@ -1,5 +1,11 @@
 // Template code data for table templates
 const templateCodes = {
+    
+    // ====================================================================
+    // TEMPLATE 1: MODERN TABLE
+    // Features: User avatars, status badges, action buttons
+    // Category: Modern
+    // ====================================================================
     table1: {
         html: `<div class="table-container">
     <table class="modern-table">
@@ -168,6 +174,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this table`
     },
+
+    // ====================================================================
+    // TEMPLATE 2: STRIPED TABLE
+    // Features: Alternating row colors, star ratings
+    // Category: Striped
+    // ====================================================================
     table2: {
         html: `<div class="table-container">
     <table class="striped-table">
@@ -252,6 +264,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this table`
     },
+
+    // ====================================================================
+    // TEMPLATE 3: DARK TABLE
+    // Features: Dark theme, progress bars, priority indicators
+    // Category: Dark
+    // ====================================================================
     table3: {
         html: `<div class="table-container">
     <table class="dark-table">
@@ -359,6 +377,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this table`
     },
+
+    // ====================================================================
+    // TEMPLATE 4: MINIMAL TABLE
+    // Features: Clean design, priority badges, subtle borders
+    // Category: Minimal
+    // ====================================================================
     table4: {
         html: `<div class="minimal-table-container">
     <table class="minimal-table">
@@ -454,6 +478,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this table`
     },
+
+    // ====================================================================
+    // TEMPLATE 5: COLORFUL TABLE
+    // Features: Gradient header, growth indicators, trend arrows
+    // Category: Colorful
+    // ====================================================================
     table5: {
         html: `<div class="colorful-table-container">
     <table class="colorful-table">
@@ -554,6 +584,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this table`
     },
+
+    // ====================================================================
+    // TEMPLATE 6: ELEGANT TABLE
+    // Features: Sophisticated design, smooth hover animations
+    // Category: Elegant
+    // ====================================================================
     table6: {
         html: `<div class="elegant-table-container">
     <table class="elegant-table">
@@ -646,6 +682,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this table`
     },
+
+    // ====================================================================
+    // TEMPLATE 7: CARD TABLE
+    // Features: Card-based rows, performance indicators
+    // Category: Card
+    // ====================================================================
     table7: {
         html: `<div class="card-table-container">
     <table class="card-table">
@@ -750,6 +792,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this table`
     },
+
+    // ====================================================================
+    // TEMPLATE 8: GRADIENT TABLE
+    // Features: Gradient badges, star ratings, status indicators
+    // Category: Gradient
+    // ====================================================================
     table8: {
         html: `<div class="gradient-table-container">
     <table class="gradient-table">
@@ -879,6 +927,11 @@ const templateCodes = {
         js: `// No JavaScript required for this table`
     }
 };
+
+// ====================================================================
+// MAIN FUNCTIONALITY - TABLE TEMPLATES GALLERY
+// Handles modal, code preview, copy functionality and filtering
+// ====================================================================
 
 // Initialize table templates functionality
 document.addEventListener('DOMContentLoaded', function() {

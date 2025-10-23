@@ -1,5 +1,11 @@
 // Extended template code data with 9 footer templates
 const templateCodes = {
+    
+    // ====================================================================
+    // TEMPLATE 1: MODERN FOOTER
+    // Features: Gradient background, newsletter form, social links
+    // Category: Modern
+    // ====================================================================
     footer1: {
         name: "Modern Footer",
         category: "modern",
@@ -153,6 +159,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this footer`
     },
+
+    // ====================================================================
+    // TEMPLATE 2: MINIMAL FOOTER
+    // Features: Clean design, simple layout, border top
+    // Category: Minimal
+    // ====================================================================
     footer2: {
         name: "Minimal Footer",
         category: "minimal",
@@ -240,6 +252,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this footer`
     },
+
+    // ====================================================================
+    // TEMPLATE 3: DARK FOOTER
+    // Features: Dark theme, contact info, decorative underline
+    // Category: Dark
+    // ====================================================================
     footer3: {
         name: "Dark Footer",
         category: "dark",
@@ -351,6 +369,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this footer`
     },
+
+    // ====================================================================
+    // TEMPLATE 4: GRADIENT FOOTER
+    // Features: Purple gradient background, simple layout
+    // Category: Gradient
+    // ====================================================================
     footer4: {
         name: "Gradient Footer",
         category: "gradient",
@@ -443,6 +467,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this footer`
     },
+
+    // ====================================================================
+    // TEMPLATE 5: SOCIAL MEDIA FOOTER
+    // Features: Centered design, large social icons, hover animations
+    // Category: Social
+    // ====================================================================
     footer5: {
         name: "Social Media Footer",
         category: "social",
@@ -543,6 +573,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this footer`
     },
+
+    // ====================================================================
+    // TEMPLATE 6: CONTACT FOOTER
+    // Features: Contact information, business hours, icon support
+    // Category: Modern
+    // ====================================================================
     footer6: {
         name: "Contact Footer",
         category: "modern",
@@ -672,6 +708,12 @@ const templateCodes = {
 }`,
         js: `// No JavaScript required for this footer`
     },
+
+    // ====================================================================
+    // TEMPLATE 7: NEWSLETTER FOOTER
+    // Features: Email subscription form, gradient background
+    // Category: Modern
+    // ====================================================================
     footer7: {
         name: "Newsletter Footer",
         category: "modern",
@@ -806,6 +848,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });`
     },
+
+    // ====================================================================
+    // TEMPLATE 8: MULTI-COLUMN FOOTER
+    // Features: 4-column layout, comprehensive link sections
+    // Category: Modern
+    // ====================================================================
     footer8: {
         name: "Multi-column Footer",
         category: "modern",
@@ -954,6 +1002,12 @@ document.addEventListener('DOMContentLoaded', function() {
 }`,
         js: `// No JavaScript required for this footer`
     },
+
+    // ====================================================================
+    // TEMPLATE 9: CREATIVE FOOTER
+    // Features: Creative design, gradient background, artistic elements
+    // Category: Gradient
+    // ====================================================================
     footer9: {
         name: "Creative Footer",
         category: "gradient",
@@ -1098,6 +1152,11 @@ document.addEventListener('DOMContentLoaded', function() {
         js: `// No JavaScript required for this footer`
     }
 };
+
+// ====================================================================
+// MAIN FUNCTIONALITY - FOOTER TEMPLATES GALLERY
+// Handles modal, code preview, copy functionality and filtering
+// ====================================================================
 
 // COMPLETELY FIXED Footer Templates Functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -1263,74 +1322,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-
-
-// COPY CODE FUNCTION - WITH BEAUTIFUL FEEDBACK
-copyBtn.addEventListener('click', function() {
-    if (!currentTemplate) {
-        alert('Please select a template first!');
-        return;
-    }
-    
-    let textToCopy = '';
-    
-    // Get the correct code based on current tab
-    if (currentTab === 'html') {
-        textToCopy = currentTemplate.html;
-    } else if (currentTab === 'css') {
-        textToCopy = currentTemplate.css;
-    } else if (currentTab === 'js') {
-        textToCopy = currentTemplate.js;
-    }
-    
-    // Create a temporary textarea element
-    const textArea = document.createElement('textarea');
-    textArea.value = textToCopy;
-    textArea.style.position = 'fixed';
-    textArea.style.left = '-999999px';
-    textArea.style.top = '-999999px';
-    document.body.appendChild(textArea);
-    
-    // Select and copy the text
-    textArea.focus();
-    textArea.select();
-    
-    try {
-        const successful = document.execCommand('copy');
-        if (successful) {
-            // Add beautiful feedback
-            copyBtn.classList.add('copied');
-            copyBtn.innerHTML = '<span>✅ Copied!</span>';
-            
-            // Show beautiful notification
-            showCopyNotification();
-            
-            // Reset button after 2 seconds
-            setTimeout(() => {
-                copyBtn.classList.remove('copied');
-                copyBtn.innerHTML = '<span>📋 Copy Code</span>';
-            }, 2000);
-            
-        } else {
-            alert('Failed to copy code. Please try again.');
-        }
-    } catch (err) {
-        console.error('Copy failed:', err);
-        alert('Copy failed: ' + err);
-    }
-    
-    // Clean up
-    document.body.removeChild(textArea);
-});
-
-function showCopyNotification() {
-    const notification = document.getElementById('copyNotification');
-    notification.style.display = 'flex';
-    
-    // Reset animation by re-adding it
-    notification.style.animation = 'none';
-    setTimeout(() => {
-        notification.style.animation = 'notificationSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), notificationSlideOut 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 2s forwards';
-    }, 10);
-}
