@@ -2899,6 +2899,561 @@ nav27: {
 }`,
     js: `// No JavaScript required for this sidebar`
 },
+
+// ====================================================================
+// TEMPLATE 28: DARK GRADIENT NAVIGATION
+// Features: Elegant dark gradient with glowing effects
+// Category: Dark
+// ====================================================================
+nav28: {
+    name: "Dark Gradient Navigation",
+    category: "dark",
+    html: `<nav class="dark-gradient-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-moon"></i>
+                DarkGrad
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Features</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+        </ul>
+        <button class="btn-glow">Get Started</button>
+    </div>
+</nav>`,
+    css: `.dark-gradient-navbar {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo i {
+    margin-right: 8px;
+    color: #8b5cf6;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.btn-glow {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+.btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.7);
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 29: DARK GLASS NAVIGATION
+// Features: Dark glassmorphism with blur effect
+// Category: Dark
+// ====================================================================
+nav29: {
+    name: "Dark Glass Navigation",
+    category: "dark",
+    html: `<nav class="dark-glass-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">DarkGlass</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.dark-glass-navbar {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #8b5cf6;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 30: DARK MINIMAL NAVIGATION
+// Features: Clean dark design with subtle effects
+// Category: Dark
+// ====================================================================
+nav30: {
+    name: "Dark Minimal Navigation",
+    category: "dark",
+    html: `<nav class="dark-minimal-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">Minimal</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Work</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.dark-minimal-navbar {
+    background: #1e293b;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #334155;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 31: DARK WITH SEARCH
+// Features: Dark navigation with search functionality
+// Category: Dark
+// ====================================================================
+nav31: {
+    name: "Dark with Search",
+    category: "dark",
+    html: `<nav class="dark-search-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-search"></i>
+                SearchApp
+            </a>
+        </div>
+        <div class="nav-search">
+            <input type="text" placeholder="Search...">
+            <button class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.dark-search-navbar {
+    background: #0f172a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding: 1.5rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo i {
+    margin-right: 8px;
+    color: #60a5fa;
+}
+
+.nav-search {
+    display: flex;
+    align-items: center;
+    background: #1e293b;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #334155;
+    transition: all 0.3s;
+}
+
+.nav-search:focus-within {
+    border-color: #60a5fa;
+}
+
+.nav-search input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 200px;
+    color: white;
+}
+
+.nav-search input::placeholder {
+    color: #64748b;
+}
+
+.search-btn {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.search-btn:hover {
+    color: #60a5fa;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #60a5fa;
+}`,
+    js: `// Search functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('.nav-search input');
+    const searchBtn = document.querySelector('.search-btn');
+    
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', function() {
+            if (searchInput.value.trim() !== '') {
+                alert('Searching for: ' + searchInput.value);
+                searchInput.value = '';
+            }
+        });
+        
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                if (searchInput.value.trim() !== '') {
+                    alert('Searching for: ' + searchInput.value);
+                    searchInput.value = '';
+                }
+            }
+        });
+    }
+});`
+},
+
+// ====================================================================
+// TEMPLATE 32: DARK WITH SOCIAL ICONS
+// Features: Dark theme with social icons and notifications
+// Category: Dark
+// ====================================================================
+nav32: {
+    name: "Dark with Social Icons",
+    category: "dark",
+    html: `<nav class="dark-social-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">SocialApp</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Feed</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Explore</a>
+            </li>
+        </ul>
+        <div class="social-icons">
+            <a href="#" class="social-link">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="#" class="social-link notification">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </a>
+        </div>
+    </div>
+</nav>`,
+    css: `.dark-social-navbar {
+    background: #1e293b;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem 0;
+    border: 1px solid #334155;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #60a5fa;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.social-link:hover {
+    color: #60a5fa;
+}
+
+.social-link.notification {
+    position: relative;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ef4444;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 50%;
+    min-width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}`,
+    js: `// Notification functionality can be added here
+document.addEventListener('DOMContentLoaded', function() {
+    const notificationBtn = document.querySelector('.social-link.notification');
+    
+    if (notificationBtn) {
+        notificationBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('You have 3 new notifications!');
+        });
+    }
+});`
+},
     
 
 };
