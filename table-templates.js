@@ -945,6 +945,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const jsCode = document.getElementById('js-code');
     const copyNotification = document.getElementById('copyNotification');
 
+    // Ensure copy notification is hidden on page load
+    copyNotification.style.display = 'none';
+
     // Open modal with template code
     codeBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -955,6 +958,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 jsCode.querySelector('code').textContent = templateCodes[templateId].js;
                 modal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
+                
+                // Hide notification when modal opens
+                copyNotification.style.display = 'none';
                 
                 // Reset tabs to show HTML first
                 codeTabs.forEach(tab => tab.classList.remove('active'));
@@ -971,6 +977,7 @@ document.addEventListener('DOMContentLoaded', function() {
     closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
+        copyNotification.style.display = 'none'; // Hide notification when modal closes
     });
 
     // Close modal when clicking outside
@@ -978,6 +985,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target === modal) {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
+            copyNotification.style.display = 'none'; // Hide notification when modal closes
         }
     });
 
@@ -986,6 +994,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Escape' && modal.style.display === 'block') {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
+            copyNotification.style.display = 'none'; // Hide notification when modal closes
         }
     });
 
@@ -1033,7 +1042,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function showCopyNotification() {
+        // Hide any existing notification first
+        copyNotification.style.display = 'none';
+        
+        // Force reflow
+        void copyNotification.offsetWidth;
+        
+        // Show notification
         copyNotification.style.display = 'block';
+        
+        // Hide after 2 seconds
         setTimeout(() => {
             copyNotification.style.display = 'none';
         }, 2000);
