@@ -10792,6 +10792,1360 @@ nav89: {
 }`,
     js: `// Flip animation triggers on hover automatically`
 },
+// ====================================================================
+// TEMPLATE 90: ANIMATED GRADIENT DARK NAV
+// Features: Pulsing gradient and bouncing animations
+// Category: Dark
+// ====================================================================
+nav90: {
+    name: "Animated Gradient Dark Nav",
+    category: "dark",
+    html: `<nav class="animated-gradient-dark-nav">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-star"></i>
+                Animate
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Features</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+        </ul>
+        <button class="btn-pulse">Explore</button>
+    </div>
+</nav>`,
+    css: `.animated-gradient-dark-nav {
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #475569);
+    background-size: 400% 400%;
+    animation: gradientShift 6s ease infinite;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo i {
+    margin-right: 8px;
+    color: #8b5cf6;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: #8b5cf6;
+    transition: left 0.3s;
+}
+
+.nav-link:hover::before {
+    left: 0;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.btn-pulse {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+}
+
+.btn-pulse:hover {
+    transform: translateY(-2px);
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 91: GLITCH EFFECT DARK NAV
+// Features: Cyberpunk glitch animations
+// Category: Dark
+// ====================================================================
+nav91: {
+    name: "Glitch Effect Dark Nav",
+    category: "dark",
+    html: `<nav class="glitch-dark-nav">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#" class="glitch-text" data-text="Glitch">Glitch</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link glitch-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link glitch-link">Work</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link glitch-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link glitch-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.glitch-dark-nav {
+    background: #0f0f0f;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #00ff88;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.glitch-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00ff88;
+    text-decoration: none;
+    position: relative;
+    animation: glitch-skew 4s infinite linear;
+    text-shadow: 0 0 5px #00ff88;
+}
+
+@keyframes glitch-skew {
+    0% { transform: skew(0deg); }
+    10% { transform: skew(2deg); }
+    20% { transform: skew(-1deg); }
+    30% { transform: skew(1deg); }
+    40% { transform: skew(0deg); }
+    100% { transform: skew(0deg); }
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-text::before {
+    animation: glitch-anim-1 3s infinite linear alternate-reverse;
+    color: #ff0080;
+    z-index: -1;
+}
+
+.glitch-text::after {
+    animation: glitch-anim-2 2s infinite linear alternate-reverse;
+    color: #0080ff;
+    z-index: -2;
+}
+
+@keyframes glitch-anim-1 {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { transform: translate(0); }
+    20% { transform: translate(2px, -2px); }
+    40% { transform: translate(2px, 2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(-2px, 2px); }
+    100% { transform: translate(0); }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.glitch-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.glitch-link:hover {
+    color: #00ff88;
+    animation: text-flicker 0.3s linear;
+    text-shadow: 0 0 8px #00ff88;
+}
+
+@keyframes text-flicker {
+    0% { opacity: 1; transform: translateX(0); }
+    25% { opacity: 0.8; transform: translateX(-1px); }
+    50% { opacity: 0.6; transform: translateX(1px); }
+    75% { opacity: 0.8; transform: translateX(-1px); }
+    100% { opacity: 1; transform: translateX(0); }
+}`,
+    js: `// Additional glitch effects on click
+document.addEventListener('DOMContentLoaded', function() {
+    const glitchLinks = document.querySelectorAll('.glitch-link');
+    
+    glitchLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.style.animation = 'text-flicker 0.5s linear';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 500);
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 92: FLOATING PARTICLES DARK NAV
+// Features: Animated floating particles
+// Category: Dark
+// ====================================================================
+nav92: {
+    name: "Floating Particles Dark Nav",
+    category: "dark",
+    html: `<nav class="particles-dark-nav">
+    <div class="particles-container" id="particles"></div>
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">Particles</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.particles-dark-nav {
+    background: #0f172a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background: #3b82f6;
+    border-radius: 50%;
+    animation: float 6s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100%) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%) translateX(20px);
+        opacity: 0;
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #3b82f6;
+}`,
+    js: `// Generate particles dynamically
+document.addEventListener('DOMContentLoaded', function() {
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 15;
+    
+    for (let i = 0; i < particleCount; i++) {
+        createParticle(particlesContainer);
+    }
+    
+    function createParticle(container) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        // Random properties
+        const size = Math.random() * 3 + 1;
+        const left = Math.random() * 100;
+        const delay = Math.random() * 6;
+        const duration = Math.random() * 4 + 4;
+        
+        particle.style.width = \`\${size}px\`;
+        particle.style.height = \`\${size}px\`;
+        particle.style.left = \`\${left}%\`;
+        particle.style.animationDelay = \`\${delay}s\`;
+        particle.style.animationDuration = \`\${duration}s\`;
+        
+        container.appendChild(particle);
+        
+        // Remove and recreate particle after animation
+        setTimeout(() => {
+            particle.remove();
+            createParticle(container);
+        }, (duration + delay) * 1000);
+    }
+});`
+},
+
+// ====================================================================
+// TEMPLATE 93: WAVE ANIMATION DARK NAV
+// Features: Liquid wave animations
+// Category: Dark
+// ====================================================================
+nav93: {
+    name: "Wave Animation Dark Nav",
+    category: "dark",
+    html: `<nav class="wave-dark-nav">
+    <div class="wave-container">
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+    </div>
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-water"></i>
+                Wave
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.wave-dark-nav {
+    background: #0f172a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(6, 182, 212, 0.4), 
+        transparent
+    );
+}
+
+.wave-1 {
+    animation: wave-anim-1 4s infinite linear;
+}
+
+.wave-2 {
+    animation: wave-anim-2 3s infinite linear;
+    opacity: 0.5;
+}
+
+@keyframes wave-anim-1 {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+}
+
+@keyframes wave-anim-2 {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(50%); }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo i {
+    margin-right: 8px;
+    color: #06b6d4;
+    animation: water-drop 2s infinite;
+}
+
+@keyframes water-drop {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-3px) scale(1.1); }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #06b6d4;
+    transform: translateY(-2px);
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 94: NEON SCAN LINES DARK NAV
+// Features: Matrix-style scan line effects
+// Category: Dark
+// ====================================================================
+nav94: {
+    name: "Neon Scan Lines Dark Nav",
+    category: "dark",
+    html: `<nav class="scan-dark-nav">
+    <div class="scan-lines">
+        <div class="scan-line"></div>
+        <div class="scan-line"></div>
+        <div class="scan-line"></div>
+    </div>
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#" class="scan-text">Matrix</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link scan-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link scan-link">Data</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link scan-link">System</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link scan-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.scan-dark-nav {
+    background: #000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 1.5rem 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #00ff41;
+}
+
+.scan-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.scan-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #00ff41;
+    animation: scan 3s infinite linear;
+    box-shadow: 0 0 5px #00ff41;
+}
+
+.scan-line:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.scan-line:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.scan-line:nth-child(3) {
+    animation-delay: 2s;
+}
+
+@keyframes scan {
+    0% { top: 0; opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { top: 100%; opacity: 1; }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.scan-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00ff41;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px #00ff41;
+    animation: text-flicker 3s infinite;
+}
+
+@keyframes text-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+    75% { opacity: 0.9; }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.scan-link {
+    color: #00ff41;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.scan-link::before {
+    content: '>';
+    margin-right: 8px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.scan-link:hover::before {
+    opacity: 1;
+}
+
+.scan-link:hover {
+    text-shadow: 0 0 8px #00ff41;
+    transform: translateX(5px);
+}`,
+    js: `// Add random text flicker effect
+document.addEventListener('DOMContentLoaded', function() {
+    const scanText = document.querySelector('.scan-text');
+    
+    function randomFlicker() {
+        const duration = Math.random() * 100 + 50;
+        scanText.style.animationDuration = \`\${duration}ms\`;
+        
+        setTimeout(randomFlicker, Math.random() * 3000 + 1000);
+    }
+    
+    randomFlicker();
+});`
+},
+// ====================================================================
+// TEMPLATE 95: ANIMATED GRADIENT NAVIGATION
+// Features: Dynamic gradient background with animations
+// Category: Modern
+// ====================================================================
+nav95: {
+    name: "Animated Gradient Navigation",
+    category: "modern",
+    html: `<nav class="animated-gradient-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-star"></i>
+                Modern
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Features</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+        </ul>
+        <button class="btn-pulse">Get Started</button>
+    </div>
+</nav>`,
+    css: `.animated-gradient-navbar {
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+    background-size: 300% 300%;
+    animation: gradientShift 3s ease infinite;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 0;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo i {
+    margin-right: 8px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.btn-pulse {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+.btn-pulse:hover {
+    transform: translateY(-2px);
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 96: FLOATING ICONS NAVIGATION
+// Features: Floating icons with hover animations
+// Category: Modern
+// ====================================================================
+nav96: {
+    name: "Floating Icons Navigation",
+    category: "modern",
+    html: `<nav class="floating-icons-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">FloatNav</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+        <button class="btn-float">Menu</button>
+    </div>
+</nav>`,
+    css: `.floating-icons-navbar {
+    background: #1e293b;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem 0;
+    border-radius: 15px;
+    margin: 1rem auto;
+    max-width: 1200px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    animation: float 3s ease-in-out infinite;
+}
+
+.nav-item:nth-child(2) .nav-link {
+    animation-delay: 0.2s;
+}
+
+.nav-item:nth-child(3) .nav-link {
+    animation-delay: 0.4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.nav-link:hover {
+    background: #3b82f6;
+    color: white;
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+.nav-link i {
+    font-size: 1.1rem;
+}
+
+.btn-float {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-float:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 97: SLIDE-IN NAVIGATION
+// Features: Staggered slide-in animations
+// Category: Modern
+// ====================================================================
+nav97: {
+    name: "Slide-In Navigation",
+    category: "modern",
+    html: `<nav class="slide-in-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">SlideNav</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Work</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+        <button class="btn-slide">Contact</button>
+    </div>
+</nav>`,
+    css: `.slide-in-navbar {
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+    border-radius: 12px;
+    margin: 1rem auto;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-decoration: none;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+.nav-item:nth-child(1) .nav-link { animation-delay: 0.1s; }
+.nav-item:nth-child(2) .nav-link { animation-delay: 0.2s; }
+.nav-item:nth-child(3) .nav-link { animation-delay: 0.3s; }
+.nav-item:nth-child(4) .nav-link { animation-delay: 0.4s; }
+
+@keyframes slideInUp {
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.nav-link:hover {
+    color: #7c3aed;
+}
+
+.btn-slide {
+    background: linear-gradient(45deg, #7c3aed, #ec4899);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transform: translateX(20px);
+    opacity: 0;
+    animation: slideInRight 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes slideInRight {
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.btn-slide:hover {
+    transform: translateX(0) translateY(-2px);
+    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+}`,
+    js: `// Animation triggers on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Animations are handled by CSS
+});`
+},
+
+// ====================================================================
+// TEMPLATE 98: GLOW BORDER NAVIGATION
+// Features: Animated glowing border effects
+// Category: Modern
+// ====================================================================
+nav98: {
+    name: "Glow Border Navigation",
+    category: "modern",
+    html: `<nav class="glow-border-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-bolt"></i>
+                Glow
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Features</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.glow-border-navbar {
+    background: #0f172a;
+    border: 1px solid #3b82f6;
+    box-shadow: 
+        0 0 15px rgba(59, 130, 246, 0.5),
+        inset 0 0 15px rgba(59, 130, 246, 0.1);
+    animation: borderGlow 2s ease-in-out infinite alternate;
+    padding: 1.5rem 0;
+    border-radius: 12px;
+    margin: 1rem auto;
+    max-width: 1200px;
+}
+
+@keyframes borderGlow {
+    from { 
+        box-shadow: 
+            0 0 15px rgba(59, 130, 246, 0.5),
+            inset 0 0 15px rgba(59, 130, 246, 0.1);
+    }
+    to { 
+        box-shadow: 
+            0 0 25px rgba(59, 130, 246, 0.8),
+            inset 0 0 20px rgba(59, 130, 246, 0.2);
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3b82f6;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.nav-logo i {
+    margin-right: 8px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #3b82f6;
+    text-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3b82f6;
+    box-shadow: 0 0 8px #3b82f6;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 99: MORPHING NAVIGATION
+// Features: Morphing shapes and smooth transitions
+// Category: Modern
+// ====================================================================
+nav99: {
+    name: "Morphing Navigation",
+    category: "modern",
+    html: `<nav class="morphing-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">Morph</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Work</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+        <button class="btn-morph">Let's Go</button>
+    </div>
+</nav>`,
+    css: `.morphing-navbar {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    border-radius: 20px 8px 20px 8px;
+    animation: morphShape 4s ease-in-out infinite;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 0;
+    margin: 1rem auto;
+    max-width: 1200px;
+}
+
+@keyframes morphShape {
+    0%, 100% { border-radius: 20px 8px 20px 8px; }
+    25% { border-radius: 8px 20px 8px 20px; }
+    50% { border-radius: 20px 20px 8px 8px; }
+    75% { border-radius: 8px 8px 20px 20px; }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    animation: colorChange 3s ease-in-out infinite;
+}
+
+@keyframes colorChange {
+    0%, 100% { color: white; }
+    50% { color: #ffe66d; }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    transition: all 0.3s;
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.btn-morph {
+    background: rgba(255, 255, 255, 0.9);
+    color: #ff6b6b;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: pulseMorph 2s ease-in-out infinite;
+}
+
+@keyframes pulseMorph {
+    0%, 100% { 
+        transform: scale(1);
+        border-radius: 12px;
+    }
+    50% { 
+        transform: scale(1.05);
+        border-radius: 16px;
+    }
+}
+
+.btn-morph:hover {
+    background: white;
+    transform: scale(1.1);
+}`,
+    js: `// No JavaScript required for this navigation`
+},
     
 
 };
