@@ -6480,7 +6480,4318 @@ nav57: {
     box-shadow: 0 0 25px rgba(139, 92, 246, 0.8);
 }`,
     js: `// Animation already handled in CSS`
+},
+
+// ====================================================================
+// TEMPLATE 58: GLASS MORPH ANIMATION
+// Features: Dynamic shape morphing with glass effects
+// Category: Glassmorphism
+// ====================================================================
+nav58: {
+    name: "Glass Morph Animation",
+    category: "glassmorphism",
+    html: `<nav class="glass-morph-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-shapes"></i>
+                Morph
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Shape</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Form</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Design</a>
+            </li>
+        </ul>
+        <button class="btn-morph">Transform</button>
+    </div>
+</nav>`,
+    css: `.glass-morph-navbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 2rem;
+    margin: 1rem auto;
+    max-width: 1200px;
+    border-radius: 20px;
+    animation: morphShape 6s ease-in-out infinite;
 }
+
+@keyframes morphShape {
+    0%, 100% { border-radius: 20px; }
+    25% { border-radius: 30px 10px 30px 10px; }
+    50% { border-radius: 10px 30px 10px 30px; }
+    75% { border-radius: 25px 15px 25px 15px; }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #7c3aed;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    animation: colorShift 4s infinite;
+}
+
+@keyframes colorShift {
+    0%, 100% { color: #7c3aed; }
+    50% { color: #ec4899; }
+}
+
+.nav-logo i {
+    margin-right: 8px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: rgba(124, 58, 237, 0.2);
+    color: #7c3aed;
+    transform: scale(1.1);
+}
+
+.btn-morph {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: buttonMorph 3s ease-in-out infinite;
+}
+
+@keyframes buttonMorph {
+    0%, 100% { border-radius: 12px; }
+    50% { border-radius: 20px 6px 20px 6px; }
+}
+
+.btn-morph:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+}`,
+    js: `// Animation already handled in CSS`
+},
+
+// ====================================================================
+// TEMPLATE 59: GLASS PRISM ANIMATION
+// Features: Prismatic light effects with color spectrum
+// Category: Glassmorphism
+// ====================================================================
+nav59: {
+    name: "Glass Prism Animation",
+    category: "glassmorphism",
+    html: `<nav class="glass-prism-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-gem"></i>
+                Prism
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Light</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Color</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Spectrum</a>
+            </li>
+        </ul>
+        <button class="btn-prism">Refract</button>
+    </div>
+</nav>`,
+    css: `.glass-prism-navbar {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 2rem;
+    margin: 1rem auto;
+    max-width: 1200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-prism-navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent
+    );
+    animation: prismScan 3s linear infinite;
+}
+
+@keyframes prismScan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    animation: prismColors 4s infinite;
+}
+
+@keyframes prismColors {
+    0% { color: #ef4444; }
+    25% { color: #f59e0b; }
+    50% { color: #10b981; }
+    75% { color: #3b82f6; }
+    100% { color: #8b5cf6; }
+}
+
+.nav-logo i {
+    margin-right: 8px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #1e293b;
+    transform: translateY(-2px);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-prism {
+    background: rgba(255, 255, 255, 0.3);
+    color: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: prismButton 3s infinite;
+}
+
+@keyframes prismButton {
+    0%, 100% { 
+        background: rgba(255, 255, 255, 0.3);
+        color: #1e293b;
+    }
+    25% { 
+        background: rgba(239, 68, 68, 0.3);
+        color: #ef4444;
+    }
+    50% { 
+        background: rgba(16, 185, 129, 0.3);
+        color: #10b981;
+    }
+    75% { 
+        background: rgba(59, 130, 246, 0.3);
+        color: #3b82f6;
+    }
+}
+
+.btn-prism:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}`,
+    js: `// Animation already handled in CSS`
+},
+
+// ====================================================================
+// TEMPLATE 60: GLASS BUBBLE ANIMATION
+// Features: Floating bubble effects with glass transparency
+// Category: Glassmorphism
+// ====================================================================
+nav60: {
+    name: "Glass Bubble Animation",
+    category: "glassmorphism",
+    html: `<nav class="glass-bubble-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-bubbles"></i>
+                Bubble
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Float</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Pop</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Rise</a>
+            </li>
+        </ul>
+        <button class="btn-bubble">Float</button>
+    </div>
+</nav>`,
+    css: `.glass-bubble-navbar {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 2rem;
+    margin: 1rem auto;
+    max-width: 1200px;
+    border-radius: 50% 20px 50% 20px;
+    animation: bubbleFloat 4s ease-in-out infinite;
+}
+
+@keyframes bubbleFloat {
+    0%, 100% { 
+        transform: translateY(0) scale(1);
+        border-radius: 50% 20px 50% 20px;
+    }
+    33% { 
+        transform: translateY(-5px) scale(1.02);
+        border-radius: 20px 50% 20px 50%;
+    }
+    66% { 
+        transform: translateY(3px) scale(0.98);
+        border-radius: 30px 30px 30px 30px;
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0ea5e9;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    animation: bubbleRise 3s ease-in-out infinite;
+}
+
+@keyframes bubbleRise {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.nav-logo i {
+    margin-right: 8px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.nav-link {
+    color: #475569;
+    text-decoration: none;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+    transition: all 0.3s;
+    animation: bubblePop 2s infinite;
+}
+
+.nav-link:nth-child(1) { animation-delay: 0s; }
+.nav-link:nth-child(2) { animation-delay: 0.5s; }
+.nav-link:nth-child(3) { animation-delay: 1s; }
+.nav-link:nth-child(4) { animation-delay: 1.5s; }
+
+@keyframes bubblePop {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.nav-link:hover {
+    background: rgba(14, 165, 233, 0.3);
+    color: #0ea5e9;
+}
+
+.btn-bubble {
+    background: rgba(14, 165, 233, 0.6);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: bubbleFloatBtn 3s ease-in-out infinite;
+}
+
+@keyframes bubbleFloatBtn {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.btn-bubble:hover {
+    background: rgba(14, 165, 233, 0.8);
+    transform: scale(1.1);
+}`,
+    js: `// Animation already handled in CSS`
+},
+
+// ====================================================================
+// TEMPLATE 61: GLASS CRYSTAL ANIMATION
+// Features: Crystal clear effects with sparkling animations
+// Category: Glassmorphism
+// ====================================================================
+nav61: {
+    name: "Glass Crystal Animation",
+    category: "glassmorphism",
+    html: `<nav class="glass-crystal-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-crystal"></i>
+                Crystal
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Shine</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Sparkle</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Clear</a>
+            </li>
+        </ul>
+        <button class="btn-crystal">Shine</button>
+    </div>
+</nav>`,
+    css: `.glass-crystal-navbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(35px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 2rem;
+    margin: 1rem auto;
+    max-width: 1200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-crystal-navbar::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.1), 
+        transparent
+    );
+    animation: crystalShine 4s linear infinite;
+}
+
+@keyframes crystalShine {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #06b6d4;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+    animation: crystalSparkle 2s infinite;
+}
+
+@keyframes crystalSparkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.nav-logo i {
+    margin-right: 8px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #06b6d4;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #06b6d4;
+}
+
+.btn-crystal {
+    background: rgba(6, 182, 212, 0.3);
+    color: #06b6d4;
+    border: 1px solid rgba(6, 182, 212, 0.5);
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: crystalPulse 2s infinite;
+}
+
+@keyframes crystalPulse {
+    0%, 100% { 
+        box-shadow: 0 0 5px rgba(6, 182, 212, 0.3);
+    }
+    50% { 
+        box-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
+    }
+}
+
+.btn-crystal:hover {
+    background: rgba(6, 182, 212, 0.4);
+    transform: translateY(-2px);
+}`,
+    js: `// Animation already handled in CSS`
+},
+
+// ====================================================================
+// TEMPLATE 62: GLASS AURORA ANIMATION
+// Features: Northern lights effect with flowing color waves
+// Category: Glassmorphism
+// ====================================================================
+nav62: {
+    name: "Glass Aurora Animation",
+    category: "glassmorphism",
+    html: `<nav class="glass-aurora-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-cloud-moon"></i>
+                Aurora
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Sky</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Light</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Dance</a>
+            </li>
+        </ul>
+        <button class="btn-aurora">Dance</button>
+    </div>
+</nav>`,
+    css: `.glass-aurora-navbar {
+    background: linear-gradient(45deg, 
+        rgba(139, 92, 246, 0.1), 
+        rgba(16, 185, 129, 0.1), 
+        rgba(59, 130, 246, 0.1)
+    );
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 2rem;
+    margin: 1rem auto;
+    max-width: 1200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-aurora-navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(139, 92, 246, 0.2), 
+        rgba(16, 185, 129, 0.2), 
+        rgba(59, 130, 246, 0.2), 
+        transparent
+    );
+    animation: auroraFlow 5s linear infinite;
+}
+
+@keyframes auroraFlow {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    animation: auroraColors 6s infinite;
+}
+
+@keyframes auroraColors {
+    0% { color: #8b5cf6; }
+    33% { color: #10b981; }
+    66% { color: #3b82f6; }
+    100% { color: #8b5cf6; }
+}
+
+.nav-logo i {
+    margin-right: 8px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #475569;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #1e293b;
+    transform: translateY(-2px);
+}
+
+.btn-aurora {
+    background: rgba(255, 255, 255, 0.3);
+    color: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: auroraDance 4s infinite;
+}
+
+@keyframes auroraDance {
+    0%, 100% { 
+        background: rgba(139, 92, 246, 0.3);
+        color: #8b5cf6;
+    }
+    33% { 
+        background: rgba(16, 185, 129, 0.3);
+        color: #10b981;
+    }
+    66% { 
+        background: rgba(59, 130, 246, 0.3);
+        color: #3b82f6;
+    }
+}
+
+.btn-aurora:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}`,
+    js: `// Animation already handled in CSS`
+},
+// ====================================================================
+// TEMPLATE 63: MINIMAL BREATH ANIMATION
+// Features: Breathing effect with smooth expansion
+// Category: Minimal
+// ====================================================================
+nav63: {
+    name: "Minimal Breath Animation",
+    category: "minimal",
+    html: `<nav class="minimal-breath-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">Breathe</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Calm</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Peace</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Zen</a>
+            </li>
+        </ul>
+        <button class="btn-breath">Relax</button>
+    </div>
+</nav>`,
+    css: `.minimal-breath-navbar {
+    background: white;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem 0;
+    animation: breath 4s ease-in-out infinite;
+}
+
+@keyframes breath {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    50% { 
+        transform: scale(1.01);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1e293b;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    animation: textBreath 4s ease-in-out infinite;
+}
+
+@keyframes textBreath {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.3s;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #1e293b;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #1e293b;
+}
+
+.btn-breath {
+    background: #1e293b;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: buttonBreath 3s ease-in-out infinite;
+}
+
+@keyframes buttonBreath {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.btn-breath:hover {
+    background: #374151;
+}`,
+    js: `// Animation already handled in CSS`
+},
+
+// ====================================================================
+// TEMPLATE 64: MINIMAL PULSE ANIMATION
+// Features: Subtle pulse effects with rhythmic timing
+// Category: Minimal
+// ====================================================================
+nav64: {
+    name: "Minimal Pulse Animation",
+    category: "minimal",
+    html: `<nav class="minimal-pulse-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">Pulse</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Beat</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Rhythm</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Flow</a>
+            </li>
+        </ul>
+        <button class="btn-pulse">Start</button>
+    </div>
+</nav>`,
+    css: `.minimal-pulse-navbar {
+    background: white;
+    border-bottom: 2px solid #f1f5f9;
+    padding: 1.5rem 0;
+    position: relative;
+}
+
+.minimal-pulse-navbar::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #10b981;
+    transform: scaleX(0);
+    animation: pulseLine 2s ease-in-out infinite;
+}
+
+@keyframes pulseLine {
+    0%, 100% { transform: scaleX(0); }
+    50% { transform: scaleX(1); }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+    animation: logoPulse 3s infinite;
+}
+
+@keyframes logoPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #10b981;
+    animation: linkPulse 0.5s;
+}
+
+@keyframes linkPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.btn-pulse {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: buttonPulse 2s infinite;
+}
+
+@keyframes buttonPulse {
+    0%, 100% { 
+        box-shadow: 0 0 0 rgba(16, 185, 129, 0.4);
+    }
+    50% { 
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+    }
+}
+
+.btn-pulse:hover {
+    background: #059669;
+}`,
+    js: `// Animation already handled in CSS`
+},
+
+// ====================================================================
+// TEMPLATE 65: MINIMAL FLOAT ANIMATION
+// Features: Floating elements with weightless movement
+// Category: Minimal
+// ====================================================================
+nav65: {
+    name: "Minimal Float Animation",
+    category: "minimal",
+    html: `<nav class="minimal-float-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">Float</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Air</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Light</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Cloud</a>
+            </li>
+        </ul>
+        <button class="btn-float">Lift</button>
+    </div>
+</nav>`,
+    css: `.minimal-float-navbar {
+    background: white;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem 0;
+    animation: floatContainer 6s ease-in-out infinite;
+}
+
+@keyframes floatContainer {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1e293b;
+    text-decoration: none;
+    animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.3s;
+    animation: floatStagger 3s ease-in-out infinite;
+}
+
+.nav-link:nth-child(1) { animation-delay: 0s; }
+.nav-link:nth-child(2) { animation-delay: 0.2s; }
+.nav-link:nth-child(3) { animation-delay: 0.4s; }
+.nav-link:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes floatStagger {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+
+.nav-link:hover {
+    color: #1e293b;
+    transform: translateY(-3px);
+}
+
+.btn-float {
+    background: #1e293b;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: floatButton 5s ease-in-out infinite;
+}
+
+@keyframes floatButton {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.btn-float:hover {
+    background: #374151;
+}`,
+    js: `// Animation already handled in CSS`
+},
+
+// ====================================================================
+// TEMPLATE 66: MINIMAL GLOW ANIMATION
+// Features: Soft glow effects with subtle illumination
+// Category: Minimal
+// ====================================================================
+nav66: {
+    name: "Minimal Glow Animation",
+    category: "minimal",
+    html: `<nav class="minimal-glow-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">Glow</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Light</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Shine</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Bright</a>
+            </li>
+        </ul>
+        <button class="btn-glow">Bright</button>
+    </div>
+</nav>`,
+    css: `.minimal-glow-navbar {
+    background: white;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem 0;
+    animation: glowContainer 4s ease-in-out infinite;
+}
+
+@keyframes glowContainer {
+    0%, 100% { 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    50% { 
+        box-shadow: 0 4px 25px rgba(99, 102, 241, 0.1);
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #6366f1;
+    text-decoration: none;
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+    0%, 100% { 
+        text-shadow: 0 0 0 rgba(99, 102, 241, 0);
+    }
+    50% { 
+        text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+    }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #6366f1;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #6366f1;
+    animation: linkGlow 0.5s;
+}
+
+@keyframes linkGlow {
+    0%, 100% { 
+        text-shadow: 0 0 0 rgba(99, 102, 241, 0);
+    }
+    50% { 
+        text-shadow: 0 0 5px rgba(99, 102, 241, 0.5);
+    }
+}
+
+.btn-glow {
+    background: #6366f1;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: buttonGlow 2s infinite;
+}
+
+@keyframes buttonGlow {
+    0%, 100% { 
+        box-shadow: 0 0 0 rgba(99, 102, 241, 0.4);
+    }
+    50% { 
+        box-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+    }
+}
+
+.btn-glow:hover {
+    background: #4f46e5;
+}`,
+    js: `// Animation already handled in CSS`
+},
+
+// ====================================================================
+// TEMPLATE 67: MINIMAL WAVE ANIMATION
+// Features: Wave-like motion with smooth transitions
+// Category: Minimal
+// ====================================================================
+nav67: {
+    name: "Minimal Wave Animation",
+    category: "minimal",
+    html: `<nav class="minimal-wave-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">Wave</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Flow</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Motion</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Ocean</a>
+            </li>
+        </ul>
+        <button class="btn-wave">Flow</button>
+    </div>
+</nav>`,
+    css: `.minimal-wave-navbar {
+    background: white;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 1.5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.minimal-wave-navbar::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ec4899, transparent);
+    animation: waveFlow 3s linear infinite;
+}
+
+@keyframes waveFlow {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1e293b;
+    text-decoration: none;
+    animation: waveText 4s ease-in-out infinite;
+}
+
+@keyframes waveText {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-2px); }
+    75% { transform: translateY(2px); }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ec4899;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #ec4899;
+    animation: waveHover 0.5s;
+}
+
+@keyframes waveHover {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.btn-wave {
+    background: #ec4899;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: waveButton 3s ease-in-out infinite;
+}
+
+@keyframes waveButton {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+
+.btn-wave:hover {
+    background: #db2777;
+}`,
+    js: `// Animation already handled in CSS`
+},
+// ====================================================================
+// TEMPLATE 68: SIDEBAR SLIDE ANIMATION
+// Features: Smooth slide-in effects with staggered timing
+// Category: Sidebar
+// ====================================================================
+nav68: {
+    name: "Sidebar Slide Animation",
+    category: "sidebar",
+    html: `<div class="sidebar-slide-animation">
+    <div class="sidebar-header">
+        <h2>
+            <i class="fas fa-sliders-h"></i>
+            Dashboard
+        </h2>
+    </div>
+    <ul class="sidebar-menu">
+        <li class="menu-item active">
+            <a href="#">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-chart-bar"></i>
+                <span>Statistics</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-question-circle"></i>
+                <span>Help</span>
+            </a>
+        </li>
+    </ul>
+</div>`,
+    css: `.sidebar-slide-animation {
+    width: 280px;
+    height: 100%;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    padding: 25px 0;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header {
+    padding: 0 25px 25px;
+    border-bottom: 1px solid #334155;
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    align-items: center;
+    transform: translateX(-30px);
+    animation: slideInHeader 0.6s ease forwards;
+}
+
+@keyframes slideInHeader {
+    to { transform: translateX(0); }
+}
+
+.sidebar-header i {
+    margin-right: 12px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.menu-item {
+    margin-bottom: 5px;
+    transform: translateX(-20px);
+    opacity: 0;
+    animation: slideInMenu 0.5s ease forwards;
+}
+
+.menu-item:nth-child(1) { animation-delay: 0.1s; }
+.menu-item:nth-child(2) { animation-delay: 0.2s; }
+.menu-item:nth-child(3) { animation-delay: 0.3s; }
+.menu-item:nth-child(4) { animation-delay: 0.4s; }
+.menu-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideInMenu {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-right: 3px solid transparent;
+}
+
+.menu-item a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    transform: translateX(5px);
+}
+
+.menu-item.active a {
+    background: rgba(59, 130, 246, 0.2);
+    color: white;
+    border-right: 3px solid #3b82f6;
+}
+
+.menu-item i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}`,
+    js: `// Animation already handled in CSS`
+},
+
+// ====================================================================
+// TEMPLATE 69: SIDEBAR BOUNCE ANIMATION
+// Features: Spring-like bounce effects with energetic movement
+// Category: Sidebar
+// ====================================================================
+nav69: {
+    name: "Sidebar Bounce Animation",
+    category: "sidebar",
+    html: `<div class="sidebar-bounce-animation">
+    <div class="sidebar-header">
+        <h2>
+            <i class="fas fa-bounce"></i>
+            Control Panel
+        </h2>
+    </div>
+    <ul class="sidebar-menu">
+        <li class="menu-item active">
+            <a href="#">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-rocket"></i>
+                <span>Launch</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-star"></i>
+                <span>Stars</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-bolt"></i>
+                <span>Energy</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+    </ul>
+</div>`,
+    css: `.sidebar-bounce-animation {
+    width: 280px;
+    height: 100%;
+    background: white;
+    padding: 25px 0;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f1f5f9;
+}
+
+.sidebar-header {
+    padding: 0 25px 25px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #7c3aed;
+    display: flex;
+    align-items: center;
+    animation: bounceHeader 2s infinite;
+}
+
+@keyframes bounceHeader {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
+}
+
+.sidebar-header i {
+    margin-right: 12px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.menu-item {
+    margin-bottom: 5px;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-right: 3px solid transparent;
+}
+
+.menu-item a:hover {
+    background: rgba(124, 58, 237, 0.05);
+    color: #7c3aed;
+    transform: scale(1.05) translateX(5px);
+}
+
+.menu-item.active a {
+    background: rgba(124, 58, 237, 0.1);
+    color: #7c3aed;
+    border-right: 3px solid #7c3aed;
+    animation: bounceActive 0.5s;
+}
+
+@keyframes bounceActive {
+    0%, 20%, 60%, 100% { transform: translateX(0); }
+    40% { transform: translateX(8px); }
+    80% { transform: translateX(4px); }
+}
+
+.menu-item i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}`,
+    js: `// Animation already handled in CSS`
+},
+
+// ====================================================================
+// TEMPLATE 70: SIDEBAR GLOW ANIMATION
+// Features: Magical glow effects with pulse animations
+// Category: Sidebar
+// ====================================================================
+nav70: {
+    name: "Sidebar Glow Animation",
+    category: "sidebar",
+    html: `<div class="sidebar-glow-animation">
+    <div class="sidebar-header">
+        <h2>
+            <i class="fas fa-magic"></i>
+            Magic Panel
+        </h2>
+    </div>
+    <ul class="sidebar-menu">
+        <li class="menu-item active">
+            <a href="#">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-sparkles"></i>
+                <span>Sparkle</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-wand-magic-sparkles"></i>
+                <span>Magic</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-crystal-ball"></i>
+                <span>Crystal</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-hat-wizard"></i>
+                <span>Wizard</span>
+            </a>
+        </li>
+    </ul>
+</div>`,
+    css: `.sidebar-glow-animation {
+    width: 280px;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(20px);
+    padding: 25px 0;
+    border-radius: 20px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.sidebar-header {
+    padding: 0 25px 25px;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #8b5cf6;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    animation: glowHeader 3s infinite;
+}
+
+@keyframes glowHeader {
+    0%, 100% { 
+        text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    }
+    50% { 
+        text-shadow: 0 0 20px rgba(139, 92, 246, 0.8);
+    }
+}
+
+.sidebar-header i {
+    margin-right: 12px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.menu-item {
+    margin-bottom: 5px;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-right: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.menu-item a:hover::before {
+    left: 100%;
+}
+
+.menu-item a:hover {
+    background: rgba(139, 92, 246, 0.15);
+    color: white;
+    text-shadow: 0 0 5px rgba(139, 92, 246, 0.8);
+}
+
+.menu-item.active a {
+    background: rgba(139, 92, 246, 0.2);
+    color: white;
+    border-right: 3px solid #8b5cf6;
+    animation: pulseActive 2s infinite;
+}
+
+@keyframes pulseActive {
+    0%, 100% { 
+        box-shadow: 0 0 5px rgba(139, 92, 246, 0.4);
+    }
+    50% { 
+        box-shadow: 0 0 15px rgba(139, 92, 246, 0.8);
+    }
+}
+
+.menu-item i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}`,
+    js: `// Animation already handled in CSS`
+},
+
+// ====================================================================
+// TEMPLATE 71: ANIMATED GRADIENT NAVIGATION
+// Features: Moving gradient background with animations
+// Category: Modern
+// ====================================================================
+nav71: {
+    name: "Animated Gradient Navigation",
+    category: "modern",
+    html: `<nav class="animated-gradient-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-star"></i>
+                Animate
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Features</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+        </ul>
+        <button class="btn-pulse">Get Started</button>
+    </div>
+</nav>`,
+    css: `.animated-gradient-navbar {
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease infinite;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 0;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo i {
+    margin-right: 8px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-pulse {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    transition: all 0.3s;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-pulse:hover {
+    animation: none;
+    transform: scale(1.1);
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 72: FLOATING ICONS NAVIGATION
+// Features: Floating icons with hover animations
+// Category: Modern
+// ====================================================================
+nav72: {
+    name: "Floating Icons Navigation",
+    category: "modern",
+    html: `<nav class="floating-icons-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-rocket"></i>
+                Float
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+        <button class="btn-float">Launch</button>
+    </div>
+</nav>`,
+    css: `.floating-icons-navbar {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo i {
+    margin-right: 8px;
+    color: #fbbf24;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    animation: float 3s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.2s);
+}
+
+.nav-item:nth-child(1) .nav-link { --i: 1; }
+.nav-item:nth-child(2) .nav-link { --i: 2; }
+.nav-item:nth-child(3) .nav-link { --i: 3; }
+
+.nav-link:hover {
+    color: #fbbf24;
+    transform: translateY(-3px);
+}
+
+.nav-link i {
+    font-size: 1.1rem;
+}
+
+.btn-float {
+    background: #fbbf24;
+    color: #1e293b;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    animation: float 2s ease-in-out infinite;
+    transition: all 0.3s;
+}
+
+.btn-float:hover {
+    animation: none;
+    transform: translateY(-3px);
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 73: GLOWING BORDER NAVIGATION
+// Features: Animated glowing borders and effects
+// Category: Modern
+// ====================================================================
+nav73: {
+    name: "Glowing Border Navigation",
+    category: "modern",
+    html: `<nav class="glowing-border-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-bolt"></i>
+                Glow
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Products</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+        <button class="btn-glow">Try Now</button>
+    </div>
+</nav>`,
+    css: `.glowing-border-navbar {
+    background: #0f172a;
+    border: 1px solid #3b82f6;
+    box-shadow: 
+        0 0 10px rgba(59, 130, 246, 0.5),
+        inset 0 0 10px rgba(59, 130, 246, 0.1);
+    animation: borderGlow 2s ease-in-out infinite alternate;
+    padding: 1.5rem 0;
+}
+
+@keyframes borderGlow {
+    from {
+        box-shadow: 
+            0 0 10px rgba(59, 130, 246, 0.5),
+            inset 0 0 10px rgba(59, 130, 246, 0.1);
+    }
+    to {
+        box-shadow: 
+            0 0 20px rgba(59, 130, 246, 0.8),
+            inset 0 0 15px rgba(59, 130, 246, 0.2);
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3b82f6;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.nav-logo i {
+    margin-right: 8px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #3b82f6;
+    text-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+}
+
+.btn-glow {
+    background: transparent;
+    color: #3b82f6;
+    border: 1px solid #3b82f6;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    animation: buttonGlow 2s ease-in-out infinite alternate;
+    transition: all 0.3s;
+}
+
+@keyframes buttonGlow {
+    from {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    }
+    to {
+        box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+    }
+}
+
+.btn-glow:hover {
+    background: #3b82f6;
+    color: white;
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 74: SLIDE-IN MENU NAVIGATION
+// Features: Staggered slide-in animations
+// Category: Modern
+// ====================================================================
+nav74: {
+    name: "Slide-in Menu Navigation",
+    category: "modern",
+    html: `<nav class="slide-in-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">SlideNav</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link slide-item">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link slide-item">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link slide-item">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link slide-item">Contact</a>
+            </li>
+        </ul>
+        <button class="btn-slide">Explore</button>
+    </div>
+</nav>`,
+    css: `.slide-in-navbar {
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+    overflow: hidden;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.slide-item {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+.nav-item:nth-child(1) .slide-item { animation-delay: 0.1s; }
+.nav-item:nth-child(2) .slide-item { animation-delay: 0.2s; }
+.nav-item:nth-child(3) .slide-item { animation-delay: 0.3s; }
+.nav-item:nth-child(4) .slide-item { animation-delay: 0.4s; }
+
+@keyframes slideInUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-item:hover {
+    color: #7c3aed;
+    transform: translateY(-2px);
+}
+
+.btn-slide {
+    background: #7c3aed;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transform: translateX(20px);
+    opacity: 0;
+    animation: slideInRight 0.8s ease-out 0.5s forwards;
+    transition: all 0.3s;
+}
+
+@keyframes slideInRight {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.btn-slide:hover {
+    background: #6d28d9;
+    transform: translateY(-2px);
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 75: MORPHING NAVIGATION
+// Features: Shape-shifting animations
+// Category: Modern
+// ====================================================================
+nav75: {
+    name: "Morphing Navigation",
+    category: "modern",
+    html: `<nav class="morphing-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-shapes"></i>
+                Morph
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link morph-item">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link morph-item">Work</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link morph-item">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link morph-item">Contact</a>
+            </li>
+        </ul>
+        <button class="btn-morph">Transform</button>
+    </div>
+</nav>`,
+    css: `.morphing-navbar {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 0;
+    border-radius: 15px;
+    margin: 1rem auto;
+    max-width: 1200px;
+    animation: morphBackground 4s ease-in-out infinite;
+}
+
+@keyframes morphBackground {
+    0%, 100% { border-radius: 15px; }
+    50% { border-radius: 25px; }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo i {
+    margin-right: 8px;
+    animation: morphIcon 3s ease-in-out infinite;
+}
+
+@keyframes morphIcon {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(90deg) scale(1.1); }
+    50% { transform: rotate(180deg) scale(1); }
+    75% { transform: rotate(270deg) scale(1.1); }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.morph-item {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    transition: all 0.3s;
+    animation: morphItem 3s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.5s);
+}
+
+.nav-item:nth-child(1) .morph-item { --i: 1; }
+.nav-item:nth-child(2) .morph-item { --i: 2; }
+.nav-item:nth-child(3) .morph-item { --i: 3; }
+.nav-item:nth-child(4) .morph-item { --i: 4; }
+
+@keyframes morphItem {
+    0%, 100% { border-radius: 10px; transform: scale(1); }
+    50% { border-radius: 20px; transform: scale(1.05); }
+}
+
+.morph-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1) !important;
+}
+
+.btn-morph {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    animation: morphButton 2s ease-in-out infinite;
+    transition: all 0.3s;
+}
+
+@keyframes morphButton {
+    0%, 100% { border-radius: 10px; transform: scale(1); }
+    50% { border-radius: 20px; transform: scale(1.05); }
+}
+
+.btn-morph:hover {
+    animation: none;
+    transform: scale(1.1);
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+// ====================================================================
+// TEMPLATE 76: ANIMATED BLUR GLASS
+// Features: Dynamic blur animation with hover effects
+// Category: Glassmorphism
+// ====================================================================
+nav76: {
+    name: "Animated Blur Glass",
+    category: "glassmorphism",
+    html: `<nav class="animated-blur-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-wave-square"></i>
+                BlurEffect
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Features</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+        </ul>
+        <button class="btn-pulse">Hover Me</button>
+    </div>
+</nav>`,
+    css: `.animated-blur-navbar {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.5s ease;
+}
+
+.animated-blur-navbar:hover {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #7c3aed;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo i {
+    margin-right: 8px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #7c3aed;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #7c3aed;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.btn-pulse {
+    background: #7c3aed;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.btn-pulse:hover {
+    animation: none;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(124, 58, 237, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+    }
+}`,
+    js: `// Additional hover effects
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.animated-blur-navbar');
+    const links = document.querySelectorAll('.nav-link');
+    
+    links.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 77: GRADIENT SHIFT GLASS
+// Features: Animated gradient background
+// Category: Glassmorphism
+// ====================================================================
+nav77: {
+    name: "Gradient Shift Glass",
+    category: "glassmorphism",
+    html: `<nav class="gradient-shift-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-sync-alt"></i>
+                GradientShift
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Work</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.gradient-shift-navbar {
+    background: linear-gradient(-45deg, 
+        rgba(124, 58, 237, 0.2), 
+        rgba(236, 72, 153, 0.2),
+        rgba(59, 130, 246, 0.2),
+        rgba(16, 185, 129, 0.2)
+    );
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background-size: 400% 400%;
+    animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #7c3aed;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo i {
+    margin-right: 8px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+    color: #7c3aed;
+    animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #7c3aed;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}`,
+    js: `// No additional JavaScript required`
+},
+
+// ====================================================================
+// TEMPLATE 78: FLOATING PARTICLES GLASS
+// Features: Animated floating particles
+// Category: Glassmorphism
+// ====================================================================
+nav78: {
+    name: "Floating Particles Glass",
+    category: "glassmorphism",
+    html: `<nav class="floating-particles-navbar">
+    <div class="particles-container" id="particles"></div>
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-sparkles"></i>
+                Particles
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Features</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.floating-particles-navbar {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(124, 58, 237, 0.3);
+    border-radius: 50%;
+    animation: float 6s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100%) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%) translateX(20px);
+        opacity: 0;
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #7c3aed;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo i {
+    margin-right: 8px;
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #7c3aed;
+}`,
+    js: `// Particle generation
+document.addEventListener('DOMContentLoaded', function() {
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 15;
+    
+    for (let i = 0; i < particleCount; i++) {
+        createParticle(particlesContainer);
+    }
+    
+    function createParticle(container) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        const size = Math.random() * 4 + 2;
+        const left = Math.random() * 100;
+        const delay = Math.random() * 6;
+        const duration = Math.random() * 4 + 4;
+        
+        particle.style.width = \`\${size}px\`;
+        particle.style.height = \`\${size}px\`;
+        particle.style.left = \`\${left}%\`;
+        particle.style.animationDelay = \`\${delay}s\`;
+        particle.style.animationDuration = \`\${duration}s\`;
+        
+        container.appendChild(particle);
+        
+        // Remove and recreate particle after animation
+        setTimeout(() => {
+            particle.remove();
+            createParticle(container);
+        }, (delay + duration) * 1000);
+    }
+});`
+},
+
+// ====================================================================
+// TEMPLATE 79: MORPHING GLASS
+// Features: Shape-shifting glass elements
+// Category: Glassmorphism
+// ====================================================================
+nav79: {
+    name: "Morphing Glass",
+    category: "glassmorphism",
+    html: `<nav class="morphing-glass-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <i class="fas fa-shapes"></i>
+                Morph
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link morph-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link morph-link">Work</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link morph-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link morph-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.morphing-glass-navbar {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.morphing-glass-navbar:hover {
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 0 1rem;
+    transform: translateY(-5px);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #7c3aed;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-logo i {
+    margin-right: 8px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.morphing-glass-navbar:hover .nav-logo a {
+    transform: scale(1.1);
+}
+
+.morphing-glass-navbar:hover .nav-logo i {
+    transform: rotate(180deg);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.morph-link {
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.morph-link:hover {
+    background: #7c3aed;
+    color: white;
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+    border-radius: 15px;
+}`,
+    js: `// Morphing animation enhancement
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.morphing-glass-navbar');
+    const links = document.querySelectorAll('.morph-link');
+    
+    navbar.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+    });
+    
+    navbar.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+    
+    links.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1) rotate(3deg)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0deg)';
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 80: GLITCH GLASS
+// Features: Cyberpunk glitch effects
+// Category: Glassmorphism
+// ====================================================================
+nav80: {
+    name: "Glitch Glass",
+    category: "glassmorphism",
+    html: `<nav class="glitch-glass-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#" class="glitch-text" data-text="Glitch">
+                <i class="fas fa-bolt"></i>
+                Glitch
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link glitch-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link glitch-link">Features</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link glitch-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link glitch-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.glitch-glass-navbar {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+.glitch-glass-navbar:hover {
+    animation: glitch-bg 0.3s infinite;
+}
+
+@keyframes glitch-bg {
+    0% {
+        transform: translateX(0);
+        background: rgba(255, 255, 255, 0.8);
+    }
+    20% {
+        transform: translateX(-2px);
+        background: rgba(236, 72, 153, 0.1);
+    }
+    40% {
+        transform: translateX(2px);
+        background: rgba(59, 130, 246, 0.1);
+    }
+    60% {
+        transform: translateX(-1px);
+        background: rgba(255, 255, 255, 0.9);
+    }
+    80% {
+        transform: translateX(1px);
+        background: rgba(16, 185, 129, 0.1);
+    }
+    100% {
+        transform: translateX(0);
+        background: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.glitch-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #7c3aed;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.glitch-text i {
+    margin-right: 8px;
+}
+
+.glitch-text:hover::before,
+.glitch-text:hover::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.glitch-text:hover::before {
+    animation: glitch-1 0.5s infinite;
+    color: #ec4899;
+    left: 2px;
+    text-shadow: 2px 0 #ec4899;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+}
+
+.glitch-text:hover::after {
+    animation: glitch-2 0.5s infinite;
+    color: #60a5fa;
+    left: -2px;
+    text-shadow: -2px 0 #60a5fa;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch-1 {
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-1px);
+    }
+    66% {
+        transform: translateX(1px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes glitch-2 {
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(1px);
+    }
+    66% {
+        transform: translateX(-1px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.glitch-link {
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.glitch-link:hover {
+    color: #7c3aed;
+    animation: text-glitch 0.3s infinite;
+}
+
+@keyframes text-glitch {
+    0% {
+        transform: translateX(0);
+        color: #7c3aed;
+    }
+    25% {
+        transform: translateX(-1px);
+        color: #ec4899;
+    }
+    50% {
+        transform: translateX(1px);
+        color: #60a5fa;
+    }
+    75% {
+        transform: translateX(-1px);
+        color: #10b981;
+    }
+    100% {
+        transform: translateX(0);
+        color: #7c3aed;
+    }
+}`,
+    js: `// Enhanced glitch effects
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.glitch-glass-navbar');
+    const links = document.querySelectorAll('.glitch-link');
+    
+    let glitchInterval;
+    
+    navbar.addEventListener('mouseenter', function() {
+        // Start random glitch effects
+        glitchInterval = setInterval(() => {
+            if (Math.random() > 0.7) {
+                this.style.transform = \`translateX(\${Math.random() > 0.5 ? '-' : ''}\${Math.floor(Math.random() * 3)}px)\`;
+                setTimeout(() => {
+                    this.style.transform = 'translateX(0)';
+                }, 100);
+            }
+        }, 500);
+    });
+    
+    navbar.addEventListener('mouseleave', function() {
+        clearInterval(glitchInterval);
+        this.style.transform = 'translateX(0)';
+    });
+    
+    links.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.animation = 'text-glitch 0.3s infinite';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.animation = 'none';
+            this.style.color = '#4b5563';
+        });
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 80: ANIMATED BORDER BOTTOM
+// Features: Smooth underline animation on hover
+// Category: Minimal
+// ====================================================================
+nav80: {
+    name: "Animated Border Bottom",
+    category: "minimal",
+    html: `<nav class="animated-border-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">Minimal80</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Work</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.animated-border-navbar {
+    background: white;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+    color: #1e293b;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3b82f6;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 81: SLIDE UP ANIMATION
+// Features: Menu items slide up with smooth transition
+// Category: Minimal
+// ====================================================================
+nav81: {
+    name: "Slide Up Animation",
+    category: "minimal",
+    html: `<nav class="slide-up-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">Minimal81</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.slide-up-navbar {
+    background: white;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #1e293b;
+    transform: translateY(-3px);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #10b981;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 82: FADE IN ANIMATION
+// Features: Smooth fade-in with background transition
+// Category: Minimal
+// ====================================================================
+nav82: {
+    name: "Fade In Animation",
+    category: "minimal",
+    html: `<nav class="fade-in-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">Minimal82</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.fade-in-navbar {
+    background: white;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    opacity: 0.8;
+}
+
+.nav-link:hover {
+    opacity: 1;
+    color: #1e293b;
+    background: rgba(59, 130, 246, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 83: BOUNCE EFFECT
+// Features: Playful bounce animation on hover
+// Category: Minimal
+// ====================================================================
+nav83: {
+    name: "Bounce Effect",
+    category: "minimal",
+    html: `<nav class="bounce-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#">Minimal83</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.bounce-navbar {
+    background: white;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #1e293b;
+    transform: scale(1.1);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #f59e0b;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}`,
+    js: `// No JavaScript required for this navigation`
+},
+
+// ====================================================================
+// TEMPLATE 84: TYPEWRITER EFFECT
+// Features: Typewriter animation on logo
+// Category: Minimal
+// ====================================================================
+nav84: {
+    name: "Typewriter Effect",
+    category: "minimal",
+    html: `<nav class="typewriter-navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="#" class="typewriter-text">Minimal84</a>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Work</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>`,
+    css: `.typewriter-navbar {
+    background: white;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.typewriter-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    border-right: 2px solid #3b82f6;
+    white-space: nowrap;
+    animation: typewriter 3s steps(20) 1s 1 normal both,
+               blinkCursor 0.8s steps(20) infinite normal;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+    from { border-right-color: #3b82f6; }
+    to { border-right-color: transparent; }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #1e293b;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ef4444;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}`,
+    js: `// Typewriter effect reset on hover
+document.addEventListener('DOMContentLoaded', function() {
+    const typewriterText = document.querySelector('.typewriter-text');
+    
+    if (typewriterText) {
+        typewriterText.addEventListener('mouseenter', function() {
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 10);
+        });
+    }
+});`
+},
+// ====================================================================
+// TEMPLATE 85: ANIMATED GRADIENT SIDEBAR
+// Features: Sidebar with animated gradient background
+// Category: Sidebar
+// ====================================================================
+nav85: {
+    name: "Animated Gradient Sidebar",
+    category: "sidebar",
+    html: `<div class="animated-gradient-sidebar">
+    <div class="sidebar-header">
+        <h2>Dashboard</h2>
+    </div>
+    <ul class="sidebar-menu">
+        <li class="menu-item active">
+            <a href="#">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-chart-bar"></i>
+                <span>Analytics</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-users"></i>
+                <span>Users</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+    </ul>
+</div>`,
+    css: `.animated-gradient-sidebar {
+    width: 280px;
+    height: 100%;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+    padding: 25px 0;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.sidebar-header {
+    padding: 0 25px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.menu-item {
+    margin-bottom: 5px;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-right: 3px solid transparent;
+}
+
+.menu-item a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    transform: translateX(8px);
+}
+
+.menu-item.active a {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-right: 3px solid white;
+    transform: translateX(5px);
+}
+
+.menu-item i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}`,
+    js: `// No JavaScript required for this sidebar`
+},
+
+// ====================================================================
+// TEMPLATE 86: SLIDE-IN SIDEBAR
+// Features: Sidebar with slide-in animation
+// Category: Sidebar
+// ====================================================================
+nav86: {
+    name: "Slide-in Sidebar",
+    category: "sidebar",
+    html: `<div class="slide-in-sidebar">
+    <div class="sidebar-header">
+        <h2>
+            <i class="fas fa-bars"></i>
+            Menu
+        </h2>
+    </div>
+    <ul class="sidebar-menu">
+        <li class="menu-item active">
+            <a href="#">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-question-circle"></i>
+                <span>Help</span>
+            </a>
+        </li>
+    </ul>
+</div>`,
+    css: `.slide-in-sidebar {
+    width: 280px;
+    height: 100%;
+    background: #1e293b;
+    padding: 25px 0;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.sidebar-header {
+    padding: 0 25px 25px;
+    border-bottom: 1px solid #334155;
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-header i {
+    margin-right: 12px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.menu-item {
+    margin-bottom: 5px;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-right: 3px solid transparent;
+    transform: translateX(-100%);
+    animation: slideIn 0.6s ease forwards;
+    opacity: 0;
+}
+
+.menu-item:nth-child(1) a { animation-delay: 0.1s; }
+.menu-item:nth-child(2) a { animation-delay: 0.2s; }
+.menu-item:nth-child(3) a { animation-delay: 0.3s; }
+.menu-item:nth-child(4) a { animation-delay: 0.4s; }
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.menu-item a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    transform: translateX(5px);
+}
+
+.menu-item.active a {
+    background: rgba(59, 130, 246, 0.2);
+    color: white;
+    border-right: 3px solid #3b82f6;
+}
+
+.menu-item i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}`,
+    js: `// Animation triggers on page load automatically`
+},
+
+// ====================================================================
+// TEMPLATE 87: BOUNCING ICONS SIDEBAR
+// Features: Sidebar with bouncing icon animations
+// Category: Sidebar
+// ====================================================================
+nav87: {
+    name: "Bouncing Icons Sidebar",
+    category: "sidebar",
+    html: `<div class="bouncing-icons-sidebar">
+    <div class="sidebar-header">
+        <h2>
+            <i class="fas fa-star"></i>
+            Premium
+        </h2>
+    </div>
+    <ul class="sidebar-menu">
+        <li class="menu-item active">
+            <a href="#">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-rocket"></i>
+                <span>Projects</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-chart-line"></i>
+                <span>Statistics</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+    </ul>
+</div>`,
+    css: `.bouncing-icons-sidebar {
+    width: 280px;
+    height: 100%;
+    background: white;
+    padding: 25px 0;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f1f5f9;
+}
+
+.sidebar-header {
+    padding: 0 25px 25px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-header i {
+    margin-right: 12px;
+    color: #f59e0b;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.menu-item {
+    margin-bottom: 5px;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-right: 3px solid transparent;
+}
+
+.menu-item a i {
+    transition: transform 0.3s ease;
+}
+
+.menu-item a:hover i {
+    animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+    80% { transform: translateY(-4px); }
+}
+
+.menu-item a:hover {
+    background: #f8fafc;
+    color: #1e293b;
+    transform: translateX(5px);
+}
+
+.menu-item.active a {
+    background: #f8fafc;
+    color: #1e293b;
+    border-right: 3px solid #7c3aed;
+}
+
+.menu-item i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}`,
+    js: `// Bouncing animation triggers on hover automatically`
+},
+
+// ====================================================================
+// TEMPLATE 88: PULSE GLOW SIDEBAR
+// Features: Sidebar with pulsing glow effects
+// Category: Sidebar
+// ====================================================================
+nav88: {
+    name: "Pulse Glow Sidebar",
+    category: "sidebar",
+    html: `<div class="pulse-glow-sidebar">
+    <div class="sidebar-header">
+        <h2>
+            <i class="fas fa-bolt"></i>
+            Energy
+        </h2>
+    </div>
+    <ul class="sidebar-menu">
+        <li class="menu-item active">
+            <a href="#">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-fire"></i>
+                <span>Trending</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-shield-alt"></i>
+                <span>Security</span>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+    </ul>
+</div>`,
+    css: `.pulse-glow-sidebar {
+    width: 280px;
+    height: 100%;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 25px 0;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.sidebar-header {
+    padding: 0 25px 25px;
+    border-bottom: 1px solid #334155;
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #60a5fa;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+
+.sidebar-header i {
+    margin-right: 12px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.menu-item {
+    margin-bottom: 5px;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-right: 3px solid transparent;
+}
+
+.menu-item.active a {
+    background: rgba(96, 165, 250, 0.2);
+    color: white;
+    border-right: 3px solid #60a5fa;
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { 
+        box-shadow: 0 0 5px rgba(96, 165, 250, 0.3);
+    }
+    50% { 
+        box-shadow: 0 0 20px rgba(96, 165, 250, 0.6);
+    }
+}
+
+.menu-item a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.menu-item i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}`,
+    js: `// Pulse animation runs automatically for active items`
+},
+
+// ====================================================================
+// TEMPLATE 89: FLIP CARD SIDEBAR
+// Features: Sidebar with flip card animation
+// Category: Sidebar
+// ====================================================================
+nav89: {
+    name: "Flip Card Sidebar",
+    category: "sidebar",
+    html: `<div class="flip-card-sidebar">
+    <div class="sidebar-header">
+        <h2>
+            <i class="fas fa-sync"></i>
+            Interactive
+        </h2>
+    </div>
+    <ul class="sidebar-menu">
+        <li class="menu-item">
+            <a href="#" class="flip-item">
+                <div class="flip-front">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </div>
+                <div class="flip-back">
+                    <span>Welcome Home!</span>
+                </div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="flip-item">
+                <div class="flip-front">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </div>
+                <div class="flip-back">
+                    <span>Your Profile</span>
+                </div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="#" class="flip-item">
+                <div class="flip-front">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </div>
+                <div class="flip-back">
+                    <span>Configure</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>`,
+    css: `.flip-card-sidebar {
+    width: 280px;
+    height: 100%;
+    background: white;
+    padding: 25px 0;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f1f5f9;
+    perspective: 1000px;
+}
+
+.sidebar-header {
+    padding: 0 25px 25px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-header i {
+    margin-right: 12px;
+    color: #7c3aed;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.menu-item {
+    margin-bottom: 8px;
+    padding: 0 15px;
+}
+
+.flip-item {
+    display: block;
+    height: 50px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.flip-item:hover {
+    transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 10px;
+    border: 1px solid #f1f5f9;
+}
+
+.flip-front {
+    background: #f8fafc;
+    color: #64748b;
+    gap: 12px;
+}
+
+.flip-back {
+    background: #7c3aed;
+    color: white;
+    transform: rotateY(180deg);
+    justify-content: center;
+    font-weight: 600;
+}
+
+.flip-front i {
+    width: 20px;
+    text-align: center;
+}`,
+    js: `// Flip animation triggers on hover automatically`
+},
     
 
 };
