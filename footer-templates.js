@@ -7561,10 +7561,4243 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });`
 },
+// ====================================================================
+// TEMPLATE 40: OCEAN GRADIENT FOOTER
+// Features: Deep blue ocean gradient, modern layout
+// Category: Gradient
+// ====================================================================
+footer40: {
+    name: "Ocean Gradient Footer",
+    category: "gradient",
+    html: `<!-- Ocean Gradient Footer -->
+<footer class="ocean-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Adventures</a></li>
+                    <li><a href="#">Activities</a></li>
+                    <li><a href="#">Travel Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Travel Insurance</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Stay Connected</h4>
+                <p>Join our newsletter for travel tips and exclusive offers</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-info">
+                <p>&copy; 2023 OceanCo. Making waves in travel experiences.</p>
+                <div class="footer-meta">
+                    <span>🌊 Certified B Corporation</span>
+                    <span>🐠 Carbon Neutral Since 2020</span>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.ocean-footer {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 4rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.ocean-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #38b2ac;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-section ul li a:hover {
+    color: #38b2ac;
+    transform: translateX(5px);
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.newsletter-form input::placeholder {
+    color: #cbd5e1;
+}
+
+.newsletter-form button {
+    background: #38b2ac;
+    color: white;
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: #319795;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-info p {
+    color: #e2e8f0;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+    color: #a0aec0;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.social-links a:hover {
+    background: #38b2ac;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}`,
+    js: `// Newsletter functionality for ocean footer
+document.addEventListener('DOMContentLoaded', function() {
+    const newsletterForm = document.querySelector('.ocean-footer .newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            const button = this.querySelector('button');
+            const originalText = button.textContent;
+            
+            button.textContent = 'Subscribed!';
+            button.style.background = '#10b981';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+                this.reset();
+            }, 2000);
+        });
+    }
+});`
+},
+
+// ====================================================================
+// TEMPLATE 41: SUNSET GRADIENT FOOTER
+// Features: Warm sunset colors, centered design
+// Category: Gradient
+// ====================================================================
+footer41: {
+    name: "Sunset Gradient Footer",
+    category: "gradient",
+    html: `<!-- Sunset Gradient Footer -->
+<footer class="sunset-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="sunset-brand">
+                <div class="logo">
+                    <i class="fas fa-sun"></i>
+                    <span>SunsetApp</span>
+                </div>
+                <p class="tagline">Capture and share your most beautiful moments with the world.</p>
+            </div>
+            <div class="sunset-features">
+                <div class="feature">
+                    <i class="fas fa-camera"></i>
+                    <h5>High Quality</h5>
+                    <p>4K photo and video support</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-cloud"></i>
+                    <h5>Cloud Storage</h5>
+                    <p>Unlimited secure storage</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h5>Community</h5>
+                    <p>Share with like-minded people</p>
+                </div>
+            </div>
+            <div class="sunset-cta">
+                <h4>Ready to start your journey?</h4>
+                <p>Join millions of creators worldwide</p>
+                <button class="cta-button">
+                    <i class="fas fa-rocket"></i>
+                    Get Started Free
+                </button>
+                <div class="app-links">
+                    <a href="#" class="app-store">
+                        <i class="fab fa-apple"></i>
+                        <span>App Store</span>
+                    </a>
+                    <a href="#" class="google-play">
+                        <i class="fab fa-google-play"></i>
+                        <span>Google Play</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Blog</a>
+                <a href="#">Careers</a>
+                <a href="#">Press</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+            <p>&copy; 2023 SunsetApp. Spread positivity and creativity.</p>
+        </div>
+    </div>
+</footer>`,
+    css: `.sunset-footer {
+    background: linear-gradient(135deg, #ff6b6b, #ffa726, #ff6b6b);
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease infinite;
+    color: white;
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.sunset-brand {
+    margin-bottom: 3rem;
+}
+
+.sunset-brand .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.sunset-brand .tagline {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.sunset-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fef9e7;
+}
+
+.feature h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.feature p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.sunset-cta {
+    margin-bottom: 3rem;
+}
+
+.sunset-cta h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.sunset-cta p {
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 0 auto 1.5rem;
+}
+
+.cta-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+.app-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.app-store, .google-play {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.app-store:hover, .google-play:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 2rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom p {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}`,
+    js: `// CTA button functionality for sunset footer
+document.addEventListener('DOMContentLoaded', function() {
+    const ctaButton = document.querySelector('.sunset-footer .cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function() {
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+            setTimeout(() => {
+                alert('Welcome to SunsetApp! Redirecting to signup...');
+                this.innerHTML = '<i class="fas fa-rocket"></i> Get Started Free';
+            }, 1500);
+        });
+    }
+    
+    // App store links
+    const appLinks = document.querySelectorAll('.app-store, .google-play');
+    appLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const store = this.classList.contains('app-store') ? 'App Store' : 'Google Play';
+            alert('Redirecting to ' + store + '...');
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 42: NEON GRADIENT FOOTER
+// Features: Vibrant neon colors, gaming aesthetic
+// Category: Gradient
+// ====================================================================
+footer42: {
+    name: "Neon Gradient Footer",
+    category: "gradient",
+    html: `<!-- Neon Gradient Footer -->
+<footer class="neon-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="neon-brand">
+                <div class="logo">
+                    <i class="fas fa-gamepad"></i>
+                    <span>NeonGames</span>
+                </div>
+                <p class="tagline">Where gamers unite and legends are born</p>
+            </div>
+            <div class="neon-grid">
+                <div class="neon-section">
+                    <h4>Games</h4>
+                    <ul>
+                        <li><a href="#">New Releases</a></li>
+                        <li><a href="#">Top Sellers</a></li>
+                        <li><a href="#">Upcoming</a></li>
+                        <li><a href="#">Free to Play</a></li>
+                    </ul>
+                </div>
+                <div class="neon-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Forums</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Tournaments</a></li>
+                        <li><a href="#">Leaderboards</a></li>
+                    </ul>
+                </div>
+                <div class="neon-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Refunds</a></li>
+                    </ul>
+                </div>
+                <div class="neon-section">
+                    <h4>Connect</h4>
+                    <div class="neon-social">
+                        <a href="#" class="discord">
+                            <i class="fab fa-discord"></i>
+                            Discord
+                        </a>
+                        <a href="#" class="twitch">
+                            <i class="fab fa-twitch"></i>
+                            Twitch
+                        </a>
+                        <a href="#" class="youtube">
+                            <i class="fab fa-youtube"></i>
+                            YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="newsletter">
+                <h5>Stay Updated</h5>
+                <p>Get the latest game news and updates</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button class="neon-btn">Subscribe</button>
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2023 NeonGames. Level up your gaming experience.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">EULA</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.neon-footer {
+    background: linear-gradient(135deg, #8338ec, #ff006e, #3a86ff);
+    background-size: 300% 300%;
+    animation: neonPulse 8s ease infinite;
+    color: white;
+    padding: 4rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes neonPulse {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.neon-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(131, 56, 236, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 0, 110, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(58, 134, 255, 0.3) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.neon-brand {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.neon-brand .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.neon-brand .tagline {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.neon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.neon-section h4 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.neon-section ul {
+    list-style: none;
+}
+
+.neon-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.neon-section ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.neon-section ul li a:hover {
+    color: white;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    transform: translateX(5px);
+}
+
+.neon-social {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.neon-social a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.neon-social a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.discord:hover { background: rgba(88, 101, 242, 0.4) !important; }
+.twitch:hover { background: rgba(145, 70, 255, 0.4) !important; }
+.youtube:hover { background: rgba(255, 0, 0, 0.4) !important; }
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.newsletter h5 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.newsletter p {
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.neon-btn {
+    background: linear-gradient(135deg, #ff006e, #8338ec);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.neon-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 0, 110, 0.4);
+}
+
+.footer-info {
+    text-align: right;
+}
+
+.footer-info p {
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.legal-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+}
+
+.legal-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s;
+}
+
+.legal-links a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .footer-bottom {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-info {
+        text-align: center;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}`,
+    js: `// Neon footer functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Newsletter form
+    const newsletterForm = document.querySelector('.neon-footer .newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            const button = this.querySelector('.neon-btn');
+            const originalText = button.textContent;
+            
+            button.textContent = 'Subscribed!';
+            button.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+                this.reset();
+            }, 2000);
+        });
+    }
+    
+    // Social links animation
+    const socialLinks = document.querySelectorAll('.neon-social a');
+    socialLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px) scale(1.05)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 43: FOREST GRADIENT FOOTER
+// Features: Natural green gradient, eco-friendly design
+// Category: Gradient
+// ====================================================================
+footer43: {
+    name: "Forest Gradient Footer",
+    category: "gradient",
+    html: `<!-- Forest Gradient Footer -->
+<footer class="forest-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="forest-brand">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>EcoLiving</span>
+                </div>
+                <p class="mission">Dedicated to creating a sustainable future through innovation and community action.</p>
+            </div>
+            <div class="forest-grid">
+                <div class="forest-section">
+                    <h4>Our Impact</h4>
+                    <div class="impact-stats">
+                        <div class="stat">
+                            <span class="number">50K+</span>
+                            <span class="label">Trees Planted</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">120+</span>
+                            <span class="label">Communities</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">95%</span>
+                            <span class="label">Waste Reduced</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="forest-section">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="#">Volunteer Programs</a></li>
+                        <li><a href="#">Donate</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+                <div class="forest-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Sustainability Tips</a></li>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Educational Materials</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="certifications">
+                <div class="certification-badge">
+                    <i class="fas fa-recycle"></i>
+                    <span>Carbon Neutral Certified</span>
+                </div>
+                <div class="certification-badge">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>B Corporation</span>
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2023 EcoLiving. Together, we grow a greener tomorrow.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Transparency</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.forest-footer {
+    background: linear-gradient(135deg, #00b894, #00cec9, #55efc4);
+    color: white;
+    padding: 4rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.forest-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 184, 148, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 206, 201, 0.3) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.forest-brand {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.forest-brand .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.forest-brand .mission {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.forest-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.forest-section h4 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.forest-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+}
+
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat .number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #fef9e7;
+}
+
+.stat .label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.forest-section ul {
+    list-style: none;
+}
+
+.forest-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.forest-section ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+
+.forest-section ul li a::before {
+    content: '🌱';
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.forest-section ul li a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.certifications {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.certification-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.certification-badge i {
+    color: #fef9e7;
+}
+
+.footer-info {
+    text-align: right;
+}
+
+.footer-info p {
+    opacity: 0.8;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .forest-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .impact-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .certifications {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .footer-info {
+        text-align: center;
+    }
+}`,
+    js: `// Forest footer functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate stats on scroll into view
+    const stats = document.querySelectorAll('.forest-footer .stat .number');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const stat = entry.target;
+                const finalValue = stat.textContent;
+                stat.textContent = '0';
+                
+                let current = 0;
+                const increment = parseInt(finalValue) / 30;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= parseInt(finalValue)) {
+                        stat.textContent = finalValue;
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 50);
+                
+                observer.unobserve(stat);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    stats.forEach(stat => observer.observe(stat));
+});`
+},
+
+// ====================================================================
+// TEMPLATE 44: LUXURY GRADIENT FOOTER
+// Features: Elegant gold-purple gradient, premium design
+// Category: Gradient
+// ====================================================================
+footer44: {
+    name: "Luxury Gradient Footer",
+    category: "gradient",
+    html: `<!-- Luxury Gradient Footer -->
+<footer class="luxury-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="luxury-brand">
+                <div class="logo">
+                    <i class="fas fa-gem"></i>
+                    <span>Luxuria</span>
+                </div>
+                <p class="tagline">Experience unparalleled luxury and sophistication in every detail.</p>
+            </div>
+            <div class="luxury-grid">
+                <div class="luxury-section">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="#">Signature Series</a></li>
+                        <li><a href="#">Limited Edition</a></li>
+                        <li><a href="#">Bespoke Creations</a></li>
+                        <li><a href="#">Heritage Pieces</a></li>
+                    </ul>
+                </div>
+                <div class="luxury-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Personal Shopping</a></li>
+                        <li><a href="#">Custom Design</a></li>
+                        <li><a href="#">VIP Events</a></li>
+                        <li><a href="#">Aftercare</a></li>
+                    </ul>
+                </div>
+                <div class="luxury-section">
+                    <h4>Ateliers</h4>
+                    <ul>
+                        <li><a href="#">Paris</a></li>
+                        <li><a href="#">Milan</a></li>
+                        <li><a href="#">Tokyo</a></li>
+                        <li><a href="#">New York</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="luxury-contact">
+                <div class="contact-info">
+                    <h4>Concierge Service</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <span class="label">By Appointment</span>
+                            <span class="value">+1 888 LUXURIA</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <span class="label">Email</span>
+                            <span class="value">concierge@luxuria.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <span class="label">Hours</span>
+                            <span class="value">Mon-Fri: 9AM-6PM EST</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="newsletter">
+                    <h4>Private Collections</h4>
+                    <p>Be the first to access exclusive pieces and private viewings</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your exclusive email">
+                        <button class="luxury-btn">
+                            <i class="fas fa-lock"></i>
+                            Request Access
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="luxury-certification">
+                <i class="fas fa-award"></i>
+                <span>Certified Luxury Goods Since 1895</span>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2023 Luxuria. Crafting excellence for generations.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Authentication</a>
+                    <a href="#">Careers</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.luxury-footer {
+    background: linear-gradient(135deg, #667eea, #f093fb, #f5576c);
+    background-size: 200% 200%;
+    animation: luxuryShift 10s ease infinite;
+    color: white;
+    padding: 4rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes luxuryShift {
+    0%, 100% { background-position: 0% 50%; }
+    33% { background-position: 50% 50%; }
+    66% { background-position: 100% 50%; }
+}
+
+.luxury-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(240, 147, 251, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(245, 87, 108, 0.3) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.luxury-brand {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.luxury-brand .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #fef9e7;
+    text-shadow: 0 2px 10px rgba(254, 249, 231, 0.3);
+}
+
+.luxury-brand .tagline {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-style: italic;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.luxury-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.luxury-section h4 {
+    color: #fef9e7;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.luxury-section ul {
+    list-style: none;
+}
+
+.luxury-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.luxury-section ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.luxury-section ul li a:hover {
+    color: #fef9e7;
+    transform: translateX(5px);
+}
+
+.luxury-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info h4,
+.newsletter h4 {
+    color: #fef9e7;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-item i {
+    color: #fef9e7;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.contact-item .label {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 0.2rem;
+    letter-spacing: 1px;
+}
+
+.contact-item .value {
+    display: block;
+    font-size: 0.95rem;
+    color: #fef9e7;
+    font-weight: 500;
+}
+
+.newsletter p {
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletter-form input {
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: #fef9e7;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.luxury-btn {
+    background: linear-gradient(135deg, #fef9e7, #f8e4b7);
+    color: #2d3748;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.luxury-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(254, 249, 231, 0.3);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.luxury-certification {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fef9e7;
+}
+
+.luxury-certification i {
+    color: #fbbf24;
+}
+
+.footer-info {
+    text-align: right;
+}
+
+.footer-info p {
+    opacity: 0.7;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.footer-links a:hover {
+    color: #fef9e7;
+}
+
+@media (max-width: 768px) {
+    .luxury-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .luxury-contact {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-info {
+        text-align: center;
+    }
+}`,
+    js: `// Luxury footer functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Newsletter form with enhanced validation
+    const newsletterForm = document.querySelector('.luxury-footer .newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            const button = this.querySelector('.luxury-btn');
+            const originalHTML = button.innerHTML;
+            
+            // Enhanced validation for luxury brand
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address for exclusive access.');
+                return;
+            }
+            
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            button.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                button.innerHTML = '<i class="fas fa-check"></i> Access Granted';
+                button.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                    button.style.background = '';
+                    button.disabled = false;
+                    this.reset();
+                    alert('Welcome to the Luxuria private collection. Our concierge will contact you shortly.');
+                }, 2000);
+            }, 2000);
+        });
+    }
+    
+    // Add subtle hover effects to luxury items
+    const luxuryItems = document.querySelectorAll('.luxury-section a, .contact-item');
+    luxuryItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transition = 'all 0.3s ease';
+        });
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 45: GRADIENT SUNSET FOOTER
+// Features: Beautiful sunset gradient, modern layout
+// Category: Gradient
+// ====================================================================
+footer45: {
+    name: "Gradient Sunset Footer",
+    category: "gradient",
+    html: `<!-- Gradient Sunset Footer -->
+<footer class="sunset-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="brand-section">
+                    <div class="logo">
+                        <i class="fas fa-sun"></i>
+                        <span>SunsetApp</span>
+                    </div>
+                    <p>Building beautiful experiences that inspire creativity and innovation.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+                <div class="links-section">
+                    <div class="link-column">
+                        <h4>Product</h4>
+                        <a href="#">Features</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">API</a>
+                        <a href="#">Integrations</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Press</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>Resources</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">Help Center</a>
+                        <a href="#">Community</a>
+                        <a href="#">Partners</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 SunsetApp. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.sunset-footer {
+    background: linear-gradient(135deg, #ff6b6b, #ffa726, #ffecb3);
+    color: #2d3748;
+    padding: 4rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.sunset-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.3), transparent 50%);
+    pointer-events: none;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.brand-section .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #2d3748;
+}
+
+.brand-section .logo i {
+    color: #ff6b6b;
+}
+
+.brand-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: #2d3748;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.links-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.link-column h4 {
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.link-column a {
+    display: block;
+    color: #4a5568;
+    text-decoration: none;
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.link-column a:hover {
+    color: #2d3748;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-bottom p {
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.legal-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.legal-links a {
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: #2d3748;
+}
+
+@media (max-width: 768px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .links-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}`,
+    js: `// No JavaScript required for this footer`
+},
+
+// ====================================================================
+// TEMPLATE 46: OCEAN BLUE GRADIENT FOOTER
+// Features: Deep ocean blue gradient, professional corporate design
+// Category: Gradient
+// ====================================================================
+footer46: {
+    name: "Ocean Blue Gradient Footer",
+    category: "gradient",
+    html: `<!-- Ocean Blue Gradient Footer -->
+<footer class="ocean-footer">
+    <div class="footer-container">
+        <div class="footer-header">
+            <h3>Ready to Transform Your Business?</h3>
+            <p>Join thousands of companies using our platform to drive growth and innovation.</p>
+            <button class="cta-button">
+                Get Started Today
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="#">Enterprise</a></li>
+                    <li><a href="#">Small Business</a></li>
+                    <li><a href="#">Startups</a></li>
+                    <li><a href="#">Non-profits</a></li>
+                    <li><a href="#">Education</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Webinars</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Press Kit</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-info">
+                <div class="logo">
+                    <i class="fas fa-anchor"></i>
+                    <span>OceanTech</span>
+                </div>
+                <p>Building the future of business technology</p>
+            </div>
+            
+            <div class="footer-meta">
+                <div class="copyright">
+                    <p>&copy; 2023 OceanTech. All rights reserved.</p>
+                </div>
+                <div class="legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Security</a>
+                    <a href="#">Compliance</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.ocean-footer {
+    background: linear-gradient(135deg, #1e3c72, #2a5298, #4a90e2);
+    color: white;
+    padding: 4rem 0 2rem;
+    position: relative;
+}
+
+.ocean-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.4), transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(30, 60, 114, 0.3), transparent 50%);
+    pointer-events: none;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-header h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.footer-header p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #ff6b6b, #ffa726);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #4a90e2;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-section ul li a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-info .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.footer-info p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.footer-meta {
+    text-align: right;
+}
+
+.copyright p {
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.legal a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.legal a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-meta {
+        text-align: center;
+    }
+    
+    .legal {
+        justify-content: center;
+    }
+}`,
+    js: `// CTA button functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function() {
+            alert('Thank you for your interest! Redirecting to signup page...');
+            // window.location.href = '/signup';
+        });
+    }
+});`
+},
+
+// ====================================================================
+// TEMPLATE 47: NEON GRADIENT FOOTER
+// Features: Vibrant neon gradient, modern tech appearance
+// Category: Gradient
+// ====================================================================
+footer47: {
+    name: "Neon Gradient Footer",
+    category: "gradient",
+    html: `<!-- Neon Gradient Footer -->
+<footer class="neon-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="newsletter-section">
+                    <h3>Stay in the Loop</h3>
+                    <p>Get the latest updates on new features, releases, and tech insights.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                                Subscribe
+                            </button>
+                        </div>
+                        <p class="form-note">No spam, unsubscribe at any time</p>
+                    </form>
+                </div>
+                
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#">Features</a>
+                        <a href="#">Solutions</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Demo</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Developers</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">API Reference</a>
+                        <a href="#">Guides</a>
+                        <a href="#">Open Source</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#"><i class="fab fa-discord"></i> Discord</a>
+                        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="brand">
+                <div class="logo">
+                    <i class="fas fa-bolt"></i>
+                    <span>NeonTech</span>
+                </div>
+                <p>Powering the future with cutting-edge technology</p>
+            </div>
+            
+            <div class="footer-actions">
+                <div class="theme-switcher">
+                    <span>Theme:</span>
+                    <button class="theme-btn active" data-theme="light">Light</button>
+                    <button class="theme-btn" data-theme="dark">Dark</button>
+                </div>
+                
+                <div class="language-selector">
+                    <select>
+                        <option>English</option>
+                        <option>Español</option>
+                        <option>Français</option>
+                        <option>Deutsch</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.neon-footer {
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c);
+    color: white;
+    padding: 4rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.neon-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.4), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(245, 87, 108, 0.4), transparent 40%);
+    pointer-events: none;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.newsletter-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.newsletter-section h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff, #f093fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.newsletter-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.input-group input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.input-group button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 0 2rem;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.input-group button:hover {
+    background: linear-gradient(135deg, #5a6fd8, #6a4190);
+    transform: translateX(2px);
+}
+
+.form-note {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-column h4 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.footer-column a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-column a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.brand .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.brand .logo i {
+    color: #f093fb;
+}
+
+.brand p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.theme-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.theme-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #f093fb;
+}
+
+.theme-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.language-selector select {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.language-selector select option {
+    background: #2d3748;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}`,
+    js: `// Newsletter form and theme switcher functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Newsletter form
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert('Thank you for subscribing with: ' + email);
+            this.reset();
+        });
+    }
+    
+    // Theme switcher
+    const themeBtns = document.querySelectorAll('.theme-btn');
+    themeBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            themeBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const theme = this.getAttribute('data-theme');
+            alert('Switching to ' + theme + ' theme');
+            // Implement theme switching logic here
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 48: FOREST GRADIENT FOOTER
+// Features: Natural green gradient, eco-friendly design
+// Category: Gradient
+// ====================================================================
+footer48: {
+    name: "Forest Gradient Footer",
+    category: "gradient",
+    html: `<!-- Forest Gradient Footer -->
+<footer class="forest-footer">
+    <div class="footer-container">
+        <div class="footer-hero">
+            <div class="hero-content">
+                <h3>Join Our Green Revolution</h3>
+                <p>Be part of the movement towards sustainable technology and eco-friendly solutions.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Trees Planted</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Carbon Neutral</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">1M+</span>
+                        <span class="stat-label">Lives Impacted</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <h4>Our Mission</h4>
+                    <p>Creating sustainable technology solutions that benefit both people and the planet.</p>
+                    <div class="impact-badges">
+                        <span class="badge">♻️ Carbon Neutral</span>
+                        <span class="badge">🌱 Eco Certified</span>
+                        <span class="badge">🤝 B Corp</span>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Solutions</h4>
+                    <a href="#">Green Tech</a>
+                    <a href="#">Sustainable Apps</a>
+                    <a href="#">Eco Analytics</a>
+                    <a href="#">Carbon Tracking</a>
+                    <a href="#">Renewable Integration</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="#">Sustainability Report</a>
+                    <a href="#">Eco Guidelines</a>
+                    <a href="#">Green Tech Blog</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Research Papers</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Get Involved</h4>
+                    <a href="#">Careers</a>
+                    <a href="#">Partnerships</a>
+                    <a href="#">Volunteer</a>
+                    <a href="#">Donate</a>
+                    <a href="#">Events</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>EcoTech</span>
+                </div>
+                <p>Technology for a greener tomorrow</p>
+            </div>
+            
+            <div class="footer-certifications">
+                <div class="certification">
+                    <i class="fas fa-award"></i>
+                    <span>B Corp Certified</span>
+                </div>
+                <div class="certification">
+                    <i class="fas fa-globe-americas"></i>
+                    <span>Carbon Neutral</span>
+                </div>
+            </div>
+            
+            <div class="footer-legal">
+                <p>&copy; 2023 EcoTech. Planting a better future.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Sustainability</a>
+                    <a href="#">Transparency</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.forest-footer {
+    background: linear-gradient(135deg, #0f5132, #198754, #20c997, #d4edda);
+    color: white;
+    padding: 4rem 0 2rem;
+    position: relative;
+}
+
+.forest-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(32, 201, 151, 0.3), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(15, 81, 50, 0.4), transparent 40%);
+    pointer-events: none;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-hero {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff, #d4edda);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.footer-sections {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #20c997;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.impact-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-section a {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-section a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-brand .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand .logo i {
+    color: #20c997;
+}
+
+.footer-brand p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.footer-certifications {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.certification {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.certification i {
+    color: #20c997;
+}
+
+.footer-legal {
+    text-align: right;
+}
+
+.footer-legal p {
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.legal-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+}
+
+.legal-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .hero-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .footer-sections {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-bottom {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-legal {
+        text-align: center;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}`,
+    js: `// No JavaScript required for this footer`
+},
+
+// ====================================================================
+// TEMPLATE 49: SUNRISE GRADIENT FOOTER
+// Features: Warm sunrise colors, optimistic and energetic design
+// Category: Gradient
+// ====================================================================
+footer49: {
+    name: "Sunrise Gradient Footer",
+    category: "gradient",
+    html: `<!-- Sunrise Gradient Footer -->
+<footer class="sunrise-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-header">
+                <div class="header-content">
+                    <h3>Start Your Day with Inspiration</h3>
+                    <p>Join our community of creators, innovators, and dreamers building the future together.</p>
+                    <div class="header-actions">
+                        <button class="primary-btn">
+                            <i class="fas fa-rocket"></i>
+                            Get Started
+                        </button>
+                        <button class="secondary-btn">
+                            <i class="fas fa-play-circle"></i>
+                            Watch Demo
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-main">
+                <div class="footer-columns">
+                    <div class="column">
+                        <h4>Platform</h4>
+                        <a href="#">Overview</a>
+                        <a href="#">Features</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Templates</a>
+                        <a href="#">Integrations</a>
+                    </div>
+                    
+                    <div class="column">
+                        <h4>Resources</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">Tutorials</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Community</a>
+                        <a href="#">Support</a>
+                    </div>
+                    
+                    <div class="column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Press</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Partners</a>
+                    </div>
+                    
+                    <div class="column">
+                        <h4>Connect</h4>
+                        <div class="social-grid">
+                            <a href="#" class="social-link twitter">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-link linkedin">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-link youtube">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="bottom-content">
+                <div class="brand-section">
+                    <div class="logo">
+                        <i class="fas fa-sun"></i>
+                        <span>Sunrise Labs</span>
+                    </div>
+                    <p>Igniting creativity and innovation every day</p>
+                </div>
+                
+                <div class="newsletter-section">
+                    <h5>Stay Inspired</h5>
+                    <form class="mini-newsletter">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="legal-section">
+                    <div class="copyright">
+                        <p>&copy; 2023 Sunrise Labs. Made with <i class="fas fa-heart"></i> and sunshine.</p>
+                    </div>
+                    <div class="legal-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.sunrise-footer {
+    background: linear-gradient(135deg, #ff6b35, #ff8e53, #f9d423, #ffecb3);
+    color: #2d3748;
+    padding: 4rem 0 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.sunrise-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 107, 53, 0.3), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(249, 212, 35, 0.3), transparent 50%);
+    pointer-events: none;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.header-content h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #2d3748, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #2d3748, #4a5568);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 8px 25px rgba(45, 55, 72, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(45, 55, 72, 0.4);
+}
+
+.secondary-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: #2d3748;
+    border: 2px solid #2d3748;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    backdrop-filter: blur(10px);
+}
+
+.secondary-btn:hover {
+    background: #2d3748;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.column h4 {
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.column h4::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: #ff6b35;
+    border-radius: 2px;
+}
+
+.column a {
+    display: block;
+    color: #4a5568;
+    text-decoration: none;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.column a:hover {
+    color: #2d3748;
+    transform: translateX(8px);
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.social-link.twitter { color: #1da1f2; }
+.social-link.instagram { color: #e4405f; }
+.social-link.linkedin { color: #0077b5; }
+.social-link.youtube { color: #ff0000; }
+
+.footer-bottom {
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    padding-top: 2rem;
+}
+
+.bottom-content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.brand-section .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+}
+
+.brand-section .logo i {
+    color: #ff6b35;
+}
+
+.brand-section p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.newsletter-section h5 {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.mini-newsletter {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.mini-newsletter input {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #2d3748;
+    font-size: 0.9rem;
+    width: 200px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.mini-newsletter input::placeholder {
+    color: #4a5568;
+}
+
+.mini-newsletter input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.mini-newsletter button {
+    background: #2d3748;
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini-newsletter button:hover {
+    background: #ff6b35;
+    transform: scale(1.1);
+}
+
+.legal-section {
+    text-align: right;
+}
+
+.copyright p {
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.copyright .fa-heart {
+    color: #ff6b35;
+}
+
+.legal-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+}
+
+.legal-links a {
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: #2d3748;
+}
+
+@media (max-width: 768px) {
+    .header-content h3 {
+        font-size: 2.2rem;
+    }
+    
+    .header-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .bottom-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .legal-section {
+        text-align: center;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}`,
+    js: `// Button functionality and newsletter form
+document.addEventListener('DOMContentLoaded', function() {
+    // Primary button
+    const primaryBtn = document.querySelector('.primary-btn');
+    if (primaryBtn) {
+        primaryBtn.addEventListener('click', function() {
+            alert('Welcome to Sunrise Labs! Getting you started...');
+            // window.location.href = '/get-started';
+        });
+    }
+    
+    // Secondary button
+    const secondaryBtn = document.querySelector('.secondary-btn');
+    if (secondaryBtn) {
+        secondaryBtn.addEventListener('click', function() {
+            alert('Opening demo video...');
+            // window.open('/demo', '_blank');
+        });
+    }
+    
+    // Mini newsletter form
+    const miniNewsletter = document.querySelector('.mini-newsletter');
+    if (miniNewsletter) {
+        miniNewsletter.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert('Thanks for subscribing to our inspiration updates: ' + email);
+            this.reset();
+        });
+    }
+});`
+},
+// ====================================================================
+// TEMPLATE 50: SOCIAL MEDIA FOCUS
+// Features: Modern social grid with trending platforms
+// Category: Social
+// ====================================================================
+footer50: {
+    name: "Social Media Focus",
+    category: "social",
+    html: `<!-- Social Media Focus Footer -->
+<footer class="social-focus-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="social-header">
+                <h3>Follow Us</h3>
+                <p>Stay connected with our latest updates and community</p>
+            </div>
+            <div class="social-grid">
+                <a href="#" class="social-link">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TikTok</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-discord"></i>
+                    <span>Discord</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Join our growing community of creators and innovators</p>
+        </div>
+    </div>
+</footer>`,
+    css: `.social-focus-footer {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.social-header h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #667eea, #f093fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.social-header p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    margin-bottom: 3rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+    background: rgba(124, 58, 237, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.social-link i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.social-link span {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 2rem;
+}
+
+.footer-bottom p {
+    color: #94a3b8;
+    font-size: 1rem;
+}`,
+    js: `// Social links interaction
+document.addEventListener('DOMContentLoaded', function() {
+    const socialLinks = document.querySelectorAll('.social-link');
+    
+    socialLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.05)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 51: SOCIAL INFLUENCER
+// Features: Influencer profile with stats and follow button
+// Category: Social
+// ====================================================================
+footer51: {
+    name: "Social Influencer",
+    category: "social",
+    html: `<!-- Social Influencer Footer -->
+<footer class="influencer-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="influencer-profile">
+                <div class="avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Influencer">
+                </div>
+                <div class="profile-info">
+                    <h3>@CreativeMind</h3>
+                    <p>Digital Creator & Content Strategist</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="count">150K</span>
+                            <span class="label">Followers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="count">2.5K</span>
+                            <span class="label">Posts</span>
+                        </div>
+                        <div class="stat">
+                            <span class="count">95K</span>
+                            <span class="label">Likes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social-action">
+                <button class="follow-btn">
+                    <i class="fas fa-plus"></i>
+                    Follow
+                </button>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 @CreativeMind. All content rights reserved.</p>
+        </div>
+    </div>
+</footer>`,
+    css: `.influencer-footer {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 3rem 0 1.5rem;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 3rem;
+}
+
+.influencer-profile {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.profile-info p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.count {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.social-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.follow-btn {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.follow-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: white;
+    color: #667eea;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}`,
+    js: `// Follow button functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const followBtn = document.querySelector('.follow-btn');
+    
+    if (followBtn) {
+        followBtn.addEventListener('click', function() {
+            if (this.classList.contains('following')) {
+                this.innerHTML = '<i class="fas fa-plus"></i> Follow';
+                this.classList.remove('following');
+                this.style.background = 'white';
+                this.style.color = '#667eea';
+            } else {
+                this.innerHTML = '<i class="fas fa-check"></i> Following';
+                this.classList.add('following');
+                this.style.background = '#10b981';
+                this.style.color = 'white';
+            }
+        });
+    }
+});`
+},
+
+// ====================================================================
+// TEMPLATE 52: SOCIAL LINKS MODERN
+// Features: Branded social links with platform colors
+// Category: Social
+// ====================================================================
+footer52: {
+    name: "Social Links Modern",
+    category: "social",
+    html: `<!-- Social Links Modern Footer -->
+<footer class="social-modern-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="brand-section">
+                <div class="brand-logo">
+                    <i class="fab fa-slack"></i>
+                    <span>SocialBrand</span>
+                </div>
+                <p>Connecting people through innovative social experiences</p>
+            </div>
+            <div class="social-section">
+                <h4>Connect With Us</h4>
+                <div class="social-buttons">
+                    <a href="#" class="social-btn twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" class="social-btn instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" class="social-btn facebook">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="social-btn linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="#" class="social-btn youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 SocialBrand. Building better connections.</p>
+        </div>
+    </div>
+</footer>`,
+    css: `.social-modern-footer {
+    background: #0f172a;
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+    align-items: start;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #7c3aed;
+}
+
+.brand-logo i {
+    font-size: 2.5rem;
+}
+
+.brand-section p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 400px;
+}
+
+.social-section h4 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.social-btn.twitter {
+    background: #1da1f2;
+}
+
+.social-btn.instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.social-btn.facebook {
+    background: #1877f2;
+}
+
+.social-btn.linkedin {
+    background: #0077b5;
+}
+
+.social-btn.youtube {
+    background: #ff0000;
+}
+
+.social-btn:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.social-btn i {
+    font-size: 1.3rem;
+    width: 20px;
+    text-align: center;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #1e293b;
+}
+
+.footer-bottom p {
+    color: #64748b;
+    font-size: 0.9rem;
+}`,
+    js: `// Social buttons animation
+document.addEventListener('DOMContentLoaded', function() {
+    const socialBtns = document.querySelectorAll('.social-btn');
+    
+    socialBtns.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(10px) scale(1.02)';
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0) scale(1)';
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 53: SOCIAL COMMUNITY
+// Features: Community platforms with join buttons
+// Category: Social
+// ====================================================================
+footer53: {
+    name: "Social Community",
+    category: "social",
+    html: `<!-- Social Community Footer -->
+<footer class="community-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="community-header">
+                <h2>Join Our Community</h2>
+                <p>Connect with like-minded people and grow together</p>
+            </div>
+            <div class="platforms-grid">
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <h3>Discord</h3>
+                    <p>Join our active Discord server for real-time discussions and events</p>
+                    <button class="join-btn" data-platform="discord">
+                        Join Discord
+                    </button>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <h3>Telegram</h3>
+                    <p>Get instant updates and announcements on our Telegram channel</p>
+                    <button class="join-btn" data-platform="telegram">
+                        Join Telegram
+                    </button>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-reddit"></i>
+                    </div>
+                    <h3>Reddit</h3>
+                    <p>Share your experiences and learn from our Reddit community</p>
+                    <button class="join-btn" data-platform="reddit">
+                        Join Reddit
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Community Hub. Together we grow stronger.</p>
+        </div>
+    </div>
+</footer>`,
+    css: `.community-footer {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.community-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.community-header h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.community-header p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.platform-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.platform-card:hover {
+    transform: translateY(-10px);
+    background: rgba(124, 58, 237, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.platform-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+}
+
+.platform-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.platform-card p {
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.join-btn {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.join-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+    color: #94a3b8;
+    font-size: 1rem;
+}`,
+    js: `// Community join buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const joinBtns = document.querySelectorAll('.join-btn');
+    
+    joinBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const platform = this.getAttribute('data-platform');
+            const platformNames = {
+                'discord': 'Discord',
+                'telegram': 'Telegram', 
+                'reddit': 'Reddit'
+            };
+            
+            alert(\`Redirecting to our \${platformNames[platform]} community...\`);
+            
+            // Simulate loading state
+            const originalText = this.textContent;
+            this.textContent = 'Redirecting...';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                this.textContent = originalText;
+                this.disabled = false;
+            }, 2000);
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 54: SOCIAL SHARE
+// Features: Share buttons with labels for content sharing
+// Category: Social
+// ====================================================================
+footer54: {
+    name: "Social Share",
+    category: "social",
+    html: `<!-- Social Share Footer -->
+<footer class="social-share-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="share-section">
+                <h3>Share This Content</h3>
+                <p>Help spread the word by sharing this page</p>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn twitter" data-platform="twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Tweet</span>
+                    </a>
+                    <a href="#" class="share-btn facebook" data-platform="facebook">
+                        <i class="fab fa-facebook"></i>
+                        <span>Share</span>
+                    </a>
+                    <a href="#" class="share-btn linkedin" data-platform="linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <span>Post</span>
+                    </a>
+                    <a href="#" class="share-btn reddit" data-platform="reddit">
+                        <i class="fab fa-reddit"></i>
+                        <span>Share</span>
+                    </a>
+                    <a href="#" class="share-btn whatsapp" data-platform="whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Send</span>
+                    </a>
+                    <a href="#" class="share-btn link" data-platform="link">
+                        <i class="fas fa-link"></i>
+                        <span>Copy Link</span>
+                    </a>
+                </div>
+            </div>
+            <div class="share-stats">
+                <div class="stat">
+                    <span class="number">2.5K</span>
+                    <span class="label">Shares</span>
+                </div>
+                <div class="stat">
+                    <span class="number">15.7K</span>
+                    <span class="label">Views</span>
+                </div>
+                <div class="stat">
+                    <span class="number">894</span>
+                    <span class="label">Likes</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Share responsibly. &copy; 2023 ContentShare.</p>
+        </div>
+    </div>
+</footer>`,
+    css: `.social-share-footer {
+    background: white;
+    border-top: 1px solid #e2e8f0;
+    padding: 3rem 0 1.5rem;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 2rem;
+    align-items: start;
+}
+
+.share-section h3 {
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.share-section p {
+    color: #64748b;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.share-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.share-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #475569;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.share-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.share-btn.twitter:hover {
+    background: #1da1f2;
+    color: white;
+    border-color: #1da1f2;
+}
+
+.share-btn.facebook:hover {
+    background: #1877f2;
+    color: white;
+    border-color: #1877f2;
+}
+
+.share-btn.linkedin:hover {
+    background: #0077b5;
+    color: white;
+    border-color: #0077b5;
+}
+
+.share-btn.reddit:hover {
+    background: #ff4500;
+    color: white;
+    border-color: #ff4500;
+}
+
+.share-btn.whatsapp:hover {
+    background: #25d366;
+    color: white;
+    border-color: #25d366;
+}
+
+.share-btn.link:hover {
+    background: #7c3aed;
+    color: white;
+    border-color: #7c3aed;
+}
+
+.share-btn i {
+    font-size: 1.5rem;
+}
+
+.share-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+.stat {
+    text-align: center;
+}
+
+.number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.3rem;
+}
+
+.label {
+    font-size: 0.9rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.footer-bottom p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}`,
+    js: `// Social share functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const shareBtns = document.querySelectorAll('.share-btn');
+    const currentUrl = window.location.href;
+    const pageTitle = document.title;
+    
+    shareBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const platform = this.getAttribute('data-platform');
+            
+            if (platform === 'link') {
+                // Copy link to clipboard
+                navigator.clipboard.writeText(currentUrl).then(() => {
+                    alert('Link copied to clipboard!');
+                });
+                return;
+            }
+            
+            const shareUrls = {
+                'twitter': \`https://twitter.com/intent/tweet?text=\${encodeURIComponent(pageTitle)}&url=\${encodeURIComponent(currentUrl)}\`,
+                'facebook': \`https://www.facebook.com/sharer/sharer.php?u=\${encodeURIComponent(currentUrl)}\`,
+                'linkedin': \`https://www.linkedin.com/sharing/share-offsite/?url=\${encodeURIComponent(currentUrl)}\`,
+                'reddit': \`https://reddit.com/submit?url=\${encodeURIComponent(currentUrl)}&title=\${encodeURIComponent(pageTitle)}\`,
+                'whatsapp': \`https://wa.me/?text=\${encodeURIComponent(pageTitle + ' ' + currentUrl)}\`
+            };
+            
+            if (shareUrls[platform]) {
+                window.open(shareUrls[platform], '_blank', 'width=600,height=400');
+            }
+        });
+    });
+});`
+},
 
 
 
 };
+
+
+
+
 
 
 
