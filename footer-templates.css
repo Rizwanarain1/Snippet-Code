@@ -3756,3 +3756,225 @@
     color: #cbd5e1;
     display: block;
 }
+/* Template 65 - Gradient Enterprise Mini */
+.preview-footer-mini.gradient-enterprise {
+    background: linear-gradient(135deg, #1e3a8a, #3730a3, #7c3aed);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.preview-footer-mini.gradient-enterprise .enterprise-brand-mini {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.preview-footer-mini.gradient-enterprise .enterprise-brand-mini strong {
+    display: block;
+    font-size: 8px;
+    margin-bottom: 1px;
+    font-weight: bold;
+}
+
+.preview-footer-mini.gradient-enterprise .enterprise-brand-mini span {
+    font-size: 5px;
+    opacity: 0.8;
+}
+
+.preview-footer-mini.gradient-enterprise .enterprise-stats-mini {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.preview-footer-mini.gradient-enterprise .stat-mini {
+    text-align: center;
+}
+
+.preview-footer-mini.gradient-enterprise .stat-mini span {
+    display: block;
+    font-size: 6px;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+.preview-footer-mini.gradient-enterprise .stat-mini small {
+    font-size: 4px;
+    opacity: 0.7;
+}
+
+.preview-footer-mini.gradient-enterprise .enterprise-cta-mini {
+    text-align: center;
+}
+
+.preview-footer-mini.gradient-enterprise .enterprise-cta-mini button {
+    background: white;
+    color: #1e3a8a;
+    border: none;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Template 66 - Gradient Creative Mini */
+.preview-footer-mini.gradient-creative {
+    background: linear-gradient(135deg, #ec4899, #8b5cf6, #06b6d4);
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.preview-footer-mini.gradient-creative .creative-brand-mini {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 6px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.preview-footer-mini.gradient-creative .creative-tags-mini {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.preview-footer-mini.gradient-creative .creative-tags-mini span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 4px;
+    backdrop-filter: blur(10px);
+}
+
+/* Template 67 - Gradient Tech Mini */
+.preview-footer-mini.gradient-tech {
+    background: linear-gradient(135deg, #059669, #0d9488, #0891b2);
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.preview-footer-mini.gradient-tech .tech-brand-mini {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 6px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.preview-footer-mini.gradient-tech .tech-features-mini {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.preview-footer-mini.gradient-tech .feature-mini {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 5px;
+}
+
+.preview-footer-mini.gradient-tech .feature-mini i {
+    font-size: 4px;
+}
+
+/* Template 68 - Gradient Finance Mini */
+.preview-footer-mini.gradient-finance {
+    background: linear-gradient(135deg, #047857, #0f766e, #0e7490);
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.preview-footer-mini.gradient-finance .finance-brand-mini {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 4px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.preview-footer-mini.gradient-finance .finance-stats-mini {
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.preview-footer-mini.gradient-finance .finance-stats-mini .stat-mini span {
+    display: block;
+    font-size: 6px;
+    font-weight: bold;
+}
+
+.preview-footer-mini.gradient-finance .finance-stats-mini .stat-mini small {
+    font-size: 4px;
+    opacity: 0.8;
+}
+
+.preview-footer-mini.gradient-finance .finance-security-mini {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1px 3px;
+    border-radius: 3px;
+}
+
+/* Template 69 - Gradient Health Mini */
+.preview-footer-mini.gradient-health {
+    background: linear-gradient(135deg, #dc2626, #ea580c, #d97706);
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.preview-footer-mini.gradient-health .health-brand-mini {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 4px;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.preview-footer-mini.gradient-health .health-info-mini {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.preview-footer-mini.gradient-health .health-info-mini span {
+    font-size: 4px;
+    opacity: 0.8;
+}
+
+.preview-footer-mini.gradient-health .health-cta-mini {
+    text-align: center;
+}
+
+.preview-footer-mini.gradient-health .health-cta-mini button {
+    background: white;
+    color: #dc2626;
+    border: none;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}

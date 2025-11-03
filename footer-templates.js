@@ -16545,6 +16545,6451 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });`
 },
+// ====================================================================
+// TEMPLATE 65: GRADIENT ENTERPRISE
+// Features: Professional enterprise with stats and demo CTA
+// Category: Gradient
+// ====================================================================
+footer65: {
+    name: "Gradient Enterprise",
+    category: "gradient",
+    html: `<!-- Gradient Enterprise Footer -->
+<footer class="enterprise-footer">
+    <div class="gradient-background">
+        <div class="gradient-overlay"></div>
+    </div>
+    
+    <div class="footer-container">
+        <!-- Enterprise Header Section -->
+        <div class="enterprise-header">
+            <div class="header-content">
+                <div class="brand-section">
+                    <div class="enterprise-logo">
+                        <i class="fas fa-cube"></i>
+                        <div class="logo-text">
+                            <h2>EnterprisePro</h2>
+                            <span class="tagline">Scalable Business Solutions</span>
+                        </div>
+                    </div>
+                    <p class="company-description">
+                        Trusted by Fortune 500 companies worldwide to drive digital transformation 
+                        and accelerate business growth through innovative technology solutions.
+                    </p>
+                </div>
+                
+                <div class="enterprise-stats">
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-count="500">0</span>
+                                <span class="stat-label">Enterprise Clients</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-count="150">0</span>
+                                <span class="stat-label">Countries Served</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-count="99.9">0</span>
+                                <span class="stat-label">Uptime SLA</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-count="24">0</span>
+                                <span class="stat-label">Industry Awards</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="enterprise-cta">
+                <div class="cta-content">
+                    <h3>Ready to Transform Your Enterprise?</h3>
+                    <p>Schedule a personalized demo with our solutions experts</p>
+                    <div class="cta-buttons">
+                        <button class="cta-btn primary">
+                            <i class="fas fa-calendar-check"></i>
+                            Book Demo
+                        </button>
+                        <button class="cta-btn secondary">
+                            <i class="fas fa-file-download"></i>
+                            Download Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Footer Content -->
+        <div class="footer-content">
+            <div class="solutions-section">
+                <h4>Enterprise Solutions</h4>
+                <div class="solutions-grid">
+                    <div class="solution-category">
+                        <h5>Digital Transformation</h5>
+                        <div class="solution-list">
+                            <a href="#" class="solution-link">Cloud Migration</a>
+                            <a href="#" class="solution-link">AI Integration</a>
+                            <a href="#" class="solution-link">Process Automation</a>
+                            <a href="#" class="solution-link">Data Analytics</a>
+                        </div>
+                    </div>
+                    
+                    <div class="solution-category">
+                        <h5>Security & Compliance</h5>
+                        <div class="solution-list">
+                            <a href="#" class="solution-link">Cybersecurity</a>
+                            <a href="#" class="solution-link">GDPR Compliance</a>
+                            <a href="#" class="solution-link">Risk Management</a>
+                            <a href="#" class="solution-link">Audit Services</a>
+                        </div>
+                    </div>
+                    
+                    <div class="solution-category">
+                        <h5>Infrastructure</h5>
+                        <div class="solution-list">
+                            <a href="#" class="solution-link">Cloud Services</a>
+                            <a href="#" class="solution-link">Network Solutions</a>
+                            <a href="#" class="solution-link">Storage Systems</a>
+                            <a href="#" class="solution-link">Disaster Recovery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resources-section">
+                <h4>Resources</h4>
+                <div class="resources-grid">
+                    <div class="resource-category">
+                        <h5>Learning</h5>
+                        <div class="resource-links">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-graduation-cap"></i>
+                                Training Programs
+                            </a>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-book"></i>
+                                Documentation
+                            </a>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-video"></i>
+                                Webinars
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-category">
+                        <h5>Support</h5>
+                        <div class="resource-links">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-headset"></i>
+                                24/7 Support
+                            </a>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-tools"></i>
+                                Developer Portal
+                            </a>
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-comments"></i>
+                                Community Forum
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="partners-section">
+                <h4>Trusted Partners</h4>
+                <div class="partners-grid">
+                    <div class="partner-logo">
+                        <i class="fab fa-microsoft"></i>
+                        <span>Microsoft</span>
+                    </div>
+                    <div class="partner-logo">
+                        <i class="fab fa-aws"></i>
+                        <span>AWS</span>
+                    </div>
+                    <div class="partner-logo">
+                        <i class="fab fa-google"></i>
+                        <span>Google Cloud</span>
+                    </div>
+                    <div class="partner-logo">
+                        <i class="fab fa-salesforce"></i>
+                        <span>Salesforce</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact & Legal Section -->
+        <div class="footer-bottom">
+            <div class="contact-section">
+                <div class="contact-info">
+                    <h5>Global Headquarters</h5>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Enterprise Avenue, Tech City, TC 10001</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (888) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>enterprise@enterprisepro.com</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="regional-offices">
+                    <h5>Regional Offices</h5>
+                    <div class="office-locations">
+                        <span>New York • London • Tokyo • Sydney • Dubai</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="legal-section">
+                <div class="legal-links">
+                    <a href="#" class="legal-link">Privacy Policy</a>
+                    <a href="#" class="legal-link">Terms of Service</a>
+                    <a href="#" class="legal-link">Data Processing Agreement</a>
+                    <a href="#" class="legal-link">Cookie Policy</a>
+                    <a href="#" class="legal-link">Compliance</a>
+                </div>
+                
+                <div class="certifications">
+                    <div class="cert-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>ISO 27001 Certified</span>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-lock"></i>
+                        <span>SOC 2 Type II</span>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-gavel"></i>
+                        <span>GDPR Compliant</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright Section -->
+        <div class="copyright-section">
+            <div class="copyright-content">
+                <p>&copy; 2023 EnterprisePro Solutions Inc. All rights reserved. Enterprise-grade solutions for global businesses.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.enterprise-footer {
+    position: relative;
+    background: #0f172a;
+    color: white;
+    overflow: hidden;
+}
+
+.gradient-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        #1e3a8a 0%,
+        #3730a3 25%,
+        #7c3aed 50%,
+        #a855f7 75%,
+        #c084fc 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.footer-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 5rem 2rem 2rem;
+}
+
+/* Enterprise Header */
+.enterprise-header {
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.enterprise-logo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.enterprise-logo i {
+    font-size: 4rem;
+    color: #7c3aed;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.logo-text h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.company-description {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+.enterprise-stats {
+    display: flex;
+    align-items: center;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.stat-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: rgba(124, 58, 237, 0.5);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.enterprise-cta {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    text-align: center;
+}
+
+.cta-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 3rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-btn.primary {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+}
+
+.cta-btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.6);
+}
+
+.cta-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Main Footer Content */
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.solutions-section h4,
+.resources-section h4,
+.partners-section h4 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: white;
+    position: relative;
+}
+
+.solutions-section h4::after,
+.resources-section h4::after,
+.partners-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    border-radius: 2px;
+}
+
+.solutions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.solution-category h5 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+.solution-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.solution-link {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 0;
+}
+
+.solution-link:hover {
+    color: white;
+    padding-left: 1rem;
+}
+
+.solution-link::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: #7c3aed;
+}
+
+.solution-link:hover::before {
+    opacity: 1;
+    left: 0.5rem;
+}
+
+.resources-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.resource-category h5 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+.resource-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.resource-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid transparent;
+}
+
+.resource-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(124, 58, 237, 0.3);
+    transform: translateX(5px);
+}
+
+.resource-link i {
+    width: 20px;
+    text-align: center;
+    color: #7c3aed;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.partner-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #cbd5e1;
+}
+
+.partner-logo:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    border-color: rgba(124, 58, 237, 0.3);
+    color: white;
+}
+
+.partner-logo i {
+    font-size: 1.5rem;
+    width: 30px;
+    text-align: center;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-section h5,
+.regional-offices h5 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.contact-item i {
+    width: 20px;
+    text-align: center;
+    color: #7c3aed;
+}
+
+.office-locations span {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.legal-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.legal-link:hover {
+    color: white;
+}
+
+.certifications {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cert-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.cert-badge i {
+    color: #7c3aed;
+}
+
+/* Copyright Section */
+.copyright-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright-content p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #7c3aed;
+    transform: translateY(-3px) rotate(5deg);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .header-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .stat-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-bottom {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+    
+    .enterprise-logo {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .logo-text h2 {
+        font-size: 2.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .partners-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .copyright-section {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .enterprise-cta {
+        padding: 2rem 1.5rem;
+    }
+    
+    .cta-content h3 {
+        font-size: 2rem;
+    }
+    
+    .stat-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}`,
+    js: `// Gradient Enterprise Footer Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate statistics counting
+    function animateCounter(element, target) {
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = target === 99.9 ? current.toFixed(1) + '%' : Math.floor(current) + (target === 500 ? '+' : '');
+        }, 30);
+    }
+    
+    // Start counting when footer is in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = document.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const target = parseFloat(stat.getAttribute('data-count'));
+                    animateCounter(stat, target);
+                });
+                observer.disconnect();
+            }
+        });
+    });
+    
+    const statsSection = document.querySelector('.enterprise-stats');
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
+    
+    // CTA button interactions
+    const ctaButtons = document.querySelectorAll('.cta-btn');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const isPrimary = this.classList.contains('primary');
+            
+            // Add click animation
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+            
+            if (isPrimary) {
+                // Book demo action
+                setTimeout(() => {
+                    alert('Opening demo scheduler... Please select your preferred date and time.');
+                }, 300);
+            } else {
+                // Download brochure action
+                setTimeout(() => {
+                    alert('Downloading Enterprise Solutions Brochure...');
+                }, 300);
+            }
+        });
+    });
+    
+    // Solution link animations
+    const solutionLinks = document.querySelectorAll('.solution-link');
+    solutionLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.fontWeight = '600';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.fontWeight = '400';
+        });
+    });
+    
+    // Resource link interactions
+    const resourceLinks = document.querySelectorAll('.resource-link');
+    resourceLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.2)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Partner logo animations
+    const partnerLogos = document.querySelectorAll('.partner-logo');
+    partnerLogos.forEach(logo => {
+        logo.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.3)';
+        });
+        
+        logo.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Stat item hover effects
+    const statItems = document.querySelectorAll('.stat-item');
+    statItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.stat-icon');
+            icon.style.transform = 'scale(1.1) rotate(5deg)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.stat-icon');
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    });
+    
+    // Social link animations
+    const socialLinks = document.querySelectorAll('.social-link');
+    socialLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) rotate(8deg)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) rotate(0)';
+        });
+    });
+    
+    // Certificate badge hover effects
+    const certBadges = document.querySelectorAll('.cert-badge');
+    certBadges.forEach(badge => {
+        badge.addEventListener('mouseenter', function() {
+            this.style.background = 'rgba(124, 58, 237, 0.2)';
+            this.style.borderColor = 'rgba(124, 58, 237, 0.5)';
+        });
+        
+        badge.addEventListener('mouseleave', function() {
+            this.style.background = '';
+            this.style.borderColor = '';
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 66: GRADIENT CREATIVE
+// Features: Creative agency with artistic gradient and portfolio focus
+// Category: Gradient
+// ====================================================================
+footer66: {
+    name: "Gradient Creative",
+    category: "gradient",
+    html: `<!-- Gradient Creative Footer -->
+<footer class="creative-footer">
+    <div class="gradient-background">
+        <div class="gradient-overlay"></div>
+        <div class="gradient-particles"></div>
+    </div>
+    
+    <div class="footer-container">
+        <!-- Creative Header -->
+        <div class="creative-header">
+            <div class="header-content">
+                <div class="creative-intro">
+                    <h2 class="creative-title">
+                        We Craft 
+                        <span class="creative-accent">Digital</span>
+                        Experiences That
+                        <span class="creative-accent">Inspire</span>
+                    </h2>
+                    <p class="creative-description">
+                        Transforming ideas into immersive digital journeys. Our creative agency 
+                        specializes in brand storytelling, interactive design, and cutting-edge 
+                        web experiences that captivate audiences and drive results.
+                    </p>
+                </div>
+                
+                <div class="creative-stats">
+                    <div class="stat-showcase">
+                        <div class="stat-item creative">
+                            <div class="stat-value" data-count="250">0</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item creative">
+                            <div class="stat-value" data-count="15">0</div>
+                            <div class="stat-label">Industry Awards</div>
+                        </div>
+                        <div class="stat-item creative">
+                            <div class="stat-value" data-count="98">0</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-cta">
+                <div class="cta-content">
+                    <h3>Ready to See Magic Happen?</h3>
+                    <p>Explore our portfolio of transformative digital experiences</p>
+                    <button class="creative-cta">
+                        <i class="fas fa-play"></i>
+                        View Our Work
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Services Showcase -->
+        <div class="services-section">
+            <h4 class="section-title">Our Creative Services</h4>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h5>Brand Identity</h5>
+                    <p>Comprehensive branding solutions that tell your unique story</p>
+                    <div class="service-features">
+                        <span>Logo Design</span>
+                        <span>Brand Guidelines</span>
+                        <span>Visual Identity</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h5>Web Design</h5>
+                    <p>Responsive, user-centric websites that convert visitors</p>
+                    <div class="service-features">
+                        <span>UI/UX Design</span>
+                        <span>E-commerce</span>
+                        <span>Web Applications</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h5>Mobile Design</h5>
+                    <p>Intuitive mobile experiences that users love to engage with</p>
+                    <div class="service-features">
+                        <span>App Design</span>
+                        <span>Mobile First</span>
+                        <span>Responsive</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h5>Motion Design</h5>
+                    <p>Dynamic animations and interactive elements that bring stories to life</p>
+                    <div class="service-features">
+                        <span>2D/3D Animation</span>
+                        <span>UI Animation</span>
+                        <span>Video Production</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Client Showcase -->
+        <div class="clients-section">
+            <h4 class="section-title">Trusted by Creative Brands</h4>
+            <div class="clients-grid">
+                <div class="client-logo">
+                    <i class="fas fa-music"></i>
+                    <span>SoundWave</span>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-camera"></i>
+                    <span>FrameStudio</span>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-book"></i>
+                    <span>StoryCraft</span>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-palette"></i>
+                    <span>ArtVibe</span>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-film"></i>
+                    <span>CineMagic</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Team Section -->
+        <div class="team-section">
+            <h4 class="section-title">Meet Our Creative Minds</h4>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h5>Sarah Chen</h5>
+                    <span>Creative Director</span>
+                    <p>15+ years in digital design and brand strategy</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h5>Marcus Rivera</h5>
+                    <span>UX Lead</span>
+                    <p>Specialized in user-centered design methodologies</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h5>Elena Petrova</h5>
+                    <span>Motion Designer</span>
+                    <p>Bringing interfaces to life with fluid animations</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact & Social -->
+        <div class="contact-social-section">
+            <div class="contact-info">
+                <h5>Start Your Creative Journey</h5>
+                <div class="contact-methods">
+                    <div class="contact-item creative">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <span>hello@creativeagency.com</span>
+                            <small>General Inquiries</small>
+                        </div>
+                    </div>
+                    <div class="contact-item creative">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <span>+1 (555) 123-4567</span>
+                            <small>Studio Line</small>
+                        </div>
+                    </div>
+                    <div class="contact-item creative">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <span>123 Creative District</span>
+                            <small>Design Studio, CA 90210</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-showcase">
+                <h5>Follow Our Creative Process</h5>
+                <div class="social-platforms">
+                    <a href="#" class="social-platform dribbble">
+                        <i class="fab fa-dribbble"></i>
+                        <div class="platform-info">
+                            <strong>Dribbble</strong>
+                            <span>Design Shots</span>
+                        </div>
+                    </a>
+                    <a href="#" class="social-platform behance">
+                        <i class="fab fa-behance"></i>
+                        <div class="platform-info">
+                            <strong>Behance</strong>
+                            <span>Case Studies</span>
+                        </div>
+                    </a>
+                    <a href="#" class="social-platform instagram">
+                        <i class="fab fa-instagram"></i>
+                        <div class="platform-info">
+                            <strong>Instagram</strong>
+                            <span>Behind Scenes</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="newsletter-creative">
+                <h5>Get Creative Insights</h5>
+                <p>Weekly design tips and industry trends</p>
+                <form class="creative-newsletter">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Footer Bottom -->
+        <div class="footer-bottom creative">
+            <div class="copyright">
+                <p>&copy; 2023 Creative Agency. Crafting digital magic since 2010.</p>
+            </div>
+            
+            <div class="quick-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+            </div>
+            
+            <div class="awards-showcase">
+                <div class="award-badge">
+                    <i class="fas fa-trophy"></i>
+                    <span>Awwwards</span>
+                </div>
+                <div class="award-badge">
+                    <i class="fas fa-award"></i>
+                    <span>CSS Design Awards</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.creative-footer {
+    position: relative;
+    background: #0f172a;
+    color: white;
+    overflow: hidden;
+}
+
+.gradient-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        #ec4899 0%,
+        #8b5cf6 25%,
+        #06b6d4 50%,
+        #10b981 75%,
+        #f59e0b 100%
+    );
+    background-size: 400% 400%;
+    animation: creativeGradient 12s ease infinite;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(15px);
+}
+
+.gradient-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.2) 0%, transparent 50%);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes creativeGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.footer-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 2rem 3rem;
+}
+
+/* Creative Header */
+.creative-header {
+    margin-bottom: 5rem;
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.creative-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.creative-accent {
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.creative-description {
+    font-size: 1.3rem;
+    color: #cbd5e1;
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+.creative-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.stat-item.creative {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.stat-item.creative:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(236, 72, 153, 0.5);
+}
+
+.stat-value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ec4899;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.portfolio-cta {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    padding: 4rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.portfolio-cta:hover::before {
+    left: 100%;
+}
+
+.cta-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 2.5rem;
+}
+
+.creative-cta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+}
+
+.creative-cta:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(236, 72, 153, 0.6);
+}
+
+/* Services Section */
+.services-section {
+    margin-bottom: 5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-10px);
+    border-color: rgba(236, 72, 153, 0.5);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.service-card h5 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.service-card p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.service-features span {
+    background: rgba(236, 72, 153, 0.2);
+    color: #fbcfe8;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+/* Clients Section */
+.clients-section {
+    margin-bottom: 5rem;
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.client-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #cbd5e1;
+}
+
+.client-logo:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: rgba(139, 92, 246, 0.5);
+    color: white;
+}
+
+.client-logo i {
+    font-size: 2rem;
+    width: 40px;
+    text-align: center;
+    color: #8b5cf6;
+}
+
+/* Team Section */
+.team-section {
+    margin-bottom: 5rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.team-member:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-8px);
+    border-color: rgba(6, 182, 212, 0.5);
+}
+
+.member-avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #06b6d4, #10b981);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+}
+
+.team-member h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.team-member span {
+    color: #06b6d4;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.team-member p {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Contact & Social Section */
+.contact-social-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-info h5,
+.social-showcase h5,
+.newsletter-creative h5 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item.creative {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-item.creative:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    border-color: rgba(236, 72, 153, 0.3);
+}
+
+.contact-item.creative i {
+    font-size: 1.5rem;
+    color: #ec4899;
+    width: 30px;
+    text-align: center;
+}
+
+.contact-item.creative span {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.contact-item.creative small {
+    color: #94a3b8;
+    font-size: 0.8rem;
+}
+
+.social-platforms {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-platform {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.social-platform.dribbble {
+    background: rgba(234, 76, 137, 0.1);
+    color: white;
+}
+
+.social-platform.behance {
+    background: rgba(0, 87, 255, 0.1);
+    color: white;
+}
+
+.social-platform.instagram {
+    background: rgba(225, 48, 108, 0.1);
+    color: white;
+}
+
+.social-platform:hover {
+    transform: translateX(10px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.social-platform.dribbble:hover {
+    background: #ea4c89;
+}
+
+.social-platform.behance:hover {
+    background: #0057ff;
+}
+
+.social-platform.instagram:hover {
+    background: #e1306c;
+}
+
+.social-platform i {
+    font-size: 1.5rem;
+    width: 30px;
+    text-align: center;
+}
+
+.platform-info strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.platform-info span {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.newsletter-creative p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.creative-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.creative-newsletter input {
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+.creative-newsletter input::placeholder {
+    color: #94a3b8;
+}
+
+.creative-newsletter button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.creative-newsletter button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(236, 72, 153, 0.4);
+}
+
+/* Footer Bottom */
+.footer-bottom.creative {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.copyright p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.quick-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.quick-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.quick-links a:hover {
+    color: white;
+}
+
+.awards-showcase {
+    display: flex;
+    gap: 1rem;
+}
+
+.award-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.award-badge i {
+    color: #f59e0b;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .header-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .contact-social-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 4rem 1.5rem 2rem;
+    }
+    
+    .creative-title {
+        font-size: 2.8rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-social-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-bottom.creative {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .quick-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .creative-title {
+        font-size: 2.2rem;
+    }
+    
+    .portfolio-cta {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .cta-content h3 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}`,
+    js: `// Gradient Creative Footer Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate creative statistics
+    function animateCreativeCounter(element, target) {
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = target === 98 ? Math.floor(current) + '%' : Math.floor(current);
+        }, 30);
+    }
+    
+    // Start counting when footer is in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statValues = document.querySelectorAll('.stat-value');
+                statValues.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-count'));
+                    animateCreativeCounter(stat, target);
+                });
+                observer.disconnect();
+            }
+        });
+    });
+    
+    const creativeStats = document.querySelector('.creative-stats');
+    if (creativeStats) {
+        observer.observe(creativeStats);
+    }
+    
+    // Portfolio CTA interaction
+    const creativeCta = document.querySelector('.creative-cta');
+    if (creativeCta) {
+        creativeCta.addEventListener('click', function() {
+            // Add loading animation
+            const originalHTML = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                alert('Opening our portfolio showcase... Prepare to be inspired!');
+                this.innerHTML = originalHTML;
+                this.disabled = false;
+            }, 2000);
+        });
+    }
+    
+    // Service card interactions
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.service-icon');
+            icon.style.transform = 'scale(1.15) rotate(8deg)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.service-icon');
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    });
+    
+    // Client logo animations
+    const clientLogos = document.querySelectorAll('.client-logo');
+    clientLogos.forEach(logo => {
+        logo.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.3)';
+            icon.style.color = '#ec4899';
+        });
+        
+        logo.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1)';
+            icon.style.color = '';
+        });
+    });
+    
+    // Team member hover effects
+    const teamMembers = document.querySelectorAll('.team-member');
+    teamMembers.forEach(member => {
+        member.addEventListener('mouseenter', function() {
+            const avatar = this.querySelector('.member-avatar');
+            avatar.style.transform = 'scale(1.1)';
+        });
+        
+        member.addEventListener('mouseleave', function() {
+            const avatar = this.querySelector('.member-avatar');
+            avatar.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Social platform interactions
+    const socialPlatforms = document.querySelectorAll('.social-platform');
+    socialPlatforms.forEach(platform => {
+        platform.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.2) rotate(5deg)';
+        });
+        
+        platform.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    });
+    
+    // Newsletter form submission
+    const creativeNewsletter = document.querySelector('.creative-newsletter');
+    if (creativeNewsletter) {
+        creativeNewsletter.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                const button = this.querySelector('button');
+                const originalHTML = button.innerHTML;
+                
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                button.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Welcome to our creative community! Check your email for design insights.');
+                    this.reset();
+                    button.innerHTML = originalHTML;
+                    button.disabled = false;
+                }, 1500);
+            }
+        });
+    }
+    
+    // Contact item animations
+    const contactItems = document.querySelectorAll('.contact-item.creative');
+    contactItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.3)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Award badge hover effects
+    const awardBadges = document.querySelectorAll('.award-badge');
+    awardBadges.forEach(badge => {
+        badge.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.2)';
+            icon.style.color = '#fbbf24';
+        });
+        
+        badge.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1)';
+            icon.style.color = '';
+        });
+    });
+    
+    // Floating particles animation
+    const particles = document.querySelector('.gradient-particles');
+    if (particles) {
+        let mouseX = 0;
+        let mouseY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 100;
+            mouseY = (e.clientY / window.innerHeight) * 100;
+            
+            particles.style.backgroundPosition = \`\${mouseX}% \${mouseY}%\`;
+        });
+    }
+});`
+},
+
+// ====================================================================
+// TEMPLATE 67: GRADIENT TECH
+// Features: Technology company with feature highlights and innovation focus
+// Category: Gradient
+// ====================================================================
+footer67: {
+    name: "Gradient Tech",
+    category: "gradient",
+    html: `<!-- Gradient Tech Footer -->
+<footer class="tech-footer">
+    <div class="gradient-background">
+        <div class="gradient-overlay"></div>
+        <div class="circuit-pattern"></div>
+    </div>
+    
+    <div class="footer-container">
+        <!-- Tech Innovation Header -->
+        <div class="tech-header">
+            <div class="header-content">
+                <div class="tech-brand">
+                    <div class="brand-showcase">
+                        <i class="fas fa-microchip"></i>
+                        <div class="brand-text">
+                            <h2>TechNova</h2>
+                            <span class="tech-tagline">Pioneering Digital Innovation</span>
+                        </div>
+                    </div>
+                    <p class="tech-mission">
+                        We build cutting-edge technology solutions that transform businesses 
+                        and create new possibilities in the digital landscape. Our expertise 
+                        spans AI, blockchain, cloud computing, and next-generation web technologies.
+                    </p>
+                </div>
+                
+                <div class="innovation-stats">
+                    <div class="tech-stats-grid">
+                        <div class="tech-stat">
+                            <div class="stat-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-count="50">0</span>
+                                <span class="stat-label">Tech Patents</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-stat">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-count="200">0</span>
+                                <span class="stat-label">Engineers</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tech-stat">
+                            <div class="stat-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-count="1000">0</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tech-cta">
+                <div class="cta-content">
+                    <h3>Build the Future with Us</h3>
+                    <p>Join our ecosystem of innovators and technology pioneers</p>
+                    <div class="cta-buttons">
+                        <button class="tech-btn primary">
+                            <i class="fas fa-laptop-code"></i>
+                            Developer Portal
+                        </button>
+                        <button class="tech-btn secondary">
+                            <i class="fas fa-handshake"></i>
+                            Partner Program
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Technology Stack -->
+        <div class="tech-stack-section">
+            <h4 class="section-title">Our Technology Stack</h4>
+            <div class="stack-categories">
+                <div class="stack-category">
+                    <h5>Frontend Technologies</h5>
+                    <div class="tech-tags">
+                        <span class="tech-tag react">React</span>
+                        <span class="tech-tag vue">Vue.js</span>
+                        <span class="tech-tag angular">Angular</span>
+                        <span class="tech-tag svelte">Svelte</span>
+                        <span class="tech-tag next">Next.js</span>
+                    </div>
+                </div>
+                
+                <div class="stack-category">
+                    <h5>Backend Technologies</h5>
+                    <div class="tech-tags">
+                        <span class="tech-tag node">Node.js</span>
+                        <span class="tech-tag python">Python</span>
+                        <span class="tech-tag go">Go</span>
+                        <span class="tech-tag java">Java</span>
+                        <span class="tech-tag rust">Rust</span>
+                    </div>
+                </div>
+                
+                <div class="stack-category">
+                    <h5>Cloud & Infrastructure</h5>
+                    <div class="tech-tags">
+                        <span class="tech-tag aws">AWS</span>
+                        <span class="tech-tag azure">Azure</span>
+                        <span class="tech-tag gcp">Google Cloud</span>
+                        <span class="tech-tag docker">Docker</span>
+                        <span class="tech-tag kubernetes">Kubernetes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Innovation Labs -->
+        <div class="innovation-section">
+            <h4 class="section-title">Innovation Labs</h4>
+            <div class="labs-grid">
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h5>AI Research</h5>
+                    <p>Advanced machine learning and neural network research</p>
+                    <div class="lab-projects">
+                        <span>Computer Vision</span>
+                        <span>NLP</span>
+                        <span>Predictive Analytics</span>
+                    </div>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h5>Blockchain</h5>
+                    <p>Decentralized solutions and smart contract development</p>
+                    <div class="lab-projects">
+                        <span>DeFi</span>
+                        <span>NFT Platforms</span>
+                        <span>Web3</span>
+                    </div>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h5>Cybersecurity</h5>
+                    <p>Advanced threat detection and security protocols</p>
+                    <div class="lab-projects">
+                        <span>Zero Trust</span>
+                        <span>Encryption</span>
+                        <span>Security AI</span>
+                    </div>
+                </div>
+                
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h5>Cloud Native</h5>
+                    <p>Scalable cloud infrastructure and microservices</p>
+                    <div class="lab-projects">
+                        <span>Serverless</span>
+                        <span>Microservices</span>
+                        <span>Edge Computing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Developer Resources -->
+        <div class="developer-section">
+            <h4 class="section-title">Developer Resources</h4>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h5>API Documentation</h5>
+                        <p>Comprehensive guides and reference materials</p>
+                        <a href="#" class="resource-link">
+                            Explore Docs
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h5>SDK & Libraries</h5>
+                        <p>Official libraries and development tools</p>
+                        <a href="#" class="resource-link">
+                            Download SDK
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h5>Tutorials</h5>
+                        <p>Step-by-step guides and video tutorials</p>
+                        <a href="#" class="resource-link">
+                            Watch Tutorials
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h5>Community</h5>
+                        <p>Join our developer community and forums</p>
+                        <a href="#" class="resource-link">
+                            Join Community
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tech Community -->
+        <div class="community-section">
+            <div class="community-content">
+                <div class="community-info">
+                    <h5>Join Our Tech Community</h5>
+                    <p>Connect with developers, share knowledge, and stay updated with the latest in technology</p>
+                    <div class="community-platforms">
+                        <a href="#" class="community-platform github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="community-platform stackoverflow">
+                            <i class="fab fa-stack-overflow"></i>
+                            <span>Stack Overflow</span>
+                        </a>
+                        <a href="#" class="community-platform discord">
+                            <i class="fab fa-discord"></i>
+                            <span>Discord</span>
+                        </a>
+                        <a href="#" class="community-platform devto">
+                            <i class="fab fa-dev"></i>
+                            <span>Dev.to</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="tech-newsletter">
+                    <h5>Tech Insights Newsletter</h5>
+                    <p>Get weekly updates on emerging technologies and industry trends</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Bottom -->
+        <div class="footer-bottom tech">
+            <div class="tech-info">
+                <div class="tech-brand-mini">
+                    <i class="fas fa-microchip"></i>
+                    <span>TechNova</span>
+                </div>
+                <p>Building the digital future, one innovation at a time</p>
+            </div>
+            
+            <div class="tech-links">
+                <div class="link-group">
+                    <h6>Products</h6>
+                    <a href="#">Enterprise Solutions</a>
+                    <a href="#">Developer Tools</a>
+                    <a href="#">APIs</a>
+                    <a href="#">Platform</a>
+                </div>
+                
+                <div class="link-group">
+                    <h6>Company</h6>
+                    <a href="#">About</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Leadership</a>
+                    <a href="#">Newsroom</a>
+                </div>
+                
+                <div class="link-group">
+                    <h6>Legal</h6>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Security</a>
+                    <a href="#">Compliance</a>
+                </div>
+            </div>
+            
+            <div class="tech-contact">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contact@technova.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 (888) TECH-NOVA</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Silicon Valley, CA</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="copyright-section tech">
+            <div class="copyright-content">
+                <p>&copy; 2023 TechNova Technologies. Pushing the boundaries of innovation.</p>
+                <div class="tech-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-medium"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.tech-footer {
+    position: relative;
+    background: #0f172a;
+    color: white;
+    overflow: hidden;
+}
+
+.gradient-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        #059669 0%,
+        #0d9488 25%,
+        #0891b2 50%,
+        #0ea5e9 75%,
+        #3b82f6 100%
+    );
+    background-size: 400% 400%;
+    animation: techGradient 10s ease infinite;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(15px);
+}
+
+.circuit-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(5, 150, 105, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(13, 148, 136, 0.1) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 48%, rgba(5, 150, 105, 0.1) 50%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(13, 148, 136, 0.1) 50%, transparent 52%);
+    background-size: 50px 50px;
+    opacity: 0.3;
+}
+
+@keyframes techGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.footer-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 2rem 3rem;
+}
+
+/* Tech Header */
+.tech-header {
+    margin-bottom: 5rem;
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.tech-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-showcase {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.brand-showcase i {
+    font-size: 4rem;
+    color: #059669;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.brand-text h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tech-tagline {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.tech-mission {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+.innovation-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-stats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.tech-stat {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.tech-stat:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px);
+    border-color: rgba(5, 150, 105, 0.5);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #059669, #0d9488);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tech-cta {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    text-align: center;
+}
+
+.cta-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tech-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2.5rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.tech-btn.primary {
+    background: linear-gradient(135deg, #059669, #0d9488);
+    color: white;
+    box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4);
+}
+
+.tech-btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(5, 150, 105, 0.6);
+}
+
+.tech-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.tech-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Technology Stack */
+.tech-stack-section {
+    margin-bottom: 5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stack-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.stack-category h5 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-align: center;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.tech-tag {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.tech-tag.react { background: rgba(97, 218, 251, 0.2); color: #61dafb; border-color: rgba(97, 218, 251, 0.3); }
+.tech-tag.vue { background: rgba(65, 184, 131, 0.2); color: #41b883; border-color: rgba(65, 184, 131, 0.3); }
+.tech-tag.angular { background: rgba(221, 0, 49, 0.2); color: #dd0031; border-color: rgba(221, 0, 49, 0.3); }
+.tech-tag.svelte { background: rgba(255, 62, 0, 0.2); color: #ff3e00; border-color: rgba(255, 62, 0, 0.3); }
+.tech-tag.next { background: rgba(0, 0, 0, 0.2); color: #000; border-color: rgba(0, 0, 0, 0.3); }
+
+.tech-tag.node { background: rgba(104, 160, 99, 0.2); color: #68a063; border-color: rgba(104, 160, 99, 0.3); }
+.tech-tag.python { background: rgba(53, 114, 165, 0.2); color: #3572a5; border-color: rgba(53, 114, 165, 0.3); }
+.tech-tag.go { background: rgba(0, 173, 216, 0.2); color: #00add8; border-color: rgba(0, 173, 216, 0.3); }
+.tech-tag.java { background: rgba(237, 139, 0, 0.2); color: #ed8b00; border-color: rgba(237, 139, 0, 0.3); }
+.tech-tag.rust { background: rgba(0, 0, 0, 0.2); color: #000; border-color: rgba(0, 0, 0, 0.3); }
+
+.tech-tag.aws { background: rgba(255, 153, 0, 0.2); color: #ff9900; border-color: rgba(255, 153, 0, 0.3); }
+.tech-tag.azure { background: rgba(0, 120, 212, 0.2); color: #0078d4; border-color: rgba(0, 120, 212, 0.3); }
+.tech-tag.gcp { background: rgba(66, 133, 244, 0.2); color: #4285f4; border-color: rgba(66, 133, 244, 0.3); }
+.tech-tag.docker { background: rgba(13, 183, 229, 0.2); color: #0db7e5; border-color: rgba(13, 183, 229, 0.3); }
+.tech-tag.kubernetes { background: rgba(50, 106, 229, 0.2); color: #326ae5; border-color: rgba(50, 106, 229, 0.3); }
+
+.tech-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Innovation Labs */
+.innovation-section {
+    margin-bottom: 5rem;
+}
+
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.lab-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.lab-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-8px);
+    border-color: rgba(5, 150, 105, 0.5);
+}
+
+.lab-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #059669, #0d9488);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.lab-card:hover .lab-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.lab-card h5 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.lab-card p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.lab-projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.lab-projects span {
+    background: rgba(5, 150, 105, 0.2);
+    color: #6ee7b7;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(5, 150, 105, 0.3);
+}
+
+/* Developer Resources */
+.developer-section {
+    margin-bottom: 5rem;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.resource-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(5, 150, 105, 0.5);
+}
+
+.resource-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #059669, #0d9488);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.resource-content h5 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.resource-content p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    flex: 1;
+}
+
+.resource-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #059669;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.resource-link:hover {
+    color: #0d9488;
+    gap: 1rem;
+}
+
+/* Tech Community */
+.community-section {
+    margin-bottom: 4rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.community-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.community-info h5 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.community-info p {
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.community-platforms {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.community-platform {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-decoration: none;
+    color: #cbd5e1;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.community-platform:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    border-color: rgba(5, 150, 105, 0.5);
+    color: white;
+}
+
+.community-platform.github:hover {
+    background: #333;
+    border-color: #333;
+}
+
+.community-platform.stackoverflow:hover {
+    background: #f48024;
+    border-color: #f48024;
+}
+
+.community-platform.discord:hover {
+    background: #5865f2;
+    border-color: #5865f2;
+}
+
+.community-platform.devto:hover {
+    background: #0a0a0a;
+    border-color: #0a0a0a;
+}
+
+.tech-newsletter h5 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.tech-newsletter p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletter-form input {
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+.newsletter-form input::placeholder {
+    color: #94a3b8;
+}
+
+.newsletter-form button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #059669, #0d9488);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(5, 150, 105, 0.4);
+}
+
+/* Footer Bottom */
+.footer-bottom.tech {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tech-brand-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.tech-brand-mini i {
+    color: #059669;
+}
+
+.tech-info p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.tech-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.link-group h6 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.link-group a {
+    display: block;
+    color: #94a3b8;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.link-group a:hover {
+    color: white;
+}
+
+.tech-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.contact-item i {
+    width: 20px;
+    text-align: center;
+    color: #059669;
+}
+
+/* Copyright */
+.copyright-section.tech {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright-content p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.tech-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.tech-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.tech-social a:hover {
+    background: #059669;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .header-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .community-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .footer-bottom.tech {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 4rem 1.5rem 2rem;
+    }
+    
+    .brand-showcase {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .brand-text h2 {
+        font-size: 2.8rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tech-links {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .copyright-section.tech {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-text h2 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .tech-cta {
+        padding: 2rem 1.5rem;
+    }
+    
+    .cta-content h3 {
+        font-size: 2rem;
+    }
+}`,
+    js: `// Gradient Tech Footer Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate tech statistics
+    function animateTechCounter(element, target) {
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current) + (target === 1000 ? '+' : '');
+        }, 20);
+    }
+    
+    // Start counting when footer is in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = document.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-count'));
+                    animateTechCounter(stat, target);
+                });
+                observer.disconnect();
+            }
+        });
+    });
+    
+    const techStats = document.querySelector('.innovation-stats');
+    if (techStats) {
+        observer.observe(techStats);
+    }
+    
+    // Tech button interactions
+    const techButtons = document.querySelectorAll('.tech-btn');
+    techButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const isPrimary = this.classList.contains('primary');
+            
+            // Add click animation
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+            
+            if (isPrimary) {
+                // Developer portal action
+                setTimeout(() => {
+                    alert('Opening Developer Portal... Access our comprehensive development resources.');
+                }, 300);
+            } else {
+                // Partner program action
+                setTimeout(() => {
+                    alert('Exploring Partner Program opportunities...');
+                }, 300);
+            }
+        });
+    });
+    
+    // Tech tag hover effects
+    const techTags = document.querySelectorAll('.tech-tag');
+    techTags.forEach(tag => {
+        tag.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.05)';
+        });
+        
+        tag.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Lab card interactions
+    const labCards = document.querySelectorAll('.lab-card');
+    labCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.lab-icon');
+            icon.style.transform = 'scale(1.15) rotate(8deg)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.lab-icon');
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    });
+    
+    // Resource card animations
+    const resourceCards = document.querySelectorAll('.resource-card');
+    resourceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.resource-icon');
+            icon.style.transform = 'scale(1.1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.resource-icon');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Community platform interactions
+    const communityPlatforms = document.querySelectorAll('.community-platform');
+    communityPlatforms.forEach(platform => {
+        platform.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.3)';
+        });
+        
+        platform.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Newsletter form submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                const button = this.querySelector('button');
+                const originalHTML = button.innerHTML;
+                
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                button.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Welcome to TechNova Insights! You will receive our weekly tech newsletter.');
+                    this.reset();
+                    button.innerHTML = originalHTML;
+                    button.disabled = false;
+                }, 1500);
+            }
+        });
+    }
+    
+    // Resource link animations
+    const resourceLinks = document.querySelectorAll('.resource-link');
+    resourceLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'translateX(5px)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'translateX(0)';
+        });
+    });
+    
+    // Tech stat hover effects
+    const techStats = document.querySelectorAll('.tech-stat');
+    techStats.forEach(stat => {
+        stat.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.stat-icon');
+            icon.style.transform = 'scale(1.1) rotate(5deg)';
+        });
+        
+        stat.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.stat-icon');
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    });
+    
+    // Circuit pattern animation
+    const circuitPattern = document.querySelector('.circuit-pattern');
+    if (circuitPattern) {
+        let position = 0;
+        setInterval(() => {
+            position = (position + 1) % 50;
+            circuitPattern.style.backgroundPosition = \`\${position}px \${position}px\`;
+        }, 100);
+    }
+});`
+},
+
+// ====================================================================
+// TEMPLATE 68: GRADIENT FINANCE
+// Features: Financial institution with trust indicators and security focus
+// Category: Gradient
+// ====================================================================
+footer68: {
+    name: "Gradient Finance",
+    category: "gradient",
+    html: `<!-- Gradient Finance Footer -->
+<footer class="finance-footer">
+    <div class="gradient-background">
+        <div class="gradient-overlay"></div>
+        <div class="security-pattern"></div>
+    </div>
+    
+    <div class="footer-container">
+        <!-- Finance Trust Header -->
+        <div class="finance-header">
+            <div class="header-content">
+                <div class="finance-brand">
+                    <div class="brand-showcase">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="brand-text">
+                            <h2>WealthPro</h2>
+                            <span class="finance-tagline">Secure Your Financial Future</span>
+                        </div>
+                    </div>
+                    <p class="finance-mission">
+                        Trusted by millions worldwide to manage and grow their wealth. 
+                        Our secure platform offers comprehensive financial solutions 
+                        with industry-leading protection and expert guidance.
+                    </p>
+                    
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Bank-Grade Security</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-user-check"></i>
+                            <span>FDIC Insured</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-lock"></i>
+                            <span>256-bit Encryption</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="financial-stats">
+                    <div class="stats-showcase">
+                        <div class="finance-stat">
+                            <div class="stat-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-count="10">0</span>
+                                <span class="stat-label">Billion+ Assets</span>
+                            </div>
+                        </div>
+                        
+                        <div class="finance-stat">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-count="500">0</span>
+                                <span class="stat-label">Thousand Clients</span>
+                            </div>
+                        </div>
+                        
+                        <div class="finance-stat">
+                            <div class="stat-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-count="25">0</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="security-cta">
+                <div class="cta-content">
+                    <h3>Your Security is Our Priority</h3>
+                    <p>Experience peace of mind with our multi-layered security framework</p>
+                    <div class="cta-buttons">
+                        <button class="finance-btn primary">
+                            <i class="fas fa-shield-check"></i>
+                            Security Overview
+                        </button>
+                        <button class="finance-btn secondary">
+                            <i class="fas fa-file-contract"></i>
+                            Compliance Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Financial Services -->
+        <div class="services-section finance">
+            <h4 class="section-title">Comprehensive Financial Solutions</h4>
+            <div class="services-grid finance">
+                <div class="service-card finance">
+                    <div class="service-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h5>Wealth Management</h5>
+                    <p>Personalized investment strategies and portfolio management</p>
+                    <div class="service-features">
+                        <span>Retirement Planning</span>
+                        <span>Tax Optimization</span>
+                        <span>Estate Planning</span>
+                    </div>
+                </div>
+                
+                <div class="service-card finance">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h5>Investment Banking</h5>
+                    <p>Strategic financial advisory and capital market solutions</p>
+                    <div class="service-features">
+                        <span>M&A Advisory</span>
+                        <span>Capital Raising</span>
+                        <span>Risk Management</span>
+                    </div>
+                </div>
+                
+                <div class="service-card finance">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h5>Private Banking</h5>
+                    <p>Exclusive banking services for high-net-worth individuals</p>
+                    <div class="service-features">
+                        <span>Custom Credit</span>
+                        <span>Family Office</span>
+                        <span>Concierge Services</span>
+                    </div>
+                </div>
+                
+                <div class="service-card finance">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h5>Asset Management</h5>
+                    <p>Professional management of investment portfolios and assets</p>
+                    <div class="service-features">
+                        <span>Portfolio Diversification</span>
+                        <span>Risk Assessment</span>
+                        <span>Performance Analytics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Security Features -->
+        <div class="security-section">
+            <h4 class="section-title">Advanced Security Features</h4>
+            <div class="security-features">
+                <div class="security-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Biometric Authentication</h5>
+                        <p>Advanced fingerprint and facial recognition technology</p>
+                    </div>
+                </div>
+                
+                <div class="security-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Zero-Knowledge Proof</h5>
+                        <p>Your data remains encrypted and private at all times</p>
+                    </div>
+                </div>
+                
+                <div class="security-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Real-time Monitoring</h5>
+                        <p>24/7 surveillance and anomaly detection systems</p>
+                    </div>
+                </div>
+                
+                <div class="security-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h5>Insurance Protection</h5>
+                        <p>Up to $50M in additional insurance coverage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Compliance & Regulations -->
+        <div class="compliance-section">
+            <h4 class="section-title">Regulatory Compliance</h4>
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h5>FINRA Registered</h5>
+                    <p>Fully compliant with Financial Industry Regulatory Authority</p>
+                </div>
+                
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h5>SEC Regulation</h5>
+                    <p>Adheres to Securities and Exchange Commission guidelines</p>
+                </div>
+                
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h5>International Standards</h5>
+                    <p>Compliant with global financial regulations and standards</p>
+                </div>
+                
+                <div class="compliance-card">
+                    <div class="compliance-icon">
+                        <i class="fas fa-audit"></i>
+                    </div>
+                    <h5>Regular Audits</h5>
+                    <p>Third-party security audits and penetration testing</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Client Support -->
+        <div class="support-section">
+            <div class="support-content">
+                <div class="support-info">
+                    <h5>24/7 Client Support</h5>
+                    <p>Our dedicated financial advisors are available around the clock</p>
+                    <div class="support-methods">
+                        <div class="support-method">
+                            <i class="fas fa-phone-volume"></i>
+                            <div>
+                                <span>+1 (800) WEALTH-PRO</span>
+                                <small>24/7 Phone Support</small>
+                            </div>
+                        </div>
+                        <div class="support-method">
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <span>Live Chat</span>
+                                <small>Instant Messaging</small>
+                            </div>
+                        </div>
+                        <div class="support-method">
+                            <i class="fas fa-envelope-open-text"></i>
+                            <div>
+                                <span>support@wealthpro.com</span>
+                                <small>Email Response within 2 hours</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="advisor-cta">
+                    <h5>Speak with a Financial Advisor</h5>
+                    <p>Get personalized advice from our certified financial experts</p>
+                    <button class="advisor-btn">
+                        <i class="fas fa-calendar-check"></i>
+                        Schedule Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Financial Education -->
+        <div class="education-section">
+            <h4 class="section-title">Financial Education Resources</h4>
+            <div class="education-resources">
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h5>Investment Guides</h5>
+                        <p>Comprehensive guides for beginners and advanced investors</p>
+                        <a href="#" class="resource-link">Explore Guides</a>
+                    </div>
+                </div>
+                
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h5>Market Insights</h5>
+                        <p>Weekly market analysis and investment opportunities</p>
+                        <a href="#" class="resource-link">Read Analysis</a>
+                    </div>
+                </div>
+                
+                <div class="resource-item">
+                    <div class="resource-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h5>Financial Tools</h5>
+                        <p>Interactive calculators and planning tools</p>
+                        <a href="#" class="resource-link">Use Tools</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Bottom -->
+        <div class="footer-bottom finance">
+            <div class="finance-info">
+                <div class="finance-brand-mini">
+                    <i class="fas fa-chart-line"></i>
+                    <span>WealthPro Financial</span>
+                </div>
+                <p>Building wealth securely since 1998</p>
+                <div class="regulatory-info">
+                    <span>Member FINRA & SIPC</span>
+                    <span>FDIC Insured</span>
+                </div>
+            </div>
+            
+            <div class="quick-links finance">
+                <div class="link-group">
+                    <h6>Accounts</h6>
+                    <a href="#">Individual Investing</a>
+                    <a href="#">Retirement Accounts</a>
+                    <a href="#">Business Accounts</a>
+                    <a href="#">Trust Accounts</a>
+                </div>
+                
+                <div class="link-group">
+                    <h6>Resources</h6>
+                    <a href="#">Learning Center</a>
+                    <a href="#">Market Research</a>
+                    <a href="#">Investment Calculator</a>
+                    <a href="#">Tax Resources</a>
+                </div>
+                
+                <div class="link-group">
+                    <h6>Company</h6>
+                    <a href="#">About Us</a>
+                    <a href="#">Leadership</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                </div>
+            </div>
+            
+            <div class="contact-finance">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>456 Financial District, NYC 10005</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 (800) WEALTH-PRO</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contact@wealthpro.com</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legal & Copyright -->
+        <div class="legal-section finance">
+            <div class="legal-content">
+                <div class="disclaimer">
+                    <p>
+                        <strong>Important Disclosures:</strong> Investing involves risk, including possible loss of principal. 
+                        Past performance does not guarantee future results. Diversification does not ensure a profit or protect against loss.
+                    </p>
+                </div>
+                
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Disclosure Library</a>
+                    <a href="#">Business Continuity</a>
+                    <a href="#">Complaint Procedure</a>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2023 WealthPro Financial Services LLC. All rights reserved. Member FINRA, SIPC.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.finance-footer {
+    position: relative;
+    background: #0f172a;
+    color: white;
+    overflow: hidden;
+}
+
+.gradient-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        #047857 0%,
+        #0f766e 25%,
+        #0e7490 50%,
+        #1d4ed8 75%,
+        #3730a3 100%
+    );
+    background-size: 400% 400%;
+    animation: financeGradient 12s ease infinite;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(15px);
+}
+
+.security-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(4, 120, 87, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(15, 118, 110, 0.1) 0%, transparent 50%),
+        linear-gradient(90deg, transparent 48%, rgba(4, 120, 87, 0.05) 50%, transparent 52%),
+        linear-gradient(0deg, transparent 48%, rgba(15, 118, 110, 0.05) 50%, transparent 52%);
+    background-size: 60px 60px;
+    opacity: 0.4;
+}
+
+@keyframes financeGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.footer-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 2rem 3rem;
+}
+
+/* Finance Header */
+.finance-header {
+    margin-bottom: 5rem;
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.finance-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-showcase {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.brand-showcase i {
+    font-size: 4rem;
+    color: #047857;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.brand-text h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.finance-tagline {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.finance-mission {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.trust-indicators {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.trust-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(4, 120, 87, 0.5);
+    color: white;
+}
+
+.trust-item i {
+    color: #047857;
+}
+
+.financial-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.finance-stat {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.finance-stat:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px);
+    border-color: rgba(4, 120, 87, 0.5);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #047857, #0f766e);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.security-cta {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.security-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.security-cta:hover::before {
+    left: 100%;
+}
+
+.cta-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.finance-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2.5rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.finance-btn.primary {
+    background: linear-gradient(135deg, #047857, #0f766e);
+    color: white;
+    box-shadow: 0 8px 25px rgba(4, 120, 87, 0.4);
+}
+
+.finance-btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(4, 120, 87, 0.6);
+}
+
+.finance-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.finance-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Financial Services */
+.services-section.finance {
+    margin-bottom: 5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.services-grid.finance {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card.finance {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.service-card.finance:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-10px);
+    border-color: rgba(4, 120, 87, 0.5);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #047857, #0f766e);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.service-card.finance:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.service-card.finance h5 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.service-card.finance p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.service-features span {
+    background: rgba(4, 120, 87, 0.2);
+    color: #6ee7b7;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(4, 120, 87, 0.3);
+}
+
+/* Security Features */
+.security-section {
+    margin-bottom: 5rem;
+}
+
+.security-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.security-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.security-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(10px);
+    border-color: rgba(4, 120, 87, 0.5);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #047857, #0f766e);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.feature-content h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: white;
+}
+
+.feature-content p {
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+/* Compliance Section */
+.compliance-section {
+    margin-bottom: 5rem;
+}
+
+.compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.compliance-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.compliance-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-8px);
+    border-color: rgba(4, 120, 87, 0.5);
+}
+
+.compliance-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #047857, #0f766e);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.8rem;
+}
+
+.compliance-card h5 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.compliance-card p {
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+/* Support Section */
+.support-section {
+    margin-bottom: 5rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.support-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.support-info h5 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.support-info p {
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.support-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.support-method {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.support-method:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    border-color: rgba(4, 120, 87, 0.3);
+}
+
+.support-method i {
+    font-size: 1.8rem;
+    color: #047857;
+    width: 40px;
+    text-align: center;
+}
+
+.support-method span {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    color: white;
+}
+
+.support-method small {
+    color: #94a3b8;
+    font-size: 0.8rem;
+}
+
+.advisor-cta {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.advisor-cta h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: white;
+}
+
+.advisor-cta p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.advisor-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2rem;
+    background: linear-gradient(135deg, #047857, #0f766e);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
+}
+
+.advisor-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(4, 120, 87, 0.4);
+}
+
+/* Education Section */
+.education-section {
+    margin-bottom: 5rem;
+}
+
+.education-resources {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.resource-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.resource-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(4, 120, 87, 0.5);
+}
+
+.resource-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #047857, #0f766e);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.resource-content h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: white;
+}
+
+.resource-content p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.resource-link {
+    color: #047857;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+    color: #0f766e;
+}
+
+/* Footer Bottom */
+.footer-bottom.finance {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.finance-brand-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.finance-brand-mini i {
+    color: #047857;
+}
+
+.finance-info p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.regulatory-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.regulatory-info span {
+    color: #6ee7b7;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.quick-links.finance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.link-group h6 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.link-group a {
+    display: block;
+    color: #94a3b8;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.link-group a:hover {
+    color: white;
+}
+
+.contact-finance {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.contact-item i {
+    width: 20px;
+    text-align: center;
+    color: #047857;
+}
+
+/* Legal Section */
+.legal-section.finance {
+    margin-bottom: 2rem;
+}
+
+.legal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.disclaimer p {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+}
+
+.disclaimer strong {
+    color: #fbbf24;
+}
+
+.legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.legal-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: white;
+}
+
+.copyright p {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .header-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .support-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .footer-bottom.finance {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 4rem 1.5rem 2rem;
+    }
+    
+    .brand-showcase {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .brand-text h2 {
+        font-size: 2.8rem;
+    }
+    
+    .trust-indicators {
+        justify-content: center;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .quick-links.finance {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-text h2 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .security-cta {
+        padding: 2rem 1.5rem;
+    }
+    
+    .cta-content h3 {
+        font-size: 2rem;
+    }
+}`,
+    js: `// Gradient Finance Footer Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate financial statistics
+    function animateFinanceCounter(element, target) {
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = target === 10 ? '$' + current.toFixed(1) + 'B+' : Math.floor(current) + (target === 500 ? 'K+' : '+');
+        }, 30);
+    }
+    
+    // Start counting when footer is in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = document.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const target = parseFloat(stat.getAttribute('data-count'));
+                    animateFinanceCounter(stat, target);
+                });
+                observer.disconnect();
+            }
+        });
+    });
+    
+    const financeStats = document.querySelector('.financial-stats');
+    if (financeStats) {
+        observer.observe(financeStats);
+    }
+    
+    // Finance button interactions
+    const financeButtons = document.querySelectorAll('.finance-btn');
+    financeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const isPrimary = this.classList.contains('primary');
+            
+            // Add click animation
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+            
+            if (isPrimary) {
+                // Security overview action
+                setTimeout(() => {
+                    alert('Opening Security Overview... Learn about our multi-layered protection systems.');
+                }, 300);
+            } else {
+                // Compliance report action
+                setTimeout(() => {
+                    alert('Downloading Compliance Report... Access our latest regulatory documentation.');
+                }, 300);
+            }
+        });
+    });
+    
+    // Trust indicator hover effects
+    const trustItems = document.querySelectorAll('.trust-item');
+    trustItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.3)';
+            icon.style.color = '#6ee7b7';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1)';
+            icon.style.color = '';
+        });
+    });
+    
+    // Service card interactions
+    const serviceCards = document.querySelectorAll('.service-card.finance');
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.service-icon');
+            icon.style.transform = 'scale(1.15) rotate(8deg)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.service-icon');
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    });
+    
+    // Security item animations
+    const securityItems = document.querySelectorAll('.security-item');
+    securityItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.feature-icon');
+            icon.style.transform = 'scale(1.1)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.feature-icon');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Compliance card hover effects
+    const complianceCards = document.querySelectorAll('.compliance-card');
+    complianceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.compliance-icon');
+            icon.style.transform = 'scale(1.1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.compliance-icon');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Support method interactions
+    const supportMethods = document.querySelectorAll('.support-method');
+    supportMethods.forEach(method => {
+        method.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.2)';
+            icon.style.color = '#6ee7b7';
+        });
+        
+        method.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1)';
+            icon.style.color = '';
+        });
+    });
+    
+    // Advisor button interaction
+    const advisorBtn = document.querySelector('.advisor-btn');
+    if (advisorBtn) {
+        advisorBtn.addEventListener('click', function() {
+            // Add loading state
+            const originalHTML = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                alert('Scheduling your consultation... Our team will contact you within 24 hours.');
+                this.innerHTML = originalHTML;
+                this.disabled = false;
+            }, 2000);
+        });
+    }
+    
+    // Resource item animations
+    const resourceItems = document.querySelectorAll('.resource-item');
+    resourceItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.resource-icon');
+            icon.style.transform = 'scale(1.1)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.resource-icon');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Finance stat hover effects
+    const financeStats = document.querySelectorAll('.finance-stat');
+    financeStats.forEach(stat => {
+        stat.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.stat-icon');
+            icon.style.transform = 'scale(1.1) rotate(5deg)';
+        });
+        
+        stat.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.stat-icon');
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    });
+    
+    // Security pattern animation
+    const securityPattern = document.querySelector('.security-pattern');
+    if (securityPattern) {
+        let position = 0;
+        setInterval(() => {
+            position = (position + 1) % 60;
+            securityPattern.style.backgroundPosition = \`\${position}px \${position}px\`;
+        }, 120);
+    }
+});`
+},
+
+// ====================================================================
+// TEMPLATE 69: GRADIENT HEALTH
+// Features: Healthcare provider with emergency CTA and trust indicators
+// Category: Gradient
+// ====================================================================
+footer69: {
+    name: "Gradient Health",
+    category: "gradient",
+    html: `<!-- Gradient Health Footer -->
+<footer class="health-footer">
+    <div class="gradient-background">
+        <div class="gradient-overlay"></div>
+        <div class="medical-pattern"></div>
+    </div>
+    
+    <div class="footer-container">
+        <!-- Health Emergency Header -->
+        <div class="health-header">
+            <div class="header-content">
+                <div class="health-brand">
+                    <div class="brand-showcase">
+                        <i class="fas fa-heartbeat"></i>
+                        <div class="brand-text">
+                            <h2>MediCare+</h2>
+                            <span class="health-tagline">Your Health, Our Priority</span>
+                        </div>
+                    </div>
+                    <p class="health-mission">
+                        Providing comprehensive healthcare services with compassion and excellence. 
+                        Our team of dedicated professionals is committed to your well-being and 
+                        delivering the highest standard of medical care.
+                    </p>
+                    
+                    <div class="emergency-indicators">
+                        <div class="emergency-item">
+                            <i class="fas fa-ambulance"></i>
+                            <span>24/7 Emergency Care</span>
+                        </div>
+                        <div class="emergency-item">
+                            <i class="fas fa-user-md"></i>
+                            <span>Board Certified Physicians</span>
+                        </div>
+                        <div class="emergency-item">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Same-Day Appointments</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="health-stats">
+                    <div class="stats-showcase">
+                        <div class="health-stat">
+                            <div class="stat-icon">
+                                <i class="fas fa-hospital"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-count="50">0</span>
+                                <span class="stat-label">Medical Centers</span>
+                            </div>
+                        </div>
+                        
+                        <div class="health-stat">
+                            <div class="stat-icon">
+                                <i class="fas fa-user-nurse"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-count="1000">0</span>
+                                <span class="stat-label">Healthcare Professionals</span>
+                            </div>
+                        </div>
+                        
+                        <div class="health-stat">
+                            <div class="stat-icon">
+                                <i class="fas fa-smile"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number" data-count="98">0</span>
+                                <span class="stat-label">Patient Satisfaction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="emergency-cta">
+                <div class="cta-content">
+                    <div class="emergency-alert">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Medical Emergency?</span>
+                    </div>
+                    <h3>Immediate Care Available</h3>
+                    <p>Our emergency department is open 24/7 with no appointment needed</p>
+                    <div class="cta-buttons">
+                        <button class="health-btn emergency">
+                            <i class="fas fa-phone-alt"></i>
+                            Call Emergency: 911
+                        </button>
+                        <button class="health-btn urgent">
+                            <i class="fas fa-calendar-plus"></i>
+                            Urgent Care Visit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Medical Services -->
+        <div class="services-section health">
+            <h4 class="section-title">Comprehensive Medical Services</h4>
+            <div class="services-grid health">
+                <div class="service-card health">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h5>Cardiology</h5>
+                    <p>Advanced heart care and cardiovascular treatments</p>
+                    <div class="service-features">
+                        <span>Echocardiogram</span>
+                        <span>Cardiac Surgery</span>
+                        <span>Rehabilitation</span>
+                    </div>
+                </div>
+                
+                <div class="service-card health">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h5>Neurology</h5>
+                    <p>Specialized care for brain and nervous system disorders</p>
+                    <div class="service-features">
+                        <span>MRI Scanning</span>
+                        <span>Stroke Care</span>
+                        <span>Epilepsy Treatment</span>
+                    </div>
+                </div>
+                
+                <div class="service-card health">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h5>Pediatrics</h5>
+                    <p>Comprehensive healthcare for children and adolescents</p>
+                    <div class="service-features">
+                        <span>Well-child Visits</span>
+                        <span>Vaccinations</span>
+                        <span>Development Screening</span>
+                    </div>
+                </div>
+                
+                <div class="service-card health">
+                    <div class="service-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h5>Orthopedics</h5>
+                    <p>Expert care for bones, joints, and musculoskeletal system</p>
+                    <div class="service-features">
+                        <span>Joint Replacement</span>
+                        <span>Sports Medicine</span>
+                        <span>Physical Therapy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Health Professionals -->
+        <div class="professionals-section">
+            <h4 class="section-title">Meet Our Medical Experts</h4>
+            <div class="professionals-grid">
+                <div class="professional-card">
+                    <div class="professional-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h5>Dr. Sarah Chen</h5>
+                    <span>Chief of Cardiology</span>
+                    <p>Board-certified cardiologist with 15+ years of experience</p>
+                    <div class="professional-specialties">
+                        <span>Heart Surgery</span>
+                        <span>Preventive Care</span>
+                    </div>
+                </div>
+                
+                <div class="professional-card">
+                    <div class="professional-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h5>Dr. Michael Rodriguez</h5>
+                    <span>Head of Neurology</span>
+                    <p>Specialized in neurodegenerative disorders and stroke care</p>
+                    <div class="professional-specialties">
+                        <span>Stroke Treatment</span>
+                        <span>Brain Health</span>
+                    </div>
+                </div>
+                
+                <div class="professional-card">
+                    <div class="professional-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h5>Dr. Emily Watson</h5>
+                    <span>Pediatric Specialist</span>
+                    <p>Dedicated to children's health and developmental care</p>
+                    <div class="professional-specialties">
+                        <span>Child Development</span>
+                        <span>Vaccination</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Health Technology -->
+        <div class="technology-section">
+            <h4 class="section-title">Advanced Medical Technology</h4>
+            <div class="technology-features">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="tech-content">
+                        <h5>Robotic Surgery</h5>
+                        <p>Minimally invasive procedures with precision robotics</p>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-magnet"></i>
+                    </div>
+                    <div class="tech-content">
+                        <h5>MRI & CT Scanning</h5>
+                        <p>Advanced imaging for accurate diagnosis and treatment</p>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <div class="tech-content">
+                        <h5>Genetic Testing</h5>
+                        <p>Personalized medicine based on genetic profiling</p>
+                    </div>
+                </div>
+                
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <div class="tech-content">
+                        <h5>Telemedicine</h5>
+                        <p>Remote consultations and digital health monitoring</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Patient Resources -->
+        <div class="resources-section health">
+            <div class="resources-content">
+                <div class="patient-resources">
+                    <h5>Patient Resources</h5>
+                    <p>Access your health information and manage your care</p>
+                    <div class="resource-links">
+                        <a href="#" class="resource-link health">
+                            <i class="fas fa-file-medical"></i>
+                            <div>
+                                <strong>Medical Records</strong>
+                                <span>Access your health history</span>
+                            </div>
+                        </a>
+                        <a href="#" class="resource-link health">
+                            <i class="fas fa-pills"></i>
+                            <div>
+                                <strong>Pharmacy Services</strong>
+                                <span>Prescription refills</span>
+                            </div>
+                        </a>
+                        <a href="#" class="resource-link health">
+                            <i class="fas fa-calendar-check"></i>
+                            <div>
+                                <strong>Appointment Scheduling</strong>
+                                <span>Book visits online</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="health-portal">
+                    <h5>Patient Portal</h5>
+                    <p>Secure access to your medical information and services</p>
+                    <div class="portal-features">
+                        <span>View Test Results</span>
+                        <span>Message Your Doctor</span>
+                        <span>Pay Bills Online</span>
+                        <span>Schedule Appointments</span>
+                    </div>
+                    <button class="portal-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Access Patient Portal
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Health Education -->
+        <div class="education-section health">
+            <h4 class="section-title">Health Education & Wellness</h4>
+            <div class="education-resources health">
+                <div class="edu-card">
+                    <div class="edu-icon">
+                        <i class="fas fa-book-medical"></i>
+                    </div>
+                    <div class="edu-content">
+                        <h5>Health Articles</h5>
+                        <p>Evidence-based information on various health conditions</p>
+                        <a href="#" class="edu-link">Read Articles</a>
+                    </div>
+                </div>
+                
+                <div class="edu-card">
+                    <div class="edu-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="edu-content">
+                        <h5>Wellness Webinars</h5>
+                        <p>Live sessions with healthcare professionals</p>
+                        <a href="#" class="edu-link">Join Webinars</a>
+                    </div>
+                </div>
+                
+                <div class="edu-card">
+                    <div class="edu-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="edu-content">
+                        <h5>Nutrition Guides</h5>
+                        <p>Healthy eating plans and dietary recommendations</p>
+                        <a href="#" class="edu-link">Explore Guides</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Bottom -->
+        <div class="footer-bottom health">
+            <div class="health-info">
+                <div class="health-brand-mini">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>MediCare+ Health System</span>
+                </div>
+                <p>Compassionate care, advanced medicine, close to home</p>
+                <div class="accreditation">
+                    <span>JCI Accredited</span>
+                    <span>Top Hospital Award</span>
+                </div>
+            </div>
+            
+            <div class="quick-links health">
+                <div class="link-group">
+                    <h6>Medical Services</h6>
+                    <a href="#">Emergency Care</a>
+                    <a href="#">Primary Care</a>
+                    <a href="#">Specialty Care</a>
+                    <a href="#">Surgical Services</a>
+                </div>
+                
+                <div class="link-group">
+                    <h6>Patient Info</h6>
+                    <a href="#">Billing & Insurance</a>
+                    <a href="#">Medical Records</a>
+                    <a href="#">Visitor Information</a>
+                    <a href="#">Patient Rights</a>
+                </div>
+                
+                <div class="link-group">
+                    <h6>About Us</h6>
+                    <a href="#">Our Story</a>
+                    <a href="#">Leadership</a>
+                    <a href="#">Careers</a>
+                    <a href="#">News & Events</a>
+                </div>
+            </div>
+            
+            <div class="contact-health">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Medical Center Drive</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 (555) MED-CARE</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@medicareplus.com</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legal & Emergency -->
+        <div class="legal-section health">
+            <div class="legal-content">
+                <div class="emergency-notice">
+                    <div class="emergency-warning">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>In case of emergency, call 911 immediately</span>
+                    </div>
+                    <p>Do not use this website for medical emergencies. For life-threatening conditions, call emergency services right away.</p>
+                </div>
+                
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Notice of Privacy</a>
+                    <a href="#">Non-Discrimination</a>
+                    <a href="#">Website Accessibility</a>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2023 MediCare+ Health System. Providing compassionate healthcare to our community.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.health-footer {
+    position: relative;
+    background: #0f172a;
+    color: white;
+    overflow: hidden;
+}
+
+.gradient-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        #dc2626 0%,
+        #ea580c 25%,
+        #d97706 50%,
+        #ca8a04 75%,
+        #eab308 100%
+    );
+    background-size: 400% 400%;
+    animation: healthGradient 12s ease infinite;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(15px);
+}
+
+.medical-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 30% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(234, 88, 12, 0.1) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 48%, rgba(220, 38, 38, 0.05) 50%, transparent 52%),
+        linear-gradient(135deg, transparent 48%, rgba(234, 88, 12, 0.05) 50%, transparent 52%);
+    background-size: 80px 80px;
+    opacity: 0.3;
+}
+
+@keyframes healthGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.footer-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 2rem 3rem;
+}
+
+/* Health Header */
+.health-header {
+    margin-bottom: 5rem;
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.health-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-showcase {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.brand-showcase i {
+    font-size: 4rem;
+    color: #dc2626;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.brand-text h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.health-tagline {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.health-mission {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.emergency-indicators {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.emergency-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.emergency-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(220, 38, 38, 0.5);
+    color: white;
+}
+
+.emergency-item i {
+    color: #dc2626;
+}
+
+.health-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.health-stat {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.health-stat:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px);
+    border-color: rgba(220, 38, 38, 0.5);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #dc2626, #ea580c);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.emergency-cta {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.emergency-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.emergency-cta:hover::before {
+    left: 100%;
+}
+
+.emergency-alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    padding: 1rem 2rem;
+    background: rgba(220, 38, 38, 0.2);
+    border: 2px solid #dc2626;
+    border-radius: 50px;
+    color: #fca5a5;
+    font-weight: 700;
+    font-size: 1.1rem;
+    animation: pulseEmergency 2s infinite;
+}
+
+@keyframes pulseEmergency {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.emergency-alert i {
+    color: #dc2626;
+}
+
+.cta-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.health-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2.5rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.health-btn.emergency {
+    background: linear-gradient(135deg, #dc2626, #ea580c);
+    color: white;
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+    animation: shake 2s infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+.health-btn.emergency:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(220, 38, 38, 0.6);
+}
+
+.health-btn.urgent {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.health-btn.urgent:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Medical Services */
+.services-section.health {
+    margin-bottom: 5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.services-grid.health {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card.health {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.service-card.health:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-10px);
+    border-color: rgba(220, 38, 38, 0.5);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #dc2626, #ea580c);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.service-card.health:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.service-card.health h5 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.service-card.health p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.service-features span {
+    background: rgba(220, 38, 38, 0.2);
+    color: #fca5a5;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+/* Health Professionals */
+.professionals-section {
+    margin-bottom: 5rem;
+}
+
+.professionals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.professional-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.professional-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-8px);
+    border-color: rgba(220, 38, 38, 0.5);
+}
+
+.professional-avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #dc2626, #ea580c);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+}
+
+.professional-card h5 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.professional-card span {
+    color: #ea580c;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.professional-card p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.professional-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.professional-specialties span {
+    background: rgba(220, 38, 38, 0.2);
+    color: #fca5a5;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+/* Health Technology */
+.technology-section {
+    margin-bottom: 5rem;
+}
+
+.technology-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.tech-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.tech-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(10px);
+    border-color: rgba(220, 38, 38, 0.5);
+}
+
+.tech-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #dc2626, #ea580c);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.tech-content h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: white;
+}
+
+.tech-content p {
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+/* Patient Resources */
+.resources-section.health {
+    margin-bottom: 5rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.resources-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.patient-resources h5 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.patient-resources p {
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.resource-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.resource-link.health {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    text-decoration: none;
+    color: #cbd5e1;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.resource-link.health:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    border-color: rgba(220, 38, 38, 0.3);
+    color: white;
+}
+
+.resource-link.health i {
+    font-size: 1.8rem;
+    color: #dc2626;
+    width: 40px;
+    text-align: center;
+}
+
+.resource-link.health strong {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: white;
+}
+
+.resource-link.health span {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.health-portal {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.health-portal h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: white;
+}
+
+.health-portal p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.portal-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.portal-features span {
+    background: rgba(220, 38, 38, 0.2);
+    color: #fca5a5;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    text-align: center;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.portal-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2rem;
+    background: linear-gradient(135deg, #dc2626, #ea580c);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
+}
+
+.portal-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+}
+
+/* Health Education */
+.education-section.health {
+    margin-bottom: 5rem;
+}
+
+.education-resources.health {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.edu-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.edu-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(220, 38, 38, 0.5);
+}
+
+.edu-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #dc2626, #ea580c);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.edu-content h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: white;
+}
+
+.edu-content p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.edu-link {
+    color: #dc2626;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.edu-link:hover {
+    color: #ea580c;
+}
+
+/* Footer Bottom */
+.footer-bottom.health {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.health-brand-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.health-brand-mini i {
+    color: #dc2626;
+}
+
+.health-info p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.accreditation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.accreditation span {
+    color: #fca5a5;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.quick-links.health {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.link-group h6 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.link-group a {
+    display: block;
+    color: #94a3b8;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.link-group a:hover {
+    color: white;
+}
+
+.contact-health {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.contact-item i {
+    width: 20px;
+    text-align: center;
+    color: #dc2626;
+}
+
+/* Legal Section */
+.legal-section.health {
+    margin-bottom: 2rem;
+}
+
+.legal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.emergency-notice {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(220, 38, 38, 0.1);
+    border: 2px solid #dc2626;
+    border-radius: 12px;
+}
+
+.emergency-warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    color: #fca5a5;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.emergency-warning i {
+    color: #dc2626;
+}
+
+.emergency-notice p {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.legal-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: white;
+}
+
+.copyright p {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .header-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .resources-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .footer-bottom.health {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 4rem 1.5rem 2rem;
+    }
+    
+    .brand-showcase {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .brand-text h2 {
+        font-size: 2.8rem;
+    }
+    
+    .emergency-indicators {
+        justify-content: center;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .portal-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .quick-links.health {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-text h2 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .emergency-cta {
+        padding: 2rem 1.5rem;
+    }
+    
+    .cta-content h3 {
+        font-size: 2rem;
+    }
+}`,
+    js: `// Gradient Health Footer Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate health statistics
+    function animateHealthCounter(element, target) {
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = target === 98 ? Math.floor(current) + '%' : Math.floor(current) + (target === 1000 ? '+' : '');
+        }, 30);
+    }
+    
+    // Start counting when footer is in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = document.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-count'));
+                    animateHealthCounter(stat, target);
+                });
+                observer.disconnect();
+            }
+        });
+    });
+    
+    const healthStats = document.querySelector('.health-stats');
+    if (healthStats) {
+        observer.observe(healthStats);
+    }
+    
+    // Health button interactions
+    const healthButtons = document.querySelectorAll('.health-btn');
+    healthButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const isEmergency = this.classList.contains('emergency');
+            
+            // Add click animation
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+            
+            if (isEmergency) {
+                // Emergency call action
+                setTimeout(() => {
+                    alert('EMERGENCY: Calling 911... Please stay on the line for emergency services.');
+                }, 300);
+            } else {
+                // Urgent care action
+                setTimeout(() => {
+                    alert('Scheduling Urgent Care Visit... Our team will assist you immediately.');
+                }, 300);
+            }
+        });
+    });
+    
+    // Emergency indicator hover effects
+    const emergencyItems = document.querySelectorAll('.emergency-item');
+    emergencyItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.3)';
+            icon.style.color = '#fca5a5';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1)';
+            icon.style.color = '';
+        });
+    });
+    
+    // Service card interactions
+    const serviceCards = document.querySelectorAll('.service-card.health');
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.service-icon');
+            icon.style.transform = 'scale(1.15) rotate(8deg)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.service-icon');
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    });
+    
+    // Professional card animations
+    const professionalCards = document.querySelectorAll('.professional-card');
+    professionalCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const avatar = this.querySelector('.professional-avatar');
+            avatar.style.transform = 'scale(1.1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const avatar = this.querySelector('.professional-avatar');
+            avatar.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Tech item hover effects
+    const techItems = document.querySelectorAll('.tech-item');
+    techItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.tech-icon');
+            icon.style.transform = 'scale(1.1)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.tech-icon');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Resource link interactions
+    const resourceLinks = document.querySelectorAll('.resource-link.health');
+    resourceLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.2)';
+            icon.style.color = '#fca5a5';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1)';
+            icon.style.color = '';
+        });
+    });
+    
+    // Portal button interaction
+    const portalBtn = document.querySelector('.portal-btn');
+    if (portalBtn) {
+        portalBtn.addEventListener('click', function() {
+            // Add loading state
+            const originalHTML = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                alert('Accessing Patient Portal... You will be redirected to the secure login page.');
+                this.innerHTML = originalHTML;
+                this.disabled = false;
+            }, 2000);
+        });
+    }
+    
+    // Education card animations
+    const eduCards = document.querySelectorAll('.edu-card');
+    eduCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.edu-icon');
+            icon.style.transform = 'scale(1.1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.edu-icon');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Health stat hover effects
+    const healthStats = document.querySelectorAll('.health-stat');
+    healthStats.forEach(stat => {
+        stat.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.stat-icon');
+            icon.style.transform = 'scale(1.1) rotate(5deg)';
+        });
+        
+        stat.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.stat-icon');
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    });
+    
+    // Medical pattern animation
+    const medicalPattern = document.querySelector('.medical-pattern');
+    if (medicalPattern) {
+        let position = 0;
+        setInterval(() => {
+            position = (position + 1) % 80;
+            medicalPattern.style.backgroundPosition = \`\${position}px \${position}px\`;
+        }, 100);
+    }
+    
+    // Emergency alert continuous animation
+    const emergencyAlert = document.querySelector('.emergency-alert');
+    if (emergencyAlert) {
+        setInterval(() => {
+            emergencyAlert.style.boxShadow = '0 0 20px rgba(220, 38, 38, 0.5)';
+            setTimeout(() => {
+                emergencyAlert.style.boxShadow = 'none';
+            }, 500);
+        }, 2000);
+    }
+});`
+}
 
 
 

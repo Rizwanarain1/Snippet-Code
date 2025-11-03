@@ -109,250 +109,6 @@
     overflow: hidden;
 }
 
-/* Striped Preview */
-.striped-preview tr:nth-child(even) {
-    background-color: #f8fafc;
-}
-
-.striped-preview th {
-    background: #7c3aed;
-    color: white;
-}
-
-/* Dark Preview */
-.dark-preview {
-    background: #1e293b !important;
-}
-
-.dark-preview .preview-table {
-    background: #1e293b;
-    color: #e2e8f0;
-}
-
-.dark-preview .preview-table th {
-    background: #0f172a;
-    color: #f8fafc;
-    border-bottom: 1px solid #334155;
-}
-
-.dark-preview .preview-table td {
-    color: #e2e8f0;
-    border-bottom: 1px solid #334155;
-}
-
-.dark-preview .preview-table tr:hover {
-    background: #334155;
-}
-
-/* Minimal Preview */
-.minimal-preview {
-    border: 1px solid #e2e8f0;
-    background: white;
-}
-
-.minimal-preview th {
-    background: white;
-    border-bottom: 2px solid #e2e8f0;
-    font-weight: 600;
-}
-
-.minimal-preview td {
-    border-bottom: 1px solid #f8fafc;
-}
-
-/* Colorful Preview */
-.colorful-preview {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.colorful-preview .preview-table th {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: none;
-}
-
-.colorful-preview .preview-table td {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
-}
-
-.colorful-preview .preview-table tr:hover td {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-/* Elegant Preview */
-.elegant-preview {
-    background: white;
-}
-
-.elegant-preview .preview-table th {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    border: none;
-}
-
-.elegant-preview .preview-table {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Card Preview */
-.card-preview .preview-table {
-    border-spacing: 0 8px;
-    border-collapse: separate;
-}
-
-.card-preview .preview-table tbody tr {
-    background: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-.card-preview .preview-table td {
-    border: none;
-    padding: 0.8rem;
-}
-
-.card-preview .preview-table td:first-child {
-    border-radius: 8px 0 0 8px;
-}
-
-.card-preview .preview-table td:last-child {
-    border-radius: 0 8px 8px 0;
-}
-
-/* Gradient Preview */
-.gradient-preview {
-    background: white;
-}
-
-.gradient-preview .preview-table th {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-    color: white;
-}
-
-/* Status Styles */
-.status {
-    padding: 0.2rem 0.6rem;
-    border-radius: 12px;
-    font-size: 0.65rem;
-    font-weight: 500;
-    display: inline-block;
-}
-
-.status.active {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.status.inactive {
-    background: #fee2e2;
-    color: #991b1b;
-}
-
-/* Priority Styles */
-.priority {
-    padding: 0.2rem 0.6rem;
-    border-radius: 12px;
-    font-size: 0.65rem;
-    font-weight: 500;
-    display: inline-block;
-}
-
-.priority.high {
-    background: #fef2f2;
-    color: #dc2626;
-}
-
-.priority.medium {
-    background: #fffbeb;
-    color: #d97706;
-}
-
-.priority.low {
-    background: #f0fdf4;
-    color: #16a34a;
-}
-
-/* Trend Styles */
-.trend-up {
-    color: #10b981;
-}
-
-.trend-down {
-    color: #ef4444;
-}
-
-/* Performance Styles */
-.performance {
-    padding: 0.2rem 0.6rem;
-    border-radius: 12px;
-    font-size: 0.65rem;
-    font-weight: 500;
-    display: inline-block;
-    text-align: center;
-}
-
-.performance.excellent {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.performance.good {
-    background: #fef3c7;
-    color: #92400e;
-}
-
-/* Badge Styles */
-.badge {
-    padding: 0.2rem 0.6rem;
-    border-radius: 12px;
-    font-size: 0.65rem;
-    font-weight: 500;
-    display: inline-block;
-}
-
-.badge.live {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.badge.beta {
-    background: #fef3c7;
-    color: #92400e;
-}
-
-.badge.development {
-    background: #e0e7ff;
-    color: #3730a3;
-}
-
-/* Progress Bar Styles */
-.progress-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.progress-bar {
-    width: 50px;
-    height: 6px;
-    background: #e2e8f0;
-    border-radius: 3px;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.dark-preview .progress-bar {
-    background: #334155;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #7c3aed, #ec4899);
-    border-radius: 3px;
-}
-
 .template-info {
     padding: 1.5rem;
     flex-grow: 1;
@@ -771,6 +527,7 @@
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    
 }
 
 .copy-btn::before {
@@ -1041,16 +798,6 @@
         padding: 0.3rem 0.4rem;
     }
     
-    .status, .priority, .badge, .performance {
-        font-size: 0.6rem;
-        padding: 0.15rem 0.4rem;
-    }
-    
-    .progress-bar {
-        width: 40px;
-        height: 5px;
-    }
-    
     .template-info {
         padding: 1rem;
     }
@@ -1066,6 +813,7 @@
     .template-actions .btn {
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
+    
     }
     
     /* Modal Small Phones */
@@ -1183,6 +931,7 @@
     .template-actions .btn {
         padding: 0.45rem 0.8rem;
         font-size: 0.75rem;
+       
     }
 }
 
