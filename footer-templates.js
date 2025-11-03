@@ -11790,6 +11790,4762 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });`
 },
+// ====================================================================
+// TEMPLATE 55: SOCIAL AGENCY
+// Features: Professional agency with business social platforms
+// Category: Social
+// ====================================================================
+footer55: {
+    name: "Social Agency",
+    category: "social",
+    html: `<!-- Social Agency Footer -->
+<footer class="agency-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="agency-info">
+                <div class="agency-logo">
+                    <h2>SocialAgency</h2>
+                    <span class="agency-tagline">Digital Marketing Excellence</span>
+                </div>
+                <div class="agency-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li>Social Media Marketing</li>
+                        <li>Content Strategy</li>
+                        <li>Brand Development</li>
+                        <li>Digital Advertising</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="agency-contact">
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@socialagency.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Business Ave, Suite 500</span>
+                    </div>
+                </div>
+                <div class="business-social">
+                    <h4>Connect Professionally</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="social-link facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="social-link google">
+                            <i class="fab fa-google"></i>
+                            <span>Google Business</span>
+                        </a>
+                        <a href="#" class="social-link twitter">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 SocialAgency. Professional Digital Marketing Solutions.</p>
+            <div class="agency-badges">
+                <span class="badge">Google Partner</span>
+                <span class="badge">Meta Certified</span>
+                <span class="badge">Award Winning</span>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.agency-footer {
+    background: linear-gradient(135deg, #1e40af, #3730a3);
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.agency-logo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.agency-tagline {
+    color: #c7d2fe;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.agency-services h4 {
+    margin: 2rem 0 1rem 0;
+    font-size: 1.2rem;
+    color: #e0e7ff;
+}
+
+.agency-services ul {
+    list-style: none;
+}
+
+.agency-services li {
+    margin-bottom: 0.5rem;
+    color: #c7d2fe;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.agency-services li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #60a5fa;
+}
+
+.contact-methods {
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: #c7d2fe;
+}
+
+.contact-item i {
+    width: 20px;
+    text-align: center;
+    color: #60a5fa;
+}
+
+.business-social h4 {
+    margin-bottom: 1rem;
+    color: #e0e7ff;
+    font-size: 1.2rem;
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.social-link.linkedin:hover {
+    background: #0077b5;
+}
+
+.social-link.facebook:hover {
+    background: #1877f2;
+}
+
+.social-link.google:hover {
+    background: #db4437;
+}
+
+.social-link.twitter:hover {
+    background: #1da1f2;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-bottom p {
+    color: #c7d2fe;
+    font-size: 0.9rem;
+}
+
+.agency-badges {
+    display: flex;
+    gap: 1rem;
+}
+
+.badge {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}`,
+    js: `// Agency social links interaction
+document.addEventListener('DOMContentLoaded', function() {
+    const socialLinks = document.querySelectorAll('.social-link');
+    
+    socialLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.02)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 56: E-COMMERCE SOCIAL
+// Features: E-commerce focused with trust badges and shopping platforms
+// Category: Social
+// ====================================================================
+footer56: {
+    name: "E-commerce Social",
+    category: "social",
+    html: `<!-- E-commerce Social Footer -->
+<footer class="ecommerce-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="store-info">
+                <div class="store-brand">
+                    <i class="fas fa-shopping-bag"></i>
+                    <div class="brand-text">
+                        <h2>ShopSocial</h2>
+                        <p>Trending Fashion & Lifestyle</p>
+                    </div>
+                </div>
+                <div class="trust-badges">
+                    <div class="trust-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure Payment</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-truck"></i>
+                        <span>Free Shipping</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-undo"></i>
+                        <span>Easy Returns</span>
+                    </div>
+                </div>
+            </div>
+            <div class="shopping-social">
+                <div class="customer-reviews">
+                    <h4>Customer Love</h4>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-text">4.9/5 from 2,847 reviews</span>
+                    </div>
+                </div>
+                <div class="social-shopping">
+                    <h4>Follow Our Style</h4>
+                    <div class="shopping-platforms">
+                        <a href="#" class="platform-link instagram">
+                            <i class="fab fa-instagram"></i>
+                            <div class="platform-info">
+                                <strong>Instagram</strong>
+                                <span>Daily Outfits</span>
+                            </div>
+                        </a>
+                        <a href="#" class="platform-link pinterest">
+                            <i class="fab fa-pinterest"></i>
+                            <div class="platform-info">
+                                <strong>Pinterest</strong>
+                                <span>Style Ideas</span>
+                            </div>
+                        </a>
+                        <a href="#" class="platform-link tiktok">
+                            <i class="fab fa-tiktok"></i>
+                            <div class="platform-info">
+                                <strong>TikTok</strong>
+                                <span>Try On Hauls</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="newsletter-signup">
+                <h4>Get 15% Off Your First Order</h4>
+                <div class="signup-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+            <div class="store-links">
+                <a href="#">Shipping Policy</a>
+                <a href="#">Returns</a>
+                <a href="#">Size Guide</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.ecommerce-footer {
+    background: white;
+    border-top: 3px solid #dc2626;
+    padding: 4rem 0 2rem;
+    color: #1f2937;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.store-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.store-brand i {
+    font-size: 3rem;
+    color: #dc2626;
+}
+
+.brand-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+.brand-text p {
+    color: #6b7280;
+    font-size: 1.1rem;
+}
+
+.trust-badges {
+    display: flex;
+    gap: 2rem;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.trust-item i {
+    color: #16a34a;
+    font-size: 1.2rem;
+}
+
+.trust-item span {
+    font-weight: 500;
+    color: #374151;
+}
+
+.customer-reviews {
+    margin-bottom: 2rem;
+}
+
+.customer-reviews h4 {
+    margin-bottom: 1rem;
+    color: #1f2937;
+    font-size: 1.3rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stars {
+    color: #f59e0b;
+    font-size: 1.2rem;
+}
+
+.rating-text {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.social-shopping h4 {
+    margin-bottom: 1rem;
+    color: #1f2937;
+    font-size: 1.3rem;
+}
+
+.shopping-platforms {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.platform-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.platform-link.instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    color: white;
+}
+
+.platform-link.pinterest {
+    background: #e60023;
+    color: white;
+}
+
+.platform-link.tiktok {
+    background: #000000;
+    color: white;
+}
+
+.platform-link:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.platform-link i {
+    font-size: 1.5rem;
+    width: 30px;
+    text-align: center;
+}
+
+.platform-info strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.platform-info span {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.newsletter-signup h4 {
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.signup-form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 400px;
+}
+
+.signup-form input {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.signup-form button {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.signup-form button:hover {
+    background: #b91c1c;
+}
+
+.store-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.store-links a {
+    color: #6b7280;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.store-links a:hover {
+    color: #dc2626;
+}`,
+    js: `// E-commerce newsletter and platform interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Newsletter form
+    const signupForm = document.querySelector('.signup-form');
+    if (signupForm) {
+        signupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                alert('Thank you for subscribing! Check your email for 15% off coupon.');
+                this.reset();
+            }
+        });
+    }
+    
+    // Platform link animations
+    const platformLinks = document.querySelectorAll('.platform-link');
+    platformLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(10px) scale(1.02)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0) scale(1)';
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 57: SAAS SOCIAL
+// Features: Software company with developer and product platforms
+// Category: Social
+// ====================================================================
+footer57: {
+    name: "SaaS Social",
+    category: "social",
+    html: `<!-- SaaS Social Footer -->
+<footer class="saas-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="saas-header">
+                <div class="saas-brand">
+                    <i class="fas fa-cloud"></i>
+                    <div class="brand-info">
+                        <h2>CloudSuite</h2>
+                        <p>Enterprise Cloud Solutions</p>
+                    </div>
+                </div>
+                <div class="saas-stats">
+                    <div class="stat">
+                        <span class="number">10,000+</span>
+                        <span class="label">Active Users</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">99.9%</span>
+                        <span class="label">Uptime</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">24/7</span>
+                        <span class="label">Support</span>
+                    </div>
+                </div>
+            </div>
+            <div class="developer-community">
+                <div class="community-section">
+                    <h4>Developer Resources</h4>
+                    <div class="resource-links">
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-book"></i>
+                            <span>Documentation</span>
+                        </a>
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-code"></i>
+                            <span>API Reference</span>
+                        </a>
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Tutorials</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="tech-social">
+                    <h4>Join Our Tech Community</h4>
+                    <div class="tech-platforms">
+                        <a href="#" class="tech-link github">
+                            <i class="fab fa-github"></i>
+                            <div class="platform-details">
+                                <strong>GitHub</strong>
+                                <span>Open Source Projects</span>
+                            </div>
+                        </a>
+                        <a href="#" class="tech-link twitter">
+                            <i class="fab fa-twitter"></i>
+                            <div class="platform-details">
+                                <strong>Twitter</strong>
+                                <span>Tech Updates</span>
+                            </div>
+                        </a>
+                        <a href="#" class="tech-link producthunt">
+                            <i class="fab fa-product-hunt"></i>
+                            <div class="platform-details">
+                                <strong>Product Hunt</strong>
+                                <span>Latest Launches</span>
+                            </div>
+                        </a>
+                        <a href="#" class="tech-link discord">
+                            <i class="fab fa-discord"></i>
+                            <div class="platform-details">
+                                <strong>Discord</strong>
+                                <span>Developer Chat</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="cta-section">
+                <h3>Ready to Transform Your Business?</h3>
+                <div class="cta-buttons">
+                    <button class="cta-btn primary">Start Free Trial</button>
+                    <button class="cta-btn secondary">Schedule Demo</button>
+                </div>
+            </div>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Security</a>
+                <a href="#">Compliance</a>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.saas-footer {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.saas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #334155;
+}
+
+.saas-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.saas-brand i {
+    font-size: 3rem;
+    color: #60a5fa;
+}
+
+.brand-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.brand-info p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+}
+
+.saas-stats {
+    display: flex;
+    gap: 3rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #60a5fa;
+    margin-bottom: 0.5rem;
+}
+
+.label {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.developer-community {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.community-section h4 {
+    margin-bottom: 1.5rem;
+    color: #e2e8f0;
+    font-size: 1.3rem;
+}
+
+.resource-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.resource-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(96, 165, 250, 0.1);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #cbd5e1;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+.resource-link:hover {
+    background: rgba(96, 165, 250, 0.2);
+    color: white;
+    transform: translateX(5px);
+}
+
+.resource-link i {
+    width: 20px;
+    text-align: center;
+    color: #60a5fa;
+}
+
+.tech-social h4 {
+    margin-bottom: 1.5rem;
+    color: #e2e8f0;
+    font-size: 1.3rem;
+}
+
+.tech-platforms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.tech-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.tech-link.github {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.tech-link.twitter {
+    background: rgba(29, 161, 242, 0.1);
+    color: white;
+}
+
+.tech-link.producthunt {
+    background: rgba(218, 85, 47, 0.1);
+    color: white;
+}
+
+.tech-link.discord {
+    background: rgba(88, 101, 242, 0.1);
+    color: white;
+}
+
+.tech-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.tech-link.github:hover {
+    background: #333;
+    border-color: #333;
+}
+
+.tech-link.twitter:hover {
+    background: #1da1f2;
+    border-color: #1da1f2;
+}
+
+.tech-link.producthunt:hover {
+    background: #da552f;
+    border-color: #da552f;
+}
+
+.tech-link.discord:hover {
+    background: #5865f2;
+    border-color: #5865f2;
+}
+
+.tech-link i {
+    font-size: 1.5rem;
+    width: 30px;
+    text-align: center;
+}
+
+.platform-details strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.platform-details span {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-bottom {
+    padding-top: 3rem;
+    border-top: 1px solid #334155;
+}
+
+.cta-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cta-section h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #e2e8f0;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.cta-btn {
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-btn.primary {
+    background: #60a5fa;
+    color: #0f172a;
+}
+
+.cta-btn.primary:hover {
+    background: #3b82f6;
+    transform: translateY(-2px);
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    color: #60a5fa;
+    border: 2px solid #60a5fa;
+}
+
+.cta-btn.secondary:hover {
+    background: #60a5fa;
+    color: #0f172a;
+}
+
+.legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.legal-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.legal-links a:hover {
+    color: #60a5fa;
+}`,
+    js: `// SaaS CTA buttons and resource links
+document.addEventListener('DOMContentLoaded', function() {
+    // CTA buttons
+    const ctaButtons = document.querySelectorAll('.cta-btn');
+    ctaButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const isPrimary = this.classList.contains('primary');
+            if (isPrimary) {
+                alert('Starting your 14-day free trial...');
+            } else {
+                alert('Opening demo scheduler...');
+            }
+        });
+    });
+    
+    // Resource links
+    const resourceLinks = document.querySelectorAll('.resource-link');
+    resourceLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(8px)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
+        });
+    });
+    
+    // Tech platform animations
+    const techLinks = document.querySelectorAll('.tech-link');
+    techLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 58: NEWS MEDIA SOCIAL
+// Features: News website with breaking news and media platforms
+// Category: Social
+// ====================================================================
+footer58: {
+    name: "News Media Social",
+    category: "social",
+    html: `<!-- News Media Social Footer -->
+<footer class="news-footer">
+    <div class="footer-container">
+        <div class="breaking-alert">
+            <div class="alert-content">
+                <span class="breaking-badge">
+                    <i class="fas fa-bolt"></i>
+                    BREAKING
+                </span>
+                <span class="alert-text">Major Tech Conference Announces Groundbreaking AI Innovations</span>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+        </div>
+        <div class="footer-content">
+            <div class="news-brand">
+                <div class="brand-section">
+                    <h2>
+                        <i class="fas fa-newspaper"></i>
+                        NewsHub
+                    </h2>
+                    <p class="brand-tagline">Trusted News. Global Coverage.</p>
+                    <div class="publication-info">
+                        <span class="edition">Evening Edition</span>
+                        <span class="date" id="currentDate"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="news-sections">
+                <div class="section">
+                    <h4>Categories</h4>
+                    <div class="section-links">
+                        <a href="#">Politics</a>
+                        <a href="#">Technology</a>
+                        <a href="#">Business</a>
+                        <a href="#">Entertainment</a>
+                        <a href="#">Sports</a>
+                        <a href="#">Health</a>
+                    </div>
+                </div>
+                <div class="section">
+                    <h4>Follow Live</h4>
+                    <div class="live-social">
+                        <a href="#" class="social-platform twitter">
+                            <i class="fab fa-twitter"></i>
+                            <div class="platform-info">
+                                <strong>Twitter</strong>
+                                <span>Live Updates</span>
+                            </div>
+                            <span class="live-indicator">LIVE</span>
+                        </a>
+                        <a href="#" class="social-platform youtube">
+                            <i class="fab fa-youtube"></i>
+                            <div class="platform-info">
+                                <strong>YouTube</strong>
+                                <span>Live Streams</span>
+                            </div>
+                            <span class="live-indicator">LIVE</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="newsletter-subscription">
+                <h4>Stay Informed</h4>
+                <p>Get daily news digest delivered to your inbox</p>
+                <div class="subscription-form">
+                    <input type="email" placeholder="Your email address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+            <div class="media-partners">
+                <h4>Media Partners</h4>
+                <div class="partners-grid">
+                    <span class="partner">Associated Press</span>
+                    <span class="partner">Reuters</span>
+                    <span class="partner">Bloomberg</span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-section">
+            <p>&copy; 2023 NewsHub Media Group. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Do Not Sell My Info</a>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.news-footer {
+    background: #dc2626;
+    color: white;
+    padding-top: 0;
+}
+
+.breaking-alert {
+    background: #1e293b;
+    padding: 1rem 0;
+    border-bottom: 2px solid #fbbf24;
+}
+
+.alert-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.breaking-badge {
+    background: #fbbf24;
+    color: #1e293b;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.alert-text {
+    flex: 1;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.read-more {
+    color: #fbbf24;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: white;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.news-brand h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.brand-tagline {
+    color: #fecaca;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.publication-info {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.edition, .date {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.news-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.section h4 {
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.2rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.section-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+}
+
+.section-links a {
+    color: #fecaca;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.section-links a:hover {
+    color: white;
+}
+
+.live-social {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-platform {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-platform.twitter {
+    background: rgba(29, 161, 242, 0.2);
+    color: white;
+}
+
+.social-platform.youtube {
+    background: rgba(255, 0, 0, 0.2);
+    color: white;
+}
+
+.social-platform:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.social-platform.twitter:hover {
+    background: #1da1f2;
+}
+
+.social-platform.youtube:hover {
+    background: #ff0000;
+}
+
+.social-platform i {
+    font-size: 1.5rem;
+    width: 30px;
+    text-align: center;
+}
+
+.platform-info strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.platform-info span {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.live-indicator {
+    background: #ef4444;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-subscription h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.newsletter-subscription p {
+    color: #fecaca;
+    margin-bottom: 1.5rem;
+}
+
+.subscription-form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 400px;
+}
+
+.subscription-form input {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+}
+
+.subscription-form input::placeholder {
+    color: #fecaca;
+}
+
+.subscription-form button {
+    background: #1e293b;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.subscription-form button:hover {
+    background: #0f172a;
+}
+
+.media-partners h4 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.partners-grid {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.partner {
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.copyright-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.copyright-section p {
+    color: #fecaca;
+    font-size: 0.9rem;
+}
+
+.legal-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.legal-links a {
+    color: #fecaca;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.legal-links a:hover {
+    color: white;
+}`,
+    js: `// News media functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Set current date
+    const currentDate = new Date();
+    const dateElement = document.getElementById('currentDate');
+    if (dateElement) {
+        const options = { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            weekday: 'long'
+        };
+        dateElement.textContent = currentDate.toLocaleDateString('en-US', options);
+    }
+    
+    // Breaking news alert
+    const readMoreLink = document.querySelector('.read-more');
+    if (readMoreLink) {
+        readMoreLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Redirecting to breaking news article...');
+        });
+    }
+    
+    // Newsletter subscription
+    const subscriptionForm = document.querySelector('.subscription-form');
+    if (subscriptionForm) {
+        subscriptionForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                alert('Thank you for subscribing to NewsHub Daily Digest!');
+                this.reset();
+            }
+        });
+    }
+    
+    // Live social platforms
+    const socialPlatforms = document.querySelectorAll('.social-platform');
+    socialPlatforms.forEach(platform => {
+        platform.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(12px)';
+        });
+        
+        platform.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 59: EDUCATION SOCIAL
+// Features: Educational platform with learning-focused social integration
+// Category: Social
+// ====================================================================
+footer59: {
+    name: "Education Social",
+    category: "social",
+    html: `<!-- Education Social Footer -->
+<footer class="education-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="edu-brand">
+                <div class="brand-main">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div class="brand-text">
+                        <h2>EduLearn</h2>
+                        <p class="tagline">Learn Without Limits</p>
+                    </div>
+                </div>
+                <div class="edu-stats">
+                    <div class="stat">
+                        <span class="number">50K+</span>
+                        <span class="label">Students</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">500+</span>
+                        <span class="label">Courses</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">95%</span>
+                        <span class="label">Success Rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="learning-community">
+                <div class="community-section">
+                    <h4>Learning Platforms</h4>
+                    <div class="platform-grid">
+                        <a href="#" class="platform-card youtube">
+                            <i class="fab fa-youtube"></i>
+                            <div class="platform-content">
+                                <strong>YouTube</strong>
+                                <span>Video Lectures</span>
+                                <small>2K+ Videos</small>
+                            </div>
+                        </a>
+                        <a href="#" class="platform-card linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <div class="platform-content">
+                                <strong>LinkedIn</strong>
+                                <span>Professional Network</span>
+                                <small>Career Guidance</small>
+                            </div>
+                        </a>
+                        <a href="#" class="platform-card discord">
+                            <i class="fab fa-discord"></i>
+                            <div class="platform-content">
+                                <strong>Discord</strong>
+                                <span>Study Groups</span>
+                                <small>Live Q&A</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="quick-links-section">
+                    <h4>Quick Links</h4>
+                    <div class="links-grid">
+                        <a href="#" class="edu-link">
+                            <i class="fas fa-book"></i>
+                            <span>All Courses</span>
+                        </a>
+                        <a href="#" class="edu-link">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <span>Instructors</span>
+                        </a>
+                        <a href="#" class="edu-link">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certifications</span>
+                        </a>
+                        <a href="#" class="edu-link">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Scholarships</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="enrollment-cta">
+            <div class="cta-content">
+                <h3>Start Your Learning Journey Today</h3>
+                <p>Join thousands of students achieving their goals</p>
+                <div class="cta-actions">
+                    <button class="cta-btn primary">
+                        <i class="fas fa-play-circle"></i>
+                        Explore Courses
+                    </button>
+                    <button class="cta-btn secondary">
+                        <i class="fas fa-calendar"></i>
+                        Free Workshop
+                    </button>
+                </div>
+            </div>
+            <div class="student-testimonial">
+                <div class="testimonial-content">
+                    <p>"EduLearn transformed my career. The community support is incredible!"</p>
+                    <div class="student-info">
+                        <strong>Sarah Johnson</strong>
+                        <span>Full Stack Developer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="contact-info">
+                <h4>Get in Touch</h4>
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>support@edulearn.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Fri 9AM-6PM EST</span>
+                    </div>
+                </div>
+            </div>
+            <div class="social-learning">
+                <h4>Connect & Learn</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 EduLearn. Empowering minds worldwide.</p>
+            <div class="legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Accessibility</a>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.education-footer {
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.edu-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.brand-main {
+    margin-bottom: 2rem;
+}
+
+.brand-main i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.brand-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.tagline {
+    color: #c4b5fd;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.edu-stats {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.label {
+    font-size: 0.8rem;
+    color: #c4b5fd;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.learning-community {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.community-section h4,
+.quick-links-section h4 {
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.platform-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.platform-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.platform-card.youtube {
+    background: rgba(255, 0, 0, 0.2);
+    color: white;
+}
+
+.platform-card.linkedin {
+    background: rgba(0, 119, 181, 0.2);
+    color: white;
+}
+
+.platform-card.discord {
+    background: rgba(88, 101, 242, 0.2);
+    color: white;
+}
+
+.platform-card:hover {
+    transform: translateX(10px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.platform-card.youtube:hover {
+    background: #ff0000;
+}
+
+.platform-card.linkedin:hover {
+    background: #0077b5;
+}
+
+.platform-card.discord:hover {
+    background: #5865f2;
+}
+
+.platform-card i {
+    font-size: 2rem;
+    width: 40px;
+    text-align: center;
+}
+
+.platform-content strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.platform-content span {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.platform-content small {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.edu-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.edu-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.edu-link i {
+    width: 20px;
+    text-align: center;
+    color: #c4b5fd;
+}
+
+.enrollment-cta {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 2rem;
+}
+
+.cta-content h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cta-content p {
+    color: #c4b5fd;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-btn.primary {
+    background: white;
+    color: #7c3aed;
+}
+
+.cta-btn.primary:hover {
+    background: #f8fafc;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-btn.secondary:hover {
+    background: white;
+    color: #7c3aed;
+}
+
+.student-testimonial {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #c4b5fd;
+}
+
+.testimonial-content p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.student-info strong {
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.student-info span {
+    font-size: 0.9rem;
+    color: #c4b5fd;
+}
+
+.footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info h4,
+.social-learning h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #c4b5fd;
+}
+
+.contact-item i {
+    width: 20px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: white;
+    color: #7c3aed;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.copyright p {
+    color: #c4b5fd;
+}
+
+.legal {
+    display: flex;
+    gap: 2rem;
+}
+
+.legal a {
+    color: #c4b5fd;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.legal a:hover {
+    color: white;
+}`,
+    js: `// Education platform functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Platform cards interaction
+    const platformCards = document.querySelectorAll('.platform-card');
+    platformCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(12px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0) scale(1)';
+        });
+    });
+    
+    // CTA buttons
+    const ctaButtons = document.querySelectorAll('.cta-btn');
+    ctaButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const isPrimary = this.classList.contains('primary');
+            if (isPrimary) {
+                alert('Exploring available courses...');
+            } else {
+                alert('Registering for free workshop...');
+            }
+        });
+    });
+    
+    // Edu links animation
+    const eduLinks = document.querySelectorAll('.edu-link');
+    eduLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(8px)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
+        });
+    });
+    
+    // Social links hover effect
+    const socialLinks = document.querySelectorAll('.social-link');
+    socialLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) rotate(5deg)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) rotate(0)';
+        });
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 60: MODERN GLASS
+// Features: Glass morphism design with blur effects
+// Category: Modern
+// ====================================================================
+footer60: {
+    name: "Modern Glass",
+    category: "modern",
+    html: `<!-- Modern Glass Footer -->
+<footer class="glass-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="glass-brand">
+                <div class="brand-logo">
+                    <i class="fas fa-gem"></i>
+                    <span class="brand-name">Luxury</span>
+                </div>
+                <p class="brand-tagline">Elevating Digital Experiences</p>
+            </div>
+            
+            <div class="glass-navigation">
+                <div class="nav-section">
+                    <h4>Explore</h4>
+                    <div class="nav-links">
+                        <a href="#" class="nav-link">Home</a>
+                        <a href="#" class="nav-link">About</a>
+                        <a href="#" class="nav-link">Services</a>
+                        <a href="#" class="nav-link">Portfolio</a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <h4>Connect</h4>
+                    <div class="nav-links">
+                        <a href="#" class="nav-link">Contact</a>
+                        <a href="#" class="nav-link">Careers</a>
+                        <a href="#" class="nav-link">Blog</a>
+                        <a href="#" class="nav-link">Support</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-newsletter">
+                <h4>Stay Updated</h4>
+                <p>Join our newsletter for exclusive insights</p>
+                <form class="newsletter-form">
+                    <div class="input-group">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2023 Luxury Brand. All rights reserved.</p>
+            </div>
+            <div class="legal-links">
+                <a href="#" class="legal-link">Privacy Policy</a>
+                <a href="#" class="legal-link">Terms of Service</a>
+                <a href="#" class="legal-link">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.glass-footer {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(124, 58, 237, 0.3), 
+        rgba(236, 72, 153, 0.3),
+        rgba(59, 130, 246, 0.3)
+    );
+    z-index: -1;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2rem;
+    position: relative;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.glass-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.brand-logo i {
+    font-size: 2.5rem;
+    color: #fbbf24;
+    filter: drop-shadow(0 2px 8px rgba(251, 191, 36, 0.4));
+}
+
+.brand-name {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.brand-tagline {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.glass-navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.nav-section h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    position: relative;
+}
+
+.nav-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #fbbf24;
+    border-radius: 2px;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    padding-left: 0;
+}
+
+.nav-link:hover {
+    color: white;
+    padding-left: 0.5rem;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 1px;
+    background: #fbbf24;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 0.3rem;
+}
+
+.glass-newsletter h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.glass-newsletter p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.newsletter-form {
+    max-width: 300px;
+}
+
+.input-group {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.input-group:focus-within {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(251, 191, 36, 0.5);
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.2);
+}
+
+.input-group input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-group button {
+    background: #fbbf24;
+    border: none;
+    padding: 1rem 1.5rem;
+    color: #1f2937;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.input-group button:hover {
+    background: #f59e0b;
+    transform: scale(1.05);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.copyright p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+.legal-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.legal-link {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.legal-link:hover {
+    color: #fbbf24;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .glass-navigation {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}`,
+    js: `// Modern Glass Footer Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Newsletter form submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                // Add loading state
+                const button = this.querySelector('button');
+                const originalHTML = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                button.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    alert('Thank you for subscribing to our newsletter!');
+                    this.reset();
+                    button.innerHTML = originalHTML;
+                    button.disabled = false;
+                }, 1500);
+            }
+        });
+    }
+    
+    // Smooth hover effects for navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.color = '#fbbf24';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.color = '';
+        });
+    });
+    
+    // Input focus effects
+    const inputs = document.querySelectorAll('.input-group input');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.style.transform = 'scale(1.02)';
+        });
+        
+        input.addEventListener('blur', function() {
+            this.parentElement.style.transform = 'scale(1)';
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 61: MODERN SPLIT
+// Features: Asymmetric split layout with bold typography
+// Category: Modern
+// ====================================================================
+footer61: {
+    name: "Modern Split",
+    category: "modern",
+    html: `<!-- Modern Split Footer -->
+<footer class="split-footer">
+    <div class="footer-container">
+        <div class="split-content">
+            <div class="split-left">
+                <div class="brand-identity">
+                    <h2 class="brand-name">Innovate</h2>
+                    <p class="brand-mission">
+                        Creating tomorrow's solutions today through innovative design 
+                        and cutting-edge technology.
+                    </p>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Innovation Drive, Tech City</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>hello@innovate.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="split-right">
+                <div class="action-section">
+                    <h3>Ready to Innovate?</h3>
+                    <p>Start your journey with us today</p>
+                    <div class="action-buttons">
+                        <button class="action-btn primary">
+                            <span>Get Started</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="action-btn secondary">
+                            <span>Learn More</span>
+                            <i class="fas fa-book-open"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="social-integration">
+                    <h4>Follow Our Journey</h4>
+                    <div class="social-grid">
+                        <a href="#" class="social-card twitter">
+                            <i class="fab fa-twitter"></i>
+                            <div class="social-info">
+                                <strong>Twitter</strong>
+                                <span>Latest Updates</span>
+                            </div>
+                        </a>
+                        <a href="#" class="social-card linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <div class="social-info">
+                                <strong>LinkedIn</strong>
+                                <span>Professional</span>
+                            </div>
+                        </a>
+                        <a href="#" class="social-card github">
+                            <i class="fab fa-github"></i>
+                            <div class="social-info">
+                                <strong>GitHub</strong>
+                                <span>Open Source</span>
+                            </div>
+                        </a>
+                        <a href="#" class="social-card dribbble">
+                            <i class="fab fa-dribbble"></i>
+                            <div class="social-info">
+                                <strong>Dribbble</strong>
+                                <span>Design Work</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="split-bottom">
+            <div class="legal-section">
+                <div class="copyright">
+                    <p>&copy; 2023 Innovate. Shaping the future.</p>
+                </div>
+                <div class="quick-links">
+                    <a href="#" class="quick-link">Privacy</a>
+                    <a href="#" class="quick-link">Terms</a>
+                    <a href="#" class="quick-link">Cookies</a>
+                    <a href="#" class="quick-link">Security</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.split-footer {
+    background: #0f172a;
+    color: white;
+    padding: 4rem 0 2rem;
+    border-top: 1px solid #1e293b;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.split-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.split-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.brand-name {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+.brand-mission {
+    color: #94a3b8;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 500px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #cbd5e1;
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover {
+    color: #7c3aed;
+}
+
+.contact-item i {
+    width: 20px;
+    text-align: center;
+    color: #7c3aed;
+}
+
+.split-right {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.action-section {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid #374151;
+}
+
+.action-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.action-section p {
+    color: #94a3b8;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.action-btn.primary {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    color: white;
+}
+
+.action-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+}
+
+.action-btn.secondary {
+    background: transparent;
+    color: #7c3aed;
+    border: 2px solid #7c3aed;
+}
+
+.action-btn.secondary:hover {
+    background: #7c3aed;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.social-integration h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid #374151;
+    background: #1e293b;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    border-color: #7c3aed;
+}
+
+.social-card.twitter:hover {
+    background: #1da1f2;
+    border-color: #1da1f2;
+}
+
+.social-card.linkedin:hover {
+    background: #0077b5;
+    border-color: #0077b5;
+}
+
+.social-card.github:hover {
+    background: #333;
+    border-color: #333;
+}
+
+.social-card.dribbble:hover {
+    background: #ea4c89;
+    border-color: #ea4c89;
+}
+
+.social-card i {
+    font-size: 1.5rem;
+    width: 30px;
+    text-align: center;
+}
+
+.social-info strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.social-info span {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.split-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 2rem;
+}
+
+.legal-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.quick-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.quick-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.quick-link:hover {
+    color: #7c3aed;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .split-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .brand-name {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .legal-section {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .quick-links {
+        justify-content: center;
+    }
+}`,
+    js: `// Modern Split Footer Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Action buttons functionality
+    const actionButtons = document.querySelectorAll('.action-btn');
+    actionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const isPrimary = this.classList.contains('primary');
+            if (isPrimary) {
+                // Primary button action
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                setTimeout(() => {
+                    alert('Welcome! Getting started with your innovation journey.');
+                    this.innerHTML = '<span>Get Started</span><i class="fas fa-arrow-right"></i>';
+                }, 1500);
+            } else {
+                // Secondary button action
+                alert('Opening learning resources...');
+            }
+        });
+    });
+    
+    // Social card interactions
+    const socialCards = document.querySelectorAll('.social-card');
+    socialCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.2) rotate(5deg)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    });
+    
+    // Contact items hover effect
+    const contactItems = document.querySelectorAll('.contact-item');
+    contactItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(10px)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 62: MODERN GRADIENT
+// Features: Vibrant animated gradient with CTA focus
+// Category: Modern
+// ====================================================================
+footer62: {
+    name: "Modern Gradient",
+    category: "modern",
+    html: `<!-- Modern Gradient Footer -->
+<footer class="gradient-modern-footer">
+    <div class="gradient-background">
+        <div class="gradient-overlay"></div>
+    </div>
+    
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="cta-section">
+                <h2 class="cta-title">
+                    Ready to Transform 
+                    <span class="highlight">Your Vision</span> 
+                    into Reality?
+                </h2>
+                <p class="cta-description">
+                    Join thousands of innovators who are already building the future with us. 
+                    Let's create something extraordinary together.
+                </p>
+                
+                <div class="cta-actions">
+                    <button class="cta-button primary">
+                        <i class="fas fa-rocket"></i>
+                        Start Your Project
+                    </button>
+                    <button class="cta-button secondary">
+                        <i class="fas fa-play-circle"></i>
+                        Watch Demo
+                    </button>
+                </div>
+                
+                <div class="achievement-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="5000">0</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="98">0</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="24">0</span>
+                        <span class="stat-label">Support Hours</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h4>Innovation First</h4>
+                    <p>We push boundaries and explore new possibilities in every project.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Secure & Reliable</h4>
+                    <p>Your data and projects are protected with enterprise-grade security.</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Community Driven</h4>
+                    <p>Join a vibrant community of creators, developers, and innovators.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="brand-section">
+                <div class="brand">
+                    <i class="fas fa-bolt"></i>
+                    <span>Nexus</span>
+                </div>
+                <p class="brand-tagline">Powering Digital Innovation</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="link-group">
+                    <h5>Product</h5>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">API</a>
+                    <a href="#">Integrations</a>
+                </div>
+                
+                <div class="link-group">
+                    <h5>Company</h5>
+                    <a href="#">About</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Press</a>
+                </div>
+                
+                <div class="link-group">
+                    <h5>Resources</h5>
+                    <a href="#">Documentation</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Community</a>
+                    <a href="#">Partners</a>
+                </div>
+            </div>
+            
+            <div class="newsletter-section">
+                <h5>Stay Updated</h5>
+                <p>Get the latest news and updates</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright-section">
+            <p>&copy; 2023 Nexus. Building the future, one innovation at a time.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.gradient-modern-footer {
+    position: relative;
+    background: #0f172a;
+    color: white;
+    overflow: hidden;
+}
+
+.gradient-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        #667eea 0%,
+        #764ba2 25%,
+        #f093fb 50%,
+        #f5576c 75%,
+        #4facfe 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(20px);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.footer-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem 2rem;
+}
+
+.footer-content {
+    margin-bottom: 4rem;
+}
+
+.cta-section {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.cta-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.highlight {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-description {
+    font-size: 1.3rem;
+    color: #cbd5e1;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.5rem 3rem;
+    border: none;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.cta-button.primary {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #1f2937;
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.3);
+}
+
+.cta-button.primary:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(251, 191, 36, 0.4);
+}
+
+.cta-button.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.achievement-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fbbf24;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-10px);
+    border-color: rgba(251, 191, 36, 0.3);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+}
+
+.info-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.info-card p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fbbf24;
+}
+
+.brand-tagline {
+    color: #cbd5e1;
+    font-size: 1rem;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.link-group h5 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.link-group a {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.link-group a:hover {
+    color: #fbbf24;
+}
+
+.newsletter-section h5 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.newsletter-section p {
+    color: #cbd5e1;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.newsletter-form {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 1rem;
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+.newsletter-form input::placeholder {
+    color: #94a3b8;
+}
+
+.newsletter-form button {
+    background: #fbbf24;
+    border: none;
+    padding: 1rem 1.5rem;
+    color: #1f2937;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background: #f59e0b;
+}
+
+.copyright-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright-section p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #fbbf24;
+    color: #1f2937;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .footer-bottom {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-title {
+        font-size: 2.5rem;
+    }
+    
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .achievement-stats {
+        gap: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .copyright-section {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}`,
+    js: `// Modern Gradient Footer Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate statistics counting
+    function animateCounter(element, target) {
+        let current = 0;
+        const increment = target / 100;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current) + (target === 98 ? '%' : '+');
+        }, 20);
+    }
+    
+    // Start counting when footer is in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = document.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-count'));
+                    animateCounter(stat, target);
+                });
+                observer.disconnect();
+            }
+        });
+    });
+    
+    const statsSection = document.querySelector('.achievement-stats');
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
+    
+    // CTA button interactions
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const isPrimary = this.classList.contains('primary');
+            
+            // Add click animation
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+            
+            if (isPrimary) {
+                // Primary button action
+                setTimeout(() => {
+                    alert('Starting your project setup...');
+                }, 300);
+            } else {
+                // Secondary button action
+                setTimeout(() => {
+                    alert('Opening demo video...');
+                }, 300);
+            }
+        });
+    });
+    
+    // Newsletter form submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                const button = this.querySelector('button');
+                const originalHTML = button.innerHTML;
+                
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                button.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Thank you for subscribing to our newsletter!');
+                    this.reset();
+                    button.innerHTML = originalHTML;
+                    button.disabled = false;
+                }, 1500);
+            }
+        });
+    }
+    
+    // Info card hover effects
+    const infoCards = document.querySelectorAll('.info-card');
+    infoCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.card-icon');
+            icon.style.transform = 'scale(1.1) rotate(5deg)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.card-icon');
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    });
+    
+    // Social links animation
+    const socialLinks = document.querySelectorAll('.social-links a');
+    socialLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) rotate(10deg)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) rotate(0)';
+        });
+    });
+});`
+},
+
+// ====================================================================
+// TEMPLATE 63: MODERN MINIMAL
+// Features: Ultra-clean design with essential information
+// Category: Modern
+// ====================================================================
+footer63: {
+    name: "Modern Minimal",
+    category: "modern",
+    html: `<!-- Modern Minimal Footer -->
+<footer class="minimal-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="brand-section">
+                <div class="brand-identity">
+                    <span class="brand-name">Studio</span>
+                    <span class="brand-description">Digital Design Agency</span>
+                </div>
+                
+                <div class="contact-details">
+                    <div class="contact-line">
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:hello@studio.com" class="contact-link">hello@studio.com</a>
+                    </div>
+                    <div class="contact-line">
+                        <span class="contact-label">Phone</span>
+                        <a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a>
+                    </div>
+                    <div class="contact-line">
+                        <span class="contact-label">Location</span>
+                        <span class="contact-text">San Francisco, CA</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="service-section">
+                <div class="service-category">
+                    <h5 class="category-title">Design</h5>
+                    <div class="service-list">
+                        <span class="service-item">UI/UX Design</span>
+                        <span class="service-item">Brand Identity</span>
+                        <span class="service-item">Web Design</span>
+                        <span class="service-item">Mobile Design</span>
+                    </div>
+                </div>
+                
+                <div class="service-category">
+                    <h5 class="category-title">Development</h5>
+                    <div class="service-list">
+                        <span class="service-item">Web Development</span>
+                        <span class="service-item">Mobile Apps</span>
+                        <span class="service-item">E-commerce</span>
+                        <span class="service-item">API Integration</span>
+                    </div>
+                </div>
+                
+                <div class="service-category">
+                    <h5 class="category-title">Strategy</h5>
+                    <div class="service-list">
+                        <span class="service-item">Digital Strategy</span>
+                        <span class="service-item">Content Strategy</span>
+                        <span class="service-item">SEO Optimization</span>
+                        <span class="service-item">Analytics</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="action-section">
+                <div class="availability">
+                    <div class="status-indicator">
+                        <div class="status-dot"></div>
+                        <span class="status-text">Available for new projects</span>
+                    </div>
+                    <p class="availability-note">
+                        Currently accepting projects for Q1 2024. Limited slots available.
+                    </p>
+                </div>
+                
+                <div class="cta-wrapper">
+                    <button class="minimal-cta">
+                        <span>Start a Project</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; 2023 Studio. Crafting digital experiences with purpose.</p>
+            </div>
+            
+            <div class="legal-section">
+                <a href="#" class="legal-link">Privacy</a>
+                <a href="#" class="legal-link">Terms</a>
+                <a href="#" class="legal-link">Cookies</a>
+            </div>
+            
+            <div class="social-section">
+                <a href="#" class="social-link" aria-label="Behance">
+                    <i class="fab fa-behance"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Dribbble">
+                    <i class="fab fa-dribbble"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="social-link" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.minimal-footer {
+    background: #ffffff;
+    color: #1f2937;
+    border-top: 1px solid #f3f4f6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.brand-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.brand-identity {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.brand-description {
+    font-size: 1rem;
+    color: #6b7280;
+    font-weight: 400;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.contact-label {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.contact-link, .contact-text {
+    font-size: 0.9rem;
+    color: #374151;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #111827;
+}
+
+.divider {
+    height: 1px;
+    background: #f3f4f6;
+    width: 100%;
+}
+
+.service-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.service-category {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.service-item {
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    cursor: default;
+}
+
+.service-item:hover {
+    color: #374151;
+}
+
+.action-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.availability {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.status-text {
+    font-size: 0.9rem;
+    color: #10b981;
+    font-weight: 500;
+}
+
+.availability-note {
+    font-size: 0.8rem;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+.cta-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.minimal-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+    background: #111827;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.minimal-cta:hover {
+    background: #374151;
+    transform: translateX(5px);
+}
+
+.minimal-cta i {
+    transition: transform 0.3s ease;
+}
+
+.minimal-cta:hover i {
+    transform: translateX(3px);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid #f3f4f6;
+}
+
+.copyright p {
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+.legal-section {
+    display: flex;
+    gap: 2rem;
+}
+
+.legal-link {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.legal-link:hover {
+    color: #374151;
+}
+
+.social-section {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #f9fafb;
+    border-radius: 6px;
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #111827;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .brand-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .service-section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+    
+    .action-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .cta-wrapper {
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .legal-section {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-line {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+}`,
+    js: `// Modern Minimal Footer Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // CTA button interaction
+    const minimalCta = document.querySelector('.minimal-cta');
+    if (minimalCta) {
+        minimalCta.addEventListener('click', function() {
+            // Add loading state
+            const originalHTML = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            this.disabled = true;
+            
+            // Simulate project initiation
+            setTimeout(() => {
+                alert('Thank you for your interest! We will contact you within 24 hours to discuss your project.');
+                this.innerHTML = originalHTML;
+                this.disabled = false;
+            }, 2000);
+        });
+    }
+    
+    // Contact link interactions
+    const contactLinks = document.querySelectorAll('.contact-link');
+    contactLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.fontWeight = '500';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.fontWeight = '400';
+        });
+    });
+    
+    // Service item hover effects
+    const serviceItems = document.querySelectorAll('.service-item');
+    serviceItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(5px)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
+        });
+    });
+    
+    // Social link animations
+    const socialLinks = document.querySelectorAll('.social-link');
+    socialLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1.2)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('i');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Status indicator animation
+    const statusDot = document.querySelector('.status-dot');
+    if (statusDot) {
+        setInterval(() => {
+            statusDot.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                statusDot.style.transform = 'scale(1)';
+            }, 300);
+        }, 4000);
+    }
+});`
+},
+
+// ====================================================================
+// TEMPLATE 64: MODERN CARDS
+// Features: Card-based layout with icon highlights
+// Category: Modern
+// ====================================================================
+footer64: {
+    name: "Modern Cards",
+    category: "modern",
+    html: `<!-- Modern Cards Footer -->
+<footer class="cards-footer">
+    <div class="footer-container">
+        <div class="cards-section">
+            <div class="main-card">
+                <div class="card-content">
+                    <h2 class="card-title">
+                        Let's Build Something 
+                        <span class="accent">Amazing</span> 
+                        Together
+                    </h2>
+                    <p class="card-description">
+                        We specialize in creating digital experiences that captivate audiences 
+                        and drive meaningful results for your business.
+                    </p>
+                    
+                    <div class="card-actions">
+                        <button class="card-btn primary">
+                            <i class="fas fa-calendar"></i>
+                            Schedule Call
+                        </button>
+                        <button class="card-btn secondary">
+                            <i class="fas fa-file-alt"></i>
+                            View Portfolio
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="card-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Satisfaction</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h4 class="feature-title">UI/UX Design</h4>
+                    <p class="feature-description">
+                        Beautiful, intuitive interfaces that users love to interact with.
+                    </p>
+                    <div class="feature-tags">
+                        <span class="tag">Figma</span>
+                        <span class="tag">Sketch</span>
+                        <span class="tag">Adobe XD</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4 class="feature-title">Development</h4>
+                    <p class="feature-description">
+                        Robust, scalable solutions built with modern technologies.
+                    </p>
+                    <div class="feature-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Vue</span>
+                        <span class="tag">Node.js</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4 class="feature-title">Strategy</h4>
+                    <p class="feature-description">
+                        Data-driven approaches to achieve your business objectives.
+                    </p>
+                    <div class="feature-tags">
+                        <span class="tag">Analytics</span>
+                        <span class="tag">SEO</span>
+                        <span class="tag">Growth</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h5>Email Us</h5>
+                        <a href="mailto:hello@creative.com">hello@creative.com</a>
+                        <p>We'll respond within 24 hours</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h5>Call Us</h5>
+                        <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                        <p>Mon-Fri, 9AM-6PM EST</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h5>Visit Us</h5>
+                        <span>123 Creative Street</span>
+                        <p>New York, NY 10001</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quick-links-section">
+                <div class="links-group">
+                    <h5>Company</h5>
+                    <a href="#" class="link-item">About</a>
+                    <a href="#" class="link-item">Team</a>
+                    <a href="#" class="link-item">Careers</a>
+                    <a href="#" class="link-item">Press</a>
+                </div>
+                
+                <div class="links-group">
+                    <h5>Services</h5>
+                    <a href="#" class="link-item">Web Design</a>
+                    <a href="#" class="link-item">Development</a>
+                    <a href="#" class="link-item">Marketing</a>
+                    <a href="#" class="link-item">Consulting</a>
+                </div>
+                
+                <div class="links-group">
+                    <h5>Resources</h5>
+                    <a href="#" class="link-item">Blog</a>
+                    <a href="#" class="link-item">Case Studies</a>
+                    <a href="#" class="link-item">Documentation</a>
+                    <a href="#" class="link-item">Support</a>
+                </div>
+            </div>
+            
+            <div class="newsletter-card">
+                <div class="newsletter-content">
+                    <h5>Stay in the Loop</h5>
+                    <p>Get the latest updates on design trends and industry insights</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <p class="newsletter-note">No spam, unsubscribe at any time</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="brand-section">
+                <div class="brand">
+                    <i class="fas fa-cube"></i>
+                    <span>CreativeStudio</span>
+                </div>
+                <p class="brand-motto">Designing the future, one pixel at a time</p>
+            </div>
+            
+            <div class="social-section">
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Dribbble">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="legal-section">
+                <p class="copyright">&copy; 2023 CreativeStudio. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#" class="legal-link">Privacy</a>
+                    <a href="#" class="legal-link">Terms</a>
+                    <a href="#" class="legal-link">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>`,
+    css: `.cards-footer {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.cards-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.main-card {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    border-radius: 24px;
+    padding: 3rem;
+    border: 1px solid #374151;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.accent {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.card-description {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.card-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.card-btn.primary {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    color: white;
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+}
+
+.card-btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
+}
+
+.card-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.card-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.card-stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: rgba(124, 58, 237, 0.3);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.2rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.feature-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.feature-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px);
+    border-color: rgba(124, 58, 237, 0.3);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.feature-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.feature-description {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.feature-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: rgba(124, 58, 237, 0.2);
+    color: #c4b5fd;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+.info-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    padding: 3rem 0;
+    border-top: 1px solid #374151;
+    border-bottom: 1px solid #374151;
+}
+
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: rgba(124, 58, 237, 0.3);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-info h5 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.contact-info a, .contact-info span {
+    display: block;
+    color: #c4b5fd;
+    text-decoration: none;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: white;
+}
+
+.contact-info p {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.quick-links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.links-group h5 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.link-item {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.link-item:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.newsletter-card {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid #374151;
+}
+
+.newsletter-content h5 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.newsletter-content p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.input-group {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: #94a3b8;
+}
+
+.input-group button {
+    background: #7c3aed;
+    border: none;
+    padding: 1rem 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.input-group button:hover {
+    background: #6d28d9;
+}
+
+.newsletter-note {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    text-align: center;
+    margin: 0;
+}
+
+.footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.brand i {
+    color: #7c3aed;
+}
+
+.brand-motto {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #7c3aed;
+    transform: translateY(-3px) rotate(5deg);
+}
+
+.legal-section {
+    text-align: right;
+}
+
+.copyright {
+    color: #94a3b8;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.legal-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+}
+
+.legal-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.legal-link:hover {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .cards-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .card-actions {
+        flex-direction: column;
+    }
+    
+    .footer-bottom {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .legal-section {
+        text-align: center;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .card-title {
+        font-size: 2.2rem;
+    }
+}`,
+    js: `// Modern Cards Footer Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Card button interactions
+    const cardButtons = document.querySelectorAll('.card-btn');
+    cardButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const isPrimary = this.classList.contains('primary');
+            
+            // Add click animation
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+            
+            if (isPrimary) {
+                // Schedule call action
+                setTimeout(() => {
+                    alert('Opening calendar to schedule your call...');
+                }, 300);
+            } else {
+                // View portfolio action
+                setTimeout(() => {
+                    alert('Opening portfolio showcase...');
+                }, 300);
+            }
+        });
+    });
+    
+    // Stat card hover effects
+    const statCards = document.querySelectorAll('.stat-card');
+    statCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.stat-icon');
+            icon.style.transform = 'scale(1.1) rotate(5deg)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.stat-icon');
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    });
+    
+    // Feature card interactions
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.feature-icon');
+            icon.style.transform = 'scale(1.1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.feature-icon');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Contact card animations
+    const contactCards = document.querySelectorAll('.contact-card');
+    contactCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.contact-icon');
+            icon.style.transform = 'scale(1.1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.contact-icon');
+            icon.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Link item animations
+    const linkItems = document.querySelectorAll('.link-item');
+    linkItems.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.fontWeight = '600';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.fontWeight = '400';
+        });
+    });
+    
+    // Newsletter form submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                const button = this.querySelector('button');
+                const originalHTML = button.innerHTML;
+                
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                button.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Thank you for subscribing to our newsletter!');
+                    this.reset();
+                    button.innerHTML = originalHTML;
+                    button.disabled = false;
+                }, 1500);
+            }
+        });
+    }
+    
+    // Social link animations
+    const socialLinks = document.querySelectorAll('.social-link');
+    socialLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) rotate(8deg)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) rotate(0)';
+        });
+    });
+});`
+},
+
 
 
 
