@@ -142,6 +142,7 @@
 .template-actions .btn {
     padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
+    width: 100%;
 }
 
 /* ========== BEAUTIFUL MODAL DESIGN ========== */
@@ -1070,4 +1071,989 @@
     .template-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+/* ========== BUSINESS TEMPLATE PREVIEW STYLES ========== */
+
+/* Business Finance Preview */
+.business-finance-preview th {
+    background: #1f2937;
+    color: white;
+}
+
+.status-preview {
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-preview.on-track {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-preview.completed {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-preview.in-stock {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-preview.low-stock {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-preview.out-of-stock {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Employee Directory Preview */
+.employee-directory-preview th {
+    background: #1f2937;
+    color: white;
+}
+
+.preview-emp {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.preview-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* Sales Performance Preview */
+.sales-preview th {
+    background: #1f2937;
+    color: white;
+}
+
+.preview-achievement {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.preview-achievement .mini-progress {
+    height: 6px;
+    background: #10b981;
+    border-radius: 3px;
+    flex: 1;
+    min-width: 40px;
+}
+
+.preview-achievement span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    min-width: 30px;
+}
+
+/* Project Management Preview */
+.project-preview th {
+    background: #1f2937;
+    color: white;
+}
+
+.preview-project {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.preview-icon {
+    font-size: 0.9rem;
+    width: 20px;
+    text-align: center;
+}
+
+.preview-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.preview-progress .mini-progress {
+    height: 6px;
+    background: #3b82f6;
+    border-radius: 3px;
+    flex: 1;
+    min-width: 40px;
+}
+
+.preview-progress span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    min-width: 25px;
+}
+
+/* Inventory Management Preview */
+.inventory-preview th {
+    background: #1f2937;
+    color: white;
+}
+
+/* Mini progress bar for all previews */
+.mini-progress {
+    height: 6px;
+    border-radius: 3px;
+    margin-top: 2px;
+}
+
+/* Color variations for different progress types */
+.sales-preview .mini-progress { background: #10b981; }
+.project-preview .mini-progress { background: #3b82f6; }
+/* ========== MINIMAL TEMPLATE PREVIEW STYLES ========== */
+
+/* Minimal Data Preview */
+.minimal-preview th {
+    background: #f8fafc;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.minimal-preview td {
+    color: #6b7280;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+/* User List Preview */
+.user-list-preview th {
+    background: #f8fafc;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.preview-user-minimal {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.preview-avatar-minimal {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.preview-status {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.7rem;
+}
+
+.status-dot-preview {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.status-dot-preview.online {
+    background: #10b981;
+}
+
+.status-dot-preview.away {
+    background: #f59e0b;
+}
+
+.status-dot-preview.offline {
+    background: #6b7280;
+}
+
+/* Pricing Table Preview */
+.pricing-preview th {
+    background: #f8fafc;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.preview-plan {
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-name-preview {
+    font-weight: 500;
+    color: #1f2937;
+    font-size: 0.8rem;
+}
+
+.plan-desc-preview {
+    font-size: 0.65rem;
+    color: #9ca3af;
+    margin-top: 1px;
+}
+
+/* Task List Preview */
+.task-list-preview th {
+    background: #f8fafc;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.preview-checkbox {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #d1d5db;
+    border-radius: 2px;
+    background: white;
+}
+
+.preview-checkbox.checked {
+    background: #10b981;
+    border-color: #10b981;
+}
+
+.preview-task {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-title-preview {
+    font-weight: 500;
+    color: #1f2937;
+    font-size: 0.8rem;
+}
+
+.task-desc-preview {
+    font-size: 0.65rem;
+    color: #9ca3af;
+    margin-top: 1px;
+}
+
+.priority-preview {
+    padding: 0.2rem 0.4rem;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    font-weight: 500;
+}
+
+.priority-preview.high {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.priority-preview.medium {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.priority-preview.low {
+    background: #d1fae5;
+    color: #059669;
+}
+
+/* Metrics Preview */
+.metrics-preview th {
+    background: #f8fafc;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.change-preview {
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.change-preview.positive {
+    color: #059669;
+}
+
+.change-preview.negative {
+    color: #dc2626;
+}
+
+/* Minimal table common styles */
+.minimal-preview th,
+.user-list-preview th,
+.pricing-preview th,
+.task-list-preview th,
+.metrics-preview th {
+    font-weight: 500;
+    font-size: 0.7rem;
+}
+
+.minimal-preview td,
+.user-list-preview td,
+.pricing-preview td,
+.task-list-preview td,
+.metrics-preview td {
+    font-size: 0.7rem;
+    color: #6b7280;
+}
+/* ========== ANALYTICS TEMPLATE PREVIEW STYLES ========== */
+
+/* Analytics Dashboard Preview */
+.analytics-preview th {
+    background: #1e293b;
+    color: white;
+}
+
+.preview-channel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.channel-icon-preview {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.channel-icon-preview.organic {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.channel-icon-preview.social {
+    background: #fce7f3;
+    color: #db2777;
+}
+
+.preview-metric-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+}
+
+.bar-fill-preview {
+    height: 4px;
+    background: #3b82f6;
+    border-radius: 2px;
+    min-width: 30px;
+    flex: 1;
+}
+
+.preview-conversion {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.7rem;
+}
+
+.trend-preview {
+    padding: 0.15rem 0.3rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+.trend-preview.positive {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.trend-preview.negative {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Performance Metrics Preview */
+.performance-preview th {
+    background: #1e293b;
+    color: white;
+}
+
+.preview-progress-metric {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+}
+
+.progress-track-preview {
+    flex: 1;
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+    overflow: hidden;
+    min-width: 30px;
+}
+
+.progress-value-preview {
+    height: 100%;
+    border-radius: 2px;
+}
+
+.preview-score {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.7rem;
+    color: white;
+    margin: 0 auto;
+}
+
+.preview-score.excellent {
+    background: #10b981;
+}
+
+.preview-score.good {
+    background: #f59e0b;
+}
+
+.preview-score.average {
+    background: #ef4444;
+}
+
+/* Real-Time Analytics Preview */
+.realtime-preview th {
+    background: #1e293b;
+    color: white;
+}
+
+.preview-country {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.flag-preview {
+    font-size: 0.9rem;
+}
+
+.preview-active-users {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.7rem;
+}
+
+.user-trend-preview {
+    padding: 0.15rem 0.3rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+.user-trend-preview.up {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.user-trend-preview.down {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.traffic-status-preview {
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.traffic-status-preview.high {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.traffic-status-preview.medium {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+/* Conversion Funnel Preview */
+.funnel-preview th {
+    background: #1e293b;
+    color: white;
+}
+
+.preview-funnel-stage {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.stage-number-preview {
+    width: 18px;
+    height: 18px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.65rem;
+    flex-shrink: 0;
+}
+
+.drop-off-preview {
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+.drop-off-preview.negative {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* KPI Dashboard Preview */
+.kpi-preview th {
+    background: #1e293b;
+    color: white;
+}
+
+.preview-kpi-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+}
+
+.kpi-status-preview {
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.kpi-status-preview.achieved {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.kpi-status-preview.on-track {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.kpi-status-preview.at-risk {
+    background: #fecaca;
+    color: #dc2626;
+}
+
+/* Analytics table common styles */
+.analytics-preview th,
+.performance-preview th,
+.realtime-preview th,
+.funnel-preview th,
+.kpi-preview th {
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.analytics-preview td,
+.performance-preview td,
+.realtime-preview td,
+.funnel-preview td,
+.kpi-preview td {
+    font-size: 0.7rem;
+    color: #374151;
+}
+
+/* Progress bar colors for different templates */
+.performance-preview tr:nth-child(1) .progress-value-preview { background: #ef4444; }
+.performance-preview tr:nth-child(2) .progress-value-preview { background: #f59e0b; }
+.performance-preview tr:nth-child(3) .progress-value-preview { background: #ef4444; }
+
+.kpi-preview tr:nth-child(1) .progress-value-preview { background: #10b981; }
+.kpi-preview tr:nth-child(2) .progress-value-preview { background: #f59e0b; }
+.kpi-preview tr:nth-child(3) .progress-value-preview { background: #f59e0b; }
+/* ========== DARK THEME PREVIEW STYLES ========== */
+
+/* Dark preview background */
+.dark-preview {
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+}
+
+/* Dark Dashboard Preview */
+.dark-dashboard-preview th {
+    background: #334155;
+    color: #e2e8f0;
+    border-bottom: 1px solid #475569;
+}
+
+.dark-dashboard-preview td {
+    color: #cbd5e1;
+    border-bottom: 1px solid #334155;
+}
+
+.preview-dark-metric {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.preview-metric-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.preview-metric-icon.revenue {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.preview-metric-icon.users {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.preview-metric-icon.conversion {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.preview-growth {
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+.preview-growth.positive {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Dark User Management Preview */
+.dark-user-preview th {
+    background: #334155;
+    color: #e2e8f0;
+    border-bottom: 1px solid #475569;
+}
+
+.dark-user-preview td {
+    color: #cbd5e1;
+    border-bottom: 1px solid #334155;
+}
+
+.preview-dark-user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.preview-dark-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+}
+
+.preview-dark-user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-dark-name {
+    font-weight: 600;
+    color: #f1f5f9;
+    font-size: 0.7rem;
+}
+
+.preview-dark-email {
+    font-size: 0.6rem;
+    color: #94a3b8;
+    margin-top: 1px;
+}
+
+.preview-dark-role {
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+.preview-dark-role.admin {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.preview-dark-role.editor {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.preview-dark-role.viewer {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.preview-dark-status {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+.preview-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.preview-dark-status.online .preview-status-dot {
+    background: #10b981;
+}
+
+.preview-dark-status.away .preview-status-dot {
+    background: #f59e0b;
+}
+
+.preview-dark-status.offline .preview-status-dot {
+    background: #6b7280;
+}
+
+/* Dark Finance Preview */
+.dark-finance-preview th {
+    background: #334155;
+    color: #e2e8f0;
+    border-bottom: 1px solid #475569;
+}
+
+.dark-finance-preview td {
+    color: #cbd5e1;
+    border-bottom: 1px solid #334155;
+}
+
+.preview-dark-budget-status {
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.preview-dark-budget-status.on-track {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.preview-dark-budget-status.warning {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.preview-dark-budget-status.over-budget {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Dark Server Monitoring Preview */
+.dark-server-preview th {
+    background: #334155;
+    color: #e2e8f0;
+    border-bottom: 1px solid #475569;
+}
+
+.dark-server-preview td {
+    color: #cbd5e1;
+    border-bottom: 1px solid #334155;
+}
+
+.preview-dark-server {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.preview-server-icon {
+    font-size: 0.9rem;
+    width: 16px;
+    text-align: center;
+}
+
+.preview-dark-server-status {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+.preview-status-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.preview-dark-server-status.online .preview-status-indicator {
+    background: #10b981;
+}
+
+.preview-dark-server-status.warning .preview-status-indicator {
+    background: #f59e0b;
+}
+
+.preview-dark-server-status.critical .preview-status-indicator {
+    background: #ef4444;
+}
+
+.preview-dark-resource {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.65rem;
+}
+
+.preview-resource-bar {
+    flex: 1;
+    height: 4px;
+    background: #475569;
+    border-radius: 2px;
+    overflow: hidden;
+    min-width: 30px;
+}
+
+.preview-resource-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.preview-resource-fill.warning {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.preview-resource-fill.critical {
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+/* Dark Crypto Dashboard Preview */
+.dark-crypto-preview th {
+    background: #334155;
+    color: #e2e8f0;
+    border-bottom: 1px solid #475569;
+}
+
+.dark-crypto-preview td {
+    color: #cbd5e1;
+    border-bottom: 1px solid #334155;
+}
+
+.preview-dark-crypto {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.preview-crypto-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.preview-crypto-icon.btc {
+    background: #f59e0b;
+    color: #1e293b;
+}
+
+.preview-crypto-icon.eth {
+    background: #6366f1;
+    color: white;
+}
+
+.preview-crypto-icon.ada {
+    background: #3b82f6;
+    color: white;
+}
+
+.preview-crypto-icon.sol {
+    background: #14b8a6;
+    color: white;
+}
+
+.preview-crypto-change {
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+.preview-crypto-change.positive {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.preview-crypto-change.negative {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Dark theme common styles */
+.dark-dashboard-preview th,
+.dark-user-preview th,
+.dark-finance-preview th,
+.dark-server-preview th,
+.dark-crypto-preview th {
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.dark-dashboard-preview td,
+.dark-user-preview td,
+.dark-finance-preview td,
+.dark-server-preview td,
+.dark-crypto-preview td {
+    font-size: 0.7rem;
 }
