@@ -2057,3 +2057,184 @@
 .dark-crypto-preview td {
     font-size: 0.7rem;
 }
+/* Colorful Preview Table Styles */
+.colorful-preview-1 th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 600;
+}
+
+.colorful-preview-2 th {
+    background: linear-gradient(135deg, #ff6b6b, #ffa726, #66bb6a);
+    color: white;
+    font-weight: 600;
+}
+
+.colorful-preview-3 th {
+    background: #0f0f23;
+    color: #8b5cf6;
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(139, 92, 246, 0.8);
+}
+
+.colorful-preview-4 th {
+    background: linear-gradient(135deg, #f0f9ff, #fdf2f8, #f0fdf4);
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.colorful-preview-5 th {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+    color: white;
+    font-weight: 600;
+}
+/* Premium Preview Table Styles */
+.premium-preview-1 th {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fbbf24;
+    font-weight: 600;
+    border-bottom: 2px solid #fbbf24;
+}
+
+.premium-preview-2 th {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+.premium-preview-3 th {
+    background: linear-gradient(135deg, #1c1917, #292524);
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.premium-preview-4 th {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.premium-preview-5 th {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #fbbf24;
+    font-weight: 600;
+}
+/* Business Preview Table Styles */
+.business-preview-6 th {
+    background: linear-gradient(135deg, #1e40af, #3730a3);
+    color: white;
+    font-weight: 600;
+}
+
+.business-preview-7 th {
+    background: linear-gradient(135deg, #059669, #047857);
+    color: white;
+    font-weight: 600;
+}
+
+.business-preview-8 th {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    color: white;
+    font-weight: 600;
+}
+
+.business-preview-9 th {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    font-weight: 600;
+}
+
+.business-preview-10 th {
+    background: linear-gradient(135deg, #ec4899, #db2777);
+    color: white;
+    font-weight: 600;
+}
+/* Minimal Preview Table Styles */
+.minimal-preview-1 th {
+    background: #f9fafb;
+    color: #374151;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.minimal-preview-1 td {
+    border-bottom: 1px solid #f3f4f6;
+    color: #6b7280;
+}
+
+.minimal-preview-2 th {
+    background: #ffffff;
+    color: #6b7280;
+    font-weight: 500;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.minimal-preview-2 td {
+    border-bottom: 1px solid #f9fafb;
+    color: #374151;
+}
+
+.minimal-preview-3 th {
+    background: #ffffff;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.minimal-preview-3 tr {
+    border-bottom: 1px solid #f8fafc;
+}
+
+.minimal-preview-4 th {
+    background: #fafafa;
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 0.75rem;
+}
+
+.minimal-preview-4 td {
+    font-size: 0.8125rem;
+    border-bottom: 1px solid #f9fafb;
+}
+
+.minimal-preview-5 th {
+    background: #f8fafc;
+    color: #64748b;
+    font-weight: 500;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.minimal-preview-5 td {
+    border-bottom: 1px solid #f8fafc;
+    color: #475569;
+}
+/* Analytics Preview Table Styles */
+.analytics-preview-1 th {
+    background: #f8fafc;
+    color: #374151;
+    font-weight: 600;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.analytics-preview-2 th {
+    background: #f8fafc;
+    color: #374151;
+    font-weight: 600;
+}
+
+.analytics-preview-3 th {
+    background: #f8fafc;
+    color: #374151;
+    font-weight: 600;
+}
+
+.analytics-preview-4 th {
+    background: linear-gradient(135deg, #059669, #047857);
+    color: white;
+    font-weight: 600;
+}
+
+.analytics-preview-5 th {
+    background: #1e293b;
+    color: #94a3b8;
+    font-weight: 600;
+}
