@@ -2,9 +2,7 @@
 const templateCodes = {
     
     // ====================================================================
-    // TEMPLATE 1: MODERN TABLE
-    // Features: User avatars, status badges, action buttons
-    // Category: Modern
+    // TEMPLATE 1: MODERN BUSINESS TABLE (Already exists)
     // ====================================================================
     table1: {
         html: `<div class="table-container">
@@ -67,6 +65,18 @@ const templateCodes = {
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .modern-table {
@@ -86,9 +96,15 @@ const templateCodes = {
 .modern-table td {
     padding: 1rem 1.5rem;
     border-bottom: 1px solid #f3f4f6;
+    transition: all 0.3s ease;
 }
 
 .modern-table tr:hover {
+    background: #f9fafb;
+    transform: translateX(5px);
+}
+
+.modern-table tr:hover td {
     background: #f9fafb;
 }
 
@@ -109,6 +125,11 @@ const templateCodes = {
     color: white;
     font-weight: 600;
     font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.user-info:hover .avatar {
+    transform: scale(1.1);
 }
 
 .user-details .name {
@@ -126,6 +147,7 @@ const templateCodes = {
     border-radius: 20px;
     font-size: 0.875rem;
     font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .status.active {
@@ -136,6 +158,11 @@ const templateCodes = {
 .status.inactive {
     background: #fee2e2;
     color: #991b1b;
+}
+
+.status.pending {
+    background: #fef3c7;
+    color: #92400e;
 }
 
 .actions {
@@ -156,6 +183,7 @@ const templateCodes = {
 
 .btn-edit:hover {
     background: #c7d2fe;
+    transform: translateY(-2px);
 }
 
 .btn-delete {
@@ -171,612 +199,204 @@ const templateCodes = {
 
 .btn-delete:hover {
     background: #fecaca;
+    transform: translateY(-2px);
 }`,
-        js: `// No JavaScript required for this table`
+        js: `// Table row hover animations
+document.querySelectorAll('.modern-table tr').forEach(row => {
+    row.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateX(5px)';
+    });
+    
+    row.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateX(0)';
+    });
+});`
     },
-// ====================================================================
-// TEMPLATE 2: BUSINESS FINANCE TABLE
-// ====================================================================
-table2: {
-    html: `<div class="business-finance-table">
-    <div class="table-header">
-        <h3>Financial Report Q4 2024</h3>
-        <div class="table-actions">
-            <button class="export-btn">Export CSV</button>
-            <button class="print-btn">Print</button>
-        </div>
-    </div>
-    <table>
+
+    // ====================================================================
+    // TEMPLATE 2: FINANCIAL DATA TABLE
+    // ====================================================================
+    table2: {
+        html: `<div class="financial-table-container">
+    <table class="financial-table">
         <thead>
             <tr>
-                <th>Department</th>
-                <th>Budget</th>
-                <th>Spent</th>
-                <th>Remaining</th>
-                <th>Utilization</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Marketing</td>
-                <td>$50,000</td>
-                <td>$42,500</td>
-                <td>$7,500</td>
-                <td>
-                    <div class="utilization-bar">
-                        <div class="progress" style="width: 85%"></div>
-                        <span>85%</span>
-                    </div>
-                </td>
-                <td><span class="status on-track">On Track</span></td>
-            </tr>
-            <tr>
-                <td>Engineering</td>
-                <td>$120,000</td>
-                <td>$95,000</td>
-                <td>$25,000</td>
-                <td>
-                    <div class="utilization-bar">
-                        <div class="progress" style="width: 79%"></div>
-                        <span>79%</span>
-                    </div>
-                </td>
-                <td><span class="status on-track">On Track</span></td>
-            </tr>
-            <tr>
-                <td>Sales</td>
-                <td>$75,000</td>
-                <td>$68,000</td>
-                <td>$7,000</td>
-                <td>
-                    <div class="utilization-bar">
-                        <div class="progress" style="width: 91%"></div>
-                        <span>91%</span>
-                    </div>
-                </td>
-                <td><span class="status warning">Watch</span></td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.business-finance-table {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-}
-
-.business-finance-table .table-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    background: #f8fafc;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.table-header h3 {
-    margin: 0;
-    color: #1f2937;
-    font-weight: 600;
-}
-
-.table-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.export-btn, .print-btn {
-    padding: 0.5rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    background: white;
-    color: #374151;
-    cursor: pointer;
-    font-size: 0.875rem;
-    transition: all 0.3s;
-}
-
-.export-btn:hover, .print-btn:hover {
-    background: #f9fafb;
-    border-color: #9ca3af;
-}
-
-.business-finance-table table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.business-finance-table th {
-    background: #1f2937;
-    color: white;
-    padding: 1rem 1.5rem;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.business-finance-table td {
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #374151;
-}
-
-.business-finance-table tr:hover {
-    background: #f9fafb;
-}
-
-.utilization-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.utilization-bar .progress {
-    height: 8px;
-    background: linear-gradient(90deg, #10b981, #059669);
-    border-radius: 4px;
-    min-width: 60px;
-}
-
-.utilization-bar span {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #374151;
-    min-width: 35px;
-}
-
-.status {
-    padding: 0.35rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.status.on-track {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.status.warning {
-    background: #fef3c7;
-    color: #92400e;
-}`,
-    js: `// Business finance table functionality
-document.querySelectorAll('.export-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        alert('Exporting data to CSV...');
-    });
-});
-
-document.querySelectorAll('.print-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        window.print();
-    });
-});`
-},
-
-// ====================================================================
-// TEMPLATE 3: EMPLOYEE DIRECTORY
-// ====================================================================
-table3: {
-    html: `<div class="employee-directory">
-    <div class="directory-header">
-        <h3>Employee Directory</h3>
-        <div class="search-box">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search employees...">
-        </div>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th>Employee</th>
-                <th>Position</th>
-                <th>Department</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Location</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div class="employee-card">
-                        <div class="avatar">JD</div>
-                        <div class="emp-info">
-                            <div class="name">John Doe</div>
-                            <div class="id">EMP-001</div>
-                        </div>
-                    </div>
-                </td>
-                <td>Senior Developer</td>
-                <td>Engineering</td>
-                <td>john.doe@company.com</td>
-                <td>+1 (555) 123-4567</td>
-                <td>New York</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="employee-card">
-                        <div class="avatar">JS</div>
-                        <div class="emp-info">
-                            <div class="name">Jane Smith</div>
-                            <div class="id">EMP-002</div>
-                        </div>
-                    </div>
-                </td>
-                <td>Product Manager</td>
-                <td>Product</td>
-                <td>jane.smith@company.com</td>
-                <td>+1 (555) 987-6543</td>
-                <td>San Francisco</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="employee-card">
-                        <div class="avatar">RJ</div>
-                        <div class="emp-info">
-                            <div class="name">Robert Johnson</div>
-                            <div class="id">EMP-003</div>
-                        </div>
-                    </div>
-                </td>
-                <td>Sales Executive</td>
-                <td>Sales</td>
-                <td>robert.j@company.com</td>
-                <td>+1 (555) 456-7890</td>
-                <td>Chicago</td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.employee-directory {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-}
-
-.directory-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    background: #f8fafc;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.directory-header h3 {
-    margin: 0;
-    color: #1f2937;
-    font-weight: 600;
-}
-
-.search-box {
-    position: relative;
-    width: 300px;
-}
-
-.search-box i {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #6b7280;
-}
-
-.search-box input {
-    width: 100%;
-    padding: 0.75rem 1rem 0.75rem 2.5rem;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    transition: all 0.3s;
-}
-
-.search-box input:focus {
-    outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-.employee-directory table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.employee-directory th {
-    background: #1f2937;
-    color: white;
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.employee-directory td {
-    padding: 1rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #374151;
-}
-
-.employee-directory tr:hover {
-    background: #f9fafb;
-}
-
-.employee-card {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.employee-card .avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    flex-shrink: 0;
-}
-
-.emp-info .name {
-    font-weight: 600;
-    color: #1f2937;
-}
-
-.emp-info .id {
-    font-size: 0.75rem;
-    color: #6b7280;
-    margin-top: 2px;
-}`,
-    js: `// Employee directory search functionality
-document.querySelectorAll('.search-box input').forEach(input => {
-    input.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-        const rows = e.target.closest('.employee-directory').querySelectorAll('tbody tr');
-        
-        rows.forEach(row => {
-            const text = row.textContent.toLowerCase();
-            row.style.display = text.includes(searchTerm) ? '' : 'none';
-        });
-    });
-});`
-},
-
-// ====================================================================
-// TEMPLATE 4: SALES PERFORMANCE DASHBOARD
-// ====================================================================
-table4: {
-    html: `<div class="sales-dashboard">
-    <div class="dashboard-header">
-        <h3>Sales Performance Q4 2024</h3>
-        <div class="filters">
-            <select class="period-filter">
-                <option>Last 7 Days</option>
-                <option>Last 30 Days</option>
-                <option selected>Quarter 4</option>
-            </select>
-        </div>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th>Sales Rep</th>
-                <th>Region</th>
-                <th>Deals Closed</th>
-                <th>Revenue</th>
-                <th>Target</th>
-                <th>Achievement</th>
+                <th>Product</th>
+                <th>Q1 Sales</th>
+                <th>Q2 Sales</th>
+                <th>Growth</th>
                 <th>Trend</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Sarah Wilson</td>
-                <td>North America</td>
-                <td>24</td>
-                <td>$245,000</td>
-                <td>$200,000</td>
+                <td>Laptop Pro</td>
+                <td>$125,430</td>
+                <td>$148,920</td>
+                <td><span class="growth positive">+18.7%</span></td>
                 <td>
-                    <div class="achievement">
-                        <span class="percent">122%</span>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 122%"></div>
-                        </div>
+                    <div class="trend-chart">
+                        <div class="bar" style="height: 60%; background: #10b981;"></div>
+                        <div class="bar" style="height: 80%; background: #10b981;"></div>
+                        <div class="bar" style="height: 45%; background: #ef4444;"></div>
+                        <div class="bar" style="height: 90%; background: #10b981;"></div>
                     </div>
                 </td>
-                <td><span class="trend up">↗ 15%</span></td>
             </tr>
             <tr>
-                <td>Mike Chen</td>
-                <td>Europe</td>
-                <td>18</td>
-                <td>$189,500</td>
-                <td>$180,000</td>
+                <td>Smartphone X</td>
+                <td>$89,560</td>
+                <td>$95,320</td>
+                <td><span class="growth positive">+6.4%</span></td>
                 <td>
-                    <div class="achievement">
-                        <span class="percent">105%</span>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 105%"></div>
-                        </div>
+                    <div class="trend-chart">
+                        <div class="bar" style="height: 70%; background: #10b981;"></div>
+                        <div class="bar" style="height: 65%; background: #f59e0b;"></div>
+                        <div class="bar" style="height: 75%; background: #10b981;"></div>
+                        <div class="bar" style="height: 80%; background: #10b981;"></div>
                     </div>
                 </td>
-                <td><span class="trend up">↗ 8%</span></td>
             </tr>
             <tr>
-                <td>Emma Davis</td>
-                <td>Asia Pacific</td>
-                <td>15</td>
-                <td>$156,000</td>
-                <td>$175,000</td>
+                <td>Tablet Mini</td>
+                <td>$45,780</td>
+                <td>$42,150</td>
+                <td><span class="growth negative">-7.9%</span></td>
                 <td>
-                    <div class="achievement">
-                        <span class="percent">89%</span>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 89%"></div>
-                        </div>
+                    <div class="trend-chart">
+                        <div class="bar" style="height: 80%; background: #10b981;"></div>
+                        <div class="bar" style="height: 60%; background: #ef4444;"></div>
+                        <div class="bar" style="height: 55%; background: #ef4444;"></div>
+                        <div class="bar" style="height: 50%; background: #ef4444;"></div>
                     </div>
                 </td>
-                <td><span class="trend down">↘ 5%</span></td>
             </tr>
         </tbody>
     </table>
 </div>`,
-    css: `.sales-dashboard {
+        css: `.financial-table-container {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    border: 1px solid #e5e7eb;
+    animation: fadeInScale 0.6s ease-out;
 }
 
-.dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    background: #f8fafc;
-    border-bottom: 1px solid #e5e7eb;
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-.dashboard-header h3 {
-    margin: 0;
-    color: #1f2937;
-    font-weight: 600;
-}
-
-.period-filter {
-    padding: 0.5rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    background: white;
-    color: #374151;
-    font-size: 0.875rem;
-}
-
-.sales-dashboard table {
+.financial-table {
     width: 100%;
     border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.sales-dashboard th {
-    background: #1f2937;
+.financial-table th {
+    background: linear-gradient(135deg, #1e293b, #374151);
     color: white;
-    padding: 1rem;
+    padding: 1.2rem 1.5rem;
     text-align: left;
     font-weight: 600;
     font-size: 0.9rem;
+    border-bottom: 2px solid #4b5563;
 }
 
-.sales-dashboard td {
-    padding: 1rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #374151;
+.financial-table td {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
-.sales-dashboard tr:hover {
-    background: #f9fafb;
+.financial-table tr:hover td {
+    background: #f8fafc;
+    transform: translateX(8px);
 }
 
-.achievement {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    min-width: 120px;
+.financial-table tr {
+    transition: all 0.3s ease;
 }
 
-.percent {
-    font-weight: 600;
-    font-size: 0.875rem;
-    min-width: 40px;
-}
-
-.progress-bar {
-    flex: 1;
-    height: 8px;
-    background: #e5e7eb;
-    border-radius: 4px;
-    overflow: hidden;
-    min-width: 80px;
-}
-
-.progress-bar .progress {
-    height: 100%;
-    border-radius: 4px;
-}
-
-.trend {
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
+.growth {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.trend.up {
+.growth.positive {
     background: #d1fae5;
     color: #065f46;
+    animation: pulseGreen 2s infinite;
 }
 
-.trend.down {
+.growth.negative {
     background: #fee2e2;
     color: #dc2626;
 }
 
-/* Color coding for achievement levels */
-.sales-dashboard tr:nth-child(1) .progress { background: linear-gradient(90deg, #10b981, #059669); }
-.sales-dashboard tr:nth-child(2) .progress { background: linear-gradient(90deg, #f59e0b, #d97706); }
-.sales-dashboard tr:nth-child(3) .progress { background: linear-gradient(90deg, #ef4444, #dc2626); }`,
-    js: `// Sales dashboard filter functionality
-document.querySelectorAll('.period-filter').forEach(select => {
-    select.addEventListener('change', (e) => {
-        alert('Filtering data for: ' + e.target.value);
-        // In real implementation, you would filter the table data here
-    });
-});`
-},
+@keyframes pulseGreen {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+}
 
-// ====================================================================
-// TEMPLATE 5: PROJECT MANAGEMENT BOARD
-// ====================================================================
-table5: {
-    html: `<div class="project-management-board">
-    <div class="board-header">
-        <h3>Project Management</h3>
-        <div class="board-stats">
-            <div class="stat">
-                <span class="number">12</span>
-                <span class="label">Active</span>
-            </div>
-            <div class="stat">
-                <span class="number">5</span>
-                <span class="label">Completed</span>
-            </div>
-            <div class="stat">
-                <span class="number">2</span>
-                <span class="label">Delayed</span>
-            </div>
-        </div>
-    </div>
-    <table>
+.trend-chart {
+    display: flex;
+    align-items: end;
+    gap: 4px;
+    height: 30px;
+    width: 80px;
+}
+
+.bar {
+    width: 12px;
+    border-radius: 2px 2px 0 0;
+    transition: all 0.3s ease;
+    animation: barGrow 1s ease-out;
+}
+
+@keyframes barGrow {
+    from { height: 0%; opacity: 0; }
+    to { height: var(--target-height); opacity: 1; }
+}
+
+.financial-table tr:hover .bar {
+    transform: scaleY(1.1);
+}`,
+        js: `// Animate bars on load
+document.querySelectorAll('.bar').forEach(bar => {
+    const height = bar.style.height;
+    bar.style.setProperty('--target-height', height);
+    bar.style.height = '0%';
+    
+    setTimeout(() => {
+        bar.style.height = height;
+    }, 300);
+});`
+    },
+
+    // ====================================================================
+    // TEMPLATE 3: PROJECT MANAGEMENT TABLE
+    // ====================================================================
+    table3: {
+        html: `<div class="project-table-container">
+    <table class="project-table">
         <thead>
             <tr>
-                <th>Project Name</th>
-                <th>Team Lead</th>
-                <th>Priority</th>
-                <th>Progress</th>
-                <th>Deadline</th>
-                <th>Status</th>
+                <th>Project</th>
                 <th>Team</th>
+                <th>Deadline</th>
+                <th>Progress</th>
+                <th>Priority</th>
             </tr>
         </thead>
         <tbody>
@@ -786,130 +406,129 @@ table5: {
                         <div class="project-icon">🚀</div>
                         <div class="project-details">
                             <div class="project-name">Website Redesign</div>
-                            <div class="project-id">PROJ-2024-001</div>
+                            <div class="project-desc">Company portfolio update</div>
                         </div>
                     </div>
                 </td>
-                <td>John Doe</td>
-                <td><span class="priority high">High</span></td>
+                <td>
+                    <div class="team-avatars">
+                        <div class="team-avatar" style="background: #7c3aed;">JD</div>
+                        <div class="team-avatar" style="background: #ec4899;">AS</div>
+                        <div class="team-avatar" style="background: #10b981;">+2</div>
+                    </div>
+                </td>
+                <td>Dec 15, 2024</td>
                 <td>
                     <div class="progress-container">
                         <div class="progress-bar">
-                            <div class="progress" style="width: 75%"></div>
+                            <div class="progress-fill" style="width: 75%; background: #10b981;"></div>
                         </div>
-                        <span>75%</span>
+                        <span class="progress-text">75%</span>
                     </div>
                 </td>
-                <td>2024-12-15</td>
-                <td><span class="status on-track">On Track</span></td>
+                <td><span class="priority high">High</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="project-info">
+                        <div class="project-icon">📱</div>
+                        <div class="project-details">
+                            <div class="project-name">Mobile App</div>
+                            <div class="project-desc">Customer engagement platform</div>
+                        </div>
+                    </div>
+                </td>
                 <td>
                     <div class="team-avatars">
-                        <span class="avatar">JD</span>
-                        <span class="avatar">JS</span>
-                        <span class="avatar">+3</span>
+                        <div class="team-avatar" style="background: #3b82f6;">MS</div>
+                        <div class="team-avatar" style="background: #f59e0b;">RJ</div>
                     </div>
                 </td>
+                <td>Jan 30, 2024</td>
+                <td>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%; background: #f59e0b;"></div>
+                        </div>
+                        <span class="progress-text">45%</span>
+                    </div>
+                </td>
+                <td><span class="priority medium">Medium</span></td>
             </tr>
             <tr>
                 <td>
                     <div class="project-info">
                         <div class="project-icon">🛒</div>
                         <div class="project-details">
-                            <div class="project-name">E-commerce Platform</div>
-                            <div class="project-id">PROJ-2024-002</div>
+                            <div class="project-name">E-commerce</div>
+                            <div class="project-desc">Online store development</div>
                         </div>
                     </div>
                 </td>
-                <td>Jane Smith</td>
-                <td><span class="priority critical">Critical</span></td>
+                <td>
+                    <div class="team-avatars">
+                        <div class="team-avatar" style="background: #ef4444;">TK</div>
+                        <div class="team-avatar" style="background: #8b5cf6;">LM</div>
+                        <div class="team-avatar" style="background: #06b6d4;">+3</div>
+                    </div>
+                </td>
+                <td>Nov 20, 2024</td>
                 <td>
                     <div class="progress-container">
                         <div class="progress-bar">
-                            <div class="progress" style="width: 90%"></div>
+                            <div class="progress-fill" style="width: 90%; background: #ef4444;"></div>
                         </div>
-                        <span>90%</span>
+                        <span class="progress-text">90%</span>
                     </div>
                 </td>
-                <td>2024-11-30</td>
-                <td><span class="status completed">Completed</span></td>
-                <td>
-                    <div class="team-avatars">
-                        <span class="avatar">JS</span>
-                        <span class="avatar">RJ</span>
-                        <span class="avatar">+5</span>
-                    </div>
-                </td>
+                <td><span class="priority urgent">Urgent</span></td>
             </tr>
         </tbody>
     </table>
 </div>`,
-    css: `.project-management-board {
+        css: `.project-table-container {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    border: 1px solid #e5e7eb;
+    animation: slideInRight 0.6s ease-out;
 }
 
-.board-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    background: #f8fafc;
-    border-bottom: 1px solid #e5e7eb;
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-.board-header h3 {
-    margin: 0;
-    color: #1f2937;
-    font-weight: 600;
-}
-
-.board-stats {
-    display: flex;
-    gap: 2rem;
-}
-
-.stat {
-    text-align: center;
-}
-
-.stat .number {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1f2937;
-}
-
-.stat .label {
-    font-size: 0.875rem;
-    color: #6b7280;
-    margin-top: 0.25rem;
-}
-
-.project-management-board table {
+.project-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.project-management-board th {
-    background: #1f2937;
-    color: white;
-    padding: 1rem;
+.project-table th {
+    background: #f8fafc;
+    padding: 1.2rem 1.5rem;
     text-align: left;
     font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
     font-size: 0.9rem;
 }
 
-.project-management-board td {
-    padding: 1rem;
+.project-table td {
+    padding: 1.2rem 1.5rem;
     border-bottom: 1px solid #f3f4f6;
-    color: #374151;
+    transition: all 0.3s ease;
 }
 
-.project-management-board tr:hover {
-    background: #f9fafb;
+.project-table tr:hover td {
+    background: #f0f9ff;
+    transform: translateX(5px);
 }
 
 .project-info {
@@ -919,15 +538,12 @@ table5: {
 }
 
 .project-icon {
-    font-size: 1.25rem;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f3f4f6;
-    border-radius: 8px;
-    flex-shrink: 0;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.project-table tr:hover .project-icon {
+    transform: scale(1.2) rotate(10deg);
 }
 
 .project-details .project-name {
@@ -935,18 +551,75 @@ table5: {
     color: #1f2937;
 }
 
-.project-details .project-id {
-    font-size: 0.75rem;
+.project-details .project-desc {
+    font-size: 0.8rem;
     color: #6b7280;
-    margin-top: 2px;
+}
+
+.team-avatars {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.team-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.project-table tr:hover .team-avatar {
+    transform: translateY(-3px) scale(1.1);
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 1.5s ease-in-out;
+    animation: progressAnimation 1.5s ease-out;
+}
+
+@keyframes progressAnimation {
+    from { width: 0%; }
+    to { width: var(--target-width); }
+}
+
+.progress-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #374151;
+    min-width: 35px;
 }
 
 .priority {
-    padding: 0.35rem 0.75rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
 .priority.high {
@@ -954,139 +627,2758 @@ table5: {
     color: #92400e;
 }
 
-.priority.critical {
+.priority.medium {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.priority.urgent {
     background: #fee2e2;
     color: #dc2626;
+    animation: pulseRed 2s infinite;
 }
 
-.progress-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    min-width: 120px;
-}
-
-.progress-bar {
-    flex: 1;
-    height: 8px;
-    background: #e5e7eb;
-    border-radius: 4px;
-    overflow: hidden;
-    min-width: 80px;
-}
-
-.progress-bar .progress {
-    height: 100%;
-    border-radius: 4px;
-    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
-}
-
-.team-avatars {
-    display: flex;
-    gap: 0.25rem;
-}
-
-.team-avatars .avatar {
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
-    background: #6b7280;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 600;
-}
-
-.status.completed {
-    background: #d1fae5;
-    color: #065f46;
+@keyframes pulseRed {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
 }`,
-    js: `// Project management board functionality
-// Add any interactive features like sorting or filtering here`
-},
+        js: `// Animate progress bars on load
+document.querySelectorAll('.progress-fill').forEach(progress => {
+    const width = progress.style.width;
+    progress.style.setProperty('--target-width', width);
+    progress.style.width = '0%';
+    
+    setTimeout(() => {
+        progress.style.width = width;
+    }, 500);
+});`
+    },
 
-// ====================================================================
-// TEMPLATE 6: INVENTORY MANAGEMENT
-// ====================================================================
-table6: {
-    html: `<div class="inventory-management">
-    <div class="inventory-header">
-        <h3>Inventory Management</h3>
-        <div class="inventory-summary">
-            <div class="summary-item">
-                <span class="value">1,248</span>
-                <span class="label">Total Items</span>
-            </div>
-            <div class="summary-item">
-                <span class="value">$284,500</span>
-                <span class="label">Total Value</span>
-            </div>
-            <div class="summary-item">
-                <span class="value warning">42</span>
-                <span class="label">Low Stock</span>
-            </div>
-        </div>
-    </div>
-    <table>
+    // ====================================================================
+    // TEMPLATE 4: SALES PERFORMANCE TABLE
+    // ====================================================================
+    table4: {
+        html: `<div class="sales-table-container">
+    <table class="sales-table">
         <thead>
             <tr>
-                <th>Product ID</th>
-                <th>Product Name</th>
-                <th>Category</th>
-                <th>Current Stock</th>
-                <th>Reorder Level</th>
-                <th>Unit Price</th>
-                <th>Total Value</th>
-                <th>Stock Status</th>
+                <th>Sales Rep</th>
+                <th>Region</th>
+                <th>Deals</th>
+                <th>Revenue</th>
+                <th>Target</th>
+                <th>Performance</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>PROD-001</td>
-                <td>MacBook Pro 16"</td>
-                <td>Electronics</td>
-                <td>48</td>
-                <td>20</td>
-                <td>$2,499</td>
-                <td>$119,952</td>
-                <td><span class="stock-status in-stock">In Stock</span></td>
+                <td>
+                    <div class="sales-rep">
+                        <div class="rep-avatar" style="background: #7c3aed;">SR</div>
+                        <div class="rep-info">
+                            <div class="rep-name">Sarah Johnson</div>
+                            <div class="rep-title">Senior Rep</div>
+                        </div>
+                    </div>
+                </td>
+                <td>North America</td>
+                <td>24</td>
+                <td>$284,500</td>
+                <td>$250,000</td>
+                <td>
+                    <div class="performance-indicator">
+                        <div class="performance-bar">
+                            <div class="performance-fill exceeded"></div>
+                        </div>
+                        <span class="performance-text">+13.8%</span>
+                    </div>
+                </td>
             </tr>
             <tr>
-                <td>PROD-002</td>
-                <td>Wireless Mouse</td>
-                <td>Accessories</td>
-                <td>15</td>
-                <td>25</td>
-                <td>$79</td>
-                <td>$1,185</td>
-                <td><span class="stock-status low-stock">Low Stock</span></td>
+                <td>
+                    <div class="sales-rep">
+                        <div class="rep-avatar" style="background: #10b981;">MR</div>
+                        <div class="rep-info">
+                            <div class="rep-name">Mike Rodriguez</div>
+                            <div class="rep-title">Account Exec</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Europe</td>
+                <td>18</td>
+                <td>$198,200</td>
+                <td>$200,000</td>
+                <td>
+                    <div class="performance-indicator">
+                        <div class="performance-bar">
+                            <div class="performance-fill on-track"></div>
+                        </div>
+                        <span class="performance-text">-0.9%</span>
+                    </div>
+                </td>
             </tr>
             <tr>
-                <td>PROD-003</td>
-                <td>USB-C Hub</td>
-                <td>Accessories</td>
-                <td>0</td>
-                <td>15</td>
-                <td>$129</td>
-                <td>$0</td>
-                <td><span class="stock-status out-of-stock">Out of Stock</span></td>
-            </tr>
-            <tr>
-                <td>PROD-004</td>
-                <td>Monitor 27" 4K</td>
-                <td>Electronics</td>
-                <td>32</td>
-                <td>10</td>
-                <td>$699</td>
-                <td>$22,368</td>
-                <td><span class="stock-status in-stock">In Stock</span></td>
+                <td>
+                    <div class="sales-rep">
+                        <div class="rep-avatar" style="background: #f59e0b;">ED</div>
+                        <div class="rep-info">
+                            <div class="rep-name">Emily Davis</div>
+                            <div class="rep-title">Sales Manager</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Asia Pacific</td>
+                <td>31</td>
+                <td>$412,800</td>
+                <td>$350,000</td>
+                <td>
+                    <div class="performance-indicator">
+                        <div class="performance-bar">
+                            <div class="performance-fill exceeded"></div>
+                        </div>
+                        <span class="performance-text">+17.9%</span>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>
 </div>`,
-    css: `.inventory-management {
+        css: `.sales-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: bounceIn 0.8s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sales-table th {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: white;
+    padding: 1.2rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-bottom: 2px solid #047857;
+}
+
+.sales-table td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.sales-table tr:hover td {
+    background: #f0fdf4;
+    transform: scale(1.02);
+}
+
+.sales-rep {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.rep-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.sales-table tr:hover .rep-avatar {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.rep-info .rep-name {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.rep-info .rep-title {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.performance-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.performance-bar {
+    flex: 1;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.performance-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 1.5s ease-in-out;
+    animation: performanceAnimation 1.5s ease-out;
+    position: relative;
+}
+
+.performance-fill.exceeded {
+    background: linear-gradient(90deg, #10b981, #34d399);
+    width: 113%;
+}
+
+.performance-fill.on-track {
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    width: 99%;
+}
+
+@keyframes performanceAnimation {
+    from { width: 0%; }
+    to { width: var(--target-width); }
+}
+
+.performance-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.performance-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    min-width: 50px;
+    text-align: right;
+}
+
+.performance-fill.exceeded + .performance-text {
+    color: #065f46;
+}
+
+.performance-fill.on-track + .performance-text {
+    color: #92400e;
+}
+
+.sales-table tr:nth-child(1) .performance-fill {
+    animation-delay: 0.1s;
+}
+
+.sales-table tr:nth-child(2) .performance-fill {
+    animation-delay: 0.3s;
+}
+
+.sales-table tr:nth-child(3) .performance-fill {
+    animation-delay: 0.5s;
+}`,
+        js: `// Animate performance bars with delays
+document.querySelectorAll('.performance-fill').forEach((fill, index) => {
+    const width = fill.style.width || fill.classList.contains('exceeded') ? '113%' : '99%';
+    fill.style.setProperty('--target-width', width);
+    fill.style.width = '0%';
+    
+    setTimeout(() => {
+        fill.style.width = width;
+    }, 300 + (index * 200));
+});`
+    },
+
+    // ====================================================================
+    // TEMPLATE 5: EMPLOYEE DIRECTORY TABLE
+    // ====================================================================
+    table5: {
+        html: `<div class="employee-table-container">
+    <table class="employee-table">
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Role</th>
+                <th>Department</th>
+                <th>Join Date</th>
+                <th>Salary</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="employee-info">
+                        <div class="employee-avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="John Doe">
+                        </div>
+                        <div class="employee-details">
+                            <div class="employee-name">John Doe</div>
+                            <div class="employee-id">EMP-001</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Senior Developer</td>
+                <td>Engineering</td>
+                <td>Jan 15, 2020</td>
+                <td>$95,000</td>
+                <td>
+                    <div class="rating">
+                        <span class="star filled">⭐</span>
+                        <span class="star filled">⭐</span>
+                        <span class="star filled">⭐</span>
+                        <span class="star filled">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="employee-info">
+                        <div class="employee-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face" alt="Jane Smith">
+                        </div>
+                        <div class="employee-details">
+                            <div class="employee-name">Jane Smith</div>
+                            <div class="employee-id">EMP-002</div>
+                        </div>
+                    </div>
+                </td>
+                <td>UX Designer</td>
+                <td>Design</td>
+                <td>Mar 22, 2021</td>
+                <td>$85,000</td>
+                <td>
+                    <div class="rating">
+                        <span class="star filled">⭐</span>
+                        <span class="star filled">⭐</span>
+                        <span class="star filled">⭐</span>
+                        <span class="star filled">⭐</span>
+                        <span class="star filled">⭐</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="employee-info">
+                        <div class="employee-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Robert Kim">
+                        </div>
+                        <div class="employee-details">
+                            <div class="employee-name">Robert Kim</div>
+                            <div class="employee-id">EMP-003</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Product Manager</td>
+                <td>Product</td>
+                <td>Aug 10, 2019</td>
+                <td>$110,000</td>
+                <td>
+                    <div class="rating">
+                        <span class="star filled">⭐</span>
+                        <span class="star filled">⭐</span>
+                        <span class="star filled">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+        css: `.employee-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: flipInX 0.8s ease-out;
+}
+
+@keyframes flipInX {
+    from {
+        opacity: 0;
+        transform: perspective(400px) rotateX(90deg);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(400px) rotateX(0);
+    }
+}
+
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.employee-table th {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    padding: 1.2rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-bottom: 2px solid #4f46e5;
+}
+
+.employee-table td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    transition: all 0.3s ease;
+}
+
+.employee-table tr {
+    transition: all 0.3s ease;
+}
+
+.employee-table tr:hover {
+    background: #faf5ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.employee-table tr:hover td {
+    background: transparent;
+}
+
+.employee-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.employee-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.employee-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.employee-table tr:hover .employee-avatar {
+    border-color: #8b5cf6;
+    transform: scale(1.1);
+}
+
+.employee-details .employee-name {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.employee-details .employee-id {
+    font-size: 0.75rem;
+    color: #6b7280;
+    font-family: 'Courier New', monospace;
+}
+
+.rating {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    font-size: 1rem;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+    animation: starTwinkle 2s infinite;
+}
+
+.star.filled {
+    opacity: 1;
+    color: #f59e0b;
+    animation: starPulse 1.5s infinite;
+}
+
+@keyframes starPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+.employee-table tr:hover .star.filled {
+    animation: starBounce 0.6s ease;
+}
+
+@keyframes starBounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+    60% { transform: translateY(-4px); }
+}
+
+/* Staggered animation for stars */
+.rating .star:nth-child(1) { animation-delay: 0.1s; }
+.rating .star:nth-child(2) { animation-delay: 0.2s; }
+.rating .star:nth-child(3) { animation-delay: 0.3s; }
+.rating .star:nth-child(4) { animation-delay: 0.4s; }
+.rating .star:nth-child(5) { animation-delay: 0.5s; }`,
+        js: `// Add hover effects for employee rows
+document.querySelectorAll('.employee-table tr').forEach(row => {
+    row.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = '0 4px 12px rgba(139, 92, 246, 0.15)';
+    });
+    
+    row.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = 'none';
+    });
+});
+
+// Animate stars on load
+document.querySelectorAll('.star.filled').forEach((star, index) => {
+    star.style.animationDelay = `
+},
+    // ====================================================================
+    // TEMPLATE 6: BUSINESS METRICS DASHBOARD TABLE
+    // ====================================================================
+    table6: {
+        html: `<div class="metrics-table-container">
+    <table class="metrics-table">
+        <thead>
+            <tr>
+                <th>KPI</th>
+                <th>Current</th>
+                <th>Previous</th>
+                <th>Change</th>
+                <th>Trend</th>
+                <th>Target</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="kpi-info">
+                        <div class="kpi-icon">📈</div>
+                        <div class="kpi-details">
+                            <div class="kpi-name">Revenue Growth</div>
+                            <div class="kpi-desc">Monthly recurring</div>
+                        </div>
+                    </div>
+                </td>
+                <td>$125K</td>
+                <td>$98K</td>
+                <td><span class="change positive">+27.5%</span></td>
+                <td>
+                    <div class="trend-sparkline">
+                        <div class="sparkline-bar" style="height: 40%"></div>
+                        <div class="sparkline-bar" style="height: 60%"></div>
+                        <div class="sparkline-bar" style="height: 55%"></div>
+                        <div class="sparkline-bar" style="height: 80%"></div>
+                        <div class="sparkline-bar" style="height: 95%"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="target-indicator">
+                        <div class="target-progress" style="width: 125%"></div>
+                        <span class="target-text">125%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="kpi-info">
+                        <div class="kpi-icon">👥</div>
+                        <div class="kpi-details">
+                            <div class="kpi-name">Customer Acquisition</div>
+                            <div class="kpi-desc">New customers</div>
+                        </div>
+                    </div>
+                </td>
+                <td>1,248</td>
+                <td>956</td>
+                <td><span class="change positive">+30.5%</span></td>
+                <td>
+                    <div class="trend-sparkline">
+                        <div class="sparkline-bar" style="height: 35%"></div>
+                        <div class="sparkline-bar" style="height: 45%"></div>
+                        <div class="sparkline-bar" style="height: 65%"></div>
+                        <div class="sparkline-bar" style="height: 75%"></div>
+                        <div class="sparkline-bar" style="height: 100%"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="target-indicator">
+                        <div class="target-progress" style="width: 104%"></div>
+                        <span class="target-text">104%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="kpi-info">
+                        <div class="kpi-icon">💬</div>
+                        <div class="kpi-details">
+                            <div class="kpi-name">Customer Satisfaction</div>
+                            <div class="kpi-desc">CSAT Score</div>
+                        </div>
+                    </div>
+                </td>
+                <td>4.8/5</td>
+                <td>4.6/5</td>
+                <td><span class="change positive">+4.3%</span></td>
+                <td>
+                    <div class="trend-sparkline">
+                        <div class="sparkline-bar" style="height: 80%"></div>
+                        <div class="sparkline-bar" style="height: 85%"></div>
+                        <div class="sparkline-bar" style="height: 82%"></div>
+                        <div class="sparkline-bar" style="height: 88%"></div>
+                        <div class="sparkline-bar" style="height: 96%"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="target-indicator">
+                        <div class="target-progress" style="width: 96%"></div>
+                        <span class="target-text">96%</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+        css: `.metrics-table-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: slideInUp 0.6s ease-out;
+}
+
+.metrics-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+}
+
+.metrics-table th {
+    background: linear-gradient(135deg, #1a56db, #1e40af);
+    color: white;
+    padding: 1.3rem 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-bottom: 3px solid #1e3a8a;
+    position: relative;
+    overflow: hidden;
+}
+
+.metrics-table th::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.metrics-table td {
+    padding: 1.3rem 1.2rem;
+    border-bottom: 1px solid #f1f5f9;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.metrics-table tr {
+    transition: all 0.3s ease;
+}
+
+.metrics-table tr:hover {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    transform: translateX(8px);
+}
+
+.metrics-table tr:hover td {
+    background: transparent;
+}
+
+.metrics-table tr:hover td::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(135deg, #1a56db, #06b6d4);
+    animation: slideInLeft 0.3s ease-out;
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-10px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.kpi-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.kpi-icon {
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+.metrics-table tr:hover .kpi-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.kpi-details .kpi-name {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.95rem;
+}
+
+.kpi-details .kpi-desc {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.change {
+    padding: 0.5rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: inline-block;
+    animation: bounceIn 0.6s ease-out;
+}
+
+.change.positive {
+    background: linear-gradient(135deg, #10b981, #34d399);
+    color: white;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.trend-sparkline {
+    display: flex;
+    align-items: end;
+    gap: 3px;
+    height: 35px;
+    width: 80px;
+}
+
+.sparkline-bar {
+    width: 8px;
+    border-radius: 4px 4px 0 0;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    transition: all 0.4s ease;
+    animation: sparklineGrow 1s ease-out;
+}
+
+@keyframes sparklineGrow {
+    from { 
+        height: 0%; 
+        opacity: 0; 
+        transform: translateY(10px);
+    }
+    to { 
+        height: var(--target-height); 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.metrics-table tr:hover .sparkline-bar {
+    transform: scaleY(1.2);
+    background: linear-gradient(135deg, #1d4ed8, #0891b2);
+}
+
+.target-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: #f8fafc;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.target-progress {
+    height: 6px;
+    background: linear-gradient(135deg, #10b981, #34d399);
+    border-radius: 10px;
+    transition: width 1.5s ease-in-out;
+    animation: targetProgress 1.5s ease-out;
+    position: relative;
+}
+
+@keyframes targetProgress {
+    from { width: 0%; }
+    to { width: var(--target-width); }
+}
+
+.target-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.6), 
+        transparent
+    );
+    animation: progressShimmer 2s infinite;
+}
+
+@keyframes progressShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.target-text {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    min-width: 40px;
+    text-align: center;
+}
+
+/* Staggered animations */
+.metrics-table tr:nth-child(1) .sparkline-bar { animation-delay: 0.1s; }
+.metrics-table tr:nth-child(2) .sparkline-bar { animation-delay: 0.2s; }
+.metrics-table tr:nth-child(3) .sparkline-bar { animation-delay: 0.3s; }
+
+.metrics-table tr:nth-child(1) .target-progress { animation-delay: 0.4s; }
+.metrics-table tr:nth-child(2) .target-progress { animation-delay: 0.5s; }
+.metrics-table tr:nth-child(3) .target-progress { animation-delay: 0.6s; }`,
+        js: `// Animate sparkline bars
+document.querySelectorAll('.sparkline-bar').forEach(bar => {
+    const height = bar.style.height;
+    bar.style.setProperty('--target-height', height);
+    bar.style.height = '0%';
+    
+    setTimeout(() => {
+        bar.style.height = height;
+    }, 300);
+});
+
+// Animate target progress
+document.querySelectorAll('.target-progress').forEach(progress => {
+    const width = progress.style.width;
+    progress.style.setProperty('--target-width', width);
+    progress.style.width = '0%';
+    
+    setTimeout(() => {
+        progress.style.width = width;
+    }, 500);
+});`
+    },
+
+    // ====================================================================
+    // TEMPLATE 7: REAL-TIME ANALYTICS TABLE
+    // ====================================================================
+    table7: {
+        html: `<div class="analytics-table-container">
+    <div class="table-header">
+        <h3>Real-Time Analytics</h3>
+        <div class="live-indicator">
+            <span class="live-dot"></span>
+            LIVE
+        </div>
+    </div>
+    <table class="analytics-table">
+        <thead>
+            <tr>
+                <th>Page</th>
+                <th>Visitors</th>
+                <th>Bounce Rate</th>
+                <th>Avg. Time</th>
+                <th>Conversions</th>
+                <th>Trend</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="page-info">
+                        <div class="page-icon">🏠</div>
+                        <div class="page-details">
+                            <div class="page-name">Homepage</div>
+                            <div class="page-url">example.com</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="metric-with-change">
+                        <span class="metric-value">12,458</span>
+                        <span class="metric-change positive">+12%</span>
+                    </div>
+                </td>
+                <td>32%</td>
+                <td>3m 24s</td>
+                <td>8.2%</td>
+                <td>
+                    <div class="analytics-trend up">
+                        <span class="trend-arrow">↗</span>
+                        <span class="trend-value">+15%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="page-info">
+                        <div class="page-icon">🛒</div>
+                        <div class="page-details">
+                            <div class="page-name">Product Page</div>
+                            <div class="page-url">/products</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="metric-with-change">
+                        <span class="metric-value">8,742</span>
+                        <span class="metric-change positive">+8%</span>
+                    </div>
+                </td>
+                <td>28%</td>
+                <td>4m 12s</td>
+                <td>12.5%</td>
+                <td>
+                    <div class="analytics-trend up">
+                        <span class="trend-arrow">↗</span>
+                        <span class="trend-value">+22%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="page-info">
+                        <div class="page-icon">📱</div>
+                        <div class="page-details">
+                            <div class="page-name">Mobile App</div>
+                            <div class="page-url">/mobile</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="metric-with-change">
+                        <span class="metric-value">6,321</span>
+                        <span class="metric-change negative">-3%</span>
+                    </div>
+                </td>
+                <td>45%</td>
+                <td>2m 18s</td>
+                <td>5.8%</td>
+                <td>
+                    <div class="analytics-trend down">
+                        <span class="trend-arrow">↘</span>
+                        <span class="trend-value">-8%</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+        css: `.analytics-table-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-out;
+    border: 1px solid #e2e8f0;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px) scale(0.95);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1);
+    }
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border-bottom: 1px solid #334155;
+}
+
+.table-header h3 {
+    color: white;
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(239, 68, 68, 0.2);
+    color: #fca5a5;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: pulseLive 2s infinite;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+@keyframes pulseLive {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+    }
+    50% { 
+        box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+    }
+}
+
+.analytics-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.analytics-table th {
+    background: #f8fafc;
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.85rem;
+    border-bottom: 2px solid #e2e8f0;
+    position: relative;
+}
+
+.analytics-table th::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    animation: headerSlide 3s infinite;
+}
+
+@keyframes headerSlide {
+    0% { width: 0; left: 0; }
+    50% { width: 100%; left: 0; }
+    100% { width: 0; left: 100%; }
+}
+
+.analytics-table td {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.analytics-table tr {
+    transition: all 0.3s ease;
+}
+
+.analytics-table tr:hover {
+    background: #f8fafc;
+    transform: translateX(5px);
+}
+
+.analytics-table tr:hover td {
+    background: transparent;
+}
+
+.analytics-table tr:hover td::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+}
+
+.page-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.page-icon {
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.analytics-table tr:hover .page-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.page-details .page-name {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.9rem;
+}
+
+.page-details .page-url {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-family: 'Courier New', monospace;
+}
+
+.metric-with-change {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.metric-value {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 1rem;
+}
+
+.metric-change {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.4rem;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.metric-change.positive {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.metric-change.negative {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.analytics-trend {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    animation: trendPulse 2s infinite;
+}
+
+@keyframes trendPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.analytics-trend.up {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+    color: #065f46;
+}
+
+.analytics-trend.down {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    color: #dc2626;
+}
+
+.trend-arrow {
+    font-size: 1rem;
+    animation: bounce 0.6s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-2px); }
+}
+
+/* Real-time data simulation */
+@keyframes dataUpdate {
+    0% { background: transparent; }
+    50% { background: rgba(34, 197, 94, 0.1); }
+    100% { background: transparent; }
+}
+
+.data-updating {
+    animation: dataUpdate 1s ease-in-out;
+}`,
+        js: `// Simulate real-time data updates
+function simulateDataUpdates() {
+    const rows = document.querySelectorAll('.analytics-table tbody tr');
+    
+    setInterval(() => {
+        const randomRow = rows[Math.floor(Math.random() * rows.length)];
+        randomRow.classList.add('data-updating');
+        
+        setTimeout(() => {
+            randomRow.classList.remove('data-updating');
+        }, 1000);
+    }, 3000);
+}
+
+// Initialize real-time simulation
+simulateDataUpdates();
+
+// Add hover effects for trend indicators
+document.querySelectorAll('.analytics-trend').forEach(trend => {
+    trend.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1)';
+    });
+    
+    trend.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+    });
+});`
+    },
+
+    // ====================================================================
+    // TEMPLATE 8: INVESTMENT PORTFOLIO TABLE
+    // ====================================================================
+    table8: {
+        html: `<div class="portfolio-table-container">
+    <table class="portfolio-table">
+        <thead>
+            <tr>
+                <th>Asset</th>
+                <th>Symbol</th>
+                <th>Price</th>
+                <th>24h Change</th>
+                <th>Holdings</th>
+                <th>Value</th>
+                <th>Allocation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="asset-info">
+                        <div class="asset-icon">🔵</div>
+                        <div class="asset-details">
+                            <div class="asset-name">Apple Inc.</div>
+                            <div class="asset-type">Technology</div>
+                        </div>
+                    </div>
+                </td>
+                <td>AAPL</td>
+                <td>$182.63</td>
+                <td>
+                    <div class="price-change positive">
+                        <span class="change-arrow">↑</span>
+                        <span class="change-value">+2.34%</span>
+                    </div>
+                </td>
+                <td>50 shares</td>
+                <td>$9,131.50</td>
+                <td>
+                    <div class="allocation-container">
+                        <div class="allocation-bar">
+                            <div class="allocation-fill" style="width: 35%"></div>
+                        </div>
+                        <span class="allocation-text">35%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="asset-info">
+                        <div class="asset-icon">🟢</div>
+                        <div class="asset-details">
+                            <div class="asset-name">Microsoft</div>
+                            <div class="asset-type">Technology</div>
+                        </div>
+                    </div>
+                </td>
+                <td>MSFT</td>
+                <td>$378.85</td>
+                <td>
+                    <div class="price-change positive">
+                        <span class="change-arrow">↑</span>
+                        <span class="change-value">+1.87%</span>
+                    </div>
+                </td>
+                <td>20 shares</td>
+                <td>$7,577.00</td>
+                <td>
+                    <div class="allocation-container">
+                        <div class="allocation-bar">
+                            <div class="allocation-fill" style="width: 28%"></div>
+                        </div>
+                        <span class="allocation-text">28%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="asset-info">
+                        <div class="asset-icon">🟡</div>
+                        <div class="asset-details">
+                            <div class="asset-name">Amazon</div>
+                            <div class="asset-type">E-commerce</div>
+                        </div>
+                    </div>
+                </td>
+                <td>AMZN</td>
+                <td>$145.18</td>
+                <td>
+                    <div class="price-change negative">
+                        <span class="change-arrow">↓</span>
+                        <span class="change-value">-0.92%</span>
+                    </div>
+                </td>
+                <td>35 shares</td>
+                <td>$5,081.30</td>
+                <td>
+                    <div class="allocation-container">
+                        <div class="allocation-bar">
+                            <div class="allocation-fill" style="width: 20%"></div>
+                        </div>
+                        <span class="allocation-text">20%</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+        css: `.portfolio-table-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    animation: slideInRight 0.7s ease-out;
+    border: 1px solid #f1f5f9;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px) rotateY(10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotateY(0);
+    }
+}
+
+.portfolio-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'SF Pro Display', -apple-system, sans-serif;
+}
+
+.portfolio-table th {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: white;
+    padding: 1.3rem 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-bottom: 3px solid #047857;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-table th::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+    animation: headerShimmer 4s infinite;
+}
+
+@keyframes headerShimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.portfolio-table td {
+    padding: 1.3rem 1.2rem;
+    border-bottom: 1px solid #f8fafc;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.portfolio-table tr {
+    transition: all 0.3s ease;
+}
+
+.portfolio-table tr:hover {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+}
+
+.portfolio-table tr:hover td {
+    background: transparent;
+}
+
+.asset-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.asset-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    transition: all 0.4s ease;
+}
+
+.portfolio-table tr:hover .asset-icon {
+    transform: scale(1.1) rotate(15deg);
+    background: linear-gradient(135deg, #10b981, #34d399);
+    color: white;
+}
+
+.asset-details .asset-name {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.95rem;
+}
+
+.asset-details .asset-type {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.price-change {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    animation: pricePulse 2s infinite;
+}
+
+@keyframes pricePulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.price-change.positive {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+    color: #065f46;
+}
+
+.price-change.negative {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    color: #dc2626;
+}
+
+.change-arrow {
+    font-size: 0.9rem;
+    animation: arrowBounce 0.8s infinite alternate;
+}
+
+@keyframes arrowBounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-2px); }
+}
+
+.allocation-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.allocation-bar {
+    flex: 1;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.allocation-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    transition: width 1.5s ease-in-out;
+    animation: allocationGrow 1.5s ease-out;
+    position: relative;
+}
+
+@keyframes allocationGrow {
+    from { 
+        width: 0%; 
+        opacity: 0;
+    }
+    to { 
+        width: var(--target-width); 
+        opacity: 1;
+    }
+}
+
+.allocation-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.6), 
+        transparent
+    );
+    animation: allocationShimmer 3s infinite;
+}
+
+@keyframes allocationShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.allocation-text {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    min-width: 35px;
+    text-align: center;
+}
+
+/* Staggered animations for better visual effect */
+.portfolio-table tr:nth-child(1) .allocation-fill { animation-delay: 0.1s; }
+.portfolio-table tr:nth-child(2) .allocation-fill { animation-delay: 0.3s; }
+.portfolio-table tr:nth-child(3) .allocation-fill { animation-delay: 0.5s; }
+
+.portfolio-table tr:nth-child(1) .price-change { animation-delay: 0.2s; }
+.portfolio-table tr:nth-child(2) .price-change { animation-delay: 0.4s; }
+.portfolio-table tr:nth-child(3) .price-change { animation-delay: 0.6s; }`,
+        js: `// Animate allocation bars
+document.querySelectorAll('.allocation-fill').forEach(fill => {
+    const width = fill.style.width;
+    fill.style.setProperty('--target-width', width);
+    fill.style.width = '0%';
+    
+    setTimeout(() => {
+        fill.style.width = width;
+    }, 300);
+});
+
+// Add interactive price change effects
+document.querySelectorAll('.price-change').forEach(change => {
+    change.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1) translateY(-2px)';
+    });
+    
+    change.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1) translateY(0)';
+    });
+});
+
+// Simulate price updates
+function simulatePriceUpdates() {
+    const priceChanges = document.querySelectorAll('.price-change');
+    
+    setInterval(() => {
+        const randomChange = priceChanges[Math.floor(Math.random() * priceChanges.length)];
+        randomChange.style.animation = 'none';
+        setTimeout(() => {
+            randomChange.style.animation = 'pricePulse 2s infinite';
+        }, 10);
+    }, 5000);
+}
+
+simulatePriceUpdates();`
+    },
+
+    // ====================================================================
+    // TEMPLATE 9: TEAM PERFORMANCE SCOREBOARD
+    // ====================================================================
+    table9: {
+        html: `<div class="scoreboard-table-container">
+    <table class="scoreboard-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Team Member</th>
+                <th>Department</th>
+                <th>Tasks Completed</th>
+                <th>Quality Score</th>
+                <th>Productivity</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="first-place">
+                <td>
+                    <div class="rank-badge gold">1</div>
+                </td>
+                <td>
+                    <div class="member-info">
+                        <div class="member-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">SJ</div>
+                        <div class="member-details">
+                            <div class="member-name">Sarah Johnson</div>
+                            <div class="member-role">Lead Developer</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Engineering</td>
+                <td>42</td>
+                <td>
+                    <div class="quality-score excellent">98%</div>
+                </td>
+                <td>
+                    <div class="productivity-meter">
+                        <div class="productivity-fill" style="width: 95%"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="points-display">
+                        <span class="points-value">1,250</span>
+                        <span class="points-change positive">+125</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="second-place">
+                <td>
+                    <div class="rank-badge silver">2</div>
+                </td>
+                <td>
+                    <div class="member-info">
+                        <div class="member-avatar" style="background: linear-gradient(135deg, #94a3b8, #64748b);">MR</div>
+                        <div class="member-details">
+                            <div class="member-name">Mike Rodriguez</div>
+                            <div class="member-role">UX Designer</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Design</td>
+                <td>38</td>
+                <td>
+                    <div class="quality-score great">92%</div>
+                </td>
+                <td>
+                    <div class="productivity-meter">
+                        <div class="productivity-fill" style="width: 88%"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="points-display">
+                        <span class="points-value">1,125</span>
+                        <span class="points-change positive">+88</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="third-place">
+                <td>
+                    <div class="rank-badge bronze">3</div>
+                </td>
+                <td>
+                    <div class="member-info">
+                        <div class="member-avatar" style="background: linear-gradient(135deg, #b45309, #92400e);">ED</div>
+                        <div class="member-details">
+                            <div class="member-name">Emily Davis</div>
+                            <div class="member-role">Product Manager</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Product</td>
+                <td>35</td>
+                <td>
+                    <div class="quality-score good">87%</div>
+                </td>
+                <td>
+                    <div class="productivity-meter">
+                        <div class="productivity-fill" style="width: 82%"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="points-display">
+                        <span class="points-value">980</span>
+                        <span class="points-change positive">+45</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+        css: `.scoreboard-table-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    animation: zoomIn 0.8s ease-out;
+    border: 1px solid #f1f5f9;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) rotateX(10deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotateX(0);
+    }
+}
+
+.scoreboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+}
+
+.scoreboard-table th {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+    padding: 1.4rem 1.3rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-bottom: 3px solid #334155;
+    position: relative;
+    overflow: hidden;
+}
+
+.scoreboard-table th::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        #f59e0b, 
+        #eab308, 
+        #f59e0b
+    );
+    animation: goldShimmer 3s infinite;
+}
+
+@keyframes goldShimmer {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.scoreboard-table td {
+    padding: 1.4rem 1.3rem;
+    border-bottom: 1px solid #f8fafc;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.scoreboard-table tr {
+    transition: all 0.4s ease;
+}
+
+.scoreboard-table tr:hover {
+    transform: translateX(10px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.scoreboard-table tr.first-place:hover {
+    background: linear-gradient(135deg, #fefce8, #fef3c7);
+}
+
+.scoreboard-table tr.second-place:hover {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+}
+
+.scoreboard-table tr.third-place:hover {
+    background: linear-gradient(135deg, #fef7ed, #fed7aa);
+}
+
+.rank-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    animation: badgePulse 2s infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.rank-badge.gold {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+.rank-badge.silver {
+    background: linear-gradient(135deg, #94a3b8, #64748b);
+    box-shadow: 0 4px 15px rgba(148, 163, 184, 0.4);
+}
+
+.rank-badge.bronze {
+    background: linear-gradient(135deg, #b45309, #92400e);
+    box-shadow: 0 4px 15px rgba(180, 83, 9, 0.4);
+}
+
+.scoreboard-table tr:hover .rank-badge {
+    transform: scale(1.2) rotate(15deg);
+    animation: badgeSpin 0.6s ease;
+}
+
+@keyframes badgeSpin {
+    from { transform: scale(1) rotate(0); }
+    to { transform: scale(1.2) rotate(15deg); }
+}
+
+.member-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.member-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+}
+
+.scoreboard-table tr:hover .member-avatar {
+    transform: scale(1.1);
+    border-color: #f1f5f9;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.member-details .member-name {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 1rem;
+}
+
+.member-details .member-role {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.quality-score {
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: scoreGlow 2s infinite;
+}
+
+@keyframes scoreGlow {
+    0%, 100% { 
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    50% { 
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.quality-score.excellent {
+    background: linear-gradient(135deg, #10b981, #34d399);
+    color: white;
+}
+
+.quality-score.great {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+}
+
+.quality-score.good {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    color: white;
+}
+
+.productivity-meter {
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.productivity-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    transition: width 1.5s ease-in-out;
+    animation: productivityGrow 1.5s ease-out;
+    position: relative;
+}
+
+@keyframes productivityGrow {
+    from { 
+        width: 0%; 
+        opacity: 0;
+    }
+    to { 
+        width: var(--target-width); 
+        opacity: 1;
+    }
+}
+
+.productivity-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.6), 
+        transparent
+    );
+    animation: meterShimmer 2s infinite;
+}
+
+@keyframes meterShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.points-display {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+.points-value {
+    font-weight: 800;
+    color: #1e293b;
+    font-size: 1.1rem;
+}
+
+.points-change {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+}
+
+.points-change.positive {
+    background: #d1fae5;
+    color: #065f46;
+    animation: pointsBounce 0.6s ease;
+}
+
+@keyframes pointsBounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
+}
+
+/* Medal animation for top performers */
+@keyframes medalGlow {
+    0%, 100% { 
+        filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.6));
+    }
+    50% { 
+        filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.9));
+    }
+}
+
+.first-place .rank-badge {
+    animation: medalGlow 2s infinite, badgePulse 2s infinite;
+}`,
+        js: `// Animate productivity meters
+document.querySelectorAll('.productivity-fill').forEach(fill => {
+    const width = fill.style.width;
+    fill.style.setProperty('--target-width', width);
+    fill.style.width = '0%';
+    
+    setTimeout(() => {
+        fill.style.width = width;
+    }, 400);
+});
+
+// Add celebration effect for top performers
+document.querySelectorAll('.first-place, .second-place, .third-place').forEach(row => {
+    row.addEventListener('mouseenter', function() {
+        this.style.zIndex = '10';
+        this.style.position = 'relative';
+    });
+    
+    row.addEventListener('mouseleave', function() {
+        this.style.zIndex = '1';
+    });
+});
+
+// Simulate points updates
+function simulatePointsUpdates() {
+    const pointsChanges = document.querySelectorAll('.points-change');
+    
+    setInterval(() => {
+        pointsChanges.forEach(change => {
+            change.style.animation = 'none';
+            setTimeout(() => {
+                change.style.animation = 'pointsBounce 0.6s ease';
+            }, 10);
+        });
+    }, 8000);
+}
+
+simulatePointsUpdates();`
+    },
+
+    // ====================================================================
+    // TEMPLATE 10: CUSTOMER SUPPORT DASHBOARD
+    // ====================================================================
+    table10: {
+        html: `<div class="support-table-container">
+    <table class="support-table">
+        <thead>
+            <tr>
+                <th>Ticket ID</th>
+                <th>Customer</th>
+                <th>Subject</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Assignee</th>
+                <th>Response Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="ticket-id">#CS-2845</div>
+                </td>
+                <td>
+                    <div class="customer-info">
+                        <div class="customer-avatar">AB</div>
+                        <div class="customer-details">
+                            <div class="customer-name">Alex Bennett</div>
+                            <div class="customer-company">TechCorp Inc.</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="subject-line">
+                        Payment gateway integration issue
+                    </div>
+                </td>
+                <td>
+                    <div class="priority-indicator urgent">
+                        <span class="priority-dot"></span>
+                        Urgent
+                    </div>
+                </td>
+                <td>
+                    <div class="status-badge in-progress">
+                        In Progress
+                    </div>
+                </td>
+                <td>
+                    <div class="assignee-info">
+                        <div class="assignee-avatar">SJ</div>
+                        <span class="assignee-name">Sarah J.</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="response-timer critical">
+                        <span class="timer-icon">⏰</span>
+                        <span class="timer-value">2h 15m</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="ticket-id">#CS-2844</div>
+                </td>
+                <td>
+                    <div class="customer-info">
+                        <div class="customer-avatar">MC</div>
+                        <div class="customer-details">
+                            <div class="customer-name">Maria Chen</div>
+                            <div class="customer-company">StartUp Labs</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="subject-line">
+                        Account verification problem
+                    </div>
+                </td>
+                <td>
+                    <div class="priority-indicator high">
+                        <span class="priority-dot"></span>
+                        High
+                    </div>
+                </td>
+                <td>
+                    <div class="status-badge open">
+                        Open
+                    </div>
+                </td>
+                <td>
+                    <div class="assignee-info">
+                        <div class="assignee-avatar">MR</div>
+                        <span class="assignee-name">Mike R.</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="response-timer warning">
+                        <span class="timer-icon">⏰</span>
+                        <span class="timer-value">1h 30m</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="ticket-id">#CS-2843</div>
+                </td>
+                <td>
+                    <div class="customer-info">
+                        <div class="customer-avatar">DJ</div>
+                        <div class="customer-details">
+                            <div class="customer-name">David Johnson</div>
+                            <div class="customer-company">Enterprise Co.</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="subject-line">
+                        Feature request: API limits
+                    </div>
+                </td>
+                <td>
+                    <div class="priority-indicator medium">
+                        <span class="priority-dot"></span>
+                        Medium
+                    </div>
+                </td>
+                <td>
+                    <div class="status-badge resolved">
+                        Resolved
+                    </div>
+                </td>
+                <td>
+                    <div class="assignee-info">
+                        <div class="assignee-avatar">ED</div>
+                        <span class="assignee-name">Emily D.</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="response-timer good">
+                        <span class="timer-icon">✅</span>
+                        <span class="timer-value">45m</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+        css: `.support-table-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 
+        0 10px 35px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    animation: slideInUp 0.7s ease-out;
+    border: 1px solid #f1f5f9;
+}
+
+.support-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+}
+
+.support-table th {
+    background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+    color: white;
+    padding: 1.3rem 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-bottom: 3px solid #6d28d9;
+    position: relative;
+}
+
+.support-table th::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.1), 
+        transparent
+    );
+    animation: supportShimmer 4s infinite;
+}
+
+@keyframes supportShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.support-table td {
+    padding: 1.3rem 1.2rem;
+    border-bottom: 1px solid #f8fafc;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.support-table tr {
+    transition: all 0.3s ease;
+}
+
+.support-table tr:hover {
+    background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+    transform: translateX(5px);
+}
+
+.support-table tr:hover td {
+    background: transparent;
+}
+
+.support-table tr:hover td::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+.ticket-id {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    color: #7c3aed;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.support-table tr:hover .ticket-id {
+    transform: scale(1.1);
+    color: #6d28d9;
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.customer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.4s ease;
+}
+
+.support-table tr:hover .customer-avatar {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.customer-details .customer-name {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.9rem;
+}
+
+.customer-details .customer-company {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.subject-line {
+    font-weight: 500;
+    color: #374151;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+}
+
+.support-table tr:hover .subject-line {
+    color: #7c3aed;
+}
+
+.priority-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    animation: priorityPulse 2s infinite;
+}
+
+@keyframes priorityPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.priority-indicator.urgent {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    color: #dc2626;
+}
+
+.priority-indicator.high {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    color: #d97706;
+}
+
+.priority-indicator.medium {
+    background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+    color: #3730a3;
+}
+
+.priority-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: dotPulse 1.5s infinite;
+}
+
+.priority-indicator.urgent .priority-dot {
+    background: #dc2626;
+    animation: urgentPulse 1s infinite;
+}
+
+@keyframes urgentPulse {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+    }
+    50% { 
+        box-shadow: 0 0 0 6px rgba(220, 38, 38, 0);
+    }
+}
+
+.priority-indicator.high .priority-dot {
+    background: #d97706;
+}
+
+.priority-indicator.medium .priority-dot {
+    background: #3730a3;
+}
+
+.status-badge {
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: statusGlow 2s infinite;
+}
+
+@keyframes statusGlow {
+    0%, 100% { 
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    50% { 
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.status-badge.in-progress {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    color: #92400e;
+}
+
+.status-badge.open {
+    background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+    color: #3730a3;
+}
+
+.status-badge.resolved {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+    color: #065f46;
+}
+
+.assignee-info {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.assignee-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.support-table tr:hover .assignee-avatar {
+    transform: scale(1.1);
+}
+
+.assignee-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.response-timer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    animation: timerPulse 2s infinite;
+}
+
+@keyframes timerPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.response-timer.critical {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    color: #dc2626;
+    animation: criticalPulse 1s infinite;
+}
+
+@keyframes criticalPulse {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+    }
+    50% { 
+        box-shadow: 0 0 0 8px rgba(220, 38, 38, 0);
+    }
+}
+
+.response-timer.warning {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    color: #d97706;
+}
+
+.response-timer.good {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+    color: #065f46;
+}
+
+.timer-icon {
+    font-size: 1rem;
+    animation: timerShake 0.6s infinite alternate;
+}
+
+@keyframes timerShake {
+    from { transform: rotate(-5deg); }
+    to { transform: rotate(5deg); }
+}
+
+/* Staggered animations for better visual hierarchy */
+.support-table tr:nth-child(1) { animation-delay: 0.1s; }
+.support-table tr:nth-child(2) { animation-delay: 0.2s; }
+.support-table tr:nth-child(3) { animation-delay: 0.3s; }`,
+        js: `// Add interactive effects for support tickets
+document.querySelectorAll('.support-table tr').forEach(row => {
+    row.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateX(5px)';
+    });
+    
+    row.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateX(0)';
+    });
+});
+
+// Simulate real-time ticket updates
+function simulateTicketUpdates() {
+    const statusBadges = document.querySelectorAll('.status-badge');
+    const timers = document.querySelectorAll('.response-timer');
+    
+    setInterval(() => {
+        // Random status update
+        const randomStatus = statusBadges[Math.floor(Math.random() * statusBadges.length)];
+        randomStatus.style.animation = 'none';
+        setTimeout(() => {
+            randomStatus.style.animation = 'statusGlow 2s infinite';
+        }, 10);
+        
+        // Timer updates
+        timers.forEach(timer => {
+            if (timer.classList.contains('critical')) {
+                timer.style.animation = 'none';
+                setTimeout(() => {
+                    timer.style.animation = 'criticalPulse 1s infinite, timerPulse 2s infinite';
+                }, 10);
+            }
+        });
+    }, 5000);
+}
+
+simulateTicketUpdates();
+
+// Add click effects for assignee avatars
+document.querySelectorAll('.assignee-avatar').forEach(avatar => {
+    avatar.addEventListener('click', function() {
+        this.style.transform = 'scale(1.2)';
+        setTimeout(() => {
+            this.style.transform = 'scale(1)';
+        }, 300);
+    });
+});`
+    },
+    // ====================================================================
+// BUSINESS TEMPLATE 11: INVENTORY MANAGEMENT
+// ====================================================================
+business11: {
+    html: `<div class="inventory-table-container">
+    <div class="inventory-header">
+        <h3>Inventory Management System</h3>
+        <div class="inventory-stats">
+            <div class="stat-item">
+                <span class="stat-value">28</span>
+                <span class="stat-label">In Stock</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">5</span>
+                <span class="stat-label">Low Stock</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">3</span>
+                <span class="stat-label">Out of Stock</span>
+            </div>
+        </div>
+    </div>
+    <table class="inventory-table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>SKU</th>
+                <th>Category</th>
+                <th>Current Stock</th>
+                <th>Reorder Level</th>
+                <th>Status</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="product-display">
+                        <div class="product-name">MacBook Pro 16"</div>
+                        <div class="product-brand">Apple</div>
+                    </div>
+                </td>
+                <td>MBP16-2024</td>
+                <td>Electronics</td>
+                <td>
+                    <div class="stock-info">
+                        <span class="stock-quantity">45</span>
+                        <div class="stock-bar">
+                            <div class="stock-level high"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>10</td>
+                <td><span class="stock-status in-stock">In Stock</span></td>
+                <td>$72,000</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="product-display">
+                        <div class="product-name">Wireless Mouse X</div>
+                        <div class="product-brand">TechGear</div>
+                    </div>
+                </td>
+                <td>WM-X2024</td>
+                <td>Accessories</td>
+                <td>
+                    <div class="stock-info">
+                        <span class="stock-quantity">0</span>
+                        <div class="stock-bar">
+                            <div class="stock-level out"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>25</td>
+                <td><span class="stock-status out-of-stock">Out of Stock</span></td>
+                <td>$0</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="product-display">
+                        <div class="product-name">Mechanical Keyboard</div>
+                        <div class="product-brand">KeyMaster</div>
+                    </div>
+                </td>
+                <td>MK-PRO2024</td>
+                <td>Accessories</td>
+                <td>
+                    <div class="stock-info">
+                        <span class="stock-quantity">8</span>
+                        <div class="stock-bar">
+                            <div class="stock-level low"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>15</td>
+                <td><span class="stock-status low-stock">Low Stock</span></td>
+                <td>$1,200</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="product-display">
+                        <div class="product-name">4K Monitor 27"</div>
+                        <div class="product-brand">ViewPlus</div>
+                    </div>
+                </td>
+                <td>MON27-4K</td>
+                <td>Electronics</td>
+                <td>
+                    <div class="stock-info">
+                        <span class="stock-quantity">22</span>
+                        <div class="stock-bar">
+                            <div class="stock-level medium"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>8</td>
+                <td><span class="stock-status in-stock">In Stock</span></td>
+                <td>$33,000</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="table-footer">
+        <button class="btn-generate-report">Generate Stock Report</button>
+        <button class="btn-reorder">Create Reorder List</button>
+    </div>
+</div>`,
+    css: `.inventory-table-container {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -1096,70 +3388,127 @@ table6: {
 
 .inventory-header {
     padding: 1.5rem;
-    background: #f8fafc;
-    border-bottom: 1px solid #e5e7eb;
+    background: linear-gradient(135deg, #059669, #047857);
+    color: white;
 }
 
 .inventory-header h3 {
     margin: 0 0 1rem 0;
-    color: #1f2937;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
-.inventory-summary {
+.inventory-stats {
     display: flex;
     gap: 2rem;
 }
 
-.summary-item {
+.stat-item {
     text-align: center;
 }
 
-.summary-item .value {
+.stat-value {
     display: block;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: #1f2937;
+    margin-bottom: 0.25rem;
 }
 
-.summary-item .value.warning {
-    color: #dc2626;
-}
-
-.summary-item .label {
+.stat-label {
     font-size: 0.875rem;
-    color: #6b7280;
-    margin-top: 0.25rem;
+    opacity: 0.9;
 }
 
-.inventory-management table {
+.inventory-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.inventory-management th {
-    background: #1f2937;
-    color: white;
-    padding: 1rem;
+.inventory-table th {
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
     text-align: left;
     font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.inventory-management td {
-    padding: 1rem;
-    border-bottom: 1px solid #f3f4f6;
     color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+    font-size: 0.875rem;
 }
 
-.inventory-management tr:hover {
+.inventory-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #6b7280;
+}
+
+.inventory-table tr:hover {
     background: #f9fafb;
+}
+
+.product-display .product-name {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.product-display .product-brand {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    background: #f3f4f6;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.stock-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.stock-quantity {
+    font-weight: 600;
+    color: #1f2937;
+    min-width: 30px;
+}
+
+.stock-bar {
+    width: 80px;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.stock-level {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.stock-level.high {
+    background: #10b981;
+    width: 90%;
+}
+
+.stock-level.medium {
+    background: #f59e0b;
+    width: 60%;
+}
+
+.stock-level.low {
+    background: #ef4444;
+    width: 30%;
+}
+
+.stock-level.out {
+    background: #6b7280;
+    width: 0%;
 }
 
 .stock-status {
     padding: 0.35rem 0.75rem;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -1176,126 +3525,2008 @@ table6: {
 
 .stock-status.out-of-stock {
     background: #fee2e2;
-    color: #dc2626;
+    color: #991b1b;
 }
 
-/* Highlight low stock rows */
-.inventory-management tr:nth-child(2) {
-    background: #fffbeb;
+.table-footer {
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
 }
 
-.inventory-management tr:nth-child(2):hover {
-    background: #fef3c7;
+.btn-generate-report {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.inventory-management tr:nth-child(3) {
-    background: #fef2f2;
+.btn-generate-report:hover {
+    background: #2563eb;
 }
 
-.inventory-management tr:nth-child(3):hover {
-    background: #fecaca;
+.btn-reorder {
+    background: #7c3aed;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-reorder:hover {
+    background: #6d28d9;
 }`,
     js: `// Inventory management functionality
-// Add features like stock alerts or reordering here`
+document.querySelector('.btn-generate-report').addEventListener('click', function() {
+    alert('Generating stock report...');
+    // In real implementation, this would generate a PDF report
+});
+
+document.querySelector('.btn-reorder').addEventListener('click', function() {
+    const lowStockItems = document.querySelectorAll('.stock-status.low-stock, .stock-status.out-of-stock');
+    alert(\`Creating reorder list for \${lowStockItems.length} items\`);
+});`
 },
+
 // ====================================================================
-// TEMPLATE 7: MINIMAL DATA TABLE
+// BUSINESS TEMPLATE 12: HR ATTENDANCE
 // ====================================================================
-table7: {
-    html: `<div class="minimal-data-table">
-    <table>
+business12: {
+    html: `<div class="attendance-table-container">
+    <div class="attendance-header">
+        <h3>Employee Attendance Tracker</h3>
+        <div class="date-filter">
+            <input type="date" class="date-picker" value="2024-01-15">
+            <button class="btn-today">Today</button>
+        </div>
+    </div>
+    <div class="attendance-summary">
+        <div class="summary-card present">
+            <div class="summary-count">42</div>
+            <div class="summary-label">Present</div>
+        </div>
+        <div class="summary-card absent">
+            <div class="summary-count">3</div>
+            <div class="summary-label">Absent</div>
+        </div>
+        <div class="summary-card late">
+            <div class="summary-count">5</div>
+            <div class="summary-label">Late</div>
+        </div>
+        <div class="summary-card leave">
+            <div class="summary-count">2</div>
+            <div class="summary-label">On Leave</div>
+        </div>
+    </div>
+    <table class="attendance-table">
         <thead>
             <tr>
-                <th>Product</th>
-                <th>Category</th>
-                <th>Price</th>
-                <th>Stock</th>
-                <th>Sales</th>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Check-In</th>
+                <th>Check-Out</th>
+                <th>Working Hours</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Wireless Earbuds</td>
-                <td>Electronics</td>
-                <td>$129.99</td>
-                <td>156</td>
-                <td>284</td>
+                <td>EMP-001</td>
+                <td>
+                    <div class="employee-info">
+                        <div class="employee-name">John Smith</div>
+                        <div class="employee-position">Sales Manager</div>
+                    </div>
+                </td>
+                <td>Sales</td>
+                <td>
+                    <div class="time-slot on-time">09:05 AM</div>
+                </td>
+                <td>06:15 PM</td>
+                <td>9h 10m</td>
+                <td><span class="attendance-status present">Present</span></td>
             </tr>
             <tr>
-                <td>Smart Watch</td>
-                <td>Electronics</td>
-                <td>$199.99</td>
-                <td>89</td>
-                <td>167</td>
+                <td>EMP-002</td>
+                <td>
+                    <div class="employee-info">
+                        <div class="employee-name">Sarah Johnson</div>
+                        <div class="employee-position">HR Specialist</div>
+                    </div>
+                </td>
+                <td>Human Resources</td>
+                <td>
+                    <div class="time-slot late">10:30 AM</div>
+                </td>
+                <td>07:00 PM</td>
+                <td>8h 30m</td>
+                <td><span class="attendance-status late">Late</span></td>
             </tr>
             <tr>
-                <td>Desk Lamp</td>
-                <td>Home</td>
-                <td>$49.99</td>
-                <td>234</td>
-                <td>189</td>
+                <td>EMP-003</td>
+                <td>
+                    <div class="employee-info">
+                        <div class="employee-name">Mike Chen</div>
+                        <div class="employee-position">Developer</div>
+                    </div>
+                </td>
+                <td>IT</td>
+                <td>
+                    <div class="time-slot">-</div>
+                </td>
+                <td>-</td>
+                <td>0h 0m</td>
+                <td><span class="attendance-status absent">Absent</span></td>
             </tr>
             <tr>
-                <td>Notebook Set</td>
-                <td>Stationery</td>
-                <td>$24.99</td>
-                <td>567</td>
-                <td>432</td>
+                <td>EMP-004</td>
+                <td>
+                    <div class="employee-info">
+                        <div class="employee-name">Emily Davis</div>
+                        <div class="employee-position">Designer</div>
+                    </div>
+                </td>
+                <td>Design</td>
+                <td>
+                    <div class="time-slot on-time">08:55 AM</div>
+                </td>
+                <td>05:45 PM</td>
+                <td>8h 50m</td>
+                <td><span class="attendance-status present">Present</span></td>
+            </tr>
+            <tr>
+                <td>EMP-005</td>
+                <td>
+                    <div class="employee-info">
+                        <div class="employee-name">Robert Brown</div>
+                        <div class="employee-position">Analyst</div>
+                    </div>
+                </td>
+                <td>Finance</td>
+                <td>
+                    <div class="time-slot">-</div>
+                </td>
+                <td>-</td>
+                <td>0h 0m</td>
+                <td><span class="attendance-status leave">On Leave</span></td>
             </tr>
         </tbody>
     </table>
 </div>`,
-    css: `.minimal-data-table {
+    css: `.attendance-table-container {
     background: white;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     border: 1px solid #e5e7eb;
 }
 
-.minimal-data-table table {
+.attendance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.attendance-header h3 {
+    margin: 0;
+    color: #1f2937;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.date-filter {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.date-picker {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
+
+.btn-today {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.attendance-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.summary-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+}
+
+.summary-card.present {
+    border-left: 4px solid #10b981;
+}
+
+.summary-card.absent {
+    border-left: 4px solid #ef4444;
+}
+
+.summary-card.late {
+    border-left: 4px solid #f59e0b;
+}
+
+.summary-card.leave {
+    border-left: 4px solid #8b5cf6;
+}
+
+.summary-count {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.summary-card.present .summary-count {
+    color: #10b981;
+}
+
+.summary-card.absent .summary-count {
+    color: #ef4444;
+}
+
+.summary-card.late .summary-count {
+    color: #f59e0b;
+}
+
+.summary-card.leave .summary-count {
+    color: #8b5cf6;
+}
+
+.summary-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-table th {
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+    font-size: 0.875rem;
+}
+
+.attendance-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #6b7280;
+}
+
+.attendance-table tr:hover {
+    background: #f9fafb;
+}
+
+.employee-info .employee-name {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.employee-info .employee-position {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.time-slot {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.time-slot.on-time {
+    color: #10b981;
+}
+
+.time-slot.late {
+    color: #f59e0b;
+}
+
+.attendance-status {
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.attendance-status.present {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.attendance-status.absent {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.attendance-status.late {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.attendance-status.leave {
+    background: #e0e7ff;
+    color: #3730a3;
+}`,
+    js: `// Attendance system functionality
+document.querySelector('.date-picker').addEventListener('change', function(e) {
+    const selectedDate = e.target.value;
+    alert(\`Loading attendance data for: \${selectedDate}\`);
+});
+
+document.querySelector('.btn-today').addEventListener('click', function() {
+    const today = new Date().toISOString().split('T')[0];
+    document.querySelector('.date-picker').value = today;
+    alert('Loading today\\'s attendance data');
+});`
+},
+
+// ====================================================================
+// BUSINESS TEMPLATE 13: CUSTOMER SUPPORT
+// ====================================================================
+business13: {
+    html: `<div class="support-table-container">
+    <div class="support-header">
+        <h3>Customer Support Tickets</h3>
+        <div class="support-actions">
+            <button class="btn-new-ticket">+ New Ticket</button>
+            <button class="btn-export-tickets">Export</button>
+        </div>
+    </div>
+    <div class="support-filters">
+        <div class="filter-group">
+            <label>Status:</label>
+            <select class="filter-select">
+                <option>All Tickets</option>
+                <option>Open</option>
+                <option>In Progress</option>
+                <option>Resolved</option>
+                <option>Closed</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label>Priority:</label>
+            <select class="filter-select">
+                <option>All Priorities</option>
+                <option>Critical</option>
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label>Agent:</label>
+            <select class="filter-select">
+                <option>All Agents</option>
+                <option>John Smith</option>
+                <option>Sarah Chen</option>
+                <option>Mike Johnson</option>
+            </select>
+        </div>
+    </div>
+    <table class="support-table">
+        <thead>
+            <tr>
+                <th>Ticket ID</th>
+                <th>Customer</th>
+                <th>Subject</th>
+                <th>Priority</th>
+                <th>Agent</th>
+                <th>Created</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="ticket-id">#TSK-001</div>
+                    <div class="ticket-category">Technical</div>
+                </td>
+                <td>
+                    <div class="customer-info">
+                        <div class="customer-name">Alex Johnson</div>
+                        <div class="customer-email">alex@company.com</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="ticket-subject">Login issues after update</div>
+                    <div class="ticket-excerpt">Unable to access account since last update...</div>
+                </td>
+                <td><span class="priority critical">Critical</span></td>
+                <td>
+                    <div class="agent-info">
+                        <div class="agent-name">John Smith</div>
+                        <div class="agent-status online">Online</div>
+                    </div>
+                </td>
+                <td>2024-01-15</td>
+                <td><span class="ticket-status open">Open</span></td>
+                <td>
+                    <div class="ticket-actions">
+                        <button class="btn-action view" title="View Ticket">👁️</button>
+                        <button class="btn-action assign" title="Assign">👤</button>
+                        <button class="btn-action close" title="Close">✅</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="ticket-id">#TSK-002</div>
+                    <div class="ticket-category">Billing</div>
+                </td>
+                <td>
+                    <div class="customer-info">
+                        <div class="customer-name">Maria Garcia</div>
+                        <div class="customer-email">maria@business.com</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="ticket-subject">Invoice discrepancy</div>
+                    <div class="ticket-excerpt">Charged twice for monthly subscription...</div>
+                </td>
+                <td><span class="priority high">High</span></td>
+                <td>
+                    <div class="agent-info">
+                        <div class="agent-name">Sarah Chen</div>
+                        <div class="agent-status online">Online</div>
+                    </div>
+                </td>
+                <td>2024-01-14</td>
+                <td><span class="ticket-status progress">In Progress</span></td>
+                <td>
+                    <div class="ticket-actions">
+                        <button class="btn-action view" title="View Ticket">👁️</button>
+                        <button class="btn-action assign" title="Assign">👤</button>
+                        <button class="btn-action close" title="Close">✅</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="ticket-id">#TSK-003</div>
+                    <div class="ticket-category">Feature Request</div>
+                </td>
+                <td>
+                    <div class="customer-info">
+                        <div class="customer-name">David Kim</div>
+                        <div class="customer-email">david@startup.io</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="ticket-subject">Export to PDF feature</div>
+                    <div class="ticket-excerpt">Requesting PDF export for reports...</div>
+                </td>
+                <td><span class="priority medium">Medium</span></td>
+                <td>
+                    <div class="agent-info">
+                        <div class="agent-name">-</div>
+                        <div class="agent-status">Unassigned</div>
+                    </div>
+                </td>
+                <td>2024-01-13</td>
+                <td><span class="ticket-status open">Open</span></td>
+                <td>
+                    <div class="ticket-actions">
+                        <button class="btn-action view" title="View Ticket">👁️</button>
+                        <button class="btn-action assign" title="Assign">👤</button>
+                        <button class="btn-action close" title="Close">✅</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="ticket-id">#TSK-004</div>
+                    <div class="ticket-category">General</div>
+                </td>
+                <td>
+                    <div class="customer-info">
+                        <div class="customer-name">Lisa Wong</div>
+                        <div class="customer-email">lisa@consulting.com</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="ticket-subject">Documentation update</div>
+                    <div class="ticket-excerpt">API documentation needs updating...</div>
+                </td>
+                <td><span class="priority low">Low</span></td>
+                <td>
+                    <div class="agent-info">
+                        <div class="agent-name">Mike Johnson</div>
+                        <div class="agent-status away">Away</div>
+                    </div>
+                </td>
+                <td>2024-01-12</td>
+                <td><span class="ticket-status resolved">Resolved</span></td>
+                <td>
+                    <div class="ticket-actions">
+                        <button class="btn-action view" title="View Ticket">👁️</button>
+                        <button class="btn-action reopen" title="Reopen">↩️</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `.support-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+.support-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.support-header h3 {
+    margin: 0;
+    color: #1f2937;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.support-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-new-ticket {
+    background: #7c3aed;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-export-tickets {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.support-filters {
+    display: flex;
+    gap: 2rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.filter-select {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: white;
+    font-size: 0.875rem;
+    min-width: 150px;
+}
+
+.support-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.support-table th {
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+    font-size: 0.875rem;
+}
+
+.support-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #6b7280;
+}
+
+.support-table tr:hover {
+    background: #f9fafb;
+}
+
+.ticket-id {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.ticket-category {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    background: #f3f4f6;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.customer-info .customer-name {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.customer-info .customer-email {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.ticket-subject {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.ticket-excerpt {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.priority {
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.priority.critical {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.priority.high {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.priority.medium {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.priority.low {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.agent-info .agent-name {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.agent-info .agent-status {
+    font-size: 0.75rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.agent-status.online {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.agent-status.away {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.ticket-status {
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ticket-status.open {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.ticket-status.progress {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.ticket-status.resolved {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.ticket-actions {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.btn-action {
+    background: none;
+    border: 1px solid #e5e7eb;
+    padding: 0.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: all 0.3s;
+}
+
+.btn-action:hover {
+    background: #f3f4f6;
+    transform: scale(1.1);
+}`,
+    js: `// Support ticket system functionality
+document.querySelector('.btn-new-ticket').addEventListener('click', function() {
+    alert('Opening new ticket form...');
+});
+
+document.querySelector('.btn-export-tickets').addEventListener('click', function() {
+    alert('Exporting tickets to CSV...');
+});
+
+document.querySelectorAll('.filter-select').forEach(select => {
+    select.addEventListener('change', function() {
+        alert('Filtering tickets...');
+    });
+});
+
+document.querySelectorAll('.btn-action.view').forEach(btn => {
+    btn.addEventListener('click', function() {
+        alert('Opening ticket details...');
+    });
+});`
+},
+
+// ====================================================================
+// BUSINESS TEMPLATE 14: EXPENSE REPORT
+// ====================================================================
+business14: {
+    html: `<div class="expense-table-container">
+    <div class="expense-header">
+        <h3>Expense Report - January 2024</h3>
+        <div class="expense-total">
+            <span class="total-label">Total Expenses:</span>
+            <span class="total-amount">$8,745.50</span>
+        </div>
+    </div>
+    <div class="expense-actions">
+        <button class="btn-add-expense">+ Add Expense</button>
+        <button class="btn-submit-report">Submit for Approval</button>
+        <button class="btn-export-expenses">Export to Excel</button>
+    </div>
+    <table class="expense-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Payment Method</th>
+                <th>Receipt</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2024-01-15</td>
+                <td>
+                    <div class="expense-category">
+                        <span class="category-icon">✈️</span>
+                        <span class="category-name">Travel</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="expense-description">
+                        <div class="expense-title">Flight to Client Meeting</div>
+                        <div class="expense-details">New York to San Francisco</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="expense-amount">$450.00</div>
+                </td>
+                <td>Corporate Card</td>
+                <td>
+                    <button class="btn-receipt">📎 View</button>
+                </td>
+                <td><span class="expense-status approved">Approved</span></td>
+                <td>
+                    <div class="expense-actions">
+                        <button class="btn-action edit">✏️</button>
+                        <button class="btn-action delete">🗑️</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>2024-01-14</td>
+                <td>
+                    <div class="expense-category">
+                        <span class="category-icon">🍽️</span>
+                        <span class="category-name">Meals</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="expense-description">
+                        <div class="expense-title">Client Dinner</div>
+                        <div class="expense-details">Restaurant - 4 people</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="expense-amount">$320.00</div>
+                </td>
+                <td>Corporate Card</td>
+                <td>
+                    <button class="btn-receipt">📎 View</button>
+                </td>
+                <td><span class="expense-status pending">Pending</span></td>
+                <td>
+                    <div class="expense-actions">
+                        <button class="btn-action edit">✏️</button>
+                        <button class="btn-action delete">🗑️</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>2024-01-12</td>
+                <td>
+                    <div class="expense-category">
+                        <span class="category-icon">🛏️</span>
+                        <span class="category-name">Accommodation</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="expense-description">
+                        <div class="expense-title">Hotel Stay</div>
+                        <div class="expense-details">3 nights - Business trip</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="expense-amount">$680.00</div>
+                </td>
+                <td>Corporate Card</td>
+                <td>
+                    <button class="btn-receipt">📎 View</button>
+                </td>
+                <td><span class="expense-status approved">Approved</span></td>
+                <td>
+                    <div class="expense-actions">
+                        <button class="btn-action edit">✏️</button>
+                        <button class="btn-action delete">🗑️</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>2024-01-10</td>
+                <td>
+                    <div class="expense-category">
+                        <span class="category-icon">🖥️</span>
+                        <span class="category-name">Software</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="expense-description">
+                        <div class="expense-title">Design Tool Subscription</div>
+                        <div class="expense-details">Annual license renewal</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="expense-amount">$299.00</div>
+                </td>
+                <td>Bank Transfer</td>
+                <td>
+                    <button class="btn-receipt">📎 View</button>
+                </td>
+                <td><span class="expense-status rejected">Rejected</span></td>
+                <td>
+                    <div class="expense-actions">
+                        <button class="btn-action edit">✏️</button>
+                        <button class="btn-action delete">🗑️</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>2024-01-08</td>
+                <td>
+                    <div class="expense-category">
+                        <span class="category-icon">🚗</span>
+                        <span class="category-name">Transportation</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="expense-description">
+                        <div class="expense-title">Car Rental</div>
+                        <div class="expense-details">5 days - Client visits</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="expense-amount">$425.50</div>
+                </td>
+                <td>Corporate Card</td>
+                <td>
+                    <button class="btn-receipt">📎 View</button>
+                </td>
+                <td><span class="expense-status pending">Pending</span></td>
+                <td>
+                    <div class="expense-actions">
+                        <button class="btn-action edit">✏️</button>
+                        <button class="btn-action delete">🗑️</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="expense-summary">
+        <div class="summary-row">
+            <div class="summary-item">
+                <span class="summary-label">Total Submitted:</span>
+                <span class="summary-value">$8,745.50</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Approved:</span>
+                <span class="summary-value approved">$1,130.00</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Pending:</span>
+                <span class="summary-value pending">$745.50</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Rejected:</span>
+                <span class="summary-value rejected">$299.00</span>
+            </div>
+        </div>
+    </div>
+</div>`,
+    css: `.expense-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+.expense-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    color: white;
+}
+
+.expense-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.expense-total {
+    text-align: right;
+}
+
+.total-label {
+    display: block;
+    font-size: 0.875rem;
+    opacity: 0.9;
+    margin-bottom: 0.25rem;
+}
+
+.total-amount {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.expense-actions {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.btn-add-expense {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-submit-report {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-export-expenses {
+    background: #6b7280;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.expense-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.expense-table th {
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+    font-size: 0.875rem;
+}
+
+.expense-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #6b7280;
+}
+
+.expense-table tr:hover {
+    background: #f9fafb;
+}
+
+.expense-category {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.category-icon {
+    font-size: 1.1rem;
+}
+
+.category-name {
+    font-weight: 500;
+    color: #374151;
+}
+
+.expense-description .expense-title {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.expense-description .expense-details {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.expense-amount {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 1.1rem;
+}
+
+.btn-receipt {
+    background: #e0e7ff;
+    color: #3730a3;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-receipt:hover {
+    background: #c7d2fe;
+}
+
+.expense-status {
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.expense-status.approved {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.expense-status.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.expense-status.rejected {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.expense-actions {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.btn-action {
+    background: none;
+    border: 1px solid #e5e7eb;
+    padding: 0.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: all 0.3s;
+}
+
+.btn-action:hover {
+    background: #f3f4f6;
+    transform: scale(1.1);
+}
+
+.expense-summary {
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-top: 1px solid #e5e7eb;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.summary-item {
+    text-align: center;
+}
+
+.summary-label {
+    display: block;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.summary-value {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.summary-value.approved {
+    color: #10b981;
+}
+
+.summary-value.pending {
+    color: #f59e0b;
+}
+
+.summary-value.rejected {
+    color: #ef4444;
+}`,
+    js: `// Expense report functionality
+document.querySelector('.btn-add-expense').addEventListener('click', function() {
+    alert('Opening add expense form...');
+});
+
+document.querySelector('.btn-submit-report').addEventListener('click', function() {
+    const pendingExpenses = document.querySelectorAll('.expense-status.pending').length;
+    alert(\`Submitting \${pendingExpenses} expenses for approval...\`);
+});
+
+document.querySelector('.btn-export-expenses').addEventListener('click', function() {
+    alert('Exporting expense report to Excel...');
+});
+
+document.querySelectorAll('.btn-receipt').forEach(btn => {
+    btn.addEventListener('click', function() {
+        alert('Opening receipt document...');
+    });
+});`
+},
+
+// ====================================================================
+// BUSINESS TEMPLATE 15: KPI DASHBOARD
+// ====================================================================
+business15: {
+    html: `<div class="kpi-table-container">
+    <div class="kpi-header">
+        <h3>Key Performance Indicators</h3>
+        <div class="kpi-period">
+            <span class="period-label">Reporting Period:</span>
+            <span class="period-value">Q1 2024</span>
+        </div>
+    </div>
+    <table class="kpi-table">
+        <thead>
+            <tr>
+                <th>KPI Metric</th>
+                <th>Current Value</th>
+                <th>Target</th>
+                <th>Previous Period</th>
+                <th>Performance</th>
+                <th>Trend</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="kpi-metric">
+                        <div class="metric-name">Monthly Revenue</div>
+                        <div class="metric-description">Total monthly sales revenue</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="current-value">$85,250</div>
+                </td>
+                <td>
+                    <div class="target-value">$100,000</div>
+                </td>
+                <td>
+                    <div class="previous-value">$78,500</div>
+                    <div class="change positive">+8.6%</div>
+                </td>
+                <td>
+                    <div class="performance-bar">
+                        <div class="performance-fill" style="width: 85%"></div>
+                        <span class="performance-text">85%</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="trend-indicator positive">📈</div>
+                </td>
+                <td><span class="kpi-status on-track">On Track</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="kpi-metric">
+                        <div class="metric-name">Customer Acquisition</div>
+                        <div class="metric-description">New customers per month</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="current-value">145</div>
+                </td>
+                <td>
+                    <div class="target-value">200</div>
+                </td>
+                <td>
+                    <div class="previous-value">128</div>
+                    <div class="change positive">+13.3%</div>
+                </td>
+                <td>
+                    <div class="performance-bar">
+                        <div class="performance-fill" style="width: 72%"></div>
+                        <span class="performance-text">72%</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="trend-indicator positive">📈</div>
+                </td>
+                <td><span class="kpi-status needs-attention">Needs Attention</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="kpi-metric">
+                        <div class="metric-name">Conversion Rate</div>
+                        <div class="metric-description">Lead to customer conversion</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="current-value">12.5%</div>
+                </td>
+                <td>
+                    <div class="target-value">15%</div>
+                </td>
+                <td>
+                    <div class="previous-value">11.2%</div>
+                    <div class="change positive">+11.6%</div>
+                </td>
+                <td>
+                    <div class="performance-bar">
+                        <div class="performance-fill" style="width: 83%"></div>
+                        <span class="performance-text">83%</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="trend-indicator positive">📈</div>
+                </td>
+                <td><span class="kpi-status on-track">On Track</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="kpi-metric">
+                        <div class="metric-name">Customer Retention</div>
+                        <div class="metric-description">Monthly customer retention rate</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="current-value">88.2%</div>
+                </td>
+                <td>
+                    <div class="target-value">90%</div>
+                </td>
+                <td>
+                    <div class="previous-value">89.5%</div>
+                    <div class="change negative">-1.5%</div>
+                </td>
+                <td>
+                    <div class="performance-bar">
+                        <div class="performance-fill" style="width: 98%"></div>
+                        <span class="performance-text">98%</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="trend-indicator negative">📉</div>
+                </td>
+                <td><span class="kpi-status at-risk">At Risk</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="kpi-metric">
+                        <div class="metric-name">Average Order Value</div>
+                        <div class="metric-description">Average revenue per order</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="current-value">$245</div>
+                </td>
+                <td>
+                    <div class="target-value">$220</div>
+                </td>
+                <td>
+                    <div class="previous-value">$235</div>
+                    <div class="change positive">+4.3%</div>
+                </td>
+                <td>
+                    <div class="performance-bar">
+                        <div class="performance-fill" style="width: 111%"></div>
+                        <span class="performance-text">111%</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="trend-indicator positive">📈</div>
+                </td>
+                <td><span class="kpi-status exceeding">Exceeding</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="kpi-metric">
+                        <div class="metric-name">Website Traffic</div>
+                        <div class="metric-description">Monthly unique visitors</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="current-value">45,820</div>
+                </td>
+                <td>
+                    <div class="target-value">50,000</div>
+                </td>
+                <td>
+                    <div class="previous-value">42,150</div>
+                    <div class="change positive">+8.7%</div>
+                </td>
+                <td>
+                    <div class="performance-bar">
+                        <div class="performance-fill" style="width: 92%"></div>
+                        <span class="performance-text">92%</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="trend-indicator positive">📈</div>
+                </td>
+                <td><span class="kpi-status on-track">On Track</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="kpi-summary">
+        <div class="summary-card">
+            <div class="summary-icon">🎯</div>
+            <div class="summary-content">
+                <div class="summary-value">4/6</div>
+                <div class="summary-label">KPIs On Track</div>
+            </div>
+        </div>
+        <div class="summary-card">
+            <div class="summary-icon">📈</div>
+            <div class="summary-content">
+                <div class="summary-value">5</div>
+                <div class="summary-label">Positive Trends</div>
+            </div>
+        </div>
+        <div class="summary-card">
+            <div class="summary-icon">📊</div>
+            <div class="summary-content">
+                <div class="summary-value">89%</div>
+                <div class="summary-label">Avg. Performance</div>
+            </div>
+        </div>
+    </div>
+</div>`,
+    css: `.kpi-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+.kpi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1e293b, #374151);
+    color: white;
+}
+
+.kpi-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.kpi-period {
+    text-align: right;
+}
+
+.period-label {
+    display: block;
+    font-size: 0.875rem;
+    opacity: 0.9;
+    margin-bottom: 0.25rem;
+}
+
+.period-value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.kpi-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.kpi-table th {
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+    font-size: 0.875rem;
+}
+
+.kpi-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #6b7280;
+}
+
+.kpi-table tr:hover {
+    background: #f9fafb;
+}
+
+.kpi-metric .metric-name {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.kpi-metric .metric-description {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.current-value {
+    font-weight: 700;
+    color: #1f2937;
+    font-size: 1.1rem;
+}
+
+.target-value {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.previous-value {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+.change {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.change.positive {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.change.negative {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.performance-bar {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    position: relative;
+    margin: 0.5rem 0;
+}
+
+.performance-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.performance-bar:nth-child(1) .performance-fill {
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.performance-bar:nth-child(2) .performance-fill {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.performance-bar:nth-child(3) .performance-fill {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+}
+
+.performance-text {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.trend-indicator {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.trend-indicator.positive {
+    color: #10b981;
+}
+
+.trend-indicator.negative {
+    color: #ef4444;
+}
+
+.kpi-status {
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.kpi-status.on-track {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.kpi-status.needs-attention {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.kpi-status.at-risk {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.kpi-status.exceeding {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.kpi-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-top: 1px solid #e5e7eb;
+}
+
+.summary-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #e5e7eb;
+}
+
+.summary-icon {
+    font-size: 2rem;
+}
+
+.summary-content {
+    flex: 1;
+}
+
+.summary-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.summary-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-weight: 500;
+}`,
+    js: `// KPI dashboard functionality
+console.log('KPI dashboard loaded');
+
+// Animate performance bars on load
+document.addEventListener('DOMContentLoaded', function() {
+    const performanceBars = document.querySelectorAll('.performance-fill');
+    performanceBars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => {
+            bar.style.width = width;
+        }, 300);
+    });
+});
+
+// Add click handlers for KPI metrics
+document.querySelectorAll('.kpi-metric').forEach(metric => {
+    metric.addEventListener('click', function() {
+        const metricName = this.querySelector('.metric-name').textContent;
+        alert(\`Showing detailed analysis for: \${metricName}\`);
+    });
+});`
+},
+// ====================================================================
+// MINIMAL TEMPLATE 16: CLEAN DATA GRID
+// ====================================================================
+minimal16: {
+    html: `<div class="minimal-table-container">
+    <table class="minimal-table clean-grid">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Last Updated</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Wireless Bluetooth Mouse</td>
+                <td>Electronics</td>
+                <td>$29.99</td>
+                <td>45</td>
+                <td>2024-01-15</td>
+            </tr>
+            <tr>
+                <td>Mechanical Gaming Keyboard</td>
+                <td>Electronics</td>
+                <td>$89.99</td>
+                <td>23</td>
+                <td>2024-01-14</td>
+            </tr>
+            <tr>
+                <td>USB-C Hub Adapter</td>
+                <td>Accessories</td>
+                <td>$39.99</td>
+                <td>67</td>
+                <td>2024-01-16</td>
+            </tr>
+            <tr>
+                <td>Noise Cancelling Headphones</td>
+                <td>Audio</td>
+                <td>$199.99</td>
+                <td>12</td>
+                <td>2024-01-13</td>
+            </tr>
+            <tr>
+                <td>Laptop Stand Aluminum</td>
+                <td>Accessories</td>
+                <td>$49.99</td>
+                <td>34</td>
+                <td>2024-01-15</td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `.minimal-table-container {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.minimal-table.clean-grid {
     width: 100%;
     border-collapse: collapse;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-.minimal-data-table th {
-    background: #f8fafc;
-    color: #374151;
-    padding: 0.875rem 1rem;
+.minimal-table.clean-grid th {
+    background: #fafafa;
+    padding: 1rem 1.25rem;
     text-align: left;
     font-weight: 500;
+    color: #666;
     font-size: 0.875rem;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #eaeaea;
+    letter-spacing: 0.5px;
 }
 
-.minimal-data-table td {
-    padding: 0.875rem 1rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-    font-size: 0.875rem;
+.minimal-table.clean-grid td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #f5f5f5;
+    color: #333;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
 }
 
-.minimal-data-table tr:last-child td {
+.minimal-table.clean-grid tr:last-child td {
     border-bottom: none;
 }
 
-.minimal-data-table tr:hover {
-    background: #f9fafb;
+.minimal-table.clean-grid tr:hover td {
+    background: #f8f9fa;
+}
+
+/* Minimal color variations for categories */
+.minimal-table.clean-grid td:nth-child(2) {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.minimal-table.clean-grid td:nth-child(3) {
+    font-weight: 500;
+    color: #000;
+}
+
+.minimal-table.clean-grid td:nth-child(4) {
+    font-weight: 500;
+}
+
+.minimal-table.clean-grid td:nth-child(5) {
+    color: #999;
+    font-size: 0.85rem;
 }`,
-    js: `// No JavaScript required - pure minimal design`
+    js: `// No JavaScript required - pure CSS minimal table`
 },
 
 // ====================================================================
-// TEMPLATE 8: CLEAN USER LIST
+// MINIMAL TEMPLATE 17: BORDERLESS DESIGN
 // ====================================================================
-table8: {
-    html: `<div class="clean-user-list">
-    <table>
+minimal17: {
+    html: `<div class="minimal-table-container">
+    <table class="minimal-table borderless">
         <thead>
             <tr>
-                <th>User</th>
+                <th>Task Description</th>
+                <th>Assigned To</th>
+                <th>Due Date</th>
+                <th>Priority</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Complete design system documentation</td>
+                <td>Sarah Chen</td>
+                <td>Jan 15, 2024</td>
+                <td><span class="priority-high">High</span></td>
+                <td><span class="status-in-progress">In Progress</span></td>
+            </tr>
+            <tr>
+                <td>Deploy new authentication service</td>
+                <td>Mike Rodriguez</td>
+                <td>Jan 18, 2024</td>
+                <td><span class="priority-medium">Medium</span></td>
+                <td><span class="status-pending">Pending</span></td>
+            </tr>
+            <tr>
+                <td>Update user onboarding flow</td>
+                <td>Jessica Wang</td>
+                <td>Jan 20, 2024</td>
+                <td><span class="priority-low">Low</span></td>
+                <td><span class="status-completed">Completed</span></td>
+            </tr>
+            <tr>
+                <td>Conduct user research interviews</td>
+                <td>David Kim</td>
+                <td>Jan 22, 2024</td>
+                <td><span class="priority-medium">Medium</span></td>
+                <td><span class="status-not-started">Not Started</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `.minimal-table.borderless {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.minimal-table.borderless th {
+    padding: 1.25rem 1rem 0.75rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    color: #999;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.minimal-table.borderless td {
+    padding: 1rem;
+    color: #333;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.minimal-table.borderless tr:hover td {
+    background: #fafafa;
+    transform: translateX(4px);
+}
+
+/* Priority and Status Styles */
+.priority-high, .priority-medium, .priority-low {
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.priority-high {
+    background: #fff0f0;
+    color: #d63031;
+}
+
+.priority-medium {
+    background: #fff9e6;
+    color: #f39c12;
+}
+
+.priority-low {
+    background: #f0fff4;
+    color: #27ae60;
+}
+
+.status-in-progress, .status-pending, .status-completed, .status-not-started {
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-in-progress {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.status-pending {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.status-completed {
+    background: #e8f5e8;
+    color: #388e3c;
+}
+
+.status-not-started {
+    background: #f5f5f5;
+    color: #757575;
+}`,
+    js: `// Add smooth hover animations
+document.querySelectorAll('.minimal-table.borderless tr').forEach(row => {
+    row.addEventListener('mouseenter', function() {
+        this.style.transition = 'all 0.2s ease';
+    });
+});`
+},
+
+// ====================================================================
+// MINIMAL TEMPLATE 18: LIGHT ZEBRA STRIPES
+// ====================================================================
+minimal18: {
+    html: `<div class="minimal-table-container">
+    <table class="minimal-table zebra-stripes">
+        <thead>
+            <tr>
+                <th>Team Member</th>
+                <th>Email Address</th>
+                <th>Department</th>
                 <th>Role</th>
-                <th>Last Active</th>
                 <th>Status</th>
             </tr>
         </thead>
@@ -1303,95 +5534,103 @@ table8: {
             <tr>
                 <td>
                     <div class="user-minimal">
-                        <div class="avatar-minimal">JD</div>
+                        <div class="avatar-minimal">AJ</div>
                         <div class="user-details-minimal">
-                            <div class="name">John Doe</div>
-                            <div class="email">john@example.com</div>
+                            <div class="user-name">Alex Johnson</div>
+                            <div class="user-title">Senior Developer</div>
                         </div>
                     </div>
                 </td>
-                <td>Administrator</td>
-                <td>2 hours ago</td>
-                <td>
-                    <div class="status-dot online"></div>
-                    Online
-                </td>
+                <td>alex.johnson@company.com</td>
+                <td>Engineering</td>
+                <td>Backend</td>
+                <td><span class="status-badge active">Active</span></td>
             </tr>
             <tr>
                 <td>
                     <div class="user-minimal">
-                        <div class="avatar-minimal">JS</div>
+                        <div class="avatar-minimal">MG</div>
                         <div class="user-details-minimal">
-                            <div class="name">Jane Smith</div>
-                            <div class="email">jane@example.com</div>
+                            <div class="user-name">Maria Garcia</div>
+                            <div class="user-title">UI/UX Designer</div>
                         </div>
                     </div>
                 </td>
-                <td>Editor</td>
-                <td>1 day ago</td>
-                <td>
-                    <div class="status-dot away"></div>
-                    Away
-                </td>
+                <td>maria.garcia@company.com</td>
+                <td>Design</td>
+                <td>Product Design</td>
+                <td><span class="status-badge active">Active</span></td>
             </tr>
             <tr>
                 <td>
                     <div class="user-minimal">
-                        <div class="avatar-minimal">RJ</div>
+                        <div class="avatar-minimal">TK</div>
                         <div class="user-details-minimal">
-                            <div class="name">Robert Johnson</div>
-                            <div class="email">robert@example.com</div>
+                            <div class="user-name">Tom Wilson</div>
+                            <div class="user-title">Product Manager</div>
                         </div>
                     </div>
                 </td>
-                <td>Viewer</td>
-                <td>3 days ago</td>
+                <td>tom.wilson@company.com</td>
+                <td>Product</td>
+                <td>Lead PM</td>
+                <td><span class="status-badge active">Active</span></td>
+            </tr>
+            <tr>
                 <td>
-                    <div class="status-dot offline"></div>
-                    Offline
+                    <div class="user-minimal">
+                        <div class="avatar-minimal">SL</div>
+                        <div class="user-details-minimal">
+                            <div class="user-name">Sarah Lee</div>
+                            <div class="user-title">Data Analyst</div>
+                        </div>
+                    </div>
                 </td>
+                <td>sarah.lee@company.com</td>
+                <td>Analytics</td>
+                <td>Senior Analyst</td>
+                <td><span class="status-badge away">Away</span></td>
             </tr>
         </tbody>
     </table>
 </div>`,
-    css: `.clean-user-list {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-}
-
-.clean-user-list table {
+    css: `.minimal-table.zebra-stripes {
     width: 100%;
     border-collapse: collapse;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-.clean-user-list th {
-    background: #f8fafc;
-    color: #374151;
-    padding: 1rem;
+.minimal-table.zebra-stripes th {
+    padding: 1rem 1.25rem;
     text-align: left;
     font-weight: 500;
-    font-size: 0.875rem;
-    border-bottom: 1px solid #e5e7eb;
+    color: #555;
+    font-size: 0.85rem;
+    border-bottom: 2px solid #f0f0f0;
+    background: white;
 }
 
-.clean-user-list td {
-    padding: 1rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-    font-size: 0.875rem;
+.minimal-table.zebra-stripes td {
+    padding: 1.25rem 1.25rem;
+    color: #333;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f8f8f8;
 }
 
-.clean-user-list tr:last-child td {
-    border-bottom: none;
+/* Zebra Striping */
+.minimal-table.zebra-stripes tbody tr:nth-child(odd) {
+    background: #fafafa;
 }
 
-.clean-user-list tr:hover {
-    background: #f9fafb;
+.minimal-table.zebra-stripes tbody tr:nth-child(even) {
+    background: white;
 }
 
+.minimal-table.zebra-stripes tbody tr:hover {
+    background: #f0f8ff;
+}
+
+/* User Minimal Styles */
 .user-minimal {
     display: flex;
     align-items: center;
@@ -1401,8 +5640,8 @@ table8: {
 .avatar-minimal {
     width: 36px;
     height: 36px;
-    border-radius: 6px;
-    background: #6b7280;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1412,575 +5651,5147 @@ table8: {
     flex-shrink: 0;
 }
 
-.user-details-minimal .name {
+.user-details-minimal .user-name {
     font-weight: 500;
-    color: #1f2937;
-    font-size: 0.875rem;
+    color: #333;
+    margin-bottom: 0.1rem;
 }
 
-.user-details-minimal .email {
+.user-details-minimal .user-title {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
     font-size: 0.75rem;
-    color: #9ca3af;
-    margin-top: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.status-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    margin-right: 6px;
+.status-badge.active {
+    background: #e8f5e8;
+    color: #2e7d32;
 }
 
-.status-dot.online {
-    background: #10b981;
-}
-
-.status-dot.away {
-    background: #f59e0b;
-}
-
-.status-dot.offline {
-    background: #6b7280;
+.status-badge.away {
+    background: #fff3e0;
+    color: #ef6c00;
 }`,
-    js: `// No JavaScript required - clean and simple`
+    js: `// Simple user interaction
+document.querySelectorAll('.user-minimal').forEach(user => {
+    user.addEventListener('click', function() {
+        const userName = this.querySelector('.user-name').textContent;
+        console.log('Selected user:', userName);
+    });
+});`
 },
 
 // ====================================================================
-// TEMPLATE 9: SIMPLE PRICING TABLE
+// MINIMAL TEMPLATE 19: COMPACT LAYOUT
 // ====================================================================
-table9: {
-    html: `<div class="simple-pricing-table">
-    <table>
+minimal19: {
+    html: `<div class="minimal-table-container">
+    <table class="minimal-table compact">
         <thead>
             <tr>
-                <th>Plan</th>
-                <th>Price</th>
-                <th>Users</th>
-                <th>Storage</th>
-                <th>Support</th>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Total</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>
-                    <div class="plan-name">Basic</div>
-                    <div class="plan-desc">For small teams</div>
-                </td>
-                <td>
-                    <div class="price">$19<span>/month</span></div>
-                </td>
-                <td>5 users</td>
-                <td>10 GB</td>
-                <td>Email</td>
+                <td>#ORD-001</td>
+                <td>John Smith</td>
+                <td>Wireless Mouse</td>
+                <td>2</td>
+                <td>$29.99</td>
+                <td>$59.98</td>
+                <td><span class="order-status shipped">Shipped</span></td>
             </tr>
             <tr>
-                <td>
-                    <div class="plan-name">Pro</div>
-                    <div class="plan-desc">For growing teams</div>
-                </td>
-                <td>
-                    <div class="price">$49<span>/month</span></div>
-                </td>
-                <td>15 users</td>
-                <td>50 GB</td>
-                <td>Priority</td>
+                <td>#ORD-002</td>
+                <td>Sarah Johnson</td>
+                <td>Mechanical Keyboard</td>
+                <td>1</td>
+                <td>$89.99</td>
+                <td>$89.99</td>
+                <td><span class="order-status delivered">Delivered</span></td>
             </tr>
             <tr>
-                <td>
-                    <div class="plan-name">Enterprise</div>
-                    <div class="plan-desc">For large organizations</div>
-                </td>
-                <td>
-                    <div class="price">$99<span>/month</span></div>
-                </td>
-                <td>Unlimited</td>
-                <td>100 GB</td>
-                <td>24/7</td>
+                <td>#ORD-003</td>
+                <td>Mike Chen</td>
+                <td>USB-C Hub</td>
+                <td>3</td>
+                <td>$39.99</td>
+                <td>$119.97</td>
+                <td><span class="order-status processing">Processing</span></td>
+            </tr>
+            <tr>
+                <td>#ORD-004</td>
+                <td>Emily Davis</td>
+                <td>Laptop Stand</td>
+                <td>1</td>
+                <td>$49.99</td>
+                <td>$49.99</td>
+                <td><span class="order-status cancelled">Cancelled</span></td>
+            </tr>
+            <tr>
+                <td>#ORD-005</td>
+                <td>David Wilson</td>
+                <td>Headphones</td>
+                <td>1</td>
+                <td>$199.99</td>
+                <td>$199.99</td>
+                <td><span class="order-status shipped">Shipped</span></td>
             </tr>
         </tbody>
     </table>
 </div>`,
-    css: `.simple-pricing-table {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
+    css: `.minimal-table.compact {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.8rem;
 }
 
-.simple-pricing-table table {
+.minimal-table.compact th {
+    padding: 0.75rem 0.8rem;
+    text-align: left;
+    font-weight: 500;
+    color: #666;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #fcfcfc;
+}
+
+.minimal-table.compact td {
+    padding: 0.7rem 0.8rem;
+    color: #444;
+    border-bottom: 1px solid #f5f5f5;
+    line-height: 1.3;
+}
+
+.minimal-table.compact tr:hover td {
+    background: #f8f9fa;
+}
+
+/* Order Status Styles */
+.order-status {
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.order-status.shipped {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.order-status.delivered {
+    background: #e8f5e8;
+    color: #2e7d32;
+}
+
+.order-status.processing {
+    background: #fff3e0;
+    color: #ef6c00;
+}
+
+.order-status.cancelled {
+    background: #ffebee;
+    color: #c62828;
+}
+
+/* Compact specific styles */
+.minimal-table.compact td:nth-child(1) {
+    font-weight: 500;
+    color: #333;
+    font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.minimal-table.compact td:nth-child(4),
+.minimal-table.compact td:nth-child(5),
+.minimal-table.compact td:nth-child(6) {
+    text-align: right;
+    font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.minimal-table.compact td:nth-child(6) {
+    font-weight: 500;
+    color: #000;
+}`,
+    js: `// Compact table interactions
+document.querySelectorAll('.minimal-table.compact tr').forEach(row => {
+    row.addEventListener('click', function() {
+        const orderId = this.cells[0].textContent;
+        console.log('Order details for:', orderId);
+        
+        // Remove any existing active states
+        document.querySelectorAll('.minimal-table.compact tr').forEach(r => {
+            r.style.background = '';
+        });
+        
+        // Highlight clicked row
+        this.style.background = '#f0f7ff';
+    });
+});`
+},
+
+// ====================================================================
+// MINIMAL TEMPLATE 20: MINIMAL HEADER
+// ====================================================================
+minimal20: {
+    html: `<div class="minimal-table-container">
+    <table class="minimal-table minimal-header">
+        <thead>
+            <tr>
+                <th>Transaction Date</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2024-01-12</td>
+                <td>Web Hosting - Annual Plan</td>
+                <td>Infrastructure</td>
+                <td class="amount-negative">-$19.99</td>
+                <td><span class="type-expense">Expense</span></td>
+            </tr>
+            <tr>
+                <td>2024-01-15</td>
+                <td>Client Payment - Project Alpha</td>
+                <td>Services</td>
+                <td class="amount-positive">+$2,500.00</td>
+                <td><span class="type-income">Income</span></td>
+            </tr>
+            <tr>
+                <td>2024-01-16</td>
+                <td>Software Subscription - Adobe Creative</td>
+                <td>Tools</td>
+                <td class="amount-negative">-$59.99</td>
+                <td><span class="type-expense">Expense</span></td>
+            </tr>
+            <tr>
+                <td>2024-01-18</td>
+                <td>Consulting Services - Tech Corp</td>
+                <td>Services</td>
+                <td class="amount-positive">+$1,200.00</td>
+                <td><span class="type-income">Income</span></td>
+            </tr>
+            <tr>
+                <td>2024-01-20</td>
+                <td>Office Supplies Purchase</td>
+                <td>Operations</td>
+                <td class="amount-negative">-$145.50</td>
+                <td><span class="type-expense">Expense</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `.minimal-table.minimal-header {
     width: 100%;
     border-collapse: collapse;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-.simple-pricing-table th {
-    background: #f8fafc;
-    color: #374151;
-    padding: 1.25rem 1rem;
+.minimal-table.minimal-header th {
+    padding: 1rem 1.25rem 0.5rem 1.25rem;
     text-align: left;
-    font-weight: 500;
-    font-size: 0.875rem;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.simple-pricing-table td {
-    padding: 1.25rem 1rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-    font-size: 0.875rem;
-}
-
-.simple-pricing-table tr:last-child td {
-    border-bottom: none;
-}
-
-.simple-pricing-table tr:hover {
-    background: #f9fafb;
-}
-
-.plan-name {
-    font-weight: 600;
-    color: #1f2937;
-    font-size: 0.95rem;
-}
-
-.plan-desc {
-    font-size: 0.75rem;
-    color: #9ca3af;
-    margin-top: 2px;
-}
-
-.price {
-    font-weight: 700;
-    color: #1f2937;
-    font-size: 1.25rem;
-}
-
-.price span {
-    font-size: 0.875rem;
     font-weight: 400;
-    color: #6b7280;
-}`,
-    js: `// No JavaScript required - simple pricing display`
-},
+    color: #888;
+    font-size: 0.8rem;
+    border-bottom: 2px solid #e8e8e8;
+    background: white;
+}
 
+.minimal-table.minimal-header td {
+    padding: 1rem 1.25rem;
+    color: #444;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f8f8f8;
+    transition: all 0.2s ease;
+}
+
+.minimal-table.minimal-header tr:hover td {
+    background: #fafafa;
+}
+
+/* Amount Styles */
+.amount-positive {
+    color: #27ae60;
+    font-weight: 500;
+    font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.amount-negative {
+    color: #e74c3c;
+    font-weight: 500;
+    font-family: 'Monaco', 'Consolas', monospace;
+}
+
+/* Type Styles */
+.type-income, .type-expense {
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.type-income {
+    background: #e8f5e8;
+    color: #27ae60;
+    border: 1px solid #c8e6c9;
+}
+
+.type-expense {
+    background: #ffebee;
+    color: #e74c3c;
+    border: 1px solid #ffcdd2;
+}
+
+/* Minimal header specific styles */
+.minimal-table.minimal-header td:nth-child(1) {
+    color: #666;
+    font-size: 0.85rem;
+    font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.minimal-table.minimal-header td:nth-child(3) {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.minimal-table.minimal-header td:nth-child(4) {
+    text-align: right;
+    font-weight: 500;
+}`,
+    js: `// Financial table formatting
+document.querySelectorAll('.amount-positive, .amount-negative').forEach(amount => {
+    amount.addEventListener('click', function() {
+        const value = this.textContent;
+        console.log('Transaction amount:', value);
+    });
+});
+
+// Add keyboard navigation
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        // Add keyboard navigation logic here
+    }
+});`
+},
 // ====================================================================
-// TEMPLATE 10: MINIMAL TASK LIST
+// MINIMAL TEMPLATE 21: FADE IN ANIMATION
 // ====================================================================
-table10: {
-    html: `<div class="minimal-task-list">
-    <table>
+minimal21: {
+    html: `<div class="minimal-table-container">
+    <table class="minimal-table fade-in-animation">
         <thead>
             <tr>
-                <th style="width: 40px;"></th>
-                <th>Task</th>
-                <th>Priority</th>
-                <th>Due Date</th>
-                <th>Assignee</th>
+                <th>Project Name</th>
+                <th>Team</th>
+                <th>Progress</th>
+                <th>Timeline</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="fade-row">
                 <td>
-                    <input type="checkbox" class="task-checkbox">
+                    <div class="project-with-icon">
+                        <span class="project-icon">🚀</span>
+                        Website Redesign
+                    </div>
                 </td>
+                <td>Design Team</td>
                 <td>
-                    <div class="task-title">Design homepage layout</div>
-                    <div class="task-desc">Create responsive design for main page</div>
+                    <div class="progress-minimal">
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                        <span class="progress-text">75%</span>
+                    </div>
                 </td>
-                <td>
-                    <span class="priority-tag high">High</span>
-                </td>
-                <td>Tomorrow</td>
-                <td>
-                    <div class="assignee-minimal">JD</div>
-                </td>
+                <td>2 weeks</td>
+                <td><span class="status-on-track">On Track</span></td>
             </tr>
-            <tr>
+            <tr class="fade-row">
                 <td>
-                    <input type="checkbox" class="task-checkbox" checked>
+                    <div class="project-with-icon">
+                        <span class="project-icon">📱</span>
+                        Mobile App Development
+                    </div>
                 </td>
+                <td>Dev Team</td>
                 <td>
-                    <div class="task-title">Write documentation</div>
-                    <div class="task-desc">API documentation for new features</div>
+                    <div class="progress-minimal">
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                        <span class="progress-text">45%</span>
+                    </div>
                 </td>
-                <td>
-                    <span class="priority-tag medium">Medium</span>
-                </td>
-                <td>Yesterday</td>
-                <td>
-                    <div class="assignee-minimal">JS</div>
-                </td>
+                <td>4 weeks</td>
+                <td><span class="status-delayed">Delayed</span></td>
             </tr>
-            <tr>
+            <tr class="fade-row">
                 <td>
-                    <input type="checkbox" class="task-checkbox">
+                    <div class="project-with-icon">
+                        <span class="project-icon">🔐</span>
+                        Security Audit
+                    </div>
                 </td>
+                <td>Security Team</td>
                 <td>
-                    <div class="task-title">Team meeting</div>
-                    <div class="task-desc">Weekly sprint planning</div>
+                    <div class="progress-minimal">
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                        <span class="progress-text">90%</span>
+                    </div>
                 </td>
+                <td>1 week</td>
+                <td><span class="status-completed">Completed</span></td>
+            </tr>
+            <tr class="fade-row">
                 <td>
-                    <span class="priority-tag low">Low</span>
+                    <div class="project-with-icon">
+                        <span class="project-icon">📊</span>
+                        Analytics Dashboard
+                    </div>
                 </td>
-                <td>Friday</td>
+                <td>Data Team</td>
                 <td>
-                    <div class="assignee-minimal">RJ</div>
+                    <div class="progress-minimal">
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width: 30%"></div>
+                        </div>
+                        <span class="progress-text">30%</span>
+                    </div>
                 </td>
+                <td>3 weeks</td>
+                <td><span class="status-on-track">On Track</span></td>
             </tr>
         </tbody>
     </table>
 </div>`,
-    css: `.minimal-task-list {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-}
-
-.minimal-task-list table {
+    css: `.minimal-table.fade-in-animation {
     width: 100%;
     border-collapse: collapse;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-.minimal-task-list th {
-    background: #f8fafc;
-    color: #374151;
-    padding: 1rem;
+.minimal-table.fade-in-animation th {
+    padding: 1.25rem 1rem 0.75rem 1rem;
     text-align: left;
     font-weight: 500;
-    font-size: 0.875rem;
-    border-bottom: 1px solid #e5e7eb;
+    color: #666;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #f0f0f0;
+    background: white;
 }
 
-.minimal-task-list td {
-    padding: 1rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-    font-size: 0.875rem;
+.minimal-table.fade-in-animation td {
+    padding: 1.25rem 1rem;
+    color: #444;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f8f8f8;
 }
 
-.minimal-task-list tr:last-child td {
-    border-bottom: none;
+/* Fade In Animation */
+.fade-row {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease forwards;
 }
 
-.minimal-task-list tr:hover {
-    background: #f9fafb;
+.fade-row:nth-child(1) { animation-delay: 0.1s; }
+.fade-row:nth-child(2) { animation-delay: 0.2s; }
+.fade-row:nth-child(3) { animation-delay: 0.3s; }
+.fade-row:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.task-checkbox {
-    width: 16px;
-    height: 16px;
-    border: 2px solid #d1d5db;
+/* Project Styles */
+.project-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.project-icon {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* Progress Bar */
+.progress-minimal {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.progress-track {
+    flex: 1;
+    height: 6px;
+    background: #f0f0f0;
     border-radius: 3px;
-    cursor: pointer;
+    overflow: hidden;
 }
 
-.task-checkbox:checked {
-    background: #10b981;
-    border-color: #10b981;
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 3px;
+    transition: width 1s ease-in-out;
+    animation: progressFill 1.5s ease-out;
 }
 
-.task-title {
+@keyframes progressFill {
+    from { width: 0% !important; }
+}
+
+.progress-text {
+    font-size: 0.8rem;
     font-weight: 500;
-    color: #1f2937;
-    font-size: 0.875rem;
+    color: #666;
+    min-width: 2.5rem;
 }
 
-.task-desc {
-    font-size: 0.75rem;
-    color: #9ca3af;
-    margin-top: 2px;
-}
-
-.priority-tag {
-    padding: 0.25rem 0.5rem;
+/* Status Styles */
+.status-on-track, .status-delayed, .status-completed {
+    padding: 0.4rem 0.8rem;
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: statusPulse 2s infinite;
 }
 
-.priority-tag.high {
-    background: #fee2e2;
-    color: #dc2626;
+.status-on-track {
+    background: #e8f5e8;
+    color: #27ae60;
 }
 
-.priority-tag.medium {
-    background: #fef3c7;
-    color: #d97706;
+.status-delayed {
+    background: #fff3e0;
+    color: #f39c12;
 }
 
-.priority-tag.low {
-    background: #d1fae5;
-    color: #059669;
+.status-completed {
+    background: #e3f2fd;
+    color: #2980b9;
 }
 
-.assignee-minimal {
-    width: 28px;
-    height: 28px;
+@keyframes statusPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}`,
+    js: `// Add interactive progress animations
+document.querySelectorAll('.progress-fill').forEach(progress => {
+    // Reset and re-animate on hover
+    progress.parentElement.addEventListener('mouseenter', function() {
+        const currentWidth = progress.style.width;
+        progress.style.width = '0%';
+        setTimeout(() => {
+            progress.style.width = currentWidth;
+        }, 50);
+    });
+});
+
+// Re-initialize animations when table comes into view
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = 'none';
+            setTimeout(() => {
+                entry.target.style.animation = '';
+            }, 10);
+        }
+    });
+});
+
+document.querySelectorAll('.fade-row').forEach(row => {
+    observer.observe(row);
+});`
+},
+
+// ====================================================================
+// MINIMAL TEMPLATE 22: SLIDE IN ANIMATION
+// ====================================================================
+minimal22: {
+    html: `<div class="minimal-table-container">
+    <table class="minimal-table slide-in-animation">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Status</th>
+                <th>Release Version</th>
+                <th>User Impact</th>
+                <th>Confidence</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="slide-row">
+                <td>
+                    <div class="feature-item">
+                        <span class="feature-badge new">NEW</span>
+                        Dark Mode
+                    </div>
+                </td>
+                <td><span class="status-live">Live</span></td>
+                <td>v2.1.0</td>
+                <td><span class="impact-high">High</span></td>
+                <td>
+                    <div class="confidence-meter">
+                        <div class="confidence-fill" style="width: 95%"></div>
+                        <span class="confidence-text">95%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="slide-row">
+                <td>
+                    <div class="feature-item">
+                        <span class="feature-badge beta">BETA</span>
+                        AI Assistant
+                    </div>
+                </td>
+                <td><span class="status-beta">Beta</span></td>
+                <td>v2.2.0</td>
+                <td><span class="impact-medium">Medium</span></td>
+                <td>
+                    <div class="confidence-meter">
+                        <div class="confidence-fill" style="width: 75%"></div>
+                        <span class="confidence-text">75%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="slide-row">
+                <td>
+                    <div class="feature-item">
+                        <span class="feature-badge upcoming">UPCOMING</span>
+                        Voice Commands
+                    </div>
+                </td>
+                <td><span class="status-planned">Planned</span></td>
+                <td>v2.3.0</td>
+                <td><span class="impact-high">High</span></td>
+                <td>
+                    <div class="confidence-meter">
+                        <div class="confidence-fill" style="width: 60%"></div>
+                        <span class="confidence-text">60%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="slide-row">
+                <td>
+                    <div class="feature-item">
+                        <span class="feature-badge experimental">EXPERIMENTAL</span>
+                        AR Preview
+                    </div>
+                </td>
+                <td><span class="status-research">Research</span></td>
+                <td>v2.4.0</td>
+                <td><span class="impact-low">Low</span></td>
+                <td>
+                    <div class="confidence-meter">
+                        <div class="confidence-fill" style="width: 40%"></div>
+                        <span class="confidence-text">40%</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `.minimal-table.slide-in-animation {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+.minimal-table.slide-in-animation th {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e8e8e8;
+    background: white;
+}
+
+.minimal-table.slide-in-animation td {
+    padding: 1.25rem 1rem;
+    color: #333;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+/* Slide In Animation */
+.slide-row {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slide-row:nth-child(1) { animation-delay: 0.1s; }
+.slide-row:nth-child(2) { animation-delay: 0.2s; }
+.slide-row:nth-child(3) { animation-delay: 0.3s; }
+.slide-row:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Feature Item Styles */
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+}
+
+.feature-badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.feature-badge.new {
+    background: #e8f5e8;
+    color: #27ae60;
+    animation: badgePulse 2s infinite;
+}
+
+.feature-badge.beta {
+    background: #fff3e0;
+    color: #f39c12;
+}
+
+.feature-badge.upcoming {
+    background: #e3f2fd;
+    color: #2980b9;
+}
+
+.feature-badge.experimental {
+    background: #f3e5f5;
+    color: #9b59b6;
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Status Styles */
+.status-live, .status-beta, .status-planned, .status-research {
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-live {
+    background: #e8f5e8;
+    color: #27ae60;
+    animation: livePulse 3s infinite;
+}
+
+.status-beta {
+    background: #fff3e0;
+    color: #f39c12;
+}
+
+.status-planned {
+    background: #e3f2fd;
+    color: #2980b9;
+}
+
+.status-research {
+    background: #f5f5f5;
+    color: #7f8c8d;
+}
+
+@keyframes livePulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.4); }
+    50% { box-shadow: 0 0 0 4px rgba(39, 174, 96, 0); }
+}
+
+/* Impact Styles */
+.impact-high, .impact-medium, .impact-low {
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.impact-high {
+    background: #ffebee;
+    color: #e74c3c;
+}
+
+.impact-medium {
+    background: #fff3e0;
+    color: #f39c12;
+}
+
+.impact-low {
+    background: #e8f5e8;
+    color: #27ae60;
+}
+
+/* Confidence Meter */
+.confidence-meter {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.confidence-fill {
+    flex: 1;
+    height: 6px;
+    background: linear-gradient(90deg, #ff6b6b, #ffa726);
+    border-radius: 3px;
+    transition: width 1s ease;
+    animation: confidenceFill 2s ease-out;
+}
+
+@keyframes confidenceFill {
+    from { width: 0% !important; }
+}
+
+.confidence-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333;
+    min-width: 2.5rem;
+}`,
+    js: `// Interactive slide animations
+document.querySelectorAll('.slide-row').forEach((row, index) => {
+    row.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateX(10px)';
+        this.style.transition = 'transform 0.3s ease';
+    });
+    
+    row.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateX(0)';
+    });
+});
+
+// Confidence meter interactions
+document.querySelectorAll('.confidence-meter').forEach(meter => {
+    meter.addEventListener('click', function() {
+        const fill = this.querySelector('.confidence-fill');
+        const currentWidth = fill.style.width;
+        fill.style.width = '0%';
+        setTimeout(() => {
+            fill.style.width = currentWidth;
+        }, 100);
+    });
+});`
+},
+
+// ====================================================================
+// MINIMAL TEMPLATE 23: HOVER GLOW EFFECT
+// ====================================================================
+minimal23: {
+    html: `<div class="minimal-table-container">
+    <table class="minimal-table hover-glow">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Rating</th>
+                <th>Reviews</th>
+                <th>Trend</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="glow-row">
+                <td>
+                    <div class="product-card">
+                        <div class="product-emoji">🎧</div>
+                        <div class="product-info">
+                            <div class="product-name">Wireless Earbuds Pro</div>
+                            <div class="product-brand">SoundMax</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Audio</td>
+                <td>
+                    <div class="rating-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star half">★</span>
+                        <span class="rating-value">4.8</span>
+                    </div>
+                </td>
+                <td>128</td>
+                <td>
+                    <div class="trend-indicator up">
+                        <span class="trend-arrow">↑</span>
+                        <span class="trend-text">Rising</span>
+                    </div>
+                </td>
+                <td>$129.99</td>
+            </tr>
+            <tr class="glow-row">
+                <td>
+                    <div class="product-card">
+                        <div class="product-emoji">⌚</div>
+                        <div class="product-info">
+                            <div class="product-name">Smart Watch Series 5</div>
+                            <div class="product-brand">TechFit</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Wearables</td>
+                <td>
+                    <div class="rating-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                        <span class="rating-value">4.6</span>
+                    </div>
+                </td>
+                <td>89</td>
+                <td>
+                    <div class="trend-indicator stable">
+                        <span class="trend-arrow">→</span>
+                        <span class="trend-text">Stable</span>
+                    </div>
+                </td>
+                <td>$199.99</td>
+            </tr>
+            <tr class="glow-row">
+                <td>
+                    <div class="product-card">
+                        <div class="product-emoji">📱</div>
+                        <div class="product-info">
+                            <div class="product-name">Phone Case Ultra</div>
+                            <div class="product-brand">Guardian</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Accessories</td>
+                <td>
+                    <div class="rating-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="rating-value">5.0</span>
+                    </div>
+                </td>
+                <td>256</td>
+                <td>
+                    <div class="trend-indicator up">
+                        <span class="trend-arrow">↑</span>
+                        <span class="trend-text">Rising</span>
+                    </div>
+                </td>
+                <td>$29.99</td>
+            </tr>
+            <tr class="glow-row">
+                <td>
+                    <div class="product-card">
+                        <div class="product-emoji">💻</div>
+                        <div class="product-info">
+                            <div class="product-name">Laptop Stand Pro</div>
+                            <div class="product-brand">ErgoTech</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Accessories</td>
+                <td>
+                    <div class="rating-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                        <span class="rating-value">3.4</span>
+                    </div>
+                </td>
+                <td>34</td>
+                <td>
+                    <div class="trend-indicator down">
+                        <span class="trend-arrow">↓</span>
+                        <span class="trend-text">Falling</span>
+                    </div>
+                </td>
+                <td>$49.99</td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `.minimal-table.hover-glow {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.minimal-table.hover-glow th {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    color: #666;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #f0f0f0;
+    background: white;
+}
+
+.minimal-table.hover-glow td {
+    padding: 1.25rem 1rem;
+    color: #333;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f8f8f8;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Glow Hover Effect */
+.glow-row {
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.glow-row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    right: -10px;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(102, 126, 234, 0.1) 0%, 
+        rgba(118, 75, 162, 0.1) 50%, 
+        rgba(102, 126, 234, 0.1) 100%);
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0;
+    transform: scaleX(0.95);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.glow-row:hover::before {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.glow-row:hover td {
+    transform: translateY(-2px);
+    color: #2c3e50;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 
+        0 4px 20px rgba(102, 126, 234, 0.15),
+        0 0 0 1px rgba(102, 126, 234, 0.1);
+    border-radius: 8px;
+    margin: 4px 0;
+}
+
+/* Product Card */
+.product-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.product-emoji {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.glow-row:hover .product-emoji {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.product-info .product-name {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.1rem;
+}
+
+.product-info .product-brand {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+}
+
+/* Rating Stars */
+.rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.star {
+    color: #ffd700;
+    font-size: 0.9rem;
+}
+
+.star.half {
+    background: linear-gradient(90deg, #ffd700 50%, #ddd 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rating-value {
+    margin-left: 0.5rem;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.8rem;
+}
+
+/* Trend Indicator */
+.trend-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.trend-indicator.up {
+    background: #e8f5e8;
+    color: #27ae60;
+}
+
+.trend-indicator.stable {
+    background: #f0f0f0;
+    color: #7f8c8d;
+}
+
+.trend-indicator.down {
+    background: #ffebee;
+    color: #e74c3c;
+}
+
+.trend-arrow {
+    font-size: 1rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-3px); }
+    60% { transform: translateY(-1px); }
+}
+
+.glow-row:hover .trend-indicator {
+    transform: scale(1.05);
+}`,
+    js: `// Enhanced glow effects
+document.querySelectorAll('.glow-row').forEach(row => {
+    row.addEventListener('mouseenter', function() {
+        this.style.zIndex = '10';
+    });
+    
+    row.addEventListener('mouseleave', function() {
+        this.style.zIndex = '1';
+    });
+});
+
+// Star rating interactions
+document.querySelectorAll('.star').forEach(star => {
+    star.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.3)';
+        this.style.transition = 'transform 0.2s ease';
+    });
+    
+    star.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+    });
+});`
+},
+
+// ====================================================================
+// MINIMAL TEMPLATE 24: PULSE LOADING
+// ====================================================================
+minimal24: {
+    html: `<div class="minimal-table-container">
+    <div class="table-header-pulse">
+        <h3>System Health Dashboard</h3>
+        <div class="last-updated" id="lastUpdated">Updated just now</div>
+    </div>
+    <table class="minimal-table pulse-loading">
+        <thead>
+            <tr>
+                <th>Service</th>
+                <th>Status</th>
+                <th>Uptime</th>
+                <th>Response Time</th>
+                <th>Health Score</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="pulse-row">
+                <td>
+                    <div class="service-info">
+                        <div class="service-icon">🌐</div>
+                        <div class="service-details">
+                            <div class="service-name">API Gateway</div>
+                            <div class="service-endpoint">api.company.com</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="status-indicator online">
+                        <div class="status-dot"></div>
+                        <span>Online</span>
+                    </div>
+                </td>
+                <td>99.9%</td>
+                <td>
+                    <div class="response-time fast">45ms</div>
+                </td>
+                <td>
+                    <div class="health-score">
+                        <div class="score-circle" data-score="95">
+                            <svg width="40" height="40" class="score-svg">
+                                <circle cx="20" cy="20" r="18" class="score-bg"></circle>
+                                <circle cx="20" cy="20" r="18" class="score-fill" style="stroke-dashoffset: 113.097"></circle>
+                            </svg>
+                            <span class="score-text">95</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="btn-action refresh">🔄</button>
+                </td>
+            </tr>
+            <tr class="pulse-row">
+                <td>
+                    <div class="service-info">
+                        <div class="service-icon">💾</div>
+                        <div class="service-details">
+                            <div class="service-name">Database Cluster</div>
+                            <div class="service-endpoint">db-primary.company.com</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="status-indicator online">
+                        <div class="status-dot"></div>
+                        <span>Online</span>
+                    </div>
+                </td>
+                <td>99.8%</td>
+                <td>
+                    <div class="response-time fast">12ms</div>
+                </td>
+                <td>
+                    <div class="health-score">
+                        <div class="score-circle" data-score="88">
+                            <svg width="40" height="40" class="score-svg">
+                                <circle cx="20" cy="20" r="18" class="score-bg"></circle>
+                                <circle cx="20" cy="20" r="18" class="score-fill" style="stroke-dashoffset: 135.717"></circle>
+                            </svg>
+                            <span class="score-text">88</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="btn-action refresh">🔄</button>
+                </td>
+            </tr>
+            <tr class="pulse-row">
+                <td>
+                    <div class="service-info">
+                        <div class="service-icon">📧</div>
+                        <div class="service-details">
+                            <div class="service-name">Email Service</div>
+                            <div class="service-endpoint">smtp.company.com</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="status-indicator warning">
+                        <div class="status-dot"></div>
+                        <span>Degraded</span>
+                    </div>
+                </td>
+                <td>98.5%</td>
+                <td>
+                    <div class="response-time slow">250ms</div>
+                </td>
+                <td>
+                    <div class="health-score">
+                        <div class="score-circle" data-score="72">
+                            <svg width="40" height="40" class="score-svg">
+                                <circle cx="20" cy="20" r="18" class="score-bg"></circle>
+                                <circle cx="20" cy="20" r="18" class="score-fill" style="stroke-dashoffset: 158.336"></circle>
+                            </svg>
+                            <span class="score-text">72</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="btn-action refresh">🔄</button>
+                </td>
+            </tr>
+            <tr class="pulse-row">
+                <td>
+                    <div class="service-info">
+                        <div class="service-icon">📊</div>
+                        <div class="service-details">
+                            <div class="service-name">Analytics API</div>
+                            <div class="service-endpoint">analytics.company.com</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="status-indicator offline">
+                        <div class="status-dot"></div>
+                        <span>Offline</span>
+                    </div>
+                </td>
+                <td>95.2%</td>
+                <td>
+                    <div class="response-time timeout">Timeout</div>
+                </td>
+                <td>
+                    <div class="health-score">
+                        <div class="score-circle" data-score="45">
+                            <svg width="40" height="40" class="score-svg">
+                                <circle cx="20" cy="20" r="18" class="score-bg"></circle>
+                                <circle cx="20" cy="20" r="18" class="score-fill" style="stroke-dashoffset: 203.575"></circle>
+                            </svg>
+                            <span class="score-text">45</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <button class="btn-action refresh">🔄</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `.minimal-table.pulse-loading {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.table-header-pulse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.table-header-pulse h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.last-updated {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    animation: textPulse 2s infinite;
+}
+
+@keyframes textPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.minimal-table.pulse-loading th {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    color: #666;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #f0f0f0;
+    background: white;
+}
+
+.minimal-table.pulse-loading td {
+    padding: 1.25rem 1rem;
+    color: #333;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f8f8f8;
+    transition: all 0.3s ease;
+}
+
+/* Pulse Animation */
+.pulse-row {
+    animation: rowPulse 3s ease-in-out infinite;
+}
+
+.pulse-row:nth-child(1) { animation-delay: 0.1s; }
+.pulse-row:nth-child(2) { animation-delay: 0.3s; }
+.pulse-row:nth-child(3) { animation-delay: 0.5s; }
+.pulse-row:nth-child(4) { animation-delay: 0.7s; }
+
+@keyframes rowPulse {
+    0%, 100% { 
+        background: white;
+        transform: scale(1);
+    }
+    50% { 
+        background: #f8f9fa;
+        transform: scale(1.002);
+    }
+}
+
+/* Service Info */
+.service-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.service-icon {
+    font-size: 1.3rem;
+    opacity: 0.8;
+}
+
+.service-details .service-name {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.1rem;
+}
+
+.service-details .service-endpoint {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    font-family: 'Monaco', 'Consolas', monospace;
+}
+
+/* Status Indicator */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: statusPulse 2s infinite;
+}
+
+.status-indicator.online .status-dot {
+    background: #27ae60;
+    animation: onlinePulse 2s infinite;
+}
+
+.status-indicator.warning .status-dot {
+    background: #f39c12;
+    animation: warningPulse 1.5s infinite;
+}
+
+.status-indicator.offline .status-dot {
+    background: #e74c3c;
+    animation: offlinePulse 1s infinite;
+}
+
+@keyframes onlinePulse {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 0 4px rgba(39, 174, 96, 0);
+        transform: scale(1.2);
+    }
+}
+
+@keyframes warningPulse {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 0 4px rgba(243, 156, 18, 0);
+        transform: scale(1.2);
+    }
+}
+
+@keyframes offlinePulse {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 0 4px rgba(231, 76, 60, 0);
+        transform: scale(1.1);
+    }
+}
+
+/* Response Time */
+.response-time {
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.response-time.fast {
+    background: #e8f5e8;
+    color: #27ae60;
+}
+
+.response-time.slow {
+    background: #fff3e0;
+    color: #f39c12;
+}
+
+.response-time.timeout {
+    background: #ffebee;
+    color: #e74c3c;
+}
+
+/* Health Score */
+.health-score {
+    display: flex;
+    justify-content: center;
+}
+
+.score-circle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.score-svg {
+    transform: rotate(-90deg);
+}
+
+.score-bg {
+    fill: none;
+    stroke: #f0f0f0;
+    stroke-width: 3;
+}
+
+.score-fill {
+    fill: none;
+    stroke: #27ae60;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 113.097;
+    transition: stroke-dashoffset 1s ease;
+    animation: scoreFill 2s ease-out;
+}
+
+@keyframes scoreFill {
+    from { stroke-dashoffset: 113.097; }
+}
+
+.score-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Action Button */
+.btn-action.refresh {
+    background: none;
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem;
     border-radius: 6px;
-    background: #6b7280;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-action.refresh:hover {
+    background: #667eea;
+    color: white;
+    transform: rotate(180deg);
+}`,
+    js: `// Update last updated time
+function updateLastUpdated() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('en-US', { 
+        hour: '2-digit', 
+        minute: '2-digit',
+        second: '2-digit'
+    });
+    document.getElementById('lastUpdated').textContent = \`Updated at \${timeString}\`;
+}
+
+// Update every 30 seconds
+setInterval(updateLastUpdated, 30000);
+
+// Refresh button functionality
+document.querySelectorAll('.btn-action.refresh').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const row = this.closest('tr');
+        const serviceName = row.querySelector('.service-name').textContent;
+        
+        // Add loading state
+        this.textContent = '⏳';
+        this.style.animation = 'spin 1s linear infinite';
+        
+        setTimeout(() => {
+            this.textContent = '🔄';
+            this.style.animation = '';
+            updateLastUpdated();
+            console.log(\`Refreshed data for: \${serviceName}\`);
+        }, 1000);
+    });
+});
+
+// Initialize score animations
+document.querySelectorAll('.score-circle').forEach(circle => {
+    const score = parseInt(circle.getAttribute('data-score'));
+    const fill = circle.querySelector('.score-fill');
+    const circumference = 2 * Math.PI * 18;
+    const offset = circumference - (score / 100) * circumference;
+    
+    fill.style.strokeDashoffset = offset;
+    
+    // Color based on score
+    if (score >= 80) {
+        fill.style.stroke = '#27ae60';
+    } else if (score >= 60) {
+        fill.style.stroke = '#f39c12';
+    } else {
+        fill.style.stroke = '#e74c3c';
+    }
+});`
+},
+
+// ====================================================================
+// MINIMAL TEMPLATE 25: MORPHING CELLS
+// ====================================================================
+minimal25: {
+    html: `<div class="minimal-table-container">
+    <table class="minimal-table morphing-cells">
+        <thead>
+            <tr>
+                <th>Performance Metric</th>
+                <th>Current Value</th>
+                <th>Previous Value</th>
+                <th>Change</th>
+                <th>Trend (7d)</th>
+                <th>Target</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="morph-row">
+                <td>
+                    <div class="metric-info">
+                        <div class="metric-icon">👥</div>
+                        <div class="metric-details">
+                            <div class="metric-name">Active Users</div>
+                            <div class="metric-description">Daily active users</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="current-value" data-value="1284">1,284</div>
+                </td>
+                <td>
+                    <div class="previous-value">1,150</div>
+                </td>
+                <td>
+                    <div class="change-indicator positive">
+                        <span class="change-arrow">↑</span>
+                        <span class="change-value">+134</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="trend-sparkline">
+                        <div class="sparkline" data-values="900,1050,1100,1150,1200,1250,1284"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="target-progress">
+                        <div class="target-bar">
+                            <div class="target-fill" style="width: 85.6%"></div>
+                        </div>
+                        <span class="target-text">1,500</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="morph-row">
+                <td>
+                    <div class="metric-info">
+                        <div class="metric-icon">💰</div>
+                        <div class="metric-details">
+                            <div class="metric-name">Monthly Revenue</div>
+                            <div class="metric-description">Total monthly revenue</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="current-value" data-value="12500">$12,500</div>
+                </td>
+                <td>
+                    <div class="previous-value">$11,200</div>
+                </td>
+                <td>
+                    <div class="change-indicator positive">
+                        <span class="change-arrow">↑</span>
+                        <span class="change-value">+11.6%</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="trend-sparkline">
+                        <div class="sparkline" data-values="8000,9500,10200,10800,11200,11800,12500"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="target-progress">
+                        <div class="target-bar">
+                            <div class="target-fill" style="width: 62.5%"></div>
+                        </div>
+                        <span class="target-text">$20,000</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="morph-row">
+                <td>
+                    <div class="metric-info">
+                        <div class="metric-icon">📈</div>
+                        <div class="metric-details">
+                            <div class="metric-name">Conversion Rate</div>
+                            <div class="metric-description">Visitor to customer rate</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="current-value" data-value="3.2">3.2%</div>
+                </td>
+                <td>
+                    <div class="previous-value">2.8%</div>
+                </td>
+                <td>
+                    <div class="change-indicator positive">
+                        <span class="change-arrow">↑</span>
+                        <span class="change-value">+0.4%</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="trend-sparkline">
+                        <div class="sparkline" data-values="2.5,2.6,2.7,2.8,2.9,3.0,3.2"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="target-progress">
+                        <div class="target-bar">
+                            <div class="target-fill" style="width: 64%"></div>
+                        </div>
+                        <span class="target-text">5%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="morph-row">
+                <td>
+                    <div class="metric-info">
+                        <div class="metric-icon">⏱️</div>
+                        <div class="metric-details">
+                            <div class="metric-name">Avg. Session</div>
+                            <div class="metric-description">Average session duration</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="current-value" data-value="4.8">4.8m</div>
+                </td>
+                <td>
+                    <div class="previous-value">5.2m</div>
+                </td>
+                <td>
+                    <div class="change-indicator negative">
+                        <span class="change-arrow">↓</span>
+                        <span class="change-value">-0.4m</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="trend-sparkline">
+                        <div class="sparkline" data-values="5.5,5.3,5.2,5.1,5.0,4.9,4.8"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="target-progress">
+                        <div class="target-bar">
+                            <div class="target-fill" style="width: 80%"></div>
+                        </div>
+                        <span class="target-text">6m</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `.minimal-table.morphing-cells {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.minimal-table.morphing-cells th {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    color: #666;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #f0f0f0;
+    background: white;
+}
+
+.minimal-table.morphing-cells td {
+    padding: 1.25rem 1rem;
+    color: #333;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f8f8f8;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Morph Row Animation */
+.morph-row {
+    opacity: 0;
+    animation: morphIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.morph-row:nth-child(1) { animation-delay: 0.1s; }
+.morph-row:nth-child(2) { animation-delay: 0.2s; }
+.morph-row:nth-child(3) { animation-delay: 0.3s; }
+.morph-row:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes morphIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.morph-row:hover td {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+/* Metric Info */
+.metric-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.metric-icon {
+    font-size: 1.3rem;
+    opacity: 0.8;
+}
+
+.metric-details .metric-name {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.1rem;
+}
+
+.metric-details .metric-description {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+}
+
+/* Current Value Morphing */
+.current-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+
+.current-value::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 4px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.current-value.morphing {
+    color: white;
+    transform: scale(1.1);
+}
+
+.current-value.morphing::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Change Indicator */
+.change-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.change-indicator.positive {
+    background: #e8f5e8;
+    color: #27ae60;
+}
+
+.change-indicator.negative {
+    background: #ffebee;
+    color: #e74c3c;
+}
+
+.change-arrow {
+    font-size: 1rem;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-2px); }
+    60% { transform: translateY(-1px); }
+}
+
+/* Trend Sparkline */
+.trend-sparkline {
+    width: 80px;
+    height: 30px;
+}
+
+.sparkline {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #f8f9fa, #fff);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sparkline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(102, 126, 234, 0.3) 0%, 
+        rgba(118, 75, 162, 0.3) 100%);
+    clip-path: polygon(0% 100%, 0% 100%, 100% 100%, 100% 100%);
+    animation: drawSparkline 2s ease-out forwards;
+}
+
+@keyframes drawSparkline {
+    to {
+        clip-path: polygon(
+            0% 100%,
+            14.28% var(--y1),
+            28.57% var(--y2),
+            42.85% var(--y3),
+            57.14% var(--y4),
+            71.42% var(--y5),
+            85.71% var(--y6),
+            100% var(--y7),
+            100% 100%
+        );
+    }
+}
+
+/* Target Progress */
+.target-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.target-bar {
+    flex: 1;
+    height: 6px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.target-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 3px;
+    transition: width 1s ease;
+    animation: targetFill 2s ease-out;
+}
+
+@keyframes targetFill {
+    from { width: 0% !important; }
+}
+
+.target-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #666;
+    min-width: 3rem;
+}`,
+    js: `// Value morphing animation
+function animateValueChange(element, newValue) {
+    element.classList.add('morphing');
+    
+    setTimeout(() => {
+        element.textContent = newValue;
+        element.classList.remove('morphing');
+    }, 400);
+}
+
+// Initialize sparklines
+document.querySelectorAll('.sparkline').forEach(sparkline => {
+    const values = sparkline.getAttribute('data-values').split(',').map(Number);
+    const maxValue = Math.max(...values);
+    const minValue = Math.min(...values);
+    const range = maxValue - minValue;
+    
+    // Calculate Y positions (inverted for SVG coordinate system)
+    const yPositions = values.map(value => {
+        const normalized = (value - minValue) / range;
+        return 100 - (normalized * 80 + 10); // 10% padding top and bottom
+    });
+    
+    // Set CSS custom properties for animation
+    sparkline.style.setProperty('--y1', \`\${yPositions[0]}%\`);
+    sparkline.style.setProperty('--y2', \`\${yPositions[1]}%\`);
+    sparkline.style.setProperty('--y3', \`\${yPositions[2]}%\`);
+    sparkline.style.setProperty('--y4', \`\${yPositions[3]}%\`);
+    sparkline.style.setProperty('--y5', \`\${yPositions[4]}%\`);
+    sparkline.style.setProperty('--y6', \`\${yPositions[5]}%\`);
+    sparkline.style.setProperty('--y7', \`\${yPositions[6]}%\`);
+});
+
+// Interactive value updates
+document.querySelectorAll('.current-value').forEach(valueElement => {
+    valueElement.addEventListener('click', function() {
+        const currentValue = this.getAttribute('data-value');
+        const randomChange = (Math.random() - 0.5) * 100;
+        const newValue = Math.max(0, parseFloat(currentValue) + randomChange);
+        const formattedValue = newValue.toLocaleString();
+        
+        animateValueChange(this, formattedValue);
+        this.setAttribute('data-value', newValue);
+    });
+});
+
+// Auto-refresh simulation
+setInterval(() => {
+    document.querySelectorAll('.morph-row').forEach(row => {
+        row.style.animation = 'none';
+        setTimeout(() => {
+            row.style.animation = 'morphIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+        }, 10);
+    });
+}, 10000);`
+},
+// ====================================================================
+// MINIMAL TEMPLATE 26: UNIVERSAL DATA TABLE
+// ====================================================================
+minimal26: {
+    html: `<div class="universal-table-container">
+    <div class="table-actions">
+        <div class="search-box">
+            <input type="text" placeholder="Search..." class="search-input">
+            <span class="search-icon">🔍</span>
+        </div>
+        <div class="table-controls">
+            <select class="rows-select">
+                <option>10 rows</option>
+                <option>25 rows</option>
+                <option>50 rows</option>
+                <option>100 rows</option>
+            </select>
+            <button class="btn-export">Export</button>
+        </div>
+    </div>
+    
+    <table class="universal-table">
+        <thead>
+            <tr>
+                <th>
+                    <div class="th-content">
+                        Name
+                        <span class="sort-indicator">↕️</span>
+                    </div>
+                </th>
+                <th>
+                    <div class="th-content">
+                        Email
+                        <span class="sort-indicator">↕️</span>
+                    </div>
+                </th>
+                <th>
+                    <div class="th-content">
+                        Role
+                        <span class="sort-indicator">↕️</span>
+                    </div>
+                </th>
+                <th>
+                    <div class="th-content">
+                        Status
+                        <span class="sort-indicator">↕️</span>
+                    </div>
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="user-cell">
+                        <div class="avatar-sm">JD</div>
+                        <div class="user-info">
+                            <div class="user-name">John Doe</div>
+                            <div class="user-id">ID: USR-001</div>
+                        </div>
+                    </div>
+                </td>
+                <td>john.doe@company.com</td>
+                <td>
+                    <span class="role-tag admin">Admin</span>
+                </td>
+                <td>
+                    <div class="status-cell">
+                        <div class="status-dot active"></div>
+                        <span>Active</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn-icon edit" title="Edit">✏️</button>
+                        <button class="btn-icon delete" title="Delete">🗑️</button>
+                        <button class="btn-icon more" title="More">⋯</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="user-cell">
+                        <div class="avatar-sm">JS</div>
+                        <div class="user-info">
+                            <div class="user-name">Jane Smith</div>
+                            <div class="user-id">ID: USR-002</div>
+                        </div>
+                    </div>
+                </td>
+                <td>jane.smith@company.com</td>
+                <td>
+                    <span class="role-tag user">User</span>
+                </td>
+                <td>
+                    <div class="status-cell">
+                        <div class="status-dot pending"></div>
+                        <span>Pending</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn-icon edit" title="Edit">✏️</button>
+                        <button class="btn-icon delete" title="Delete">🗑️</button>
+                        <button class="btn-icon more" title="More">⋯</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="user-cell">
+                        <div class="avatar-sm">MJ</div>
+                        <div class="user-info">
+                            <div class="user-name">Mike Johnson</div>
+                            <div class="user-id">ID: USR-003</div>
+                        </div>
+                    </div>
+                </td>
+                <td>mike.johnson@company.com</td>
+                <td>
+                    <span class="role-tag editor">Editor</span>
+                </td>
+                <td>
+                    <div class="status-cell">
+                        <div class="status-dot active"></div>
+                        <span>Active</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn-icon edit" title="Edit">✏️</button>
+                        <button class="btn-icon delete" title="Delete">🗑️</button>
+                        <button class="btn-icon more" title="More">⋯</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="user-cell">
+                        <div class="avatar-sm">SC</div>
+                        <div class="user-info">
+                            <div class="user-name">Sarah Chen</div>
+                            <div class="user-id">ID: USR-004</div>
+                        </div>
+                    </div>
+                </td>
+                <td>sarah.chen@company.com</td>
+                <td>
+                    <span class="role-tag user">User</span>
+                </td>
+                <td>
+                    <div class="status-cell">
+                        <div class="status-dot inactive"></div>
+                        <span>Inactive</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn-icon edit" title="Edit">✏️</button>
+                        <button class="btn-icon delete" title="Delete">🗑️</button>
+                        <button class="btn-icon more" title="More">⋯</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="table-footer">
+        <div class="pagination-info">
+            Showing 1 to 4 of 100 entries
+        </div>
+        <div class="pagination">
+            <button class="page-btn prev" disabled>‹ Previous</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <span class="page-ellipsis">...</span>
+            <button class="page-btn">10</button>
+            <button class="page-btn next">Next ›</button>
+        </div>
+    </div>
+</div>`,
+    css: `.universal-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.table-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: #fafafa;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.search-box {
+    position: relative;
+    width: 300px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.table-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rows-select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    font-size: 0.9rem;
+}
+
+.btn-export {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-export:hover {
+    background: #5a6fd8;
+}
+
+.universal-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.universal-table th {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e8e8e8;
+    background: #f8f9fa;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.universal-table th:hover {
+    background: #e9ecef;
+}
+
+.th-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sort-indicator {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.universal-table th:hover .sort-indicator {
+    opacity: 1;
+}
+
+.universal-table td {
+    padding: 1.25rem 1.25rem;
+    color: #333;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f5f5f5;
+    transition: background 0.3s ease;
+}
+
+.universal-table tr:hover td {
+    background: #f8f9fa;
+}
+
+/* User Cell */
+.user-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.avatar-sm {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 0.7rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.user-info .user-name {
     font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.1rem;
+}
+
+.user-info .user-id {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+}
+
+/* Role Tags */
+.role-tag {
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.role-tag.admin {
+    background: #fff0f0;
+    color: #e74c3c;
+}
+
+.role-tag.editor {
+    background: #fff3e0;
+    color: #f39c12;
+}
+
+.role-tag.user {
+    background: #e8f5e8;
+    color: #27ae60;
+}
+
+/* Status Cell */
+.status-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-dot.active {
+    background: #27ae60;
+    animation: pulse 2s infinite;
+}
+
+.status-dot.pending {
+    background: #f39c12;
+}
+
+.status-dot.inactive {
+    background: #95a5a6;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-icon {
+    background: none;
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.btn-icon:hover {
+    background: #f5f5f5;
+    transform: scale(1.1);
+}
+
+.btn-icon.edit:hover {
+    background: #e3f2fd;
+    border-color: #2196f3;
+}
+
+.btn-icon.delete:hover {
+    background: #ffebee;
+    border-color: #f44336;
+}
+
+/* Table Footer */
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: #fafafa;
+    border-top: 1px solid #e8e8e8;
+}
+
+.pagination-info {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.page-btn {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.page-btn.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-ellipsis {
+    padding: 0.5rem;
+    color: #666;
 }`,
-    js: `// Task list functionality
-document.querySelectorAll('.task-checkbox').forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        const row = this.closest('tr');
-        if (this.checked) {
-            row.style.opacity = '0.6';
-            row.querySelector('.task-title').style.textDecoration = 'line-through';
-        } else {
-            row.style.opacity = '1';
-            row.querySelector('.task-title').style.textDecoration = 'none';
+    js: `// Search functionality
+const searchInput = document.querySelector('.search-input');
+searchInput.addEventListener('input', function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+    const rows = document.querySelectorAll('.universal-table tbody tr');
+    
+    rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(searchTerm) ? '' : 'none';
+    });
+});
+
+// Sort functionality
+document.querySelectorAll('.universal-table th').forEach(header => {
+    header.addEventListener('click', function() {
+        const table = this.closest('table');
+        const headerIndex = Array.from(this.parentElement.children).indexOf(this);
+        const rows = Array.from(table.querySelectorAll('tbody tr'));
+        
+        const isAscending = !this.classList.contains('asc');
+        this.classList.toggle('asc', isAscending);
+        this.classList.toggle('desc', !isAscending);
+        
+        rows.sort((a, b) => {
+            const aText = a.children[headerIndex].textContent.trim();
+            const bText = b.children[headerIndex].textContent.trim();
+            
+            if (isAscending) {
+                return aText.localeCompare(bText);
+            } else {
+                return bText.localeCompare(aText);
+            }
+        });
+        
+        // Re-append sorted rows
+        rows.forEach(row => table.querySelector('tbody').appendChild(row));
+    });
+});
+
+// Pagination
+document.querySelectorAll('.page-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        if (this.disabled) return;
+        
+        document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // In real implementation, this would load the corresponding page data
+        console.log('Page changed');
+    });
+});
+
+// Export functionality
+document.querySelector('.btn-export').addEventListener('click', function() {
+    alert('Exporting data...');
+    // In real implementation, this would trigger CSV/Excel download
+});`
+},
+
+// ====================================================================
+// MINIMAL TEMPLATE 27: PRICING COMPARISON
+// ====================================================================
+minimal27: {
+    html: `<div class="pricing-table-container">
+    <div class="pricing-header">
+        <h2>Choose Your Plan</h2>
+        <p>Select the perfect plan for your needs</p>
+        <div class="billing-toggle">
+            <span class="billing-option active">Monthly</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="billingToggle">
+                <span class="toggle-slider"></span>
+            </label>
+            <span class="billing-option">Yearly <span class="discount-badge">Save 20%</span></span>
+        </div>
+    </div>
+    
+    <table class="pricing-table">
+        <thead>
+            <tr>
+                <th class="feature-column">Features</th>
+                <th class="plan-column">
+                    <div class="plan-card basic">
+                        <div class="plan-name">Basic</div>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount">19</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <button class="btn-plan">Get Started</button>
+                    </div>
+                </th>
+                <th class="plan-column popular">
+                    <div class="plan-card pro">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="plan-name">Professional</div>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount">49</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <button class="btn-plan primary">Try Free</button>
+                    </div>
+                </th>
+                <th class="plan-column">
+                    <div class="plan-card enterprise">
+                        <div class="plan-name">Enterprise</div>
+                        <div class="plan-price">
+                            <span class="currency">$</span>
+                            <span class="amount">99</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <button class="btn-plan">Contact Sales</button>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="feature-category">
+                <td colspan="4">Core Features</td>
+            </tr>
+            <tr>
+                <td>Number of Users</td>
+                <td>1 user</td>
+                <td>5 users</td>
+                <td>Unlimited users</td>
+            </tr>
+            <tr>
+                <td>Storage Space</td>
+                <td>5 GB</td>
+                <td>50 GB</td>
+                <td>1 TB</td>
+            </tr>
+            <tr>
+                <td>API Access</td>
+                <td>❌</td>
+                <td>✅ Limited</td>
+                <td>✅ Full access</td>
+            </tr>
+            
+            <tr class="feature-category">
+                <td colspan="4">Support</td>
+            </tr>
+            <tr>
+                <td>Email Support</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Phone Support</td>
+                <td>❌</td>
+                <td>✅ Business hours</td>
+                <td>✅ 24/7</td>
+            </tr>
+            <tr>
+                <td>Dedicated Account Manager</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>✅</td>
+            </tr>
+            
+            <tr class="feature-category">
+                <td colspan="4">Security</td>
+            </tr>
+            <tr>
+                <td>SSL Certificate</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Two-Factor Authentication</td>
+                <td>❌</td>
+                <td>✅</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>SAML SSO</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td>✅</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="pricing-footer">
+        <p>All plans include 30-day money-back guarantee</p>
+    </div>
+</div>`,
+    css: `.pricing-table-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pricing-header {
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.pricing-header h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.pricing-header p {
+    margin: 0 0 2rem 0;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.billing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-weight: 500;
+}
+
+.billing-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.billing-option.active {
+    color: #ffd700;
+}
+
+.discount-badge {
+    background: #ffd700;
+    color: #333;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 34px;
+    transition: .4s;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+input:checked + .toggle-slider {
+    background: #ffd700;
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(30px);
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pricing-table th {
+    padding: 0;
+    vertical-align: top;
+}
+
+.feature-column {
+    width: 30%;
+    padding: 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.plan-column {
+    width: 23.33%;
+    padding: 0;
+    border-left: 1px solid #e8e8e8;
+}
+
+.plan-column.popular {
+    position: relative;
+    background: #f8f9fa;
+}
+
+.plan-column.popular::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.popular-badge {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.plan-card {
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.plan-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.plan-price {
+    margin-bottom: 1.5rem;
+}
+
+.plan-price .currency {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #667eea;
+    vertical-align: top;
+}
+
+.plan-price .amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1;
+}
+
+.plan-price .period {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+.btn-plan {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-plan:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-plan.primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-plan.primary:hover {
+    background: #5a6fd8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.pricing-table td {
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #f5f5f5;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.pricing-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+    color: #333;
+    background: #f8f9fa;
+}
+
+.feature-category td {
+    background: #2c3e50;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.pricing-table tr:hover td:not(.feature-category td) {
+    background: #f8f9fa;
+}
+
+.pricing-footer {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-top: 1px solid #e8e8e8;
+    color: #666;
+    font-size: 0.9rem;
+}`,
+    js: `// Billing toggle functionality
+const billingToggle = document.getElementById('billingToggle');
+const monthlyPrices = { basic: 19, pro: 49, enterprise: 99 };
+const yearlyPrices = { basic: 15, pro: 39, enterprise: 79 };
+
+billingToggle.addEventListener('change', function() {
+    const isYearly = this.checked;
+    const prices = isYearly ? yearlyPrices : monthlyPrices;
+    
+    // Update prices
+    document.querySelectorAll('.plan-price .amount').forEach((element, index) => {
+        const plan = ['basic', 'pro', 'enterprise'][index];
+        element.textContent = prices[plan];
+    });
+    
+    // Update period text
+    document.querySelectorAll('.plan-price .period').forEach(element => {
+        element.textContent = isYearly ? '/month' : '/month';
+    });
+    
+    // Update billing option active states
+    document.querySelectorAll('.billing-option').forEach((option, index) => {
+        option.classList.toggle('active', index === (isYearly ? 1 : 0));
+    });
+});
+
+// Plan selection
+document.querySelectorAll('.btn-plan').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const planName = this.closest('.plan-card').querySelector('.plan-name').textContent;
+        alert(\`Selected plan: \${planName}\`);
+        // In real implementation, this would redirect to signup/payment
+    });
+});`
+},
+
+// ====================================================================
+// MINIMAL TEMPLATE 28: BLOG/CONTENT MANAGER
+// ====================================================================
+minimal28: {
+    html: `<div class="content-table-container">
+    <div class="content-header">
+        <h2>Content Management</h2>
+        <div class="content-actions">
+            <button class="btn-new-post">+ New Post</button>
+            <div class="view-options">
+                <button class="view-option active" data-view="all">All Posts</button>
+                <button class="view-option" data-view="published">Published</button>
+                <button class="view-option" data-view="drafts">Drafts</button>
+                <button class="view-option" data-view="scheduled">Scheduled</button>
+            </div>
+        </div>
+    </div>
+    
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th class="title-column">Title</th>
+                <th class="author-column">Author</th>
+                <th class="date-column">Date</th>
+                <th class="status-column">Status</th>
+                <th class="stats-column">Stats</th>
+                <th class="actions-column">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="content-row">
+                <td>
+                    <div class="post-title">
+                        <div class="post-thumbnail">
+                            <img src="https://via.placeholder.com/60x40/667eea/white?text=IMG" alt="Post thumbnail">
+                        </div>
+                        <div class="post-info">
+                            <div class="post-name">Getting Started with Web Development</div>
+                            <div class="post-category">Web Development • 5 min read</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="author-info">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-name">John Doe</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="date-info">
+                        <div class="publish-date">Jan 15, 2024</div>
+                        <div class="publish-time">10:30 AM</div>
+                    </div>
+                </td>
+                <td>
+                    <span class="status-badge published">Published</span>
+                </td>
+                <td>
+                    <div class="post-stats">
+                        <div class="stat">
+                            <span class="stat-icon">👁️</span>
+                            <span class="stat-value">1.2K</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-icon">💬</span>
+                            <span class="stat-value">45</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-icon">❤️</span>
+                            <span class="stat-value">89</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="content-actions">
+                        <button class="action-btn edit" title="Edit">✏️</button>
+                        <button class="action-btn view" title="View">👁️</button>
+                        <button class="action-btn more" title="More">⋯</button>
+                    </div>
+                </td>
+            </tr>
+            <tr class="content-row">
+                <td>
+                    <div class="post-title">
+                        <div class="post-thumbnail">
+                            <img src="https://via.placeholder.com/60x40/764ba2/white?text=IMG" alt="Post thumbnail">
+                        </div>
+                        <div class="post-info">
+                            <div class="post-name">Advanced CSS Techniques for 2024</div>
+                            <div class="post-category">CSS • 8 min read</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="author-info">
+                        <div class="author-avatar">JS</div>
+                        <div class="author-name">Jane Smith</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="date-info">
+                        <div class="publish-date">Jan 18, 2024</div>
+                        <div class="publish-time">02:15 PM</div>
+                    </div>
+                </td>
+                <td>
+                    <span class="status-badge draft">Draft</span>
+                </td>
+                <td>
+                    <div class="post-stats">
+                        <div class="stat">
+                            <span class="stat-icon">👁️</span>
+                            <span class="stat-value">-</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-icon">💬</span>
+                            <span class="stat-value">-</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-icon">❤️</span>
+                            <span class="stat-value">-</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="content-actions">
+                        <button class="action-btn edit" title="Edit">✏️</button>
+                        <button class="action-btn preview" title="Preview">👁️</button>
+                        <button class="action-btn more" title="More">⋯</button>
+                    </div>
+                </td>
+            </tr>
+            <tr class="content-row">
+                <td>
+                    <div class="post-title">
+                        <div class="post-thumbnail">
+                            <img src="https://via.placeholder.com/60x40/f39c12/white?text=IMG" alt="Post thumbnail">
+                        </div>
+                        <div class="post-info">
+                            <div class="post-name">JavaScript Performance Optimization</div>
+                            <div class="post-category">JavaScript • 6 min read</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="author-info">
+                        <div class="author-avatar">MJ</div>
+                        <div class="author-name">Mike Johnson</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="date-info">
+                        <div class="publish-date">Jan 20, 2024</div>
+                        <div class="publish-time">09:00 AM</div>
+                    </div>
+                </td>
+                <td>
+                    <span class="status-badge scheduled">Scheduled</span>
+                </td>
+                <td>
+                    <div class="post-stats">
+                        <div class="stat">
+                            <span class="stat-icon">👁️</span>
+                            <span class="stat-value">-</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-icon">💬</span>
+                            <span class="stat-value">-</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-icon">❤️</span>
+                            <span class="stat-value">-</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="content-actions">
+                        <button class="action-btn edit" title="Edit">✏️</button>
+                        <button class="action-btn schedule" title="Reschedule">⏰</button>
+                        <button class="action-btn more" title="More">⋯</button>
+                    </div>
+                </td>
+            </tr>
+            <tr class="content-row">
+                <td>
+                    <div class="post-title">
+                        <div class="post-thumbnail">
+                            <img src="https://via.placeholder.com/60x40/27ae60/white?text=IMG" alt="Post thumbnail">
+                        </div>
+                        <div class="post-info">
+                            <div class="post-name">Building Responsive Layouts with Flexbox</div>
+                            <div class="post-category">CSS • 4 min read</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="author-info">
+                        <div class="author-avatar">SC</div>
+                        <div class="author-name">Sarah Chen</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="date-info">
+                        <div class="publish-date">Jan 22, 2024</div>
+                        <div class="publish-time">11:45 AM</div>
+                    </div>
+                </td>
+                <td>
+                    <span class="status-badge published">Published</span>
+                </td>
+                <td>
+                    <div class="post-stats">
+                        <div class="stat">
+                            <span class="stat-icon">👁️</span>
+                            <span class="stat-value">856</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-icon">💬</span>
+                            <span class="stat-value">23</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-icon">❤️</span>
+                            <span class="stat-value">67</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="content-actions">
+                        <button class="action-btn edit" title="Edit">✏️</button>
+                        <button class="action-btn view" title="View">👁️</button>
+                        <button class="action-btn more" title="More">⋯</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="content-footer">
+        <div class="content-summary">
+            Showing 4 of 128 posts
+        </div>
+        <div class="content-pagination">
+            <button class="page-btn prev">‹</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <span class="page-ellipsis">...</span>
+            <button class="page-btn">12</button>
+            <button class="page-btn next">›</button>
+        </div>
+    </div>
+</div>`,
+    css: `.content-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.content-header h2 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.content-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.btn-new-post {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-new-post:hover {
+    background: #5a6fd8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.view-options {
+    display: flex;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.view-option {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.view-option.active {
+    background: #667eea;
+    color: white;
+}
+
+.view-option:hover:not(.active) {
+    background: #f5f5f5;
+}
+
+.content-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.content-table th {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e8e8e8;
+    background: #fafafa;
+}
+
+.title-column { width: 35%; }
+.author-column { width: 15%; }
+.date-column { width: 15%; }
+.status-column { width: 12%; }
+.stats-column { width: 15%; }
+.actions-column { width: 8%; }
+
+.content-table td {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #f5f5f5;
+    vertical-align: middle;
+}
+
+.content-row:hover td {
+    background: #f8f9fa;
+}
+
+/* Post Title */
+.post-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.post-thumbnail {
+    width: 60px;
+    height: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.post-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-info .post-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+
+.post-info .post-category {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+/* Author Info */
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.author-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.author-name {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Date Info */
+.date-info .publish-date {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.1rem;
+}
+
+.date-info .publish-time {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.status-badge.published {
+    background: #e8f5e8;
+    color: #27ae60;
+}
+
+.status-badge.draft {
+    background: #fff3e0;
+    color: #f39c12;
+}
+
+.status-badge.scheduled {
+    background: #e3f2fd;
+    color: #2980b9;
+}
+
+/* Post Stats */
+.post-stats {
+    display: flex;
+    gap: 1rem;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+}
+
+.stat-icon {
+    opacity: 0.7;
+}
+
+.stat-value {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Content Actions */
+.content-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    background: none;
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.action-btn:hover {
+    background: #f5f5f5;
+    transform: scale(1.1);
+}
+
+.action-btn.edit:hover {
+    background: #e3f2fd;
+    border-color: #2196f3;
+}
+
+.action-btn.view:hover {
+    background: #e8f5e8;
+    border-color: #4caf50;
+}
+
+/* Content Footer */
+.content-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: #fafafa;
+    border-top: 1px solid #e8e8e8;
+}
+
+.content-summary {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.content-pagination {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.page-btn {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover:not(.active) {
+    background: #f5f5f5;
+}
+
+.page-btn.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.page-ellipsis {
+    padding: 0.5rem;
+    color: #666;
+}`,
+    js: `// View filtering
+document.querySelectorAll('.view-option').forEach(option => {
+    option.addEventListener('click', function() {
+        const view = this.getAttribute('data-view');
+        
+        // Update active state
+        document.querySelectorAll('.view-option').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        this.classList.add('active');
+        
+        // Filter rows based on view
+        document.querySelectorAll('.content-row').forEach(row => {
+            const status = row.querySelector('.status-badge').classList[1];
+            
+            if (view === 'all') {
+                row.style.display = '';
+            } else {
+                row.style.display = status === view ? '' : 'none';
+            }
+        });
+        
+        // Update summary
+        const visibleRows = document.querySelectorAll('.content-row[style=""]').length;
+        document.querySelector('.content-summary').textContent = \`Showing \${visibleRows} of 128 posts\`;
+    });
+});
+
+// New post button
+document.querySelector('.btn-new-post').addEventListener('click', function() {
+    alert('Opening new post editor...');
+    // In real implementation, this would open a post editor
+});
+
+// Action buttons
+document.querySelectorAll('.action-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const action = this.title;
+        const postTitle = this.closest('.content-row').querySelector('.post-name').textContent;
+        
+        switch(action) {
+            case 'Edit':
+                alert(\`Editing: "\${postTitle}"\`);
+                break;
+            case 'View':
+                alert(\`Viewing: "\${postTitle}"\`);
+                break;
+            case 'Preview':
+                alert(\`Previewing: "\${postTitle}"\`);
+                break;
+            case 'Reschedule':
+                alert(\`Rescheduling: "\${postTitle}"\`);
+                break;
         }
     });
 });`
 },
 
 // ====================================================================
-// TEMPLATE 11: CLEAN METRICS TABLE
+// MINIMAL TEMPLATE 29: E-COMMERCE PRODUCTS
 // ====================================================================
-table11: {
-    html: `<div class="clean-metrics-table">
-    <table>
+minimal29: {
+    html: `<div class="ecommerce-table-container">
+    <div class="ecommerce-header">
+        <h2>Product Inventory</h2>
+        <div class="product-actions">
+            <div class="search-products">
+                <input type="text" placeholder="Search products..." class="search-input">
+                <span class="search-icon">🔍</span>
+            </div>
+            <button class="btn-add-product">+ Add Product</button>
+        </div>
+    </div>
+    
+    <table class="ecommerce-table">
         <thead>
             <tr>
-                <th>Metric</th>
-                <th>Current</th>
-                <th>Previous</th>
-                <th>Change</th>
-                <th>Trend</th>
+                <th class="product-column">Product</th>
+                <th class="price-column">Price</th>
+                <th class="stock-column">Stock</th>
+                <th class="category-column">Category</th>
+                <th class="status-column">Status</th>
+                <th class="sales-column">Sales</th>
+                <th class="actions-column">Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Website Visitors</td>
-                <td>12,489</td>
-                <td>10,256</td>
+            <tr class="product-row">
                 <td>
-                    <span class="change positive">+21.8%</span>
+                    <div class="product-cell">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/50x50/667eea/white?text=P1" alt="Product image">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-name">Wireless Bluetooth Earbuds</div>
+                            <div class="product-sku">SKU: WB-2024</div>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <div class="trend-indicator up">↗</div>
+                    <div class="price-info">
+                        <div class="current-price">$129.99</div>
+                        <div class="original-price">$149.99</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="stock-info">
+                        <div class="stock-level high">45 in stock</div>
+                        <div class="stock-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <span class="category-tag electronics">Electronics</span>
+                </td>
+                <td>
+                    <span class="status-badge active">Active</span>
+                </td>
+                <td>
+                    <div class="sales-info">
+                        <div class="sales-count">128 sold</div>
+                        <div class="sales-trend up">+15%</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="product-actions">
+                        <button class="action-btn edit" title="Edit">✏️</button>
+                        <button class="action-btn duplicate" title="Duplicate">📋</button>
+                        <button class="action-btn more" title="More">⋯</button>
+                    </div>
                 </td>
             </tr>
-            <tr>
-                <td>Conversion Rate</td>
-                <td>3.2%</td>
-                <td>3.5%</td>
+            <tr class="product-row">
                 <td>
-                    <span class="change negative">-8.6%</span>
+                    <div class="product-cell">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/50x50/764ba2/white?text=P2" alt="Product image">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-name">Smart Fitness Watch</div>
+                            <div class="product-sku">SKU: SF-2024</div>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <div class="trend-indicator down">↘</div>
+                    <div class="price-info">
+                        <div class="current-price">$199.99</div>
+                        <div class="original-price"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="stock-info">
+                        <div class="stock-level medium">12 in stock</div>
+                        <div class="stock-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 24%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <span class="category-tag wearables">Wearables</span>
+                </td>
+                <td>
+                    <span class="status-badge active">Active</span>
+                </td>
+                <td>
+                    <div class="sales-info">
+                        <div class="sales-count">89 sold</div>
+                        <div class="sales-trend up">+8%</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="product-actions">
+                        <button class="action-btn edit" title="Edit">✏️</button>
+                        <button class="action-btn duplicate" title="Duplicate">📋</button>
+                        <button class="action-btn more" title="More">⋯</button>
+                    </div>
                 </td>
             </tr>
-            <tr>
-                <td>Average Order</td>
-                <td>$124.50</td>
-                <td>$118.75</td>
+            <tr class="product-row">
                 <td>
-                    <span class="change positive">+4.8%</span>
+                    <div class="product-cell">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/50x50/f39c12/white?text=P3" alt="Product image">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-name">USB-C Hub Adapter</div>
+                            <div class="product-sku">SKU: UC-2024</div>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <div class="trend-indicator up">↗</div>
+                    <div class="price-info">
+                        <div class="current-price">$39.99</div>
+                        <div class="original-price">$49.99</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="stock-info">
+                        <div class="stock-level low">3 in stock</div>
+                        <div class="stock-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 6%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <span class="category-tag accessories">Accessories</span>
+                </td>
+                <td>
+                    <span class="status-badge active">Active</span>
+                </td>
+                <td>
+                    <div class="sales-info">
+                        <div class="sales-count">256 sold</div>
+                        <div class="sales-trend up">+22%</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="product-actions">
+                        <button class="action-btn edit" title="Edit">✏️</button>
+                        <button class="action-btn duplicate" title="Duplicate">📋</button>
+                        <button class="action-btn more" title="More">⋯</button>
+                    </div>
                 </td>
             </tr>
-            <tr>
-                <td>Bounce Rate</td>
-                <td>42.3%</td>
-                <td>45.1%</td>
+            <tr class="product-row">
                 <td>
-                    <span class="change positive">-6.2%</span>
+                    <div class="product-cell">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/50x50/e74c3c/white?text=P4" alt="Product image">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-name">Gaming Mechanical Keyboard</div>
+                            <div class="product-sku">SKU: GM-2024</div>
+                        </div>
+                    </div>
                 </td>
                 <td>
-                    <div class="trend-indicator up">↗</div>
+                    <div class="price-info">
+                        <div class="current-price">$89.99</div>
+                        <div class="original-price"></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="stock-info">
+                        <div class="stock-level out">Out of stock</div>
+                        <div class="stock-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <span class="category-tag electronics">Electronics</span>
+                </td>
+                <td>
+                    <span class="status-badge inactive">Inactive</span>
+                </td>
+                <td>
+                    <div class="sales-info">
+                        <div class="sales-count">67 sold</div>
+                        <div class="sales-trend down">-5%</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="product-actions">
+                        <button class="action-btn edit" title="Edit">✏️</button>
+                        <button class="action-btn duplicate" title="Duplicate">📋</button>
+                        <button class="action-btn more" title="More">⋯</button>
+                    </div>
                 </td>
             </tr>
         </tbody>
     </table>
+    
+    <div class="ecommerce-footer">
+        <div class="inventory-summary">
+            <div class="summary-item">
+                <span class="summary-label">Total Products:</span>
+                <span class="summary-value">48</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Low Stock:</span>
+                <span class="summary-value">3</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Out of Stock:</span>
+                <span class="summary-value">1</span>
+            </div>
+        </div>
+        <div class="ecommerce-pagination">
+            <button class="page-btn prev">‹</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <span class="page-ellipsis">...</span>
+            <button class="page-btn">5</button>
+            <button class="page-btn next">›</button>
+        </div>
+    </div>
 </div>`,
-    css: `.clean-metrics-table {
+    css: `.ecommerce-table-container {
     background: white;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    border: 1px solid #e5e7eb;
-}
-
-.clean-metrics-table table {
-    width: 100%;
-    border-collapse: collapse;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-.clean-metrics-table th {
-    background: #f8fafc;
-    color: #374151;
-    padding: 1rem;
-    text-align: left;
-    font-weight: 500;
-    font-size: 0.875rem;
-    border-bottom: 1px solid #e5e7eb;
+.ecommerce-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e8e8e8;
 }
 
-.clean-metrics-table td {
-    padding: 1rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-    font-size: 0.875rem;
-}
-
-.clean-metrics-table tr:last-child td {
-    border-bottom: none;
-}
-
-.clean-metrics-table tr:hover {
-    background: #f9fafb;
-}
-
-.change {
+.ecommerce-header h2 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
     font-weight: 600;
+}
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.search-products {
+    position: relative;
+    width: 250px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.btn-add-product {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-add-product:hover {
+    background: #219a52;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.ecommerce-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ecommerce-table th {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e8e8e8;
+    background: #fafafa;
+}
+
+.product-column { width: 25%; }
+.price-column { width: 12%; }
+.stock-column { width: 15%; }
+.category-column { width: 12%; }
+.status-column { width: 10%; }
+.sales-column { width: 12%; }
+.actions-column { width: 8%; }
+
+.ecommerce-table td {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #f5f5f5;
+    vertical-align: middle;
+}
+
+.product-row:hover td {
+    background: #f8f9fa;
+}
+
+/* Product Cell */
+.product-cell {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.product-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f5f5f5;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-details .product-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+
+.product-details .product-sku {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+/* Price Info */
+.price-info .current-price {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.price-info .original-price {
+    font-size: 0.8rem;
+    color: #95a5a6;
+    text-decoration: line-through;
+}
+
+/* Stock Info */
+.stock-level {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.stock-level.high {
+    color: #27ae60;
+}
+
+.stock-level.medium {
+    color: #f39c12;
+}
+
+.stock-level.low {
+    color: #e74c3c;
+}
+
+.stock-level.out {
+    color: #95a5a6;
+}
+
+.stock-progress {
+    width: 80px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #ecf0f1;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.stock-level.high ~ .stock-progress .progress-fill {
+    background: #27ae60;
+}
+
+.stock-level.medium ~ .stock-progress .progress-fill {
+    background: #f39c12;
+}
+
+.stock-level.low ~ .stock-progress .progress-fill {
+    background: #e74c3c;
+}
+
+/* Category Tags */
+.category-tag {
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.category-tag.electronics {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.category-tag.wearables {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.category-tag.accessories {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+/* Status Badges */
+.status-badge.active {
+    background: #e8f5e8;
+    color: #27ae60;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.inactive {
+    background: #f5f5f5;
+    color: #95a5a6;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Sales Info */
+.sales-info {
+    text-align: center;
+}
+
+.sales-count {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+}
+
+.sales-trend {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 8px;
+}
+
+.sales-trend.up {
+    background: #e8f5e8;
+    color: #27ae60;
+}
+
+.sales-trend.down {
+    background: #ffebee;
+    color: #e74c3c;
+}
+
+/* Product Actions */
+.product-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    background: none;
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     font-size: 0.8rem;
 }
 
-.change.positive {
-    color: #059669;
+.action-btn:hover {
+    background: #f5f5f5;
+    transform: scale(1.1);
 }
 
-.change.negative {
-    color: #dc2626;
+.action-btn.edit:hover {
+    background: #e3f2fd;
+    border-color: #2196f3;
 }
 
-.trend-indicator {
-    font-size: 1rem;
+.action-btn.duplicate:hover {
+    background: #fff3e0;
+    border-color: #ff9800;
+}
+
+/* E-commerce Footer */
+.ecommerce-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: #fafafa;
+    border-top: 1px solid #e8e8e8;
+}
+
+.inventory-summary {
+    display: flex;
+    gap: 2rem;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.summary-label {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.summary-value {
+    font-size: 1.1rem;
     font-weight: 700;
+    color: #2c3e50;
 }
 
-.trend-indicator.up {
-    color: #059669;
+.ecommerce-pagination {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.trend-indicator.down {
-    color: #dc2626;
+.page-btn {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover:not(.active) {
+    background: #f5f5f5;
+}
+
+.page-btn.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.page-ellipsis {
+    padding: 0.5rem;
+    color: #666;
 }`,
-    js: `// No JavaScript required - clean metrics display`
+    js: `// Search functionality
+const searchInput = document.querySelector('.search-input');
+searchInput.addEventListener('input', function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+    const rows = document.querySelectorAll('.product-row');
+    
+    rows.forEach(row => {
+        const productName = row.querySelector('.product-name').textContent.toLowerCase();
+        const productSku = row.querySelector('.product-sku').textContent.toLowerCase();
+        const text = productName + ' ' + productSku;
+        
+        row.style.display = text.includes(searchTerm) ? '' : 'none';
+    });
+});
+
+// Add product button
+document.querySelector('.btn-add-product').addEventListener('click', function() {
+    alert('Opening product creation form...');
+    // In real implementation, this would open a product form
+});
+
+// Stock level warnings
+document.querySelectorAll('.stock-level').forEach(level => {
+    if (level.classList.contains('low') || level.classList.contains('out')) {
+        level.closest('.product-row').style.background = '#fff9e6';
+        
+        // Add warning icon
+        const warningIcon = document.createElement('span');
+        warningIcon.textContent = '⚠️';
+        warningIcon.style.marginLeft = '0.5rem';
+        level.appendChild(warningIcon);
+    }
+});
+
+// Action buttons
+document.querySelectorAll('.action-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const action = this.title;
+        const productName = this.closest('.product-row').querySelector('.product-name').textContent;
+        
+        switch(action) {
+            case 'Edit':
+                alert(\`Editing product: "\${productName}"\`);
+                break;
+            case 'Duplicate':
+                alert(\`Duplicating product: "\${productName}"\`);
+                break;
+        }
+    });
+});`
 },
+
 // ====================================================================
-// TEMPLATE 12: ANALYTICS DASHBOARD TABLE
+// MINIMAL TEMPLATE 30: CONTACT DIRECTORY
 // ====================================================================
-table12: {
-    html: `<div class="analytics-dashboard-table">
-    <div class="dashboard-header">
-        <h3>Website Analytics Dashboard</h3>
-        <div class="date-range">
-            <span>Last 30 Days</span>
-            <i class="fas fa-chevron-down"></i>
+minimal30: {
+    html: `<div class="contact-table-container">
+    <div class="contact-header">
+        <h2>Team Directory</h2>
+        <div class="contact-filters">
+            <div class="filter-group">
+                <label>Department:</label>
+                <select class="department-filter">
+                    <option value="all">All Departments</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="design">Design</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="sales">Sales</option>
+                    <option value="support">Support</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Location:</label>
+                <select class="location-filter">
+                    <option value="all">All Locations</option>
+                    <option value="new-york">New York</option>
+                    <option value="san-francisco">San Francisco</option>
+                    <option value="london">London</option>
+                    <option value="tokyo">Tokyo</option>
+                </select>
+            </div>
         </div>
     </div>
-    <table>
+    
+    <table class="contact-table">
         <thead>
             <tr>
-                <th>Channel</th>
-                <th>Visitors</th>
-                <th>Sessions</th>
-                <th>Bounce Rate</th>
-                <th>Conversion</th>
-                <th>Trend</th>
+                <th class="contact-column">Contact</th>
+                <th class="role-column">Role</th>
+                <th class="department-column">Department</th>
+                <th class="location-column">Location</th>
+                <th class="contact-info-column">Contact Info</th>
+                <th class="availability-column">Availability</th>
+                <th class="quick-actions-column">Quick Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="contact-row">
                 <td>
-                    <div class="channel-info">
-                        <div class="channel-icon organic">🔍</div>
-                        <span>Organic Search</span>
-                    </div>
-                </td>
-                <td>12,489</td>
-                <td>15,672</td>
-                <td>
-                    <div class="metric-with-bar">
-                        <span>42.3%</span>
-                        <div class="metric-bar">
-                            <div class="bar-fill" style="width: 42.3%"></div>
+                    <div class="contact-card">
+                        <div class="contact-avatar">
+                            <img src="https://via.placeholder.com/48x48/667eea/white?text=JS" alt="John Smith">
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-name">John Smith</div>
+                            <div class="contact-title">Senior Developer</div>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="conversion-rate">
-                        <span>3.8%</span>
-                        <div class="trend-badge positive">+12%</div>
+                    <span class="role-tag senior">Senior Dev</span>
+                </td>
+                <td>
+                    <span class="department engineering">Engineering</span>
+                </td>
+                <td>
+                    <div class="location-info">
+                        <span class="location-flag">🇺🇸</span>
+                        <span class="location-name">New York</span>
                     </div>
                 </td>
                 <td>
-                    <div class="sparkline">📈</div>
+                    <div class="contact-info">
+                        <div class="contact-email">john.smith@company.com</div>
+                        <div class="contact-phone">+1 (555) 123-4567</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="availability-status available">
+                        <div class="status-indicator"></div>
+                        <span>Available</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="quick-actions">
+                        <button class="action-btn email" title="Send Email">✉️</button>
+                        <button class="action-btn call" title="Call">📞</button>
+                        <button class="action-btn message" title="Message">💬</button>
+                    </div>
                 </td>
             </tr>
-            <tr>
+            <tr class="contact-row">
                 <td>
-                    <div class="channel-info">
-                        <div class="channel-icon social">💬</div>
-                        <span>Social Media</span>
-                    </div>
-                </td>
-                <td>8,456</td>
-                <td>9,123</td>
-                <td>
-                    <div class="metric-with-bar">
-                        <span>51.2%</span>
-                        <div class="metric-bar">
-                            <div class="bar-fill" style="width: 51.2%"></div>
+                    <div class="contact-card">
+                        <div class="contact-avatar">
+                            <img src="https://via.placeholder.com/48x48/764ba2/white?text=SC" alt="Sarah Chen">
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-name">Sarah Chen</div>
+                            <div class="contact-title">Product Designer</div>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="conversion-rate">
-                        <span>2.1%</span>
-                        <div class="trend-badge negative">-5%</div>
+                    <span class="role-tag designer">Designer</span>
+                </td>
+                <td>
+                    <span class="department design">Design</span>
+                </td>
+                <td>
+                    <div class="location-info">
+                        <span class="location-flag">🇺🇸</span>
+                        <span class="location-name">San Francisco</span>
                     </div>
                 </td>
                 <td>
-                    <div class="sparkline">📉</div>
+                    <div class="contact-info">
+                        <div class="contact-email">sarah.chen@company.com</div>
+                        <div class="contact-phone">+1 (555) 987-6543</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="availability-status away">
+                        <div class="status-indicator"></div>
+                        <span>Away</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="quick-actions">
+                        <button class="action-btn email" title="Send Email">✉️</button>
+                        <button class="action-btn call" title="Call">📞</button>
+                        <button class="action-btn message" title="Message">💬</button>
+                    </div>
                 </td>
             </tr>
-            <tr>
+            <tr class="contact-row">
                 <td>
-                    <div class="channel-info">
-                        <div class="channel-icon direct">🔗</div>
-                        <span>Direct Traffic</span>
-                    </div>
-                </td>
-                <td>6,789</td>
-                <td>7,234</td>
-                <td>
-                    <div class="metric-with-bar">
-                        <span>38.7%</span>
-                        <div class="metric-bar">
-                            <div class="bar-fill" style="width: 38.7%"></div>
+                    <div class="contact-card">
+                        <div class="contact-avatar">
+                            <img src="https://via.placeholder.com/48x48/f39c12/white?text=MJ" alt="Mike Johnson">
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-name">Mike Johnson</div>
+                            <div class="contact-title">Sales Manager</div>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="conversion-rate">
-                        <span>4.5%</span>
-                        <div class="trend-badge positive">+8%</div>
+                    <span class="role-tag manager">Manager</span>
+                </td>
+                <td>
+                    <span class="department sales">Sales</span>
+                </td>
+                <td>
+                    <div class="location-info">
+                        <span class="location-flag">🇬🇧</span>
+                        <span class="location-name">London</span>
                     </div>
                 </td>
                 <td>
-                    <div class="sparkline">📈</div>
+                    <div class="contact-info">
+                        <div class="contact-email">mike.johnson@company.com</div>
+                        <div class="contact-phone">+44 20 7946 0958</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="availability-status busy">
+                        <div class="status-indicator"></div>
+                        <span>In a Meeting</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="quick-actions">
+                        <button class="action-btn email" title="Send Email">✉️</button>
+                        <button class="action-btn call" title="Call">📞</button>
+                        <button class="action-btn message" title="Message">💬</button>
+                    </div>
+                </td>
+            </tr>
+            <tr class="contact-row">
+                <td>
+                    <div class="contact-card">
+                        <div class="contact-avatar">
+                            <img src="https://via.placeholder.com/48x48/27ae60/white?text=ED" alt="Emily Davis">
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-name">Emily Davis</div>
+                            <div class="contact-title">Support Specialist</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <span class="role-tag specialist">Specialist</span>
+                </td>
+                <td>
+                    <span class="department support">Support</span>
+                </td>
+                <td>
+                    <div class="location-info">
+                        <span class="location-flag">🇯🇵</span>
+                        <span class="location-name">Tokyo</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="contact-info">
+                        <div class="contact-email">emily.davis@company.com</div>
+                        <div class="contact-phone">+81 3 1234 5678</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="availability-status available">
+                        <div class="status-indicator"></div>
+                        <span>Available</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="quick-actions">
+                        <button class="action-btn email" title="Send Email">✉️</button>
+                        <button class="action-btn call" title="Call">📞</button>
+                        <button class="action-btn message" title="Message">💬</button>
+                    </div>
                 </td>
             </tr>
         </tbody>
     </table>
+    
+    <div class="contact-footer">
+        <div class="contact-stats">
+            <div class="stat-item">
+                <span class="stat-label">Total Contacts:</span>
+                <span class="stat-value">48</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Online Now:</span>
+                <span class="stat-value">12</span>
+            </div>
+        </div>
+        <div class="contact-export">
+            <button class="btn-export-contacts">Export Contacts</button>
+        </div>
+    </div>
 </div>`,
-    css: `.analytics-dashboard-table {
+    css: `.contact-table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.contact-header {
+    padding: 2rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.contact-header h2 {
+    margin: 0 0 1.5rem 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.contact-filters {
+    display: flex;
+    gap: 2rem;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.filter-group label {
+    font-weight: 500;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.department-filter,
+.location-filter {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    font-size: 0.9rem;
+    min-width: 150px;
+}
+
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.contact-table th {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e8e8e8;
+    background: #fafafa;
+}
+
+.contact-column { width: 22%; }
+.role-column { width: 12%; }
+.department-column { width: 12%; }
+.location-column { width: 12%; }
+.contact-info-column { width: 20%; }
+.availability-column { width: 12%; }
+.quick-actions-column { width: 10%; }
+
+.contact-table td {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #f5f5f5;
+    vertical-align: middle;
+}
+
+.contact-row:hover td {
+    background: #f8f9fa;
+}
+
+/* Contact Card */
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f5f5f5;
+}
+
+.contact-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-details .contact-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+
+.contact-details .contact-title {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+/* Role Tags */
+.role-tag {
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.role-tag.senior {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.role-tag.designer {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.role-tag.manager {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.role-tag.specialist {
+    background: #e8f5e8;
+    color: #388e3c;
+}
+
+/* Department */
+.department {
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.department.engineering {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.department.design {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.department.sales {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.department.support {
+    background: #e8f5e8;
+    color: #388e3c;
+}
+
+/* Location Info */
+.location-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.location-flag {
+    font-size: 1.2rem;
+}
+
+.location-name {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Contact Info */
+.contact-info .contact-email {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+}
+
+.contact-info .contact-phone {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+/* Availability Status */
+.availability-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.availability-status.available {
+    background: #e8f5e8;
+    color: #27ae60;
+}
+
+.availability-status.away {
+    background: #fff3e0;
+    color: #f39c12;
+}
+
+.availability-status.busy {
+    background: #ffebee;
+    color: #e74c3c;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: statusPulse 2s infinite;
+}
+
+.availability-status.available .status-indicator {
+    background: #27ae60;
+}
+
+.availability-status.away .status-indicator {
+    background: #f39c12;
+}
+
+.availability-status.busy .status-indicator {
+    background: #e74c3c;
+}
+
+@keyframes statusPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    background: none;
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.action-btn:hover {
+    background: #f5f5f5;
+    transform: scale(1.1);
+}
+
+.action-btn.email:hover {
+    background: #e3f2fd;
+    border-color: #2196f3;
+}
+
+.action-btn.call:hover {
+    background: #e8f5e8;
+    border-color: #4caf50;
+}
+
+.action-btn.message:hover {
+    background: #fff3e0;
+    border-color: #ff9800;
+}
+
+/* Contact Footer */
+.contact-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: #fafafa;
+    border-top: 1px solid #e8e8e8;
+}
+
+.contact-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.btn-export-contacts {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-export-contacts:hover {
+    background: #5a6fd8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}`,
+    js: `// Filter functionality
+const departmentFilter = document.querySelector('.department-filter');
+const locationFilter = document.querySelector('.location-filter');
+
+function filterContacts() {
+    const department = departmentFilter.value;
+    const location = locationFilter.value;
+    const rows = document.querySelectorAll('.contact-row');
+    
+    rows.forEach(row => {
+        const rowDepartment = row.querySelector('.department').textContent.toLowerCase();
+        const rowLocation = row.querySelector('.location-name').textContent.toLowerCase().replace(' ', '-');
+        
+        const departmentMatch = department === 'all' || rowDepartment === department;
+        const locationMatch = location === 'all' || rowLocation === location;
+        
+        row.style.display = departmentMatch && locationMatch ? '' : 'none';
+    });
+}
+
+departmentFilter.addEventListener('change', filterContacts);
+locationFilter.addEventListener('change', filterContacts);
+
+// Quick actions
+document.querySelectorAll('.action-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const action = this.title;
+        const contactName = this.closest('.contact-row').querySelector('.contact-name').textContent;
+        
+        switch(action) {
+            case 'Send Email':
+                alert(\`Composing email to \${contactName}\`);
+                break;
+            case 'Call':
+                alert(\`Calling \${contactName}\`);
+                break;
+            case 'Message':
+                alert(\`Messaging \${contactName}\`);
+                break;
+        }
+    });
+});
+
+// Export contacts
+document.querySelector('.btn-export-contacts').addEventListener('click', function() {
+    alert('Exporting contact list...');
+    // In real implementation, this would export contacts as CSV/vCard
+});
+
+// Update online status randomly (for demo)
+setInterval(() => {
+    document.querySelectorAll('.availability-status').forEach(status => {
+        if (Math.random() > 0.7) {
+            const states = ['available', 'away', 'busy'];
+            const currentState = status.classList[1];
+            let newState;
+            
+            do {
+                newState = states[Math.floor(Math.random() * states.length)];
+            } while (newState === currentState);
+            
+            status.classList.remove(currentState);
+            status.classList.add(newState);
+            
+            const statusText = status.querySelector('span:last-child');
+            switch(newState) {
+                case 'available':
+                    statusText.textContent = 'Available';
+                    break;
+                case 'away':
+                    statusText.textContent = 'Away';
+                    break;
+                case 'busy':
+                    statusText.textContent = 'In a Meeting';
+                    break;
+            }
+        }
+    });
+}, 10000);`
+},
+    // ====================================================================
+    // ANALYTICS TEMPLATE 1: WEBSITE TRAFFIC
+    // ====================================================================
+    analytics1: {
+        html: `<div class="analytics-table-container">
+    <div class="analytics-header">
+        <h3>Website Traffic Analytics</h3>
+        <div class="date-range">Last 30 Days</div>
+    </div>
+    <div class="metrics-summary">
+        <div class="metric-card">
+            <div class="metric-value">124,580</div>
+            <div class="metric-label">Total Visits</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-value">2:45</div>
+            <div class="metric-label">Avg. Duration</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-value">41.2%</div>
+            <div class="metric-label">Bounce Rate</div>
+        </div>
+    </div>
+    <table class="analytics-table traffic-table">
+        <thead>
+            <tr>
+                <th>Page URL</th>
+                <th>Pageviews</th>
+                <th>Unique Visitors</th>
+                <th>Bounce Rate</th>
+                <th>Avg. Time</th>
+                <th>Conversion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="page-url">
+                    <div class="url-info">
+                        <span class="page-name">Homepage</span>
+                        <span class="full-url">/index.html</span>
+                    </div>
+                </td>
+                <td>45,230</td>
+                <td>32,150</td>
+                <td>
+                    <div class="metric-with-bar">
+                        <span class="metric-value">38.5%</span>
+                        <div class="metric-bar">
+                            <div class="bar-fill" style="width: 38.5%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>2:15</td>
+                <td>4.2%</td>
+            </tr>
+            <tr>
+                <td class="page-url">
+                    <div class="url-info">
+                        <span class="page-name">Product Catalog</span>
+                        <span class="full-url">/products</span>
+                    </div>
+                </td>
+                <td>32,890</td>
+                <td>24,670</td>
+                <td>
+                    <div class="metric-with-bar">
+                        <span class="metric-value">42.1%</span>
+                        <div class="metric-bar">
+                            <div class="bar-fill" style="width: 42.1%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>3:45</td>
+                <td>6.8%</td>
+            </tr>
+            <tr>
+                <td class="page-url">
+                    <div class="url-info">
+                        <span class="page-name">About Us</span>
+                        <span class="full-url">/about</span>
+                    </div>
+                </td>
+                <td>18,450</td>
+                <td>15,230</td>
+                <td>
+                    <div class="metric-with-bar">
+                        <span class="metric-value">51.3%</span>
+                        <div class="metric-bar">
+                            <div class="bar-fill" style="width: 51.3%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>1:30</td>
+                <td>1.2%</td>
+            </tr>
+            <tr>
+                <td class="page-url">
+                    <div class="url-info">
+                        <span class="page-name">Contact Page</span>
+                        <span class="full-url">/contact</span>
+                    </div>
+                </td>
+                <td>12,560</td>
+                <td>10,890</td>
+                <td>
+                    <div class="metric-with-bar">
+                        <span class="metric-value">28.9%</span>
+                        <div class="metric-bar">
+                            <div class="bar-fill" style="width: 28.9%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>4:20</td>
+                <td>8.5%</td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+        css: `.analytics-table-container {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -1988,96 +10799,103 @@ table12: {
     border: 1px solid #e5e7eb;
 }
 
-.dashboard-header {
+.analytics-header {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.analytics-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.date-range {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+.metrics-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
     padding: 1.5rem;
     background: #f8fafc;
     border-bottom: 1px solid #e5e7eb;
 }
 
-.dashboard-header h3 {
-    margin: 0;
-    color: #1f2937;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.date-range {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
+.metric-card {
     background: white;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    color: #374151;
-    cursor: pointer;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.analytics-dashboard-table table {
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.metric-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.analytics-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.analytics-dashboard-table th {
-    background: #1e293b;
-    color: white;
-    padding: 1rem;
+.analytics-table th {
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
     text-align: left;
     font-weight: 600;
-    font-size: 0.875rem;
-}
-
-.analytics-dashboard-table td {
-    padding: 1rem;
-    border-bottom: 1px solid #f3f4f6;
     color: #374151;
+    border-bottom: 2px solid #e5e7eb;
     font-size: 0.875rem;
 }
 
-.analytics-dashboard-table tr:hover {
+.analytics-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #6b7280;
+}
+
+.analytics-table tr:hover {
     background: #f9fafb;
 }
 
-.channel-info {
+.page-url .url-info {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    flex-direction: column;
 }
 
-.channel-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
+.page-name {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
 }
 
-.channel-icon.organic {
-    background: #dbeafe;
-    color: #1d4ed8;
-}
-
-.channel-icon.social {
-    background: #fce7f3;
-    color: #db2777;
-}
-
-.channel-icon.direct {
-    background: #dcfce7;
-    color: #16a34a;
+.full-url {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    font-family: monospace;
 }
 
 .metric-with-bar {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    min-width: 100px;
 }
 
 .metric-bar {
@@ -2091,124 +10909,175 @@ table12: {
 
 .bar-fill {
     height: 100%;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
     border-radius: 3px;
-    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
-}
-
-.conversion-rate {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.trend-badge {
-    padding: 0.2rem 0.5rem;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.trend-badge.positive {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.trend-badge.negative {
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-.sparkline {
-    font-size: 1.2rem;
+    transition: width 0.3s ease;
 }`,
-    js: `// Analytics dashboard interactions
-document.querySelectorAll('.date-range').forEach(range => {
-    range.addEventListener('click', () => {
-        alert('Date range selector would open here');
+        js: `// Animate metric bars on load
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.bar-fill').forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => {
+            bar.style.width = width;
+        }, 500);
     });
 });`
-},
+    },
 
-// ====================================================================
-// TEMPLATE 13: PERFORMANCE METRICS TABLE
-// ====================================================================
-table13: {
-    html: `<div class="performance-metrics-table">
-    <div class="metrics-header">
-        <h3>Performance Metrics</h3>
-        <div class="time-filters">
-            <button class="time-filter active">7D</button>
-            <button class="time-filter">30D</button>
-            <button class="time-filter">90D</button>
+    // ====================================================================
+    // ANALYTICS TEMPLATE 2: USER ACQUISITION
+    // ====================================================================
+    analytics2: {
+        html: `<div class="acquisition-table-container">
+    <div class="acquisition-header">
+        <h3>User Acquisition Channels</h3>
+        <div class="time-filter">
+            <select class="period-select">
+                <option>Last 7 Days</option>
+                <option>Last 30 Days</option>
+                <option selected>Last 90 Days</option>
+                <option>Year to Date</option>
+            </select>
         </div>
     </div>
-    <table>
+    <table class="acquisition-table">
         <thead>
             <tr>
-                <th>Page</th>
-                <th>Pageviews</th>
-                <th>Avg. Time</th>
-                <th>Exit Rate</th>
-                <th>Goal Completions</th>
-                <th>Score</th>
+                <th>Traffic Source</th>
+                <th>Users</th>
+                <th>New Users</th>
+                <th>Sessions</th>
+                <th>Bounce Rate</th>
+                <th>Conversion</th>
+                <th>Trend</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>/home</td>
-                <td>24,589</td>
-                <td>2m 34s</td>
                 <td>
-                    <div class="progress-metric">
-                        <div class="progress-track">
-                            <div class="progress-value" style="width: 32%"></div>
+                    <div class="source-info">
+                        <div class="source-icon">🔍</div>
+                        <div class="source-details">
+                            <div class="source-name">Organic Search</div>
+                            <div class="source-description">Google, Bing, etc.</div>
                         </div>
-                        <span>32%</span>
                     </div>
                 </td>
-                <td>1,248</td>
+                <td>45,230</td>
+                <td>32,150</td>
+                <td>67,890</td>
                 <td>
-                    <div class="performance-score excellent">92</div>
+                    <div class="rate-display">
+                        <span class="rate-value">38.5%</span>
+                        <div class="rate-indicator low">Low</div>
+                    </div>
+                </td>
+                <td>4.2%</td>
+                <td class="trend-cell">
+                    <div class="trend positive">+12% ↗</div>
                 </td>
             </tr>
             <tr>
-                <td>/products</td>
-                <td>18,456</td>
-                <td>3m 12s</td>
                 <td>
-                    <div class="progress-metric">
-                        <div class="progress-track">
-                            <div class="progress-value" style="width: 45%"></div>
+                    <div class="source-info">
+                        <div class="source-icon">📱</div>
+                        <div class="source-details">
+                            <div class="source-name">Social Media</div>
+                            <div class="source-description">Facebook, Twitter, Instagram</div>
                         </div>
-                        <span>45%</span>
                     </div>
                 </td>
-                <td>856</td>
+                <td>28,450</td>
+                <td>18,230</td>
+                <td>42,670</td>
                 <td>
-                    <div class="performance-score good">78</div>
+                    <div class="rate-display">
+                        <span class="rate-value">52.1%</span>
+                        <div class="rate-indicator medium">Medium</div>
+                    </div>
+                </td>
+                <td>2.8%</td>
+                <td class="trend-cell">
+                    <div class="trend positive">+8% ↗</div>
                 </td>
             </tr>
             <tr>
-                <td>/about</td>
-                <td>8,923</td>
-                <td>1m 48s</td>
                 <td>
-                    <div class="progress-metric">
-                        <div class="progress-track">
-                            <div class="progress-value" style="width: 61%"></div>
+                    <div class="source-info">
+                        <div class="source-icon">📧</div>
+                        <div class="source-details">
+                            <div class="source-name">Email Marketing</div>
+                            <div class="source-description">Newsletter campaigns</div>
                         </div>
-                        <span>61%</span>
                     </div>
                 </td>
-                <td>234</td>
+                <td>15,670</td>
+                <td>2,340</td>
+                <td>18,920</td>
                 <td>
-                    <div class="performance-score average">65</div>
+                    <div class="rate-display">
+                        <span class="rate-value">28.9%</span>
+                        <div class="rate-indicator low">Low</div>
+                    </div>
+                </td>
+                <td>6.5%</td>
+                <td class="trend-cell">
+                    <div class="trend positive">+15% ↗</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="source-info">
+                        <div class="source-icon">💼</div>
+                        <div class="source-details">
+                            <div class="source-name">Direct Traffic</div>
+                            <div class="source-description">Direct URL entry</div>
+                        </div>
+                    </div>
+                </td>
+                <td>12,340</td>
+                <td>8,450</td>
+                <td>15,670</td>
+                <td>
+                    <div class="rate-display">
+                        <span class="rate-value">45.6%</span>
+                        <div class="rate-indicator medium">Medium</div>
+                    </div>
+                </td>
+                <td>3.2%</td>
+                <td class="trend-cell">
+                    <div class="trend negative">-5% ↘</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="source-info">
+                        <div class="source-icon">🛒</div>
+                        <div class="source-details">
+                            <div class="source-name">Referral</div>
+                            <div class="source-description">Other websites</div>
+                        </div>
+                    </div>
+                </td>
+                <td>8,920</td>
+                <td>6,780</td>
+                <td>12,450</td>
+                <td>
+                    <div class="rate-display">
+                        <span class="rate-value">61.2%</span>
+                        <div class="rate-indicator high">High</div>
+                    </div>
+                </td>
+                <td>1.8%</td>
+                <td class="trend-cell">
+                    <div class="trend positive">+3% ↗</div>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>`,
-    css: `.performance-metrics-table {
+        css: `.acquisition-table-container {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -2216,7 +11085,7 @@ table13: {
     border: 1px solid #e5e7eb;
 }
 
-.metrics-header {
+.acquisition-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -2225,142 +11094,157 @@ table13: {
     border-bottom: 1px solid #e5e7eb;
 }
 
-.metrics-header h3 {
+.acquisition-header h3 {
     margin: 0;
     color: #1f2937;
+    font-size: 1.5rem;
     font-weight: 600;
-    font-size: 1.1rem;
 }
 
-.time-filters {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.time-filter {
+.period-select {
     padding: 0.5rem 1rem;
     border: 1px solid #d1d5db;
-    background: white;
     border-radius: 6px;
+    background: white;
     font-size: 0.875rem;
-    color: #374151;
-    cursor: pointer;
-    transition: all 0.3s;
 }
 
-.time-filter.active,
-.time-filter:hover {
-    background: #3b82f6;
-    color: white;
-    border-color: #3b82f6;
-}
-
-.performance-metrics-table table {
+.acquisition-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.performance-metrics-table th {
-    background: #1e293b;
-    color: white;
-    padding: 1rem;
+.acquisition-table th {
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
     text-align: left;
     font-weight: 600;
-    font-size: 0.875rem;
-}
-
-.performance-metrics-table td {
-    padding: 1rem;
-    border-bottom: 1px solid #f3f4f6;
     color: #374151;
+    border-bottom: 2px solid #e5e7eb;
     font-size: 0.875rem;
 }
 
-.performance-metrics-table tr:hover {
+.acquisition-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #6b7280;
+}
+
+.acquisition-table tr:hover {
     background: #f9fafb;
 }
 
-.progress-metric {
+.source-info {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    min-width: 100px;
 }
 
-.progress-track {
-    flex: 1;
-    height: 6px;
-    background: #e5e7eb;
-    border-radius: 3px;
-    overflow: hidden;
-    min-width: 60px;
-}
-
-.progress-value {
-    height: 100%;
-    border-radius: 3px;
-    background: linear-gradient(90deg, #ef4444, #dc2626);
-}
-
-.performance-score {
+.source-icon {
+    font-size: 1.25rem;
     width: 40px;
     height: 40px;
-    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: 0.875rem;
-    color: white;
+    background: #f3f4f6;
+    border-radius: 8px;
 }
 
-.performance-score.excellent {
-    background: linear-gradient(135deg, #10b981, #059669);
+.source-details .source-name {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
 }
 
-.performance-score.good {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
+.source-details .source-description {
+    font-size: 0.75rem;
+    color: #9ca3af;
 }
 
-.performance-score.average {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
+.rate-display {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rate-indicator {
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.rate-indicator.low {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.rate-indicator.medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.rate-indicator.high {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.trend {
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.trend.positive {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.trend.negative {
+    background: #fee2e2;
+    color: #991b1b;
 }`,
-    js: `// Time filter functionality
-document.querySelectorAll('.time-filter').forEach(filter => {
-    filter.addEventListener('click', function() {
-        // Remove active class from all filters
-        document.querySelectorAll('.time-filter').forEach(f => f.classList.remove('active'));
-        // Add active class to clicked filter
-        this.classList.add('active');
-        
-        // In real implementation, you would filter the data here
-        const period = this.textContent;
-        alert('Showing data for: ' + period);
-    });
+        js: `// Time period filtering for acquisition data
+document.querySelector('.period-select').addEventListener('change', function(e) {
+    const selectedPeriod = e.target.value;
+    console.log(\`Loading acquisition data for: \${selectedPeriod}\`);
+    // In real implementation, this would fetch new data
 });`
-},
+    },
 
-// ====================================================================
-// TEMPLATE 14: REAL-TIME ANALYTICS TABLE
-// ====================================================================
-table14: {
-    html: `<div class="realtime-analytics-table">
+    // ====================================================================
+    // ANALYTICS TEMPLATE 3: REAL-TIME ANALYTICS
+    // ====================================================================
+    analytics3: {
+        html: `<div class="realtime-table-container">
     <div class="realtime-header">
-        <h3>Real-Time Analytics</h3>
-        <div class="live-indicator">
-            <div class="pulse-dot"></div>
-            <span>LIVE</span>
+        <div class="realtime-title">
+            <h3>Real-time Analytics Dashboard</h3>
+            <div class="live-indicator">
+                <span class="pulse"></span>
+                LIVE
+            </div>
+        </div>
+        <div class="realtime-stats">
+            <div class="stat">
+                <div class="stat-value">1,245</div>
+                <div class="stat-label">Active Now</div>
+            </div>
         </div>
     </div>
-    <table>
+    <table class="realtime-table">
         <thead>
             <tr>
                 <th>Country</th>
                 <th>Active Users</th>
-                <th>Pageviews/min</th>
+                <th>Pageviews</th>
                 <th>Avg. Session</th>
-                <th>Bounce Rate</th>
-                <th>Status</th>
+                <th>Current Activity</th>
+                <th>Trend</th>
             </tr>
         </thead>
         <tbody>
@@ -2368,86 +11252,111 @@ table14: {
                 <td>
                     <div class="country-info">
                         <span class="flag">🇺🇸</span>
-                        <span>United States</span>
+                        <span class="country-name">United States</span>
                     </div>
                 </td>
+                <td>456</td>
+                <td>2,345</td>
+                <td>3:45</td>
                 <td>
-                    <div class="active-users">
-                        <span>1,248</span>
-                        <div class="user-trend up">↗ 12%</div>
+                    <div class="activity-stream">
+                        <span class="activity">Viewing products</span>
+                        <span class="activity">Added to cart</span>
+                        <span class="activity">Checking out</span>
                     </div>
                 </td>
-                <td>45</td>
-                <td>3m 24s</td>
-                <td>38.2%</td>
-                <td>
-                    <div class="traffic-status high">High</div>
+                <td class="trend-cell">
+                    <div class="trend positive">↗ 12%</div>
                 </td>
             </tr>
             <tr>
                 <td>
                     <div class="country-info">
                         <span class="flag">🇬🇧</span>
-                        <span>United Kingdom</span>
+                        <span class="country-name">United Kingdom</span>
                     </div>
                 </td>
+                <td>234</td>
+                <td>1,567</td>
+                <td>4:12</td>
                 <td>
-                    <div class="active-users">
-                        <span>856</span>
-                        <div class="user-trend up">↗ 8%</div>
+                    <div class="activity-stream">
+                        <span class="activity">Reading blog</span>
+                        <span class="activity">Contact form</span>
                     </div>
                 </td>
-                <td>32</td>
-                <td>2m 56s</td>
-                <td>42.7%</td>
+                <td class="trend-cell">
+                    <div class="trend positive">↗ 8%</div>
+                </td>
+            </tr>
+            <tr>
                 <td>
-                    <div class="traffic-status medium">Medium</div>
+                    <div class="country-info">
+                        <span class="flag">🇨🇦</span>
+                        <span class="country-name">Canada</span>
+                    </div>
+                </td>
+                <td>189</td>
+                <td>987</td>
+                <td>2:56</td>
+                <td>
+                    <div class="activity-stream">
+                        <span class="activity">Product search</span>
+                        <span class="activity">Price comparison</span>
+                    </div>
+                </td>
+                <td class="trend-cell">
+                    <div class="trend negative">↘ 5%</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="country-info">
+                        <span class="flag">🇦🇺</span>
+                        <span class="country-name">Australia</span>
+                    </div>
+                </td>
+                <td>156</td>
+                <td>845</td>
+                <td>3:23</td>
+                <td>
+                    <div class="activity-stream">
+                        <span class="activity">Account login</span>
+                        <span class="activity">Order history</span>
+                    </div>
+                </td>
+                <td class="trend-cell">
+                    <div class="trend positive">↗ 15%</div>
                 </td>
             </tr>
             <tr>
                 <td>
                     <div class="country-info">
                         <span class="flag">🇩🇪</span>
-                        <span>Germany</span>
+                        <span class="country-name">Germany</span>
                     </div>
                 </td>
+                <td>134</td>
+                <td>723</td>
+                <td>5:12</td>
                 <td>
-                    <div class="active-users">
-                        <span>623</span>
-                        <div class="user-trend down">↘ 5%</div>
+                    <div class="activity-stream">
+                        <span class="activity">Technical specs</span>
+                        <span class="activity">Support page</span>
                     </div>
                 </td>
-                <td>28</td>
-                <td>3m 12s</td>
-                <td>45.3%</td>
-                <td>
-                    <div class="traffic-status medium">Medium</div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="country-info">
-                        <span class="flag">🇫🇷</span>
-                        <span>France</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="active-users">
-                        <span>412</span>
-                        <div class="user-trend stable">→ 0%</div>
-                    </div>
-                </td>
-                <td>18</td>
-                <td>2m 48s</td>
-                <td>51.8%</td>
-                <td>
-                    <div class="traffic-status low">Low</div>
+                <td class="trend-cell">
+                    <div class="trend positive">↗ 22%</div>
                 </td>
             </tr>
         </tbody>
     </table>
+    <div class="realtime-footer">
+        <div class="update-time">Last updated: <span class="time">Just now</span></div>
+        <button class="btn-refresh">Refresh Data</button>
+    </div>
 </div>`,
-    css: `.realtime-analytics-table {
+        css: `.realtime-table-container {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -2460,33 +11369,37 @@ table14: {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
-    background: #f8fafc;
-    border-bottom: 1px solid #e5e7eb;
+    background: linear-gradient(135deg, #1e40af, #3730a3);
+    color: white;
 }
 
-.realtime-header h3 {
+.realtime-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.realtime-title h3 {
     margin: 0;
-    color: #1f2937;
+    font-size: 1.5rem;
     font-weight: 600;
-    font-size: 1.1rem;
 }
 
 .live-indicator {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
     padding: 0.5rem 1rem;
-    background: #dc2626;
-    color: white;
     border-radius: 20px;
     font-size: 0.875rem;
     font-weight: 600;
 }
 
-.pulse-dot {
+.pulse {
     width: 8px;
     height: 8px;
-    background: white;
+    background: #10b981;
     border-radius: 50%;
     animation: pulse 2s infinite;
 }
@@ -2497,28 +11410,43 @@ table14: {
     100% { opacity: 1; }
 }
 
-.realtime-analytics-table table {
+.realtime-stats {
+    text-align: right;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.realtime-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.realtime-analytics-table th {
-    background: #1e293b;
-    color: white;
-    padding: 1rem;
+.realtime-table th {
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
     text-align: left;
     font-weight: 600;
-    font-size: 0.875rem;
-}
-
-.realtime-analytics-table td {
-    padding: 1rem;
-    border-bottom: 1px solid #f3f4f6;
     color: #374151;
+    border-bottom: 2px solid #e5e7eb;
     font-size: 0.875rem;
 }
 
-.realtime-analytics-table tr:hover {
+.realtime-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #6b7280;
+}
+
+.realtime-table tr:hover {
     background: #f9fafb;
 }
 
@@ -2529,10677 +11457,2184 @@ table14: {
 }
 
 .flag {
-    font-size: 1.2rem;
-}
-
-.active-users {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.user-trend {
-    padding: 0.2rem 0.4rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.user-trend.up {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.user-trend.down {
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-.user-trend.stable {
-    background: #f3f4f6;
-    color: #6b7280;
-}
-
-.traffic-status {
-    padding: 0.4rem 0.8rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-align: center;
-}
-
-.traffic-status.high {
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-.traffic-status.medium {
-    background: #fef3c7;
-    color: #d97706;
-}
-
-.traffic-status.low {
-    background: #d1fae5;
-    color: #065f46;
-}`,
-    js: `// Real-time data simulation (in a real app, this would connect to a live data source)
-function simulateRealTimeUpdates() {
-    const userCounts = document.querySelectorAll('.active-users span:first-child');
-    userCounts.forEach(element => {
-        const current = parseInt(element.textContent.replace(',', ''));
-        const change = Math.floor(Math.random() * 20) - 10; // Random change between -10 and +10
-        const newCount = Math.max(100, current + change); // Ensure minimum 100 users
-        element.textContent = newCount.toLocaleString();
-    });
-}
-
-// Update every 10 seconds
-setInterval(simulateRealTimeUpdates, 10000);`
-},
-
-// ====================================================================
-// TEMPLATE 15: CONVERSION FUNNEL TABLE
-// ====================================================================
-table15: {
-    html: `<div class="conversion-funnel-table">
-    <div class="funnel-header">
-        <h3>Conversion Funnel Analysis</h3>
-        <div class="funnel-period">Last 7 Days</div>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th>Stage</th>
-                <th>Visitors</th>
-                <th>Drop-off</th>
-                <th>Conversion Rate</th>
-                <th>Revenue</th>
-                <th>Trend</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div class="funnel-stage">
-                        <div class="stage-number">1</div>
-                        <div class="stage-info">
-                            <div class="stage-name">Landing Page</div>
-                            <div class="stage-desc">Initial visit</div>
-                        </div>
-                    </div>
-                </td>
-                <td>10,000</td>
-                <td>-</td>
-                <td>100%</td>
-                <td>-</td>
-                <td>
-                    <div class="funnel-trend neutral">→</div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="funnel-stage">
-                        <div class="stage-number">2</div>
-                        <div class="stage-info">
-                            <div class="stage-name">Product View</div>
-                            <div class="stage-desc">Viewed product</div>
-                        </div>
-                    </div>
-                </td>
-                <td>6,500</td>
-                <td>
-                    <div class="drop-off negative">-35%</div>
-                </td>
-                <td>65%</td>
-                <td>-</td>
-                <td>
-                    <div class="funnel-trend down">↘</div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="funnel-stage">
-                        <div class="stage-number">3</div>
-                        <div class="stage-info">
-                            <div class="stage-name">Add to Cart</div>
-                            <div class="stage-desc">Added item to cart</div>
-                        </div>
-                    </div>
-                </td>
-                <td>2,800</td>
-                <td>
-                    <div class="drop-off negative">-57%</div>
-                </td>
-                <td>28%</td>
-                <td>-</td>
-                <td>
-                    <div class="funnel-trend down">↘</div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="funnel-stage">
-                        <div class="stage-number">4</div>
-                        <div class="stage-info">
-                            <div class="stage-name">Checkout</div>
-                            <div class="stage-desc">Started checkout</div>
-                        </div>
-                    </div>
-                </td>
-                <td>1,200</td>
-                <td>
-                    <div class="drop-off negative">-57%</div>
-                </td>
-                <td>12%</td>
-                <td>-</td>
-                <td>
-                    <div class="funnel-trend down">↘</div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="funnel-stage">
-                        <div class="stage-number">5</div>
-                        <div class="stage-info">
-                            <div class="stage-name">Purchase</div>
-                            <div class="stage-desc">Completed order</div>
-                        </div>
-                    </div>
-                </td>
-                <td>800</td>
-                <td>
-                    <div class="drop-off negative">-33%</div>
-                </td>
-                <td>8%</td>
-                <td>$24,000</td>
-                <td>
-                    <div class="funnel-trend up">↗</div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.conversion-funnel-table {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-}
-
-.funnel-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    background: #f8fafc;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.funnel-header h3 {
-    margin: 0;
-    color: #1f2937;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.funnel-period {
-    padding: 0.5rem 1rem;
-    background: #3b82f6;
-    color: white;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    font-weight: 600;
-}
-
-.conversion-funnel-table table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.conversion-funnel-table th {
-    background: #1e293b;
-    color: white;
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.875rem;
-}
-
-.conversion-funnel-table td {
-    padding: 1rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #374151;
-    font-size: 0.875rem;
-}
-
-.conversion-funnel-table tr:hover {
-    background: #f9fafb;
-}
-
-.funnel-stage {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.stage-number {
-    width: 28px;
-    height: 28px;
-    background: #3b82f6;
-    color: white;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 0.875rem;
-    flex-shrink: 0;
-}
-
-.stage-info .stage-name {
-    font-weight: 600;
-    color: #1f2937;
-    font-size: 0.875rem;
-}
-
-.stage-info .stage-desc {
-    font-size: 0.75rem;
-    color: #6b7280;
-    margin-top: 2px;
-}
-
-.drop-off {
-    padding: 0.3rem 0.6rem;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.drop-off.negative {
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-.funnel-trend {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.funnel-trend.up {
-    color: #059669;
-}
-
-.funnel-trend.down {
-    color: #dc2626;
-}
-
-.funnel-trend.neutral {
-    color: #6b7280;
-}`,
-    js: `// Funnel analysis interactions
-// Add any specific funnel analysis functionality here`
-},
-
-// ====================================================================
-// TEMPLATE 16: KPI DASHBOARD TABLE
-// ====================================================================
-table16: {
-    html: `<div class="kpi-dashboard-table">
-    <div class="kpi-header">
-        <h3>KPI Performance Dashboard</h3>
-        <div class="kpi-filters">
-            <select class="kpi-filter">
-                <option>All Channels</option>
-                <option>Organic</option>
-                <option>Paid</option>
-                <option>Social</option>
-            </select>
-        </div>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th>KPI</th>
-                <th>Current</th>
-                <th>Target</th>
-                <th>Progress</th>
-                <th>Variance</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Monthly Revenue</td>
-                <td>$124,580</td>
-                <td>$120,000</td>
-                <td>
-                    <div class="kpi-progress">
-                        <div class="progress-track">
-                            <div class="progress-value" style="width: 104%"></div>
-                        </div>
-                        <span>104%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="variance positive">+$4,580</div>
-                </td>
-                <td>
-                    <div class="kpi-status achieved">Achieved</div>
-                </td>
-            </tr>
-            <tr>
-                <td>Customer Acquisition</td>
-                <td>1,248</td>
-                <td>1,500</td>
-                <td>
-                    <div class="kpi-progress">
-                        <div class="progress-track">
-                            <div class="progress-value" style="width: 83%"></div>
-                        </div>
-                        <span>83%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="variance negative">-252</div>
-                </td>
-                <td>
-                    <div class="kpi-status at-risk">At Risk</div>
-                </td>
-            </tr>
-            <tr>
-                <td>Conversion Rate</td>
-                <td>3.8%</td>
-                <td>4.0%</td>
-                <td>
-                    <div class="kpi-progress">
-                        <div class="progress-track">
-                            <div class="progress-value" style="width: 95%"></div>
-                        </div>
-                        <span>95%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="variance negative">-0.2%</div>
-                </td>
-                <td>
-                    <div class="kpi-status on-track">On Track</div>
-                </td>
-            </tr>
-            <tr>
-                <td>Customer Satisfaction</td>
-                <td>4.7/5</td>
-                <td>4.5/5</td>
-                <td>
-                    <div class="kpi-progress">
-                        <div class="progress-track">
-                            <div class="progress-value" style="width: 104%"></div>
-                        </div>
-                        <span>104%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="variance positive">+0.2</div>
-                </td>
-                <td>
-                    <div class="kpi-status exceeded">Exceeded</div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.kpi-dashboard-table {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-}
-
-.kpi-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    background: #f8fafc;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.kpi-header h3 {
-    margin: 0;
-    color: #1f2937;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.kpi-filter {
-    padding: 0.5rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    background: white;
-    color: #374151;
-    font-size: 0.875rem;
-}
-
-.kpi-dashboard-table table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.kpi-dashboard-table th {
-    background: #1e293b;
-    color: white;
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.875rem;
-}
-
-.kpi-dashboard-table td {
-    padding: 1rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #374151;
-    font-size: 0.875rem;
-}
-
-.kpi-dashboard-table tr:hover {
-    background: #f9fafb;
-}
-
-.kpi-progress {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    min-width: 100px;
-}
-
-.progress-track {
-    flex: 1;
-    height: 8px;
-    background: #e5e7eb;
-    border-radius: 4px;
-    overflow: hidden;
-    min-width: 60px;
-}
-
-.progress-value {
-    height: 100%;
-    border-radius: 4px;
-}
-
-/* Different colors for different progress levels */
-.kpi-dashboard-table tr:nth-child(1) .progress-value { background: linear-gradient(90deg, #10b981, #059669); }
-.kpi-dashboard-table tr:nth-child(2) .progress-value { background: linear-gradient(90deg, #f59e0b, #d97706); }
-.kpi-dashboard-table tr:nth-child(3) .progress-value { background: linear-gradient(90deg, #f59e0b, #d97706); }
-.kpi-dashboard-table tr:nth-child(4) .progress-value { background: linear-gradient(90deg, #10b981, #059669); }
-
-.variance {
-    padding: 0.3rem 0.6rem;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.variance.positive {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.variance.negative {
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-.kpi-status {
-    padding: 0.4rem 0.8rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-align: center;
-}
-
-.kpi-status.achieved {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.kpi-status.exceeded {
-    background: #a7f3d0;
-    color: #047857;
-}
-
-.kpi-status.on-track {
-    background: #fef3c7;
-    color: #d97706;
-}
-
-.kpi-status.at-risk {
-    background: #fecaca;
-    color: #dc2626;
-}`,
-    js: `// KPI filter functionality
-document.querySelectorAll('.kpi-filter').forEach(filter => {
-    filter.addEventListener('change', function() {
-        const selectedChannel = this.value;
-        alert('Filtering KPIs for: ' + selectedChannel);
-        // In real implementation, you would filter the KPI data here
-    });
-});`
-},
-// ====================================================================
-// TEMPLATE 17: DARK MODERN DASHBOARD
-// ====================================================================
-table17: {
-    html: `<div class="dark-modern-dashboard">
-    <div class="dark-header">
-        <h3>Performance Dashboard</h3>
-        <div class="dark-actions">
-            <button class="dark-btn refresh-btn">
-                <i class="fas fa-sync-alt"></i>
-            </button>
-            <button class="dark-btn export-btn">
-                <i class="fas fa-download"></i>
-            </button>
-        </div>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th>Metric</th>
-                <th>Current</th>
-                <th>Previous</th>
-                <th>Growth</th>
-                <th>Trend</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div class="dark-metric">
-                        <div class="metric-icon revenue">💰</div>
-                        <span>Monthly Revenue</span>
-                    </div>
-                </td>
-                <td>$124,580</td>
-                <td>$112,450</td>
-                <td>
-                    <div class="growth positive">+10.8%</div>
-                </td>
-                <td>
-                    <div class="trend-chart">📈</div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="dark-metric">
-                        <div class="metric-icon users">👥</div>
-                        <span>Active Users</span>
-                    </div>
-                </td>
-                <td>12,489</td>
-                <td>11,256</td>
-                <td>
-                    <div class="growth positive">+11.0%</div>
-                </td>
-                <td>
-                    <div class="trend-chart">📈</div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="dark-metric">
-                        <div class="metric-icon conversion">🎯</div>
-                        <span>Conversion Rate</span>
-                    </div>
-                </td>
-                <td>3.8%</td>
-                <td>3.5%</td>
-                <td>
-                    <div class="growth positive">+8.6%</div>
-                </td>
-                <td>
-                    <div class="trend-chart">📈</div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="dark-metric">
-                        <div class="metric-icon bounce">↩️</div>
-                        <span>Bounce Rate</span>
-                    </div>
-                </td>
-                <td>42.3%</td>
-                <td>45.1%</td>
-                <td>
-                    <div class="growth positive">-6.2%</div>
-                </td>
-                <td>
-                    <div class="trend-chart">📉</div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.dark-modern-dashboard {
-    background: #1e293b;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #334155;
-    color: #f1f5f9;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-.dark-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    background: #0f172a;
-    border-bottom: 1px solid #334155;
-}
-
-.dark-header h3 {
-    margin: 0;
-    color: #f8fafc;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.dark-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.dark-btn {
-    width: 36px;
-    height: 36px;
-    border: 1px solid #475569;
-    background: #334155;
-    color: #cbd5e1;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-}
-
-.dark-btn:hover {
-    background: #475569;
-    border-color: #64748b;
-    color: #f1f5f9;
-}
-
-.dark-modern-dashboard table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.dark-modern-dashboard th {
-    background: #334155;
-    color: #e2e8f0;
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.875rem;
-    border-bottom: 1px solid #475569;
-}
-
-.dark-modern-dashboard td {
-    padding: 1rem;
-    border-bottom: 1px solid #334155;
-    color: #cbd5e1;
-    font-size: 0.875rem;
-}
-
-.dark-modern-dashboard tr:hover {
-    background: #334155;
-}
-
-.dark-metric {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.metric-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    flex-shrink: 0;
-}
-
-.metric-icon.revenue {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-}
-
-.metric-icon.users {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-}
-
-.metric-icon.conversion {
-    background: linear-gradient(135deg, #10b981, #059669);
-}
-
-.metric-icon.bounce {
-    background: linear-gradient(135deg, #6b7280, #4b5563);
-}
-
-.growth {
-    padding: 0.3rem 0.6rem;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.growth.positive {
-    background: rgba(16, 185, 129, 0.2);
-    color: #10b981;
-    border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-.trend-chart {
-    font-size: 1.2rem;
-}`,
-    js: `// Dark dashboard interactions
-document.querySelectorAll('.refresh-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        this.style.animation = 'spin 1s linear';
-        setTimeout(() => {
-            this.style.animation = '';
-            alert('Data refreshed!');
-        }, 1000);
-    });
-});
-
-document.querySelectorAll('.export-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        alert('Exporting dashboard data...');
-    });
-});`
-},
-
-// ====================================================================
-// TEMPLATE 18: DARK USER MANAGEMENT
-// ====================================================================
-table18: {
-    html: `<div class="dark-user-management">
-    <div class="dark-user-header">
-        <h3>User Management</h3>
-        <div class="dark-search">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search users..." class="dark-input">
-        </div>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th>User</th>
-                <th>Role</th>
-                <th>Status</th>
-                <th>Last Active</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div class="dark-user">
-                        <div class="dark-avatar">JD</div>
-                        <div class="dark-user-info">
-                            <div class="dark-name">John Doe</div>
-                            <div class="dark-email">john@company.com</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <span class="dark-role admin">Admin</span>
-                </td>
-                <td>
-                    <div class="dark-status online">
-                        <div class="status-dot"></div>
-                        Online
-                    </div>
-                </td>
-                <td>2 hours ago</td>
-                <td>
-                    <div class="dark-actions">
-                        <button class="dark-action-btn edit">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="dark-action-btn delete">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="dark-user">
-                        <div class="dark-avatar">JS</div>
-                        <div class="dark-user-info">
-                            <div class="dark-name">Jane Smith</div>
-                            <div class="dark-email">jane@company.com</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <span class="dark-role editor">Editor</span>
-                </td>
-                <td>
-                    <div class="dark-status away">
-                        <div class="status-dot"></div>
-                        Away
-                    </div>
-                </td>
-                <td>1 day ago</td>
-                <td>
-                    <div class="dark-actions">
-                        <button class="dark-action-btn edit">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="dark-action-btn delete">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="dark-user">
-                        <div class="dark-avatar">RJ</div>
-                        <div class="dark-user-info">
-                            <div class="dark-name">Robert Johnson</div>
-                            <div class="dark-email">robert@company.com</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <span class="dark-role viewer">Viewer</span>
-                </td>
-                <td>
-                    <div class="dark-status offline">
-                        <div class="status-dot"></div>
-                        Offline
-                    </div>
-                </td>
-                <td>3 days ago</td>
-                <td>
-                    <div class="dark-actions">
-                        <button class="dark-action-btn edit">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="dark-action-btn delete">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.dark-user-management {
-    background: #1e293b;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #334155;
-    color: #f1f5f9;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-.dark-user-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    background: #0f172a;
-    border-bottom: 1px solid #334155;
-}
-
-.dark-user-header h3 {
-    margin: 0;
-    color: #f8fafc;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.dark-search {
-    position: relative;
-    width: 250px;
-}
-
-.dark-search i {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #64748b;
-}
-
-.dark-input {
-    width: 100%;
-    padding: 0.75rem 1rem 0.75rem 2.5rem;
-    background: #334155;
-    border: 1px solid #475569;
-    border-radius: 8px;
-    color: #f1f5f9;
-    font-size: 0.875rem;
-    transition: all 0.3s;
-}
-
-.dark-input:focus {
-    outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-.dark-input::placeholder {
-    color: #64748b;
-}
-
-.dark-user-management table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.dark-user-management th {
-    background: #334155;
-    color: #e2e8f0;
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.875rem;
-    border-bottom: 1px solid #475569;
-}
-
-.dark-user-management td {
-    padding: 1rem;
-    border-bottom: 1px solid #334155;
-    color: #cbd5e1;
-    font-size: 0.875rem;
-}
-
-.dark-user-management tr:hover {
-    background: #334155;
-}
-
-.dark-user {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.dark-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #7c3aed, #6d28d9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    flex-shrink: 0;
-}
-
-.dark-user-info .dark-name {
-    font-weight: 600;
-    color: #f1f5f9;
-    font-size: 0.875rem;
-}
-
-.dark-user-info .dark-email {
-    font-size: 0.75rem;
-    color: #94a3b8;
-    margin-top: 2px;
-}
-
-.dark-role {
-    padding: 0.3rem 0.6rem;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.dark-role.admin {
-    background: rgba(239, 68, 68, 0.2);
-    color: #f87171;
-    border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-.dark-role.editor {
-    background: rgba(59, 130, 246, 0.2);
-    color: #60a5fa;
-    border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.dark-role.viewer {
-    background: rgba(16, 185, 129, 0.2);
-    color: #34d399;
-    border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-.dark-status {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-}
-
-.dark-status.online .status-dot {
-    background: #10b981;
-    box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
-}
-
-.dark-status.away .status-dot {
-    background: #f59e0b;
-    box-shadow: 0 0 6px rgba(245, 158, 11, 0.5);
-}
-
-.dark-status.offline .status-dot {
-    background: #6b7280;
-}
-
-.dark-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.dark-action-btn {
-    width: 32px;
-    height: 32px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    transition: all 0.3s;
-}
-
-.dark-action-btn.edit {
-    background: rgba(59, 130, 246, 0.2);
-    color: #60a5fa;
-}
-
-.dark-action-btn.edit:hover {
-    background: rgba(59, 130, 246, 0.3);
-}
-
-.dark-action-btn.delete {
-    background: rgba(239, 68, 68, 0.2);
-    color: #f87171;
-}
-
-.dark-action-btn.delete:hover {
-    background: rgba(239, 68, 68, 0.3);
-}`,
-    js: `// Dark user management functionality
-document.querySelectorAll('.dark-input').forEach(input => {
-    input.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-        const rows = e.target.closest('.dark-user-management').querySelectorAll('tbody tr');
-        
-        rows.forEach(row => {
-            const text = row.textContent.toLowerCase();
-            row.style.display = text.includes(searchTerm) ? '' : 'none';
-        });
-    });
-});
-
-document.querySelectorAll('.dark-action-btn.edit').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const userName = this.closest('tr').querySelector('.dark-name').textContent;
-        alert('Editing user: ' + userName);
-    });
-});
-
-document.querySelectorAll('.dark-action-btn.delete').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const userName = this.closest('tr').querySelector('.dark-name').textContent;
-        if (confirm('Are you sure you want to delete ' + userName + '?')) {
-            alert('User ' + userName + ' deleted!');
-        }
-    });
-});`
-},
-
-// ====================================================================
-// TEMPLATE 19: DARK FINANCE TABLE
-// ====================================================================
-table19: {
-    html: `<div class="dark-finance-table">
-    <div class="dark-finance-header">
-        <h3>Financial Overview</h3>
-        <div class="dark-period">
-            <span>Q4 2024</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th>Category</th>
-                <th>Budget</th>
-                <th>Spent</th>
-                <th>Remaining</th>
-                <th>Utilization</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Marketing</td>
-                <td>$50,000</td>
-                <td>$42,500</td>
-                <td>$7,500</td>
-                <td>
-                    <div class="dark-progress">
-                        <div class="dark-progress-track">
-                            <div class="dark-progress-fill" style="width: 85%"></div>
-                        </div>
-                        <span>85%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-budget-status on-track">On Track</div>
-                </td>
-            </tr>
-            <tr>
-                <td>Engineering</td>
-                <td>$120,000</td>
-                <td>$95,000</td>
-                <td>$25,000</td>
-                <td>
-                    <div class="dark-progress">
-                        <div class="dark-progress-track">
-                            <div class="dark-progress-fill" style="width: 79%"></div>
-                        </div>
-                        <span>79%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-budget-status on-track">On Track</div>
-                </td>
-            </tr>
-            <tr>
-                <td>Sales</td>
-                <td>$75,000</td>
-                <td>$68,000</td>
-                <td>$7,000</td>
-                <td>
-                    <div class="dark-progress">
-                        <div class="dark-progress-track">
-                            <div class="dark-progress-fill" style="width: 91%"></div>
-                        </div>
-                        <span>91%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-budget-status warning">Warning</div>
-                </td>
-            </tr>
-            <tr>
-                <td>Operations</td>
-                <td>$60,000</td>
-                <td>$72,000</td>
-                <td>-$12,000</td>
-                <td>
-                    <div class="dark-progress">
-                        <div class="dark-progress-track">
-                            <div class="dark-progress-fill over-budget" style="width: 120%"></div>
-                        </div>
-                        <span>120%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-budget-status over-budget">Over Budget</div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.dark-finance-table {
-    background: #1e293b;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #334155;
-    color: #f1f5f9;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-.dark-finance-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    background: #0f172a;
-    border-bottom: 1px solid #334155;
-}
-
-.dark-finance-header h3 {
-    margin: 0;
-    color: #f8fafc;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.dark-period {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: #334155;
-    border: 1px solid #475569;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    color: #cbd5e1;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.dark-period:hover {
-    background: #475569;
-    border-color: #64748b;
-}
-
-.dark-finance-table table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.dark-finance-table th {
-    background: #334155;
-    color: #e2e8f0;
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.875rem;
-    border-bottom: 1px solid #475569;
-}
-
-.dark-finance-table td {
-    padding: 1rem;
-    border-bottom: 1px solid #334155;
-    color: #cbd5e1;
-    font-size: 0.875rem;
-}
-
-.dark-finance-table tr:hover {
-    background: #334155;
-}
-
-.dark-progress {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    min-width: 100px;
-}
-
-.dark-progress-track {
-    flex: 1;
-    height: 6px;
-    background: #475569;
-    border-radius: 3px;
-    overflow: hidden;
-    min-width: 60px;
-}
-
-.dark-progress-fill {
-    height: 100%;
-    border-radius: 3px;
-    background: linear-gradient(90deg, #10b981, #059669);
-    transition: width 0.3s ease;
-}
-
-.dark-progress-fill.over-budget {
-    background: linear-gradient(90deg, #ef4444, #dc2626);
-}
-
-.dark-budget-status {
-    padding: 0.4rem 0.8rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-align: center;
-}
-
-.dark-budget-status.on-track {
-    background: rgba(16, 185, 129, 0.2);
-    color: #10b981;
-    border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-.dark-budget-status.warning {
-    background: rgba(245, 158, 11, 0.2);
-    color: #f59e0b;
-    border: 1px solid rgba(245, 158, 11, 0.3);
-}
-
-.dark-budget-status.over-budget {
-    background: rgba(239, 68, 68, 0.2);
-    color: #ef4444;
-    border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-/* Negative amount styling */
-.dark-finance-table tr:nth-child(4) td:nth-child(4) {
-    color: #ef4444;
-    font-weight: 600;
-}`,
-    js: `// Dark finance table interactions
-document.querySelectorAll('.dark-period').forEach(period => {
-    period.addEventListener('click', function() {
-        alert('Quarter selection dropdown would open here');
-    });
-});
-
-// Add animation for progress bars
-document.addEventListener('DOMContentLoaded', function() {
-    const progressBars = document.querySelectorAll('.dark-progress-fill');
-    progressBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0%';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 100);
-    });
-});`
-},
-
-// ====================================================================
-// TEMPLATE 20: DARK SERVER MONITORING
-// ====================================================================
-table20: {
-    html: `<div class="dark-server-monitoring">
-    <div class="dark-server-header">
-        <h3>Server Monitoring</h3>
-        <div class="dark-server-stats">
-            <div class="dark-stat">
-                <div class="stat-value">12</div>
-                <div class="stat-label">Online</div>
-            </div>
-            <div class="dark-stat">
-                <div class="stat-value">2</div>
-                <div class="stat-label">Warning</div>
-            </div>
-            <div class="dark-stat">
-                <div class="stat-value">1</div>
-                <div class="stat-label">Critical</div>
-            </div>
-        </div>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th>Server</th>
-                <th>Status</th>
-                <th>CPU</th>
-                <th>Memory</th>
-                <th>Disk</th>
-                <th>Uptime</th>
-                <th>Last Check</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div class="dark-server">
-                        <div class="server-icon">🖥️</div>
-                        <div class="server-info">
-                            <div class="server-name">Web Server 01</div>
-                            <div class="server-ip">192.168.1.101</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-server-status online">
-                        <div class="status-indicator"></div>
-                        Online
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-resource">
-                        <div class="resource-bar">
-                            <div class="resource-fill" style="width: 45%"></div>
-                        </div>
-                        <span>45%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-resource">
-                        <div class="resource-bar">
-                            <div class="resource-fill" style="width: 62%"></div>
-                        </div>
-                        <span>62%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-resource">
-                        <div class="resource-bar">
-                            <div class="resource-fill" style="width: 28%"></div>
-                        </div>
-                        <span>28%</span>
-                    </div>
-                </td>
-                <td>45 days</td>
-                <td>2 min ago</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="dark-server">
-                        <div class="server-icon">💾</div>
-                        <div class="server-info">
-                            <div class="server-name">Database 01</div>
-                            <div class="server-ip">192.168.1.102</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-server-status warning">
-                        <div class="status-indicator"></div>
-                        Warning
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-resource">
-                        <div class="resource-bar">
-                            <div class="resource-fill warning" style="width: 78%"></div>
-                        </div>
-                        <span>78%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-resource">
-                        <div class="resource-bar">
-                            <div class="resource-fill" style="width: 85%"></div>
-                        </div>
-                        <span>85%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-resource">
-                        <div class="resource-bar">
-                            <div class="resource-fill" style="width: 45%"></div>
-                        </div>
-                        <span>45%</span>
-                    </div>
-                </td>
-                <td>32 days</td>
-                <td>1 min ago</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="dark-server">
-                        <div class="server-icon">🔧</div>
-                        <div class="server-info">
-                            <div class="server-name">Backup Server</div>
-                            <div class="server-ip">192.168.1.103</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-server-status critical">
-                        <div class="status-indicator"></div>
-                        Critical
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-resource">
-                        <div class="resource-bar">
-                            <div class="resource-fill critical" style="width: 92%"></div>
-                        </div>
-                        <span>92%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-resource">
-                        <div class="resource-bar">
-                            <div class="resource-fill critical" style="width: 95%"></div>
-                        </div>
-                        <span>95%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="dark-resource">
-                        <div class="resource-bar">
-                            <div class="resource-fill" style="width: 88%"></div>
-                        </div>
-                        <span>88%</span>
-                    </div>
-                </td>
-                <td>15 days</td>
-                <td>30 sec ago</td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.dark-server-monitoring {
-    background: #1e293b;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #334155;
-    color: #f1f5f9;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-.dark-server-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    background: #0f172a;
-    border-bottom: 1px solid #334155;
-}
-
-.dark-server-header h3 {
-    margin: 0;
-    color: #f8fafc;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.dark-server-stats {
-    display: flex;
-    gap: 2rem;
-}
-
-.dark-stat {
-    text-align: center;
-}
-
-.stat-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #f1f5f9;
-}
-
-.stat-label {
-    font-size: 0.75rem;
-    color: #94a3b8;
-    margin-top: 0.25rem;
-}
-
-.dark-server-stats .dark-stat:nth-child(1) .stat-value { color: #10b981; }
-.dark-server-stats .dark-stat:nth-child(2) .stat-value { color: #f59e0b; }
-.dark-server-stats .dark-stat:nth-child(3) .stat-value { color: #ef4444; }
-
-.dark-server-monitoring table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.dark-server-monitoring th {
-    background: #334155;
-    color: #e2e8f0;
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.875rem;
-    border-bottom: 1px solid #475569;
-}
-
-.dark-server-monitoring td {
-    padding: 1rem;
-    border-bottom: 1px solid #334155;
-    color: #cbd5e1;
-    font-size: 0.875rem;
-}
-
-.dark-server-monitoring tr:hover {
-    background: #334155;
-}
-
-.dark-server {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.server-icon {
-    font-size: 1.2rem;
-    width: 32px;
-    text-align: center;
-}
-
-.server-info .server-name {
-    font-weight: 600;
-    color: #f1f5f9;
-    font-size: 0.875rem;
-}
-
-.server-info .server-ip {
-    font-size: 0.75rem;
-    color: #94a3b8;
-    margin-top: 2px;
-}
-
-.dark-server-status {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-}
-
-.status-indicator {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-}
-
-.dark-server-status.online .status-indicator {
-    background: #10b981;
-    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
-    animation: pulse-green 2s infinite;
-}
-
-.dark-server-status.warning .status-indicator {
-    background: #f59e0b;
-    box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
-    animation: pulse-orange 2s infinite;
-}
-
-.dark-server-status.critical .status-indicator {
-    background: #ef4444;
-    box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
-    animation: pulse-red 1s infinite;
-}
-
-@keyframes pulse-green {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-
-@keyframes pulse-orange {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-
-@keyframes pulse-red {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-}
-
-.dark-resource {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    min-width: 80px;
-}
-
-.resource-bar {
-    flex: 1;
-    height: 6px;
-    background: #475569;
-    border-radius: 3px;
-    overflow: hidden;
-    min-width: 50px;
-}
-
-.resource-fill {
-    height: 100%;
-    border-radius: 3px;
-    background: linear-gradient(90deg, #10b981, #059669);
-    transition: width 0.3s ease;
-}
-
-.resource-fill.warning {
-    background: linear-gradient(90deg, #f59e0b, #d97706);
-}
-
-.resource-fill.critical {
-    background: linear-gradient(90deg, #ef4444, #dc2626);
-}`,
-    js: `// Server monitoring simulation
-function updateServerStats() {
-    const resources = document.querySelectorAll('.resource-fill');
-    resources.forEach(resource => {
-        const currentWidth = parseInt(resource.style.width);
-        const change = Math.floor(Math.random() * 10) - 5; // Random change between -5 and +5
-        let newWidth = Math.max(10, Math.min(95, currentWidth + change));
-        resource.style.width = newWidth + '%';
-        resource.parentElement.nextElementSibling.textContent = newWidth + '%';
-        
-        // Update status based on resource usage
-        if (newWidth > 90) {
-            resource.classList.add('critical');
-            resource.classList.remove('warning');
-        } else if (newWidth > 75) {
-            resource.classList.add('warning');
-            resource.classList.remove('critical');
-        } else {
-            resource.classList.remove('warning', 'critical');
-        }
-    });
-}
-
-// Update every 5 seconds
-setInterval(updateServerStats, 5000);`
-},
-// ====================================================================
-// COLORFUL TEMPLATE 22: RAINBOW TASKS
-// ====================================================================
-colorful22: {
-    html: `<div class="rainbow-table-container">
-    <div class="rainbow-header">
-        <h3>🌈 Task Rainbow Dashboard</h3>
-        <div class="rainbow-stats">
-            <span class="stat completed">Completed: 8</span>
-            <span class="stat pending">Pending: 3</span>
-            <span class="stat overdue">Overdue: 1</span>
-        </div>
-    </div>
-    <table class="rainbow-table">
-        <thead>
-            <tr>
-                <th>Task Name</th>
-                <th>Category</th>
-                <th>Priority</th>
-                <th>Due Date</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="task-high">
-                <td>
-                    <div class="task-info">
-                        <div class="task-icon">🎨</div>
-                        <div class="task-details">
-                            <div class="task-name">Design Homepage</div>
-                            <div class="task-desc">Create new homepage layout</div>
-                        </div>
-                    </div>
-                </td>
-                <td><span class="category design">Design</span></td>
-                <td><span class="priority high">🔥 High</span></td>
-                <td>Today</td>
-                <td><span class="status in-progress">In Progress</span></td>
-            </tr>
-            <tr class="task-medium">
-                <td>
-                    <div class="task-info">
-                        <div class="task-icon">📊</div>
-                        <div class="task-details">
-                            <div class="task-name">Analytics Report</div>
-                            <div class="task-desc">Monthly performance analysis</div>
-                        </div>
-                    </div>
-                </td>
-                <td><span class="category analytics">Analytics</span></td>
-                <td><span class="priority medium">⚡ Medium</span></td>
-                <td>Tomorrow</td>
-                <td><span class="status pending">Pending</span></td>
-            </tr>
-            <tr class="task-low">
-                <td>
-                    <div class="task-info">
-                        <div class="task-icon">📝</div>
-                        <div class="task-details">
-                            <div class="task-name">Documentation</div>
-                            <div class="task-desc">Update API documentation</div>
-                        </div>
-                    </div>
-                </td>
-                <td><span class="category docs">Documentation</span></td>
-                <td><span class="priority low">💤 Low</span></td>
-                <td>Next Week</td>
-                <td><span class="status completed">Completed</span></td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.rainbow-table-container {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.rainbow-header {
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.rainbow-header h3 {
-    margin: 0 0 1rem 0;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.rainbow-stats {
-    display: flex;
-    gap: 1rem;
-}
-
-.stat {
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: white;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.stat.completed { background: rgba(34, 197, 94, 0.8); }
-.stat.pending { background: rgba(249, 115, 22, 0.8); }
-.stat.overdue { background: rgba(239, 68, 68, 0.8); }
-
-.rainbow-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.95);
-}
-
-.rainbow-table th {
-    padding: 1.5rem 2rem;
-    text-align: left;
-    font-weight: 700;
-    color: #4b5563;
-    border-bottom: 2px solid #e5e7eb;
-    background: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.rainbow-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-}
-
-.task-high { background: linear-gradient(90deg, rgba(254, 202, 202, 0.3), transparent); }
-.task-medium { background: linear-gradient(90deg, rgba(253, 230, 138, 0.3), transparent); }
-.task-low { background: linear-gradient(90deg, rgba(187, 247, 208, 0.3), transparent); }
-
-.rainbow-table tr:hover {
-    background: rgba(255, 255, 255, 0.7);
-    transform: scale(1.02);
-    transition: all 0.3s ease;
-}
-
-.task-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.task-icon {
-    font-size: 1.5rem;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    border-radius: 12px;
-    color: white;
-}
-
-.task-details .task-name {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.task-details .task-desc {
-    font-size: 0.875rem;
-    color: #9ca3af;
-}
-
-.category, .priority, .status {
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.category.design { background: #c7d2fe; color: #3730a3; }
-.category.analytics { background: #bae6fd; color: #0369a1; }
-.category.docs { background: #bbf7d0; color: #166534; }
-
-.priority.high { background: #fecaca; color: #dc2626; }
-.priority.medium { background: #fed7aa; color: #ea580c; }
-.priority.low { background: #bbf7d0; color: #16a34a; }
-
-.status.in-progress { background: #dbeafe; color: #1e40af; }
-.status.pending { background: #fef3c7; color: #92400e; }
-.status.completed { background: #d1fae5; color: #065f46; }`,
-    js: `// Rainbow table animations
-document.querySelectorAll('.rainbow-table tr').forEach(row => {
-    row.addEventListener('mouseenter', function() {
-        this.style.transition = 'all 0.3s ease';
-    });
-});`
-},
-
-// ====================================================================
-// COLORFUL TEMPLATE 23: GRADIENT ANALYTICS
-// ====================================================================
-colorful23: {
-    html: `<div class="gradient-analytics-container">
-    <div class="analytics-header">
-        <h3>🚀 Performance Analytics</h3>
-        <div class="time-period">Last 30 Days</div>
-    </div>
-    <table class="gradient-analytics-table">
-        <thead>
-            <tr>
-                <th>Platform</th>
-                <th>Visitors</th>
-                <th>Growth</th>
-                <th>Engagement</th>
-                <th>Trend</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="platform-web">
-                <td>
-                    <div class="platform-info">
-                        <div class="platform-icon">🌐</div>
-                        <div class="platform-details">
-                            <div class="platform-name">Website</div>
-                            <div class="platform-url">example.com</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="metric-value">12,548</td>
-                <td><span class="growth up">+25.3%</span></td>
-                <td>
-                    <div class="engagement-bar">
-                        <div class="engagement-fill" style="width: 85%"></div>
-                        <span>85%</span>
-                    </div>
-                </td>
-                <td><span class="trend up">📈</span></td>
-            </tr>
-            <tr class="platform-mobile">
-                <td>
-                    <div class="platform-info">
-                        <div class="platform-icon">📱</div>
-                        <div class="platform-details">
-                            <div class="platform-name">Mobile App</div>
-                            <div class="platform-url">iOS & Android</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="metric-value">8,742</td>
-                <td><span class="growth up">+18.7%</span></td>
-                <td>
-                    <div class="engagement-bar">
-                        <div class="engagement-fill" style="width: 78%"></div>
-                        <span>78%</span>
-                    </div>
-                </td>
-                <td><span class="trend up">📈</span></td>
-            </tr>
-            <tr class="platform-social">
-                <td>
-                    <div class="platform-info">
-                        <div class="platform-icon">💬</div>
-                        <div class="platform-details">
-                            <div class="platform-name">Social Media</div>
-                            <div class="platform-url">Twitter & FB</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="metric-value">15,236</td>
-                <td><span class="growth down">-5.2%</span></td>
-                <td>
-                    <div class="engagement-bar">
-                        <div class="engagement-fill" style="width: 62%"></div>
-                        <span>62%</span>
-                    </div>
-                </td>
-                <td><span class="trend down">📉</span></td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.gradient-analytics-container {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 50%, #66bb6a 100%);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-}
-
-.analytics-header {
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    text-align: center;
-}
-
-.analytics-header h3 {
-    margin: 0 0 0.5rem 0;
-    color: white;
-    font-size: 1.75rem;
-    font-weight: 800;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.time-period {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.gradient-analytics-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-}
-
-.gradient-analytics-table th {
-    padding: 1.5rem 2rem;
-    text-align: left;
-    font-weight: 700;
-    color: #374151;
-    border-bottom: 3px solid #e5e7eb;
-    background: rgba(255, 255, 255, 0.9);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.gradient-analytics-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid rgba(229, 231, 235, 0.8);
-    color: #4b5563;
-}
-
-.platform-web { background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), transparent); }
-.platform-mobile { background: linear-gradient(90deg, rgba(168, 85, 247, 0.1), transparent); }
-.platform-social { background: linear-gradient(90deg, rgba(236, 72, 153, 0.1), transparent); }
-
-.gradient-analytics-table tr:hover {
-    background: rgba(255, 255, 255, 0.8);
-    transform: translateX(10px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.platform-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.platform-icon {
-    font-size: 2rem;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    border-radius: 15px;
-    color: white;
-}
-
-.platform-details .platform-name {
-    font-weight: 700;
-    color: #1f2937;
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-}
-
-.platform-details .platform-url {
-    font-size: 0.875rem;
-    color: #6b7280;
-}
-
-.metric-value {
     font-size: 1.25rem;
-    font-weight: 800;
+}
+
+.country-name {
+    font-weight: 600;
     color: #1f2937;
 }
 
-.growth {
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    font-size: 0.875rem;
-    font-weight: 700;
-    text-transform: uppercase;
+.activity-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
-.growth.up {
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: white;
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
-}
-
-.growth.down {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
-    color: white;
-    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
-}
-
-.engagement-bar {
-    width: 100%;
-    height: 8px;
-    background: #e5e7eb;
-    border-radius: 10px;
-    position: relative;
-    margin: 0.5rem 0;
-}
-
-.engagement-fill {
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #8b5cf6, #ec4899);
-    transition: width 1s ease-in-out;
-}
-
-.engagement-bar span {
-    position: absolute;
-    top: -20px;
-    right: 0;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #374151;
+.activity {
+    background: #f3f4f6;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #6b7280;
 }
 
 .trend {
-    font-size: 1.5rem;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}`,
-    js: `// Animate engagement bars on load
-document.addEventListener('DOMContentLoaded', function() {
-    const bars = document.querySelectorAll('.engagement-fill');
-    bars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 500);
-    });
-});`
-},
-
-// ====================================================================
-// COLORFUL TEMPLATE 24: NEON PRICING
-// ====================================================================
-colorful24: {
-    html: `<div class="neon-pricing-container">
-    <div class="neon-header">
-        <h3>💎 Premium Pricing Plans</h3>
-        <p class="neon-subtitle">Choose the perfect plan for your needs</p>
-    </div>
-    <table class="neon-pricing-table">
-        <thead>
-            <tr>
-                <th>Plan</th>
-                <th>Price</th>
-                <th>Users</th>
-                <th>Storage</th>
-                <th>Features</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="plan-basic">
-                <td>
-                    <div class="plan-info">
-                        <div class="plan-name">✨ Basic</div>
-                        <div class="plan-desc">Perfect for starters</div>
-                    </div>
-                </td>
-                <td class="price-cell">
-                    <div class="price">$9.99</div>
-                    <div class="price-period">per month</div>
-                </td>
-                <td>1 User</td>
-                <td>10 GB</td>
-                <td>
-                    <ul class="features-list">
-                        <li>✓ Basic Support</li>
-                        <li>✓ 5 Projects</li>
-                        <li>✗ Advanced Analytics</li>
-                    </ul>
-                </td>
-                <td>
-                    <button class="neon-btn basic">Get Started</button>
-                </td>
-            </tr>
-            <tr class="plan-pro">
-                <td>
-                    <div class="plan-info">
-                        <div class="plan-name">🚀 Pro</div>
-                        <div class="plan-desc">Most popular choice</div>
-                    </div>
-                </td>
-                <td class="price-cell">
-                    <div class="price">$29.99</div>
-                    <div class="price-period">per month</div>
-                </td>
-                <td>5 Users</td>
-                <td>50 GB</td>
-                <td>
-                    <ul class="features-list">
-                        <li>✓ Priority Support</li>
-                        <li>✓ 50 Projects</li>
-                        <li>✓ Advanced Analytics</li>
-                    </ul>
-                </td>
-                <td>
-                    <button class="neon-btn pro">Get Started</button>
-                </td>
-            </tr>
-            <tr class="plan-enterprise">
-                <td>
-                    <div class="plan-info">
-                        <div class="plan-name">🏢 Enterprise</div>
-                        <div class="plan-desc">For large teams</div>
-                    </div>
-                </td>
-                <td class="price-cell">
-                    <div class="price">$99.99</div>
-                    <div class="price-period">per month</div>
-                </td>
-                <td>Unlimited</td>
-                <td>500 GB</td>
-                <td>
-                    <ul class="features-list">
-                        <li>✓ 24/7 Support</li>
-                        <li>✓ Unlimited Projects</li>
-                        <li>✓ Custom Solutions</li>
-                    </ul>
-                </td>
-                <td>
-                    <button class="neon-btn enterprise">Contact Sales</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.neon-pricing-container {
-    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 
-        0 0 50px rgba(139, 92, 246, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(139, 92, 246, 0.3);
-}
-
-.neon-header {
-    padding: 3rem 2rem;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
-}
-
-.neon-header h3 {
-    margin: 0 0 1rem 0;
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 800;
-    text-shadow: 
-        0 0 10px rgba(139, 92, 246, 0.8),
-        0 0 20px rgba(139, 92, 246, 0.6);
-}
-
-.neon-subtitle {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.1rem;
-    margin: 0;
-}
-
-.neon-pricing-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-}
-
-.neon-pricing-table th {
-    padding: 2rem;
-    text-align: center;
-    font-weight: 700;
-    color: #8b5cf6;
-    border-bottom: 2px solid rgba(139, 92, 246, 0.3);
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
-}
-
-.neon-pricing-table td {
-    padding: 2rem;
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.plan-basic { 
-    background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), transparent);
-    border-left: 4px solid #3b82f6;
-}
-
-.plan-pro { 
-    background: linear-gradient(90deg, rgba(139, 92, 246, 0.15), transparent);
-    border-left: 4px solid #8b5cf6;
-}
-
-.plan-enterprise { 
-    background: linear-gradient(90deg, rgba(236, 72, 153, 0.1), transparent);
-    border-left: 4px solid #ec4899;
-}
-
-.neon-pricing-table tr:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.02);
-    transition: all 0.3s ease;
-}
-
-.plan-info {
-    text-align: left;
-}
-
-.plan-name {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 0 10px currentColor;
-}
-
-.plan-desc {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
-}
-
-.price-cell {
-    text-align: center;
-}
-
-.price {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 0 15px currentColor;
-}
-
-.price-period {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
-}
-
-.features-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-.features-list li {
-    padding: 0.25rem 0;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-}
-
-.neon-btn {
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
-}
-
-.neon-btn.basic {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    color: white;
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-}
-
-.neon-btn.pro {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-    color: white;
-    box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
-}
-
-.neon-btn.enterprise {
-    background: linear-gradient(135deg, #ec4899, #db2777);
-    color: white;
-    box-shadow: 0 0 25px rgba(236, 72, 153, 0.6);
-}
-
-.neon-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 
-        0 10px 30px rgba(0, 0, 0, 0.3),
-        0 0 30px currentColor;
-}`,
-    js: `// Neon pricing table interactions
-document.querySelectorAll('.neon-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const plan = this.classList[1];
-        alert(\`Selected \${plan.toUpperCase()} plan! Redirecting to checkout...\`);
-    });
-});`
-},
-
-// ====================================================================
-// COLORFUL TEMPLATE 25: PASTEL TEAM
-// ====================================================================
-colorful25: {
-    html: `<div class="pastel-team-container">
-    <div class="pastel-header">
-        <h3>👥 Team Members</h3>
-        <div class="team-stats">
-            <span class="stat online">Online: 8</span>
-            <span class="stat away">Away: 2</span>
-            <span class="stat offline">Offline: 1</span>
-        </div>
-    </div>
-    <table class="pastel-team-table">
-        <thead>
-            <tr>
-                <th>Member</th>
-                <th>Role</th>
-                <th>Department</th>
-                <th>Projects</th>
-                <th>Status</th>
-                <th>Contact</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="member-online">
-                <td>
-                    <div class="member-info">
-                        <div class="member-avatar" style="background: linear-gradient(135deg, #a5b4fc, #c4b5fd);">AS</div>
-                        <div class="member-details">
-                            <div class="member-name">Alex Smith</div>
-                            <div class="member-title">Senior Designer</div>
-                        </div>
-                    </div>
-                </td>
-                <td><span class="role-tag design">UI/UX Design</span></td>
-                <td>Creative</td>
-                <td>
-                    <div class="projects-count">8 Projects</div>
-                    <div class="projects-bar">
-                        <div class="projects-fill" style="width: 80%"></div>
-                    </div>
-                </td>
-                <td>
-                    <div class="status-indicator online">
-                        <div class="status-dot"></div>
-                        <span>Online</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="contact-actions">
-                        <button class="contact-btn message">💬</button>
-                        <button class="contact-btn call">📞</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="member-away">
-                <td>
-                    <div class="member-info">
-                        <div class="member-avatar" style="background: linear-gradient(135deg, #fbcfe8, #f9a8d4);">SJ</div>
-                        <div class="member-details">
-                            <div class="member-name">Sarah Johnson</div>
-                            <div class="member-title">Frontend Dev</div>
-                        </div>
-                    </div>
-                </td>
-                <td><span class="role-tag development">Frontend</span></td>
-                <td>Engineering</td>
-                <td>
-                    <div class="projects-count">12 Projects</div>
-                    <div class="projects-bar">
-                        <div class="projects-fill" style="width: 60%"></div>
-                    </div>
-                </td>
-                <td>
-                    <div class="status-indicator away">
-                        <div class="status-dot"></div>
-                        <span>Away</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="contact-actions">
-                        <button class="contact-btn message">💬</button>
-                        <button class="contact-btn call">📞</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="member-offline">
-                <td>
-                    <div class="member-info">
-                        <div class="member-avatar" style="background: linear-gradient(135deg, #bae6fd, #7dd3fc);">MC</div>
-                        <div class="member-details">
-                            <div class="member-name">Mike Chen</div>
-                            <div class="member-title">Backend Lead</div>
-                        </div>
-                    </div>
-                </td>
-                <td><span class="role-tag backend">Backend</span></td>
-                <td>Engineering</td>
-                <td>
-                    <div class="projects-count">6 Projects</div>
-                    <div class="projects-bar">
-                        <div class="projects-fill" style="width: 90%"></div>
-                    </div>
-                </td>
-                <td>
-                    <div class="status-indicator offline">
-                        <div class="status-dot"></div>
-                        <span>Offline</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="contact-actions">
-                        <button class="contact-btn message">💬</button>
-                        <button class="contact-btn call">📞</button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.pastel-team-container {
-    background: linear-gradient(135deg, #f0f9ff 0%, #fdf2f8 50%, #f0fdf4 100%);
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.pastel-header {
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.pastel-header h3 {
-    margin: 0;
-    color: #4f46e5;
-    font-size: 1.75rem;
-    font-weight: 700;
-}
-
-.team-stats {
-    display: flex;
-    gap: 1rem;
-}
-
-.stat {
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: white;
-}
-
-.stat.online { background: linear-gradient(135deg, #34d399, #10b981); }
-.stat.away { background: linear-gradient(135deg, #fbbf24, #f59e0b); }
-.stat.offline { background: linear-gradient(135deg, #9ca3af, #6b7280); }
-
-.pastel-team-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.8);
-}
-
-.pastel-team-table th {
-    padding: 1.5rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    color: #6b7280;
-    border-bottom: 2px solid #e5e7eb;
-    background: rgba(255, 255, 255, 0.9);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.pastel-team-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid rgba(243, 244, 246, 0.8);
-    color: #6b7280;
-}
-
-.member-online { background: linear-gradient(90deg, rgba(52, 211, 153, 0.1), transparent); }
-.member-away { background: linear-gradient(90deg, rgba(251, 191, 36, 0.1), transparent); }
-.member-offline { background: linear-gradient(90deg, rgba(156, 163, 175, 0.1), transparent); }
-
-.pastel-team-table tr:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.member-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.member-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 700;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.member-details .member-name {
-    font-weight: 700;
-    color: #1f2937;
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-}
-
-.member-details .member-title {
-    font-size: 0.875rem;
-    color: #9ca3af;
-}
-
-.role-tag {
-    padding: 0.5rem 1rem;
-    border-radius: 15px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.role-tag.design { background: #c7d2fe; color: #3730a3; }
-.role-tag.development { background: #fbcfe8; color: #be185d; }
-.role-tag.backend { background: #bae6fd; color: #0369a1; }
-
-.projects-count {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-}
-
-.projects-bar {
-    width: 100%;
-    height: 6px;
-    background: #e5e7eb;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.projects-fill {
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #8b5cf6, #ec4899);
-    transition: width 1s ease-in-out;
-}
-
-.status-indicator {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-}
-
-.status-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.status-indicator.online .status-dot { background: #10b981; }
-.status-indicator.away .status-dot { background: #f59e0b; }
-.status-indicator.offline .status-dot { background: #6b7280; }
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-
-.contact-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.contact-btn {
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 12px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.contact-btn:hover {
-    transform: scale(1.1);
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}`,
-    js: `// Pastel team table interactions
-document.querySelectorAll('.contact-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const action = this.textContent;
-        const memberName = this.closest('tr').querySelector('.member-name').textContent;
-        alert(\`\${action} \${memberName}\`);
-    });
-});
-
-// Animate project bars
-document.addEventListener('DOMContentLoaded', function() {
-    const bars = document.querySelectorAll('.projects-fill');
-    bars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 300);
-    });
-});`
-},
-
-// ====================================================================
-// COLORFUL TEMPLATE 26: FESTIVAL EVENTS
-// ====================================================================
-colorful26: {
-    html: `<div class="festival-events-container">
-    <div class="festival-header">
-        <h3>🎉 Upcoming Events & Festivals</h3>
-        <div class="festival-controls">
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">Music</button>
-            <button class="filter-btn">Food</button>
-            <button class="filter-btn">Art</button>
-        </div>
-    </div>
-    <table class="festival-events-table">
-        <thead>
-            <tr>
-                <th>Event</th>
-                <th>Date & Time</th>
-                <th>Location</th>
-                <th>Type</th>
-                <th>Tickets</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="event-music">
-                <td>
-                    <div class="event-info">
-                        <div class="event-emoji">🎵</div>
-                        <div class="event-details">
-                            <div class="event-name">Summer Music Festival</div>
-                            <div class="event-artist">Feat. Top Artists</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="event-date">
-                        <div class="date">Mar 15, 2024</div>
-                        <div class="time">6:00 PM - 11:00 PM</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="event-location">
-                        <div class="venue">Central Park</div>
-                        <div class="city">New York, NY</div>
-                    </div>
-                </td>
-                <td><span class="event-type music">Music</span></td>
-                <td>
-                    <div class="ticket-status available">
-                        <span class="ticket-emoji">🎫</span>
-                        Available
-                    </div>
-                </td>
-                <td>
-                    <button class="festival-btn buy-tickets">Get Tickets</button>
-                </td>
-            </tr>
-            <tr class="event-food">
-                <td>
-                    <div class="event-info">
-                        <div class="event-emoji">🍕</div>
-                        <div class="event-details">
-                            <div class="event-name">International Food Fair</div>
-                            <div class="event-artist">50+ Food Stalls</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="event-date">
-                        <div class="date">Apr 2, 2024</div>
-                        <div class="time">12:00 PM - 8:00 PM</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="event-location">
-                        <div class="venue">Downtown Square</div>
-                        <div class="city">Chicago, IL</div>
-                    </div>
-                </td>
-                <td><span class="event-type food">Food</span></td>
-                <td>
-                    <div class="ticket-status sold-out">
-                        <span class="ticket-emoji">😢</span>
-                        Sold Out
-                    </div>
-                </td>
-                <td>
-                    <button class="festival-btn notify">Notify Me</button>
-                </td>
-            </tr>
-            <tr class="event-art">
-                <td>
-                    <div class="event-info">
-                        <div class="event-emoji">🎨</div>
-                        <div class="event-details">
-                            <div class="event-name">Modern Art Exhibition</div>
-                            <div class="event-artist">Local Artists Showcase</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="event-date">
-                        <div class="date">Apr 18, 2024</div>
-                        <div class="time">10:00 AM - 6:00 PM</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="event-location">
-                        <div class="venue">Art Gallery</div>
-                        <div class="city">San Francisco, CA</div>
-                    </div>
-                </td>
-                <td><span class="event-type art">Art</span></td>
-                <td>
-                    <div class="ticket-status limited">
-                        <span class="ticket-emoji">⚡</span>
-                        Limited
-                    </div>
-                </td>
-                <td>
-                    <button class="festival-btn buy-tickets">Get Tickets</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.festival-events-container {
-    background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-}
-
-.festival-header {
-    padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.festival-header h3 {
-    margin: 0 0 1.5rem 0;
-    color: white;
-    font-size: 2rem;
-    font-weight: 800;
-    text-align: center;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.festival-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.filter-btn {
-    padding: 0.75rem 1.5rem;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border-radius: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-    background: rgba(255, 255, 255, 0.9);
-    color: #ff6b6b;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.festival-events-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-}
-
-.festival-events-table th {
-    padding: 1.75rem 2rem;
-    text-align: left;
-    font-weight: 700;
-    color: #374151;
-    border-bottom: 3px solid #e5e7eb;
-    background: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.festival-events-table td {
-    padding: 1.75rem 2rem;
-    border-bottom: 1px solid rgba(243, 244, 246, 0.8);
-    color: #4b5563;
-}
-
-.event-music { 
-    background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), transparent);
-    border-left: 5px solid #3b82f6;
-}
-
-.event-food { 
-    background: linear-gradient(90deg, rgba(34, 197, 94, 0.1), transparent);
-    border-left: 5px solid #22c55e;
-}
-
-.event-art { 
-    background: linear-gradient(90deg, rgba(168, 85, 247, 0.1), transparent);
-    border-left: 5px solid #a855f7;
-}
-
-.festival-events-table tr:hover {
-    background: rgba(255, 255, 255, 0.8);
-    transform: scale(1.01);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.event-info {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.event-emoji {
-    font-size: 2.5rem;
-    width: 70px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    border-radius: 20px;
-    color: white;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.event-details .event-name {
-    font-weight: 800;
-    color: #1f2937;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.event-details .event-artist {
-    font-size: 0.9rem;
-    color: #6b7280;
-    font-weight: 500;
-}
-
-.event-date .date {
-    font-weight: 700;
-    color: #1f2937;
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-}
-
-.event-date .time {
-    font-size: 0.9rem;
-    color: #6b7280;
-}
-
-.event-location .venue {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.event-location .city {
-    font-size: 0.9rem;
-    color: #6b7280;
-}
-
-.event-type {
-    padding: 0.75rem 1.25rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.event-type.music { background: #dbeafe; color: #1e40af; }
-.event-type.food { background: #dcfce7; color: #166534; }
-.event-type.art { background: #f3e8ff; color: #7c3aed; }
-
-.ticket-status {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.ticket-status.available { background: #d1fae5; color: #065f46; }
-.ticket-status.sold-out { background: #fecaca; color: #dc2626; }
-.ticket-status.limited { background: #fef3c7; color: #92400e; }
-
-.ticket-emoji {
-    font-size: 1.2rem;
-}
-
-.festival-btn {
-    padding: 1rem 1.5rem;
-    border: none;
-    border-radius: 15px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.festival-btn.buy-tickets {
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: white;
-    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
-}
-
-.festival-btn.notify {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    color: white;
-    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
-}
-
-.festival-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}`,
-    js: `// Festival events filtering and interactions
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        
-        const filter = this.textContent.toLowerCase();
-        alert(\`Filtering events by: \${filter}\`);
-        // In real implementation, this would filter the table rows
-    });
-});
-
-document.querySelectorAll('.festival-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const eventName = this.closest('tr').querySelector('.event-name').textContent;
-        if (this.classList.contains('buy-tickets')) {
-            alert(\`Buying tickets for: \${eventName}\`);
-        } else {
-            alert(\`You'll be notified about: \${eventName}\`);
-        }
-    });
-});`
-},
-// ====================================================================
-// PREMIUM TEMPLATE 27: LUXURY DASHBOARD
-// ====================================================================
-premium27: {
-    html: `<div class="luxury-dashboard-container">
-    <div class="luxury-header">
-        <div class="header-content">
-            <h3>💎 Elite Client Portfolio</h3>
-            <p class="header-subtitle">Managing High-Net-Worth Relationships</p>
-        </div>
-        <div class="header-stats">
-            <div class="stat">
-                <div class="stat-value">$48.2M</div>
-                <div class="stat-label">Total AUM</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">+15.8%</div>
-                <div class="stat-label">YTD Growth</div>
-            </div>
-        </div>
-    </div>
-    <table class="luxury-table">
-        <thead>
-            <tr>
-                <th>Client</th>
-                <th>Portfolio Value</th>
-                <th>Investment Style</th>
-                <th>YTD Growth</th>
-                <th>Risk Profile</th>
-                <th>Client Tier</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="client-vip">
-                <td>
-                    <div class="client-info">
-                        <div class="client-avatar">
-                            <div class="avatar-gold">JD</div>
-                            <div class="online-indicator"></div>
-                        </div>
-                        <div class="client-details">
-                            <div class="client-name">John Davidson</div>
-                            <div class="client-company">Elite Corporation</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="portfolio-value">
-                    <div class="value-amount">$2,548,000</div>
-                    <div class="value-change positive">+12.5%</div>
-                </td>
-                <td><span class="investment-style aggressive">Aggressive Growth</span></td>
-                <td>
-                    <div class="growth-chart">
-                        <div class="chart-bar" style="width: 88%"></div>
-                        <span class="chart-value">88%</span>
-                    </div>
-                </td>
-                <td><span class="risk-level high">High</span></td>
-                <td>
-                    <div class="client-tier vip">
-                        <span class="tier-icon">👑</span>
-                        VIP
-                    </div>
-                </td>
-            </tr>
-            <tr class="client-premium">
-                <td>
-                    <div class="client-info">
-                        <div class="client-avatar">
-                            <div class="avatar-silver">SG</div>
-                            <div class="online-indicator"></div>
-                        </div>
-                        <div class="client-details">
-                            <div class="client-name">Sarah Goldberg</div>
-                            <div class="client-company">Global Innovations Inc.</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="portfolio-value">
-                    <div class="value-amount">$1,825,000</div>
-                    <div class="value-change positive">+8.3%</div>
-                </td>
-                <td><span class="investment-style balanced">Balanced</span></td>
-                <td>
-                    <div class="growth-chart">
-                        <div class="chart-bar" style="width: 76%"></div>
-                        <span class="chart-value">76%</span>
-                    </div>
-                </td>
-                <td><span class="risk-level medium">Medium</span></td>
-                <td>
-                    <div class="client-tier premium">
-                        <span class="tier-icon">💎</span>
-                        Premium
-                    </div>
-                </td>
-            </tr>
-            <tr class="client-standard">
-                <td>
-                    <div class="client-info">
-                        <div class="client-avatar">
-                            <div class="avatar-bronze">MC</div>
-                            <div class="online-indicator offline"></div>
-                        </div>
-                        <div class="client-details">
-                            <div class="client-name">Michael Chen</div>
-                            <div class="client-company">Tech Solutions Ltd.</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="portfolio-value">
-                    <div class="value-amount">$950,000</div>
-                    <div class="value-change negative">-2.1%</div>
-                </td>
-                <td><span class="investment-style conservative">Conservative</span></td>
-                <td>
-                    <div class="growth-chart">
-                        <div class="chart-bar" style="width: 45%"></div>
-                        <span class="chart-value">45%</span>
-                    </div>
-                </td>
-                <td><span class="risk-level low">Low</span></td>
-                <td>
-                    <div class="client-tier standard">
-                        <span class="tier-icon">⭐</span>
-                        Standard
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="luxury-footer">
-        <div class="footer-actions">
-            <button class="btn-luxury primary">Add New Client</button>
-            <button class="btn-luxury secondary">Generate Report</button>
-            <button class="btn-luxury outline">Export Data</button>
-        </div>
-    </div>
-</div>`,
-    css: `.luxury-dashboard-container {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 
-        0 25px 50px -12px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 215, 0, 0.2);
-    position: relative;
-}
-
-.luxury-dashboard-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 215, 0, 0.5), 
-        rgba(255, 215, 0, 0.8),
-        rgba(255, 215, 0, 0.5),
-        transparent
-    );
-}
-
-.luxury-header {
-    padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-content h3 {
-    margin: 0 0 0.5rem 0;
-    color: #fbbf24;
-    font-size: 2rem;
-    font-weight: 700;
-    text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
-}
-
-.header-subtitle {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1rem;
-    margin: 0;
-}
-
-.header-stats {
-    display: flex;
-    gap: 2rem;
-}
-
-.stat {
-    text-align: center;
-}
-
-.stat-value {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #fbbf24;
-    margin-bottom: 0.25rem;
-}
-
-.stat-label {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.luxury-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(10px);
-}
-
-.luxury-table th {
-    padding: 1.75rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    color: #fbbf24;
-    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.luxury-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.client-vip { 
-    background: linear-gradient(90deg, rgba(251, 191, 36, 0.1), transparent);
-    border-left: 4px solid #fbbf24;
-}
-
-.client-premium { 
-    background: linear-gradient(90deg, rgba(156, 163, 175, 0.1), transparent);
-    border-left: 4px solid #9ca3af;
-}
-
-.client-standard { 
-    background: linear-gradient(90deg, rgba(120, 53, 15, 0.1), transparent);
-    border-left: 4px solid #78350f;
-}
-
-.luxury-table tr:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateX(10px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.client-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.client-avatar {
-    position: relative;
-}
-
-.avatar-gold, .avatar-silver, .avatar-bronze {
-    width: 60px;
-    height: 60px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: white;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-.avatar-gold {
-    background: linear-gradient(135deg, #fbbf24, #d97706);
-    border: 2px solid #fbbf24;
-}
-
-.avatar-silver {
-    background: linear-gradient(135deg, #9ca3af, #6b7280);
-    border: 2px solid #9ca3af;
-}
-
-.avatar-bronze {
-    background: linear-gradient(135deg, #b45309, #78350f);
-    border: 2px solid #b45309;
-}
-
-.online-indicator {
-    position: absolute;
-    bottom: 2px;
-    right: 2px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #10b981;
-    border: 2px solid #1e293b;
-}
-
-.online-indicator.offline {
-    background: #6b7280;
-}
-
-.client-details .client-name {
-    font-weight: 700;
-    color: white;
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-}
-
-.client-details .client-company {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.portfolio-value .value-amount {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0.25rem;
-}
-
-.value-change {
-    font-size: 0.875rem;
-    font-weight: 600;
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-}
-
-.value-change.positive {
-    background: rgba(34, 197, 94, 0.2);
-    color: #10b981;
-}
-
-.value-change.negative {
-    background: rgba(239, 68, 68, 0.2);
-    color: #ef4444;
-}
-
-.investment-style {
-    padding: 0.75rem 1.25rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.investment-style.aggressive {
-    background: rgba(239, 68, 68, 0.2);
-    color: #ef4444;
-    border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-.investment-style.balanced {
-    background: rgba(245, 158, 11, 0.2);
-    color: #f59e0b;
-    border: 1px solid rgba(245, 158, 11, 0.3);
-}
-
-.investment-style.conservative {
-    background: rgba(34, 197, 94, 0.2);
-    color: #10b981;
-    border: 1px solid rgba(34, 197, 94, 0.3);
-}
-
-.growth-chart {
-    width: 100%;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    position: relative;
-    margin: 0.5rem 0;
-}
-
-.chart-bar {
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #fbbf24, #f59e0b);
-    transition: width 1s ease-in-out;
-}
-
-.chart-value {
-    position: absolute;
-    top: -20px;
-    right: 0;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #fbbf24;
-}
-
-.risk-level {
-    padding: 0.75rem 1.25rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.risk-level.high {
-    background: rgba(239, 68, 68, 0.2);
-    color: #ef4444;
-    border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-.risk-level.medium {
-    background: rgba(245, 158, 11, 0.2);
-    color: #f59e0b;
-    border: 1px solid rgba(245, 158, 11, 0.3);
-}
-
-.risk-level.low {
-    background: rgba(34, 197, 94, 0.2);
-    color: #10b981;
-    border: 1px solid rgba(34, 197, 94, 0.3);
-}
-
-.client-tier {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.client-tier.vip {
-    background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(251, 191, 36, 0.1));
-    color: #fbbf24;
-    border: 1px solid rgba(251, 191, 36, 0.3);
-}
-
-.client-tier.premium {
-    background: linear-gradient(135deg, rgba(156, 163, 175, 0.2), rgba(156, 163, 175, 0.1));
-    color: #9ca3af;
-    border: 1px solid rgba(156, 163, 175, 0.3);
-}
-
-.client-tier.standard {
-    background: linear-gradient(135deg, rgba(120, 53, 15, 0.2), rgba(120, 53, 15, 0.1));
-    color: #b45309;
-    border: 1px solid rgba(120, 53, 15, 0.3);
-}
-
-.luxury-footer {
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 215, 0, 0.2);
-}
-
-.footer-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.btn-luxury {
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.btn-luxury.primary {
-    background: linear-gradient(135deg, #fbbf24, #d97706);
-    color: #1e293b;
-    box-shadow: 0 5px 15px rgba(251, 191, 36, 0.4);
-}
-
-.btn-luxury.secondary {
-    background: linear-gradient(135deg, #475569, #334155);
-    color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.btn-luxury.outline {
-    background: transparent;
-    color: #fbbf24;
-    border: 2px solid #fbbf24;
-}
-
-.btn-luxury:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}`,
-    js: `// Luxury dashboard interactions
-document.querySelectorAll('.btn-luxury').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const btnType = this.classList[1];
-        const actions = {
-            primary: 'Adding new VIP client...',
-            secondary: 'Generating comprehensive report...',
-            outline: 'Exporting client data...'
-        };
-        alert(actions[btnType]);
-    });
-});
-
-// Animate growth charts
-document.addEventListener('DOMContentLoaded', function() {
-    const bars = document.querySelectorAll('.chart-bar');
-    bars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 500);
-    });
-});`
-},
-
-// ====================================================================
-// PREMIUM TEMPLATE 28: EXECUTIVE BOARD
-// ====================================================================
-premium28: {
-    html: `<div class="executive-board-container">
-    <div class="executive-header">
-        <div class="header-main">
-            <h3>🏢 Executive Leadership Board</h3>
-            <p class="header-desc">C-Suite Performance & Governance</p>
-        </div>
-        <div class="header-badges">
-            <div class="badge performance">
-                <span class="badge-value">96.2%</span>
-                <span class="badge-label">Avg. Performance</span>
-            </div>
-            <div class="badge satisfaction">
-                <span class="badge-value">4.8/5</span>
-                <span class="badge-label">Board Satisfaction</span>
-            </div>
-        </div>
-    </div>
-    <table class="executive-table">
-        <thead>
-            <tr>
-                <th>Executive</th>
-                <th>Position</th>
-                <th>Department</th>
-                <th>Tenure</th>
-                <th>Performance</th>
-                <th>Rating</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="executive-ceo">
-                <td>
-                    <div class="executive-info">
-                        <div class="executive-avatar">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='20' fill='%23fbbf24'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%23fbbf24'/%3E%3C/svg%3E" alt="CEO" class="avatar-img">
-                            <div class="rank-badge">1</div>
-                        </div>
-                        <div class="executive-details">
-                            <div class="executive-name">Robert Kingsley</div>
-                            <div class="executive-title">Chief Executive Officer</div>
-                        </div>
-                    </div>
-                </td>
-                <td><span class="position-tag ceo">CEO</span></td>
-                <td>Executive Leadership</td>
-                <td>
-                    <div class="tenure-info">
-                        <div class="tenure-years">5.2 Years</div>
-                        <div class="tenure-date">Since 2019</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="performance-metric">
-                        <div class="metric-value">98.5%</div>
-                        <div class="metric-bar">
-                            <div class="metric-fill" style="width: 98.5%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="star-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="executive-actions">
-                        <button class="action-btn review">📊 Review</button>
-                        <button class="action-btn message">✉️ Message</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="executive-cfo">
-                <td>
-                    <div class="executive-info">
-                        <div class="executive-avatar">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='20' fill='%239ca3af'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%239ca3af'/%3E%3C/svg%3E" alt="CFO" class="avatar-img">
-                            <div class="rank-badge">2</div>
-                        </div>
-                        <div class="executive-details">
-                            <div class="executive-name">Jennifer Martinez</div>
-                            <div class="executive-title">Chief Financial Officer</div>
-                        </div>
-                    </div>
-                </td>
-                <td><span class="position-tag cfo">CFO</span></td>
-                <td>Finance & Accounting</td>
-                <td>
-                    <div class="tenure-info">
-                        <div class="tenure-years">3.8 Years</div>
-                        <div class="tenure-date">Since 2020</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="performance-metric">
-                        <div class="metric-value">95.2%</div>
-                        <div class="metric-bar">
-                            <div class="metric-fill" style="width: 95.2%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="star-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star half">★</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="executive-actions">
-                        <button class="action-btn review">📊 Review</button>
-                        <button class="action-btn message">✉️ Message</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="executive-cto">
-                <td>
-                    <div class="executive-info">
-                        <div class="executive-avatar">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='20' fill='%23b45309'/%3E%3Ccircle cx='50' cy='100' r='40' fill='%23b45309'/%3E%3C/svg%3E" alt="CTO" class="avatar-img">
-                            <div class="rank-badge">3</div>
-                        </div>
-                        <div class="executive-details">
-                            <div class="executive-name">David Chen</div>
-                            <div class="executive-title">Chief Technology Officer</div>
-                        </div>
-                    </div>
-                </td>
-                <td><span class="position-tag cto">CTO</span></td>
-                <td>Technology & Innovation</td>
-                <td>
-                    <div class="tenure-info">
-                        <div class="tenure-years">2.5 Years</div>
-                        <div class="tenure-date">Since 2021</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="performance-metric">
-                        <div class="metric-value">92.8%</div>
-                        <div class="metric-bar">
-                            <div class="metric-fill" style="width: 92.8%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="star-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star">★</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="executive-actions">
-                        <button class="action-btn review">📊 Review</button>
-                        <button class="action-btn message">✉️ Message</button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.executive-board-container {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 100%);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.executive-header {
-    padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-main h3 {
-    margin: 0 0 0.5rem 0;
-    color: #fbbf24;
-    font-size: 1.75rem;
-    font-weight: 700;
-}
-
-.header-desc {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1rem;
-    margin: 0;
-}
-
-.header-badges {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.badge {
-    text-align: center;
-    padding: 1rem 1.5rem;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.badge-value {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #fbbf24;
-    margin-bottom: 0.25rem;
-}
-
-.badge-label {
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.7);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.executive-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.executive-table th {
-    padding: 1.5rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    color: #fbbf24;
-    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.executive-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.executive-ceo { 
-    background: linear-gradient(90deg, rgba(251, 191, 36, 0.15), transparent);
-    border-left: 4px solid #fbbf24;
-}
-
-.executive-cfo { 
-    background: linear-gradient(90deg, rgba(156, 163, 175, 0.1), transparent);
-    border-left: 4px solid #9ca3af;
-}
-
-.executive-cto { 
-    background: linear-gradient(90deg, rgba(120, 53, 15, 0.1), transparent);
-    border-left: 4px solid #78350f;
-}
-
-.executive-table tr:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: scale(1.01);
-    transition: all 0.3s ease;
-}
-
-.executive-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.executive-avatar {
-    position: relative;
-}
-
-.avatar-img {
-    width: 70px;
-    height: 70px;
-    border-radius: 20px;
-    border: 3px solid;
-}
-
-.executive-ceo .avatar-img { border-color: #fbbf24; }
-.executive-cfo .avatar-img { border-color: #9ca3af; }
-.executive-cto .avatar-img { border-color: #b45309; }
-
-.rank-badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    width: 25px;
-    height: 25px;
-    background: #fbbf24;
-    color: #1e293b;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 800;
-    border: 2px solid #1e293b;
-}
-
-.executive-details .executive-name {
-    font-weight: 700;
-    color: white;
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-}
-
-.executive-details .executive-title {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.position-tag {
-    padding: 0.75rem 1.25rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.position-tag.ceo {
-    background: rgba(251, 191, 36, 0.2);
-    color: #fbbf24;
-    border: 1px solid rgba(251, 191, 36, 0.3);
-}
-
-.position-tag.cfo {
-    background: rgba(156, 163, 175, 0.2);
-    color: #9ca3af;
-    border: 1px solid rgba(156, 163, 175, 0.3);
-}
-
-.position-tag.cto {
-    background: rgba(180, 83, 9, 0.2);
-    color: #b45309;
-    border: 1px solid rgba(180, 83, 9, 0.3);
-}
-
-.tenure-info .tenure-years {
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0.25rem;
-}
-
-.tenure-info .tenure-date {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.performance-metric .metric-value {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #fbbf24;
-    margin-bottom: 0.5rem;
-}
-
-.metric-bar {
-    width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.metric-fill {
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #fbbf24, #f59e0b);
-    transition: width 1s ease-in-out;
-}
-
-.star-rating {
-    display: flex;
-    gap: 0.25rem;
-}
-
-.star {
-    font-size: 1.2rem;
-    color: #6b7280;
-}
-
-.star.filled {
-    color: #fbbf24;
-    text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
-}
-
-.star.half {
-    background: linear-gradient(90deg, #fbbf24 50%, #6b7280 50%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.executive-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.action-btn {
-    padding: 0.75rem 1rem;
-    border: none;
-    border-radius: 10px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.action-btn:hover {
-    background: rgba(251, 191, 36, 0.2);
-    color: #fbbf24;
-    transform: translateY(-2px);
-}`,
-    js: `// Executive board interactions
-document.querySelectorAll('.action-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const action = this.textContent;
-        const executiveName = this.closest('tr').querySelector('.executive-name').textContent;
-        
-        if (action.includes('Review')) {
-            alert(\`Opening performance review for \${executiveName}\`);
-        } else {
-            alert(\`Opening message composer for \${executiveName}\`);
-        }
-    });
-});
-
-// Animate performance metrics
-document.addEventListener('DOMContentLoaded', function() {
-    const metrics = document.querySelectorAll('.metric-fill');
-    metrics.forEach(metric => {
-        const width = metric.style.width;
-        metric.style.width = '0';
-        setTimeout(() => {
-            metric.style.width = width;
-        }, 600);
-    });
-});`
-},
-
-// ====================================================================
-// PREMIUM TEMPLATE 29: REAL ESTATE PORTFOLIO
-// ====================================================================
-premium29: {
-    html: `<div class="real-estate-container">
-    <div class="real-estate-header">
-        <div class="header-content">
-            <h3>🏡 Luxury Real Estate Portfolio</h3>
-            <p class="header-subtitle">Premium Properties & Investment Assets</p>
-        </div>
-        <div class="portfolio-summary">
-            <div class="summary-item">
-                <div class="summary-value">$48.7M</div>
-                <div class="summary-label">Total Portfolio Value</div>
-            </div>
-            <div class="summary-item">
-                <div class="summary-value">12.4%</div>
-                <div class="summary-label">Average ROI</div>
-            </div>
-            <div class="summary-item">
-                <div class="summary-value">8</div>
-                <div class="summary-label">Properties</div>
-            </div>
-        </div>
-    </div>
-    <table class="real-estate-table">
-        <thead>
-            <tr>
-                <th>Property</th>
-                <th>Location</th>
-                <th>Type</th>
-                <th>Purchase Price</th>
-                <th>Current Value</th>
-                <th>ROI</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="property-penthouse">
-                <td>
-                    <div class="property-info">
-                        <div class="property-image">
-                            <div class="image-placeholder">🏙️</div>
-                            <div class="property-badge luxury">Luxury</div>
-                        </div>
-                        <div class="property-details">
-                            <div class="property-name">Skyline Penthouse A</div>
-                            <div class="property-address">432 Park Avenue, NYC</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="location-info">
-                        <div class="location-name">Manhattan</div>
-                        <div class="location-region">New York, NY</div>
-                    </div>
-                </td>
-                <td><span class="property-type residential">Residential</span></td>
-                <td>
-                    <div class="price-info">
-                        <div class="price-amount">$4,200,000</div>
-                        <div class="price-date">2020</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="value-info">
-                        <div class="value-amount">$5,200,000</div>
-                        <div class="value-appreciation positive">+$1,000,000</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="roi-metric">
-                        <div class="roi-value positive">+23.8%</div>
-                        <div class="roi-chart">
-                            <div class="roi-bar" style="width: 85%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="property-status rented">
-                        <span class="status-dot"></span>
-                        Rented
-                    </div>
-                </td>
-            </tr>
-            <tr class="property-villa">
-                <td>
-                    <div class="property-info">
-                        <div class="property-image">
-                            <div class="image-placeholder">🏡</div>
-                            <div class="property-badge premium">Premium</div>
-                        </div>
-                        <div class="property-details">
-                            <div class="property-name">Beverly Hills Villa</div>
-                            <div class="property-address">123 Sunset Blvd, LA</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="location-info">
-                        <div class="location-name">Beverly Hills</div>
-                        <div class="location-region">Los Angeles, CA</div>
-                    </div>
-                </td>
-                <td><span class="property-type villa">Villa</span></td>
-                <td>
-                    <div class="price-info">
-                        <div class="price-amount">$7,500,000</div>
-                        <div class="price-date">2019</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="value-info">
-                        <div class="value-amount">$8,700,000</div>
-                        <div class="value-appreciation positive">+$1,200,000</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="roi-metric">
-                        <div class="roi-value positive">+16.0%</div>
-                        <div class="roi-chart">
-                            <div class="roi-bar" style="width: 70%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="property-status occupied">
-                        <span class="status-dot"></span>
-                        Owner Occupied
-                    </div>
-                </td>
-            </tr>
-            <tr class="property-commercial">
-                <td>
-                    <div class="property-info">
-                        <div class="property-image">
-                            <div class="image-placeholder">🏢</div>
-                            <div class="property-badge commercial">Commercial</div>
-                        </div>
-                        <div class="property-details">
-                            <div class="property-name">Tech Office Tower</div>
-                            <div class="property-address">1 Market Street, SF</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="location-info">
-                        <div class="location-name">Financial District</div>
-                        <div class="location-region">San Francisco, CA</div>
-                    </div>
-                </td>
-                <td><span class="property-type commercial">Commercial</span></td>
-                <td>
-                    <div class="price-info">
-                        <div class="price-amount">$12,000,000</div>
-                        <div class="price-date">2018</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="value-info">
-                        <div class="value-amount">$15,800,000</div>
-                        <div class="value-appreciation positive">+$3,800,000</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="roi-metric">
-                        <div class="roi-value positive">+31.7%</div>
-                        <div class="roi-chart">
-                            <div class="roi-bar" style="width: 95%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="property-status leased">
-                        <span class="status-dot"></span>
-                        Leased
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.real-estate-container {
-    background: linear-gradient(135deg, #1c1917 0%, #292524 50%, #44403c 100%);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 
-        0 25px 50px -12px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(120, 113, 108, 0.3);
-}
-
-.real-estate-header {
-    padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(120, 113, 108, 0.3);
-}
-
-.header-content h3 {
-    margin: 0 0 0.5rem 0;
-    color: #f59e0b;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.header-subtitle {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1rem;
-    margin: 0 0 2rem 0;
-}
-
-.portfolio-summary {
-    display: flex;
-    gap: 3rem;
-}
-
-.summary-item {
-    text-align: center;
-}
-
-.summary-value {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #f59e0b;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
-}
-
-.summary-label {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.real-estate-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.real-estate-table th {
-    padding: 1.75rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    color: #f59e0b;
-    border-bottom: 2px solid rgba(245, 158, 11, 0.3);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.real-estate-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.property-penthouse { 
-    background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), transparent);
-    border-left: 4px solid #f59e0b;
-}
-
-.property-villa { 
-    background: linear-gradient(90deg, rgba(180, 83, 9, 0.1), transparent);
-    border-left: 4px solid #b45309;
-}
-
-.property-commercial { 
-    background: linear-gradient(90deg, rgba(120, 53, 15, 0.1), transparent);
-    border-left: 4px solid #78350f;
-}
-
-.real-estate-table tr:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateX(5px);
-    transition: all 0.3s ease;
-}
-
-.property-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.property-image {
-    position: relative;
-}
-
-.image-placeholder {
-    width: 80px;
-    height: 80px;
-    border-radius: 15px;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: white;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-.property-badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.7rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: white;
-}
-
-.property-badge.luxury { background: #f59e0b; }
-.property-badge.premium { background: #b45309; }
-.property-badge.commercial { background: #78350f; }
-
-.property-details .property-name {
-    font-weight: 700;
-    color: white;
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-}
-
-.property-details .property-address {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.location-info .location-name {
-    font-weight: 600;
-    color: white;
-    margin-bottom: 0.25rem;
-}
-
-.location-info .location-region {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.property-type {
-    padding: 0.75rem 1.25rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.property-type.residential {
-    background: rgba(245, 158, 11, 0.2);
-    color: #f59e0b;
-    border: 1px solid rgba(245, 158, 11, 0.3);
-}
-
-.property-type.villa {
-    background: rgba(180, 83, 9, 0.2);
-    color: #b45309;
-    border: 1px solid rgba(180, 83, 9, 0.3);
-}
-
-.property-type.commercial {
-    background: rgba(120, 53, 15, 0.2);
-    color: #78350f;
-    border: 1px solid rgba(120, 53, 15, 0.3);
-}
-
-.price-info .price-amount,
-.value-info .value-amount {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0.25rem;
-}
-
-.price-info .price-date,
-.value-info .value-appreciation {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.value-appreciation.positive {
-    color: #10b981;
-}
-
-.roi-metric .roi-value {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.roi-value.positive {
-    color: #10b981;
-}
-
-.roi-chart {
-    width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.roi-bar {
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #10b981, #059669);
-    transition: width 1s ease-in-out;
-}
-
-.property-status {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.property-status.rented .status-dot { background: #10b981; }
-.property-status.occupied .status-dot { background: #f59e0b; }
-.property-status.leased .status-dot { background: #3b82f6; }
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}`,
-    js: `// Real estate portfolio interactions
-document.addEventListener('DOMContentLoaded', function() {
-    // Animate ROI bars
-    const bars = document.querySelectorAll('.roi-bar');
-    bars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 800);
-    });
-});`
-},
-
-// ====================================================================
-// PREMIUM TEMPLATE 30: INVESTMENT PORTFOLIO
-// ====================================================================
-premium30: {
-    html: `<div class="investment-portfolio-container">
-    <div class="portfolio-header">
-        <div class="header-main">
-            <h3>📈 Strategic Investment Portfolio</h3>
-            <p class="header-subtitle">Multi-Asset Class Allocation & Performance</p>
-        </div>
-        <div class="portfolio-metrics">
-            <div class="metric">
-                <div class="metric-value">+18.4%</div>
-                <div class="metric-label">YTD Return</div>
-            </div>
-            <div class="metric">
-                <div class="metric-value">$2.8M</div>
-                <div class="metric-label">Total Value</div>
-            </div>
-            <div class="metric">
-                <div class="metric-value">7.2%</div>
-                <div class="metric-label">Dividend Yield</div>
-            </div>
-        </div>
-    </div>
-    <table class="investment-table">
-        <thead>
-            <tr>
-                <th>Asset Class</th>
-                <th>Allocation</th>
-                <th>Holdings</th>
-                <th>YTD Return</th>
-                <th>Risk Level</th>
-                <th>Performance</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="asset-equity">
-                <td>
-                    <div class="asset-info">
-                        <div class="asset-icon">📊</div>
-                        <div class="asset-details">
-                            <div class="asset-name">US Equities</div>
-                            <div class="asset-category">Growth Stocks</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="allocation-info">
-                        <div class="allocation-percent">35%</div>
-                        <div class="allocation-bar">
-                            <div class="allocation-fill" style="width: 35%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="holdings-list">
-                        <div class="holding">AAPL, MSFT, GOOGL</div>
-                        <div class="holding-count">12 Stocks</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="return-metric positive">
-                        <span class="return-value">+24.5%</span>
-                        <span class="return-arrow">↗</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="risk-indicator high">
-                        <div class="risk-dots">
-                            <span class="dot active"></span>
-                            <span class="dot active"></span>
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                        <span class="risk-label">High</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="performance-chart">
-                        <div class="chart-line" style="height: 80%"></div>
-                        <div class="chart-points">
-                            <span class="point" style="left: 10%"></span>
-                            <span class="point" style="left: 30%"></span>
-                            <span class="point" style="left: 50%"></span>
-                            <span class="point" style="left: 70%"></span>
-                            <span class="point" style="left: 90%"></span>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="investment-actions">
-                        <button class="invest-btn rebalance">Rebalance</button>
-                        <button class="invest-btn analyze">Analyze</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="asset-realestate">
-                <td>
-                    <div class="asset-info">
-                        <div class="asset-icon">🏠</div>
-                        <div class="asset-details">
-                            <div class="asset-name">Real Estate</div>
-                            <div class="asset-category">REITs & Properties</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="allocation-info">
-                        <div class="allocation-percent">25%</div>
-                        <div class="allocation-bar">
-                            <div class="allocation-fill" style="width: 25%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="holdings-list">
-                        <div class="holding">VNQ, PLD, AMT</div>
-                        <div class="holding-count">8 REITs</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="return-metric positive">
-                        <span class="return-value">+12.3%</span>
-                        <span class="return-arrow">↗</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="risk-indicator medium">
-                        <div class="risk-dots">
-                            <span class="dot active"></span>
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                        <span class="risk-label">Medium</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="performance-chart">
-                        <div class="chart-line" style="height: 60%"></div>
-                        <div class="chart-points">
-                            <span class="point" style="left: 10%"></span>
-                            <span class="point" style="left: 30%"></span>
-                            <span class="point" style="left: 50%"></span>
-                            <span class="point" style="left: 70%"></span>
-                            <span class="point" style="left: 90%"></span>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="investment-actions">
-                        <button class="invest-btn rebalance">Rebalance</button>
-                        <button class="invest-btn analyze">Analyze</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="asset-bonds">
-                <td>
-                    <div class="asset-info">
-                        <div class="asset-icon">🏛️</div>
-                        <div class="asset-details">
-                            <div class="asset-name">Fixed Income</div>
-                            <div class="asset-category">Bonds & Treasuries</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="allocation-info">
-                        <div class="allocation-percent">20%</div>
-                        <div class="allocation-bar">
-                            <div class="allocation-fill" style="width: 20%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="holdings-list">
-                        <div class="holding">BND, AGG, TLT</div>
-                        <div class="holding-count">6 Bond ETFs</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="return-metric negative">
-                        <span class="return-value">-2.1%</span>
-                        <span class="return-arrow">↘</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="risk-indicator low">
-                        <div class="risk-dots">
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-                        <span class="risk-label">Low</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="performance-chart">
-                        <div class="chart-line" style="height: 30%"></div>
-                        <div class="chart-points">
-                            <span class="point" style="left: 10%"></span>
-                            <span class="point" style="left: 30%"></span>
-                            <span class="point" style="left: 50%"></span>
-                            <span class="point" style="left: 70%"></span>
-                            <span class="point" style="left: 90%"></span>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="investment-actions">
-                        <button class="invest-btn rebalance">Rebalance</button>
-                        <button class="invest-btn analyze">Analyze</button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.investment-portfolio-container {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 
-        0 25px 50px -12px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.portfolio-header {
-    padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(59, 130, 246, 0.3);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-main h3 {
-    margin: 0 0 0.5rem 0;
-    color: #3b82f6;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.header-subtitle {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1rem;
-    margin: 0;
-}
-
-.portfolio-metrics {
-    display: flex;
-    gap: 2rem;
-}
-
-.metric {
-    text-align: center;
-}
-
-.metric-value {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #3b82f6;
-    margin-bottom: 0.5rem;
-}
-
-.metric-label {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.investment-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.investment-table th {
-    padding: 1.75rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    color: #3b82f6;
-    border-bottom: 2px solid rgba(59, 130, 246, 0.3);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.investment-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.asset-equity { 
-    background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), transparent);
-    border-left: 4px solid #3b82f6;
-}
-
-.asset-realestate { 
-    background: linear-gradient(90deg, rgba(34, 197, 94, 0.1), transparent);
-    border-left: 4px solid #22c55e;
-}
-
-.asset-bonds { 
-    background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), transparent);
-    border-left: 4px solid #f59e0b;
-}
-
-.investment-table tr:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: scale(1.01);
-    transition: all 0.3s ease;
-}
-
-.asset-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.asset-icon {
-    font-size: 2rem;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    border-radius: 15px;
-    color: white;
-}
-
-.asset-details .asset-name {
-    font-weight: 700;
-    color: white;
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-}
-
-.asset-details .asset-category {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.allocation-info .allocation-percent {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0.5rem;
-}
-
-.allocation-bar {
-    width: 100%;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.allocation-fill {
-    height: 100%;
-    border-radius: 10px;
-    transition: width 1s ease-in-out;
-}
-
-.asset-equity .allocation-fill { background: linear-gradient(90deg, #3b82f6, #1d4ed8); }
-.asset-realestate .allocation-fill { background: linear-gradient(90deg, #22c55e, #16a34a); }
-.asset-bonds .allocation-fill { background: linear-gradient(90deg, #f59e0b, #d97706); }
-
-.holdings-list .holding {
-    font-weight: 600;
-    color: white;
-    margin-bottom: 0.25rem;
-}
-
-.holdings-list .holding-count {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.return-metric {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-
-.return-metric.positive {
-    color: #10b981;
-}
-
-.return-metric.negative {
-    color: #ef4444;
-}
-
-.return-arrow {
-    font-size: 1.2rem;
-}
-
-.risk-indicator {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.risk-dots {
-    display: flex;
-    gap: 0.25rem;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.dot.active {
-    background: currentColor;
-}
-
-.risk-indicator.high { color: #ef4444; }
-.risk-indicator.medium { color: #f59e0b; }
-.risk-indicator.low { color: #10b981; }
-
-.risk-label {
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.performance-chart {
-    width: 100px;
-    height: 40px;
-    position: relative;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.chart-line {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
-    border-radius: 5px 5px 0 0;
-    transition: height 1s ease-in-out;
-}
-
-.asset-realestate .chart-line { background: linear-gradient(90deg, #22c55e, #16a34a); }
-.asset-bonds .chart-line { background: linear-gradient(90deg, #f59e0b, #d97706); }
-
-.chart-points {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.point {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: white;
-    transform: translate(-50%, -50%);
-}
-
-.investment-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.invest-btn {
-    padding: 0.75rem 1rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.invest-btn.rebalance {
-    background: rgba(59, 130, 246, 0.2);
-    color: #3b82f6;
-    border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.invest-btn.analyze {
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.invest-btn:hover {
-    transform: translateY(-2px);
-    background: rgba(59, 130, 246, 0.3);
-}`,
-    js: `// Investment portfolio interactions
-document.querySelectorAll('.invest-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const action = this.textContent;
-        const assetName = this.closest('tr').querySelector('.asset-name').textContent;
-        
-        if (action === 'Rebalance') {
-            alert(\`Rebalancing \${assetName} allocation...\`);
-        } else {
-            alert(\`Opening detailed analysis for \${assetName}...\`);
-        }
-    });
-});
-
-// Animate allocation bars and charts
-document.addEventListener('DOMContentLoaded', function() {
-    // Allocation bars
-    const allocationBars = document.querySelectorAll('.allocation-fill');
-    allocationBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 500);
-    });
-    
-    // Performance charts
-    const chartLines = document.querySelectorAll('.chart-line');
-    chartLines.forEach(line => {
-        const height = line.style.height;
-        line.style.height = '0';
-        setTimeout(() => {
-            line.style.height = height;
-        }, 800);
-    });
-});`
-},
-
-// ====================================================================
-// PREMIUM TEMPLATE 31: VIP MEMBERS
-// ====================================================================
-premium31: {
-    html: `<div class="vip-members-container">
-    <div class="vip-header">
-        <div class="header-content">
-            <h3>👑 Exclusive VIP Members</h3>
-            <p class="header-subtitle">Premium Membership Tiers & Benefits</p>
-        </div>
-        <div class="vip-stats">
-            <div class="vip-stat">
-                <div class="stat-icon">💎</div>
-                <div class="stat-info">
-                    <div class="stat-value">42</div>
-                    <div class="stat-label">Diamond Members</div>
-                </div>
-            </div>
-            <div class="vip-stat">
-                <div class="stat-icon">⭐</div>
-                <div class="stat-info">
-                    <div class="stat-value">128</div>
-                    <div class="stat-label">Platinum Members</div>
-                </div>
-            </div>
-            <div class="vip-stat">
-                <div class="stat-icon">🔹</div>
-                <div class="stat-info">
-                    <div class="stat-value">256</div>
-                    <div class="stat-label">Gold Members</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <table class="vip-table">
-        <thead>
-            <tr>
-                <th>Member</th>
-                <th>Membership Tier</th>
-                <th>Join Date</th>
-                <th>Lifetime Value</th>
-                <th>Benefits</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="member-diamond">
-                <td>
-                    <div class="member-info">
-                        <div class="member-avatar">
-                            <div class="avatar-diamond">JD</div>
-                            <div class="vip-badge">👑</div>
-                        </div>
-                        <div class="member-details">
-                            <div class="member-name">James Donovan</div>
-                            <div class="member-email">james@donovan.com</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="tier-info diamond">
-                        <span class="tier-icon">💎</span>
-                        <span class="tier-name">Diamond</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="join-date">
-                        <div class="date">Jan 15, 2020</div>
-                        <div class="duration">4.2 years</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="lifetime-value">
-                        <div class="value-amount">$250,000</div>
-                        <div class="value-trend positive">+15% YoY</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="benefits-list">
-                        <span class="benefit">24/7 Support</span>
-                        <span class="benefit">Personal Manager</span>
-                        <span class="benefit">Exclusive Events</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="member-status active">
-                        <div class="status-indicator"></div>
-                        Active
-                    </div>
-                </td>
-                <td>
-                    <div class="member-actions">
-                        <button class="vip-btn contact">Contact</button>
-                        <button class="vip-btn upgrade">Upgrade</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="member-platinum">
-                <td>
-                    <div class="member-info">
-                        <div class="member-avatar">
-                            <div class="avatar-platinum">SM</div>
-                            <div class="vip-badge">⭐</div>
-                        </div>
-                        <div class="member-details">
-                            <div class="member-name">Sarah Mitchell</div>
-                            <div class="member-email">sarah@mitchell.com</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="tier-info platinum">
-                        <span class="tier-icon">⭐</span>
-                        <span class="tier-name">Platinum</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="join-date">
-                        <div class="date">Mar 22, 2021</div>
-                        <div class="duration">2.8 years</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="lifetime-value">
-                        <div class="value-amount">$150,000</div>
-                        <div class="value-trend positive">+22% YoY</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="benefits-list">
-                        <span class="benefit">Priority Support</span>
-                        <span class="benefit">Event Access</span>
-                        <span class="benefit">Early Access</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="member-status active">
-                        <div class="status-indicator"></div>
-                        Active
-                    </div>
-                </td>
-                <td>
-                    <div class="member-actions">
-                        <button class="vip-btn contact">Contact</button>
-                        <button class="vip-btn upgrade">Upgrade</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="member-gold">
-                <td>
-                    <div class="member-info">
-                        <div class="member-avatar">
-                            <div class="avatar-gold">RC</div>
-                            <div class="vip-badge">🔹</div>
-                        </div>
-                        <div class="member-details">
-                            <div class="member-name">Robert Chen</div>
-                            <div class="member-email">robert@chen.com</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="tier-info gold">
-                        <span class="tier-icon">🔹</span>
-                        <span class="tier-name">Gold</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="join-date">
-                        <div class="date">Aug 10, 2022</div>
-                        <div class="duration">1.4 years</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="lifetime-value">
-                        <div class="value-amount">$75,000</div>
-                        <div class="value-trend positive">+18% YoY</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="benefits-list">
-                        <span class="benefit">Standard Support</span>
-                        <span class="benefit">Basic Events</span>
-                        <span class="benefit">Member Discounts</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="member-status pending">
-                        <div class="status-indicator"></div>
-                        Renewal Due
-                    </div>
-                </td>
-                <td>
-                    <div class="member-actions">
-                        <button class="vip-btn contact">Contact</button>
-                        <button class="vip-btn upgrade">Upgrade</button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.vip-members-container {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 100%);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 
-        0 25px 50px -12px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-}
-
-.vip-header {
-    padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-}
-
-.header-content h3 {
-    margin: 0 0 0.5rem 0;
-    color: #fbbf24;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.header-subtitle {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1rem;
-    margin: 0 0 2rem 0;
-}
-
-.vip-stats {
-    display: flex;
-    gap: 2rem;
-}
-
-.vip-stat {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.stat-icon {
-    font-size: 2rem;
-}
-
-.stat-info .stat-value {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #fbbf24;
-    margin-bottom: 0.25rem;
-}
-
-.stat-info .stat-label {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.7);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.vip-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.vip-table th {
-    padding: 1.75rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    color: #fbbf24;
-    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.vip-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.member-diamond { 
-    background: linear-gradient(90deg, rgba(251, 191, 36, 0.15), transparent);
-    border-left: 4px solid #fbbf24;
-}
-
-.member-platinum { 
-    background: linear-gradient(90deg, rgba(156, 163, 175, 0.1), transparent);
-    border-left: 4px solid #9ca3af;
-}
-
-.member-gold { 
-    background: linear-gradient(90deg, rgba(180, 83, 9, 0.1), transparent);
-    border-left: 4px solid #b45309;
-}
-
-.vip-table tr:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateX(5px);
-    transition: all 0.3s ease;
-}
-
-.member-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.member-avatar {
-    position: relative;
-}
-
-.avatar-diamond, .avatar-platinum, .avatar-gold {
-    width: 70px;
-    height: 70px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: white;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-.avatar-diamond {
-    background: linear-gradient(135deg, #fbbf24, #d97706);
-    border: 2px solid #fbbf24;
-}
-
-.avatar-platinum {
-    background: linear-gradient(135deg, #9ca3af, #6b7280);
-    border: 2px solid #9ca3af;
-}
-
-.avatar-gold {
-    background: linear-gradient(135deg, #b45309, #78350f);
-    border: 2px solid #b45309;
-}
-
-.vip-badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    width: 25px;
-    height: 25px;
-    background: #fbbf24;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    border: 2px solid #1e293b;
-}
-
-.member-platinum .vip-badge { background: #9ca3af; }
-.member-gold .vip-badge { background: #b45309; }
-
-.member-details .member-name {
-    font-weight: 700;
-    color: white;
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-}
-
-.member-details .member-email {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.tier-info {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.tier-info.diamond {
-    background: rgba(251, 191, 36, 0.2);
-    color: #fbbf24;
-    border: 1px solid rgba(251, 191, 36, 0.3);
-}
-
-.tier-info.platinum {
-    background: rgba(156, 163, 175, 0.2);
-    color: #9ca3af;
-    border: 1px solid rgba(156, 163, 175, 0.3);
-}
-
-.tier-info.gold {
-    background: rgba(180, 83, 9, 0.2);
-    color: #b45309;
-    border: 1px solid rgba(180, 83, 9, 0.3);
-}
-
-.join-date .date {
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0.25rem;
-}
-
-.join-date .duration {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.lifetime-value .value-amount {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0.25rem;
-}
-
-.value-trend {
-    font-size: 0.875rem;
-    font-weight: 600;
-}
-
-.value-trend.positive {
-    color: #10b981;
-}
-
-.benefits-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.benefit {
-    padding: 0.5rem 0.75rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.member-status {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.member-status.active {
-    background: rgba(34, 197, 94, 0.2);
-    color: #10b981;
-}
-
-.member-status.pending {
-    background: rgba(245, 158, 11, 0.2);
-    color: #f59e0b;
-}
-
-.status-indicator {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.member-status.active .status-indicator { background: #10b981; }
-.member-status.pending .status-indicator { background: #f59e0b; }
-
-.member-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.vip-btn {
-    padding: 0.75rem 1rem;
-    border: none;
-    border-radius: 10px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.vip-btn.contact {
-    background: rgba(59, 130, 246, 0.2);
-    color: #3b82f6;
-    border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.vip-btn.upgrade {
-    background: rgba(251, 191, 36, 0.2);
-    color: #fbbf24;
-    border: 1px solid rgba(251, 191, 36, 0.3);
-}
-
-.vip-btn:hover {
-    transform: translateY(-2px);
-    background: rgba(251, 191, 36, 0.3);
-}`,
-    js: `// VIP members interactions
-document.querySelectorAll('.vip-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const action = this.textContent;
-        const memberName = this.closest('tr').querySelector('.member-name').textContent;
-        const memberTier = this.closest('tr').querySelector('.tier-name').textContent;
-        
-        if (action === 'Contact') {
-            alert(\`Contacting \${memberName} (\${memberTier} Member)...\`);
-        } else {
-            alert(\`Initiating upgrade process for \${memberName}...\`);
-        }
-    });
-});`
-},
-// ====================================================================
-// BUSINESS TEMPLATE 32: SALES PIPELINE
-// ====================================================================
-business32: {
-    html: `<div class="sales-pipeline-container">
-    <div class="pipeline-header">
-        <h3>📊 Sales Pipeline Dashboard</h3>
-        <div class="pipeline-stats">
-            <div class="stat">
-                <div class="stat-value">$2.8M</div>
-                <div class="stat-label">Total Pipeline</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">42</div>
-                <div class="stat-label">Active Deals</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">28%</div>
-                <div class="stat-label">Win Rate</div>
-            </div>
-        </div>
-    </div>
-    <table class="sales-pipeline-table">
-        <thead>
-            <tr>
-                <th>Deal Name</th>
-                <th>Company</th>
-                <th>Deal Value</th>
-                <th>Pipeline Stage</th>
-                <th>Probability</th>
-                <th>Close Date</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="deal-negotiation">
-                <td>
-                    <div class="deal-info">
-                        <div class="deal-icon">💼</div>
-                        <div class="deal-details">
-                            <div class="deal-name">Enterprise Software License</div>
-                            <div class="deal-id">#DEAL-2024-001</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="company-info">
-                        <div class="company-name">TechCorp Global</div>
-                        <div class="industry">Technology</div>
-                    </div>
-                </td>
-                <td class="deal-value">
-                    <div class="value-amount">$250,000</div>
-                    <div class="value-currency">USD</div>
-                </td>
-                <td>
-                    <div class="pipeline-stage negotiation">
-                        <div class="stage-progress"></div>
-                        <span class="stage-text">Negotiation</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="probability-metric">
-                        <div class="probability-value">75%</div>
-                        <div class="probability-bar">
-                            <div class="probability-fill" style="width: 75%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="close-date">
-                        <div class="date">Mar 15, 2024</div>
-                        <div class="timeline">In 30 days</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="deal-actions">
-                        <button class="action-btn update">Update</button>
-                        <button class="action-btn contact">Contact</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="deal-proposal">
-                <td>
-                    <div class="deal-info">
-                        <div class="deal-icon">📑</div>
-                        <div class="deal-details">
-                            <div class="deal-name">SMB Service Contract</div>
-                            <div class="deal-id">#DEAL-2024-002</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="company-info">
-                        <div class="company-name">Startup Innovations</div>
-                        <div class="industry">Startup</div>
-                    </div>
-                </td>
-                <td class="deal-value">
-                    <div class="value-amount">$50,000</div>
-                        <div class="value-currency">USD</div>
-                    </td>
-                    <td>
-                        <div class="pipeline-stage proposal">
-                            <div class="stage-progress"></div>
-                            <span class="stage-text">Proposal</span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="probability-metric">
-                            <div class="probability-value">40%</div>
-                            <div class="probability-bar">
-                                <div class="probability-fill" style="width: 40%"></div>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="close-date">
-                            <div class="date">Apr 30, 2024</div>
-                            <div class="timeline">In 75 days</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="deal-actions">
-                            <button class="action-btn update">Update</button>
-                            <button class="action-btn contact">Contact</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="deal-qualification">
-                    <td>
-                        <div class="deal-info">
-                            <div class="deal-icon">🔍</div>
-                            <div class="deal-details">
-                                <div class="deal-name">Enterprise Support Package</div>
-                                <div class="deal-id">#DEAL-2024-003</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="company-info">
-                            <div class="company-name">Enterprise Solutions Ltd</div>
-                            <div class="industry">Consulting</div>
-                        </div>
-                    </td>
-                    <td class="deal-value">
-                        <div class="value-amount">$120,000</div>
-                        <div class="value-currency">USD</div>
-                    </td>
-                    <td>
-                        <div class="pipeline-stage qualification">
-                            <div class="stage-progress"></div>
-                            <span class="stage-text">Qualification</span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="probability-metric">
-                            <div class="probability-value">25%</div>
-                            <div class="probability-bar">
-                                <div class="probability-fill" style="width: 25%"></div>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="close-date">
-                            <div class="date">May 15, 2024</div>
-                            <div class="timeline">In 90 days</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="deal-actions">
-                            <button class="action-btn update">Update</button>
-                            <button class="action-btn contact">Contact</button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="pipeline-footer">
-            <div class="pipeline-legend">
-                <div class="legend-item">
-                    <span class="legend-color qualification"></span>
-                    <span>Qualification (20%)</span>
-                </div>
-                <div class="legend-item">
-                    <span class="legend-color proposal"></span>
-                    <span>Proposal (40%)</span>
-                </div>
-                <div class="legend-item">
-                    <span class="legend-color negotiation"></span>
-                    <span>Negotiation (75%)</span>
-                </div>
-                <div class="legend-item">
-                    <span class="legend-color closed"></span>
-                    <span>Closed Won (100%)</span>
-                </div>
-            </div>
-        </div>
-    </div>`,
-    css: `.sales-pipeline-container {
-        background: white;
-        border-radius: 16px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        border: 1px solid #e5e7eb;
-    }
-
-    .pipeline-header {
-        padding: 2rem;
-        background: linear-gradient(135deg, #1e40af, #3730a3);
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .pipeline-header h3 {
-        margin: 0;
-        font-size: 1.75rem;
-        font-weight: 700;
-    }
-
-    .pipeline-stats {
-        display: flex;
-        gap: 2rem;
-    }
-
-    .stat {
-        text-align: center;
-    }
-
-    .stat-value {
-        font-size: 1.5rem;
-        font-weight: 800;
-        margin-bottom: 0.25rem;
-    }
-
-    .stat-label {
-        font-size: 0.875rem;
-        opacity: 0.9;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .sales-pipeline-table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    .sales-pipeline-table th {
-        padding: 1.5rem 2rem;
-        text-align: left;
-        font-weight: 600;
-        color: #374151;
-        border-bottom: 2px solid #e5e7eb;
-        background: #f8fafc;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .sales-pipeline-table td {
-        padding: 1.5rem 2rem;
-        border-bottom: 1px solid #f3f4f6;
-        color: #6b7280;
-    }
-
-    .deal-negotiation { background: linear-gradient(90deg, rgba(34, 197, 94, 0.05), transparent); }
-    .deal-proposal { background: linear-gradient(90deg, rgba(245, 158, 11, 0.05), transparent); }
-    .deal-qualification { background: linear-gradient(90deg, rgba(239, 68, 68, 0.05), transparent); }
-
-    .sales-pipeline-table tr:hover {
-        background: #f9fafb;
-        transform: translateX(5px);
-        transition: all 0.3s ease;
-    }
-
-    .deal-info {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .deal-icon {
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
-        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        color: white;
-    }
-
-    .deal-details .deal-name {
-        font-weight: 600;
-        color: #1f2937;
-        margin-bottom: 0.25rem;
-    }
-
-    .deal-details .deal-id {
-        font-size: 0.875rem;
-        color: #9ca3af;
-    }
-
-    .company-info .company-name {
-        font-weight: 600;
-        color: #1f2937;
-        margin-bottom: 0.25rem;
-    }
-
-    .company-info .industry {
-        font-size: 0.875rem;
-        color: #6b7280;
-        background: #f3f4f6;
-        padding: 0.25rem 0.5rem;
-        border-radius: 6px;
-        display: inline-block;
-    }
-
-    .deal-value .value-amount {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #1f2937;
-        margin-bottom: 0.25rem;
-    }
-
-    .deal-value .value-currency {
-        font-size: 0.875rem;
-        color: #6b7280;
-    }
-
-    .pipeline-stage {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 0.875rem;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .stage-progress {
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 0%;
-        transition: width 0.3s ease;
-    }
-
-    .pipeline-stage.qualification {
-        background: rgba(239, 68, 68, 0.1);
-        color: #dc2626;
-    }
-    .pipeline-stage.qualification .stage-progress {
-        background: rgba(239, 68, 68, 0.2);
-        width: 20%;
-    }
-
-    .pipeline-stage.proposal {
-        background: rgba(245, 158, 11, 0.1);
-        color: #d97706;
-    }
-    .pipeline-stage.proposal .stage-progress {
-        background: rgba(245, 158, 11, 0.2);
-        width: 40%;
-    }
-
-    .pipeline-stage.negotiation {
-        background: rgba(34, 197, 94, 0.1);
-        color: #16a34a;
-    }
-    .pipeline-stage.negotiation .stage-progress {
-        background: rgba(34, 197, 94, 0.2);
-        width: 75%;
-    }
-
-    .probability-metric .probability-value {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: #1f2937;
-        margin-bottom: 0.5rem;
-    }
-
-    .probability-bar {
-        width: 100%;
-        height: 6px;
-        background: #e5e7eb;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .probability-fill {
-        height: 100%;
-        border-radius: 10px;
-        background: linear-gradient(90deg, #ef4444, #f59e0b, #22c55e);
-        transition: width 1s ease-in-out;
-    }
-
-    .close-date .date {
-        font-weight: 600;
-        color: #1f2937;
-        margin-bottom: 0.25rem;
-    }
-
-    .close-date .timeline {
-        font-size: 0.875rem;
-        color: #6b7280;
-    }
-
-    .deal-actions {
-        display: flex;
-        gap: 0.5rem;
-    }
-
-    .action-btn {
-        padding: 0.75rem 1rem;
-        border: none;
-        border-radius: 8px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .action-btn.update {
-        background: #3b82f6;
-        color: white;
-    }
-
-    .action-btn.contact {
-        background: #f3f4f6;
-        color: #374151;
-        border: 1px solid #d1d5db;
-    }
-
-    .action-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .pipeline-footer {
-        padding: 1.5rem 2rem;
-        background: #f8fafc;
-        border-top: 1px solid #e5e7eb;
-    }
-
-    .pipeline-legend {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-    }
-
-    .legend-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.875rem;
-        color: #6b7280;
-    }
-
-    .legend-color {
-        width: 12px;
-        height: 12px;
-        border-radius: 3px;
-    }
-
-    .legend-color.qualification { background: #ef4444; }
-    .legend-color.proposal { background: #f59e0b; }
-    .legend-color.negotiation { background: #22c55e; }
-    .legend-color.closed { background: #16a34a; }`,
-    js: `// Sales pipeline interactions
-    document.querySelectorAll('.action-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const action = this.textContent;
-            const dealName = this.closest('tr').querySelector('.deal-name').textContent;
-            
-            if (action === 'Update') {
-                alert(\`Updating deal: \${dealName}\`);
-            } else {
-                alert(\`Contacting client for: \${dealName}\`);
-            }
-        });
-    });
-
-    // Animate probability bars
-    document.addEventListener('DOMContentLoaded', function() {
-        const bars = document.querySelectorAll('.probability-fill');
-        bars.forEach(bar => {
-            const width = bar.style.width;
-            bar.style.width = '0';
-            setTimeout(() => {
-                bar.style.width = width;
-            }, 500);
-        });
-    });`
-},
-
-// ====================================================================
-// BUSINESS TEMPLATE 33: INVENTORY MANAGEMENT
-// ====================================================================
-business33: {
-    html: `<div class="inventory-management-container">
-    <div class="inventory-header">
-        <h3>📦 Inventory Management System</h3>
-        <div class="inventory-controls">
-            <button class="control-btn add-product">+ Add Product</button>
-            <button class="control-btn export">Export CSV</button>
-        </div>
-    </div>
-    <table class="inventory-table">
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>SKU</th>
-                <th>Category</th>
-                <th>Current Stock</th>
-                <th>Reorder Level</th>
-                <th>Status</th>
-                <th>Last Updated</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="product-instock">
-                <td>
-                    <div class="product-info">
-                        <div class="product-image">
-                            <div class="image-placeholder">💻</div>
-                        </div>
-                        <div class="product-details">
-                            <div class="product-name">MacBook Pro 16"</div>
-                            <div class="product-brand">Apple</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="sku-code">MBP16-2024</td>
-                <td><span class="category-tag electronics">Electronics</span></td>
-                <td>
-                    <div class="stock-info">
-                        <div class="stock-quantity">45 units</div>
-                        <div class="stock-value">$67,500</div>
-                    </div>
-                </td>
-                <td class="reorder-level">10 units</td>
-                <td>
-                    <div class="stock-status in-stock">
-                        <span class="status-dot"></span>
-                        In Stock
-                    </div>
-                </td>
-                <td>
-                    <div class="update-info">
-                        <div class="update-date">2024-01-15</div>
-                        <div class="update-time">14:30 PM</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="inventory-actions">
-                        <button class="inv-btn restock">Restock</button>
-                        <button class="inv-btn edit">Edit</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="product-lowstock">
-                <td>
-                    <div class="product-info">
-                        <div class="product-image">
-                            <div class="image-placeholder">🖱️</div>
-                        </div>
-                        <div class="product-details">
-                            <div class="product-name">Wireless Mouse X1</div>
-                            <div class="product-brand">Logitech</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="sku-code">WM-X1-2024</td>
-                <td><span class="category-tag accessories">Accessories</span></td>
-                <td>
-                    <div class="stock-info">
-                        <div class="stock-quantity">8 units</div>
-                        <div class="stock-value">$400</div>
-                    </div>
-                </td>
-                <td class="reorder-level">15 units</td>
-                <td>
-                    <div class="stock-status low-stock">
-                        <span class="status-dot"></span>
-                        Low Stock
-                    </div>
-                </td>
-                <td>
-                    <div class="update-info">
-                        <div class="update-date">2024-01-14</div>
-                        <div class="update-time">09:15 AM</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="inventory-actions">
-                        <button class="inv-btn restock urgent">Restock</button>
-                        <button class="inv-btn edit">Edit</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="product-outofstock">
-                <td>
-                    <div class="product-info">
-                        <div class="product-image">
-                            <div class="image-placeholder">⌨️</div>
-                        </div>
-                        <div class="product-details">
-                            <div class="product-name">Mechanical Keyboard Pro</div>
-                            <div class="product-brand">Keychron</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="sku-code">MK-PRO-2024</td>
-                <td><span class="category-tag electronics">Electronics</span></td>
-                <td>
-                    <div class="stock-info">
-                        <div class="stock-quantity">0 units</div>
-                        <div class="stock-value">$0</div>
-                    </div>
-                </td>
-                <td class="reorder-level">20 units</td>
-                <td>
-                    <div class="stock-status out-of-stock">
-                        <span class="status-dot"></span>
-                        Out of Stock
-                    </div>
-                </td>
-                <td>
-                    <div class="update-info">
-                        <div class="update-date">2024-01-10</div>
-                        <div class="update-time">16:45 PM</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="inventory-actions">
-                        <button class="inv-btn restock critical">Restock</button>
-                        <button class="inv-btn edit">Edit</button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.inventory-management-container {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-}
-
-.inventory-header {
-    padding: 2rem;
-    background: linear-gradient(135deg, #059669, #047857);
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.inventory-header h3 {
-    margin: 0;
-    font-size: 1.75rem;
-    font-weight: 700;
-}
-
-.inventory-controls {
-    display: flex;
-    gap: 1rem;
-}
-
-.control-btn {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.control-btn.add-product {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    backdrop-filter: blur(10px);
-}
-
-.control-btn.export {
-    background: white;
-    color: #059669;
-}
-
-.control-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.inventory-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.inventory-table th {
-    padding: 1.5rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    color: #374151;
-    border-bottom: 2px solid #e5e7eb;
-    background: #f8fafc;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.inventory-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-}
-
-.product-instock { background: linear-gradient(90deg, rgba(34, 197, 94, 0.05), transparent); }
-.product-lowstock { background: linear-gradient(90deg, rgba(245, 158, 11, 0.05), transparent); }
-.product-outofstock { background: linear-gradient(90deg, rgba(239, 68, 68, 0.05), transparent); }
-
-.inventory-table tr:hover {
-    background: #f9fafb;
-    transform: scale(1.01);
-    transition: all 0.3s ease;
-}
-
-.product-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.product-image .image-placeholder {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: white;
-}
-
-.product-details .product-name {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.product-details .product-brand {
-    font-size: 0.875rem;
-    color: #6b7280;
-}
-
-.sku-code {
-    font-family: 'Courier New', monospace;
-    font-weight: 600;
-    color: #374151;
-    background: #f3f4f6;
-    padding: 0.5rem 0.75rem;
+    padding: 0.35rem 0.75rem;
     border-radius: 6px;
-    font-size: 0.875rem;
-}
-
-.category-tag {
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.category-tag.electronics {
-    background: rgba(59, 130, 246, 0.1);
-    color: #1d4ed8;
-    border: 1px solid rgba(59, 130, 246, 0.2);
-}
-
-.category-tag.accessories {
-    background: rgba(168, 85, 247, 0.1);
-    color: #7c3aed;
-    border: 1px solid rgba(168, 85, 247, 0.2);
-}
-
-.stock-info .stock-quantity {
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.stock-info .stock-value {
-    font-size: 0.875rem;
-    color: #059669;
-    font-weight: 600;
-}
-
-.reorder-level {
-    font-weight: 600;
-    color: #6b7280;
-}
-
-.stock-status {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.stock-status.in-stock {
-    background: rgba(34, 197, 94, 0.1);
-    color: #16a34a;
-}
-
-.stock-status.low-stock {
-    background: rgba(245, 158, 11, 0.1);
-    color: #d97706;
-}
-
-.stock-status.out-of-stock {
-    background: rgba(239, 68, 68, 0.1);
-    color: #dc2626;
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.stock-status.in-stock .status-dot { background: #16a34a; }
-.stock-status.low-stock .status-dot { background: #d97706; }
-.stock-status.out-of-stock .status-dot { background: #dc2626; }
-
-.update-info .update-date {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.update-info .update-time {
-    font-size: 0.875rem;
-    color: #6b7280;
-}
-
-.inventory-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.inv-btn {
-    padding: 0.75rem 1rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.inv-btn.restock {
-    background: #3b82f6;
-    color: white;
-}
-
-.inv-btn.restock.urgent {
-    background: #f59e0b;
-    animation: pulse 1.5s infinite;
-}
-
-.inv-btn.restock.critical {
-    background: #ef4444;
-    animation: pulse 1s infinite;
-}
-
-.inv-btn.edit {
-    background: #f3f4f6;
-    color: #374151;
-    border: 1px solid #d1d5db;
-}
-
-.inv-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-}`,
-    js: `// Inventory management interactions
-    document.querySelectorAll('.inv-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const action = this.textContent;
-            const productName = this.closest('tr').querySelector('.product-name').textContent;
-            
-            if (action === 'Restock') {
-                alert(\`Initiating restock for: \${productName}\`);
-            } else {
-                alert(\`Editing product: \${productName}\`);
-            }
-        });
-    });
-
-    document.querySelector('.control-btn.add-product').addEventListener('click', function() {
-        alert('Opening add product form...');
-    });
-
-    document.querySelector('.control-btn.export').addEventListener('click', function() {
-        alert('Exporting inventory data to CSV...');
-    });`
-},
-
-// ====================================================================
-// BUSINESS TEMPLATE 34: CUSTOMER SUPPORT
-// ====================================================================
-business34: {
-    html: `<div class="customer-support-container">
-    <div class="support-header">
-        <h3>🎯 Customer Support Dashboard</h3>
-        <div class="support-metrics">
-            <div class="metric">
-                <div class="metric-value">15</div>
-                <div class="metric-label">Open Tickets</div>
-            </div>
-            <div class="metric">
-                <div class="metric-value">4.2h</div>
-                <div class="metric-label">Avg. Response</div>
-            </div>
-            <div class="metric">
-                <div class="metric-value">92%</div>
-                <div class="metric-label">Satisfaction</div>
-            </div>
-        </div>
-    </div>
-    <table class="support-table">
-        <thead>
-            <tr>
-                <th>Ticket ID</th>
-                <th>Customer</th>
-                <th>Subject</th>
-                <th>Priority</th>
-                <th>Status</th>
-                <th>Assigned To</th>
-                <th>Created</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="ticket-high">
-                <td class="ticket-id">#TSK-2024-001</td>
-                <td>
-                    <div class="customer-info">
-                        <div class="customer-name">John Corporation</div>
-                        <div class="customer-tier">Enterprise</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="ticket-subject">
-                        <div class="subject-text">Server Downtime - Production Issue</div>
-                        <div class="subject-category">Technical</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="priority-level high">
-                        <span class="priority-dot"></span>
-                        High
-                    </div>
-                </td>
-                <td>
-                    <div class="ticket-status open">
-                        <span class="status-indicator"></span>
-                        Open
-                    </div>
-                </td>
-                <td>
-                    <div class="assignee-info">
-                        <div class="assignee-name">Sarah Tech</div>
-                        <div class="assignee-role">Senior Support</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="ticket-date">
-                        <div class="date">2024-01-15</div>
-                        <div class="time">14:30 PM</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="support-actions">
-                        <button class="support-btn view">View</button>
-                        <button class="support-btn assign">Assign</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="ticket-medium">
-                <td class="ticket-id">#TSK-2024-002</td>
-                <td>
-                    <div class="customer-info">
-                        <div class="customer-name">Startup Innovations</div>
-                        <div class="customer-tier">Business</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="ticket-subject">
-                        <div class="subject-text">Billing Inquiry - Invoice Discrepancy</div>
-                        <div class="subject-category">Billing</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="priority-level medium">
-                        <span class="priority-dot"></span>
-                        Medium
-                    </div>
-                </td>
-                <td>
-                    <div class="ticket-status in-progress">
-                        <span class="status-indicator"></span>
-                        In Progress
-                    </div>
-                </td>
-                <td>
-                    <div class="assignee-info">
-                        <div class="assignee-name">Mike Finance</div>
-                        <div class="assignee-role">Billing Specialist</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="ticket-date">
-                        <div class="date">2024-01-14</div>
-                        <div class="time">09:15 AM</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="support-actions">
-                        <button class="support-btn view">View</button>
-                        <button class="support-btn assign">Reassign</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="ticket-low">
-                <td class="ticket-id">#TSK-2024-003</td>
-                <td>
-                    <div class="customer-info">
-                        <div class="customer-name">Small Business Ltd</div>
-                        <div class="customer-tier">Standard</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="ticket-subject">
-                        <div class="subject-text">Feature Request - New Dashboard</div>
-                        <div class="subject-category">Feature</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="priority-level low">
-                        <span class="priority-dot"></span>
-                        Low
-                    </div>
-                </td>
-                <td>
-                    <div class="ticket-status pending">
-                        <span class="status-indicator"></span>
-                        Pending
-                    </div>
-                </td>
-                <td>
-                    <div class="assignee-info">
-                        <div class="assignee-name">Unassigned</div>
-                        <div class="assignee-role">-</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="ticket-date">
-                        <div class="date">2024-01-13</div>
-                        <div class="time">16:45 PM</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="support-actions">
-                        <button class="support-btn view">View</button>
-                        <button class="support-btn assign">Assign</button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.customer-support-container {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-}
-
-.support-header {
-    padding: 2rem;
-    background: linear-gradient(135deg, #7c3aed, #6d28d9);
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.support-header h3 {
-    margin: 0;
-    font-size: 1.75rem;
-    font-weight: 700;
-}
-
-.support-metrics {
-    display: flex;
-    gap: 2rem;
-}
-
-.metric {
     text-align: center;
 }
 
-.metric-value {
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 0.25rem;
-}
-
-.metric-label {
-    font-size: 0.875rem;
-    opacity: 0.9;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.support-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.support-table th {
-    padding: 1.5rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    color: #374151;
-    border-bottom: 2px solid #e5e7eb;
-    background: #f8fafc;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.support-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-}
-
-.ticket-high { background: linear-gradient(90deg, rgba(239, 68, 68, 0.05), transparent); }
-.ticket-medium { background: linear-gradient(90deg, rgba(245, 158, 11, 0.05), transparent); }
-.ticket-low { background: linear-gradient(90deg, rgba(34, 197, 94, 0.05), transparent); }
-
-.support-table tr:hover {
-    background: #f9fafb;
-    transform: translateX(5px);
-    transition: all 0.3s ease;
-}
-
-.ticket-id {
-    font-family: 'Courier New', monospace;
-    font-weight: 700;
-    color: #7c3aed;
-    background: rgba(124, 58, 237, 0.1);
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-}
-
-.customer-info .customer-name {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.customer-info .customer-tier {
-    font-size: 0.75rem;
-    color: #6b7280;
-    background: #f3f4f6;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-.ticket-subject .subject-text {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.ticket-subject .subject-category {
-    font-size: 0.75rem;
-    color: #6b7280;
-    background: #f3f4f6;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    display: inline-block;
-}
-
-.priority-level {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.priority-level.high {
-    background: rgba(239, 68, 68, 0.1);
-    color: #dc2626;
-}
-
-.priority-level.medium {
-    background: rgba(245, 158, 11, 0.1);
-    color: #d97706;
-}
-
-.priority-level.low {
-    background: rgba(34, 197, 94, 0.1);
-    color: #16a34a;
-}
-
-.priority-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.priority-level.high .priority-dot { background: #dc2626; }
-.priority-level.medium .priority-dot { background: #d97706; }
-.priority-level.low .priority-dot { background: #16a34a; }
-
-.ticket-status {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.ticket-status.open {
-    background: rgba(239, 68, 68, 0.1);
-    color: #dc2626;
-}
-
-.ticket-status.in-progress {
-    background: rgba(245, 158, 11, 0.1);
-    color: #d97706;
-}
-
-.ticket-status.pending {
-    background: rgba(156, 163, 175, 0.1);
-    color: #6b7280;
-}
-
-.status-indicator {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.ticket-status.open .status-indicator { background: #dc2626; }
-.ticket-status.in-progress .status-indicator { background: #d97706; }
-.ticket-status.pending .status-indicator { background: #6b7280; }
-
-.assignee-info .assignee-name {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.assignee-info .assignee-role {
-    font-size: 0.75rem;
-    color: #6b7280;
-}
-
-.ticket-date .date {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.ticket-date .time {
-    font-size: 0.875rem;
-    color: #6b7280;
-}
-
-.support-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.support-btn {
-    padding: 0.75rem 1rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.support-btn.view {
-    background: #7c3aed;
-    color: white;
-}
-
-.support-btn.assign {
-    background: #f3f4f6;
-    color: #374151;
-    border: 1px solid #d1d5db;
-}
-
-.support-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}`,
-    js: `// Customer support interactions
-    document.querySelectorAll('.support-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const action = this.textContent;
-            const ticketId = this.closest('tr').querySelector('.ticket-id').textContent;
-            const subject = this.closest('tr').querySelector('.subject-text').textContent;
-            
-            if (action === 'View') {
-                alert(\`Viewing ticket \${ticketId}: \${subject}\`);
-            } else {
-                alert(\`Assigning ticket \${ticketId} to support agent...\`);
-            }
-        });
-    });`
-},
-
-// ====================================================================
-// BUSINESS TEMPLATE 35: HR MANAGEMENT
-// ====================================================================
-business35: {
-    html: `<div class="hr-management-container">
-    <div class="hr-header">
-        <h3>👥 Human Resources Management</h3>
-        <div class="hr-stats">
-            <div class="stat">
-                <div class="stat-value">142</div>
-                <div class="stat-label">Total Employees</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">15</div>
-                <div class="stat-label">Departments</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">8</div>
-                <div class="stat-label">New Hires</div>
-            </div>
-        </div>
-    </div>
-    <table class="hr-table">
-        <thead>
-            <tr>
-                <th>Employee</th>
-                <th>Employee ID</th>
-                <th>Department</th>
-                <th>Position</th>
-                <th>Join Date</th>
-                <th>Status</th>
-                <th>Manager</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="employee-active">
-                <td>
-                    <div class="employee-info">
-                        <div class="employee-avatar">
-                            <div class="avatar-initials">MJ</div>
-                            <div class="availability online"></div>
-                        </div>
-                        <div class="employee-details">
-                            <div class="employee-name">Mike Johnson</div>
-                            <div class="employee-email">mike.johnson@company.com</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="employee-id">EMP-2020-045</td>
-                <td>
-                    <div class="department-info">
-                        <span class="department-tag engineering">Engineering</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="position-info">
-                        <div class="position-title">Senior Developer</div>
-                        <div class="position-level">L3</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="join-date">
-                        <div class="date">2020-03-15</div>
-                        <div class="tenure">3.8 years</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="employment-status active">
-                        <span class="status-dot"></span>
-                        Active
-                    </div>
-                </td>
-                <td>
-                    <div class="manager-info">
-                        <div class="manager-name">Sarah Chen</div>
-                        <div class="manager-title">Tech Lead</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="hr-actions">
-                        <button class="hr-btn profile">Profile</button>
-                        <button class="hr-btn review">Review</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="employee-leave">
-                <td>
-                    <div class="employee-info">
-                        <div class="employee-avatar">
-                            <div class="avatar-initials">LW</div>
-                            <div class="availability away"></div>
-                        </div>
-                        <div class="employee-details">
-                            <div class="employee-name">Lisa Wang</div>
-                            <div class="employee-email">lisa.wang@company.com</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="employee-id">EMP-2021-128</td>
-                <td>
-                    <div class="department-info">
-                        <span class="department-tag marketing">Marketing</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="position-info">
-                        <div class="position-title">Marketing Manager</div>
-                        <div class="position-level">L4</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="join-date">
-                        <div class="date">2021-08-22</div>
-                        <div class="tenure">2.4 years</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="employment-status on-leave">
-                        <span class="status-dot"></span>
-                        On Leave
-                    </div>
-                </td>
-                <td>
-                    <div class="manager-info">
-                        <div class="manager-name">Robert Kim</div>
-                        <div class="manager-title">Director</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="hr-actions">
-                        <button class="hr-btn profile">Profile</button>
-                        <button class="hr-btn review">Review</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="employee-probation">
-                <td>
-                    <div class="employee-info">
-                        <div class="employee-avatar">
-                            <div class="avatar-initials">AS</div>
-                            <div class="availability online"></div>
-                        </div>
-                        <div class="employee-details">
-                            <div class="employee-name">Alex Smith</div>
-                            <div class="employee-email">alex.smith@company.com</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="employee-id">EMP-2023-256</td>
-                <td>
-                    <div class="department-info">
-                        <span class="department-tag sales">Sales</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="position-info">
-                        <div class="position-title">Sales Associate</div>
-                        <div class="position-level">L1</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="join-date">
-                        <div class="date">2023-11-10</div>
-                        <div class="tenure">0.2 years</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="employment-status probation">
-                        <span class="status-dot"></span>
-                        Probation
-                    </div>
-                </td>
-                <td>
-                    <div class="manager-info">
-                        <div class="manager-name">David Wilson</div>
-                        <div class="manager-title">Sales Manager</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="hr-actions">
-                        <button class="hr-btn profile">Profile</button>
-                        <button class="hr-btn review">Review</button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.hr-management-container {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-}
-
-.hr-header {
-    padding: 2rem;
-    background: linear-gradient(135deg, #dc2626, #b91c1c);
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.hr-header h3 {
-    margin: 0;
-    font-size: 1.75rem;
-    font-weight: 700;
-}
-
-.hr-stats {
-    display: flex;
-    gap: 2rem;
-}
-
-.stat {
-    text-align: center;
-}
-
-.stat-value {
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 0.25rem;
-}
-
-.stat-label {
-    font-size: 0.875rem;
-    opacity: 0.9;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.hr-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.hr-table th {
-    padding: 1.5rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    color: #374151;
-    border-bottom: 2px solid #e5e7eb;
-    background: #f8fafc;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.hr-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-}
-
-.employee-active { background: linear-gradient(90deg, rgba(34, 197, 94, 0.05), transparent); }
-.employee-leave { background: linear-gradient(90deg, rgba(245, 158, 11, 0.05), transparent); }
-.employee-probation { background: linear-gradient(90deg, rgba(59, 130, 246, 0.05), transparent); }
-
-.hr-table tr:hover {
-    background: #f9fafb;
-    transform: scale(1.01);
-    transition: all 0.3s ease;
-}
-
-.employee-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.employee-avatar {
-    position: relative;
-}
-
-.avatar-initials {
-    width: 60px;
-    height: 60px;
-    border-radius: 15px;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: white;
-}
-
-.availability {
-    position: absolute;
-    bottom: 2px;
-    right: 2px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid white;
-}
-
-.availability.online { background: #10b981; }
-.availability.away { background: #f59e0b; }
-
-.employee-details .employee-name {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.employee-details .employee-email {
-    font-size: 0.875rem;
-    color: #6b7280;
-}
-
-.employee-id {
-    font-family: 'Courier New', monospace;
-    font-weight: 600;
-    color: #374151;
-    background: #f3f4f6;
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-}
-
-.department-tag {
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.department-tag.engineering {
-    background: rgba(59, 130, 246, 0.1);
-    color: #1d4ed8;
-    border: 1px solid rgba(59, 130, 246, 0.2);
-}
-
-.department-tag.marketing {
-    background: rgba(168, 85, 247, 0.1);
-    color: #7c3aed;
-    border: 1px solid rgba(168, 85, 247, 0.2);
-}
-
-.department-tag.sales {
-    background: rgba(34, 197, 94, 0.1);
-    color: #16a34a;
-    border: 1px solid rgba(34, 197, 94, 0.2);
-}
-
-.position-info .position-title {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.position-info .position-level {
-    font-size: 0.75rem;
-    color: #6b7280;
-    background: #f3f4f6;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    display: inline-block;
-    font-weight: 600;
-}
-
-.join-date .date {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.join-date .tenure {
-    font-size: 0.875rem;
-    color: #6b7280;
-}
-
-.employment-status {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.employment-status.active {
-    background: rgba(34, 197, 94, 0.1);
-    color: #16a34a;
-}
-
-.employment-status.on-leave {
-    background: rgba(245, 158, 11, 0.1);
-    color: #d97706;
-}
-
-.employment-status.probation {
-    background: rgba(59, 130, 246, 0.1);
-    color: #1d4ed8;
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.employment-status.active .status-dot { background: #16a34a; }
-.employment-status.on-leave .status-dot { background: #d97706; }
-.employment-status.probation .status-dot { background: #1d4ed8; }
-
-.manager-info .manager-name {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.manager-info .manager-title {
-    font-size: 0.75rem;
-    color: #6b7280;
-}
-
-.hr-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.hr-btn {
-    padding: 0.75rem 1rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.hr-btn.profile {
-    background: #3b82f6;
-    color: white;
-}
-
-.hr-btn.review {
-    background: #f3f4f6;
-    color: #374151;
-    border: 1px solid #d1d5db;
-}
-
-.hr-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}`,
-    js: `// HR management interactions
-    document.querySelectorAll('.hr-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const action = this.textContent;
-            const employeeName = this.closest('tr').querySelector('.employee-name').textContent;
-            
-            if (action === 'Profile') {
-                alert(\`Opening profile for: \${employeeName}\`);
-            } else {
-                alert(\`Initiating performance review for: \${employeeName}\`);
-            }
-        });
-    });`
-},
-
-// ====================================================================
-// BUSINESS TEMPLATE 36: MARKETING CAMPAIGNS
-// ====================================================================
-business36: {
-    html: `<div class="marketing-campaigns-container">
-    <div class="marketing-header">
-        <h3>📢 Marketing Campaigns Dashboard</h3>
-        <div class="campaign-filters">
-            <select class="filter-select">
-                <option>All Channels</option>
-                <option>Social Media</option>
-                <option>Email Marketing</option>
-                <option>PPC</option>
-            </select>
-            <select class="filter-select">
-                <option>All Status</option>
-                <option>Active</option>
-                <option>Completed</option>
-                <option>Planning</option>
-            </select>
-        </div>
-    </div>
-    <table class="marketing-table">
-        <thead>
-            <tr>
-                <th>Campaign</th>
-                <th>Channel</th>
-                <th>Budget</th>
-                <th>Spent</th>
-                <th>Impressions</th>
-                <th>Conversions</th>
-                <th>ROI</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="campaign-active">
-                <td>
-                    <div class="campaign-info">
-                        <div class="campaign-icon">🔥</div>
-                        <div class="campaign-details">
-                            <div class="campaign-name">Summer Sale 2024</div>
-                            <div class="campaign-period">Jun 1 - Jun 30, 2024</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="channel-info">
-                        <span class="channel-tag social">Social Media</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="budget-info">
-                        <div class="budget-amount">$25,000</div>
-                        <div class="budget-type">Total</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="spent-info">
-                        <div class="spent-amount">$18,500</div>
-                        <div class="spent-percent">74% spent</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="impressions-metric">
-                        <div class="metric-value">2.5M</div>
-                        <div class="metric-label">Impressions</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="conversions-metric">
-                        <div class="metric-value">15,842</div>
-                        <div class="metric-label">Conversions</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="roi-metric positive">
-                        <div class="roi-value">185%</div>
-                        <div class="roi-bar">
-                            <div class="roi-fill" style="width: 85%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="campaign-status active">
-                        <span class="status-dot"></span>
-                        Active
-                    </div>
-                </td>
-                <td>
-                    <div class="marketing-actions">
-                        <button class="marketing-btn analyze">Analyze</button>
-                        <button class="marketing-btn optimize">Optimize</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="campaign-completed">
-                <td>
-                    <div class="campaign-info">
-                        <div class="campaign-icon">🚀</div>
-                        <div class="campaign-details">
-                            <div class="campaign-name">Product Launch Q1</div>
-                            <div class="campaign-period">Jan 15 - Feb 15, 2024</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="channel-info">
-                        <span class="channel-tag email">Email Marketing</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="budget-info">
-                        <div class="budget-amount">$15,000</div>
-                        <div class="budget-type">Total</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="spent-info">
-                        <div class="spent-amount">$15,000</div>
-                        <div class="spent-percent">100% spent</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="impressions-metric">
-                        <div class="metric-value">1.2M</div>
-                        <div class="metric-label">Impressions</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="conversions-metric">
-                        <div class="metric-value">8,456</div>
-                        <div class="metric-label">Conversions</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="roi-metric positive">
-                        <div class="roi-value">220%</div>
-                        <div class="roi-bar">
-                            <div class="roi-fill" style="width: 95%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="campaign-status completed">
-                        <span class="status-dot"></span>
-                        Completed
-                    </div>
-                </td>
-                <td>
-                    <div class="marketing-actions">
-                        <button class="marketing-btn analyze">Report</button>
-                        <button class="marketing-btn optimize">Replicate</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="campaign-planning">
-                <td>
-                    <div class="campaign-info">
-                        <div class="campaign-icon">🎯</div>
-                        <div class="campaign-details">
-                            <div class="campaign-name">Holiday Campaign 2024</div>
-                            <div class="campaign-period">Nov 15 - Dec 31, 2024</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="channel-info">
-                        <span class="channel-tag ppc">PPC</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="budget-info">
-                        <div class="budget-amount">$50,000</div>
-                        <div class="budget-type">Total</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="spent-info">
-                        <div class="spent-amount">$0</div>
-                        <div class="spent-percent">0% spent</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="impressions-metric">
-                        <div class="metric-value">-</div>
-                        <div class="metric-label">Impressions</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="conversions-metric">
-                        <div class="metric-value">-</div>
-                        <div class="metric-label">Conversions</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="roi-metric planned">
-                        <div class="roi-value">-</div>
-                        <div class="roi-bar">
-                            <div class="roi-fill" style="width: 0%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="campaign-status planning">
-                        <span class="status-dot"></span>
-                        Planning
-                    </div>
-                </td>
-                <td>
-                    <div class="marketing-actions">
-                        <button class="marketing-btn analyze">Plan</button>
-                        <button class="marketing-btn optimize">Setup</button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.marketing-campaigns-container {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-}
-
-.marketing-header {
-    padding: 2rem;
-    background: linear-gradient(135deg, #ec4899, #db2777);
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.marketing-header h3 {
-    margin: 0;
-    font-size: 1.75rem;
-    font-weight: 700;
-}
-
-.campaign-filters {
-    display: flex;
-    gap: 1rem;
-}
-
-.filter-select {
-    padding: 0.75rem 1rem;
-    border: none;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    backdrop-filter: blur(10px);
-    font-size: 0.9rem;
-}
-
-.filter-select option {
-    color: #1f2937;
-}
-
-.marketing-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.marketing-table th {
-    padding: 1.5rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    color: #374151;
-    border-bottom: 2px solid #e5e7eb;
-    background: #f8fafc;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.marketing-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-}
-
-.campaign-active { background: linear-gradient(90deg, rgba(34, 197, 94, 0.05), transparent); }
-.campaign-completed { background: linear-gradient(90deg, rgba(59, 130, 246, 0.05), transparent); }
-.campaign-planning { background: linear-gradient(90deg, rgba(156, 163, 175, 0.05), transparent); }
-
-.marketing-table tr:hover {
-    background: #f9fafb;
-    transform: translateX(5px);
-    transition: all 0.3s ease;
-}
-
-.campaign-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.campaign-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #ec4899, #db2777);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: white;
-}
-
-.campaign-details .campaign-name {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.campaign-details .campaign-period {
-    font-size: 0.875rem;
-    color: #6b7280;
-}
-
-.channel-tag {
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.channel-tag.social {
-    background: rgba(59, 130, 246, 0.1);
-    color: #1d4ed8;
-    border: 1px solid rgba(59, 130, 246, 0.2);
-}
-
-.channel-tag.email {
-    background: rgba(168, 85, 247, 0.1);
-    color: #7c3aed;
-    border: 1px solid rgba(168, 85, 247, 0.2);
-}
-
-.channel-tag.ppc {
-    background: rgba(34, 197, 94, 0.1);
-    color: #16a34a;
-    border: 1px solid rgba(34, 197, 94, 0.2);
-}
-
-.budget-info .budget-amount {
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.budget-info .budget-type {
-    font-size: 0.875rem;
-    color: #6b7280;
-}
-
-.spent-info .spent-amount {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.spent-info .spent-percent {
-    font-size: 0.875rem;
-    color: #6b7280;
-}
-
-.impressions-metric,
-.conversions-metric {
-    text-align: center;
-}
-
-.metric-value {
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.metric-label {
-    font-size: 0.75rem;
-    color: #6b7280;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.roi-metric .roi-value {
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.roi-metric.positive .roi-value {
-    color: #16a34a;
-}
-
-.roi-metric.planned .roi-value {
-    color: #6b7280;
-}
-
-.roi-bar {
-    width: 100%;
-    height: 6px;
-    background: #e5e7eb;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.roi-fill {
-    height: 100%;
-    border-radius: 10px;
-    transition: width 1s ease-in-out;
-}
-
-.roi-metric.positive .roi-fill {
-    background: linear-gradient(90deg, #16a34a, #22c55e);
-}
-
-.campaign-status {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.campaign-status.active {
-    background: rgba(34, 197, 94, 0.1);
-    color: #16a34a;
-}
-
-.campaign-status.completed {
-    background: rgba(59, 130, 246, 0.1);
-    color: #1d4ed8;
-}
-
-.campaign-status.planning {
-    background: rgba(156, 163, 175, 0.1);
-    color: #6b7280;
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.campaign-status.active .status-dot { background: #16a34a; }
-.campaign-status.completed .status-dot { background: #1d4ed8; }
-.campaign-status.planning .status-dot { background: #6b7280; }
-
-.marketing-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.marketing-btn {
-    padding: 0.75rem 1rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.marketing-btn.analyze {
-    background: #ec4899;
-    color: white;
-}
-
-.marketing-btn.optimize {
-    background: #f3f4f6;
-    color: #374151;
-    border: 1px solid #d1d5db;
-}
-
-.marketing-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}`,
-    js: `// Marketing campaigns interactions
-    document.querySelectorAll('.marketing-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const action = this.textContent;
-            const campaignName = this.closest('tr').querySelector('.campaign-name').textContent;
-            
-            if (action === 'Analyze' || action === 'Report' || action === 'Plan') {
-                alert(\`\${action} campaign: \${campaignName}\`);
-            } else {
-                alert(\`\${action} campaign: \${campaignName}\`);
-            }
-        });
-    });
-
-    document.querySelectorAll('.filter-select').forEach(select => {
-        select.addEventListener('change', function() {
-            alert(\`Filtering campaigns by: \${this.value}\`);
-        });
-    });
-
-    // Animate ROI bars
-    document.addEventListener('DOMContentLoaded', function() {
-        const bars = document.querySelectorAll('.roi-fill');
-        bars.forEach(bar => {
-            const width = bar.style.width;
-            bar.style.width = '0';
-            setTimeout(() => {
-                bar.style.width = width;
-            }, 600);
-        });
-    });`
-},
-// ====================================================================
-// MINIMAL TEMPLATE 37: CLEAN DATA TABLE
-// ====================================================================
-minimal37: {
-    html: `<div class="clean-data-container">
-    <table class="clean-data-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Department</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>John Doe</td>
-                <td>john.doe@company.com</td>
-                <td>Frontend Developer</td>
-                <td>Engineering</td>
-                <td>
-                    <span class="status-badge active">Active</span>
-                </td>
-            </tr>
-            <tr>
-                <td>Sarah Johnson</td>
-                <td>sarah.j@company.com</td>
-                <td>UX Designer</td>
-                <td>Design</td>
-                <td>
-                    <span class="status-badge active">Active</span>
-                </td>
-            </tr>
-            <tr>
-                <td>Michael Chen</td>
-                <td>michael.chen@company.com</td>
-                <td>Backend Developer</td>
-                <td>Engineering</td>
-                <td>
-                    <span class="status-badge inactive">Inactive</span>
-                </td>
-            </tr>
-            <tr>
-                <td>Emily Davis</td>
-                <td>emily.davis@company.com</td>
-                <td>Product Manager</td>
-                <td>Product</td>
-                <td>
-                    <span class="status-badge active">Active</span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.clean-data-container {
-    background: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-}
-
-.clean-data-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-.clean-data-table th {
-    padding: 1rem 1.5rem;
-    text-align: left;
-    font-weight: 600;
-    color: #374151;
-    border-bottom: 1px solid #e5e7eb;
-    background: #f9fafb;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.clean-data-table td {
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-    font-size: 0.875rem;
-}
-
-.clean-data-table tr:last-child td {
-    border-bottom: none;
-}
-
-.clean-data-table tr:hover {
-    background: #f9fafb;
-}
-
-.status-badge {
-    padding: 0.25rem 0.75rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.status-badge.active {
+.trend.positive {
     background: #d1fae5;
     color: #065f46;
 }
 
-.status-badge.inactive {
-    background: #f3f4f6;
-    color: #6b7280;
-}`,
-    js: `// No JavaScript required for this minimal table`
-},
+.trend.negative {
+    background: #fee2e2;
+    color: #991b1b;
+}
 
-// ====================================================================
-// MINIMAL TEMPLATE 38: SIMPLE LIST TABLE
-// ====================================================================
-minimal38: {
-    html: `<div class="simple-list-container">
-    <table class="simple-list-table">
+.realtime-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: #f8fafc;
+    border-top: 1px solid #e5e7eb;
+}
+
+.update-time {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.update-time .time {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.btn-refresh {
+    background: #7c3aed;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-refresh:hover {
+    background: #6d28d9;
+}`,
+        js: `// Real-time data simulation
+function updateRealTimeData() {
+    const timeElement = document.querySelector('.update-time .time');
+    const now = new Date();
+    timeElement.textContent = now.toLocaleTimeString();
+    
+    // Simulate data updates
+    const activeUsers = Math.floor(Math.random() * 100) + 1200;
+    document.querySelector('.stat-value').textContent = activeUsers.toLocaleString();
+}
+
+// Update every 10 seconds
+setInterval(updateRealTimeData, 10000);
+
+// Manual refresh
+document.querySelector('.btn-refresh').addEventListener('click', updateRealTimeData);
+
+// Initial update
+updateRealTimeData();`
+    },
+
+    // ====================================================================
+    // ANALYTICS TEMPLATE 4: E-COMMERCE ANALYTICS
+    // ====================================================================
+    analytics4: {
+        html: `<div class="ecommerce-table-container">
+    <div class="ecommerce-header">
+        <h3>E-commerce Performance Dashboard</h3>
+        <div class="revenue-summary">
+            <div class="revenue-figure">$284,560</div>
+            <div class="revenue-label">Total Revenue</div>
+        </div>
+    </div>
+    <table class="ecommerce-table">
         <thead>
             <tr>
                 <th>Product</th>
                 <th>Category</th>
                 <th>Price</th>
-                <th>Stock</th>
-                <th>Last Updated</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div class="product-item">
-                        <div class="product-name">MacBook Pro 16"</div>
-                        <div class="product-sku">MBP16-2024</div>
-                    </div>
-                </td>
-                <td>Electronics</td>
-                <td>$2,499</td>
-                <td>
-                    <div class="stock-info">
-                        <span class="stock-count">45</span>
-                        <span class="stock-label">in stock</span>
-                    </div>
-                </td>
-                <td>2 hours ago</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="product-item">
-                        <div class="product-name">Wireless Mouse</div>
-                        <div class="product-sku">WM-X1-2024</div>
-                    </div>
-                </td>
-                <td>Accessories</td>
-                <td>$79</td>
-                <td>
-                    <div class="stock-info">
-                        <span class="stock-count">128</span>
-                        <span class="stock-label">in stock</span>
-                    </div>
-                </td>
-                <td>1 day ago</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="product-item">
-                        <div class="product-name">Mechanical Keyboard</div>
-                        <div class="product-sku">MK-PRO-2024</div>
-                    </div>
-                </td>
-                <td>Electronics</td>
-                <td>$149</td>
-                <td>
-                    <div class="stock-info">
-                        <span class="stock-count">23</span>
-                        <span class="stock-label">in stock</span>
-                    </div>
-                </td>
-                <td>3 days ago</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="product-item">
-                        <div class="product-name">USB-C Hub</div>
-                        <div class="product-sku">UCH-7IN1-2024</div>
-                    </div>
-                </td>
-                <td>Accessories</td>
-                <td>$89</td>
-                <td>
-                    <div class="stock-info">
-                        <span class="stock-count">0</span>
-                        <span class="stock-label out-of-stock">out of stock</span>
-                    </div>
-                </td>
-                <td>1 week ago</td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.simple-list-container {
-    background: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-}
-
-.simple-list-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-.simple-list-table th {
-    padding: 1.25rem 1.5rem;
-    text-align: left;
-    font-weight: 500;
-    color: #6b7280;
-    border-bottom: 1px solid #f3f4f6;
-    background: #ffffff;
-    font-size: 0.875rem;
-    letter-spacing: 0.25px;
-}
-
-.simple-list-table td {
-    padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid #f9fafb;
-    color: #374151;
-    font-size: 0.875rem;
-}
-
-.simple-list-table tr:last-child td {
-    border-bottom: none;
-}
-
-.simple-list-table tr:hover {
-    background: #fafafa;
-}
-
-.product-item .product-name {
-    font-weight: 500;
-    color: #111827;
-    margin-bottom: 0.125rem;
-}
-
-.product-item .product-sku {
-    font-size: 0.75rem;
-    color: #9ca3af;
-    font-family: 'Courier New', monospace;
-}
-
-.stock-info {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.stock-count {
-    font-weight: 600;
-    color: #111827;
-}
-
-.stock-label {
-    font-size: 0.75rem;
-    color: #6b7280;
-}
-
-.stock-label.out-of-stock {
-    color: #ef4444;
-}`,
-    js: `// No JavaScript required for this simple list table`
-},
-
-// ====================================================================
-// MINIMAL TEMPLATE 39: BORDERLESS TABLE
-// ====================================================================
-minimal39: {
-    html: `<div class="borderless-container">
-    <table class="borderless-table">
-        <thead>
-            <tr>
-                <th>Task</th>
-                <th>Project</th>
-                <th>Priority</th>
-                <th>Due Date</th>
-                <th>Assignee</th>
+                <th>Units Sold</th>
+                <th>Revenue</th>
+                <th>Profit Margin</th>
+                <th>Inventory</th>
                 <th>Status</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>
-                    <div class="task-info">
-                        <div class="task-title">Design homepage layout</div>
-                        <div class="task-description">Create new responsive design</div>
+                    <div class="product-info">
+                        <div class="product-name">MacBook Pro 16"</div>
+                        <div class="product-sku">SKU: MBP-16-2024</div>
                     </div>
                 </td>
-                <td>Website Redesign</td>
+                <td>Electronics</td>
+                <td>$2,399</td>
+                <td>89</td>
+                <td>$213,511</td>
                 <td>
-                    <span class="priority high">High</span>
-                </td>
-                <td>Mar 15, 2024</td>
-                <td>
-                    <div class="assignee">
-                        <span class="assignee-avatar">JD</span>
-                        <span class="assignee-name">John Doe</span>
+                    <div class="margin-display">
+                        <span class="margin-value">32%</span>
+                        <div class="margin-bar">
+                            <div class="margin-fill" style="width: 32%"></div>
+                        </div>
                     </div>
                 </td>
                 <td>
-                    <span class="status in-progress">In Progress</span>
+                    <div class="inventory-status">
+                        <span class="inventory-count">45</span>
+                        <div class="inventory-indicator high">In Stock</div>
+                    </div>
                 </td>
+                <td><span class="product-status active">Active</span></td>
             </tr>
             <tr>
                 <td>
-                    <div class="task-info">
-                        <div class="task-title">Write API documentation</div>
-                        <div class="task-description">Update endpoints documentation</div>
+                    <div class="product-info">
+                        <div class="product-name">iPhone 15 Pro</div>
+                        <div class="product-sku">SKU: IP15-PRO-256</div>
                     </div>
                 </td>
-                <td>API Development</td>
+                <td>Electronics</td>
+                <td>$1,199</td>
+                <td>156</td>
+                <td>$187,044</td>
                 <td>
-                    <span class="priority medium">Medium</span>
-                </td>
-                <td>Mar 20, 2024</td>
-                <td>
-                    <div class="assignee">
-                        <span class="assignee-avatar">SJ</span>
-                        <span class="assignee-name">Sarah Johnson</span>
+                    <div class="margin-display">
+                        <span class="margin-value">28%</span>
+                        <div class="margin-bar">
+                            <div class="margin-fill" style="width: 28%"></div>
+                        </div>
                     </div>
                 </td>
                 <td>
-                    <span class="status pending">Pending</span>
+                    <div class="inventory-status">
+                        <span class="inventory-count">23</span>
+                        <div class="inventory-indicator medium">Low Stock</div>
+                    </div>
                 </td>
+                <td><span class="product-status active">Active</span></td>
             </tr>
             <tr>
                 <td>
-                    <div class="task-info">
-                        <div class="task-title">Fix login bug</div>
-                        <div class="task-description">Resolve authentication issue</div>
+                    <div class="product-info">
+                        <div class="product-name">AirPods Pro</div>
+                        <div class="product-sku">SKU: AP-PRO-2</div>
                     </div>
                 </td>
-                <td>Bug Fixing</td>
+                <td>Accessories</td>
+                <td>$249</td>
+                <td>289</td>
+                <td>$71,961</td>
                 <td>
-                    <span class="priority high">High</span>
-                </td>
-                <td>Mar 12, 2024</td>
-                <td>
-                    <div class="assignee">
-                        <span class="assignee-avatar">MC</span>
-                        <span class="assignee-name">Mike Chen</span>
+                    <div class="margin-display">
+                        <span class="margin-value">35%</span>
+                        <div class="margin-bar">
+                            <div class="margin-fill" style="width: 35%"></div>
+                        </div>
                     </div>
                 </td>
                 <td>
-                    <span class="status completed">Completed</span>
+                    <div class="inventory-status">
+                        <span class="inventory-count">67</span>
+                        <div class="inventory-indicator high">In Stock</div>
+                    </div>
                 </td>
+                <td><span class="product-status active">Active</span></td>
             </tr>
             <tr>
                 <td>
-                    <div class="task-info">
-                        <div class="task-title">User testing session</div>
-                        <div class="task-description">Conduct usability testing</div>
+                    <div class="product-info">
+                        <div class="product-name">iPad Air</div>
+                        <div class="product-sku">SKU: IPA-5TH-GEN</div>
                     </div>
                 </td>
-                <td>Product Research</td>
+                <td>Tablets</td>
+                <td>$599</td>
+                <td>78</td>
+                <td>$46,722</td>
                 <td>
-                    <span class="priority low">Low</span>
-                </td>
-                <td>Mar 25, 2024</td>
-                <td>
-                    <div class="assignee">
-                        <span class="assignee-avatar">ED</span>
-                        <span class="assignee-name">Emily Davis</span>
+                    <div class="margin-display">
+                        <span class="margin-value">30%</span>
+                        <div class="margin-bar">
+                            <div class="margin-fill" style="width: 30%"></div>
+                        </div>
                     </div>
                 </td>
                 <td>
-                    <span class="status planning">Planning</span>
+                    <div class="inventory-status">
+                        <span class="inventory-count">0</span>
+                        <div class="inventory-indicator out">Out of Stock</div>
+                    </div>
                 </td>
+                <td><span class="product-status inactive">Inactive</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="product-info">
+                        <div class="product-name">Apple Watch</div>
+                        <div class="product-sku">SKU: AW-SE-2</div>
+                    </div>
+                </td>
+                <td>Wearables</td>
+                <td>$249</td>
+                <td>134</td>
+                <td>$33,366</td>
+                <td>
+                    <div class="margin-display">
+                        <span class="margin-value">25%</span>
+                        <div class="margin-bar">
+                            <div class="margin-fill" style="width: 25%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="inventory-status">
+                        <span class="inventory-count">12</span>
+                        <div class="inventory-indicator medium">Low Stock</div>
+                    </div>
+                </td>
+                <td><span class="product-status active">Active</span></td>
             </tr>
         </tbody>
     </table>
 </div>`,
-    css: `.borderless-container {
-    background: #ffffff;
+        css: `.ecommerce-table-container {
+    background: white;
     border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
 }
 
-.borderless-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+.ecommerce-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: white;
 }
 
-.borderless-table th {
-    padding: 1.5rem 1.5rem 1rem 1.5rem;
-    text-align: left;
-    font-weight: 500;
-    color: #6b7280;
-    background: #ffffff;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.ecommerce-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-.borderless-table td {
-    padding: 1.25rem 1.5rem;
-    color: #374151;
-    font-size: 0.875rem;
+.revenue-summary {
+    text-align: right;
 }
 
-.borderless-table tr {
-    border-bottom: 1px solid #f8fafc;
-}
-
-.borderless-table tr:last-child {
-    border-bottom: none;
-}
-
-.borderless-table tr:hover {
-    background: #fafafa;
-}
-
-.task-info .task-title {
-    font-weight: 500;
-    color: #111827;
+.revenue-figure {
+    font-size: 2rem;
+    font-weight: 700;
     margin-bottom: 0.25rem;
 }
 
-.task-info .task-description {
+.revenue-label {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.ecommerce-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ecommerce-table th {
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 2px solid #e5e7eb;
+    font-size: 0.875rem;
+}
+
+.ecommerce-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #6b7280;
+}
+
+.ecommerce-table tr:hover {
+    background: #f9fafb;
+}
+
+.product-info .product-name {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.product-info .product-sku {
     font-size: 0.75rem;
     color: #9ca3af;
+    font-family: monospace;
 }
 
-.priority {
-    padding: 0.375rem 0.75rem;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.priority.high {
-    background: #fef2f2;
-    color: #dc2626;
-}
-
-.priority.medium {
-    background: #fffbeb;
-    color: #d97706;
-}
-
-.priority.low {
-    background: #f0fdf4;
-    color: #16a34a;
-}
-
-.assignee {
+.margin-display {
     display: flex;
     align-items: center;
     gap: 0.75rem;
 }
 
-.assignee-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: #3b82f6;
+.margin-bar {
+    flex: 1;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    overflow: hidden;
+    min-width: 60px;
+}
+
+.margin-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #059669);
+    border-radius: 3px;
+}
+
+.inventory-status {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: white;
+    gap: 0.5rem;
 }
 
-.assignee-name {
-    font-weight: 500;
-    color: #374151;
+.inventory-count {
+    font-weight: 600;
+    color: #1f2937;
 }
 
-.status {
-    padding: 0.375rem 0.75rem;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 500;
+.inventory-indicator {
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-.status.in-progress {
-    background: #dbeafe;
-    color: #1d4ed8;
+.inventory-indicator.high {
+    background: #d1fae5;
+    color: #065f46;
 }
 
-.status.pending {
+.inventory-indicator.medium {
     background: #fef3c7;
     color: #92400e;
 }
 
-.status.completed {
+.inventory-indicator.out {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.product-status {
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.product-status.active {
     background: #d1fae5;
     color: #065f46;
 }
 
-.status.planning {
+.product-status.inactive {
     background: #f3f4f6;
     color: #6b7280;
 }`,
-    js: `// No JavaScript required for this borderless table`
-},
+        js: `// Animate margin bars on load
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.margin-fill').forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => {
+            bar.style.width = width;
+        }, 500);
+    });
+});`
+    },
 
-// ====================================================================
-// MINIMAL TEMPLATE 40: COMPACT TABLE
-// ====================================================================
-minimal40: {
-    html: `<div class="compact-container">
-    <table class="compact-table">
+    // ====================================================================
+    // ANALYTICS TEMPLATE 5: PERFORMANCE METRICS
+    // ====================================================================
+    analytics5: {
+        html: `<div class="performance-table-container">
+    <div class="performance-header">
+        <h3>Website Performance Metrics</h3>
+        <div class="performance-score">
+            <div class="score-value">87</div>
+            <div class="score-label">Performance Score</div>
+        </div>
+    </div>
+    <table class="performance-table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Metric</th>
                 <th>Current</th>
                 <th>Previous</th>
                 <th>Change</th>
-                <th>Trend</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="metric-id">#001</td>
-                <td class="metric-name">Monthly Revenue</td>
-                <td class="metric-value">$12,548</td>
-                <td class="metric-previous">$11,923</td>
-                <td>
-                    <span class="change positive">+5.2%</span>
-                </td>
-                <td>
-                    <span class="trend up">↗</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="metric-id">#002</td>
-                <td class="metric-name">Active Users</td>
-                <td class="metric-value">1,240</td>
-                <td class="metric-previous">1,099</td>
-                <td>
-                    <span class="change positive">+12.8%</span>
-                </td>
-                <td>
-                    <span class="trend up">↗</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="metric-id">#003</td>
-                <td class="metric-name">Bounce Rate</td>
-                <td class="metric-value">32.5%</td>
-                <td class="metric-previous">28.7%</td>
-                <td>
-                    <span class="change negative">+13.2%</span>
-                </td>
-                <td>
-                    <span class="trend down">↘</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="metric-id">#004</td>
-                <td class="metric-name">Avg. Session</td>
-                <td class="metric-value">4m 32s</td>
-                <td class="metric-previous">4m 15s</td>
-                <td>
-                    <span class="change positive">+6.7%</span>
-                </td>
-                <td>
-                    <span class="trend up">↗</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="metric-id">#005</td>
-                <td class="metric-name">Conversion Rate</td>
-                <td class="metric-value">3.8%</td>
-                <td class="metric-previous">3.5%</td>
-                <td>
-                    <span class="change positive">+8.6%</span>
-                </td>
-                <td>
-                    <span class="trend up">↗</span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.compact-container {
-    background: #ffffff;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
-}
-
-.compact-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-size: 0.8125rem;
-}
-
-.compact-table th {
-    padding: 0.875rem 1rem;
-    text-align: left;
-    font-weight: 500;
-    color: #6b7280;
-    border-bottom: 1px solid #f3f4f6;
-    background: #fafafa;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 0.75rem;
-}
-
-.compact-table td {
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid #f9fafb;
-    color: #374151;
-}
-
-.compact-table tr:last-child td {
-    border-bottom: none;
-}
-
-.compact-table tr:hover {
-    background: #fafafa;
-}
-
-.metric-id {
-    font-family: 'Courier New', monospace;
-    font-weight: 600;
-    color: #6b7280;
-    font-size: 0.75rem;
-}
-
-.metric-name {
-    font-weight: 500;
-    color: #111827;
-}
-
-.metric-value {
-    font-weight: 600;
-    color: #111827;
-}
-
-.metric-previous {
-    color: #9ca3af;
-    font-size: 0.75rem;
-}
-
-.change {
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-weight: 500;
-    font-size: 0.75rem;
-}
-
-.change.positive {
-    background: #f0fdf4;
-    color: #16a34a;
-}
-
-.change.negative {
-    background: #fef2f2;
-    color: #dc2626;
-}
-
-.trend {
-    font-size: 0.875rem;
-    font-weight: 600;
-}
-
-.trend.up {
-    color: #16a34a;
-}
-
-.trend.down {
-    color: #dc2626;
-}`,
-    js: `// No JavaScript required for this compact table`
-},
-
-// ====================================================================
-// MINIMAL TEMPLATE 41: LIGHT THEME TABLE
-// ====================================================================
-minimal41: {
-    html: `<div class="light-theme-container">
-    <table class="light-theme-table">
-        <thead>
-            <tr>
-                <th>Service</th>
-                <th>Environment</th>
-                <th>Uptime</th>
-                <th>Response Time</th>
+                <th>Target</th>
                 <th>Status</th>
-                <th>Last Check</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>
-                    <div class="service-info">
-                        <div class="service-name">API Gateway</div>
-                        <div class="service-version">v2.4.1</div>
+                    <div class="metric-info">
+                        <div class="metric-name">Page Load Time</div>
+                        <div class="metric-description">Time to first contentful paint</div>
                     </div>
                 </td>
-                <td>Production</td>
+                <td>1.2s</td>
+                <td>1.8s</td>
                 <td>
-                    <div class="uptime-metric">
-                        <span class="uptime-value">99.98%</span>
-                        <span class="uptime-perfect">Perfect</span>
+                    <div class="change-display positive">
+                        <span class="change-icon">↗</span>
+                        <span class="change-value">-33%</span>
                     </div>
                 </td>
-                <td>
-                    <div class="response-metric">
-                        <span class="response-value">45ms</span>
-                        <span class="response-fast">Fast</span>
-                    </div>
-                </td>
-                <td>
-                    <span class="service-status online">Online</span>
-                </td>
-                <td>Just now</td>
+                <td>&lt; 2.0s</td>
+                <td><span class="status-badge excellent">Excellent</span></td>
             </tr>
             <tr>
                 <td>
-                    <div class="service-info">
-                        <div class="service-name">Database Cluster</div>
-                        <div class="service-version">v1.2.0</div>
+                    <div class="metric-info">
+                        <div class="metric-name">First Input Delay</div>
+                        <div class="metric-description">Time to first user interaction</div>
                     </div>
                 </td>
-                <td>Production</td>
+                <td>85ms</td>
+                <td>120ms</td>
                 <td>
-                    <div class="uptime-metric">
-                        <span class="uptime-value">99.95%</span>
-                        <span class="uptime-excellent">Excellent</span>
+                    <div class="change-display positive">
+                        <span class="change-icon">↗</span>
+                        <span class="change-value">-29%</span>
                     </div>
                 </td>
-                <td>
-                    <div class="response-metric">
-                        <span class="response-value">12ms</span>
-                        <span class="response-fast">Fast</span>
-                    </div>
-                </td>
-                <td>
-                    <span class="service-status online">Online</span>
-                </td>
-                <td>2 min ago</td>
+                <td>&lt; 100ms</td>
+                <td><span class="status-badge good">Good</span></td>
             </tr>
             <tr>
                 <td>
-                    <div class="service-info">
-                        <div class="service-name">Cache Service</div>
-                        <div class="service-version">v3.1.2</div>
+                    <div class="metric-info">
+                        <div class="metric-name">Largest Contentful Paint</div>
+                        <div class="metric-description">Time to render main content</div>
                     </div>
                 </td>
-                <td>Production</td>
+                <td>2.1s</td>
+                <td>2.8s</td>
                 <td>
-                    <div class="uptime-metric">
-                        <span class="uptime-value">99.92%</span>
-                        <span class="uptime-excellent">Excellent</span>
+                    <div class="change-display positive">
+                        <span class="change-icon">↗</span>
+                        <span class="change-value">-25%</span>
                     </div>
                 </td>
-                <td>
-                    <div class="response-metric">
-                        <span class="response-value">8ms</span>
-                        <span class="response-fast">Fast</span>
-                    </div>
-                </td>
-                <td>
-                    <span class="service-status online">Online</span>
-                </td>
-                <td>5 min ago</td>
+                <td>&lt; 2.5s</td>
+                <td><span class="status-badge good">Good</span></td>
             </tr>
             <tr>
                 <td>
-                    <div class="service-info">
-                        <div class="service-name">File Storage</div>
-                        <div class="service-version">v1.0.3</div>
+                    <div class="metric-info">
+                        <div class="metric-name">Cumulative Layout Shift</div>
+                        <div class="metric-description">Visual stability score</div>
                     </div>
                 </td>
-                <td>Staging</td>
+                <td>0.08</td>
+                <td>0.12</td>
                 <td>
-                    <div class="uptime-metric">
-                        <span class="uptime-value">99.85%</span>
-                        <span class="uptime-good">Good</span>
+                    <div class="change-display positive">
+                        <span class="change-icon">↗</span>
+                        <span class="change-value">-33%</span>
                     </div>
                 </td>
+                <td>&lt; 0.1</td>
+                <td><span class="status-badge excellent">Excellent</span></td>
+            </tr>
+            <tr>
                 <td>
-                    <div class="response-metric">
-                        <span class="response-value">89ms</span>
-                        <span class="response-normal">Normal</span>
+                    <div class="metric-info">
+                        <div class="metric-name">Conversion Rate</div>
+                        <div class="metric-description">Percentage of converting visitors</div>
                     </div>
                 </td>
+                <td>4.5%</td>
+                <td>3.8%</td>
                 <td>
-                    <span class="service-status maintenance">Maintenance</span>
+                    <div class="change-display positive">
+                        <span class="change-icon">↗</span>
+                        <span class="change-value">+18%</span>
+                    </div>
                 </td>
-                <td>1 hour ago</td>
+                <td>&gt; 4.0%</td>
+                <td><span class="status-badge excellent">Excellent</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="metric-info">
+                        <div class="metric-name">Bounce Rate</div>
+                        <div class="metric-description">Percentage of single-page sessions</div>
+                    </div>
+                </td>
+                <td>42.3%</td>
+                <td>38.5%</td>
+                <td>
+                    <div class="change-display negative">
+                        <span class="change-icon">↘</span>
+                        <span class="change-value">+9.8%</span>
+                    </div>
+                </td>
+                <td>&lt; 40%</td>
+                <td><span class="status-badge needs-improvement">Needs Improvement</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="metric-info">
+                        <div class="metric-name">Mobile Responsiveness</div>
+                        <div class="metric-description">Mobile usability score</div>
+                    </div>
+                </td>
+                <td>94%</td>
+                <td>92%</td>
+                <td>
+                    <div class="change-display positive">
+                        <span class="change-icon">↗</span>
+                        <span class="change-value">+2.2%</span>
+                    </div>
+                </td>
+                <td>&gt; 95%</td>
+                <td><span class="status-badge good">Good</span></td>
             </tr>
         </tbody>
     </table>
 </div>`,
-    css: `.light-theme-container {
-    background: #ffffff;
+        css: `.performance-table-container {
+    background: white;
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    border: 1px solid #f1f5f9;
-}
-
-.light-theme-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-.light-theme-table th {
-    padding: 1.25rem 1.5rem;
-    text-align: left;
-    font-weight: 500;
-    color: #64748b;
-    border-bottom: 1px solid #f1f5f9;
-    background: #f8fafc;
-    font-size: 0.875rem;
-    letter-spacing: 0.25px;
-}
-
-.light-theme-table td {
-    padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid #f8fafc;
-    color: #475569;
-    font-size: 0.875rem;
-}
-
-.light-theme-table tr:last-child td {
-    border-bottom: none;
-}
-
-.light-theme-table tr:hover {
-    background: #f8fafc;
-}
-
-.service-info .service-name {
-    font-weight: 500;
-    color: #0f172a;
-    margin-bottom: 0.25rem;
-}
-
-.service-info .service-version {
-    font-size: 0.75rem;
-    color: #94a3b8;
-    font-family: 'Courier New', monospace;
-}
-
-.uptime-metric,
-.response-metric {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.uptime-value,
-.response-value {
-    font-weight: 600;
-    color: #0f172a;
-}
-
-.uptime-perfect,
-.uptime-excellent,
-.uptime-good,
-.response-fast,
-.response-normal {
-    font-size: 0.75rem;
-    padding: 0.125rem 0.5rem;
-    border-radius: 4px;
-    font-weight: 500;
-}
-
-.uptime-perfect {
-    background: #f0fdf4;
-    color: #16a34a;
-}
-
-.uptime-excellent {
-    background: #ecfdf5;
-    color: #10b981;
-}
-
-.uptime-good {
-    background: #f0f9ff;
-    color: #0ea5e9;
-}
-
-.response-fast {
-    background: #f0fdf4;
-    color: #16a34a;
-}
-
-.response-normal {
-    background: #fffbeb;
-    color: #d97706;
-}
-
-.service-status {
-    padding: 0.5rem 0.875rem;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.service-status.online {
-    background: #f0fdf4;
-    color: #16a34a;
-    border: 1px solid #dcfce7;
-}
-
-.service-status.maintenance {
-    background: #fffbeb;
-    color: #d97706;
-    border: 1px solid #fed7aa;
-}`,
-    js: `// No JavaScript required for this light theme table`
-},
-// ====================================================================
-// ANALYTICS TEMPLATE 42: PERFORMANCE METRICS
-// ====================================================================
-analytics42: {
-    html: `<div class="performance-metrics-container">
-    <div class="metrics-header">
-        <h3>📈 Key Performance Indicators</h3>
-        <div class="time-filter">
-            <select class="filter-select">
-                <option>Last 7 Days</option>
-                <option>Last 30 Days</option>
-                <option selected>Last 90 Days</option>
-                <option>Year to Date</option>
-            </select>
-        </div>
-    </div>
-    <table class="performance-metrics-table">
-        <thead>
-            <tr>
-                <th>Metric</th>
-                <th>Current Period</th>
-                <th>Previous Period</th>
-                <th>Change</th>
-                <th>Trend</th>
-                <th>Progress</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="metric-revenue">
-                <td>
-                    <div class="metric-info">
-                        <div class="metric-icon">💰</div>
-                        <div class="metric-details">
-                            <div class="metric-name">Monthly Revenue</div>
-                            <div class="metric-description">Total monthly income</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="current-value">$12,548</td>
-                <td class="previous-value">$10,845</td>
-                <td>
-                    <div class="change-indicator positive">
-                        <span class="change-value">+15.7%</span>
-                        <span class="change-arrow">↗</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="trend-chart">
-                        <div class="chart-line">
-                            <div class="data-point" style="left: 10%"></div>
-                            <div class="data-point" style="left: 30%"></div>
-                            <div class="data-point" style="left: 50%"></div>
-                            <div class="data-point" style="left: 70%"></div>
-                            <div class="data-point" style="left: 90%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="progress-metric">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 85%"></div>
-                        </div>
-                        <span class="progress-text">85% of target</span>
-                    </div>
-                </td>
-            </tr>
-            <tr class="metric-users">
-                <td>
-                    <div class="metric-info">
-                        <div class="metric-icon">👥</div>
-                        <div class="metric-details">
-                            <div class="metric-name">Active Users</div>
-                            <div class="metric-description">Monthly active users</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="current-value">2,458</td>
-                <td class="previous-value">2,120</td>
-                <td>
-                    <div class="change-indicator positive">
-                        <span class="change-value">+15.9%</span>
-                        <span class="change-arrow">↗</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="trend-chart">
-                        <div class="chart-line">
-                            <div class="data-point" style="left: 15%"></div>
-                            <div class="data-point" style="left: 35%"></div>
-                            <div class="data-point" style="left: 55%"></div>
-                            <div class="data-point" style="left: 75%"></div>
-                            <div class="data-point" style="left: 95%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="progress-metric">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 92%"></div>
-                        </div>
-                        <span class="progress-text">92% of target</span>
-                    </div>
-                </td>
-            </tr>
-            <tr class="metric-conversion">
-                <td>
-                    <div class="metric-info">
-                        <div class="metric-icon">🎯</div>
-                        <div class="metric-details">
-                            <div class="metric-name">Conversion Rate</div>
-                            <div class="metric-description">Visitor to customer rate</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="current-value">4.2%</td>
-                <td class="previous-value">3.8%</td>
-                <td>
-                    <div class="change-indicator positive">
-                        <span class="change-value">+10.5%</span>
-                        <span class="change-arrow">↗</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="trend-chart">
-                        <div class="chart-line">
-                            <div class="data-point" style="left: 20%"></div>
-                            <div class="data-point" style="left: 40%"></div>
-                            <div class="data-point" style="left: 60%"></div>
-                            <div class="data-point" style="left: 80%"></div>
-                            <div class="data-point" style="left: 85%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="progress-metric">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 78%"></div>
-                        </div>
-                        <span class="progress-text">78% of target</span>
-                    </div>
-                </td>
-            </tr>
-            <tr class="metric-bounce">
-                <td>
-                    <div class="metric-info">
-                        <div class="metric-icon">📉</div>
-                        <div class="metric-details">
-                            <div class="metric-name">Bounce Rate</div>
-                            <div class="metric-description">Single-page sessions</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="current-value">32.5%</td>
-                <td class="previous-value">35.2%</td>
-                <td>
-                    <div class="change-indicator positive">
-                        <span class="change-value">-7.7%</span>
-                        <span class="change-arrow">↘</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="trend-chart">
-                        <div class="chart-line">
-                            <div class="data-point" style="left: 90%"></div>
-                            <div class="data-point" style="left: 80%"></div>
-                            <div class="data-point" style="left: 70%"></div>
-                            <div class="data-point" style="left: 60%"></div>
-                            <div class="data-point" style="left: 50%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="progress-metric">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 65%"></div>
-                        </div>
-                        <span class="progress-text">65% of target</span>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.performance-metrics-container {
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     border: 1px solid #e5e7eb;
 }
 
-.metrics-header {
-    padding: 1.5rem 2rem;
-    background: #f8fafc;
-    border-bottom: 1px solid #e5e7eb;
+.performance-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    color: white;
 }
 
-.metrics-header h3 {
+.performance-header h3 {
     margin: 0;
-    color: #1f2937;
     font-size: 1.5rem;
     font-weight: 600;
 }
 
-.time-filter .filter-select {
-    padding: 0.5rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    background: white;
-    font-size: 0.875rem;
-    color: #374151;
+.performance-score {
+    text-align: center;
 }
 
-.performance-metrics-table {
+.score-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.score-label {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.performance-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.performance-metrics-table th {
-    padding: 1.25rem 2rem;
+.performance-table th {
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
     text-align: left;
     font-weight: 600;
     color: #374151;
     border-bottom: 2px solid #e5e7eb;
-    background: #f9fafb;
     font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-.performance-metrics-table td {
-    padding: 1.5rem 2rem;
+.performance-table td {
+    padding: 1rem 1.5rem;
     border-bottom: 1px solid #f3f4f6;
     color: #6b7280;
 }
 
-.metric-revenue { background: linear-gradient(90deg, rgba(34, 197, 94, 0.03), transparent); }
-.metric-users { background: linear-gradient(90deg, rgba(59, 130, 246, 0.03), transparent); }
-.metric-conversion { background: linear-gradient(90deg, rgba(168, 85, 247, 0.03), transparent); }
-.metric-bounce { background: linear-gradient(90deg, rgba(239, 68, 68, 0.03), transparent); }
-
-.performance-metrics-table tr:hover {
+.performance-table tr:hover {
     background: #f9fafb;
 }
 
-.metric-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.metric-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #10b981, #059669);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    color: white;
-}
-
-.metric-users .metric-icon { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
-.metric-conversion .metric-icon { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-.metric-bounce .metric-icon { background: linear-gradient(135deg, #ef4444, #dc2626); }
-
-.metric-details .metric-name {
+.metric-info .metric-name {
     font-weight: 600;
     color: #1f2937;
     margin-bottom: 0.25rem;
 }
 
-.metric-details .metric-description {
-    font-size: 0.875rem;
+.metric-info .metric-description {
+    font-size: 0.75rem;
     color: #9ca3af;
 }
 
-.current-value {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #1f2937;
-}
-
-.previous-value {
-    color: #9ca3af;
-    font-size: 0.875rem;
-}
-
-.change-indicator {
+.change-display {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 8px;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
     font-weight: 600;
     font-size: 0.875rem;
 }
 
-.change-indicator.positive {
-    background: #f0fdf4;
-    color: #16a34a;
+.change-display.positive {
+    background: #d1fae5;
+    color: #065f46;
 }
 
-.change-indicator.negative {
-    background: #fef2f2;
-    color: #dc2626;
+.change-display.negative {
+    background: #fee2e2;
+    color: #991b1b;
 }
 
-.change-arrow {
+.change-icon {
     font-size: 1rem;
-    font-weight: 700;
 }
 
-.trend-chart {
-    width: 80px;
-    height: 30px;
-    position: relative;
-    background: #f8fafc;
-    border-radius: 4px;
-    overflow: hidden;
+.status-badge {
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.chart-line {
+.status-badge.excellent {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.good {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.status-badge.needs-improvement {
+    background: #fef3c7;
+    color: #92400e;
+}`,
+        js: `// Performance metrics calculations
+console.log('Performance metrics table loaded');
+// Additional performance tracking can be added here`
+    },
+    // ====================================================================
+    // TEMPLATE 36: DARK MODERN DATA TABLE
+    // Features: Clean dark design with status indicators and actions
+    // Category: dark-theme
+    // ====================================================================
+    table36: {
+        html: `<div class="dark-modern-container">
+    <table class="dark-modern-table">
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Position</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="employee-info">
+                        <div class="avatar">JD</div>
+                        <div class="employee-details">
+                            <div class="name">John Doe</div>
+                            <div class="email">john@company.com</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Frontend Developer</td>
+                <td>Engineering</td>
+                <td><span class="status active">Active</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="employee-info">
+                        <div class="avatar">SM</div>
+                        <div class="employee-details">
+                            <div class="name">Sarah Miller</div>
+                            <div class="email">sarah@company.com</div>
+                        </div>
+                    </div>
+                </td>
+                <td>UI Designer</td>
+                <td>Design</td>
+                <td><span class="status active">Active</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="employee-info">
+                        <div class="avatar">RJ</div>
+                        <div class="employee-details">
+                            <div class="name">Robert Johnson</div>
+                            <div class="email">robert@company.com</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Backend Developer</td>
+                <td>Engineering</td>
+                <td><span class="status inactive">Inactive</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+        css: `/* Dark Modern Table Styles */
+.dark-modern-container {
+    background: #1a1f35;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid #2d3748;
+}
+
+.dark-modern-table {
     width: 100%;
-    height: 100%;
-    position: relative;
+    border-collapse: collapse;
+    color: #e2e8f0;
 }
 
-.data-point {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: #3b82f6;
-    transform: translate(-50%, -50%);
-    bottom: 0;
+.dark-modern-table th {
+    background: #2d3748;
+    padding: 1rem 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    color: #cbd5e1;
+    border-bottom: 2px solid #4a5568;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.metric-revenue .data-point { background: #10b981; }
-.metric-users .data-point { background: #3b82f6; }
-.metric-conversion .data-point { background: #8b5cf6; }
-.metric-bounce .data-point { background: #ef4444; }
+.dark-modern-table td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid #2d3748;
+    transition: all 0.3s ease;
+}
 
-.progress-metric {
+.dark-modern-table tr {
+    transition: all 0.3s ease;
+}
+
+.dark-modern-table tr:hover {
+    background: #2d3748;
+    transform: translateX(5px);
+}
+
+.dark-modern-table tr:hover td {
+    color: #ffffff;
+}
+
+/* Employee Info Styles */
+.employee-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.employee-details {
     display: flex;
     flex-direction: column;
+}
+
+.employee-details .name {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.employee-details .email {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* Status Styles */
+.status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status.active {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status.inactive {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
     gap: 0.5rem;
 }
 
-.progress-bar {
+.btn-edit {
+    background: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-edit:hover {
+    background: rgba(59, 130, 246, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-delete:hover {
+    background: rgba(239, 68, 68, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dark-modern-container {
+        padding: 1rem;
+    }
+    
+    .dark-modern-table th,
+    .dark-modern-table td {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+    
+    .btn-edit,
+    .btn-delete {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}`,
+        js: `// Dark Modern Table Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    const tableRows = document.querySelectorAll('.dark-modern-table tr');
+    
+    tableRows.forEach(row => {
+        row.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(5px)';
+        });
+        
+        row.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
+        });
+    });
+    
+    // Action button functionality
+    const editButtons = document.querySelectorAll('.btn-edit');
+    const deleteButtons = document.querySelectorAll('.btn-delete');
+    
+    editButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const row = this.closest('tr');
+            const name = row.querySelector('.name').textContent;
+            console.log('Edit clicked for:', name);
+            // Add your edit logic here
+        });
+    });
+    
+    deleteButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const row = this.closest('tr');
+            const name = row.querySelector('.name').textContent;
+            console.log('Delete clicked for:', name);
+            // Add your delete logic here
+        });
+    });
+});`
+    },
+
+    // ====================================================================
+    // TEMPLATE 37: DARK ANALYTICS DASHBOARD TABLE
+    // Features: Analytics data with progress bars and metrics
+    // Category: dark-theme, analytics
+    // ====================================================================
+    table37: {
+        html: `<div class="dark-analytics-container">
+    <div class="analytics-header">
+        <h3>Performance Metrics</h3>
+        <div class="time-filter">
+            <select class="filter-select">
+                <option>Last 7 Days</option>
+                <option>Last 30 Days</option>
+                <option>Last 90 Days</option>
+            </select>
+        </div>
+    </div>
+    
+    <table class="dark-analytics-table">
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Current</th>
+                <th>Target</th>
+                <th>Progress</th>
+                <th>Trend</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="metric-info">
+                        <i class="fas fa-users"></i>
+                        <span>User Growth</span>
+                    </div>
+                </td>
+                <td class="metric-value">12,458</td>
+                <td class="metric-target">15,000</td>
+                <td>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 83%"></div>
+                        </div>
+                        <span class="progress-text">83%</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>12%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="metric-info">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Revenue</span>
+                    </div>
+                </td>
+                <td class="metric-value">$48,250</td>
+                <td class="metric-target">$60,000</td>
+                <td>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%"></div>
+                        </div>
+                        <span class="progress-text">80%</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>8%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="metric-info">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Conversion Rate</span>
+                    </div>
+                </td>
+                <td class="metric-value">3.2%</td>
+                <td class="metric-target">4.0%</td>
+                <td>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <span class="progress-text">65%</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="trend down">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>2%</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+        css: `/* Dark Analytics Table Styles */
+.dark-analytics-container {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid #334155;
+}
+
+.analytics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #334155;
+}
+
+.analytics-header h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.time-filter {
+    display: flex;
+    align-items: center;
+}
+
+.filter-select {
+    background: #1e293b;
+    border: 1px solid #475569;
+    color: #e2e8f0;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+}
+
+.dark-analytics-table {
     width: 100%;
-    height: 6px;
-    background: #e5e7eb;
+    border-collapse: collapse;
+    color: #e2e8f0;
+}
+
+.dark-analytics-table th {
+    background: #1e293b;
+    padding: 1.2rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #94a3b8;
+    border-bottom: 2px solid #475569;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dark-analytics-table td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid #334155;
+    transition: all 0.3s ease;
+}
+
+.dark-analytics-table tr {
+    transition: all 0.3s ease;
+}
+
+.dark-analytics-table tr:hover {
+    background: #1e293b;
+}
+
+.dark-analytics-table tr:hover td {
+    color: #ffffff;
+}
+
+/* Metric Info Styles */
+.metric-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+}
+
+.metric-info i {
+    color: #7c3aed;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Metric Values */
+.metric-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.metric-target {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* Progress Bar Styles */
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: #334155;
     border-radius: 10px;
     overflow: hidden;
 }
 
 .progress-fill {
     height: 100%;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
     border-radius: 10px;
-    background: linear-gradient(90deg, #10b981, #22c55e);
-    transition: width 1s ease-in-out;
+    transition: width 1s ease;
+    position: relative;
 }
 
-.metric-users .progress-fill { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
-.metric-conversion .progress-fill { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
-.metric-bounce .progress-fill { background: linear-gradient(90deg, #ef4444, #f87171); }
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
 
 .progress-text {
-    font-size: 0.75rem;
-    color: #6b7280;
-    text-align: center;
-}`,
-    js: `// Performance metrics interactions
-document.querySelector('.filter-select').addEventListener('change', function() {
-    const period = this.value;
-    alert(\`Loading data for: \${period}\`);
-});
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.9rem;
+    min-width: 40px;
+}
 
-// Animate progress bars
+/* Trend Styles */
+.trend {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.trend.up {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+.trend.down {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.trend i {
+    font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .analytics-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .time-filter {
+        width: 100%;
+    }
+    
+    .filter-select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .dark-analytics-container {
+        padding: 1.5rem;
+    }
+    
+    .dark-analytics-table {
+        font-size: 0.9rem;
+    }
+    
+    .dark-analytics-table th,
+    .dark-analytics-table td {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .progress-container {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+}`,
+        js: `// Analytics Table Functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Time filter functionality
+    const filterSelect = document.querySelector('.filter-select');
+    
+    filterSelect.addEventListener('change', function() {
+        console.log('Time filter changed to:', this.value);
+        // Add your filter logic here
+    });
+    
+    // Animate progress bars on scroll
     const progressBars = document.querySelectorAll('.progress-fill');
-    progressBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 500);
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const width = entry.target.style.width;
+                entry.target.style.width = '0%';
+                setTimeout(() => {
+                    entry.target.style.width = width;
+                }, 300);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    progressBars.forEach(bar => observer.observe(bar));
+    
+    // Add hover effects
+    const tableRows = document.querySelectorAll('.dark-analytics-table tr');
+    
+    tableRows.forEach(row => {
+        row.addEventListener('mouseenter', function() {
+            const progressFill = this.querySelector('.progress-fill');
+            if (progressFill) {
+                progressFill.style.transform = 'scaleY(1.2)';
+            }
+        });
+        
+        row.addEventListener('mouseleave', function() {
+            const progressFill = this.querySelector('.progress-fill');
+            if (progressFill) {
+                progressFill.style.transform = 'scaleY(1)';
+            }
+        });
     });
 });`
-},
+    },
 
-// ====================================================================
-// ANALYTICS TEMPLATE 43: TRAFFIC SOURCES
-// ====================================================================
-analytics43: {
-    html: `<div class="traffic-sources-container">
-    <div class="traffic-header">
-        <h3>🌐 Traffic Sources Analysis</h3>
-        <div class="traffic-summary">
-            <div class="summary-item">
-                <div class="summary-value">45.8K</div>
-                <div class="summary-label">Total Visits</div>
-            </div>
-            <div class="summary-item">
-                <div class="summary-value">3.8%</div>
-                <div class="summary-label">Avg. Conversion</div>
-            </div>
+    // ====================================================================
+    // TEMPLATE 38: DARK E-COMMERCE PRODUCTS TABLE
+    // Features: Product management with inventory and pricing
+    // Category: dark-theme, business
+    // ====================================================================
+    table38: {
+        html: `<div class="dark-ecommerce-container">
+    <div class="ecommerce-header">
+        <h3>Product Inventory</h3>
+        <div class="header-actions">
+            <button class="btn-add">
+                <i class="fas fa-plus"></i>
+                Add Product
+            </button>
         </div>
     </div>
-    <table class="traffic-sources-table">
+    
+    <table class="dark-ecommerce-table">
         <thead>
             <tr>
-                <th>Source</th>
-                <th>Visits</th>
-                <th>% of Total</th>
-                <th>Conversion Rate</th>
-                <th>Trend (30d)</th>
-                <th>Quality Score</th>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>Sales</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="source-organic">
+            <tr>
                 <td>
-                    <div class="source-info">
-                        <div class="source-icon">🔍</div>
-                        <div class="source-details">
-                            <div class="source-name">Organic Search</div>
-                            <div class="source-description">Google, Bing, etc.</div>
+                    <div class="product-info">
+                        <div class="product-image">
+                            <i class="fas fa-laptop"></i>
                         </div>
-                    </div>
-                </td>
-                <td class="visits-count">12,548</td>
-                <td>
-                    <div class="percentage-metric">
-                        <div class="percentage-value">27.4%</div>
-                        <div class="percentage-bar">
-                            <div class="percentage-fill" style="width: 27.4%"></div>
+                        <div class="product-details">
+                            <div class="product-name">MacBook Pro 16"</div>
+                            <div class="product-sku">SKU: MBP16-2024</div>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="conversion-metric">
-                        <div class="conversion-value">4.2%</div>
-                        <div class="conversion-change positive">+0.8%</div>
-                    </div>
+                    <span class="category-tag">Electronics</span>
                 </td>
                 <td>
-                    <div class="trend-sparkline">
-                        <svg width="80" height="30" viewBox="0 0 80 30" class="sparkline">
-                            <path d="M0,25 L10,18 L20,22 L30,15 L40,20 L50,12 L60,18 L70,10 L80,15" 
-                                  fill="none" stroke="#10b981" stroke-width="2"/>
-                        </svg>
-                        <span class="trend-value positive">+12.5%</span>
-                    </div>
+                    <div class="price">$2,499.00</div>
                 </td>
                 <td>
-                    <div class="quality-score excellent">
-                        <div class="score-stars">
-                            <span class="star filled">★</span>
-                            <span class="star filled">★</span>
-                            <span class="star filled">★</span>
-                            <span class="star filled">★</span>
-                            <span class="star">★</span>
+                    <div class="stock-info">
+                        <div class="stock-level">
+                            <div class="stock-bar">
+                                <div class="stock-fill high"></div>
+                            </div>
+                            <span class="stock-text">45 units</span>
                         </div>
-                        <span class="score-text">Excellent</span>
+                    </div>
+                </td>
+                <td>
+                    <span class="status-badge active">In Stock</span>
+                </td>
+                <td>
+                    <div class="sales-info">
+                        <div class="sales-count">128 sold</div>
+                        <div class="sales-trend up">+15%</div>
                     </div>
                 </td>
             </tr>
-            <tr class="source-social">
+            <tr>
                 <td>
-                    <div class="source-info">
-                        <div class="source-icon">💬</div>
-                        <div class="source-details">
-                            <div class="source-name">Social Media</div>
-                            <div class="source-description">Facebook, Twitter, etc.</div>
+                    <div class="product-info">
+                        <div class="product-image">
+                            <i class="fas fa-mobile-alt"></i>
                         </div>
-                    </div>
-                </td>
-                <td class="visits-count">8,742</td>
-                <td>
-                    <div class="percentage-metric">
-                        <div class="percentage-value">19.1%</div>
-                        <div class="percentage-bar">
-                            <div class="percentage-fill" style="width: 19.1%"></div>
+                        <div class="product-details">
+                            <div class="product-name">iPhone 15 Pro</div>
+                            <div class="product-sku">SKU: IP15P-256</div>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="conversion-metric">
-                        <div class="conversion-value">3.1%</div>
-                        <div class="conversion-change positive">+0.4%</div>
-                    </div>
+                    <span class="category-tag">Electronics</span>
                 </td>
                 <td>
-                    <div class="trend-sparkline">
-                        <svg width="80" height="30" viewBox="0 0 80 30" class="sparkline">
-                            <path d="M0,20 L10,15 L20,18 L30,12 L40,15 L50,10 L60,12 L70,8 L80,10" 
-                                  fill="none" stroke="#3b82f6" stroke-width="2"/>
-                        </svg>
-                        <span class="trend-value positive">+8.3%</span>
-                    </div>
+                    <div class="price">$1,199.00</div>
                 </td>
                 <td>
-                    <div class="quality-score good">
-                        <div class="score-stars">
-                            <span class="star filled">★</span>
-                            <span class="star filled">★</span>
-                            <span class="star filled">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
+                    <div class="stock-info">
+                        <div class="stock-level">
+                            <div class="stock-bar">
+                                <div class="stock-fill medium"></div>
+                            </div>
+                            <span class="stock-text">12 units</span>
                         </div>
-                        <span class="score-text">Good</span>
+                    </div>
+                </td>
+                <td>
+                    <span class="status-badge active">In Stock</span>
+                </td>
+                <td>
+                    <div class="sales-info">
+                        <div class="sales-count">89 sold</div>
+                        <div class="sales-trend up">+22%</div>
                     </div>
                 </td>
             </tr>
-            <tr class="source-direct">
+            <tr>
                 <td>
-                    <div class="source-info">
-                        <div class="source-icon">📍</div>
-                        <div class="source-details">
-                            <div class="source-name">Direct Traffic</div>
-                            <div class="source-description">Direct visits</div>
+                    <div class="product-info">
+                        <div class="product-image">
+                            <i class="fas fa-headphones"></i>
                         </div>
-                    </div>
-                </td>
-                <td class="visits-count">7,856</td>
-                <td>
-                    <div class="percentage-metric">
-                        <div class="percentage-value">17.2%</div>
-                        <div class="percentage-bar">
-                            <div class="percentage-fill" style="width: 17.2%"></div>
+                        <div class="product-details">
+                            <div class="product-name">Wireless Headphones</div>
+                            <div class="product-sku">SKU: WH-XB910</div>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="conversion-metric">
-                        <div class="conversion-value">5.8%</div>
-                        <div class="conversion-change negative">-0.2%</div>
-                    </div>
+                    <span class="category-tag">Audio</span>
                 </td>
                 <td>
-                    <div class="trend-sparkline">
-                        <svg width="80" height="30" viewBox="0 0 80 30" class="sparkline">
-                            <path d="M0,15 L10,18 L20,12 L30,15 L40,10 L50,12 L60,8 L70,10 L80,12" 
-                                  fill="none" stroke="#f59e0b" stroke-width="2"/>
-                        </svg>
-                        <span class="trend-value negative">-3.2%</span>
-                    </div>
+                    <div class="price">$299.00</div>
                 </td>
                 <td>
-                    <div class="quality-score excellent">
-                        <div class="score-stars">
-                            <span class="star filled">★</span>
-                            <span class="star filled">★</span>
-                            <span class="star filled">★</span>
-                            <span class="star filled">★</span>
-                            <span class="star filled">★</span>
-                        </div>
-                        <span class="score-text">Excellent</span>
-                    </div>
-                </td>
-            </tr>
-            <tr class="source-referral">
-                <td>
-                    <div class="source-info">
-                        <div class="source-icon">🔗</div>
-                        <div class="source-details">
-                            <div class="source-name">Referral</div>
-                            <div class="source-description">Other websites</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="visits-count">5,234</td>
-                <td>
-                    <div class="percentage-metric">
-                        <div class="percentage-value">11.4%</div>
-                        <div class="percentage-bar">
-                            <div class="percentage-fill" style="width: 11.4%"></div>
+                    <div class="stock-info">
+                        <div class="stock-level">
+                            <div class="stock-bar">
+                                <div class="stock-fill low"></div>
+                            </div>
+                            <span class="stock-text">3 units</span>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="conversion-metric">
-                        <div class="conversion-value">2.4%</div>
-                        <div class="conversion-change positive">+1.1%</div>
-                    </div>
+                    <span class="status-badge warning">Low Stock</span>
                 </td>
                 <td>
-                    <div class="trend-sparkline">
-                        <svg width="80" height="30" viewBox="0 0 80 30" class="sparkline">
-                            <path d="M0,25 L10,20 L20,22 L30,18 L40,20 L50,15 L60,18 L70,12 L80,15" 
-                                  fill="none" stroke="#8b5cf6" stroke-width="2"/>
-                        </svg>
-                        <span class="trend-value positive">+15.8%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="quality-score average">
-                        <div class="score-stars">
-                            <span class="star filled">★</span>
-                            <span class="star filled">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                            <span class="star">★</span>
-                        </div>
-                        <span class="score-text">Average</span>
+                    <div class="sales-info">
+                        <div class="sales-count">67 sold</div>
+                        <div class="sales-trend down">-5%</div>
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>`,
-    css: `.traffic-sources-container {
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5e7eb;
+        css: `/* Dark E-commerce Table Styles */
+.dark-ecommerce-container {
+    background: #1a1f35;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid #2d3748;
 }
 
-.traffic-header {
-    padding: 1.5rem 2rem;
-    background: #f8fafc;
-    border-bottom: 1px solid #e5e7eb;
+.ecommerce-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #2d3748;
 }
 
-.traffic-header h3 {
-    margin: 0;
-    color: #1f2937;
+.ecommerce-header h3 {
+    color: #ffffff;
     font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.btn-add {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+}
+
+.dark-ecommerce-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #e2e8f0;
+}
+
+.dark-ecommerce-table th {
+    background: #2d3748;
+    padding: 1.2rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #cbd5e1;
+    border-bottom: 2px solid #4a5568;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dark-ecommerce-table td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid #2d3748;
+    transition: all 0.3s ease;
+}
+
+.dark-ecommerce-table tr {
+    transition: all 0.3s ease;
+}
+
+.dark-ecommerce-table tr:hover {
+    background: #2d3748;
+}
+
+.dark-ecommerce-table tr:hover td {
+    color: #ffffff;
+}
+
+/* Product Info Styles */
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.product-image {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.product-sku {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* Category Tag */
+.category-tag {
+    background: rgba(124, 58, 237, 0.2);
+    color: #7c3aed;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+/* Price */
+.price {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+/* Stock Info */
+.stock-info {
+    display: flex;
+    align-items: center;
+}
+
+.stock-level {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.stock-bar {
+    width: 60px;
+    height: 6px;
+    background: #4a5568;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.stock-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.stock-fill.high {
+    background: #22c55e;
+    width: 80%;
+}
+
+.stock-fill.medium {
+    background: #f59e0b;
+    width: 40%;
+}
+
+.stock-fill.low {
+    background: #ef4444;
+    width: 15%;
+}
+
+.stock-text {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    min-width: 60px;
+}
+
+/* Status Badge */
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.active {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-badge.warning {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.status-badge.inactive {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Sales Info */
+.sales-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.sales-count {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.sales-trend {
+    font-size: 0.8rem;
     font-weight: 600;
 }
 
-.traffic-summary {
+.sales-trend.up {
+    color: #22c55e;
+}
+
+.sales-trend.down {
+    color: #ef4444;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .ecommerce-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .dark-ecommerce-container {
+        padding: 1.5rem;
+    }
+    
+    .dark-ecommerce-table {
+        font-size: 0.9rem;
+    }
+    
+    .dark-ecommerce-table th,
+    .dark-ecommerce-table td {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .product-info {
+        gap: 0.5rem;
+    }
+    
+    .product-image {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+}`,
+        js: `// E-commerce Table Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Add product button functionality
+    const addButton = document.querySelector('.btn-add');
+    
+    addButton.addEventListener('click', function() {
+        console.log('Add product clicked');
+        // Add your add product logic here
+    });
+    
+    // Stock level animations
+    const stockBars = document.querySelectorAll('.stock-bar');
+    
+    stockBars.forEach(bar => {
+        const fill = bar.querySelector('.stock-fill');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const width = fill.style.width;
+                    fill.style.width = '0%';
+                    setTimeout(() => {
+                        fill.style.width = width;
+                    }, 500);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(bar);
+    });
+    
+    // Product row interactions
+    const productRows = document.querySelectorAll('.dark-ecommerce-table tr');
+    
+    productRows.forEach(row => {
+        row.addEventListener('click', function() {
+            const productName = this.querySelector('.product-name').textContent;
+            console.log('Product selected:', productName);
+            // Add your product selection logic here
+        });
+    });
+});`
+    },
+
+    // ====================================================================
+    // TEMPLATE 39: DARK PROJECT MANAGEMENT TABLE
+    // Features: Project tracking with progress and deadlines
+    // Category: dark-theme, business
+    // ====================================================================
+    table39: {
+        html: `<div class="dark-project-container">
+    <div class="project-header">
+        <h3>Project Dashboard</h3>
+        <div class="project-stats">
+            <div class="stat">
+                <span class="stat-value">12</span>
+                <span class="stat-label">Active</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">5</span>
+                <span class="stat-label">Completed</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">3</span>
+                <span class="stat-label">Delayed</span>
+            </div>
+        </div>
+    </div>
+    
+    <table class="dark-project-table">
+        <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>Team</th>
+                <th>Deadline</th>
+                <th>Progress</th>
+                <th>Priority</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="project-info">
+                        <div class="project-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-title">Website Redesign</div>
+                            <div class="project-client">TechCorp Inc.</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="team-members">
+                        <div class="member-avatar">JD</div>
+                        <div class="member-avatar">SM</div>
+                        <div class="member-avatar">+3</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="deadline">
+                        <div class="date">Dec 15, 2024</div>
+                        <div class="days-left">15 days left</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="progress-wrapper">
+                        <div class="progress-circle" data-progress="75">
+                            <svg width="40" height="40">
+                                <circle cx="20" cy="20" r="16" stroke="#334155" stroke-width="3" fill="none"/>
+                                <circle class="progress-circle-fill" cx="20" cy="20" r="16" stroke="#7c3aed" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            </svg>
+                            <span class="progress-percent">75%</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <span class="priority high">High</span>
+                </td>
+                <td>
+                    <span class="project-status active">In Progress</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="project-info">
+                        <div class="project-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-title">Mobile App Development</div>
+                            <div class="project-client">StartupXYZ</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="team-members">
+                        <div class="member-avatar">RJ</div>
+                        <div class="member-avatar">AK</div>
+                        <div class="member-avatar">+2</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="deadline">
+                        <div class="date">Jan 20, 2025</div>
+                        <div class="days-left">51 days left</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="progress-wrapper">
+                        <div class="progress-circle" data-progress="45">
+                            <svg width="40" height="40">
+                                <circle cx="20" cy="20" r="16" stroke="#334155" stroke-width="3" fill="none"/>
+                                <circle class="progress-circle-fill" cx="20" cy="20" r="16" stroke="#3b82f6" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            </svg>
+                            <span class="progress-percent">45%</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <span class="priority medium">Medium</span>
+                </td>
+                <td>
+                    <span class="project-status active">In Progress</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="project-info">
+                        <div class="project-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-title">E-commerce Platform</div>
+                            <div class="project-client">RetailGlobal</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="team-members">
+                        <div class="member-avatar">TM</div>
+                        <div class="member-avatar">LP</div>
+                        <div class="member-avatar">+4</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="deadline overdue">
+                        <div class="date">Nov 30, 2024</div>
+                        <div class="days-left">Overdue</div>
+                    </div>
+                </td>
+                <td>
+                    <div class="progress-wrapper">
+                        <div class="progress-circle" data-progress="90">
+                            <svg width="40" height="40">
+                                <circle cx="20" cy="20" r="16" stroke="#334155" stroke-width="3" fill="none"/>
+                                <circle class="progress-circle-fill" cx="20" cy="20" r="16" stroke="#ef4444" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            </svg>
+                            <span class="progress-percent">90%</span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <span class="priority high">High</span>
+                </td>
+                <td>
+                    <span class="project-status delayed">Delayed</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+        css: `/* Dark Project Management Table Styles */
+.dark-project-container {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid #334155;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #334155;
+}
+
+.project-header h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.project-stats {
     display: flex;
     gap: 2rem;
 }
 
-.summary-item {
-    text-align: center;
-}
-
-.summary-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.summary-label {
-    font-size: 0.875rem;
-    color: #6b7280;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.traffic-sources-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.traffic-sources-table th {
-    padding: 1.25rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    color: #374151;
-    border-bottom: 2px solid #e5e7eb;
-    background: #f9fafb;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.traffic-sources-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-}
-
-.source-organic { background: linear-gradient(90deg, rgba(34, 197, 94, 0.03), transparent); }
-.source-social { background: linear-gradient(90deg, rgba(59, 130, 246, 0.03), transparent); }
-.source-direct { background: linear-gradient(90deg, rgba(245, 158, 11, 0.03), transparent); }
-.source-referral { background: linear-gradient(90deg, rgba(168, 85, 247, 0.03), transparent); }
-
-.traffic-sources-table tr:hover {
-    background: #f9fafb;
-}
-
-.source-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.source-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #10b981, #059669);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    color: white;
-}
-
-.source-social .source-icon { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
-.source-direct .source-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
-.source-referral .source-icon { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-
-.source-details .source-name {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.source-details .source-description {
-    font-size: 0.875rem;
-    color: #9ca3af;
-}
-
-.visits-count {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: #1f2937;
-}
-
-.percentage-metric {
+.stat {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
 }
 
-.percentage-value {
-    font-weight: 600;
-    color: #1f2937;
-}
-
-.percentage-bar {
-    width: 100%;
-    height: 4px;
-    background: #e5e7eb;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.percentage-fill {
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #10b981, #22c55e);
-    transition: width 1s ease-in-out;
-}
-
-.source-social .percentage-fill { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
-.source-direct .percentage-fill { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-.source-referral .percentage-fill { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
-
-.conversion-metric .conversion-value {
-    font-size: 1.125rem;
+.stat-value {
+    font-size: 1.8rem;
     font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
+    color: #7c3aed;
 }
 
-.conversion-change {
-    font-size: 0.75rem;
+.stat-label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dark-project-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #e2e8f0;
+}
+
+.dark-project-table th {
+    background: #1e293b;
+    padding: 1.2rem 1rem;
+    text-align: left;
     font-weight: 600;
-    padding: 0.125rem 0.5rem;
-    border-radius: 4px;
+    color: #94a3b8;
+    border-bottom: 2px solid #475569;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.conversion-change.positive {
-    background: #f0fdf4;
-    color: #16a34a;
+.dark-project-table td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid #334155;
+    transition: all 0.3s ease;
 }
 
-.conversion-change.negative {
-    background: #fef2f2;
-    color: #dc2626;
+.dark-project-table tr {
+    transition: all 0.3s ease;
 }
 
-.trend-sparkline {
+.dark-project-table tr:hover {
+    background: #1e293b;
+}
+
+.dark-project-table tr:hover td {
+    color: #ffffff;
+}
+
+/* Project Info Styles */
+.project-info {
     display: flex;
     align-items: center;
     gap: 0.75rem;
 }
 
-.sparkline {
+.project-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
     flex-shrink: 0;
 }
 
-.trend-value {
-    font-size: 0.875rem;
+.project-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
     font-weight: 600;
+    color: #ffffff;
+    font-size: 0.95rem;
 }
 
-.trend-value.positive {
-    color: #16a34a;
+.project-client {
+    font-size: 0.8rem;
+    color: #94a3b8;
 }
 
-.trend-value.negative {
-    color: #dc2626;
-}
-
-.quality-score {
+/* Team Members */
+.team-members {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    gap: 0.3rem;
 }
 
-.score-stars {
-    display: flex;
-    gap: 0.125rem;
-}
-
-.star {
-    font-size: 0.875rem;
-    color: #d1d5db;
-}
-
-.star.filled {
-    color: #fbbf24;
-}
-
-.quality-score.excellent .star.filled { color: #10b981; }
-.quality-score.good .star.filled { color: #3b82f6; }
-.quality-score.average .star.filled { color: #f59e0b; }
-
-.score-text {
-    font-size: 0.875rem;
-    font-weight: 600;
-}
-
-.quality-score.excellent .score-text { color: #10b981; }
-.quality-score.good .score-text { color: #3b82f6; }
-.quality-score.average .score-text { color: #f59e0b; }`,
-    js: `// Animate percentage bars
-document.addEventListener('DOMContentLoaded', function() {
-    const bars = document.querySelectorAll('.percentage-fill');
-    bars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 600);
-    });
-});`
-},
-
-// ====================================================================
-// ANALYTICS TEMPLATE 44: USER BEHAVIOR
-// ====================================================================
-analytics44: {
-    html: `<div class="user-behavior-container">
-    <div class="behavior-header">
-        <h3>👤 User Behavior Analytics</h3>
-        <div class="behavior-filters">
-            <button class="filter-btn active">All Pages</button>
-            <button class="filter-btn">High Engagement</button>
-            <button class="filter-btn">Low Bounce</button>
-        </div>
-    </div>
-    <table class="user-behavior-table">
-        <thead>
-            <tr>
-                <th>Page</th>
-                <th>Page Views</th>
-                <th>Unique Visitors</th>
-                <th>Avg. Time</th>
-                <th>Bounce Rate</th>
-                <th>Engagement Score</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="page-high">
-                <td>
-                    <div class="page-info">
-                        <div class="page-icon">🏠</div>
-                        <div class="page-details">
-                            <div class="page-name">Homepage</div>
-                            <div class="page-url">example.com</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="views-metric">
-                        <div class="views-count">45,248</div>
-                        <div class="views-trend positive">+12.5%</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="visitors-metric">
-                        <div class="visitors-count">32,156</div>
-                        <div class="visitors-change">71% of views</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="time-metric">
-                        <div class="time-value">2m 15s</div>
-                        <div class="time-comparison positive">+25s</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="bounce-metric">
-                        <div class="bounce-value">32.5%</div>
-                        <div class="bounce-bar">
-                            <div class="bounce-fill" style="width: 32.5%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="engagement-score high">
-                        <div class="score-circle">
-                            <svg width="40" height="40" viewBox="0 0 40 40">
-                                <circle cx="20" cy="20" r="18" stroke="#e5e7eb" stroke-width="4" fill="none"/>
-                                <circle cx="20" cy="20" r="18" stroke="#10b981" stroke-width="4" fill="none" 
-                                        stroke-dasharray="113" stroke-dashoffset="34" transform="rotate(-90 20 20)"/>
-                            </svg>
-                            <span class="score-value">85</span>
-                        </div>
-                        <span class="score-label">High</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="behavior-actions">
-                        <button class="action-btn analyze">Analyze</button>
-                        <button class="action-btn optimize">Optimize</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="page-medium">
-                <td>
-                    <div class="page-info">
-                        <div class="page-icon">🛍️</div>
-                        <div class="page-details">
-                            <div class="page-name">Product Catalog</div>
-                            <div class="page-url">example.com/products</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="views-metric">
-                        <div class="views-count">28,742</div>
-                        <div class="views-trend positive">+8.3%</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="visitors-metric">
-                        <div class="visitors-count">18,945</div>
-                        <div class="visitors-change">66% of views</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="time-metric">
-                        <div class="time-value">3m 45s</div>
-                        <div class="time-comparison positive">+45s</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="bounce-metric">
-                        <div class="bounce-value">18.2%</div>
-                        <div class="bounce-bar">
-                            <div class="bounce-fill" style="width: 18.2%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="engagement-score high">
-                        <div class="score-circle">
-                            <svg width="40" height="40" viewBox="0 0 40 40">
-                                <circle cx="20" cy="20" r="18" stroke="#e5e7eb" stroke-width="4" fill="none"/>
-                                <circle cx="20" cy="20" r="18" stroke="#10b981" stroke-width="4" fill="none" 
-                                        stroke-dasharray="113" stroke-dashoffset="23" transform="rotate(-90 20 20)"/>
-                            </svg>
-                            <span class="score-value">92</span>
-                        </div>
-                        <span class="score-label">High</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="behavior-actions">
-                        <button class="action-btn analyze">Analyze</button>
-                        <button class="action-btn optimize">Optimize</button>
-                    </div>
-                </td>
-            </tr>
-            <tr class="page-low">
-                <td>
-                    <div class="page-info">
-                        <div class="page-icon">📄</div>
-                        <div class="page-details">
-                            <div class="page-name">Blog Post</div>
-                            <div class="page-url">example.com/blog/post-123</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="views-metric">
-                        <div class="views-count">12,458</div>
-                        <div class="views-trend negative">-5.2%</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="visitors-metric">
-                        <div class="visitors-count">8,742</div>
-                        <div class="visitors-change">70% of views</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="time-metric">
-                        <div class="time-value">1m 08s</div>
-                        <div class="time-comparison negative">-12s</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="bounce-metric">
-                        <div class="bounce-value">58.7%</div>
-                        <div class="bounce-bar">
-                            <div class="bounce-fill" style="width: 58.7%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="engagement-score low">
-                        <div class="score-circle">
-                            <svg width="40" height="40" viewBox="0 0 40 40">
-                                <circle cx="20" cy="20" r="18" stroke="#e5e7eb" stroke-width="4" fill="none"/>
-                                <circle cx="20" cy="20" r="18" stroke="#ef4444" stroke-width="4" fill="none" 
-                                        stroke-dasharray="113" stroke-dashoffset="79" transform="rotate(-90 20 20)"/>
-                            </svg>
-                            <span class="score-value">42</span>
-                        </div>
-                        <span class="score-label">Low</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="behavior-actions">
-                        <button class="action-btn analyze">Analyze</button>
-                        <button class="action-btn optimize">Optimize</button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.user-behavior-container {
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5e7eb;
-}
-
-.behavior-header {
-    padding: 1.5rem 2rem;
-    background: #f8fafc;
-    border-bottom: 1px solid #e5e7eb;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.behavior-header h3 {
-    margin: 0;
-    color: #1f2937;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.behavior-filters {
-    display: flex;
-    gap: 0.75rem;
-}
-
-.filter-btn {
-    padding: 0.5rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    background: white;
-    color: #6b7280;
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-    background: #3b82f6;
-    color: white;
-    border-color: #3b82f6;
-}
-
-.user-behavior-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.user-behavior-table th {
-    padding: 1.25rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    color: #374151;
-    border-bottom: 2px solid #e5e7eb;
-    background: #f9fafb;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.user-behavior-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-}
-
-.page-high { background: linear-gradient(90deg, rgba(34, 197, 94, 0.03), transparent); }
-.page-medium { background: linear-gradient(90deg, rgba(59, 130, 246, 0.03), transparent); }
-.page-low { background: linear-gradient(90deg, rgba(239, 68, 68, 0.03), transparent); }
-
-.user-behavior-table tr:hover {
-    background: #f9fafb;
-}
-
-.page-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.page-icon {
-    width: 40px;
-    height: 40px;
+.member-avatar {
+    width: 32px;
+    height: 32px;
     border-radius: 8px;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    background: #475569;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
     color: white;
-}
-
-.page-medium .page-icon { background: linear-gradient(135deg, #10b981, #059669); }
-.page-low .page-icon { background: linear-gradient(135deg, #ef4444, #dc2626); }
-
-.page-details .page-name {
+    font-size: 0.8rem;
     font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
+    border: 2px solid #1e293b;
 }
 
-.page-details .page-url {
-    font-size: 0.875rem;
-    color: #9ca3af;
-    font-family: 'Courier New', monospace;
+.member-avatar:hover {
+    transform: translateY(-2px);
+    z-index: 1;
 }
 
-.views-metric .views-count {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
+/* Deadline */
+.deadline {
+    display: flex;
+    flex-direction: column;
 }
 
-.views-trend {
-    font-size: 0.75rem;
+.date {
     font-weight: 600;
-    padding: 0.125rem 0.5rem;
-    border-radius: 4px;
+    color: #ffffff;
+    font-size: 0.9rem;
 }
 
-.views-trend.positive {
-    background: #f0fdf4;
-    color: #16a34a;
+.days-left {
+    font-size: 0.8rem;
+    color: #94a3b8;
 }
 
-.views-trend.negative {
-    background: #fef2f2;
-    color: #dc2626;
-}
-
-.visitors-metric .visitors-count {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.visitors-change {
-    font-size: 0.75rem;
-    color: #6b7280;
-}
-
-.time-metric .time-value {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.time-comparison {
-    font-size: 0.75rem;
+.deadline.overdue .days-left {
+    color: #ef4444;
     font-weight: 600;
 }
 
-.time-comparison.positive {
-    color: #16a34a;
-}
-
-.time-comparison.negative {
-    color: #dc2626;
-}
-
-.bounce-metric .bounce-value {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-}
-
-.bounce-bar {
-    width: 100%;
-    height: 4px;
-    background: #e5e7eb;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.bounce-fill {
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #ef4444, #f87171);
-    transition: width 1s ease-in-out;
-}
-
-.page-high .bounce-fill { background: linear-gradient(90deg, #10b981, #22c55e); }
-.page-medium .bounce-fill { background: linear-gradient(90deg, #10b981, #22c55e); }
-
-.engagement-score {
+/* Progress Circle */
+.progress-wrapper {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    justify-content: center;
 }
 
-.score-circle {
+.progress-circle {
     position: relative;
     width: 40px;
     height: 40px;
 }
 
-.score-value {
+.progress-circle-fill {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 1s ease;
+}
+
+.progress-percent {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: #1f2937;
-}
-
-.engagement-score.high .score-value { color: #10b981; }
-.engagement-score.low .score-value { color: #ef4444; }
-
-.score-label {
-    font-size: 0.875rem;
+    font-size: 0.7rem;
     font-weight: 600;
+    color: #ffffff;
 }
 
-.engagement-score.high .score-label { color: #10b981; }
-.engagement-score.low .score-label { color: #ef4444; }
-
-.behavior-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.action-btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.action-btn.analyze {
-    background: #3b82f6;
-    color: white;
-}
-
-.action-btn.optimize {
-    background: #f3f4f6;
-    color: #374151;
-    border: 1px solid #d1d5db;
-}
-
-.action-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}`,
-    js: `// User behavior interactions
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        const filter = this.textContent;
-        alert(\`Filtering pages by: \${filter}\`);
-    });
-});
-
-document.querySelectorAll('.action-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const action = this.textContent;
-        const pageName = this.closest('tr').querySelector('.page-name').textContent;
-        alert(\`\${action} page: \${pageName}\`);
-    });
-});
-
-// Animate bounce bars
-document.addEventListener('DOMContentLoaded', function() {
-    const bars = document.querySelectorAll('.bounce-fill');
-    bars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 700);
-    });
-});`
-},
-
-// ====================================================================
-// ANALYTICS TEMPLATE 45: REVENUE ANALYTICS
-// ====================================================================
-analytics45: {
-    html: `<div class="revenue-analytics-container">
-    <div class="revenue-header">
-        <h3>💰 Revenue Analytics Dashboard</h3>
-        <div class="revenue-summary">
-            <div class="summary-card">
-                <div class="card-value">$248.5K</div>
-                <div class="card-label">Total Revenue</div>
-                <div class="card-change positive">+18.4%</div>
-            </div>
-            <div class="summary-card">
-                <div class="card-value">1,248</div>
-                <div class="card-label">Total Orders</div>
-                <div class="card-change positive">+12.7%</div>
-            </div>
-            <div class="summary-card">
-                <div class="card-value">$199.20</div>
-                <div class="card-label">Avg. Order Value</div>
-                <div class="card-change positive">+5.1%</div>
-            </div>
-        </div>
-    </div>
-    <table class="revenue-analytics-table">
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Category</th>
-                <th>Units Sold</th>
-                <th>Revenue</th>
-                <th>Profit Margin</th>
-                <th>Growth (MoM)</th>
-                <th>Market Share</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="product-high">
-                <td>
-                    <div class="product-info">
-                        <div class="product-avatar">💻</div>
-                        <div class="product-details">
-                            <div class="product-name">MacBook Pro 16"</div>
-                            <div class="product-sku">MBP16-2024</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <span class="category-tag electronics">Electronics</span>
-                </td>
-                <td>
-                    <div class="units-sold">
-                        <div class="units-count">45</div>
-                        <div class="units-trend positive">+25%</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="revenue-metric">
-                        <div class="revenue-amount">$85,245</div>
-                        <div class="revenue-percent">34.3% of total</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="margin-metric">
-                        <div class="margin-value">42.5%</div>
-                        <div class="margin-bar">
-                            <div class="margin-fill" style="width: 42.5%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="growth-metric high">
-                        <span class="growth-value">+25.8%</span>
-                        <span class="growth-arrow">↗</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="marketshare-metric">
-                        <div class="marketshare-value">18.4%</div>
-                        <div class="marketshare-bar">
-                            <div class="marketshare-fill" style="width: 18.4%"></div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr class="product-medium">
-                <td>
-                    <div class="product-info">
-                        <div class="product-avatar">📱</div>
-                        <div class="product-details">
-                            <div class="product-name">iPhone 15 Pro</div>
-                            <div class="product-sku">IP15P-2024</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <span class="category-tag electronics">Electronics</span>
-                </td>
-                <td>
-                    <div class="units-sold">
-                        <div class="units-count">120</div>
-                        <div class="units-trend positive">+18.3%</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="revenue-metric">
-                        <div class="revenue-amount">$42,180</div>
-                        <div class="revenue-percent">17.0% of total</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="margin-metric">
-                        <div class="margin-value">35.2%</div>
-                        <div class="margin-bar">
-                            <div class="margin-fill" style="width: 35.2%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="growth-metric medium">
-                        <span class="growth-value">+18.3%</span>
-                        <span class="growth-arrow">↗</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="marketshare-metric">
-                        <div class="marketshare-value">12.7%</div>
-                        <div class="marketshare-bar">
-                            <div class="marketshare-fill" style="width: 12.7%"></div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <tr class="product-low">
-                <td>
-                    <div class="product-info">
-                        <div class="product-avatar">🎧</div>
-                        <div class="product-details">
-                            <div class="product-name">Wireless Earbuds</div>
-                            <div class="product-sku">WEB-2024</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <span class="category-tag accessories">Accessories</span>
-                </td>
-                <td>
-                    <div class="units-sold">
-                        <div class="units-count">285</div>
-                        <div class="units-trend positive">+8.7%</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="revenue-metric">
-                        <div class="revenue-amount">$28,500</div>
-                        <div class="revenue-percent">11.5% of total</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="margin-metric">
-                        <div class="margin-value">28.7%</div>
-                        <div class="margin-bar">
-                            <div class="margin-fill" style="width: 28.7%"></div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="growth-metric low">
-                        <span class="growth-value">+8.7%</span>
-                        <span class="growth-arrow">↗</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="marketshare-metric">
-                        <div class="marketshare-value">8.2%</div>
-                        <div class="marketshare-bar">
-                            <div class="marketshare-fill" style="width: 8.2%"></div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
-    css: `.revenue-analytics-container {
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5e7eb;
-}
-
-.revenue-header {
-    padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, #059669, #047857);
-    color: white;
-}
-
-.revenue-header h3 {
-    margin: 0 0 1.5rem 0;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.revenue-summary {
-    display: flex;
-    gap: 2rem;
-}
-
-.summary-card {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.card-value {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.card-label {
-    font-size: 0.875rem;
-    opacity: 0.9;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.card-change {
-    font-size: 0.875rem;
-    font-weight: 600;
-    padding: 0.25rem 0.75rem;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.card-change.positive {
-    background: rgba(34, 197, 94, 0.3);
-}
-
-.revenue-analytics-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.revenue-analytics-table th {
-    padding: 1.25rem 2rem;
-    text-align: left;
-    font-weight: 600;
-    color: #374151;
-    border-bottom: 2px solid #e5e7eb;
-    background: #f9fafb;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.revenue-analytics-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
-}
-
-.product-high { background: linear-gradient(90deg, rgba(34, 197, 94, 0.05), transparent); }
-.product-medium { background: linear-gradient(90deg, rgba(59, 130, 246, 0.05), transparent); }
-.product-low { background: linear-gradient(90deg, rgba(245, 158, 11, 0.05), transparent); }
-
-.revenue-analytics-table tr:hover {
-    background: #f9fafb;
-}
-
-.product-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.product-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    color: white;
-}
-
-.product-medium .product-avatar { background: linear-gradient(135deg, #10b981, #059669); }
-.product-low .product-avatar { background: linear-gradient(135deg, #f59e0b, #d97706); }
-
-.product-details .product-name {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
-}
-
-.product-details .product-sku {
-    font-size: 0.875rem;
-    color: #9ca3af;
-    font-family: 'Courier New', monospace;
-}
-
-.category-tag {
-    padding: 0.5rem 1rem;
+/* Priority */
+.priority {
+    padding: 0.4rem 0.8rem;
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 600;
@@ -13207,613 +13642,627 @@ analytics45: {
     letter-spacing: 0.5px;
 }
 
-.category-tag.electronics {
-    background: rgba(59, 130, 246, 0.1);
-    color: #1d4ed8;
-    border: 1px solid rgba(59, 130, 246, 0.2);
+.priority.high {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
-.category-tag.accessories {
-    background: rgba(168, 85, 247, 0.1);
-    color: #7c3aed;
-    border: 1px solid rgba(168, 85, 247, 0.2);
+.priority.medium {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
-.units-sold .units-count {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
+.priority.low {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
-.units-trend {
+/* Project Status */
+.project-status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
-    padding: 0.125rem 0.5rem;
-    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.units-trend.positive {
-    background: #f0fdf4;
-    color: #16a34a;
+.project-status.active {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
-.revenue-metric .revenue-amount {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 0.25rem;
+.project-status.delayed {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
-.revenue-percent {
-    font-size: 0.875rem;
-    color: #6b7280;
+.project-status.completed {
+    background: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
-.margin-metric .margin-value {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-}
-
-.margin-bar {
-    width: 100%;
-    height: 6px;
-    background: #e5e7eb;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.margin-fill {
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #10b981, #22c55e);
-    transition: width 1s ease-in-out;
-}
-
-.product-medium .margin-fill { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
-.product-low .margin-fill { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-
-.growth-metric {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 8px;
-    font-weight: 600;
-}
-
-.growth-metric.high {
-    background: #f0fdf4;
-    color: #16a34a;
-}
-
-.growth-metric.medium {
-    background: #dbeafe;
-    color: #1d4ed8;
-}
-
-.growth-metric.low {
-    background: #fef3c7;
-    color: #d97706;
-}
-
-.growth-arrow {
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.marketshare-metric .marketshare-value {
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-}
-
-.marketshare-bar {
-    width: 100%;
-    height: 4px;
-    background: #e5e7eb;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.marketshare-fill {
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #8b5cf6, #a78bfa);
-    transition: width 1s ease-in-out;
-}`,
-    js: `// Animate revenue analytics bars
-document.addEventListener('DOMContentLoaded', function() {
-    const marginBars = document.querySelectorAll('.margin-fill');
-    const marketBars = document.querySelectorAll('.marketshare-fill');
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .project-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
     
-    marginBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 500);
+    .project-stats {
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 768px) {
+    .dark-project-container {
+        padding: 1.5rem;
+    }
+    
+    .dark-project-table {
+        font-size: 0.9rem;
+    }
+    
+    .dark-project-table th,
+    .dark-project-table td {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .project-info {
+        gap: 0.5rem;
+    }
+    
+    .project-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+}`,
+        js: `// Project Management Table Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate progress circles
+    const progressCircles = document.querySelectorAll('.progress-circle');
+    
+    progressCircles.forEach(circle => {
+        const progress = circle.getAttribute('data-progress');
+        const circleElement = circle.querySelector('.progress-circle-fill');
+        const radius = 16;
+        const circumference = 2 * Math.PI * radius;
+        const offset = circumference - (progress / 100) * circumference;
+        
+        circleElement.style.strokeDasharray = circumference + ' ' + circumference;
+        circleElement.style.strokeDashoffset = offset;
     });
     
-    marketBars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 800);
+    // Team member hover effects
+    const teamMembers = document.querySelectorAll('.member-avatar');
+    
+    teamMembers.forEach(member => {
+        member.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px) scale(1.1)';
+        });
+        
+        member.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
     });
+    
+    // Project row interactions
+    const projectRows = document.querySelectorAll('.dark-project-table tr');
+    
+    projectRows.forEach(row => {
+        row.addEventListener('click', function() {
+            const projectTitle = this.querySelector('.project-title').textContent;
+            console.log('Project selected:', projectTitle);
+            // Add your project selection logic here
+        });
+    });
+    
+    // Update stats (example functionality)
+    function updateProjectStats() {
+        const activeProjects = document.querySelectorAll('.project-status.active').length;
+        const delayedProjects = document.querySelectorAll('.project-status.delayed').length;
+        
+        // Update stat values
+        document.querySelector('.stat:nth-child(1) .stat-value').textContent = activeProjects;
+        document.querySelector('.stat:nth-child(3) .stat-value').textContent = delayedProjects;
+    }
+    
+    // Initial stats update
+    updateProjectStats();
 });`
-},
+    },
 
-// ====================================================================
-// ANALYTICS TEMPLATE 46: REAL-TIME DASHBOARD
-// ====================================================================
-analytics46: {
-    html: `<div class="realtime-dashboard-container">
-    <div class="dashboard-header">
-        <h3>⚡ Real-time Analytics Dashboard</h3>
-        <div class="dashboard-controls">
-            <div class="last-updated">
-                <span class="update-indicator"></span>
-                Last updated: <span class="update-time">Just now</span>
-            </div>
-            <button class="refresh-btn">🔄 Refresh</button>
+    // ====================================================================
+    // TEMPLATE 40: DARK FINANCIAL DATA TABLE
+    // Features: Financial data with charts and trends
+    // Category: dark-theme, business
+    // ====================================================================
+    table40: {
+        html: `<div class="dark-financial-container">
+    <div class="financial-header">
+        <h3>Financial Overview</h3>
+        <div class="period-selector">
+            <button class="period-btn active">Q4 2024</button>
+            <button class="period-btn">Q1 2025</button>
+            <button class="period-btn">Q2 2025</button>
         </div>
     </div>
-    <table class="realtime-dashboard-table">
+    
+    <table class="dark-financial-table">
         <thead>
             <tr>
-                <th>Metric</th>
-                <th>Current Value</th>
-                <th>Target</th>
-                <th>Status</th>
+                <th>Account</th>
+                <th>Balance</th>
+                <th>Transactions</th>
+                <th>Growth</th>
                 <th>Trend</th>
-                <th>Alert Level</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="metric-healthy">
+            <tr>
                 <td>
-                    <div class="metric-info">
-                        <div class="metric-icon">👥</div>
-                        <div class="metric-details">
-                            <div class="metric-name">Active Users</div>
-                            <div class="metric-description">Currently online</div>
+                    <div class="account-info">
+                        <div class="account-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="account-details">
+                            <div class="account-name">Business Account</div>
+                            <div class="account-number">**** 4832</div>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="current-value">
-                        <span class="value-number">1,245</span>
-                        <span class="value-unit">users</span>
+                    <div class="balance-amount">$45,678.90</div>
+                </td>
+                <td>
+                    <div class="transaction-count">128 transactions</div>
+                </td>
+                <td>
+                    <div class="growth-indicator positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>12.5%</span>
                     </div>
                 </td>
                 <td>
-                    <div class="target-value">1,500 users</div>
-                </td>
-                <td>
-                    <div class="status-indicator healthy">
-                        <span class="status-dot"></span>
-                        <span class="status-text">Healthy</span>
+                    <div class="trend-chart">
+                        <div class="chart-bar" style="height: 30%"></div>
+                        <div class="chart-bar" style="height: 45%"></div>
+                        <div class="chart-bar" style="height: 60%"></div>
+                        <div class="chart-bar" style="height: 75%"></div>
+                        <div class="chart-bar" style="height: 85%"></div>
+                        <div class="chart-bar" style="height: 90%"></div>
+                        <div class="chart-bar" style="height: 100%"></div>
                     </div>
                 </td>
                 <td>
-                    <div class="trend-indicator up">
-                        <span class="trend-arrow">↗</span>
-                        <span class="trend-value">+12/min</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="alert-level normal">
-                        <span class="alert-icon">✅</span>
-                        <span class="alert-text">Normal</span>
-                    </div>
+                    <button class="action-btn view-details">
+                        <i class="fas fa-chart-line"></i>
+                        Details
+                    </button>
                 </td>
             </tr>
-            <tr class="metric-warning">
+            <tr>
                 <td>
-                    <div class="metric-info">
-                        <div class="metric-icon">⚡</div>
-                        <div class="metric-details">
-                            <div class="metric-name">Response Time</div>
-                            <div class="metric-description">API latency</div>
+                    <div class="account-info">
+                        <div class="account-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="account-details">
+                            <div class="account-name">Savings Account</div>
+                            <div class="account-number">**** 7192</div>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="current-value">
-                        <span class="value-number">245</span>
-                        <span class="value-unit">ms</span>
+                    <div class="balance-amount">$23,450.00</div>
+                </td>
+                <td>
+                    <div class="transaction-count">45 transactions</div>
+                </td>
+                <td>
+                    <div class="growth-indicator positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>8.2%</span>
                     </div>
                 </td>
                 <td>
-                    <div class="target-value">< 200ms</div>
-                </td>
-                <td>
-                    <div class="status-indicator warning">
-                        <span class="status-dot"></span>
-                        <span class="status-text">Warning</span>
+                    <div class="trend-chart">
+                        <div class="chart-bar" style="height: 20%"></div>
+                        <div class="chart-bar" style="height: 35%"></div>
+                        <div class="chart-bar" style="height: 50%"></div>
+                        <div class="chart-bar" style="height: 65%"></div>
+                        <div class="chart-bar" style="height: 75%"></div>
+                        <div class="chart-bar" style="height: 85%"></div>
+                        <div class="chart-bar" style="height: 95%"></div>
                     </div>
                 </td>
                 <td>
-                    <div class="trend-indicator up">
-                        <span class="trend-arrow">↗</span>
-                        <span class="trend-value">+15ms</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="alert-level warning">
-                        <span class="alert-icon">⚠️</span>
-                        <span class="alert-text">Warning</span>
-                    </div>
+                    <button class="action-btn view-details">
+                        <i class="fas fa-chart-line"></i>
+                        Details
+                    </button>
                 </td>
             </tr>
-            <tr class="metric-critical">
+            <tr>
                 <td>
-                    <div class="metric-info">
-                        <div class="metric-icon">🔄</div>
-                        <div class="metric-details">
-                            <div class="metric-name">Error Rate</div>
-                            <div class="metric-description">Failed requests</div>
+                    <div class="account-info">
+                        <div class="account-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="account-details">
+                            <div class="account-name">Credit Card</div>
+                            <div class="account-number">**** 2647</div>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <div class="current-value">
-                        <span class="value-number">5.2</span>
-                        <span class="value-unit">%</span>
+                    <div class="balance-amount negative">-$2,345.67</div>
+                </td>
+                <td>
+                    <div class="transaction-count">67 transactions</div>
+                </td>
+                <td>
+                    <div class="growth-indicator negative">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>5.1%</span>
                     </div>
                 </td>
                 <td>
-                    <div class="target-value">< 2%</div>
-                </td>
-                <td>
-                    <div class="status-indicator critical">
-                        <span class="status-dot"></span>
-                        <span class="status-text">Critical</span>
+                    <div class="trend-chart">
+                        <div class="chart-bar" style="height: 100%"></div>
+                        <div class="chart-bar" style="height: 95%"></div>
+                        <div class="chart-bar" style="height: 90%"></div>
+                        <div class="chart-bar" style="height: 85%"></div>
+                        <div class="chart-bar" style="height: 80%"></div>
+                        <div class="chart-bar" style="height: 75%"></div>
+                        <div class="chart-bar" style="height: 70%"></div>
                     </div>
                 </td>
                 <td>
-                    <div class="trend-indicator up">
-                        <span class="trend-arrow">↗</span>
-                        <span class="trend-value">+1.8%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="alert-level critical">
-                        <span class="alert-icon">🚨</span>
-                        <span class="alert-text">Critical</span>
-                    </div>
-                </td>
-            </tr>
-            <tr class="metric-healthy">
-                <td>
-                    <div class="metric-info">
-                        <div class="metric-icon">💾</div>
-                        <div class="metric-details">
-                            <div class="metric-name">Server Load</div>
-                            <div class="metric-description">CPU utilization</div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="current-value">
-                        <span class="value-number">68</span>
-                        <span class="value-unit">%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="target-value">< 80%</div>
-                </td>
-                <td>
-                    <div class="status-indicator healthy">
-                        <span class="status-dot"></span>
-                        <span class="status-text">Healthy</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="trend-indicator down">
-                        <span class="trend-arrow">↘</span>
-                        <span class="trend-value">-5%</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="alert-level normal">
-                        <span class="alert-icon">✅</span>
-                        <span class="alert-text">Normal</span>
-                    </div>
+                    <button class="action-btn view-details">
+                        <i class="fas fa-chart-line"></i>
+                        Details
+                    </button>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>`,
-    css: `.realtime-dashboard-container {
-    background: #0f172a;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-    border: 1px solid #1e293b;
+        css: `/* Dark Financial Table Styles */
+.dark-financial-container {
+    background: #1a1f35;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid #2d3748;
 }
 
-.dashboard-header {
-    padding: 1.5rem 2rem;
-    background: #1e293b;
-    border-bottom: 1px solid #334155;
+.financial-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #2d3748;
 }
 
-.dashboard-header h3 {
-    margin: 0;
-    color: #f1f5f9;
+.financial-header h3 {
+    color: #ffffff;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
+    margin: 0;
 }
 
-.dashboard-controls {
+.period-selector {
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.last-updated {
-    display: flex;
-    align-items: center;
     gap: 0.5rem;
-    font-size: 0.875rem;
+}
+
+.period-btn {
+    background: #2d3748;
+    border: 1px solid #4a5568;
     color: #94a3b8;
-}
-
-.update-indicator {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #10b981;
-    animation: pulse 2s infinite;
-}
-
-.update-time {
-    color: #e2e8f0;
-    font-weight: 600;
-}
-
-.refresh-btn {
-    padding: 0.5rem 1rem;
-    border: 1px solid #334155;
-    border-radius: 6px;
-    background: #1e293b;
-    color: #e2e8f0;
-    font-size: 0.875rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
-.refresh-btn:hover {
-    background: #334155;
-    border-color: #475569;
+.period-btn.active,
+.period-btn:hover {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    color: white;
+    border-color: transparent;
 }
 
-.realtime-dashboard-table {
+.dark-financial-table {
     width: 100%;
     border-collapse: collapse;
+    color: #e2e8f0;
 }
 
-.realtime-dashboard-table th {
-    padding: 1.25rem 2rem;
+.dark-financial-table th {
+    background: #2d3748;
+    padding: 1.2rem 1rem;
     text-align: left;
     font-weight: 600;
-    color: #94a3b8;
-    border-bottom: 1px solid #334155;
-    background: #1e293b;
-    font-size: 0.875rem;
+    color: #cbd5e1;
+    border-bottom: 2px solid #4a5568;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-.realtime-dashboard-table td {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #1e293b;
-    color: #cbd5e1;
+.dark-financial-table td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid #2d3748;
+    transition: all 0.3s ease;
 }
 
-.metric-healthy { background: linear-gradient(90deg, rgba(34, 197, 94, 0.05), transparent); }
-.metric-warning { background: linear-gradient(90deg, rgba(245, 158, 11, 0.05), transparent); }
-.metric-critical { background: linear-gradient(90deg, rgba(239, 68, 68, 0.05), transparent); }
-
-.realtime-dashboard-table tr:hover {
-    background: #1e293b;
+.dark-financial-table tr {
+    transition: all 0.3s ease;
 }
 
-.metric-info {
+.dark-financial-table tr:hover {
+    background: #2d3748;
+}
+
+.dark-financial-table tr:hover td {
+    color: #ffffff;
+}
+
+/* Account Info Styles */
+.account-info {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
-.metric-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #10b981, #059669);
+.account-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
     color: white;
+    font-size: 1.1rem;
+    flex-shrink: 0;
 }
 
-.metric-warning .metric-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
-.metric-critical .metric-icon { background: linear-gradient(135deg, #ef4444, #dc2626); }
+.account-details {
+    display: flex;
+    flex-direction: column;
+}
 
-.metric-details .metric-name {
+.account-name {
     font-weight: 600;
-    color: #f1f5f9;
-    margin-bottom: 0.25rem;
+    color: #ffffff;
+    font-size: 0.95rem;
 }
 
-.metric-details .metric-description {
-    font-size: 0.875rem;
+.account-number {
+    font-size: 0.8rem;
     color: #94a3b8;
 }
 
-.current-value {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-}
-
-.value-number {
-    font-size: 1.5rem;
+/* Balance Amount */
+.balance-amount {
     font-weight: 700;
-    color: #f1f5f9;
+    color: #22c55e;
+    font-size: 1.1rem;
 }
 
-.value-unit {
-    font-size: 0.875rem;
+.balance-amount.negative {
+    color: #ef4444;
+}
+
+/* Transaction Count */
+.transaction-count {
     color: #94a3b8;
+    font-size: 0.9rem;
 }
 
-.target-value {
-    color: #94a3b8;
-    font-size: 0.875rem;
-}
-
-.status-indicator {
+/* Growth Indicator */
+.growth-indicator {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 8px;
-    font-size: 0.875rem;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    width: fit-content;
 }
 
-.status-indicator.healthy {
-    background: rgba(34, 197, 94, 0.1);
-    color: #10b981;
-    border: 1px solid rgba(34, 197, 94, 0.2);
+.growth-indicator.positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
 }
 
-.status-indicator.warning {
-    background: rgba(245, 158, 11, 0.1);
-    color: #f59e0b;
-    border: 1px solid rgba(245, 158, 11, 0.2);
-}
-
-.status-indicator.critical {
-    background: rgba(239, 68, 68, 0.1);
-    color: #ef4444;
-    border: 1px solid rgba(239, 68, 68, 0.2);
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.status-indicator.healthy .status-dot { background: #10b981; }
-.status-indicator.warning .status-dot { background: #f59e0b; }
-.status-indicator.critical .status-dot { background: #ef4444; }
-
-.trend-indicator {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    font-weight: 600;
-}
-
-.trend-indicator.up {
-    background: rgba(239, 68, 68, 0.1);
+.growth-indicator.negative {
+    background: rgba(239, 68, 68, 0.2);
     color: #ef4444;
 }
 
-.trend-indicator.down {
-    background: rgba(34, 197, 94, 0.1);
-    color: #10b981;
+.growth-indicator i {
+    font-size: 0.8rem;
 }
 
-.trend-arrow {
-    font-size: 1rem;
-    font-weight: 700;
+/* Trend Chart */
+.trend-chart {
+    display: flex;
+    align-items: end;
+    gap: 2px;
+    height: 40px;
+    padding: 0.5rem 0;
 }
 
-.alert-level {
+.chart-bar {
+    width: 6px;
+    background: linear-gradient(to top, #7c3aed, #ec4899);
+    border-radius: 2px 2px 0 0;
+    transition: all 0.5s ease;
+    animation: chartGrow 1s ease-out;
+}
+
+@keyframes chartGrow {
+    from { height: 0%; }
+    to { height: var(--target-height); }
+}
+
+.trend-chart:hover .chart-bar {
+    opacity: 0.8;
+    transform: scaleY(1.1);
+}
+
+/* Action Button */
+.action-btn {
+    background: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-weight: 500;
 }
 
-.alert-level.normal {
-    background: rgba(34, 197, 94, 0.1);
-    color: #10b981;
-    border: 1px solid rgba(34, 197, 94, 0.2);
+.action-btn:hover {
+    background: rgba(59, 130, 246, 0.3);
+    transform: translateY(-1px);
 }
 
-.alert-level.warning {
-    background: rgba(245, 158, 11, 0.1);
-    color: #f59e0b;
-    border: 1px solid rgba(245, 158, 11, 0.2);
-}
-
-.alert-level.critical {
-    background: rgba(239, 68, 68, 0.1);
-    color: #ef4444;
-    border: 1px solid rgba(239, 68, 68, 0.2);
-    animation: alertPulse 1s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-
-@keyframes alertPulse {
-    0%, 100% { 
-        background: rgba(239, 68, 68, 0.1);
-        border-color: rgba(239, 68, 68, 0.2);
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .financial-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
     }
-    50% { 
-        background: rgba(239, 68, 68, 0.2);
-        border-color: rgba(239, 68, 68, 0.3);
+    
+    .period-selector {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .dark-financial-container {
+        padding: 1.5rem;
+    }
+    
+    .dark-financial-table {
+        font-size: 0.9rem;
+    }
+    
+    .dark-financial-table th,
+    .dark-financial-table td {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .account-info {
+        gap: 0.5rem;
+    }
+    
+    .account-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    .trend-chart {
+        height: 30px;
+    }
+    
+    .chart-bar {
+        width: 4px;
     }
 }`,
-    js: `// Real-time dashboard interactions
-document.querySelector('.refresh-btn').addEventListener('click', function() {
-    this.textContent = '🔄 Refreshing...';
-    this.disabled = true;
+        js: `// Financial Table Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Period selector functionality
+    const periodBtns = document.querySelectorAll('.period-btn');
     
-    setTimeout(() => {
-        this.textContent = '🔄 Refresh';
-        this.disabled = false;
-        document.querySelector('.update-time').textContent = 'Just now';
-        alert('Dashboard data refreshed!');
-    }, 1500);
-});
+    periodBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            periodBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            console.log('Period selected:', this.textContent);
+            // Add your period filter logic here
+        });
+    });
+    
+    // Animate chart bars on scroll
+    const chartBars = document.querySelectorAll('.chart-bar');
+    
+    const chartObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const height = entry.target.style.height;
+                entry.target.style.height = '0%';
+                setTimeout(() => {
+                    entry.target.style.height = height;
+                }, 300);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    chartBars.forEach(bar => chartObserver.observe(bar));
+    
+    // View details button functionality
+    const viewDetailsBtns = document.querySelectorAll('.view-details');
+    
+    viewDetailsBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const row = this.closest('tr');
+            const accountName = row.querySelector('.account-name').textContent;
+            console.log('View details for:', accountName);
+            // Add your view details logic here
+        });
+    });
+    
+    // Financial data interactions
+    const financialRows = document.querySelectorAll('.dark-financial-table tr');
+    
+    financialRows.forEach(row => {
+        row.addEventListener('click', function() {
+            const accountName = this.querySelector('.account-name').textContent;
+            const balance = this.querySelector('.balance-amount').textContent;
+            console.log('Account selected:', accountName, 'Balance:', balance);
+            // Add your account selection logic here
+        });
+    });
+});`
+    },
 
-// Simulate real-time updates
-setInterval(() => {
-    const time = new Date().toLocaleTimeString();
-    document.querySelector('.update-time').textContent = time;
-}, 30000);`
-},
     
+
 };
+
+
+
 
 // ====================================================================
 // MAIN FUNCTIONALITY - TABLE TEMPLATES GALLERY

@@ -528,7 +528,6 @@
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    
 }
 
 .copy-btn::before {
@@ -814,7 +813,6 @@
     .template-actions .btn {
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
-    
     }
     
     /* Modal Small Phones */
@@ -932,7 +930,6 @@
     .template-actions .btn {
         padding: 0.45rem 0.8rem;
         font-size: 0.75rem;
-       
     }
 }
 
@@ -1072,1169 +1069,466 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
-/* ========== BUSINESS TEMPLATE PREVIEW STYLES ========== */
-
-/* Business Finance Preview */
-.business-finance-preview th {
-    background: #1f2937;
+/* Preview Table Specific Styles */
+.financial-preview th {
+    background: #1e293b;
     color: white;
 }
 
-.status-preview {
+.growth {
     padding: 0.2rem 0.5rem;
     border-radius: 12px;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     font-weight: 600;
-    text-transform: uppercase;
 }
 
-.status-preview.on-track {
+.growth.positive {
     background: #d1fae5;
     color: #065f46;
 }
 
-.status-preview.completed {
-    background: #d1fae5;
-    color: #065f46;
+.team-preview {
+    display: flex;
+    gap: 0.2rem;
 }
 
-.status-preview.in-stock {
-    background: #d1fae5;
-    color: #065f46;
+.team-avatar-small {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #7c3aed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 600;
 }
 
-.status-preview.low-stock {
+.progress-preview {
+    height: 6px;
+    background: #10b981;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.priority {
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.priority.high {
     background: #fef3c7;
     color: #92400e;
 }
 
-.status-preview.out-of-stock {
-    background: #fee2e2;
-    color: #dc2626;
+.priority.medium {
+    background: #e0e7ff;
+    color: #3730a3;
 }
 
-/* Employee Directory Preview */
-.employee-directory-preview th {
-    background: #1f2937;
-    color: white;
-}
-
-.preview-emp {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.preview-avatar {
-    width: 24px;
-    height: 24px;
-    border-radius: 6px;
-    background: #3b82f6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 0.6rem;
-    font-weight: 600;
-    flex-shrink: 0;
-}
-
-/* Sales Performance Preview */
 .sales-preview th {
-    background: #1f2937;
+    background: #059669;
     color: white;
 }
 
-.preview-achievement {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
+.performance-preview {
+    height: 8px;
+    border-radius: 10px;
+    width: 60px;
 }
 
-.preview-achievement .mini-progress {
-    height: 6px;
-    background: #10b981;
-    border-radius: 3px;
-    flex: 1;
-    min-width: 40px;
+.performance-preview.exceeded {
+    background: linear-gradient(90deg, #10b981, #34d399);
 }
 
-.preview-achievement span {
-    font-size: 0.7rem;
-    font-weight: 600;
-    min-width: 30px;
+.performance-preview.on-track {
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
 }
 
-/* Project Management Preview */
-.project-preview th {
-    background: #1f2937;
+.employee-preview th {
+    background: #6366f1;
     color: white;
 }
 
-.preview-project {
+.rating-preview {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    gap: 1px;
 }
 
-.preview-icon {
-    font-size: 0.9rem;
-    width: 20px;
-    text-align: center;
-}
-
-.preview-progress {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-.preview-progress .mini-progress {
-    height: 6px;
-    background: #3b82f6;
-    border-radius: 3px;
-    flex: 1;
-    min-width: 40px;
-}
-
-.preview-progress span {
-    font-size: 0.7rem;
-    font-weight: 600;
-    min-width: 25px;
-}
-
-/* Inventory Management Preview */
-.inventory-preview th {
-    background: #1f2937;
-    color: white;
-}
-
-/* Mini progress bar for all previews */
-.mini-progress {
-    height: 6px;
-    border-radius: 3px;
-    margin-top: 2px;
-}
-
-/* Color variations for different progress types */
-.sales-preview .mini-progress { background: #10b981; }
-.project-preview .mini-progress { background: #3b82f6; }
-/* ========== MINIMAL TEMPLATE PREVIEW STYLES ========== */
-
-/* Minimal Data Preview */
-.minimal-preview th {
-    background: #f8fafc;
-    color: #374151;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.minimal-preview td {
-    color: #6b7280;
-    border-bottom: 1px solid #f3f4f6;
-}
-
-/* User List Preview */
-.user-list-preview th {
-    background: #f8fafc;
-    color: #374151;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.preview-user-minimal {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.preview-avatar-minimal {
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    background: #6b7280;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 0.6rem;
-    font-weight: 500;
-    flex-shrink: 0;
-}
-
-.preview-status {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.7rem;
-}
-
-.status-dot-preview {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-}
-
-.status-dot-preview.online {
-    background: #10b981;
-}
-
-.status-dot-preview.away {
-    background: #f59e0b;
-}
-
-.status-dot-preview.offline {
-    background: #6b7280;
-}
-
-/* Pricing Table Preview */
-.pricing-preview th {
-    background: #f8fafc;
-    color: #374151;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.preview-plan {
-    display: flex;
-    flex-direction: column;
-}
-
-.plan-name-preview {
-    font-weight: 500;
-    color: #1f2937;
+.rating-preview .star {
     font-size: 0.8rem;
+    opacity: 0.3;
 }
 
-.plan-desc-preview {
-    font-size: 0.65rem;
-    color: #9ca3af;
-    margin-top: 1px;
+.rating-preview .star.filled {
+    opacity: 1;
+    color: #f59e0b;
 }
-
-/* Task List Preview */
-.task-list-preview th {
-    background: #f8fafc;
-    color: #374151;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.preview-checkbox {
-    width: 12px;
-    height: 12px;
-    border: 2px solid #d1d5db;
-    border-radius: 2px;
-    background: white;
-}
-
-.preview-checkbox.checked {
-    background: #10b981;
-    border-color: #10b981;
-}
-
-.preview-task {
-    display: flex;
-    flex-direction: column;
-}
-
-.task-title-preview {
-    font-weight: 500;
-    color: #1f2937;
-    font-size: 0.8rem;
-}
-
-.task-desc-preview {
-    font-size: 0.65rem;
-    color: #9ca3af;
-    margin-top: 1px;
-}
-
-.priority-preview {
-    padding: 0.2rem 0.4rem;
-    border-radius: 8px;
-    font-size: 0.65rem;
-    font-weight: 500;
-}
-
-.priority-preview.high {
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-.priority-preview.medium {
-    background: #fef3c7;
-    color: #d97706;
-}
-
-.priority-preview.low {
-    background: #d1fae5;
-    color: #059669;
-}
+/* New Preview Styles for Business Templates */
 
 /* Metrics Preview */
 .metrics-preview th {
-    background: #f8fafc;
-    color: #374151;
-    border-bottom: 1px solid #e5e7eb;
+    background: #1a56db;
+    color: white;
 }
 
-.change-preview {
+.change {
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
     font-weight: 600;
+}
+
+.change.positive {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+/* Analytics Preview */
+.analytics-preview-header {
+    background: #0f172a;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.live-indicator-small {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: rgba(239, 68, 68, 0.2);
+    color: #fca5a5;
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
     font-size: 0.7rem;
+    font-weight: 600;
 }
 
-.change-preview.positive {
-    color: #059669;
+.live-dot-small {
+    width: 6px;
+    height: 6px;
+    background: #ef4444;
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
 }
 
-.change-preview.negative {
-    color: #dc2626;
-}
-
-/* Minimal table common styles */
-.minimal-preview th,
-.user-list-preview th,
-.pricing-preview th,
-.task-list-preview th,
-.metrics-preview th {
-    font-weight: 500;
-    font-size: 0.7rem;
-}
-
-.minimal-preview td,
-.user-list-preview td,
-.pricing-preview td,
-.task-list-preview td,
-.metrics-preview td {
-    font-size: 0.7rem;
-    color: #6b7280;
-}
-/* ========== ANALYTICS TEMPLATE PREVIEW STYLES ========== */
-
-/* Analytics Dashboard Preview */
 .analytics-preview th {
     background: #1e293b;
     color: white;
 }
 
-.preview-channel {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.channel-icon-preview {
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    flex-shrink: 0;
-}
-
-.channel-icon-preview.organic {
-    background: #dbeafe;
-    color: #1d4ed8;
-}
-
-.channel-icon-preview.social {
-    background: #fce7f3;
-    color: #db2777;
-}
-
-.preview-metric-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
+.trend {
     font-size: 0.7rem;
-}
-
-.bar-fill-preview {
-    height: 4px;
-    background: #3b82f6;
-    border-radius: 2px;
-    min-width: 30px;
-    flex: 1;
-}
-
-.preview-conversion {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.7rem;
-}
-
-.trend-preview {
-    padding: 0.15rem 0.3rem;
-    border-radius: 4px;
-    font-size: 0.65rem;
     font-weight: 600;
+    padding: 0.2rem 0.4rem;
+    border-radius: 8px;
 }
 
-.trend-preview.positive {
+.trend.up {
     background: #d1fae5;
     color: #065f46;
 }
 
-.trend-preview.negative {
+/* Portfolio Preview */
+.portfolio-preview th {
+    background: #059669;
+    color: white;
+}
+
+.price-change {
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.price-change.positive {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.price-change.negative {
     background: #fee2e2;
     color: #dc2626;
 }
 
-/* Performance Metrics Preview */
-.performance-preview th {
+/* Scoreboard Preview */
+.scoreboard-preview th {
     background: #1e293b;
     color: white;
 }
 
-.preview-progress-metric {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.7rem;
-}
-
-.progress-track-preview {
-    flex: 1;
-    height: 4px;
-    background: #e5e7eb;
-    border-radius: 2px;
-    overflow: hidden;
-    min-width: 30px;
-}
-
-.progress-value-preview {
-    height: 100%;
-    border-radius: 2px;
-}
-
-.preview-score {
+.rank-badge-small {
     width: 24px;
     height: 24px;
-    border-radius: 4px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 0.7rem;
-    color: white;
-    margin: 0 auto;
-}
-
-.preview-score.excellent {
-    background: #10b981;
-}
-
-.preview-score.good {
-    background: #f59e0b;
-}
-
-.preview-score.average {
-    background: #ef4444;
-}
-
-/* Real-Time Analytics Preview */
-.realtime-preview th {
-    background: #1e293b;
-    color: white;
-}
-
-.preview-country {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-.flag-preview {
-    font-size: 0.9rem;
-}
-
-.preview-active-users {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.7rem;
-}
-
-.user-trend-preview {
-    padding: 0.15rem 0.3rem;
-    border-radius: 4px;
-    font-size: 0.65rem;
-    font-weight: 600;
-}
-
-.user-trend-preview.up {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.user-trend-preview.down {
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-.traffic-status-preview {
-    padding: 0.3rem 0.5rem;
-    border-radius: 8px;
-    font-size: 0.65rem;
-    font-weight: 600;
-    text-align: center;
-}
-
-.traffic-status-preview.high {
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-.traffic-status-preview.medium {
-    background: #fef3c7;
-    color: #d97706;
-}
-
-/* Conversion Funnel Preview */
-.funnel-preview th {
-    background: #1e293b;
-    color: white;
-}
-
-.preview-funnel-stage {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-.stage-number-preview {
-    width: 18px;
-    height: 18px;
-    background: #3b82f6;
-    color: white;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 0.65rem;
-    flex-shrink: 0;
-}
-
-.drop-off-preview {
-    padding: 0.2rem 0.4rem;
-    border-radius: 6px;
-    font-size: 0.65rem;
-    font-weight: 600;
-}
-
-.drop-off-preview.negative {
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-/* KPI Dashboard Preview */
-.kpi-preview th {
-    background: #1e293b;
-    color: white;
-}
-
-.preview-kpi-progress {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.7rem;
-}
-
-.kpi-status-preview {
-    padding: 0.3rem 0.5rem;
-    border-radius: 8px;
-    font-size: 0.65rem;
-    font-weight: 600;
-    text-align: center;
-}
-
-.kpi-status-preview.achieved {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.kpi-status-preview.on-track {
-    background: #fef3c7;
-    color: #d97706;
-}
-
-.kpi-status-preview.at-risk {
-    background: #fecaca;
-    color: #dc2626;
-}
-
-/* Analytics table common styles */
-.analytics-preview th,
-.performance-preview th,
-.realtime-preview th,
-.funnel-preview th,
-.kpi-preview th {
-    font-weight: 600;
-    font-size: 0.7rem;
-}
-
-.analytics-preview td,
-.performance-preview td,
-.realtime-preview td,
-.funnel-preview td,
-.kpi-preview td {
-    font-size: 0.7rem;
-    color: #374151;
-}
-
-/* Progress bar colors for different templates */
-.performance-preview tr:nth-child(1) .progress-value-preview { background: #ef4444; }
-.performance-preview tr:nth-child(2) .progress-value-preview { background: #f59e0b; }
-.performance-preview tr:nth-child(3) .progress-value-preview { background: #ef4444; }
-
-.kpi-preview tr:nth-child(1) .progress-value-preview { background: #10b981; }
-.kpi-preview tr:nth-child(2) .progress-value-preview { background: #f59e0b; }
-.kpi-preview tr:nth-child(3) .progress-value-preview { background: #f59e0b; }
-/* ========== DARK THEME PREVIEW STYLES ========== */
-
-/* Dark preview background */
-.dark-preview {
-    background: #1e293b !important;
-    border: 1px solid #334155 !important;
-}
-
-/* Dark Dashboard Preview */
-.dark-dashboard-preview th {
-    background: #334155;
-    color: #e2e8f0;
-    border-bottom: 1px solid #475569;
-}
-
-.dark-dashboard-preview td {
-    color: #cbd5e1;
-    border-bottom: 1px solid #334155;
-}
-
-.preview-dark-metric {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.preview-metric-icon {
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 0.8rem;
-    flex-shrink: 0;
+    color: white;
 }
 
-.preview-metric-icon.revenue {
+.rank-badge-small.gold {
     background: linear-gradient(135deg, #f59e0b, #d97706);
 }
 
-.preview-metric-icon.users {
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+.rank-badge-small.silver {
+    background: linear-gradient(135deg, #94a3b8, #64748b);
 }
 
-.preview-metric-icon.conversion {
-    background: linear-gradient(135deg, #10b981, #059669);
+.rank-badge-small.bronze {
+    background: linear-gradient(135deg, #b45309, #92400e);
 }
 
-.preview-growth {
-    padding: 0.2rem 0.4rem;
-    border-radius: 6px;
-    font-size: 0.65rem;
-    font-weight: 600;
-}
-
-.preview-growth.positive {
-    background: rgba(16, 185, 129, 0.2);
-    color: #10b981;
-    border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-/* Dark User Management Preview */
-.dark-user-preview th {
-    background: #334155;
-    color: #e2e8f0;
-    border-bottom: 1px solid #475569;
-}
-
-.dark-user-preview td {
-    color: #cbd5e1;
-    border-bottom: 1px solid #334155;
-}
-
-.preview-dark-user {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.preview-dark-avatar {
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
-    background: linear-gradient(135deg, #7c3aed, #6d28d9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 600;
-    font-size: 0.7rem;
-    flex-shrink: 0;
-}
-
-.preview-dark-user-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.preview-dark-name {
-    font-weight: 600;
-    color: #f1f5f9;
-    font-size: 0.7rem;
-}
-
-.preview-dark-email {
-    font-size: 0.6rem;
-    color: #94a3b8;
-    margin-top: 1px;
-}
-
-.preview-dark-role {
-    padding: 0.2rem 0.4rem;
-    border-radius: 6px;
-    font-size: 0.65rem;
-    font-weight: 600;
-}
-
-.preview-dark-role.admin {
-    background: rgba(239, 68, 68, 0.2);
-    color: #f87171;
-    border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-.preview-dark-role.editor {
-    background: rgba(59, 130, 246, 0.2);
-    color: #60a5fa;
-    border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.preview-dark-role.viewer {
-    background: rgba(16, 185, 129, 0.2);
-    color: #34d399;
-    border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-.preview-dark-status {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.65rem;
-    font-weight: 600;
-}
-
-.preview-status-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-}
-
-.preview-dark-status.online .preview-status-dot {
-    background: #10b981;
-}
-
-.preview-dark-status.away .preview-status-dot {
-    background: #f59e0b;
-}
-
-.preview-dark-status.offline .preview-status-dot {
-    background: #6b7280;
-}
-
-/* Dark Finance Preview */
-.dark-finance-preview th {
-    background: #334155;
-    color: #e2e8f0;
-    border-bottom: 1px solid #475569;
-}
-
-.dark-finance-preview td {
-    color: #cbd5e1;
-    border-bottom: 1px solid #334155;
-}
-
-.preview-dark-budget-status {
-    padding: 0.2rem 0.4rem;
-    border-radius: 6px;
-    font-size: 0.65rem;
-    font-weight: 600;
-    text-align: center;
-}
-
-.preview-dark-budget-status.on-track {
-    background: rgba(16, 185, 129, 0.2);
-    color: #10b981;
-    border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-.preview-dark-budget-status.warning {
-    background: rgba(245, 158, 11, 0.2);
-    color: #f59e0b;
-    border: 1px solid rgba(245, 158, 11, 0.3);
-}
-
-.preview-dark-budget-status.over-budget {
-    background: rgba(239, 68, 68, 0.2);
-    color: #ef4444;
-    border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-/* Dark Server Monitoring Preview */
-.dark-server-preview th {
-    background: #334155;
-    color: #e2e8f0;
-    border-bottom: 1px solid #475569;
-}
-
-.dark-server-preview td {
-    color: #cbd5e1;
-    border-bottom: 1px solid #334155;
-}
-
-.preview-dark-server {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-.preview-server-icon {
-    font-size: 0.9rem;
-    width: 16px;
-    text-align: center;
-}
-
-.preview-dark-server-status {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.65rem;
-    font-weight: 600;
-}
-
-.preview-status-indicator {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-}
-
-.preview-dark-server-status.online .preview-status-indicator {
-    background: #10b981;
-}
-
-.preview-dark-server-status.warning .preview-status-indicator {
-    background: #f59e0b;
-}
-
-.preview-dark-server-status.critical .preview-status-indicator {
-    background: #ef4444;
-}
-
-.preview-dark-resource {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.65rem;
-}
-
-.preview-resource-bar {
-    flex: 1;
-    height: 4px;
-    background: #475569;
-    border-radius: 2px;
-    overflow: hidden;
-    min-width: 30px;
-}
-
-.preview-resource-fill {
-    height: 100%;
-    border-radius: 2px;
-    background: linear-gradient(90deg, #10b981, #059669);
-}
-
-.preview-resource-fill.warning {
-    background: linear-gradient(90deg, #f59e0b, #d97706);
-}
-
-.preview-resource-fill.critical {
-    background: linear-gradient(90deg, #ef4444, #dc2626);
-}
-
-/* Dark Crypto Dashboard Preview */
-.dark-crypto-preview th {
-    background: #334155;
-    color: #e2e8f0;
-    border-bottom: 1px solid #475569;
-}
-
-.dark-crypto-preview td {
-    color: #cbd5e1;
-    border-bottom: 1px solid #334155;
-}
-
-.preview-dark-crypto {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-.preview-crypto-icon {
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.8rem;
-    flex-shrink: 0;
-}
-
-.preview-crypto-icon.btc {
-    background: #f59e0b;
-    color: #1e293b;
-}
-
-.preview-crypto-icon.eth {
-    background: #6366f1;
+/* Support Preview */
+.support-preview th {
+    background: #7c3aed;
     color: white;
 }
 
-.preview-crypto-icon.ada {
+.priority {
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.priority.urgent {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.priority.high {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.status {
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.status.in-progress {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status.open {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.status.resolved {
+    background: #d1fae5;
+    color: #065f46;
+}
+/* Additional Business Preview Table Styles */
+.business-preview-11 th {
+    background: #059669;
+    color: white;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.business-preview-12 th {
     background: #3b82f6;
     color: white;
-}
-
-.preview-crypto-icon.sol {
-    background: #14b8a6;
-    color: white;
-}
-
-.preview-crypto-change {
-    padding: 0.2rem 0.4rem;
-    border-radius: 6px;
-    font-size: 0.65rem;
-    font-weight: 600;
-}
-
-.preview-crypto-change.positive {
-    background: rgba(16, 185, 129, 0.2);
-    color: #10b981;
-    border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-.preview-crypto-change.negative {
-    background: rgba(239, 68, 68, 0.2);
-    color: #ef4444;
-    border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-/* Dark theme common styles */
-.dark-dashboard-preview th,
-.dark-user-preview th,
-.dark-finance-preview th,
-.dark-server-preview th,
-.dark-crypto-preview th {
     font-weight: 600;
     font-size: 0.7rem;
 }
 
-.dark-dashboard-preview td,
-.dark-user-preview td,
-.dark-finance-preview td,
-.dark-server-preview td,
-.dark-crypto-preview td {
+.business-preview-13 th {
+    background: #7c3aed;
+    color: white;
+    font-weight: 600;
     font-size: 0.7rem;
 }
-/* Colorful Preview Table Styles */
-.colorful-preview-1 th {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+
+.business-preview-14 th {
+    background: #f59e0b;
     color: white;
     font-weight: 600;
+    font-size: 0.7rem;
 }
 
-.colorful-preview-2 th {
-    background: linear-gradient(135deg, #ff6b6b, #ffa726, #66bb6a);
+.business-preview-15 th {
+    background: #1e293b;
     color: white;
     font-weight: 600;
-}
-
-.colorful-preview-3 th {
-    background: #0f0f23;
-    color: #8b5cf6;
-    font-weight: 600;
-    text-shadow: 0 0 5px rgba(139, 92, 246, 0.8);
-}
-
-.colorful-preview-4 th {
-    background: linear-gradient(135deg, #f0f9ff, #fdf2f8, #f0fdf4);
-    color: #4f46e5;
-    font-weight: 600;
-}
-
-.colorful-preview-5 th {
-    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
-    color: white;
-    font-weight: 600;
-}
-/* Premium Preview Table Styles */
-.premium-preview-1 th {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: #fbbf24;
-    font-weight: 600;
-    border-bottom: 2px solid #fbbf24;
-}
-
-.premium-preview-2 th {
-    background: linear-gradient(135deg, #1e293b, #0f172a);
-    color: #fbbf24;
-    font-weight: 600;
-}
-
-.premium-preview-3 th {
-    background: linear-gradient(135deg, #1c1917, #292524);
-    color: #f59e0b;
-    font-weight: 600;
-}
-
-.premium-preview-4 th {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: #3b82f6;
-    font-weight: 600;
-}
-
-.premium-preview-5 th {
-    background: linear-gradient(135deg, #1e293b, #0f172a);
-    color: #fbbf24;
-    font-weight: 600;
-}
-/* Business Preview Table Styles */
-.business-preview-6 th {
-    background: linear-gradient(135deg, #1e40af, #3730a3);
-    color: white;
-    font-weight: 600;
-}
-
-.business-preview-7 th {
-    background: linear-gradient(135deg, #059669, #047857);
-    color: white;
-    font-weight: 600;
-}
-
-.business-preview-8 th {
-    background: linear-gradient(135deg, #7c3aed, #6d28d9);
-    color: white;
-    font-weight: 600;
-}
-
-.business-preview-9 th {
-    background: linear-gradient(135deg, #dc2626, #b91c1c);
-    color: white;
-    font-weight: 600;
-}
-
-.business-preview-10 th {
-    background: linear-gradient(135deg, #ec4899, #db2777);
-    color: white;
-    font-weight: 600;
+    font-size: 0.7rem;
 }
 /* Minimal Preview Table Styles */
 .minimal-preview-1 th {
-    background: #f9fafb;
-    color: #374151;
-    font-weight: 600;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.minimal-preview-1 td {
-    border-bottom: 1px solid #f3f4f6;
-    color: #6b7280;
+    background: #fafafa;
+    font-weight: 500;
+    color: #666;
+    font-size: 0.7rem;
 }
 
 .minimal-preview-2 th {
-    background: #ffffff;
-    color: #6b7280;
+    color: #999;
     font-weight: 500;
-    border-bottom: 1px solid #f3f4f6;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-.minimal-preview-2 td {
-    border-bottom: 1px solid #f9fafb;
-    color: #374151;
+.minimal-preview-3 tr:nth-child(odd) {
+    background: #fafafa;
 }
 
-.minimal-preview-3 th {
-    background: #ffffff;
-    color: #6b7280;
-    font-weight: 500;
-}
-
-.minimal-preview-3 tr {
-    border-bottom: 1px solid #f8fafc;
+.minimal-preview-4 {
+    font-size: 0.7rem;
 }
 
 .minimal-preview-4 th {
-    background: #fafafa;
-    color: #6b7280;
+    background: #fcfcfc;
     font-weight: 500;
-    font-size: 0.75rem;
-}
-
-.minimal-preview-4 td {
-    font-size: 0.8125rem;
-    border-bottom: 1px solid #f9fafb;
+    color: #666;
+    font-size: 0.65rem;
 }
 
 .minimal-preview-5 th {
-    background: #f8fafc;
-    color: #64748b;
-    font-weight: 500;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 2px solid #e8e8e8;
+    color: #888;
+    font-weight: 400;
+    font-size: 0.7rem;
+}
+/* Minimal Preview Table Styles for New Templates */
+.minimal-preview-6 .fade-row {
+    opacity: 0;
+    animation: previewFade 2s infinite alternate;
 }
 
-.minimal-preview-5 td {
-    border-bottom: 1px solid #f8fafc;
-    color: #475569;
+@keyframes previewFade {
+    to { opacity: 1; }
+}
+
+.minimal-preview-7 .slide-row {
+    transform: translateX(-10px);
+    animation: previewSlide 2s infinite alternate;
+}
+
+@keyframes previewSlide {
+    to { transform: translateX(0); }
+}
+
+.minimal-preview-8 .glow-row:hover td {
+    background: #f0f7ff;
+    transform: translateY(-1px);
+}
+
+.minimal-preview-9 .pulse-row {
+    animation: previewPulse 2s infinite;
+}
+
+@keyframes previewPulse {
+    0%, 100% { background: white; }
+    50% { background: #f8f9fa; }
+}
+
+.minimal-preview-10 .morph-row {
+    animation: previewMorph 3s infinite alternate;
+}
+
+@keyframes previewMorph {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.01); }
+}
+/* Minimal Preview Table Styles for Universal Templates */
+.minimal-preview-11 th {
+    background: #f8f9fa;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.minimal-preview-12 th {
+    background: #667eea;
+    color: white;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.minimal-preview-13 .status-badge {
+    padding: 0.2rem 0.4rem;
+    border-radius: 8px;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+
+.minimal-preview-14 .category-tag {
+    padding: 0.2rem 0.4rem;
+    border-radius: 8px;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+
+.minimal-preview-15 .availability-status {
+    padding: 0.2rem 0.4rem;
+    border-radius: 8px;
+    font-size: 0.6rem;
+    font-weight: 600;
 }
 /* Analytics Preview Table Styles */
 .analytics-preview-1 th {
-    background: #f8fafc;
-    color: #374151;
+    background: #7c3aed;
+    color: white;
     font-weight: 600;
-    border-bottom: 2px solid #e5e7eb;
+    font-size: 0.7rem;
 }
 
 .analytics-preview-2 th {
     background: #f8fafc;
-    color: #374151;
     font-weight: 600;
+    font-size: 0.7rem;
 }
 
-.analytics-preview-3 th {
-    background: #f8fafc;
-    color: #374151;
-    font-weight: 600;
-}
-
-.analytics-preview-4 th {
-    background: linear-gradient(135deg, #059669, #047857);
+.analytics-preview-3 .live-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: #10b981;
     color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 10px;
+    font-size: 0.6rem;
     font-weight: 600;
 }
 
-.analytics-preview-5 th {
-    background: #1e293b;
-    color: #94a3b8;
+.analytics-preview-4 .margin-display {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.analytics-preview-5 .change-display {
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.6rem;
     font-weight: 600;
+}
+/* Status Styles for Preview Tables */
+.status {
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status.inactive {
+    background: #fef2f2;
+    color: #dc2626;
 }
