@@ -1532,3 +1532,235 @@
     background: #fef2f2;
     color: #dc2626;
 }
+/* Colorful Preview Table Styles */
+.colorful-preview-1 th {
+    background: linear-gradient(135deg, #ff6b6b, #ffa726, #ffee58, #66bb6a, #42a5f5, #ab47bc);
+    color: white;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.colorful-preview-2 {
+    background: #0a0a0a;
+    color: white;
+}
+
+.colorful-preview-2 th {
+    background: #1a1a1a;
+    color: #00ffff;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.colorful-preview-3 th {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    color: white;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.colorful-preview-4 th {
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.8), rgba(173, 216, 230, 0.8));
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.colorful-preview-5 th {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+    color: white;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+/* New Colorful Preview Table Styles */
+.colorful-preview-6 {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 15px;
+}
+
+.colorful-preview-6 th {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.colorful-preview-7 {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+.colorful-preview-7 th {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.colorful-preview-8 {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 15px;
+}
+
+.colorful-preview-8 th {
+    background: rgba(255, 255, 255, 0.1);
+    color: #00ffff;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.colorful-preview-9 {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 15px;
+}
+
+.colorful-preview-9 th {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.colorful-preview-10 {
+    background: #0f0f23;
+    border: 1px solid #00ffff;
+    border-radius: 0;
+}
+
+.colorful-preview-10 th {
+    background: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+/* Premium Preview Table Styles */
+.premium-preview-1 {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 15px;
+}
+
+.premium-preview-1 th {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(192, 192, 192, 0.1));
+    color: #FFD700;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.premium-preview-2 {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d, #1a1a1a);
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    border-radius: 15px;
+}
+
+.premium-preview-2 th {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(192, 192, 192, 0.1));
+    color: #FFD700;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.premium-preview-3 {
+    background: linear-gradient(135deg, #0f0f23, #1a1a2e, #16213e);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 15px;
+}
+
+.premium-preview-3 th {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(185, 242, 255, 0.1));
+    color: #FFD700;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.premium-preview-4 {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d, #1a1a1a);
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    border-radius: 15px;
+}
+
+.premium-preview-4 th {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(230, 230, 250, 0.15));
+    color: #FFD700;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.premium-preview-5 {
+    background: linear-gradient(135deg, #1e1b4b, #312e81, #3730a3);
+    border: 2px solid rgba(139, 92, 246, 0.5);
+    border-radius: 15px;
+}
+
+.premium-preview-5 th {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+    color: #8B5CF6;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+/* New Premium Preview Table Styles */
+.premium-preview-6 {
+    background: linear-gradient(135deg, #0c0a1d, #1a162d, #0c0a1d);
+    border: 2px solid rgba(185, 242, 255, 0.3);
+    border-radius: 15px;
+}
+
+.premium-preview-6 th {
+    background: linear-gradient(135deg, rgba(185, 242, 255, 0.1), rgba(230, 230, 250, 0.1));
+    color: #B9F2FF;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.premium-preview-7 {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d, #1a1a1a);
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    border-radius: 15px;
+}
+
+.premium-preview-7 th {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(212, 175, 55, 0.1));
+    color: #FFD700;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.premium-preview-8 {
+    background: linear-gradient(135deg, #2d2d2d, #3d3d3d, #2d2d2d);
+    border: 2px solid rgba(229, 228, 226, 0.5);
+    border-radius: 15px;
+}
+
+.premium-preview-8 th {
+    background: linear-gradient(135deg, rgba(229, 228, 226, 0.1), rgba(190, 194, 203, 0.1));
+    color: #E5E4E2;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.premium-preview-9 {
+    background: linear-gradient(135deg, #052e16, #065f46, #047857);
+    border: 2px solid rgba(16, 185, 129, 0.5);
+    border-radius: 15px;
+}
+
+.premium-preview-9 th {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
+    color: #10b981;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.premium-preview-10 {
+    background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+    border: 2px solid rgba(37, 99, 235, 0.5);
+    border-radius: 15px;
+}
+
+.premium-preview-10 th {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(139, 92, 246, 0.1));
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 0.7rem;
+}

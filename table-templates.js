@@ -14256,6 +14256,11851 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });`
     },
+    // ====================================================================
+// COLORFUL TEMPLATE 41: RAINBOW GRADIENT
+// ====================================================================
+colorful1: {
+    html: `<div class="rainbow-table-container">
+    <div class="rainbow-header">
+        <h3>🌈 Task Manager</h3>
+        <div class="rainbow-controls">
+            <button class="btn-rainbow-add">+ Add Task</button>
+        </div>
+    </div>
+    <table class="rainbow-table">
+        <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>Category</th>
+                <th>Priority</th>
+                <th>Deadline</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="rainbow-row-1">
+                <td>
+                    <div class="task-with-icon">
+                        <span class="task-icon">🎨</span>
+                        Design Homepage
+                    </div>
+                </td>
+                <td>Design</td>
+                <td><span class="priority high">High</span></td>
+                <td>Today</td>
+                <td><span class="status-badge completed">Completed</span></td>
+            </tr>
+            <tr class="rainbow-row-2">
+                <td>
+                    <div class="task-with-icon">
+                        <span class="task-icon">⚡</span>
+                        Optimize Performance
+                    </div>
+                </td>
+                <td>Development</td>
+                <td><span class="priority medium">Medium</span></td>
+                <td>Tomorrow</td>
+                <td><span class="status-badge in-progress">In Progress</span></td>
+            </tr>
+            <tr class="rainbow-row-3">
+                <td>
+                    <div class="task-with-icon">
+                        <span class="task-icon">🐛</span>
+                        Fix Mobile Bugs
+                    </div>
+                </td>
+                <td>Testing</td>
+                <td><span class="priority high">High</span></td>
+                <td>Jan 20</td>
+                <td><span class="status-badge pending">Pending</span></td>
+            </tr>
+            <tr class="rainbow-row-4">
+                <td>
+                    <div class="task-with-icon">
+                        <span class="task-icon">📊</span>
+                        Analytics Dashboard
+                    </div>
+                </td>
+                <td>Analytics</td>
+                <td><span class="priority low">Low</span></td>
+                <td>Jan 25</td>
+                <td><span class="status-badge planning">Planning</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `@keyframes rainbowBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes colorShift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.rainbow-table-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 2px;
+    animation: colorShift 8s ease-in-out infinite;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.rainbow-table-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        #ff6b6b, #ffa726, #ffee58, 
+        #66bb6a, #42a5f5, #ab47bc
+    );
+    background-size: 400% 400%;
+    border-radius: 22px;
+    animation: rainbowBackground 6s ease infinite;
+    z-index: -1;
+}
+
+.rainbow-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem 2rem;
+    border-radius: 18px 18px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, 
+        #ff6b6b, #ffa726, #ffee58, 
+        #66bb6a, #42a5f5, #ab47bc
+    ) 1;
+}
+
+.rainbow-header h3 {
+    margin: 0;
+    background: linear-gradient(135deg, #ff6b6b, #ab47bc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.btn-rainbow-add {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-rainbow-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    animation: float 2s ease-in-out infinite;
+}
+
+.rainbow-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 0 0 18px 18px;
+    overflow: hidden;
+}
+
+.rainbow-table th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.rainbow-table th::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255,255,255,0.4), 
+        transparent
+    );
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.rainbow-table td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    color: #2d3748;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.rainbow-row-1:hover td { background: linear-gradient(90deg, #ff6b6b20, transparent); }
+.rainbow-row-2:hover td { background: linear-gradient(90deg, #ffa72620, transparent); }
+.rainbow-row-3:hover td { background: linear-gradient(90deg, #66bb6a20, transparent); }
+.rainbow-row-4:hover td { background: linear-gradient(90deg, #42a5f520, transparent); }
+
+.rainbow-table tr {
+    transition: all 0.3s ease;
+}
+
+.rainbow-table tr:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.task-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.task-icon {
+    font-size: 1.2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.priority {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.priority.high {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+.priority.medium {
+    background: linear-gradient(135deg, #ffa726, #ffb74d);
+    color: white;
+}
+
+.priority.low {
+    background: linear-gradient(135deg, #66bb6a, #81c784);
+    color: white;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.status-badge.completed {
+    background: linear-gradient(135deg, #66bb6a, #81c784);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 187, 106, 0.4);
+}
+
+.status-badge.in-progress {
+    background: linear-gradient(135deg, #42a5f5, #64b5f6);
+    color: white;
+    box-shadow: 0 4px 15px rgba(66, 165, 245, 0.4);
+    animation: pulse 2s infinite;
+}
+
+.status-badge.pending {
+    background: linear-gradient(135deg, #ffa726, #ffb74d);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 167, 38, 0.4);
+}
+
+.status-badge.planning {
+    background: linear-gradient(135deg, #ab47bc, #ba68c8);
+    color: white;
+    box-shadow: 0 4px 15px rgba(171, 71, 188, 0.4);
+}`,
+    js: `// Rainbow table animations
+document.querySelectorAll('.rainbow-table tr').forEach((row, index) => {
+    row.style.animationDelay = \`\${index * 0.1}s\`;
+});
+
+// Add floating animation to task icons
+document.querySelectorAll('.task-icon').forEach(icon => {
+    icon.style.animationDelay = \`\${Math.random() * 2}s\`;
+});
+
+// Add click animation to status badges
+document.querySelectorAll('.status-badge').forEach(badge => {
+    badge.addEventListener('click', function() {
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = 'scale(1)';
+        }, 150);
+    });
+});`
+},
+
+// ====================================================================
+// COLORFUL TEMPLATE 42: NEON GLOW
+// ====================================================================
+colorful2: {
+    html: `<div class="neon-table-container">
+    <div class="neon-header">
+        <h3>⚡ Feature Progress</h3>
+        <div class="neon-stats">
+            <span class="neon-stat">Total: 8</span>
+            <span class="neon-stat">Done: 5</span>
+        </div>
+    </div>
+    <table class="neon-table">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Team</th>
+                <th>Progress</th>
+                <th>ETA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="neon-row">
+                <td>
+                    <div class="feature-name">
+                        <span class="neon-dot" style="--neon-color: #ff00ff"></span>
+                        User Authentication
+                    </div>
+                </td>
+                <td>Backend</td>
+                <td>
+                    <div class="neon-progress">
+                        <div class="progress-bar" data-progress="100">
+                            <div class="progress-fill" style="--neon-color: #ff00ff"></div>
+                        </div>
+                        <span>100%</span>
+                    </div>
+                </td>
+                <td>Completed</td>
+            </tr>
+            <tr class="neon-row">
+                <td>
+                    <div class="feature-name">
+                        <span class="neon-dot" style="--neon-color: #00ffff"></span>
+                        Payment Gateway
+                    </div>
+                </td>
+                <td>Full Stack</td>
+                <td>
+                    <div class="neon-progress">
+                        <div class="progress-bar" data-progress="75">
+                            <div class="progress-fill" style="--neon-color: #00ffff"></div>
+                        </div>
+                        <span>75%</span>
+                    </div>
+                </td>
+                <td>2 days</td>
+            </tr>
+            <tr class="neon-row">
+                <td>
+                    <div class="feature-name">
+                        <span class="neon-dot" style="--neon-color: #ffff00"></span>
+                        Admin Dashboard
+                    </div>
+                </td>
+                <td>Frontend</td>
+                <td>
+                    <div class="neon-progress">
+                        <div class="progress-bar" data-progress="50">
+                            <div class="progress-fill" style="--neon-color: #ffff00"></div>
+                        </div>
+                        <span>50%</span>
+                    </div>
+                </td>
+                <td>1 week</td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `@keyframes neonGlow {
+    0%, 100% { 
+        box-shadow: 
+            0 0 5px var(--neon-color),
+            0 0 10px var(--neon-color),
+            0 0 15px var(--neon-color);
+    }
+    50% { 
+        box-shadow: 
+            0 0 10px var(--neon-color),
+            0 0 20px var(--neon-color),
+            0 0 30px var(--neon-color),
+            0 0 40px var(--neon-color);
+    }
+}
+
+@keyframes textGlow {
+    0%, 100% { 
+        text-shadow: 
+            0 0 5px currentColor,
+            0 0 10px currentColor;
+    }
+    50% { 
+        text-shadow: 
+            0 0 10px currentColor,
+            0 0 20px currentColor,
+            0 0 30px currentColor;
+    }
+}
+
+@keyframes progressFill {
+    0% { width: 0%; }
+    100% { width: attr(data-progress); }
+}
+
+.neon-table-container {
+    background: #0a0a0a;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00) 1;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.neon-table-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+    background-size: 400% 400%;
+    border-radius: 17px;
+    animation: gradientShift 3s ease infinite;
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0.7;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.neon-header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.neon-header h3 {
+    margin: 0;
+    color: #00ffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    animation: textGlow 2s ease-in-out infinite;
+}
+
+.neon-stats {
+    display: flex;
+    gap: 1rem;
+}
+
+.neon-stat {
+    color: #ff00ff;
+    font-weight: 600;
+    animation: textGlow 2s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.neon-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.neon-table th {
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    color: #00ffff;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #333;
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+.neon-table td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #333;
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.neon-row:hover td {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(10px);
+}
+
+.feature-name {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+}
+
+.neon-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--neon-color);
+    animation: neonGlow 2s ease-in-out infinite;
+}
+
+.neon-progress {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--neon-color);
+    border-radius: 10px;
+    animation: progressFill 2s ease-out;
+    animation: neonGlow 2s ease-in-out infinite;
+}
+
+.neon-progress span {
+    color: var(--neon-color);
+    font-weight: 600;
+    min-width: 40px;
+    animation: textGlow 2s ease-in-out infinite;
+}`,
+    js: `// Neon progress bar animations
+document.querySelectorAll('.progress-bar').forEach(bar => {
+    const progress = bar.getAttribute('data-progress');
+    const fill = bar.querySelector('.progress-fill');
+    
+    // Animate progress fill
+    setTimeout(() => {
+        fill.style.width = progress + '%';
+    }, 500);
+});
+
+// Add hover effects to neon rows
+document.querySelectorAll('.neon-row').forEach(row => {
+    row.addEventListener('mouseenter', function() {
+        this.style.animation = 'neonGlow 0.5s ease-in-out';
+    });
+    
+    row.addEventListener('mouseleave', function() {
+        this.style.animation = 'none';
+    });
+});`
+},
+
+// ====================================================================
+// COLORFUL TEMPLATE 43: ANIMATED GRADIENT
+// ====================================================================
+colorful3: {
+    html: `<div class="animated-table-container">
+    <div class="animated-header">
+        <h3>🚀 Sales Dashboard</h3>
+        <div class="animated-filters">
+            <button class="filter-btn active">Today</button>
+            <button class="filter-btn">Week</button>
+            <button class="filter-btn">Month</button>
+        </div>
+    </div>
+    <table class="animated-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Sales</th>
+                <th>Revenue</th>
+                <th>Trend</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="animated-row">
+                <td>
+                    <div class="product-card">
+                        <div class="product-avatar" style="--avatar-color: #ff6b6b">A</div>
+                        <div class="product-info">
+                            <div class="product-name">Widget Pro</div>
+                            <div class="product-id">#WP-001</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Electronics</td>
+                <td>1,234</td>
+                <td>$12,340</td>
+                <td>
+                    <div class="trend up">
+                        <span class="trend-icon">📈</span>
+                        +15%
+                    </div>
+                </td>
+            </tr>
+            <tr class="animated-row">
+                <td>
+                    <div class="product-card">
+                        <div class="product-avatar" style="--avatar-color: #4ecdc4">B</div>
+                        <div class="product-info">
+                            <div class="product-name">Gadget Plus</div>
+                            <div class="product-id">#GP-002</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Accessories</td>
+                <td>987</td>
+                <td>$7,896</td>
+                <td>
+                    <div class="trend down">
+                        <span class="trend-icon">📉</span>
+                        -5%
+                    </div>
+                </td>
+            </tr>
+            <tr class="animated-row">
+                <td>
+                    <div class="product-card">
+                        <div class="product-avatar" style="--avatar-color: #45b7d1">C</div>
+                        <div class="product-info">
+                            <div class="product-name">Tool Kit</div>
+                            <div class="product-id">#TK-003</div>
+                        </div>
+                    </div>
+                </td>
+                <td>Tools</td>
+                <td>456</td>
+                <td>$9,120</td>
+                <td>
+                    <div class="trend up">
+                        <span class="trend-icon">📈</span>
+                        +22%
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+.animated-table-container {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;
+    border-radius: 20px;
+    padding: 3px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.animated-table-container::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: inherit;
+    border-radius: 23px;
+    filter: blur(20px);
+    opacity: 0.7;
+    z-index: -1;
+    animation: gradientMove 8s ease infinite;
+}
+
+.animated-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem 2rem;
+    border-radius: 17px 17px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.animated-header h3 {
+    margin: 0;
+    background: linear-gradient(135deg, #ee7752, #23a6d5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.animated-filters {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #ee7752, #e73c7e);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+    animation: bounce 2s infinite;
+}
+
+.filter-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+
+.animated-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 0 0 17px 17px;
+    overflow: hidden;
+}
+
+.animated-table th {
+    background: linear-gradient(135deg, rgba(238, 119, 82, 0.9), rgba(35, 166, 213, 0.9));
+    color: white;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-table th::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255,255,255,0.3), 
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+.animated-table td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    color: #2d3748;
+    font-weight: 500;
+}
+
+.animated-row {
+    animation: slideIn 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.animated-row:nth-child(1) { animation-delay: 0.1s; }
+.animated-row:nth-child(2) { animation-delay: 0.2s; }
+.animated-row:nth-child(3) { animation-delay: 0.3s; }
+
+.animated-row:hover {
+    background: linear-gradient(90deg, 
+        rgba(238, 119, 82, 0.1), 
+        rgba(35, 166, 213, 0.1)
+    );
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.product-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.product-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--avatar-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    animation: bounce 3s ease-in-out infinite;
+}
+
+.product-info .product-name {
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.product-info .product-id {
+    font-size: 0.75rem;
+    color: #718096;
+}
+
+.trend {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    animation: bounce 2s infinite;
+}
+
+.trend.up {
+    background: linear-gradient(135deg, #48bb78, #68d391);
+    color: white;
+}
+
+.trend.down {
+    background: linear-gradient(135deg, #f56565, #fc8181);
+    color: white;
+}
+
+.trend-icon {
+    font-size: 1rem;
+    animation: bounce 1s infinite;
+}`,
+    js: `// Animated table interactions
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Remove active class from all buttons
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Add bounce animation
+        this.style.animation = 'none';
+        setTimeout(() => {
+            this.style.animation = 'bounce 2s infinite';
+        }, 10);
+    });
+});
+
+// Add hover animations to product avatars
+document.querySelectorAll('.product-avatar').forEach(avatar => {
+    avatar.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.2) rotate(10deg)';
+    });
+    
+    avatar.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1) rotate(0deg)';
+    });
+});`
+},
+
+// ====================================================================
+// COLORFUL TEMPLATE 44: PASTEL WAVES
+// ====================================================================
+colorful4: {
+    html: `<div class="pastel-table-container">
+    <div class="pastel-header">
+        <h3>🌸 Category Analytics</h3>
+        <div class="pastel-waves">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+    </div>
+    <table class="pastel-table">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Items</th>
+                <th>Growth</th>
+                <th>Performance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="pastel-row">
+                <td>
+                    <div class="category-with-icon">
+                        <span class="category-icon">🎨</span>
+                        Design Resources
+                    </div>
+                </td>
+                <td>156</td>
+                <td>
+                    <div class="growth-indicator positive">
+                        <span class="growth-arrow">↑</span>
+                        +24%
+                    </div>
+                </td>
+                <td>
+                    <div class="performance-meter">
+                        <div class="meter-fill" style="width: 85%"></div>
+                        <span class="meter-text">85%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="pastel-row">
+                <td>
+                    <div class="category-with-icon">
+                        <span class="category-icon">⚡</span>
+                        Development Tools
+                    </div>
+                </td>
+                <td>89</td>
+                <td>
+                    <div class="growth-indicator positive">
+                        <span class="growth-arrow">↑</span>
+                        +18%
+                    </div>
+                </td>
+                <td>
+                    <div class="performance-meter">
+                        <div class="meter-fill" style="width: 72%"></div>
+                        <span class="meter-text">72%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="pastel-row">
+                <td>
+                    <div class="category-with-icon">
+                        <span class="category-icon">📊</span>
+                        Analytics
+                    </div>
+                </td>
+                <td>67</td>
+                <td>
+                    <div class="growth-indicator negative">
+                        <span class="growth-arrow">↓</span>
+                        -5%
+                    </div>
+                </td>
+                <td>
+                    <div class="performance-meter">
+                        <div class="meter-fill" style="width: 45%"></div>
+                        <span class="meter-text">45%</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `@keyframes waveAnimation {
+    0% { transform: translateX(-100%) rotate(0deg); }
+    100% { transform: translateX(100%) rotate(360deg); }
+}
+
+@keyframes floatSoft {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(120deg); }
+    66% { transform: translateY(5px) rotate(240deg); }
+}
+
+@keyframes pastelGlow {
+    0%, 100% { 
+        box-shadow: 
+            0 0 20px rgba(255, 182, 193, 0.3),
+            0 0 40px rgba(173, 216, 230, 0.2);
+    }
+    50% { 
+        box-shadow: 
+            0 0 30px rgba(255, 182, 193, 0.5),
+            0 0 60px rgba(173, 216, 230, 0.3);
+    }
+}
+
+.pastel-table-container {
+    background: linear-gradient(135deg, 
+        rgba(255, 182, 193, 0.1), 
+        rgba(173, 216, 230, 0.1),
+        rgba(221, 160, 221, 0.1)
+    );
+    border-radius: 25px;
+    padding: 2px;
+    position: relative;
+    overflow: hidden;
+    animation: pastelGlow 4s ease-in-out infinite;
+}
+
+.pastel-table-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(173, 216, 230, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(221, 160, 221, 0.1) 0%, transparent 50%);
+    z-index: -1;
+}
+
+.pastel-header {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    padding: 2rem;
+    border-radius: 23px 23px 0 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pastel-header h3 {
+    margin: 0 0 1rem 0;
+    background: linear-gradient(135deg, #ffb6c1, #87ceeb, #dda0dd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.pastel-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.wave {
+    width: 50px;
+    height: 20px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 182, 193, 0.6), 
+        rgba(173, 216, 230, 0.6), 
+        transparent
+    );
+    border-radius: 50%;
+    animation: waveAnimation 3s ease-in-out infinite;
+}
+
+.wave:nth-child(1) { animation-delay: 0s; }
+.wave:nth-child(2) { animation-delay: 1s; }
+.wave:nth-child(3) { animation-delay: 2s; }
+
+.pastel-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    border-radius: 0 0 23px 23px;
+}
+
+.pastel-table th {
+    background: linear-gradient(135deg, 
+        rgba(255, 182, 193, 0.8), 
+        rgba(173, 216, 230, 0.8)
+    );
+    color: #2d3748;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pastel-table td {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(255, 182, 193, 0.2);
+    color: #4a5568;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.pastel-row:hover td {
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateX(10px);
+}
+
+.category-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+}
+
+.category-icon {
+    font-size: 1.5rem;
+    animation: floatSoft 4s ease-in-out infinite;
+}
+
+.growth-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.growth-indicator.positive {
+    background: linear-gradient(135deg, #a7f3d0, #6ee7b7);
+    color: #065f46;
+}
+
+.growth-indicator.negative {
+    background: linear-gradient(135deg, #fecaca, #fca5a5);
+    color: #991b1b;
+}
+
+.growth-arrow {
+    font-size: 1.2rem;
+    animation: bounce 2s infinite;
+}
+
+.performance-meter {
+    width: 100px;
+    height: 8px;
+    background: rgba(255, 182, 193, 0.3);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ffb6c1, #87ceeb);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+    position: relative;
+}
+
+.meter-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255,255,255,0.6), 
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+.meter-text {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4a5568;
+}`,
+    js: `// Pastel table animations
+document.querySelectorAll('.pastel-row').forEach((row, index) => {
+    row.style.animationDelay = \`\${index * 0.2}s\`;
+});
+
+// Animate performance meters on load
+document.querySelectorAll('.meter-fill').forEach(meter => {
+    const width = meter.style.width;
+    meter.style.width = '0%';
+    
+    setTimeout(() => {
+        meter.style.width = width;
+    }, 500);
+});
+
+// Add floating animation to category icons
+document.querySelectorAll('.category-icon').forEach(icon => {
+    icon.style.animationDelay = \`\${Math.random() * 2}s\`;
+});`
+},
+
+// ====================================================================
+// COLORFUL TEMPLATE 45: COLOR SPLASH
+// ====================================================================
+colorful5: {
+    html: `<div class="splash-table-container">
+    <div class="splash-header">
+        <h3>🎉 Event Calendar</h3>
+        <div class="splash-particles" id="splashParticles">
+            <!-- Particles will be generated by JavaScript -->
+        </div>
+    </div>
+    <table class="splash-table">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Attendees</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="splash-row">
+                <td>
+                    <div class="event-card">
+                        <div class="event-color" style="--splash-color: #ff6b6b"></div>
+                        <div class="event-details">
+                            <div class="event-name">Design Workshop</div>
+                            <div class="event-type">Workshop</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="date-badge">
+                        <span class="date-day">25</span>
+                        <span class="date-month">Jan</span>
+                    </div>
+                </td>
+                <td>Main Hall</td>
+                <td>
+                    <div class="attendees-count">
+                        <span class="count-number">120</span>
+                        <span class="count-label">people</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="splash-status confirmed">
+                        <span class="status-dot"></span>
+                        Confirmed
+                    </div>
+                </td>
+            </tr>
+            <tr class="splash-row">
+                <td>
+                    <div class="event-card">
+                        <div class="event-color" style="--splash-color: #4ecdc4"></div>
+                        <div class="event-details">
+                            <div class="event-name">Tech Conference</div>
+                            <div class="event-type">Conference</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="date-badge">
+                        <span class="date-day">14</span>
+                        <span class="date-month">Feb</span>
+                    </div>
+                </td>
+                <td>Grand Ballroom</td>
+                <td>
+                    <div class="attendees-count">
+                        <span class="count-number">450</span>
+                        <span class="count-label">people</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="splash-status sold-out">
+                        <span class="status-dot"></span>
+                        Sold Out
+                    </div>
+                </td>
+            </tr>
+            <tr class="splash-row">
+                <td>
+                    <div class="event-card">
+                        <div class="event-color" style="--splash-color: #45b7d1"></div>
+                        <div class="event-details">
+                            <div class="event-name">Networking Mixer</div>
+                            <div class="event-type">Social</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="date-badge">
+                        <span class="date-day">08</span>
+                        <span class="date-month">Mar</span>
+                    </div>
+                </td>
+                <td>Roof Terrace</td>
+                <td>
+                    <div class="attendees-count">
+                        <span class="count-number">80</span>
+                        <span class="count-label">people</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="splash-status upcoming">
+                        <span class="status-dot"></span>
+                        Upcoming
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `@keyframes splash {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes confetti {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes colorPulse {
+    0%, 100% { 
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg);
+    }
+    50% { 
+        background-position: 100% 50%;
+        filter: hue-rotate(180deg);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.splash-table-container {
+    background: linear-gradient(135deg, 
+        #ff6b6b, #4ecdc4, #45b7d1, 
+        #96ceb4, #feca57, #ff9ff3
+    );
+    background-size: 400% 400%;
+    animation: colorPulse 8s ease infinite;
+    border-radius: 20px;
+    padding: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.splash-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 2rem;
+    border-radius: 17px 17px 0 0;
+    text-align: center;
+    position: relative;
+}
+
+.splash-header h3 {
+    margin: 0;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.splash-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--particle-color);
+    border-radius: 50%;
+    animation: confetti 3s ease-in-out infinite;
+}
+
+.splash-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 0 0 17px 17px;
+}
+
+.splash-table th {
+    background: linear-gradient(135deg, 
+        rgba(255, 107, 107, 0.9), 
+        rgba(78, 205, 196, 0.9)
+    );
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.splash-table td {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: #2d3748;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.splash-row {
+    animation: bounceIn 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.splash-row:nth-child(1) { animation-delay: 0.1s; }
+.splash-row:nth-child(2) { animation-delay: 0.2s; }
+.splash-row:nth-child(3) { animation-delay: 0.3s; }
+
+.splash-row:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.02);
+}
+
+.event-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.event-color {
+    width: 4px;
+    height: 40px;
+    background: var(--splash-color);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-color::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: inherit;
+    animation: splash 2s ease-in-out infinite;
+}
+
+.event-details .event-name {
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.event-details .event-type {
+    font-size: 0.75rem;
+    color: #718096;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+}
+
+.date-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    min-width: 60px;
+    animation: bounceIn 1s ease-out;
+}
+
+.date-day {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.date-month {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.attendees-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.count-number {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.count-label {
+    font-size: 0.75rem;
+    color: #718096;
+}
+
+.splash-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.splash-status.confirmed {
+    background: linear-gradient(135deg, #48bb78, #68d391);
+    color: white;
+}
+
+.splash-status.sold-out {
+    background: linear-gradient(135deg, #ed8936, #f6ad55);
+    color: white;
+}
+
+.splash-status.upcoming {
+    background: linear-gradient(135deg, #4299e1, #63b3ed);
+    color: white;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulse 2s infinite;
+}`,
+    js: `// Color splash particles
+function createParticles() {
+    const container = document.getElementById('splashParticles');
+    const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3'];
+    
+    for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.setProperty('--particle-color', colors[Math.floor(Math.random() * colors.length)]);
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 3 + 's';
+        particle.style.animationDuration = (2 + Math.random() * 2) + 's';
+        container.appendChild(particle);
+    }
+}
+
+// Initialize particles
+createParticles();
+
+// Add click effects to table rows
+document.querySelectorAll('.splash-row').forEach(row => {
+    row.addEventListener('click', function() {
+        // Create splash effect
+        const rect = this.getBoundingClientRect();
+        createClickSplash(rect.left + rect.width / 2, rect.top + rect.height / 2);
+    });
+});
+
+function createClickSplash(x, y) {
+    const splash = document.createElement('div');
+    splash.style.cssText = \`
+        position: fixed;
+        left: \${x}px;
+        top: \${y}px;
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 1000;
+        animation: splash 0.6s ease-out forwards;
+    \`;
+    
+    document.body.appendChild(splash);
+    setTimeout(() => splash.remove(), 600);
+}
+
+// Add hover animations to event colors
+document.querySelectorAll('.event-color').forEach(color => {
+    color.addEventListener('mouseenter', function() {
+        this.style.animation = 'splash 1s ease-in-out';
+    });
+});`
+},
+// ====================================================================
+// COLORFUL TEMPLATE 46: GRADIENT CARDS
+// ====================================================================
+colorful6: {
+    html: `<div class="gradient-cards-container">
+    <div class="cards-header">
+        <h3>🎯 Project Dashboard</h3>
+        <div class="view-toggle">
+            <button class="view-btn active">Grid</button>
+            <button class="view-btn">List</button>
+        </div>
+    </div>
+    
+    <div class="gradient-cards-grid">
+        <!-- Card 1 -->
+        <div class="gradient-card" style="--card-color-1: #ff6b6b; --card-color-2: #ffa726;">
+            <div class="card-header">
+                <div class="card-icon">🎨</div>
+                <div class="card-badge">Active</div>
+            </div>
+            <div class="card-content">
+                <h4 class="card-title">Website Redesign</h4>
+                <p class="card-desc">Complete homepage redesign with new components</p>
+                <div class="card-progress">
+                    <div class="progress-info">
+                        <span>Progress</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="team-avatars">
+                    <div class="avatar" style="background: #ff6b6b">JD</div>
+                    <div class="avatar" style="background: #4ecdc4">SM</div>
+                    <div class="avatar" style="background: #45b7d1">+2</div>
+                </div>
+                <div class="deadline">Due: Jan 25</div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="gradient-card" style="--card-color-1: #4ecdc4; --card-color-2: #45b7d1;">
+            <div class="card-header">
+                <div class="card-icon">⚡</div>
+                <div class="card-badge">Planning</div>
+            </div>
+            <div class="card-content">
+                <h4 class="card-title">Mobile App</h4>
+                <p class="card-desc">iOS & Android application development</p>
+                <div class="card-progress">
+                    <div class="progress-info">
+                        <span>Progress</span>
+                        <span>45%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="team-avatars">
+                    <div class="avatar" style="background: #ffa726">MC</div>
+                    <div class="avatar" style="background: #ab47bc">AL</div>
+                </div>
+                <div class="deadline">Due: Feb 14</div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gradient-card" style="--card-color-1: #ab47bc; --card-color-2: #7e57c2;">
+            <div class="card-header">
+                <div class="card-icon">📊</div>
+                <div class="card-badge">Testing</div>
+            </div>
+            <div class="card-content">
+                <h4 class="card-title">Analytics Dashboard</h4>
+                <p class="card-desc">Real-time analytics and reporting system</p>
+                <div class="card-progress">
+                    <div class="progress-info">
+                        <span>Progress</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="team-avatars">
+                    <div class="avatar" style="background: #66bb6a">RJ</div>
+                    <div class="avatar" style="background: #42a5f5">KT</div>
+                    <div class="avatar" style="background: #ff6b6b">+1</div>
+                </div>
+                <div class="deadline">Due: Jan 30</div>
+            </div>
+        </div>
+    </div>
+</div>`,
+    css: `@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+.gradient-cards-container {
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 25px;
+    min-height: 600px;
+}
+
+.cards-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.cards-header h3 {
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.view-toggle {
+    display: flex;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 0.25rem;
+    backdrop-filter: blur(10px);
+}
+
+.view-btn {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-btn.active {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.gradient-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.gradient-card {
+    background: linear-gradient(135deg, var(--card-color-1), var(--card-color-2));
+    border-radius: 20px;
+    padding: 1.5rem;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: cardEntrance 0.6s ease-out;
+    animation-fill-mode: both;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gradient-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        transparent, 
+        rgba(255,255,255,0.1), 
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gradient-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    animation: floatCard 3s ease-in-out infinite;
+}
+
+.gradient-card:hover::before {
+    opacity: 1;
+}
+
+.gradient-card:nth-child(1) { animation-delay: 0.1s; }
+.gradient-card:nth-child(2) { animation-delay: 0.2s; }
+.gradient-card:nth-child(3) { animation-delay: 0.3s; }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+}
+
+.card-badge {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.card-content {
+    margin-bottom: 1.5rem;
+}
+
+.card-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.card-desc {
+    margin: 0 0 1rem 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.card-progress {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 0.75rem;
+    backdrop-filter: blur(10px);
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 3px;
+    transition: width 1s ease-in-out;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255,255,255,0.6), 
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-avatars {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.deadline {
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.9;
+}`,
+    js: `// Gradient cards interactions
+document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        const viewType = this.textContent;
+        const grid = document.querySelector('.gradient-cards-grid');
+        
+        if (viewType === 'List') {
+            grid.style.gridTemplateColumns = '1fr';
+        } else {
+            grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(320px, 1fr))';
+        }
+    });
+});
+
+// Animate progress bars on load
+document.querySelectorAll('.progress-fill').forEach(fill => {
+    const width = fill.style.width;
+    fill.style.width = '0%';
+    
+    setTimeout(() => {
+        fill.style.width = width;
+    }, 500);
+});
+
+// Add click effects to cards
+document.querySelectorAll('.gradient-card').forEach(card => {
+    card.addEventListener('click', function() {
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});`
+},
+
+// ====================================================================
+// COLORFUL TEMPLATE 47: GLASS MORPHISM
+// ====================================================================
+colorful7: {
+    html: `<div class="glass-table-container">
+    <div class="glass-background">
+        <div class="glass-blob blob-1"></div>
+        <div class="glass-blob blob-2"></div>
+        <div class="glass-blob blob-3"></div>
+    </div>
+    
+    <div class="glass-content">
+        <div class="glass-header">
+            <h3>💎 Sales Performance</h3>
+            <div class="glass-filters">
+                <select class="glass-select">
+                    <option>Last 7 Days</option>
+                    <option>Last 30 Days</option>
+                    <option selected>This Quarter</option>
+                </select>
+            </div>
+        </div>
+
+        <table class="glass-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Sales</th>
+                    <th>Revenue</th>
+                    <th>Growth</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="glass-row">
+                    <td>
+                        <div class="product-glass">
+                            <div class="product-emoji">💻</div>
+                            <div class="product-details">
+                                <div class="product-name">Laptop Pro</div>
+                                <div class="product-sku">#LP-2024</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Electronics</td>
+                    <td>156</td>
+                    <td>$25,680</td>
+                    <td>
+                        <div class="growth-glass positive">
+                            <span class="growth-arrow">↗</span>
+                            +24.5%
+                        </div>
+                    </td>
+                </tr>
+                <tr class="glass-row">
+                    <td>
+                        <div class="product-glass">
+                            <div class="product-emoji">📱</div>
+                            <div class="product-details">
+                                <div class="product-name">Phone Max</div>
+                                <div class="product-sku">#PM-2024</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Electronics</td>
+                    <td>234</td>
+                    <td>$18,720</td>
+                    <td>
+                        <div class="growth-glass negative">
+                            <span class="growth-arrow">↘</span>
+                            -8.2%
+                        </div>
+                    </td>
+                </tr>
+                <tr class="glass-row">
+                    <td>
+                        <div class="product-glass">
+                            <div class="product-emoji">🎧</div>
+                            <div class="product-details">
+                                <div class="product-name">Audio Pro</div>
+                                <div class="product-sku">#AP-2024</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Accessories</td>
+                    <td>89</td>
+                    <td>$8,900</td>
+                    <td>
+                        <div class="growth-glass positive">
+                            <span class="growth-arrow">↗</span>
+                            +15.7%
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>`,
+    css: `@keyframes floatBlob {
+    0%, 100% { 
+        transform: translate(0, 0) scale(1);
+    }
+    33% { 
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    66% { 
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+@keyframes glassGlow {
+    0%, 100% { 
+        box-shadow: 
+            0 8px 32px rgba(31, 38, 135, 0.37),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    50% { 
+        box-shadow: 
+            0 12px 40px rgba(31, 38, 135, 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+}
+
+.glass-table-container {
+    position: relative;
+    min-height: 500px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.glass-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(102, 126, 234, 0.8), 
+        rgba(118, 75, 162, 0.8)
+    );
+    z-index: -2;
+}
+
+.glass-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: floatBlob 15s ease-in-out infinite;
+}
+
+.blob-1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 107, 107, 0.4);
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 400px;
+    height: 400px;
+    background: rgba(78, 205, 196, 0.4);
+    bottom: -150px;
+    right: -100px;
+    animation-delay: 5s;
+}
+
+.blob-3 {
+    width: 250px;
+    height: 250px;
+    background: rgba(171, 71, 188, 0.4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 10s;
+}
+
+.glass-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+}
+
+.glass-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: glassGlow 3s ease-in-out infinite;
+}
+
+.glass-header h3 {
+    margin: 0;
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.glass-select {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 0.75rem 1rem;
+    color: white;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.glass-select option {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.glass-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: glassGlow 3s ease-in-out infinite;
+}
+
+.glass-table th {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-table td {
+    padding: 1.5rem 2rem;
+    color: white;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.glass-row:hover td {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px);
+}
+
+.product-glass {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.product-emoji {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+}
+
+.product-details .product-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.product-details .product-sku {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.growth-glass {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.growth-glass.positive {
+    background: rgba(102, 187, 106, 0.3);
+    color: #a7f3d0;
+}
+
+.growth-glass.negative {
+    background: rgba(239, 68, 68, 0.3);
+    color: #fecaca;
+}
+
+.growth-arrow {
+    font-size: 1.2rem;
+}`,
+    js: `// Glass morphism interactions
+document.querySelector('.glass-select').addEventListener('change', function(e) {
+    // Add selection feedback
+    this.style.background = 'rgba(255, 255, 255, 0.3)';
+    setTimeout(() => {
+        this.style.background = 'rgba(255, 255, 255, 0.2)';
+    }, 200);
+});
+
+// Add hover effects to glass rows
+document.querySelectorAll('.glass-row').forEach(row => {
+    row.addEventListener('mouseenter', function() {
+        this.style.background = 'rgba(255, 255, 255, 0.15)';
+    });
+    
+    row.addEventListener('mouseleave', function() {
+        this.style.background = 'transparent';
+    });
+});
+
+// Animate emojis on hover
+document.querySelectorAll('.product-emoji').forEach(emoji => {
+    emoji.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.2) rotate(10deg)';
+    });
+    
+    emoji.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1) rotate(0deg)';
+    });
+});`
+},
+
+// ====================================================================
+// COLORFUL TEMPLATE 48: 3D FLOATING
+// ====================================================================
+colorful8: {
+    html: `<div class="floating-3d-container">
+    <div class="floating-header">
+        <h3>🚀 Task Manager</h3>
+        <div class="floating-actions">
+            <button class="action-btn add-btn">+ Add Task</button>
+            <button class="action-btn filter-btn">Filter</button>
+        </div>
+    </div>
+
+    <div class="floating-scene">
+        <div class="floating-card card-1" style="--card-color: #ff6b6b">
+            <div class="card-3d-content">
+                <div class="card-badge urgent">Urgent</div>
+                <h4 class="card-title">Design Mockups</h4>
+                <p class="card-desc">Create homepage mockups for client review</p>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-icon">⏰</span>
+                        <span>Today</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">👥</span>
+                        <span>Design Team</span>
+                    </div>
+                </div>
+                <div class="card-progress-3d">
+                    <div class="progress-3d-bar">
+                        <div class="progress-3d-fill" style="width: 75%"></div>
+                    </div>
+                    <span class="progress-text">75%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="floating-card card-2" style="--card-color: #4ecdc4">
+            <div class="card-3d-content">
+                <div class="card-badge normal">Normal</div>
+                <h4 class="card-title">Code Review</h4>
+                <p class="card-desc">Review pull requests and merge features</p>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-icon">⏰</span>
+                        <span>Tomorrow</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">👥</span>
+                        <span>Dev Team</span>
+                    </div>
+                </div>
+                <div class="card-progress-3d">
+                    <div class="progress-3d-bar">
+                        <div class="progress-3d-fill" style="width: 45%"></div>
+                    </div>
+                    <span class="progress-text">45%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="floating-card card-3" style="--card-color: #45b7d1">
+            <div class="card-3d-content">
+                <div class="card-badge low">Low</div>
+                <h4 class="card-title">Documentation</h4>
+                <p class="card-desc">Update API documentation for new features</p>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <span class="meta-icon">⏰</span>
+                        <span>Jan 30</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-icon">👥</span>
+                        <span>Tech Writers</span>
+                    </div>
+                </div>
+                <div class="card-progress-3d">
+                    <div class="progress-3d-bar">
+                        <div class="progress-3d-fill" style="width: 25%"></div>
+                    </div>
+                    <span class="progress-text">25%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>`,
+    css: `@keyframes float3D {
+    0%, 100% { 
+        transform: 
+            translateY(0px) 
+            rotateX(0deg) 
+            rotateY(0deg);
+    }
+    33% { 
+        transform: 
+            translateY(-20px) 
+            rotateX(5deg) 
+            rotateY(5deg);
+    }
+    66% { 
+        transform: 
+            translateY(-10px) 
+            rotateX(-3deg) 
+            rotateY(-3deg);
+    }
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: 
+            translateY(100px) 
+            rotateX(90deg) 
+            scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: 
+            translateY(0) 
+            rotateX(0deg) 
+            scale(1);
+    }
+}
+
+@keyframes glow3D {
+    0%, 100% { 
+        box-shadow: 
+            0 10px 30px rgba(0,0,0,0.3),
+            0 0 0 1px rgba(255,255,255,0.1);
+    }
+    50% { 
+        box-shadow: 
+            0 20px 50px rgba(0,0,0,0.4),
+            0 0 0 1px rgba(255,255,255,0.2),
+            0 0 30px var(--card-color);
+    }
+}
+
+.floating-3d-container {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 30px;
+    padding: 2rem;
+    min-height: 600px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.floating-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    transform: translateZ(50px);
+}
+
+.floating-header h3 {
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.floating-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    transform: translateZ(30px);
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateZ(30px) translateY(-2px);
+}
+
+.floating-scene {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    transform-style: preserve-3d;
+}
+
+.floating-card {
+    background: linear-gradient(135deg, 
+        var(--card-color),
+        color-mix(in srgb, var(--card-color) 70%, black)
+    );
+    border-radius: 25px;
+    padding: 2rem;
+    color: white;
+    animation: float3D 6s ease-in-out infinite, glow3D 4s ease-in-out infinite;
+    transform-style: preserve-3d;
+    position: relative;
+    overflow: hidden;
+    animation: cardAppear 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.floating-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        transparent, 
+        rgba(255,255,255,0.1), 
+        transparent
+    );
+    transform: translateZ(1px);
+}
+
+.card-1 { animation-delay: 0.1s; --card-color: #ff6b6b; }
+.card-2 { animation-delay: 0.2s; --card-color: #4ecdc4; }
+.card-3 { animation-delay: 0.3s; --card-color: #45b7d1; }
+
+.floating-card:hover {
+    animation: float3D 2s ease-in-out infinite, glow3D 2s ease-in-out infinite;
+    transform: translateZ(50px) scale(1.05);
+}
+
+.card-3d-content {
+    position: relative;
+    z-index: 2;
+    transform: translateZ(30px);
+}
+
+.card-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card-badge.urgent { background: rgba(239, 68, 68, 0.3); }
+.card-badge.normal { background: rgba(34, 197, 94, 0.3); }
+.card-badge.low { background: rgba(59, 130, 246, 0.3); }
+
+.card-title {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.card-desc {
+    margin: 0 0 1.5rem 0;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.card-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.meta-icon {
+    font-size: 1.1rem;
+}
+
+.card-progress-3d {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-3d-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    transform: translateZ(20px);
+}
+
+.progress-3d-fill {
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+    position: relative;
+}
+
+.progress-3d-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255,255,255,0.6), 
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+.progress-text {
+    font-weight: 700;
+    font-size: 0.9rem;
+    min-width: 40px;
+}`,
+    js: `// 3D floating interactions
+document.querySelectorAll('.floating-card').forEach(card => {
+    // Mouse move 3D effect
+    card.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateY = (x - centerX) / 25;
+        const rotateX = (centerY - y) / 25;
+        
+        this.style.transform = \`
+            translateZ(50px) 
+            rotateX(\${rotateX}deg) 
+            rotateY(\${rotateY}deg)
+        \`;
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateZ(0) rotateX(0) rotateY(0)';
+    });
+});
+
+// Animate progress bars
+document.querySelectorAll('.progress-3d-fill').forEach(fill => {
+    const width = fill.style.width;
+    fill.style.width = '0%';
+    
+    setTimeout(() => {
+        fill.style.width = width;
+    }, 1000);
+});
+
+// Add button interactions
+document.querySelectorAll('.action-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        this.style.transform = 'translateZ(30px) scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = 'translateZ(30px) scale(1)';
+        }, 150);
+    });
+});`
+},
+
+// ====================================================================
+// COLORFUL TEMPLATE 49: LIQUID ANIMATION
+// ====================================================================
+colorful9: {
+    html: `<div class="liquid-table-container">
+    <div class="liquid-header">
+        <h3>🌊 Analytics Dashboard</h3>
+        <div class="liquid-waves">
+            <div class="liquid-wave"></div>
+            <div class="liquid-wave"></div>
+            <div class="liquid-wave"></div>
+        </div>
+    </div>
+
+    <div class="liquid-content">
+        <div class="liquid-card">
+            <div class="liquid-metric">
+                <div class="metric-icon">👥</div>
+                <div class="metric-data">
+                    <div class="metric-value">1,234</div>
+                    <div class="metric-label">Active Users</div>
+                </div>
+                <div class="metric-change positive">+12%</div>
+            </div>
+            <div class="liquid-fill" style="--fill-level: 75%"></div>
+        </div>
+
+        <div class="liquid-card">
+            <div class="liquid-metric">
+                <div class="metric-icon">💰</div>
+                <div class="metric-data">
+                    <div class="metric-value">$45,678</div>
+                    <div class="metric-label">Revenue</div>
+                </div>
+                <div class="metric-change positive">+8%</div>
+            </div>
+            <div class="liquid-fill" style="--fill-level: 60%"></div>
+        </div>
+
+        <div class="liquid-card">
+            <div class="liquid-metric">
+                <div class="metric-icon">📈</div>
+                <div class="metric-data">
+                    <div class="metric-value">89%</div>
+                    <div class="metric-label">Engagement</div>
+                </div>
+                <div class="metric-change negative">-3%</div>
+            </div>
+            <div class="liquid-fill" style="--fill-level: 89%"></div>
+        </div>
+
+        <div class="liquid-card">
+            <div class="liquid-metric">
+                <div class="metric-icon">🔄</div>
+                <div class="metric-data">
+                    <div class="metric-value">2.3s</div>
+                    <div class="metric-label">Load Time</div>
+                </div>
+                <div class="metric-change positive">-15%</div>
+            </div>
+            <div class="liquid-fill" style="--fill-level: 45%"></div>
+        </div>
+    </div>
+
+    <table class="liquid-table">
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Current</th>
+                <th>Previous</th>
+                <th>Change</th>
+                <th>Trend</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="liquid-row">
+                <td>Page Views</td>
+                <td>12,456</td>
+                <td>11,234</td>
+                <td>
+                    <div class="liquid-change positive">
+                        <span class="change-arrow">↑</span>
+                        +10.9%
+                    </div>
+                </td>
+                <td>
+                    <div class="liquid-trend up"></div>
+                </td>
+            </tr>
+            <tr class="liquid-row">
+                <td>Bounce Rate</td>
+                <td>32%</td>
+                <td>28%</td>
+                <td>
+                    <div class="liquid-change negative">
+                        <span class="change-arrow">↓</span>
+                        +14.3%
+                    </div>
+                </td>
+                <td>
+                    <div class="liquid-trend down"></div>
+                </td>
+            </tr>
+            <tr class="liquid-row">
+                <td>Conversion</td>
+                <td>4.2%</td>
+                <td>3.8%</td>
+                <td>
+                    <div class="liquid-change positive">
+                        <span class="change-arrow">↑</span>
+                        +10.5%
+                    </div>
+                </td>
+                <td>
+                    <div class="liquid-trend up"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>`,
+    css: `@keyframes liquidWave {
+    0% { transform: translateX(-100%) scaleY(1); }
+    50% { transform: translateX(0%) scaleY(1.2); }
+    100% { transform: translateX(100%) scaleY(1); }
+}
+
+@keyframes liquidFill {
+    from { height: 0%; }
+    to { height: var(--fill-level); }
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0) scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes floatLiquid {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.liquid-table-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 30px;
+    padding: 2rem;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.liquid-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.liquid-header h3 {
+    margin: 0 0 2rem 0;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    animation: floatLiquid 3s ease-in-out infinite;
+}
+
+.liquid-waves {
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    right: 0;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.liquid-wave {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    margin: 0 1rem;
+    animation: liquidWave 4s ease-in-out infinite;
+}
+
+.liquid-wave:nth-child(1) { animation-delay: 0s; }
+.liquid-wave:nth-child(2) { animation-delay: 1s; }
+.liquid-wave:nth-child(3) { animation-delay: 2s; }
+
+.liquid-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.liquid-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 1.5rem;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    animation: floatLiquid 4s ease-in-out infinite;
+}
+
+.liquid-card:nth-child(1) { animation-delay: 0s; }
+.liquid-card:nth-child(2) { animation-delay: 1s; }
+.liquid-card:nth-child(3) { animation-delay: 2s; }
+.liquid-card:nth-child(4) { animation-delay: 3s; }
+
+.liquid-metric {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.metric-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+}
+
+.metric-data {
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.metric-change {
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+}
+
+.metric-change.positive {
+    background: rgba(102, 187, 106, 0.3);
+    color: #a7f3d0;
+}
+
+.metric-change.negative {
+    background: rgba(239, 68, 68, 0.3);
+    color: #fecaca;
+}
+
+.liquid-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 20px 20px;
+    animation: liquidFill 2s ease-out;
+    height: 0%;
+}
+
+.liquid-fill::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: inherit;
+    border-radius: 50%;
+}
+
+/* Bubble animations for liquid effect */
+.liquid-fill::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: bubble 3s ease-in-out infinite;
+    left: 20%;
+}
+
+.liquid-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.liquid-table th {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.liquid-table td {
+    padding: 1.5rem 2rem;
+    color: white;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.liquid-row:hover td {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.liquid-change {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    backdrop-filter: blur(10px);
+}
+
+.liquid-change.positive {
+    background: rgba(102, 187, 106, 0.3);
+    color: #a7f3d0;
+}
+
+.liquid-change.negative {
+    background: rgba(239, 68, 68, 0.3);
+    color: #fecaca;
+}
+
+.liquid-trend {
+    width: 80px;
+    height: 30px;
+    position: relative;
+}
+
+.liquid-trend.up::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, 
+            transparent 45%, 
+            #a7f3d0 45%, 
+            #a7f3d0 55%, 
+            transparent 55%
+        );
+    animation: liquidWave 2s ease-in-out infinite;
+}
+
+.liquid-trend.down::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(-45deg, 
+            transparent 45%, 
+            #fecaca 45%, 
+            #fecaca 55%, 
+            transparent 55%
+        );
+    animation: liquidWave 2s ease-in-out infinite;
+}`,
+    js: `// Liquid animations
+document.querySelectorAll('.liquid-fill').forEach(fill => {
+    // Create bubbles
+    for (let i = 0; i < 5; i++) {
+        const bubble = document.createElement('div');
+        bubble.style.cssText = \`
+            position: absolute;
+            width: \${Math.random() * 8 + 4}px;
+            height: \${Math.random() * 8 + 4}px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: bubble \${Math.random() * 2 + 2}s ease-in-out infinite;
+            left: \${Math.random() * 80 + 10}%;
+            animation-delay: \${Math.random() * 2}s;
+        \`;
+        fill.appendChild(bubble);
+    }
+});
+
+// Animate liquid fills
+document.querySelectorAll('.liquid-fill').forEach(fill => {
+    const level = fill.style.getPropertyValue('--fill-level');
+    fill.style.height = '0%';
+    
+    setTimeout(() => {
+        fill.style.height = level;
+    }, 500);
+});
+
+// Add hover effects to liquid cards
+document.querySelectorAll('.liquid-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.animation = 'floatLiquid 1s ease-in-out infinite';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.animation = 'floatLiquid 4s ease-in-out infinite';
+    });
+});`
+},
+
+// ====================================================================
+// COLORFUL TEMPLATE 50: CYBERPUNK
+// ====================================================================
+colorful10: {
+    html: `<div class="cyberpunk-container">
+    <div class="cyberpunk-header">
+        <h3 class="cyberpunk-title">
+            <span class="cyber-text">SYSTEM</span>
+            <span class="punk-text">MONITOR</span>
+        </h3>
+        <div class="cyberpunk-stats">
+            <div class="cyber-stat">
+                <span class="stat-label">ONLINE</span>
+                <span class="stat-value">87%</span>
+            </div>
+            <div class="cyber-stat">
+                <span class="stat-label">UPTIME</span>
+                <span class="stat-value">99.2%</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cyberpunk-grid">
+        <div class="cyber-card">
+            <div class="cyber-card-header">
+                <div class="cyber-icon">🖥️</div>
+                <div class="cyber-status online">ONLINE</div>
+            </div>
+            <div class="cyber-card-content">
+                <h4 class="cyber-card-title">SERVER ALPHA</h4>
+                <div class="cyber-metrics">
+                    <div class="cyber-metric">
+                        <span class="metric-name">CPU</span>
+                        <div class="cyber-bar">
+                            <div class="cyber-fill" style="--fill: 65%"></div>
+                        </div>
+                        <span class="metric-value">65%</span>
+                    </div>
+                    <div class="cyber-metric">
+                        <span class="metric-name">RAM</span>
+                        <div class="cyber-bar">
+                            <div class="cyber-fill" style="--fill: 42%"></div>
+                        </div>
+                        <span class="metric-value">42%</span>
+                    </div>
+                    <div class="cyber-metric">
+                        <span class="metric-name">NET</span>
+                        <div class="cyber-bar">
+                            <div class="cyber-fill" style="--fill: 78%"></div>
+                        </div>
+                        <span class="metric-value">78%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cyber-card">
+            <div class="cyber-card-header">
+                <div class="cyber-icon">💾</div>
+                <div class="cyber-status stable">STABLE</div>
+            </div>
+            <div class="cyber-card-content">
+                <h4 class="cyber-card-title">DATABASE BETA</h4>
+                <div class="cyber-metrics">
+                    <div class="cyber-metric">
+                        <span class="metric-name">LOAD</span>
+                        <div class="cyber-bar">
+                            <div class="cyber-fill" style="--fill: 34%"></div>
+                        </div>
+                        <span class="metric-value">34%</span>
+                    </div>
+                    <div class="cyber-metric">
+                        <span class="metric-name">IOPS</span>
+                        <div class="cyber-bar">
+                            <div class="cyber-fill" style="--fill: 56%"></div>
+                        </div>
+                        <span class="metric-value">56%</span>
+                    </div>
+                    <div class="cyber-metric">
+                        <span class="metric-name">CACHE</span>
+                        <div class="cyber-bar">
+                            <div class="cyber-fill" style="--fill: 89%"></div>
+                        </div>
+                        <span class="metric-value">89%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cyber-card">
+            <div class="cyber-card-header">
+                <div class="cyber-icon">🌐</div>
+                <div class="cyber-status warning">WARNING</div>
+            </div>
+            <div class="cyber-card-content">
+                <h4 class="cyber-card-title">NETWORK GAMMA</h4>
+                <div class="cyber-metrics">
+                    <div class="cyber-metric">
+                        <span class="metric-name">LATENCY</span>
+                        <div class="cyber-bar">
+                            <div class="cyber-fill" style="--fill: 82%"></div>
+                        </div>
+                        <span class="metric-value">82ms</span>
+                    </div>
+                    <div class="cyber-metric">
+                        <span class="metric-name">THROUGHPUT</span>
+                        <div class="cyber-bar">
+                            <div class="cyber-fill" style="--fill: 45%"></div>
+                        </div>
+                        <span class="metric-value">45%</span>
+                    </div>
+                    <div class="cyber-metric">
+                        <span class="metric-name">ERRORS</span>
+                        <div class="cyber-bar">
+                            <div class="cyber-fill" style="--fill: 12%"></div>
+                        </div>
+                        <span class="metric-value">12%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cyberpunk-table-container">
+        <table class="cyberpunk-table">
+            <thead>
+                <tr>
+                    <th>SERVICE</th>
+                    <th>STATUS</th>
+                    <th>RESPONSE</th>
+                    <th>LOAD</th>
+                    <th>ALERTS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="cyberpunk-row">
+                    <td>
+                        <div class="service-info">
+                            <div class="service-dot online"></div>
+                            <span>API Gateway</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="status-badge cyber-online">OPERATIONAL</span>
+                    </td>
+                    <td>124ms</td>
+                    <td>
+                        <div class="load-indicator">
+                            <div class="load-bar">
+                                <div class="load-fill" style="width: 45%"></div>
+                            </div>
+                            <span>45%</span>
+                        </div>
+                    </td>
+                    <td>0</td>
+                </tr>
+                <tr class="cyberpunk-row">
+                    <td>
+                        <div class="service-info">
+                            <div class="service-dot warning"></div>
+                            <span>Auth Service</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="status-badge cyber-warning">DEGRADED</span>
+                    </td>
+                    <td>256ms</td>
+                    <td>
+                        <div class="load-indicator">
+                            <div class="load-bar">
+                                <div class="load-fill" style="width: 78%"></div>
+                            </div>
+                            <span>78%</span>
+                        </div>
+                    </td>
+                    <td>3</td>
+                </tr>
+                <tr class="cyberpunk-row">
+                    <td>
+                        <div class="service-info">
+                            <div class="service-dot offline"></div>
+                            <span>Database</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="status-badge cyber-offline">OFFLINE</span>
+                    </td>
+                    <td>---</td>
+                    <td>
+                        <div class="load-indicator">
+                            <div class="load-bar">
+                                <div class="load-fill" style="width: 0%"></div>
+                            </div>
+                            <span>0%</span>
+                        </div>
+                    </td>
+                    <td>12</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>`,
+    css: `@keyframes cyberGlow {
+    0%, 100% { 
+        text-shadow: 
+            0 0 5px #00ffff,
+            0 0 10px #00ffff,
+            0 0 20px #00ffff;
+        box-shadow: 
+            0 0 10px #00ffff,
+            inset 0 0 10px #00ffff;
+    }
+    50% { 
+        text-shadow: 
+            0 0 10px #00ffff,
+            0 0 20px #00ffff,
+            0 0 40px #00ffff;
+        box-shadow: 
+            0 0 20px #00ffff,
+            inset 0 0 20px #00ffff;
+    }
+}
+
+@keyframes scanLine {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+@keyframes matrixRain {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+@keyframes pulseCyber {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.cyberpunk-container {
+    background: 
+        radial-gradient(circle at 20% 80%, #0f0f23 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, #1a1a2e 0%, transparent 50%),
+        linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    border: 2px solid #00ffff;
+    border-radius: 0;
+    padding: 2rem;
+    min-height: 700px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyberpunk-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(90deg, 
+            transparent 49%, 
+            rgba(0, 255, 255, 0.1) 50%, 
+            transparent 51%
+        ),
+        linear-gradient( 
+            transparent 49%, 
+            rgba(0, 255, 255, 0.1) 50%, 
+            transparent 51%
+        );
+    background-size: 50px 50px;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.cyberpunk-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        #00ffff, 
+        #ff00ff, 
+        #00ffff, 
+        transparent
+    );
+    animation: scanLine 2s linear infinite;
+}
+
+.cyberpunk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.cyberpunk-title {
+    display: flex;
+    gap: 1rem;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.cyber-text {
+    color: #00ffff;
+    animation: cyberGlow 2s ease-in-out infinite;
+}
+
+.punk-text {
+    color: #ff00ff;
+    animation: cyberGlow 2s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.cyberpunk-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.cyber-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    color: #00ffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    color: #ff00ff;
+    font-size: 1.5rem;
+    font-weight: 900;
+    animation: pulseCyber 1s ease-in-out infinite;
+}
+
+.cyberpunk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.cyber-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #00ffff;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cyber-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        #00ffff, 
+        #ff00ff, 
+        transparent
+    );
+}
+
+.cyber-card:hover {
+    border-color: #ff00ff;
+    transform: translateY(-5px);
+    box-shadow: 
+        0 10px 30px rgba(0, 255, 255, 0.3),
+        0 0 20px rgba(255, 0, 255, 0.2);
+}
+
+.cyber-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.cyber-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px #00ffff);
+}
+
+.cyber-status {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cyber-status.online {
+    border-color: #00ff00;
+    color: #00ff00;
+    animation: cyberGlow 3s ease-in-out infinite;
+}
+
+.cyber-status.stable {
+    border-color: #00ffff;
+    color: #00ffff;
+    animation: cyberGlow 3s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.cyber-status.warning {
+    border-color: #ffff00;
+    color: #ffff00;
+    animation: cyberGlow 3s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.cyber-card-title {
+    color: #00ffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.cyber-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cyber-metric {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.metric-name {
+    color: #ff00ff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    min-width: 60px;
+}
+
+.cyber-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(0, 255, 255, 0.2);
+    border: 1px solid #00ffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    width: var(--fill);
+    position: relative;
+    transition: width 1s ease-in-out;
+}
+
+.cyber-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.6), 
+        transparent
+    );
+    animation: shimmer 1.5s infinite;
+}
+
+.metric-value {
+    color: #00ffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    min-width: 40px;
+}
+
+.cyberpunk-table-container {
+    position: relative;
+    z-index: 2;
+}
+
+.cyberpunk-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #00ffff;
+}
+
+.cyberpunk-table th {
+    background: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #00ffff;
+}
+
+.cyberpunk-table td {
+    padding: 1.5rem 2rem;
+    color: #00ffff;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.cyberpunk-row:hover td {
+    background: rgba(0, 255, 255, 0.1);
+}
+
+.service-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.service-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: pulseCyber 1s ease-in-out infinite;
+}
+
+.service-dot.online {
+    background: #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+.service-dot.warning {
+    background: #ffff00;
+    box-shadow: 0 0 10px #ffff00;
+}
+
+.service-dot.offline {
+    background: #ff0000;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+.status-badge {
+    padding: 0.5rem 1rem;
+    border: 1px solid;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cyber-online {
+    border-color: #00ff00;
+    color: #00ff00;
+    animation: cyberGlow 3s ease-in-out infinite;
+}
+
+.cyber-warning {
+    border-color: #ffff00;
+    color: #ffff00;
+    animation: cyberGlow 3s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.cyber-offline {
+    border-color: #ff0000;
+    color: #ff0000;
+    animation: cyberGlow 3s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.load-indicator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.load-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(0, 255, 255, 0.2);
+    border: 1px solid #00ffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.load-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    transition: width 1s ease-in-out;
+}`,
+    js: `// Cyberpunk animations
+function createMatrixEffect() {
+    const container = document.querySelector('.cyberpunk-container');
+    const characters = '01アイウエオカキクケコサシスセソ';
+    
+    for (let i = 0; i < 20; i++) {
+        const drop = document.createElement('div');
+        drop.style.cssText = \`
+            position: absolute;
+            top: -20px;
+            left: \${Math.random() * 100}%;
+            color: #00ffff;
+            font-family: 'Courier New', monospace;
+            font-size: \${Math.random() * 12 + 8}px;
+            animation: matrixRain \${Math.random() * 3 + 2}s linear infinite;
+            animation-delay: \${Math.random() * 2}s;
+            pointer-events: none;
+            z-index: 1;
+        \`;
+        
+        let text = '';
+        for (let j = 0; j < 10; j++) {
+            text += characters[Math.floor(Math.random() * characters.length)] + '\\n';
+        }
+        drop.textContent = text;
+        
+        container.appendChild(drop);
+    }
+}
+
+// Initialize matrix effect
+createMatrixEffect();
+
+// Animate cyber bars
+document.querySelectorAll('.cyber-fill').forEach(fill => {
+    const fillValue = fill.style.getPropertyValue('--fill');
+    fill.style.width = '0%';
+    
+    setTimeout(() => {
+        fill.style.width = fillValue;
+    }, 1000);
+});
+
+// Add click effects to cyber cards
+document.querySelectorAll('.cyber-card').forEach(card => {
+    card.addEventListener('click', function() {
+        this.style.borderColor = '#ff00ff';
+        this.style.boxShadow = '0 0 30px #ff00ff';
+        
+        setTimeout(() => {
+            this.style.borderColor = '#00ffff';
+            this.style.boxShadow = 'none';
+        }, 300);
+    });
+});
+
+// Animate load bars in table
+document.querySelectorAll('.load-fill').forEach(fill => {
+    const width = fill.style.width;
+    fill.style.width = '0%';
+    
+    setTimeout(() => {
+        fill.style.width = width;
+    }, 1500);
+});`
+},
+// ====================================================================
+// PREMIUM TEMPLATE 51: LUXURY DASHBOARD
+// ====================================================================
+premium1: {
+    html: `<div class="luxury-dashboard">
+    <div class="luxury-header">
+        <div class="header-content">
+            <h1 class="luxury-title">
+                <span class="title-icon">👑</span>
+                Wealth Management Dashboard
+            </h1>
+            <p class="luxury-subtitle">Premium Client Portfolio Overview</p>
+        </div>
+        <div class="luxury-controls">
+            <button class="luxury-btn export-btn">
+                <span class="btn-icon">📊</span>
+                Export Report
+            </button>
+            <button class="luxury-btn refresh-btn">
+                <span class="btn-icon">🔄</span>
+                Refresh Data
+            </button>
+        </div>
+    </div>
+
+    <div class="luxury-stats">
+        <div class="stat-card gold">
+            <div class="stat-icon">💰</div>
+            <div class="stat-data">
+                <div class="stat-value">$12.8M</div>
+                <div class="stat-label">Total Assets</div>
+            </div>
+            <div class="stat-trend positive">+5.2%</div>
+        </div>
+        <div class="stat-card platinum">
+            <div class="stat-icon">📈</div>
+            <div class="stat-data">
+                <div class="stat-value">18.3%</div>
+                <div class="stat-label">YTD Return</div>
+            </div>
+            <div class="stat-trend positive">+2.1%</div>
+        </div>
+        <div class="stat-card diamond">
+            <div class="stat-icon">👥</div>
+            <div class="stat-data">
+                <div class="stat-value">24</div>
+                <div class="stat-label">VIP Clients</div>
+            </div>
+            <div class="stat-trend positive">+3</div>
+        </div>
+    </div>
+
+    <div class="luxury-table-container">
+        <div class="table-header">
+            <h3 class="table-title">Client Portfolio Performance</h3>
+            <div class="table-filters">
+                <select class="luxury-select">
+                    <option>All Clients</option>
+                    <option>Platinum Tier</option>
+                    <option>Gold Tier</option>
+                </select>
+            </div>
+        </div>
+        
+        <table class="luxury-table">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="th-content">
+                            <span class="th-icon">👤</span>
+                            Client Name
+                        </div>
+                    </th>
+                    <th>
+                        <div class="th-content">
+                            <span class="th-icon">💼</span>
+                            Portfolio Value
+                        </div>
+                    </th>
+                    <th>
+                        <div class="th-content">
+                            <span class="th-icon">📊</span>
+                            YTD Growth
+                        </div>
+                    </th>
+                    <th>
+                        <div class="th-content">
+                            <span class="th-icon">⭐</span>
+                            Tier
+                        </div>
+                    </th>
+                    <th>
+                        <div class="th-content">
+                            <span class="th-icon">📋</span>
+                            Actions
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="luxury-row">
+                    <td>
+                        <div class="client-info">
+                            <div class="client-avatar gold">GC</div>
+                            <div class="client-details">
+                                <div class="client-name">Global Corporation</div>
+                                <div class="client-id">#GC-2024</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="portfolio-value">
+                            <span class="currency">$</span>
+                            <span class="amount">2,548,750</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="growth-indicator premium-positive">
+                            <span class="growth-arrow">↗</span>
+                            +12.5%
+                        </div>
+                    </td>
+                    <td>
+                        <div class="tier-badge platinum">
+                            <span class="tier-icon">⭐</span>
+                            Platinum
+                        </div>
+                    </td>
+                    <td>
+                        <div class="luxury-actions">
+                            <button class="action-btn view-btn">
+                                <span class="action-icon">👁️</span>
+                            </button>
+                            <button class="action-btn edit-btn">
+                                <span class="action-icon">✏️</span>
+                            </button>
+                            <button class="action-btn chart-btn">
+                                <span class="action-icon">📈</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="luxury-row">
+                    <td>
+                        <div class="client-info">
+                            <div class="client-avatar platinum">TG</div>
+                            <div class="client-details">
+                                <div class="client-name">Tech Giants Inc</div>
+                                <div class="client-id">#TG-2024</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="portfolio-value">
+                            <span class="currency">$</span>
+                            <span class="amount">1,875,320</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="growth-indicator premium-positive">
+                            <span class="growth-arrow">↗</span>
+                            +8.3%
+                        </div>
+                    </td>
+                    <td>
+                        <div class="tier-badge gold">
+                            <span class="tier-icon">💫</span>
+                            Gold
+                        </div>
+                    </td>
+                    <td>
+                        <div class="luxury-actions">
+                            <button class="action-btn view-btn">
+                                <span class="action-icon">👁️</span>
+                            </button>
+                            <button class="action-btn edit-btn">
+                                <span class="action-icon">✏️</span>
+                            </button>
+                            <button class="action-btn chart-btn">
+                                <span class="action-icon">📈</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="luxury-row">
+                    <td>
+                        <div class="client-info">
+                            <div class="client-avatar diamond">FI</div>
+                            <div class="client-details">
+                                <div class="client-name">Fortune Investments</div>
+                                <div class="client-id">#FI-2024</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="portfolio-value">
+                            <span class="currency">$</span>
+                            <span class="amount">3,215,890</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="growth-indicator premium-negative">
+                            <span class="growth-arrow">↘</span>
+                            -2.1%
+                        </div>
+                    </td>
+                    <td>
+                        <div class="tier-badge diamond">
+                            <span class="tier-icon">💎</span>
+                            Diamond
+                        </div>
+                    </td>
+                    <td>
+                        <div class="luxury-actions">
+                            <button class="action-btn view-btn">
+                                <span class="action-icon">👁️</span>
+                            </button>
+                            <button class="action-btn edit-btn">
+                                <span class="action-icon">✏️</span>
+                            </button>
+                            <button class="action-btn chart-btn">
+                                <span class="action-icon">📈</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>`,
+    css: `@keyframes goldShimmer {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@keyframes floatLuxury {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+.luxury-dashboard {
+    background: 
+        linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%),
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(192, 192, 192, 0.1) 0%, transparent 50%);
+    border-radius: 30px;
+    padding: 2rem;
+    min-height: 700px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.luxury-dashboard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, 
+            transparent 48%, 
+            rgba(255, 215, 0, 0.1) 50%, 
+            transparent 52%
+        );
+    background-size: 50px 50px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.luxury-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.header-content h1.luxury-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FFD700, #FFEC8B, #FFFACD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.title-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.luxury-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+.luxury-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.luxury-btn {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(192, 192, 192, 0.2));
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: #FFD700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.luxury-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(192, 192, 192, 0.3));
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+}
+
+.luxury-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid;
+    position: relative;
+    overflow: hidden;
+    animation: floatLuxury 4s ease-in-out infinite;
+}
+
+.stat-card.gold {
+    border-color: rgba(255, 215, 0, 0.5);
+    animation-delay: 0s;
+}
+
+.stat-card.platinum {
+    border-color: rgba(230, 230, 250, 0.5);
+    animation-delay: 1s;
+}
+
+.stat-card.diamond {
+    border-color: rgba(185, 242, 255, 0.5);
+    animation-delay: 2s;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent
+    );
+    animation: goldShimmer 3s infinite;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.stat-data {
+    margin-bottom: 1rem;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.stat-trend {
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+}
+
+.stat-trend.positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.luxury-table-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.table-title {
+    margin: 0;
+    color: #FFD700;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.luxury-select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    color: white;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.luxury-select option {
+    background: #1a1a2e;
+    color: white;
+}
+
+.luxury-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.luxury-table th {
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.1), 
+        rgba(192, 192, 192, 0.1)
+    );
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    color: #FFD700;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.th-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.th-icon {
+    font-size: 1.1rem;
+}
+
+.luxury-table td {
+    padding: 1.5rem 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.luxury-row:hover td {
+    background: rgba(255, 215, 0, 0.05);
+    transform: translateX(5px);
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.client-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.client-avatar.gold {
+    background: linear-gradient(135deg, #FFD700, #D4AF37);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.client-avatar.platinum {
+    background: linear-gradient(135deg, #E5E4E2, #BEC2CB);
+    box-shadow: 0 5px 15px rgba(230, 230, 250, 0.3);
+}
+
+.client-avatar.diamond {
+    background: linear-gradient(135deg, #B9F2FF, #70D1FF);
+    box-shadow: 0 5px 15px rgba(185, 242, 255, 0.3);
+}
+
+.client-avatar::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: goldShimmer 2s infinite;
+}
+
+.client-details .client-name {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.client-details .client-id {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.portfolio-value {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+}
+
+.currency {
+    color: #FFD700;
+    font-weight: 600;
+}
+
+.amount {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.growth-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.growth-indicator.premium-positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.growth-indicator.premium-negative {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.tier-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.tier-badge.platinum {
+    background: rgba(230, 230, 250, 0.2);
+    color: #e6e6fa;
+    border-color: rgba(230, 230, 250, 0.3);
+}
+
+.tier-badge.gold {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.tier-badge.diamond {
+    background: rgba(185, 242, 255, 0.2);
+    color: #b9f2ff;
+    border-color: rgba(185, 242, 255, 0.3);
+}
+
+.luxury-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.action-btn:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: rgba(255, 215, 0, 0.5);
+    color: #FFD700;
+    transform: scale(1.1);
+}`,
+    js: `// Luxury dashboard interactions
+document.querySelectorAll('.luxury-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Add sparkle effect
+        const sparkle = document.createElement('div');
+        sparkle.style.cssText = \`
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #FFD700, transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 0.6s ease-out forwards;
+        \`;
+        
+        const rect = this.getBoundingClientRect();
+        sparkle.style.left = (rect.width / 2 - 10) + 'px';
+        sparkle.style.top = (rect.height / 2 - 10) + 'px';
+        
+        this.style.position = 'relative';
+        this.appendChild(sparkle);
+        
+        setTimeout(() => sparkle.remove(), 600);
+    });
+});
+
+// Animate stat cards on scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+        }
+    });
+});
+
+document.querySelectorAll('.stat-card').forEach(card => {
+    observer.observe(card);
+});
+
+// Add hover effects to client avatars
+document.querySelectorAll('.client-avatar').forEach(avatar => {
+    avatar.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1) rotate(5deg)';
+    });
+    
+    avatar.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1) rotate(0deg)';
+    });
+});
+
+// Luxury select interactions
+document.querySelector('.luxury-select').addEventListener('change', function() {
+    this.style.background = 'rgba(255, 215, 0, 0.2)';
+    setTimeout(() => {
+        this.style.background = 'rgba(255, 255, 255, 0.1)';
+    }, 300);
+});`
+},
+
+// ====================================================================
+// PREMIUM TEMPLATE 52: EXECUTIVE PORTFOLIO
+// ====================================================================
+premium2: {
+    html: `<div class="executive-portfolio">
+    <div class="executive-header">
+        <div class="header-gold-bar"></div>
+        <div class="header-content">
+            <h1 class="executive-title">
+                <span class="title-crown">👑</span>
+                Executive Investment Portfolio
+            </h1>
+            <div class="portfolio-summary">
+                <div class="summary-item">
+                    <span class="summary-label">Total Value</span>
+                    <span class="summary-value">$8,450,000</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">YTD Return</span>
+                    <span class="summary-value positive">+15.2%</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Risk Level</span>
+                    <span class="summary-value">Balanced</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="executive-content">
+        <div class="investment-grid">
+            <div class="investment-card stock">
+                <div class="card-header">
+                    <div class="investment-icon">📈</div>
+                    <div class="investment-badge primary">Primary</div>
+                </div>
+                <h3 class="investment-name">Blue Chip Stocks</h3>
+                <div class="investment-value">
+                    <span class="value-amount">$850,000</span>
+                    <span class="value-change positive">+18.3%</span>
+                </div>
+                <div class="investment-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Allocation</span>
+                        <span class="meta-value">45%</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Dividend</span>
+                        <span class="meta-value">3.2%</span>
+                    </div>
+                </div>
+                <div class="performance-chart">
+                    <div class="chart-bar" style="--performance: 85%"></div>
+                </div>
+            </div>
+
+            <div class="investment-card real-estate">
+                <div class="card-header">
+                    <div class="investment-icon">🏠</div>
+                    <div class="investment-badge secondary">Secondary</div>
+                </div>
+                <h3 class="investment-name">Commercial Real Estate</h3>
+                <div class="investment-value">
+                    <span class="value-amount">$1,200,000</span>
+                    <span class="value-change positive">+7.8%</span>
+                </div>
+                <div class="investment-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Allocation</span>
+                        <span class="meta-value">30%</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Rental Yield</span>
+                        <span class="meta-value">5.5%</span>
+                    </div>
+                </div>
+                <div class="performance-chart">
+                    <div class="chart-bar" style="--performance: 65%"></div>
+                </div>
+            </div>
+
+            <div class="investment-card bonds">
+                <div class="card-header">
+                    <div class="investment-icon">📄</div>
+                    <div class="investment-badge tertiary">Tertiary</div>
+                </div>
+                <h3 class="investment-name">Government Bonds</h3>
+                <div class="investment-value">
+                    <span class="value-amount">$500,000</span>
+                    <span class="value-change positive">+5.2%</span>
+                </div>
+                <div class="investment-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Allocation</span>
+                        <span class="meta-value">15%</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Yield</span>
+                        <span class="meta-value">4.1%</span>
+                    </div>
+                </div>
+                <div class="performance-chart">
+                    <div class="chart-bar" style="--performance: 45%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="executive-table-section">
+            <table class="executive-table">
+                <thead>
+                    <tr>
+                        <th>Asset Class</th>
+                        <th>Current Value</th>
+                        <th>Allocation</th>
+                        <th>Performance</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="executive-row">
+                        <td>
+                            <div class="asset-class">
+                                <div class="asset-icon">💹</div>
+                                <span>Equities</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="asset-value">
+                                $3,850,000
+                            </div>
+                        </td>
+                        <td>
+                            <div class="allocation-bar">
+                                <div class="allocation-fill" style="width: 45%"></div>
+                                <span class="allocation-text">45%</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="performance premium-positive">
+                                +18.3%
+                            </div>
+                        </td>
+                        <td>
+                            <button class="executive-action-btn">
+                                Rebalance
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="executive-row">
+                        <td>
+                            <div class="asset-class">
+                                <div class="asset-icon">🏘️</div>
+                                <span>Real Estate</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="asset-value">
+                                $2,100,000
+                            </div>
+                        </td>
+                        <td>
+                            <div class="allocation-bar">
+                                <div class="allocation-fill" style="width: 25%"></div>
+                                <span class="allocation-text">25%</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="performance premium-positive">
+                                +7.8%
+                            </div>
+                        </td>
+                        <td>
+                            <button class="executive-action-btn">
+                                Rebalance
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="executive-row">
+                        <td>
+                            <div class="asset-class">
+                                <div class="asset-icon">📊</div>
+                                <span>Fixed Income</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="asset-value">
+                                $1,500,000
+                            </div>
+                        </td>
+                        <td>
+                            <div class="allocation-bar">
+                                <div class="allocation-fill" style="width: 18%"></div>
+                                <span class="allocation-text">18%</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="performance premium-positive">
+                                +5.2%
+                            </div>
+                        </td>
+                        <td>
+                            <button class="executive-action-btn">
+                                Rebalance
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>`,
+    css: `@keyframes goldBorderGlow {
+    0%, 100% { 
+        border-color: rgba(255, 215, 0, 0.5);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    50% { 
+        border-color: rgba(255, 215, 0, 0.8);
+        box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+    }
+}
+
+@keyframes slideInExecutive {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.executive-portfolio {
+    background: 
+        linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%),
+        radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(192, 192, 192, 0.1) 0%, transparent 40%);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    animation: goldBorderGlow 4s ease-in-out infinite;
+}
+
+.executive-header {
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.1), 
+        rgba(192, 192, 192, 0.1)
+    );
+    padding: 3rem 2rem 2rem 2rem;
+    position: relative;
+}
+
+.header-gold-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        #FFD700, 
+        #D4AF37, 
+        #FFD700
+    );
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+}
+
+.header-content {
+    text-align: center;
+}
+
+.executive-title {
+    margin: 0 0 2rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FFD700, #FFF8DC, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.title-crown {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+    animation: floatLuxury 3s ease-in-out infinite;
+}
+
+.portfolio-summary {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.summary-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.summary-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.summary-value.positive {
+    color: #4ade80;
+}
+
+.executive-content {
+    padding: 2rem;
+}
+
+.investment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.investment-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: slideInExecutive 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.investment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD700, #D4AF37);
+}
+
+.investment-card:nth-child(1) { animation-delay: 0.1s; }
+.investment-card:nth-child(2) { animation-delay: 0.2s; }
+.investment-card:nth-child(3) { animation-delay: 0.3s; }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.investment-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.investment-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid;
+}
+
+.investment-badge.primary {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.investment-badge.secondary {
+    background: rgba(230, 230, 250, 0.2);
+    color: #e6e6fa;
+    border-color: rgba(230, 230, 250, 0.3);
+}
+
+.investment-badge.tertiary {
+    background: rgba(185, 242, 255, 0.2);
+    color: #b9f2ff;
+    border-color: rgba(185, 242, 255, 0.3);
+}
+
+.investment-name {
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+}
+
+.investment-value {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+}
+
+.value-amount {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FFD700;
+}
+
+.value-change {
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.value-change.positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.investment-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.meta-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.meta-value {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.performance-chart {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.chart-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #FFD700, #D4AF37);
+    width: var(--performance);
+    border-radius: 3px;
+    transition: width 1s ease-in-out;
+    position: relative;
+}
+
+.chart-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent
+    );
+    animation: goldShimmer 2s infinite;
+}
+
+.executive-table-section {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.executive-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.executive-table th {
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.1), 
+        rgba(192, 192, 192, 0.1)
+    );
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    color: #FFD700;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.executive-table td {
+    padding: 1.5rem 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.executive-row:hover td {
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.asset-class {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+}
+
+.asset-icon {
+    font-size: 1.2rem;
+}
+
+.asset-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FFD700;
+}
+
+.allocation-bar {
+    width: 120px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.allocation-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FFD700, #D4AF37);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+    position: relative;
+}
+
+.allocation-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent
+    );
+    animation: goldShimmer 2s infinite;
+}
+
+.allocation-text {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.performance {
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.performance.premium-positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.executive-action-btn {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(192, 192, 192, 0.2));
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: #FFD700;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.executive-action-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(192, 192, 192, 0.3));
+    transform: translateY(-2px);
+}`,
+    js: `// Executive portfolio interactions
+document.querySelectorAll('.investment-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
+        this.style.boxShadow = '0 20px 40px rgba(255, 215, 0, 0.2)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = 'none';
+    });
+});
+
+// Animate chart bars
+document.querySelectorAll('.chart-bar').forEach(bar => {
+    const performance = bar.style.getPropertyValue('--performance');
+    bar.style.width = '0%';
+    
+    setTimeout(() => {
+        bar.style.width = performance;
+    }, 800);
+});
+
+// Animate allocation bars
+document.querySelectorAll('.allocation-fill').forEach(fill => {
+    const width = fill.style.width;
+    fill.style.width = '0%';
+    
+    setTimeout(() => {
+        fill.style.width = width;
+    }, 1200);
+});
+
+// Executive action buttons
+document.querySelectorAll('.executive-action-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const originalText = this.textContent;
+        this.textContent = 'Processing...';
+        this.disabled = true;
+        
+        setTimeout(() => {
+            this.textContent = originalText;
+            this.disabled = false;
+            
+            // Add success effect
+            this.style.background = 'linear-gradient(135deg, rgba(34, 197, 94, 0.3), rgba(192, 192, 192, 0.2))';
+            this.style.borderColor = 'rgba(34, 197, 94, 0.5)';
+            
+            setTimeout(() => {
+                this.style.background = 'linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(192, 192, 192, 0.2))';
+                this.style.borderColor = 'rgba(255, 215, 0, 0.3)';
+            }, 1000);
+        }, 1500);
+    });
+});`
+},
+
+// ====================================================================
+// PREMIUM TEMPLATE 53: WEALTH MANAGEMENT
+// ====================================================================
+premium3: {
+    html: `<div class="wealth-management">
+    <div class="wealth-header">
+        <div class="diamond-pattern"></div>
+        <div class="header-content">
+            <h1 class="wealth-title">
+                <span class="diamond-icon">💎</span>
+                Private Wealth Management
+            </h1>
+            <p class="wealth-subtitle">Exclusive Financial Solutions for High Net Worth Individuals</p>
+        </div>
+        <div class="wealth-nav">
+            <button class="nav-btn active">Portfolio</button>
+            <button class="nav-btn">Performance</button>
+            <button class="nav-btn">Assets</button>
+            <button class="nav-btn">Reports</button>
+        </div>
+    </div>
+
+    <div class="wealth-content">
+        <div class="wealth-overview">
+            <div class="overview-card">
+                <div class="overview-icon">💰</div>
+                <div class="overview-data">
+                    <div class="overview-value">$15.2M</div>
+                    <div class="overview-label">Total Net Worth</div>
+                </div>
+                <div class="overview-trend positive">+12.8%</div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-icon">📈</div>
+                <div class="overview-data">
+                    <div class="overview-value">22.5%</div>
+                    <div class="overview-label">Annual Return</div>
+                </div>
+                <div class="overview-trend positive">+3.2%</div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-icon">🛡️</div>
+                <div class="overview-data">
+                    <div class="overview-value">AA-</div>
+                    <div class="overview-label">Risk Rating</div>
+                </div>
+                <div class="overview-trend stable">Stable</div>
+            </div>
+        </div>
+
+        <div class="wealth-details">
+            <div class="details-sidebar">
+                <h3 class="sidebar-title">Asset Allocation</h3>
+                <div class="allocation-chart">
+                    <div class="chart-slice" style="--slice-color: #FFD700; --slice-percent: 40">
+                        <span class="slice-label">Equities</span>
+                        <span class="slice-value">40%</span>
+                    </div>
+                    <div class="chart-slice" style="--slice-color: #C0C0C0; --slice-percent: 25">
+                        <span class="slice-label">Real Estate</span>
+                        <span class="slice-value">25%</span>
+                    </div>
+                    <div class="chart-slice" style="--slice-color: #B9F2FF; --slice-percent: 20">
+                        <span class="slice-label">Bonds</span>
+                        <span class="slice-value">20%</span>
+                    </div>
+                    <div class="chart-slice" style="--slice-color: #E6E6FA; --slice-percent: 15">
+                        <span class="slice-label">Alternatives</span>
+                        <span class="slice-value">15%</span>
+                    </div>
+                </div>
+                <div class="sidebar-stats">
+                    <div class="sidebar-stat">
+                        <span class="stat-name">Liquidity</span>
+                        <span class="stat-value">$2.1M</span>
+                    </div>
+                    <div class="sidebar-stat">
+                        <span class="stat-name">Leverage</span>
+                        <span class="stat-value">18%</span>
+                    </div>
+                    <div class="sidebar-stat">
+                        <span class="stat-name">Diversification</span>
+                        <span class="stat-value">87%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details-main">
+                <table class="wealth-table">
+                    <thead>
+                        <tr>
+                            <th>Asset Class</th>
+                            <th>Current Value</th>
+                            <th>Allocation</th>
+                            <th>Performance</th>
+                            <th>Risk</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="wealth-row">
+                            <td>
+                                <div class="asset-info">
+                                    <div class="asset-color" style="--asset-color: #FFD700"></div>
+                                    <div class="asset-details">
+                                        <div class="asset-name">US Large Cap Equities</div>
+                                        <div class="asset-type">Growth Stocks</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="asset-value">$6,080,000</div>
+                            </td>
+                            <td>
+                                <div class="allocation-display">
+                                    <div class="allocation-visual" style="--allocation: 40%"></div>
+                                    <span>40%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="performance-display premium-positive">
+                                    +18.3%
+                                </div>
+                            </td>
+                            <td>
+                                <div class="risk-level medium">
+                                    <div class="risk-dots">
+                                        <span class="dot active"></span>
+                                        <span class="dot active"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                    Medium
+                                </div>
+                            </td>
+                            <td>
+                                <button class="wealth-action-btn">
+                                    Rebalance
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="wealth-row">
+                            <td>
+                                <div class="asset-info">
+                                    <div class="asset-color" style="--asset-color: #C0C0C0"></div>
+                                    <div class="asset-details">
+                                        <div class="asset-name">Commercial Real Estate</div>
+                                        <div class="asset-type">Income Properties</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="asset-value">$3,800,000</div>
+                            </td>
+                            <td>
+                                <div class="allocation-display">
+                                    <div class="allocation-visual" style="--allocation: 25%"></div>
+                                    <span>25%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="performance-display premium-positive">
+                                    +7.8%
+                                </div>
+                            </td>
+                            <td>
+                                <div class="risk-level low">
+                                    <div class="risk-dots">
+                                        <span class="dot active"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                    Low
+                                </div>
+                            </td>
+                            <td>
+                                <button class="wealth-action-btn">
+                                    Rebalance
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="wealth-row">
+                            <td>
+                                <div class="asset-info">
+                                    <div class="asset-color" style="--asset-color: #B9F2FF"></div>
+                                    <div class="asset-details">
+                                        <div class="asset-name">Government Bonds</div>
+                                        <div class="asset-type">Fixed Income</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="asset-value">$3,040,000</div>
+                            </td>
+                            <td>
+                                <div class="allocation-display">
+                                    <div class="allocation-visual" style="--allocation: 20%"></div>
+                                    <span>20%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="performance-display premium-positive">
+                                    +5.2%
+                                </div>
+                            </td>
+                            <td>
+                                <div class="risk-level low">
+                                    <div class="risk-dots">
+                                        <span class="dot active"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                    Low
+                                </div>
+                            </td>
+                            <td>
+                                <button class="wealth-action-btn">
+                                    Rebalance
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>`,
+    css: `@keyframes diamondSparkle {
+    0%, 100% { 
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+    50% { 
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+    }
+}
+
+@keyframes rotateChart {
+    from { transform: rotate(-90deg); }
+    to { transform: rotate(calc(var(--slice-percent) * 3.6deg - 90deg)); }
+}
+
+.wealth-management {
+    background: 
+        linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%),
+        radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(185, 242, 255, 0.1) 0%, transparent 50%);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.wealth-management::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 30%, transparent 50%, rgba(255, 215, 0, 0.05) 100%),
+        radial-gradient(circle at 70% 70%, transparent 50%, rgba(185, 242, 255, 0.05) 100%);
+    pointer-events: none;
+}
+
+.wealth-header {
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.1), 
+        rgba(185, 242, 255, 0.1)
+    );
+    padding: 3rem 2rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.diamond-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, 
+            transparent 48%, 
+            rgba(255, 215, 0, 0.05) 50%, 
+            transparent 52%
+        ),
+        linear-gradient(-45deg, 
+            transparent 48%, 
+            rgba(185, 242, 255, 0.05) 50%, 
+            transparent 52%
+        );
+    background-size: 30px 30px;
+    opacity: 0.5;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.wealth-title {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FFD700, #B9F2FF, #E6E6FA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.diamond-icon {
+    font-size: 2rem;
+    animation: diamondSparkle 3s ease-in-out infinite;
+}
+
+.wealth-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+.wealth-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.nav-btn.active,
+.nav-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(185, 242, 255, 0.2));
+    color: #FFD700;
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.wealth-content {
+    padding: 2rem;
+}
+
+.wealth-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.overview-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.overview-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.1), 
+        transparent
+    );
+    animation: goldShimmer 3s infinite;
+}
+
+.overview-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.overview-data {
+    flex: 1;
+}
+
+.overview-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.overview-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.overview-trend {
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+}
+
+.overview-trend.positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.overview-trend.stable {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.wealth-details {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+}
+
+.details-sidebar {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-title {
+    color: #FFD700;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.allocation-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--slice-color) 0% calc(var(--slice-percent) * 1%),
+        transparent calc(var(--slice-percent) * 1%) 100%
+    );
+    margin: 0 auto 2rem auto;
+    position: relative;
+    animation: rotateChart 2s ease-out;
+}
+
+.chart-slice {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(calc(var(--slice-percent) * 3.6deg - 90deg));
+    transform-origin: 0 0;
+    text-align: center;
+    width: 100px;
+}
+
+.slice-label {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.25rem;
+}
+
+.slice-value {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+}
+
+.sidebar-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-name {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    color: white;
+    font-weight: 600;
+}
+
+.details-main {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.wealth-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wealth-table th {
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.1), 
+        rgba(185, 242, 255, 0.1)
+    );
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    color: #FFD700;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.wealth-table td {
+    padding: 1.5rem 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.wealth-row:hover td {
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.asset-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.asset-color {
+    width: 4px;
+    height: 40px;
+    background: var(--asset-color);
+    border-radius: 2px;
+    position: relative;
+}
+
+.asset-color::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: inherit;
+    animation: diamondSparkle 2s ease-in-out infinite;
+}
+
+.asset-details .asset-name {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.asset-details .asset-type {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.asset-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FFD700;
+}
+
+.allocation-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.allocation-visual {
+    width: 80px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.allocation-visual::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #FFD700, #D4AF37);
+    width: var(--allocation);
+    border-radius: 3px;
+    transition: width 1s ease-in-out;
+}
+
+.performance-display {
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.performance-display.premium-positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.risk-level {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.risk-dots {
+    display: flex;
+    gap: 2px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.dot.active {
+    background: #4ade80;
+}
+
+.risk-level.medium .dot:nth-child(3) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.wealth-action-btn {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(185, 242, 255, 0.2));
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: #FFD700;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.wealth-action-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(185, 242, 255, 0.3));
+    transform: translateY(-2px);
+}`,
+    js: `// Wealth management interactions
+document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Add diamond sparkle effect
+        const sparkle = document.createElement('div');
+        sparkle.textContent = '💎';
+        sparkle.style.cssText = \`
+            position: absolute;
+            font-size: 1rem;
+            animation: diamondSparkle 0.6s ease-out forwards;
+            pointer-events: none;
+        \`;
+        
+        const rect = this.getBoundingClientRect();
+        sparkle.style.left = (rect.width / 2 - 8) + 'px';
+        sparkle.style.top = (rect.height / 2 - 8) + 'px';
+        
+        this.style.position = 'relative';
+        this.appendChild(sparkle);
+        
+        setTimeout(() => sparkle.remove(), 600);
+    });
+});
+
+// Animate allocation chart
+const chart = document.querySelector('.allocation-chart');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+        }
+    });
+});
+
+if (chart) {
+    observer.observe(chart);
+}
+
+// Wealth action buttons
+document.querySelectorAll('.wealth-action-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const originalText = this.textContent;
+        this.textContent = 'Analyzing...';
+        this.disabled = true;
+        
+        setTimeout(() => {
+            this.textContent = 'Rebalanced ✓';
+            
+            setTimeout(() => {
+                this.textContent = originalText;
+                this.disabled = false;
+            }, 1000);
+        }, 1500);
+    });
+});
+
+// Add hover effects to overview cards
+document.querySelectorAll('.overview-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+});`
+},
+
+// ====================================================================
+// PREMIUM TEMPLATE 54: VIP CLIENT PORTAL
+// ====================================================================
+premium4: {
+    html: `<div class="vip-portal">
+    <div class="vip-header">
+        <div class="header-gold-border"></div>
+        <div class="header-content">
+            <div class="vip-badge">
+                <span class="badge-icon">⭐</span>
+                VIP CLIENT PORTAL
+            </div>
+            <h1 class="vip-title">Exclusive Wealth Management</h1>
+            <p class="vip-welcome">Welcome back, Mr. Anderson</p>
+        </div>
+        <div class="vip-status">
+            <div class="status-indicator online">
+                <div class="status-dot"></div>
+                Portfolio Active
+            </div>
+            <div class="last-login">Last access: Today, 14:32</div>
+        </div>
+    </div>
+
+    <div class="vip-dashboard">
+        <div class="dashboard-sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Quick Access</h3>
+                <div class="sidebar-nav">
+                    <button class="nav-item active">
+                        <span class="nav-icon">📊</span>
+                        Portfolio Overview
+                    </button>
+                    <button class="nav-item">
+                        <span class="nav-icon">💼</span>
+                        Asset Allocation
+                    </button>
+                    <button class="nav-item">
+                        <span class="nav-icon">📈</span>
+                        Performance
+                    </button>
+                    <button class="nav-item">
+                        <span class="nav-icon">🛡️</span>
+                        Risk Management
+                    </button>
+                    <button class="nav-item">
+                        <span class="nav-icon">📋</span>
+                        Reports
+                    </button>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Your Advisor</h3>
+                <div class="advisor-card">
+                    <div class="advisor-avatar">SA</div>
+                    <div class="advisor-info">
+                        <div class="advisor-name">Sarah Anderson</div>
+                        <div class="advisor-role">Senior Wealth Advisor</div>
+                        <div class="advisor-contact">
+                            <span class="contact-item">📞 +1 (555) 123-4567</span>
+                            <span class="contact-item">✉️ s.anderson@wealth.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-main">
+            <div class="main-header">
+                <h2 class="main-title">Portfolio Overview</h2>
+                <div class="main-actions">
+                    <button class="action-btn premium">
+                        <span class="btn-icon">📥</span>
+                        Export Report
+                    </button>
+                    <button class="action-btn premium">
+                        <span class="btn-icon">🔄</span>
+                        Refresh Data
+                    </button>
+                </div>
+            </div>
+
+            <div class="portfolio-highlights">
+                <div class="highlight-card">
+                    <div class="highlight-icon">💰</div>
+                    <div class="highlight-content">
+                        <div class="highlight-value">$8,450,000</div>
+                        <div class="highlight-label">Total Portfolio Value</div>
+                    </div>
+                    <div class="highlight-trend positive">+$125,000</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">📈</div>
+                    <div class="highlight-content">
+                        <div class="highlight-value">15.2%</div>
+                        <div class="highlight-label">YTD Return</div>
+                    </div>
+                    <div class="highlight-trend positive">+2.1%</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">⚖️</div>
+                    <div class="highlight-content">
+                        <div class="highlight-value">Balanced</div>
+                        <div class="highlight-label">Risk Profile</div>
+                    </div>
+                    <div class="highlight-trend stable">Optimal</div>
+                </div>
+            </div>
+
+            <div class="vip-table-section">
+                <table class="vip-table">
+                    <thead>
+                        <tr>
+                            <th>Investment</th>
+                            <th>Type</th>
+                            <th>Current Value</th>
+                            <th>Allocation</th>
+                            <th>Performance</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="vip-row">
+                            <td>
+                                <div class="investment-info">
+                                    <div class="investment-badge platinum">P</div>
+                                    <div class="investment-details">
+                                        <div class="investment-name">Global Equity Fund</div>
+                                        <div class="investment-id">#GEF-2024-P</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="investment-type">Mutual Fund</span>
+                            </td>
+                            <td>
+                                <div class="investment-value">$2,850,000</div>
+                            </td>
+                            <td>
+                                <div class="allocation-display">
+                                    <div class="allocation-bar">
+                                        <div class="allocation-fill" style="width: 34%"></div>
+                                    </div>
+                                    <span class="allocation-percent">34%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="performance-vip positive">
+                                    <span class="performance-arrow">↗</span>
+                                    +18.3%
+                                </div>
+                            </td>
+                            <td>
+                                <div class="vip-actions">
+                                    <button class="vip-action-btn view">
+                                        <span class="action-icon">👁️</span>
+                                    </button>
+                                    <button class="vip-action-btn trade">
+                                        <span class="action-icon">💱</span>
+                                    </button>
+                                    <button class="vip-action-btn analyze">
+                                        <span class="action-icon">📊</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="vip-row">
+                            <td>
+                                <div class="investment-info">
+                                    <div class="investment-badge gold">G</div>
+                                    <div class="investment-details">
+                                        <div class="investment-name">Real Estate Trust</div>
+                                        <div class="investment-id">#RET-2024-G</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="investment-type">REIT</span>
+                            </td>
+                            <td>
+                                <div class="investment-value">$1,980,000</div>
+                            </td>
+                            <td>
+                                <div class="allocation-display">
+                                    <div class="allocation-bar">
+                                        <div class="allocation-fill" style="width: 23%"></div>
+                                    </div>
+                                    <span class="allocation-percent">23%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="performance-vip positive">
+                                    <span class="performance-arrow">↗</span>
+                                    +7.8%
+                                </div>
+                            </td>
+                            <td>
+                                <div class="vip-actions">
+                                    <button class="vip-action-btn view">
+                                        <span class="action-icon">👁️</span>
+                                    </button>
+                                    <button class="vip-action-btn trade">
+                                        <span class="action-icon">💱</span>
+                                    </button>
+                                    <button class="vip-action-btn analyze">
+                                        <span class="action-icon">📊</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="vip-row">
+                            <td>
+                                <div class="investment-info">
+                                    <div class="investment-badge diamond">D</div>
+                                    <div class="investment-details">
+                                        <div class="investment-name">Private Equity</div>
+                                        <div class="investment-id">#PE-2024-D</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="investment-type">Alternative</span>
+                            </td>
+                            <td>
+                                <div class="investment-value">$1,520,000</div>
+                            </td>
+                            <td>
+                                <div class="allocation-display">
+                                    <div class="allocation-bar">
+                                        <div class="allocation-fill" style="width: 18%"></div>
+                                    </div>
+                                    <span class="allocation-percent">18%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="performance-vip positive">
+                                    <span class="performance-arrow">↗</span>
+                                    +12.5%
+                                </div>
+                            </td>
+                            <td>
+                                <div class="vip-actions">
+                                    <button class="vip-action-btn view">
+                                        <span class="action-icon">👁️</span>
+                                    </button>
+                                    <button class="vip-action-btn trade">
+                                        <span class="action-icon">💱</span>
+                                    </button>
+                                    <button class="vip-action-btn analyze">
+                                        <span class="action-icon">📊</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>`,
+    css: `@keyframes vipGlow {
+    0%, 100% { 
+        box-shadow: 
+            0 0 20px rgba(255, 215, 0, 0.3),
+            inset 0 0 20px rgba(255, 215, 0, 0.1);
+    }
+    50% { 
+        box-shadow: 
+            0 0 40px rgba(255, 215, 0, 0.5),
+            inset 0 0 30px rgba(255, 215, 0, 0.2);
+    }
+}
+
+@keyframes statusPulse {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+    70% { 
+        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+    }
+}
+
+.vip-portal {
+    background: 
+        linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%),
+        radial-gradient(circle at 10% 10%, rgba(255, 215, 0, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(230, 230, 250, 0.15) 0%, transparent 40%);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    animation: vipGlow 4s ease-in-out infinite;
+}
+
+.vip-header {
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.15), 
+        rgba(230, 230, 250, 0.15)
+    );
+    padding: 2rem;
+    position: relative;
+}
+
+.header-gold-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        #FFD700, 
+        #D4AF37, 
+        #FFD700
+    );
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+}
+
+.header-content {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.vip-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #FFD700, #D4AF37);
+    color: #1a1a1a;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.badge-icon {
+    font-size: 1.1rem;
+}
+
+.vip-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FFD700, #FFF8DC, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.vip-welcome {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.vip-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 15px;
+    color: #4ade80;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    animation: statusPulse 2s infinite;
+}
+
+.last-login {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.vip-dashboard {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 600px;
+}
+
+.dashboard-sidebar {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+}
+
+.sidebar-section {
+    margin-bottom: 2rem;
+}
+
+.sidebar-title {
+    color: #FFD700;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: left;
+}
+
+.nav-item.active,
+.nav-item:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(230, 230, 250, 0.2));
+    color: #FFD700;
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.nav-icon {
+    font-size: 1.1rem;
+}
+
+.advisor-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+}
+
+.advisor-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #D4AF37);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.advisor-name {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.advisor-role {
+    color: #FFD700;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.advisor-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-item {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dashboard-main {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.main-title {
+    margin: 0;
+    color: #FFD700;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.main-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-btn.premium {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(230, 230, 250, 0.2));
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: #FFD700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.action-btn.premium:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(230, 230, 250, 0.3));
+    transform: translateY(-2px);
+}
+
+.portfolio-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.highlight-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.highlight-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.highlight-content {
+    flex: 1;
+}
+
+.highlight-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.highlight-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.highlight-trend {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+}
+
+.highlight-trend.positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.highlight-trend.stable {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.vip-table-section {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.vip-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vip-table th {
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.1), 
+        rgba(230, 230, 250, 0.1)
+    );
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    color: #FFD700;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.vip-table td {
+    padding: 1.5rem 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.vip-row:hover td {
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.investment-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.investment-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 0.8rem;
+}
+
+.investment-badge.platinum {
+    background: linear-gradient(135deg, #E5E4E2, #BEC2CB);
+}
+
+.investment-badge.gold {
+    background: linear-gradient(135deg, #FFD700, #D4AF37);
+}
+
+.investment-badge.diamond {
+    background: linear-gradient(135deg, #B9F2FF, #70D1FF);
+}
+
+.investment-details .investment-name {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.investment-details .investment-id {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.investment-type {
+    padding: 0.4rem 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.investment-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FFD700;
+}
+
+.allocation-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.allocation-bar {
+    width: 80px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.allocation-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FFD700, #D4AF37);
+    border-radius: 3px;
+    transition: width 1s ease-in-out;
+}
+
+.allocation-percent {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    min-width: 35px;
+}
+
+.performance-vip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.performance-vip.positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.vip-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.vip-action-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.vip-action-btn:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: rgba(255, 215, 0, 0.5);
+    color: #FFD700;
+    transform: scale(1.1);
+}`,
+    js: `// VIP portal interactions
+document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', function() {
+        document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Add VIP selection effect
+        this.style.background = 'linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(230, 230, 250, 0.3))';
+        setTimeout(() => {
+            this.style.background = 'linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(230, 230, 250, 0.2))';
+        }, 300);
+    });
+});
+
+// Animate allocation bars
+document.querySelectorAll('.allocation-fill').forEach(fill => {
+    const width = fill.style.width;
+    fill.style.width = '0%';
+    
+    setTimeout(() => {
+        fill.style.width = width;
+    }, 1000);
+});
+
+// VIP action buttons
+document.querySelectorAll('.vip-action-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const type = this.classList[1];
+        let message = '';
+        
+        switch(type) {
+            case 'view':
+                message = 'Opening investment details...';
+                break;
+            case 'trade':
+                message = 'Initiating trade execution...';
+                break;
+            case 'analyze':
+                message = 'Running advanced analysis...';
+                break;
+        }
+        
+        const originalHTML = this.innerHTML;
+        this.innerHTML = '⏳';
+        this.disabled = true;
+        
+        setTimeout(() => {
+            this.innerHTML = originalHTML;
+            this.disabled = false;
+            
+            // Add success effect
+            this.style.background = 'rgba(34, 197, 94, 0.3)';
+            this.style.borderColor = 'rgba(34, 197, 94, 0.5)';
+            
+            setTimeout(() => {
+                this.style.background = 'rgba(255, 255, 255, 0.1)';
+                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            }, 1000);
+        }, 1500);
+    });
+});
+
+// Premium action buttons
+document.querySelectorAll('.action-btn.premium').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const originalHTML = this.innerHTML;
+        this.innerHTML = '<span class="btn-icon">⭐</span> Processing...';
+        this.disabled = true;
+        
+        setTimeout(() => {
+            this.innerHTML = originalHTML;
+            this.disabled = false;
+            
+            // Add VIP success effect
+            this.style.background = 'linear-gradient(135deg, rgba(34, 197, 94, 0.3), rgba(230, 230, 250, 0.3))';
+            this.style.borderColor = 'rgba(34, 197, 94, 0.5)';
+            
+            setTimeout(() => {
+                this.style.background = 'linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(230, 230, 250, 0.2))';
+                this.style.borderColor = 'rgba(255, 215, 0, 0.3)';
+            }, 1000);
+        }, 2000);
+    });
+});`
+},
+
+// ====================================================================
+// PREMIUM TEMPLATE 55: ROYAL ANALYTICS
+// ====================================================================
+premium5: {
+    html: `<div class="royal-analytics">
+    <div class="royal-header">
+        <div class="crown-decoration">👑</div>
+        <div class="header-content">
+            <h1 class="royal-title">Royal Performance Analytics</h1>
+            <p class="royal-subtitle">Exclusive Insights for Premium Portfolio Management</p>
+        </div>
+        <div class="royal-controls">
+            <div class="timeframe-selector">
+                <button class="time-btn active">1D</button>
+                <button class="time-btn">1W</button>
+                <button class="time-btn">1M</button>
+                <button class="time-btn">1Y</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="royal-metrics">
+        <div class="metric-card royal">
+            <div class="metric-header">
+                <div class="metric-icon">💎</div>
+                <div class="metric-trend positive">+5.2%</div>
+            </div>
+            <div class="metric-value">$12.8M</div>
+            <div class="metric-label">Portfolio Value</div>
+            <div class="metric-chart">
+                <div class="chart-line" style="--chart-data: 0, 45, 78, 65, 90, 120, 110"></div>
+            </div>
+        </div>
+        
+        <div class="metric-card imperial">
+            <div class="metric-header">
+                <div class="metric-icon">📈</div>
+                <div class="metric-trend positive">+3.1%</div>
+            </div>
+            <div class="metric-value">18.3%</div>
+            <div class="metric-label">YTD Return</div>
+            <div class="metric-chart">
+                <div class="chart-line" style="--chart-data: 20, 35, 60, 45, 75, 90, 110"></div>
+            </div>
+        </div>
+        
+        <div class="metric-card noble">
+            <div class="metric-header">
+                <div class="metric-icon">⚡</div>
+                <div class="metric-trend positive">+12.5%</div>
+            </div>
+            <div class="metric-value">0.85</div>
+            <div class="metric-label">Sharpe Ratio</div>
+            <div class="metric-chart">
+                <div class="chart-line" style="--chart-data: 45, 60, 40, 75, 65, 85, 100"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="royal-content">
+        <div class="performance-breakdown">
+            <h3 class="section-title">Performance Breakdown</h3>
+            <div class="breakdown-grid">
+                <div class="breakdown-item">
+                    <div class="breakdown-header">
+                        <span class="breakdown-name">Equities</span>
+                        <span class="breakdown-value">+18.3%</span>
+                    </div>
+                    <div class="breakdown-bar">
+                        <div class="breakdown-fill" style="--fill-width: 85%; --fill-color: #8B5CF6"></div>
+                    </div>
+                </div>
+                <div class="breakdown-item">
+                    <div class="breakdown-header">
+                        <span class="breakdown-name">Real Estate</span>
+                        <span class="breakdown-value">+7.8%</span>
+                    </div>
+                    <div class="breakdown-bar">
+                        <div class="breakdown-fill" style="--fill-width: 65%; --fill-color: #06B6D4"></div>
+                    </div>
+                </div>
+                <div class="breakdown-item">
+                    <div class="breakdown-header">
+                        <span class="breakdown-name">Bonds</span>
+                        <span class="breakdown-value">+5.2%</span>
+                    </div>
+                    <div class="breakdown-bar">
+                        <div class="breakdown-fill" style="--fill-width: 45%; --fill-color: #10B981"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="royal-table-section">
+            <table class="royal-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="th-content">
+                                <span class="th-icon">📊</span>
+                                Metric
+                            </div>
+                        </th>
+                        <th>
+                            <div class="th-content">
+                                <span class="th-icon">🎯</span>
+                                Current
+                            </div>
+                        </th>
+                        <th>
+                            <div class="th-content">
+                                <span class="th-icon">🎯</span>
+                                Target
+                            </div>
+                        </th>
+                        <th>
+                            <div class="th-content">
+                                <span class="th-icon">📈</span>
+                                Variance
+                            </div>
+                        </th>
+                        <th>
+                            <div class="th-content">
+                                <span class="th-icon">⭐</span>
+                                Status
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="royal-row">
+                        <td>
+                            <div class="metric-info">
+                                <div class="metric-color" style="--metric-color: #8B5CF6"></div>
+                                <span>Return on Investment</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="current-value">22.5%</div>
+                        </td>
+                        <td>
+                            <div class="target-value">20%</div>
+                        </td>
+                        <td>
+                            <div class="variance positive">
+                                <span class="variance-arrow">↑</span>
+                                +2.5%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="status-badge exceeded">
+                                <span class="status-icon">🎯</span>
+                                Exceeded
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="royal-row">
+                        <td>
+                            <div class="metric-info">
+                                <div class="metric-color" style="--metric-color: #06B6D4"></div>
+                                <span>Portfolio Growth</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="current-value">15.8%</div>
+                        </td>
+                        <td>
+                            <div class="target-value">12%</div>
+                        </td>
+                        <td>
+                            <div class="variance positive">
+                                <span class="variance-arrow">↑</span>
+                                +3.8%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="status-badge exceeded">
+                                <span class="status-icon">🎯</span>
+                                Exceeded
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="royal-row">
+                        <td>
+                            <div class="metric-info">
+                                <div class="metric-color" style="--metric-color: #10B981"></div>
+                                <span>Risk Adjusted Return</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="current-value">1.25</div>
+                        </td>
+                        <td>
+                            <div class="target-value">1.20</div>
+                        </td>
+                        <td>
+                            <div class="variance positive">
+                                <span class="variance-arrow">↑</span>
+                                +0.05
+                            </div>
+                        </td>
+                        <td>
+                            <div class="status-badge achieved">
+                                <span class="status-icon">✅</span>
+                                Achieved
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="royal-row">
+                        <td>
+                            <div class="metric-info">
+                                <div class="metric-color" style="--metric-color: #F59E0B"></div>
+                                <span>Volatility</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="current-value">14.2%</div>
+                        </td>
+                        <td>
+                            <div class="target-value">15%</div>
+                        </td>
+                        <td>
+                            <div class="variance positive">
+                                <span class="variance-arrow">↓</span>
+                                -0.8%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="status-badge optimal">
+                                <span class="status-icon">⚡</span>
+                                Optimal
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>`,
+    css: `@keyframes crownGlow {
+    0%, 100% { 
+        filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
+        transform: scale(1);
+    }
+    50% { 
+        filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8));
+        transform: scale(1.1);
+    }
+}
+
+@keyframes drawChart {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes royalEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.royal-analytics {
+    background: 
+        linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #3730a3 100%),
+        radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.2) 0%, transparent 50%);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(139, 92, 246, 0.5);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.royal-analytics::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, 
+            transparent 48%, 
+            rgba(139, 92, 246, 0.1) 50%, 
+            transparent 52%
+        );
+    background-size: 40px 40px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.royal-header {
+    background: linear-gradient(135deg, 
+        rgba(139, 92, 246, 0.2), 
+        rgba(6, 182, 212, 0.2)
+    );
+    padding: 3rem 2rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.crown-decoration {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: crownGlow 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
+}
+
+.header-content {
+    margin-bottom: 2rem;
+}
+
+.royal-title {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #8B5CF6, #06B6D4, #10B981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.royal-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+.royal-controls {
+    display: flex;
+    justify-content: center;
+}
+
+.timeframe-selector {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 0.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.time-btn {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.time-btn.active,
+.time-btn:hover {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(6, 182, 212, 0.3));
+    color: white;
+}
+
+.royal-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.metric-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: royalEntrance 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.metric-card.royal {
+    border-color: rgba(139, 92, 246, 0.3);
+    animation-delay: 0.1s;
+}
+
+.metric-card.imperial {
+    border-color: rgba(6, 182, 212, 0.3);
+    animation-delay: 0.2s;
+}
+
+.metric-card.noble {
+    border-color: rgba(16, 185, 129, 0.3);
+    animation-delay: 0.3s;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.1), 
+        transparent
+    );
+    animation: goldShimmer 3s infinite;
+}
+
+.metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.metric-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.metric-trend {
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+}
+
+.metric-trend.positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.metric-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.metric-chart {
+    width: 100%;
+    height: 60px;
+    position: relative;
+}
+
+.chart-line {
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, 
+            rgba(139, 92, 246, 0.3), 
+            rgba(6, 182, 212, 0.3)
+        );
+    clip-path: polygon(
+        0% 100%,
+        calc(100% / 6 * 1) calc(100% - var(--chart-data, 0) * 0.6%),
+        calc(100% / 6 * 2) calc(100% - var(--chart-data, 0) * 0.6%),
+        calc(100% / 6 * 3) calc(100% - var(--chart-data, 0) * 0.6%),
+        calc(100% / 6 * 4) calc(100% - var(--chart-data, 0) * 0.6%),
+        calc(100% / 6 * 5) calc(100% - var(--chart-data, 0) * 0.6%),
+        100% calc(100% - var(--chart-data, 0) * 0.6%),
+        100% 100%
+    );
+    animation: drawChart 2s ease-out;
+}
+
+.royal-content {
+    padding: 0 2rem 2rem 2rem;
+}
+
+.performance-breakdown {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    color: #8B5CF6;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.breakdown-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.breakdown-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.breakdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.breakdown-name {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+}
+
+.breakdown-value {
+    color: #4ade80;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.breakdown-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.breakdown-fill {
+    height: 100%;
+    background: var(--fill-color);
+    width: var(--fill-width);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+    position: relative;
+}
+
+.breakdown-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent
+    );
+    animation: goldShimmer 2s infinite;
+}
+
+.royal-table-section {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.royal-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.royal-table th {
+    background: linear-gradient(135deg, 
+        rgba(139, 92, 246, 0.1), 
+        rgba(6, 182, 212, 0.1)
+    );
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    color: #8B5CF6;
+    border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.th-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.th-icon {
+    font-size: 1.1rem;
+}
+
+.royal-table td {
+    padding: 1.5rem 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.royal-row:hover td {
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.metric-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.metric-color {
+    width: 4px;
+    height: 24px;
+    background: var(--metric-color);
+    border-radius: 2px;
+    position: relative;
+}
+
+.metric-color::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: inherit;
+    animation: crownGlow 2s ease-in-out infinite;
+}
+
+.current-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+}
+
+.target-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.variance {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.variance.positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.status-badge.exceeded {
+    background: rgba(139, 92, 246, 0.2);
+    color: #8B5CF6;
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.status-badge.achieved {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10B981;
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.status-badge.optimal {
+    background: rgba(245, 158, 11, 0.2);
+    color: #F59E0B;
+    border-color: rgba(245, 158, 11, 0.3);
+}`,
+    js: `// Royal analytics interactions
+document.querySelectorAll('.time-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Add royal selection effect
+        this.style.background = 'linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(6, 182, 212, 0.4))';
+        setTimeout(() => {
+            this.style.background = 'linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(6, 182, 212, 0.3))';
+        }, 300);
+    });
+});
+
+// Animate breakdown bars
+document.querySelectorAll('.breakdown-fill').forEach(fill => {
+    const width = fill.style.getPropertyValue('--fill-width');
+    fill.style.width = '0%';
+    
+    setTimeout(() => {
+        fill.style.width = width;
+    }, 800);
+});
+
+// Add hover effects to metric cards
+document.querySelectorAll('.metric-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+        this.style.boxShadow = '0 20px 40px rgba(139, 92, 246, 0.2)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+        this.style.boxShadow = 'none';
+    });
+});
+
+// Royal table row interactions
+document.querySelectorAll('.royal-row').forEach(row => {
+    row.addEventListener('click', function() {
+        // Add royal selection effect
+        this.style.background = 'rgba(139, 92, 246, 0.1)';
+        
+        setTimeout(() => {
+            this.style.background = '';
+        }, 1000);
+    });
+});
+
+// Initialize chart animations
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+        }
+    });
+});
+
+document.querySelectorAll('.metric-card').forEach(card => {
+    observer.observe(card);
+});`
+},
+// ====================================================================
+// PREMIUM TEMPLATE 56: DIAMOND WEALTH
+// ====================================================================
+premium6: {
+    html: `<div class="diamond-wealth">
+    <div class="diamond-header">
+        <div class="diamond-background">
+            <div class="diamond-shape"></div>
+            <div class="diamond-shape"></div>
+            <div class="diamond-shape"></div>
+        </div>
+        <div class="header-content">
+            <h1 class="diamond-title">
+                <span class="title-icon">💎</span>
+                Diamond Wealth Portfolio
+            </h1>
+            <p class="diamond-subtitle">Crystal Clear Financial Excellence</p>
+        </div>
+        <div class="wealth-stats">
+            <div class="wealth-stat">
+                <span class="stat-label">Total Assets</span>
+                <span class="stat-value">$15.8M</span>
+            </div>
+            <div class="wealth-stat">
+                <span class="stat-label">Net Growth</span>
+                <span class="stat-value positive">+12.8%</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="diamond-content">
+        <div class="asset-breakdown">
+            <div class="breakdown-card">
+                <div class="card-icon">📈</div>
+                <div class="card-content">
+                    <h3>Equity Investments</h3>
+                    <div class="card-value">$6,250,000</div>
+                    <div class="card-growth positive">+18.3%</div>
+                </div>
+                <div class="card-sparkle"></div>
+            </div>
+            <div class="breakdown-card">
+                <div class="card-icon">🏠</div>
+                <div class="card-content">
+                    <h3>Real Estate</h3>
+                    <div class="card-value">$4,120,000</div>
+                    <div class="card-growth positive">+12.5%</div>
+                </div>
+                <div class="card-sparkle"></div>
+            </div>
+            <div class="breakdown-card">
+                <div class="card-icon">📊</div>
+                <div class="card-content">
+                    <h3>Fixed Income</h3>
+                    <div class="card-value">$3,450,000</div>
+                    <div class="card-growth positive">+8.7%</div>
+                </div>
+                <div class="card-sparkle"></div>
+            </div>
+        </div>
+
+        <div class="diamond-table-section">
+            <table class="diamond-table">
+                <thead>
+                    <tr>
+                        <th>Asset Class</th>
+                        <th>Current Value</th>
+                        <th>Allocation</th>
+                        <th>Performance</th>
+                        <th>Risk Level</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="diamond-row">
+                        <td>
+                            <div class="asset-display">
+                                <div class="asset-gem blue"></div>
+                                <div class="asset-info">
+                                    <div class="asset-name">Technology Stocks</div>
+                                    <div class="asset-category">Growth Sector</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="value-display">
+                                <span class="currency">$</span>
+                                <span class="amount">2,850,000</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="allocation-display">
+                                <div class="allocation-diamond">
+                                    <div class="diamond-fill" style="--fill: 75%"></div>
+                                </div>
+                                <span class="allocation-text">18%</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="performance-diamond positive">
+                                <span class="perf-icon">↗</span>
+                                +22.5%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="risk-diamond medium">
+                                <div class="risk-crystal">
+                                    <div class="crystal-facet"></div>
+                                    <div class="crystal-facet"></div>
+                                    <div class="crystal-facet"></div>
+                                </div>
+                                Medium
+                            </div>
+                        </td>
+                        <td>
+                            <button class="diamond-action-btn">
+                                <span class="btn-sparkle">✨</span>
+                                Manage
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="diamond-row">
+                        <td>
+                            <div class="asset-display">
+                                <div class="asset-gem green"></div>
+                                <div class="asset-info">
+                                    <div class="asset-name">Commercial REITs</div>
+                                    <div class="asset-category">Real Estate</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="value-display">
+                                <span class="currency">$</span>
+                                <span class="amount">1,980,000</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="allocation-display">
+                                <div class="allocation-diamond">
+                                    <div class="diamond-fill" style="--fill: 60%"></div>
+                                </div>
+                                <span class="allocation-text">12%</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="performance-diamond positive">
+                                <span class="perf-icon">↗</span>
+                                +15.8%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="risk-diamond low">
+                                <div class="risk-crystal">
+                                    <div class="crystal-facet"></div>
+                                    <div class="crystal-facet"></div>
+                                </div>
+                                Low
+                            </div>
+                        </td>
+                        <td>
+                            <button class="diamond-action-btn">
+                                <span class="btn-sparkle">✨</span>
+                                Manage
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="diamond-row">
+                        <td>
+                            <div class="asset-display">
+                                <div class="asset-gem purple"></div>
+                                <div class="asset-info">
+                                    <div class="asset-name">Government Bonds</div>
+                                    <div class="asset-category">Fixed Income</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="value-display">
+                                <span class="currency">$</span>
+                                <span class="amount">3,120,000</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="allocation-display">
+                                <div class="allocation-diamond">
+                                    <div class="diamond-fill" style="--fill: 45%"></div>
+                                </div>
+                                <span class="allocation-text">20%</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="performance-diamond positive">
+                                <span class="perf-icon">↗</span>
+                                +8.3%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="risk-diamond low">
+                                <div class="risk-crystal">
+                                    <div class="crystal-facet"></div>
+                                    <div class="crystal-facet"></div>
+                                </div>
+                                Low
+                            </div>
+                        </td>
+                        <td>
+                            <button class="diamond-action-btn">
+                                <span class="btn-sparkle">✨</span>
+                                Manage
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>`,
+    css: `@keyframes diamondSparkle {
+    0%, 100% { 
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+    50% { 
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+    }
+}
+
+@keyframes crystalReflect {
+    0%, 100% { 
+        background-position: 0% 50%;
+        filter: brightness(1);
+    }
+    50% { 
+        background-position: 100% 50%;
+        filter: brightness(1.3);
+    }
+}
+
+@keyframes floatDiamond {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(120deg); }
+    66% { transform: translateY(-5px) rotate(240deg); }
+}
+
+.diamond-wealth {
+    background: 
+        linear-gradient(135deg, #0c0a1d 0%, #1a162d 50%, #0c0a1d 100%),
+        radial-gradient(circle at 20% 20%, rgba(185, 242, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(230, 230, 250, 0.1) 0%, transparent 50%);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(185, 242, 255, 0.3);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.diamond-header {
+    background: linear-gradient(135deg, 
+        rgba(185, 242, 255, 0.15), 
+        rgba(230, 230, 250, 0.15)
+    );
+    padding: 3rem 2rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.diamond-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+}
+
+.diamond-shape {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, transparent 48%, rgba(185, 242, 255, 0.3) 50%, transparent 52%);
+    animation: floatDiamond 6s ease-in-out infinite;
+}
+
+.diamond-shape:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.diamond-shape:nth-child(2) {
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.diamond-shape:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.diamond-title {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #B9F2FF, #70D1FF, #E6E6FA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.title-icon {
+    font-size: 2rem;
+    animation: diamondSparkle 3s ease-in-out infinite;
+}
+
+.diamond-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+.wealth-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.wealth-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.stat-value.positive {
+    color: #4ade80;
+}
+
+.diamond-content {
+    padding: 2rem;
+}
+
+.asset-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.breakdown-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(185, 242, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.breakdown-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(185, 242, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(185, 242, 255, 0.2);
+}
+
+.card-sparkle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(185, 242, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(230, 230, 250, 0.1) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.breakdown-card:hover .card-sparkle {
+    opacity: 1;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px rgba(185, 242, 255, 0.5));
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+}
+
+.card-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #B9F2FF;
+    margin-bottom: 0.5rem;
+}
+
+.card-growth {
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.card-growth.positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.diamond-table-section {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(185, 242, 255, 0.2);
+    overflow: hidden;
+}
+
+.diamond-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.diamond-table th {
+    background: linear-gradient(135deg, 
+        rgba(185, 242, 255, 0.1), 
+        rgba(230, 230, 250, 0.1)
+    );
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    color: #B9F2FF;
+    border-bottom: 2px solid rgba(185, 242, 255, 0.3);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.diamond-table td {
+    padding: 1.5rem 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.diamond-row:hover td {
+    background: rgba(185, 242, 255, 0.05);
+}
+
+.asset-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.asset-gem {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    position: relative;
+    animation: crystalReflect 3s ease-in-out infinite;
+}
+
+.asset-gem.blue {
+    background: linear-gradient(135deg, #B9F2FF, #70D1FF);
+    box-shadow: 0 0 10px rgba(185, 242, 255, 0.5);
+}
+
+.asset-gem.green {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+}
+
+.asset-gem.purple {
+    background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.asset-info .asset-name {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.asset-info .asset-category {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.value-display {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+}
+
+.currency {
+    color: #B9F2FF;
+    font-weight: 600;
+}
+
+.amount {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+}
+
+.allocation-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.allocation-diamond {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transform: rotate(45deg);
+    position: relative;
+    overflow: hidden;
+}
+
+.diamond-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #B9F2FF, #70D1FF);
+    height: var(--fill);
+    transition: height 1s ease-in-out;
+}
+
+.allocation-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.performance-diamond {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.performance-diamond.positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.risk-diamond {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.risk-crystal {
+    display: flex;
+    gap: 1px;
+}
+
+.crystal-facet {
+    width: 4px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 1px;
+    transform: skew(-20deg);
+}
+
+.risk-diamond.medium .crystal-facet:nth-child(3) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.risk-diamond.low .crystal-facet:nth-child(2):nth-child(3) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.diamond-action-btn {
+    background: linear-gradient(135deg, rgba(185, 242, 255, 0.2), rgba(230, 230, 250, 0.2));
+    border: 1px solid rgba(185, 242, 255, 0.3);
+    color: #B9F2FF;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.diamond-action-btn:hover {
+    background: linear-gradient(135deg, rgba(185, 242, 255, 0.3), rgba(230, 230, 250, 0.3));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(185, 242, 255, 0.3);
+}
+
+.btn-sparkle {
+    animation: diamondSparkle 2s ease-in-out infinite;
+}`,
+    js: `// Diamond wealth interactions
+document.querySelectorAll('.breakdown-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        const sparkles = this.querySelectorAll('.card-sparkle');
+        sparkles.forEach(sparkle => {
+            sparkle.style.animation = 'diamondSparkle 1s ease-in-out';
+        });
+    });
+});
+
+// Animate diamond fills
+document.querySelectorAll('.diamond-fill').forEach(fill => {
+    const fillValue = fill.style.getPropertyValue('--fill');
+    fill.style.height = '0%';
+    
+    setTimeout(() => {
+        fill.style.height = fillValue;
+    }, 800);
+});
+
+// Diamond action buttons
+document.querySelectorAll('.diamond-action-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const originalHTML = this.innerHTML;
+        this.innerHTML = '<span class="btn-sparkle">💎</span> Processing...';
+        this.disabled = true;
+        
+        // Create sparkle effect
+        for (let i = 0; i < 5; i++) {
+            createSparkle(this);
+        }
+        
+        setTimeout(() => {
+            this.innerHTML = originalHTML;
+            this.disabled = false;
+        }, 1500);
+    });
+});
+
+function createSparkle(element) {
+    const sparkle = document.createElement('div');
+    sparkle.style.cssText = \`
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #B9F2FF;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: diamondSparkle 0.6s ease-out forwards;
+    \`;
+    
+    const rect = element.getBoundingClientRect();
+    sparkle.style.left = (Math.random() * rect.width) + 'px';
+    sparkle.style.top = (Math.random() * rect.height) + 'px';
+    
+    element.style.position = 'relative';
+    element.appendChild(sparkle);
+    
+    setTimeout(() => sparkle.remove(), 600);
+}
+
+// Add hover effects to asset gems
+document.querySelectorAll('.asset-gem').forEach(gem => {
+    gem.addEventListener('mouseenter', function() {
+        this.style.transform = 'rotate(45deg) scale(1.2)';
+    });
+    
+    gem.addEventListener('mouseleave', function() {
+        this.style.transform = 'rotate(45deg) scale(1)';
+    });
+});`
+},
+
+// ====================================================================
+// PREMIUM TEMPLATE 57: GOLD ELITE
+// ====================================================================
+premium7: {
+    html: `<div class="gold-elite">
+    <div class="elite-header">
+        <div class="gold-bar"></div>
+        <div class="header-content">
+            <h1 class="elite-title">
+                <span class="title-crown">👑</span>
+                Gold Elite Investments
+            </h1>
+            <p class="elite-subtitle">Exclusive Opportunities for Discerning Investors</p>
+        </div>
+        <div class="elite-badges">
+            <div class="elite-badge">
+                <span class="badge-icon">⭐</span>
+                Premium Tier
+            </div>
+            <div class="elite-badge">
+                <span class="badge-icon">💫</span>
+                Elite Access
+            </div>
+        </div>
+    </div>
+
+    <div class="elite-dashboard">
+        <div class="dashboard-stats">
+            <div class="stat-elite">
+                <div class="stat-gold">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-data">
+                        <div class="stat-value">$24.5M</div>
+                        <div class="stat-label">Portfolio Value</div>
+                    </div>
+                </div>
+                <div class="stat-trend elite-positive">
+                    <span class="trend-arrow">↗</span>
+                    +15.8%
+                </div>
+            </div>
+            <div class="stat-elite">
+                <div class="stat-gold">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-data">
+                        <div class="stat-value">22.3%</div>
+                        <div class="stat-label">Annual Return</div>
+                    </div>
+                </div>
+                <div class="stat-trend elite-positive">
+                    <span class="trend-arrow">↗</span>
+                    +3.2%
+                </div>
+            </div>
+            <div class="stat-elite">
+                <div class="stat-gold">
+                    <div class="stat-icon">🛡️</div>
+                    <div class="stat-data">
+                        <div class="stat-value">AA+</div>
+                        <div class="stat-label">Credit Rating</div>
+                    </div>
+                </div>
+                <div class="stat-trend elite-stable">
+                    <span class="trend-icon">⭐</span>
+                    Stable
+                </div>
+            </div>
+        </div>
+
+        <div class="elite-investments">
+            <div class="investments-grid">
+                <div class="investment-elite">
+                    <div class="investment-header">
+                        <div class="investment-grade gold">A+</div>
+                        <div class="investment-status active">Active</div>
+                    </div>
+                    <h3 class="investment-name">Private Equity Fund</h3>
+                    <div class="investment-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Minimum</span>
+                            <span class="metric-value">$1M</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Horizon</span>
+                            <span class="metric-value">5-7 Years</span>
+                        </div>
+                    </div>
+                    <div class="investment-performance">
+                        <div class="performance-value">28.5%</div>
+                        <div class="performance-label">Historical Return</div>
+                    </div>
+                    <button class="elite-invest-btn">
+                        <span class="btn-glow">✨</span>
+                        Invest Now
+                    </button>
+                </div>
+
+                <div class="investment-elite">
+                    <div class="investment-header">
+                        <div class="investment-grade platinum">AA</div>
+                        <div class="investment-status exclusive">Exclusive</div>
+                    </div>
+                    <h3 class="investment-name">Venture Capital</h3>
+                    <div class="investment-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Minimum</span>
+                            <span class="metric-value">$2.5M</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Horizon</span>
+                            <span class="metric-value">7-10 Years</span>
+                        </div>
+                    </div>
+                    <div class="investment-performance">
+                        <div class="performance-value">35.2%</div>
+                        <div class="performance-label">Target Return</div>
+                    </div>
+                    <button class="elite-invest-btn">
+                        <span class="btn-glow">✨</span>
+                        Invest Now
+                    </button>
+                </div>
+
+                <div class="investment-elite">
+                    <div class="investment-header">
+                        <div class="investment-grade diamond">AAA</div>
+                        <div class="investment-status limited">Limited</div>
+                    </div>
+                    <h3 class="investment-name">Real Estate Development</h3>
+                    <div class="investment-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Minimum</span>
+                            <span class="metric-value">$5M</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Horizon</span>
+                            <span class="metric-value">3-5 Years</span>
+                        </div>
+                    </div>
+                    <div class="investment-performance">
+                        <div class="performance-value">22.8%</div>
+                        <div class="performance-label">Projected IRR</div>
+                    </div>
+                    <button class="elite-invest-btn">
+                        <span class="btn-glow">✨</span>
+                        Invest Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="elite-table-section">
+            <table class="elite-table">
+                <thead>
+                    <tr>
+                        <th>Opportunity</th>
+                        <th>Investment Type</th>
+                        <th>Minimum</th>
+                        <th>Return</th>
+                        <th>Risk</th>
+                        <th>Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="elite-row">
+                        <td>
+                            <div class="opportunity-info">
+                                <div class="opportunity-badge gold">G</div>
+                                <div class="opportunity-details">
+                                    <div class="opportunity-name">Tech Startup Series B</div>
+                                    <div class="opportunity-sector">Technology</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="investment-type">Equity</span>
+                        </td>
+                        <td>
+                            <div class="minimum-amount">$500,000</div>
+                        </td>
+                        <td>
+                            <div class="return-elite high">
+                                <span class="return-icon">🚀</span>
+                                45.8%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="risk-elite high">
+                                <div class="risk-bars">
+                                    <div class="risk-bar active"></div>
+                                    <div class="risk-bar active"></div>
+                                    <div class="risk-bar active"></div>
+                                </div>
+                                High
+                            </div>
+                        </td>
+                        <td>
+                            <div class="availability limited">
+                                <div class="availability-dots">
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                    <div class="dot empty"></div>
+                                </div>
+                                2 Slots Left
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="elite-row">
+                        <td>
+                            <div class="opportunity-info">
+                                <div class="opportunity-badge platinum">P</div>
+                                <div class="opportunity-details">
+                                    <div class="opportunity-name">Commercial Real Estate</div>
+                                    <div class="opportunity-sector">Property</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="investment-type">REIT</span>
+                        </td>
+                        <td>
+                            <div class="minimum-amount">$1,000,000</div>
+                        </td>
+                        <td>
+                            <div class="return-elite medium">
+                                <span class="return-icon">📈</span>
+                                18.3%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="risk-elite medium">
+                                <div class="risk-bars">
+                                    <div class="risk-bar active"></div>
+                                    <div class="risk-bar active"></div>
+                                    <div class="risk-bar"></div>
+                                </div>
+                                Medium
+                            </div>
+                        </td>
+                        <td>
+                            <div class="availability available">
+                                <div class="availability-dots">
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                    <div class="dot"></div>
+                                </div>
+                                Open
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="elite-row">
+                        <td>
+                            <div class="opportunity-info">
+                                <div class="opportunity-badge diamond">D</div>
+                                <div class="opportunity-details">
+                                    <div class="opportunity-name">Infrastructure Fund</div>
+                                    <div class="opportunity-sector">Utilities</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="investment-type">Debt</span>
+                        </td>
+                        <td>
+                            <div class="minimum-amount">$2,000,000</div>
+                        </td>
+                        <td>
+                            <div class="return-elite stable">
+                                <span class="return-icon">🛡️</span>
+                                12.5%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="risk-elite low">
+                                <div class="risk-bars">
+                                    <div class="risk-bar active"></div>
+                                    <div class="risk-bar"></div>
+                                    <div class="risk-bar"></div>
+                                </div>
+                                Low
+                            </div>
+                        </td>
+                        <td>
+                            <div class="availability exclusive">
+                                <div class="availability-dots">
+                                    <div class="dot"></div>
+                                    <div class="dot empty"></div>
+                                    <div class="dot empty"></div>
+                                </div>
+                                VIP Only
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>`,
+    css: `@keyframes goldGlow {
+    0%, 100% { 
+        box-shadow: 
+            0 0 20px rgba(255, 215, 0, 0.4),
+            inset 0 0 20px rgba(255, 215, 0, 0.1);
+    }
+    50% { 
+        box-shadow: 
+            0 0 40px rgba(255, 215, 0, 0.6),
+            inset 0 0 30px rgba(255, 215, 0, 0.2);
+    }
+}
+
+@keyframes elitePulse {
+    0%, 100% { 
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% { 
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+.gold-elite {
+    background: 
+        linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%),
+        radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.15) 0%, transparent 50%);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    animation: goldGlow 4s ease-in-out infinite;
+}
+
+.elite-header {
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.2), 
+        rgba(212, 175, 55, 0.2)
+    );
+    padding: 3rem 2rem 2rem 2rem;
+    position: relative;
+}
+
+.gold-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        #FFD700, 
+        #D4AF37, 
+        #FFD700
+    );
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+}
+
+.header-content {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.elite-title {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FFD700, #D4AF37, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.title-crown {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+    animation: elitePulse 2s ease-in-out infinite;
+}
+
+.elite-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+.elite-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.elite-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(212, 175, 55, 0.2));
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: #FFD700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+}
+
+.elite-dashboard {
+    padding: 2rem;
+}
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-elite {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.stat-elite:hover {
+    border-color: rgba(255, 215, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.stat-gold {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.stat-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.stat-trend {
+    padding: 0.75rem 1.5rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-trend.elite-positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.stat-trend.elite-stable {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.elite-investments {
+    margin-bottom: 3rem;
+}
+
+.investments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.investment-elite {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.investment-elite:hover {
+    border-color: rgba(255, 215, 0, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+}
+
+.investment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.investment-grade {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+}
+
+.investment-grade.gold {
+    background: linear-gradient(135deg, #FFD700, #D4AF37);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.investment-grade.platinum {
+    background: linear-gradient(135deg, #E5E4E2, #BEC2CB);
+    box-shadow: 0 5px 15px rgba(229, 228, 226, 0.3);
+}
+
+.investment-grade.diamond {
+    background: linear-gradient(135deg, #B9F2FF, #70D1FF);
+    box-shadow: 0 5px 15px rgba(185, 242, 255, 0.3);
+}
+
+.investment-status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid;
+}
+
+.investment-status.active {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.investment-status.exclusive {
+    background: rgba(139, 92, 246, 0.2);
+    color: #8b5cf6;
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.investment-status.limited {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.investment-name {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+}
+
+.investment-metrics {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metric-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.metric-value {
+    color: #FFD700;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.investment-performance {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.performance-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4ade80;
+    margin-bottom: 0.5rem;
+}
+
+.performance-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.elite-invest-btn {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(212, 175, 55, 0.3));
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    color: #FFD700;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.elite-invest-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.4), rgba(212, 175, 55, 0.4));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.btn-glow {
+    animation: elitePulse 1.5s ease-in-out infinite;
+}
+
+.elite-table-section {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.elite-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.elite-table th {
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.1), 
+        rgba(212, 175, 55, 0.1)
+    );
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    color: #FFD700;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.elite-table td {
+    padding: 1.5rem 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.elite-row:hover td {
+    background: rgba(255, 215, 0, 0.05);
+}
+
+.opportunity-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.opportunity-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 0.8rem;
+}
+
+.opportunity-badge.gold {
+    background: linear-gradient(135deg, #FFD700, #D4AF37);
+}
+
+.opportunity-badge.platinum {
+    background: linear-gradient(135deg, #E5E4E2, #BEC2CB);
+}
+
+.opportunity-badge.diamond {
+    background: linear-gradient(135deg, #B9F2FF, #70D1FF);
+}
+
+.opportunity-details .opportunity-name {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.opportunity-details .opportunity-sector {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.investment-type {
+    padding: 0.4rem 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.minimum-amount {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFD700;
+}
+
+.return-elite {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.return-elite.high {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.return-elite.medium {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.return-elite.stable {
+    background: rgba(6, 182, 212, 0.2);
+    color: #06b6d4;
+    border-color: rgba(6, 182, 212, 0.3);
+}
+
+.risk-elite {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.risk-bars {
+    display: flex;
+    gap: 2px;
+}
+
+.risk-bar {
+    width: 6px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
+}
+
+.risk-bar.active {
+    background: #4ade80;
+}
+
+.risk-elite.high .risk-bar {
+    background: #4ade80;
+}
+
+.risk-elite.medium .risk-bar:nth-child(3) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.risk-elite.low .risk-bar:nth-child(2):nth-child(3) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.availability {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.availability-dots {
+    display: flex;
+    gap: 2px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ade80;
+}
+
+.dot.empty {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.availability.limited .dot:nth-child(3) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.availability.exclusive .dot:nth-child(2):nth-child(3) {
+    background: rgba(255, 255, 255, 0.3);
+}`,
+    js: `// Gold elite interactions
+document.querySelectorAll('.investment-elite').forEach(investment => {
+    investment.addEventListener('mouseenter', function() {
+        this.style.animation = 'goldGlow 2s ease-in-out infinite';
+    });
+    
+    investment.addEventListener('mouseleave', function() {
+        this.style.animation = 'none';
+    });
+});
+
+// Elite invest buttons
+document.querySelectorAll('.elite-invest-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const originalHTML = this.innerHTML;
+        this.innerHTML = '<span class="btn-glow">💫</span> Processing...';
+        this.disabled = true;
+        
+        // Create gold particle effect
+        for (let i = 0; i < 8; i++) {
+            createGoldParticle(this);
+        }
+        
+        setTimeout(() => {
+            this.innerHTML = originalHTML;
+            this.disabled = false;
+            
+            // Add success state
+            this.style.background = 'linear-gradient(135deg, rgba(34, 197, 94, 0.4), rgba(212, 175, 55, 0.3))';
+            this.style.borderColor = 'rgba(34, 197, 94, 0.5)';
+            
+            setTimeout(() => {
+                this.style.background = 'linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(212, 175, 55, 0.3))';
+                this.style.borderColor = 'rgba(255, 215, 0, 0.5)';
+            }, 1000);
+        }, 2000);
+    });
+});
+
+function createGoldParticle(element) {
+    const particle = document.createElement('div');
+    particle.style.cssText = \`
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: #FFD700;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: eliteParticle 1s ease-out forwards;
+    \`;
+    
+    const rect = element.getBoundingClientRect();
+    particle.style.left = (Math.random() * rect.width) + 'px';
+    particle.style.top = (Math.random() * rect.height) + 'px';
+    
+    element.style.position = 'relative';
+    element.appendChild(particle);
+    
+    setTimeout(() => particle.remove(), 1000);
+}
+
+// Add CSS for particle animation
+const style = document.createElement('style');
+style.textContent = \`
+    @keyframes eliteParticle {
+        0% {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(\${Math.random() * 100 - 50}px, \${Math.random() * 100 - 50}px) scale(0);
+        }
+    }
+\`;
+document.head.appendChild(style);
+
+// Stat elite hover effects
+document.querySelectorAll('.stat-elite').forEach(stat => {
+    stat.addEventListener('mouseenter', function() {
+        const icon = this.querySelector('.stat-icon');
+        icon.style.animation = 'elitePulse 0.6s ease-in-out';
+    });
+});`
+},
+
+// ====================================================================
+// PREMIUM TEMPLATE 58: PLATINUM FINANCE
+// ====================================================================
+premium8: {
+    html: `<div class="platinum-finance">
+    <div class="platinum-header">
+        <div class="metallic-overlay"></div>
+        <div class="header-content">
+            <h1 class="platinum-title">
+                <span class="title-icon">⚪</span>
+                Platinum Financial Services
+            </h1>
+            <p class="platinum-subtitle">Metallic Excellence in Wealth Management</p>
+        </div>
+        <div class="platinum-controls">
+            <div class="control-group">
+                <button class="platinum-btn active">Portfolio</button>
+                <button class="platinum-btn">Analytics</button>
+                <button class="platinum-btn">Reports</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="platinum-dashboard">
+        <div class="financial-overview">
+            <div class="overview-platinum">
+                <div class="overview-icon">💼</div>
+                <div class="overview-content">
+                    <div class="overview-value">$18.2M</div>
+                    <div class="overview-label">Managed Assets</div>
+                </div>
+                <div class="overview-trend positive">+8.5%</div>
+            </div>
+            <div class="overview-platinum">
+                <div class="overview-icon">📊</div>
+                <div class="overview-content">
+                    <div class="overview-value">16.8%</div>
+                    <div class="overview-label">Average Return</div>
+                </div>
+                <div class="overview-trend positive">+2.3%</div>
+            </div>
+            <div class="overview-platinum">
+                <div class="overview-icon">🛡️</div>
+                <div class="overview-content">
+                    <div class="overview-value">94%</div>
+                    <div class="overview-label">Success Rate</div>
+                </div>
+                <div class="overview-trend stable">Consistent</div>
+            </div>
+        </div>
+
+        <div class="portfolio-breakdown">
+            <h3 class="section-title">Portfolio Composition</h3>
+            <div class="composition-grid">
+                <div class="composition-item">
+                    <div class="composition-header">
+                        <span class="composition-name">Equity Funds</span>
+                        <span class="composition-percent">42%</span>
+                    </div>
+                    <div class="composition-bar">
+                        <div class="composition-fill" style="--fill: 85%"></div>
+                    </div>
+                    <div class="composition-value">$7.64M</div>
+                </div>
+                <div class="composition-item">
+                    <div class="composition-header">
+                        <span class="composition-name">Fixed Income</span>
+                        <span class="composition-percent">28%</span>
+                    </div>
+                    <div class="composition-bar">
+                        <div class="composition-fill" style="--fill: 65%"></div>
+                    </div>
+                    <div class="composition-value">$5.10M</div>
+                </div>
+                <div class="composition-item">
+                    <div class="composition-header">
+                        <span class="composition-name">Alternatives</span>
+                        <span class="composition-percent">20%</span>
+                    </div>
+                    <div class="composition-bar">
+                        <div class="composition-fill" style="--fill: 45%"></div>
+                    </div>
+                    <div class="composition-value">$3.64M</div>
+                </div>
+                <div class="composition-item">
+                    <div class="composition-header">
+                        <span class="composition-name">Cash & Equivalents</span>
+                        <span class="composition-percent">10%</span>
+                    </div>
+                    <div class="composition-bar">
+                        <div class="composition-fill" style="--fill: 25%"></div>
+                    </div>
+                    <div class="composition-value">$1.82M</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="platinum-table-section">
+            <table class="platinum-table">
+                <thead>
+                    <tr>
+                        <th>Fund Name</th>
+                        <th>Asset Class</th>
+                        <th>Current Value</th>
+                        <th>Allocation</th>
+                        <th>YTD Return</th>
+                        <th>Risk Level</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="platinum-row">
+                        <td>
+                            <div class="fund-info">
+                                <div class="fund-badge platinum">P</div>
+                                <div class="fund-details">
+                                    <div class="fund-name">Global Growth Equity</div>
+                                    <div class="fund-manager">BlackRock Advisors</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="asset-class">Equity</span>
+                        </td>
+                        <td>
+                            <div class="fund-value">$3,250,000</div>
+                        </td>
+                        <td>
+                            <div class="allocation-platinum">
+                                <div class="allocation-track">
+                                    <div class="allocation-progress" style="--progress: 75%"></div>
+                                </div>
+                                <span class="allocation-text">18%</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="return-platinum high">
+                                <span class="return-arrow">↗</span>
+                                22.8%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="risk-platinum medium">
+                                <div class="risk-indicator">
+                                    <div class="risk-dot"></div>
+                                    <div class="risk-dot"></div>
+                                    <div class="risk-dot"></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="platinum-actions">
+                                <button class="action-platinum view">
+                                    <span class="action-icon">👁️</span>
+                                </button>
+                                <button class="action-platinum trade">
+                                    <span class="action-icon">💱</span>
+                                </button>
+                                <button class="action-platinum analyze">
+                                    <span class="action-icon">📈</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="platinum-row">
+                        <td>
+                            <div class="fund-info">
+                                <div class="fund-badge silver">S</div>
+                                <div class="fund-details">
+                                    <div class="fund-name">Corporate Bond Fund</div>
+                                    <div class="fund-manager">Vanguard Group</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="asset-class">Fixed Income</span>
+                        </td>
+                        <td>
+                            <div class="fund-value">$2,180,000</div>
+                        </td>
+                        <td>
+                            <div class="allocation-platinum">
+                                <div class="allocation-track">
+                                    <div class="allocation-progress" style="--progress: 60%"></div>
+                                </div>
+                                <span class="allocation-text">12%</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="return-platinum medium">
+                                <span class="return-arrow">↗</span>
+                                8.5%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="risk-platinum low">
+                                <div class="risk-indicator">
+                                    <div class="risk-dot"></div>
+                                    <div class="risk-dot"></div>
+                                    <div class="risk-dot"></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="platinum-actions">
+                                <button class="action-platinum view">
+                                    <span class="action-icon">👁️</span>
+                                </button>
+                                <button class="action-platinum trade">
+                                    <span class="action-icon">💱</span>
+                                </button>
+                                <button class="action-platinum analyze">
+                                    <span class="action-icon">📈</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="platinum-row">
+                        <td>
+                            <div class="fund-info">
+                                <div class="fund-badge gold">G</div>
+                                <div class="fund-details">
+                                    <div class="fund-name">Real Estate Income</div>
+                                    <div class="fund-manager">PIMCO</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="asset-class">Real Estate</span>
+                        </td>
+                        <td>
+                            <div class="fund-value">$1,950,000</div>
+                        </td>
+                        <td>
+                            <div class="allocation-platinum">
+                                <div class="allocation-track">
+                                    <div class="allocation-progress" style="--progress: 50%"></div>
+                                </div>
+                                <span class="allocation-text">11%</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="return-platinum stable">
+                                <span class="return-arrow">↗</span>
+                                12.3%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="risk-platinum medium">
+                                <div class="risk-indicator">
+                                    <div class="risk-dot"></div>
+                                    <div class="risk-dot"></div>
+                                    <div class="risk-dot"></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="platinum-actions">
+                                <button class="action-platinum view">
+                                    <span class="action-icon">👁️</span>
+                                </button>
+                                <button class="action-platinum trade">
+                                    <span class="action-icon">💱</span>
+                                </button>
+                                <button class="action-platinum analyze">
+                                    <span class="action-icon">📈</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>`,
+    css: `@keyframes metallicShine {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@keyframes platinumGlow {
+    0%, 100% { 
+        border-color: rgba(229, 228, 226, 0.5);
+        box-shadow: 0 0 20px rgba(229, 228, 226, 0.3);
+    }
+    50% { 
+        border-color: rgba(229, 228, 226, 0.8);
+        box-shadow: 0 0 40px rgba(229, 228, 226, 0.5);
+    }
+}
+
+.platinum-finance {
+    background: 
+        linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 50%, #2d2d2d 100%),
+        radial-gradient(circle at 20% 20%, rgba(229, 228, 226, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(190, 194, 203, 0.15) 0%, transparent 50%);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(229, 228, 226, 0.5);
+    animation: platinumGlow 4s ease-in-out infinite;
+}
+
+.platinum-header {
+    background: linear-gradient(135deg, 
+        rgba(229, 228, 226, 0.2), 
+        rgba(190, 194, 203, 0.2)
+    );
+    padding: 3rem 2rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.metallic-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent 48%, 
+        rgba(229, 228, 226, 0.1) 50%, 
+        transparent 52%
+    );
+    background-size: 50px 50px;
+    opacity: 0.3;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.platinum-title {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #E5E4E2, #BEC2CB, #E5E4E2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.title-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(229, 228, 226, 0.5));
+}
+
+.platinum-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+.platinum-controls {
+    display: flex;
+    justify-content: center;
+}
+
+.control-group {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 0.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.platinum-btn {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.platinum-btn.active,
+.platinum-btn:hover {
+    background: linear-gradient(135deg, rgba(229, 228, 226, 0.3), rgba(190, 194, 203, 0.3));
+    color: white;
+}
+
+.platinum-dashboard {
+    padding: 2rem;
+}
+
+.financial-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.overview-platinum {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.overview-platinum:hover {
+    border-color: rgba(229, 228, 226, 0.3);
+    transform: translateY(-5px);
+}
+
+.overview-platinum::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(229, 228, 226, 0.1), 
+        transparent
+    );
+    animation: metallicShine 3s infinite;
+}
+
+.overview-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px rgba(229, 228, 226, 0.5));
+}
+
+.overview-content {
+    flex: 1;
+}
+
+.overview-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #E5E4E2;
+    margin-bottom: 0.25rem;
+}
+
+.overview-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.overview-trend {
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+}
+
+.overview-trend.positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.overview-trend.stable {
+    background: rgba(229, 228, 226, 0.2);
+    color: #E5E4E2;
+    border-color: rgba(229, 228, 226, 0.3);
+}
+
+.portfolio-breakdown {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    color: #E5E4E2;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.composition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.composition-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.composition-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.composition-name {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+}
+
+.composition-percent {
+    color: #E5E4E2;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.composition-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.composition-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #E5E4E2, #BEC2CB);
+    width: var(--fill);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+    position: relative;
+}
+
+.composition-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent
+    );
+    animation: metallicShine 2s infinite;
+}
+
+.composition-value {
+    color: #E5E4E2;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.platinum-table-section {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.platinum-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.platinum-table th {
+    background: linear-gradient(135deg, 
+        rgba(229, 228, 226, 0.1), 
+        rgba(190, 194, 203, 0.1)
+    );
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    color: #E5E4E2;
+    border-bottom: 2px solid rgba(229, 228, 226, 0.3);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.platinum-table td {
+    padding: 1.5rem 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.platinum-row:hover td {
+    background: rgba(229, 228, 226, 0.05);
+}
+
+.fund-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fund-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #2d2d2d;
+    font-size: 0.8rem;
+}
+
+.fund-badge.platinum {
+    background: linear-gradient(135deg, #E5E4E2, #BEC2CB);
+    box-shadow: 0 5px 15px rgba(229, 228, 226, 0.3);
+}
+
+.fund-badge.silver {
+    background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+    box-shadow: 0 5px 15px rgba(192, 192, 192, 0.3);
+}
+
+.fund-badge.gold {
+    background: linear-gradient(135deg, #FFD700, #D4AF37);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.fund-details .fund-name {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.fund-details .fund-manager {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.asset-class {
+    padding: 0.4rem 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.fund-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #E5E4E2;
+}
+
+.allocation-platinum {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.allocation-track {
+    width: 80px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.allocation-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #E5E4E2, #BEC2CB);
+    width: var(--progress);
+    border-radius: 3px;
+    transition: width 1s ease-in-out;
+}
+
+.allocation-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    min-width: 35px;
+}
+
+.return-platinum {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.return-platinum.high {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.return-platinum.medium {
+    background: rgba(229, 228, 226, 0.2);
+    color: #E5E4E2;
+    border-color: rgba(229, 228, 226, 0.3);
+}
+
+.return-platinum.stable {
+    background: rgba(6, 182, 212, 0.2);
+    color: #06b6d4;
+    border-color: rgba(6, 182, 212, 0.3);
+}
+
+.risk-platinum {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.risk-indicator {
+    display: flex;
+    gap: 2px;
+}
+
+.risk-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.risk-platinum.medium .risk-dot {
+    background: #f59e0b;
+}
+
+.risk-platinum.low .risk-dot {
+    background: #4ade80;
+}
+
+.risk-platinum.medium .risk-dot:nth-child(3) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.platinum-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-platinum {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.action-platinum:hover {
+    background: rgba(229, 228, 226, 0.2);
+    border-color: rgba(229, 228, 226, 0.5);
+    color: #E5E4E2;
+    transform: scale(1.1);
+}`,
+    js: `// Platinum finance interactions
+document.querySelectorAll('.platinum-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.platinum-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Add metallic shine effect
+        this.style.background = 'linear-gradient(135deg, rgba(229, 228, 226, 0.4), rgba(190, 194, 203, 0.4))';
+        setTimeout(() => {
+            this.style.background = 'linear-gradient(135deg, rgba(229, 228, 226, 0.3), rgba(190, 194, 203, 0.3))';
+        }, 300);
+    });
+});
+
+// Animate composition fills
+document.querySelectorAll('.composition-fill').forEach(fill => {
+    const width = fill.style.getPropertyValue('--fill');
+    fill.style.width = '0%';
+    
+    setTimeout(() => {
+        fill.style.width = width;
+    }, 800);
+});
+
+// Animate allocation progress
+document.querySelectorAll('.allocation-progress').forEach(progress => {
+    const width = progress.style.getPropertyValue('--progress');
+    progress.style.width = '0%';
+    
+    setTimeout(() => {
+        progress.style.width = width;
+    }, 1200);
+});
+
+// Platinum action buttons
+document.querySelectorAll('.action-platinum').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const type = this.classList[1];
+        let message = '';
+        
+        switch(type) {
+            case 'view':
+                message = 'Opening fund details...';
+                break;
+            case 'trade':
+                message = 'Initiating trade...';
+                break;
+            case 'analyze':
+                message = 'Running analysis...';
+                break;
+        }
+        
+        const originalHTML = this.innerHTML;
+        this.innerHTML = '⏳';
+        this.disabled = true;
+        
+        setTimeout(() => {
+            this.innerHTML = originalHTML;
+            this.disabled = false;
+            
+            // Add success effect
+            this.style.background = 'rgba(34, 197, 94, 0.3)';
+            this.style.borderColor = 'rgba(34, 197, 94, 0.5)';
+            
+            setTimeout(() => {
+                this.style.background = 'rgba(255, 255, 255, 0.1)';
+                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            }, 1000);
+        }, 1500);
+    });
+});
+
+// Overview card hover effects
+document.querySelectorAll('.overview-platinum').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        const icon = this.querySelector('.overview-icon');
+        icon.style.transform = 'scale(1.1)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        const icon = this.querySelector('.overview-icon');
+        icon.style.transform = 'scale(1)';
+    });
+});`
+},
+
+// ====================================================================
+// PREMIUM TEMPLATE 59: EMERALD GROWTH
+// ====================================================================
+premium9: {
+    html: `<div class="emerald-growth">
+    <div class="emerald-header">
+        <div class="emerald-pattern"></div>
+        <div class="header-content">
+            <h1 class="emerald-title">
+                <span class="title-icon">💚</span>
+                Emerald Growth Strategies
+            </h1>
+            <p class="emerald-subtitle">Sustainable Wealth Creation & Growth Management</p>
+        </div>
+        <div class="growth-indicators">
+            <div class="indicator">
+                <span class="indicator-label">Portfolio Growth</span>
+                <span class="indicator-value positive">+18.3%</span>
+            </div>
+            <div class="indicator">
+                <span class="indicator-label">Sustainable Yield</span>
+                <span class="indicator-value">6.8%</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="emerald-content">
+        <div class="growth-metrics">
+            <div class="metric-emerald">
+                <div class="metric-visual">
+                    <div class="growth-ring" style="--growth: 75%">
+                        <div class="ring-fill"></div>
+                        <div class="ring-value">75%</div>
+                    </div>
+                </div>
+                <div class="metric-data">
+                    <h3>Growth Achievement</h3>
+                    <p>Exceeding target growth metrics by 15%</p>
+                    <div class="metric-trend positive">+5.2% vs Target</div>
+                </div>
+            </div>
+            <div class="metric-emerald">
+                <div class="metric-visual">
+                    <div class="sustainability-score" style="--score: 88%">
+                        <div class="score-fill"></div>
+                        <div class="score-value">88%</div>
+                    </div>
+                </div>
+                <div class="metric-data">
+                    <h3>Sustainability Index</h3>
+                    <p>High environmental and social governance</p>
+                    <div class="metric-trend positive">Industry Leader</div>
+                </div>
+            </div>
+            <div class="metric-emerald">
+                <div class="metric-visual">
+                    <div class="risk-adjusted" style="--adjustment: 92%">
+                        <div class="adjustment-fill"></div>
+                        <div class="adjustment-value">1.25</div>
+                    </div>
+                </div>
+                <div class="metric-data">
+                    <h3>Risk Adjusted Return</h3>
+                    <p>Superior returns with managed risk exposure</p>
+                    <div class="metric-trend positive">Optimal</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="emerald-table-section">
+            <table class="emerald-table">
+                <thead>
+                    <tr>
+                        <th>Growth Opportunity</th>
+                        <th>Sector</th>
+                        <th>Investment</th>
+                        <th>Growth Rate</th>
+                        <th>Sustainability</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="emerald-row">
+                        <td>
+                            <div class="opportunity-emerald">
+                                <div class="opportunity-icon">🌱</div>
+                                <div class="opportunity-details">
+                                    <div class="opportunity-name">Renewable Energy Fund</div>
+                                    <div class="opportunity-desc">Solar & Wind Infrastructure</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="sector-tag green">Clean Energy</span>
+                        </td>
+                        <td>
+                            <div class="investment-amount">$2,500,000</div>
+                        </td>
+                        <td>
+                            <div class="growth-rate high">
+                                <span class="rate-icon">🚀</span>
+                                28.5%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sustainability-score">
+                                <div class="score-bars">
+                                    <div class="score-bar active"></div>
+                                    <div class="score-bar active"></div>
+                                    <div class="score-bar active"></div>
+                                    <div class="score-bar active"></div>
+                                    <div class="score-bar"></div>
+                                </div>
+                                <span>4/5 Stars</span>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="emerald-action-btn">
+                                <span class="btn-leaf">🍃</span>
+                                Invest
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="emerald-row">
+                        <td>
+                            <div class="opportunity-emerald">
+                                <div class="opportunity-icon">💧</div>
+                                <div class="opportunity-details">
+                                    <div class="opportunity-name">Water Technology</div>
+                                    <div class="opportunity-desc">Purification & Conservation</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="sector-tag blue">Water Tech</span>
+                        </td>
+                        <td>
+                            <div class="investment-amount">$1,800,000</div>
+                        </td>
+                        <td>
+                            <div class="growth-rate medium">
+                                <span class="rate-icon">📈</span>
+                                18.3%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sustainability-score">
+                                <div class="score-bars">
+                                    <div class="score-bar active"></div>
+                                    <div class="score-bar active"></div>
+                                    <div class="score-bar active"></div>
+                                    <div class="score-bar active"></div>
+                                    <div class="score-bar active"></div>
+                                </div>
+                                <span>5/5 Stars</span>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="emerald-action-btn">
+                                <span class="btn-leaf">🍃</span>
+                                Invest
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="emerald-row">
+                        <td>
+                            <div class="opportunity-emerald">
+                                <div class="opportunity-icon">🏗️</div>
+                                <div class="opportunity-details">
+                                    <div class="opportunity-name">Green Construction</div>
+                                    <div class="opportunity-desc">Sustainable Building Materials</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="sector-tag teal">Construction</span>
+                        </td>
+                        <td>
+                            <div class="investment-amount">$3,200,000</div>
+                        </td>
+                        <td>
+                            <div class="growth-rate high">
+                                <span class="rate-icon">🚀</span>
+                                22.8%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sustainability-score">
+                                <div class="score-bars">
+                                    <div class="score-bar active"></div>
+                                    <div class="score-bar active"></div>
+                                    <div class="score-bar active"></div>
+                                    <div class="score-bar"></div>
+                                    <div class="score-bar"></div>
+                                </div>
+                                <span>3/5 Stars</span>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="emerald-action-btn">
+                                <span class="btn-leaf">🍃</span>
+                                Invest
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>`,
+    css: `@keyframes emeraldPulse {
+    0%, 100% { 
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+    }
+    50% { 
+        box-shadow: 0 0 40px rgba(16, 185, 129, 0.6);
+    }
+}
+
+@keyframes leafFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-5px) rotate(-5deg); }
+    66% { transform: translateY(-3px) rotate(5deg); }
+}
+
+@keyframes growRing {
+    from { stroke-dashoffset: 283; }
+    to { stroke-dashoffset: calc(283 - (283 * var(--growth) / 100)); }
+}
+
+.emerald-growth {
+    background: 
+        linear-gradient(135deg, #052e16 0%, #065f46 50%, #047857 100%),
+        radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(5, 150, 105, 0.2) 0%, transparent 50%);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(16, 185, 129, 0.5);
+    animation: emeraldPulse 4s ease-in-out infinite;
+}
+
+.emerald-header {
+    background: linear-gradient(135deg, 
+        rgba(16, 185, 129, 0.2), 
+        rgba(5, 150, 105, 0.2)
+    );
+    padding: 3rem 2rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.emerald-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(5, 150, 105, 0.1) 0%, transparent 50%);
+    opacity: 0.3;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.emerald-title {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #10b981, #34d399, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.title-icon {
+    font-size: 2rem;
+    animation: leafFloat 3s ease-in-out infinite;
+}
+
+.emerald-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+.growth-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.indicator-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.indicator-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.indicator-value.positive {
+    color: #34d399;
+}
+
+.emerald-content {
+    padding: 2rem;
+}
+
+.growth-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.metric-emerald {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.metric-emerald:hover {
+    border-color: rgba(16, 185, 129, 0.3);
+    transform: translateY(-5px);
+}
+
+.metric-visual {
+    position: relative;
+}
+
+.growth-ring,
+.sustainability-score,
+.risk-adjusted {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring-fill,
+.score-fill,
+.adjustment-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#10b981 0% var(--growth), transparent var(--growth) 100%);
+    mask: radial-gradient(transparent 60%, black 61%);
+}
+
+.score-fill {
+    background: conic-gradient(#10b981 0% var(--score), transparent var(--score) 100%);
+}
+
+.adjustment-fill {
+    background: conic-gradient(#10b981 0% var(--adjustment), transparent var(--adjustment) 100%);
+}
+
+.ring-value,
+.score-value,
+.adjustment-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #10b981;
+    z-index: 2;
+}
+
+.metric-data {
+    flex: 1;
+}
+
+.metric-data h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+}
+
+.metric-data p {
+    margin: 0 0 1rem 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.metric-trend {
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.metric-trend.positive {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.emerald-table-section {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.emerald-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.emerald-table th {
+    background: linear-gradient(135deg, 
+        rgba(16, 185, 129, 0.1), 
+        rgba(5, 150, 105, 0.1)
+    );
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    color: #10b981;
+    border-bottom: 2px solid rgba(16, 185, 129, 0.3);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.emerald-table td {
+    padding: 1.5rem 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.emerald-row:hover td {
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.opportunity-emerald {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.opportunity-icon {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.5));
+}
+
+.opportunity-details .opportunity-name {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.opportunity-details .opportunity-desc {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.sector-tag {
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sector-tag.green {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.sector-tag.blue {
+    background: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.sector-tag.teal {
+    background: rgba(6, 182, 212, 0.2);
+    color: #06b6d4;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.investment-amount {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #10b981;
+}
+
+.growth-rate {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.growth-rate.high {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.growth-rate.medium {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.sustainability-score {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.score-bars {
+    display: flex;
+    gap: 2px;
+}
+
+.score-bar {
+    width: 6px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
+}
+
+.score-bar.active {
+    background: #10b981;
+}
+
+.emerald-action-btn {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(5, 150, 105, 0.3));
+    border: 1px solid rgba(16, 185, 129, 0.5);
+    color: #10b981;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.emerald-action-btn:hover {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.4), rgba(5, 150, 105, 0.4));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-leaf {
+    animation: leafFloat 2s ease-in-out infinite;
+}`,
+    js: `// Emerald growth interactions
+document.querySelectorAll('.metric-emerald').forEach(metric => {
+    metric.addEventListener('mouseenter', function() {
+        const visual = this.querySelector('.metric-visual > div');
+        visual.style.animation = 'emeraldPulse 1s ease-in-out';
+    });
+});
+
+// Animate growth rings
+document.querySelectorAll('.growth-ring, .sustainability-score, .risk-adjusted').forEach(ring => {
+    const growth = ring.style.getPropertyValue('--growth') || 
+                  ring.style.getPropertyValue('--score') || 
+                  ring.style.getPropertyValue('--adjustment');
+    
+    const fill = ring.querySelector('div[class*="fill"]');
+    fill.style.background = 'conic-gradient(#10b981 0% 0%, transparent 0% 100%)';
+    
+    setTimeout(() => {
+        fill.style.background = \`conic-gradient(#10b981 0% \${growth}, transparent \${growth} 100%)\`;
+    }, 500);
+});
+
+// Emerald action buttons
+document.querySelectorAll('.emerald-action-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const originalHTML = this.innerHTML;
+        this.innerHTML = '<span class="btn-leaf">🌱</span> Planting...';
+        this.disabled = true;
+        
+        // Create leaf particle effect
+        for (let i = 0; i < 5; i++) {
+            createLeafParticle(this);
+        }
+        
+        setTimeout(() => {
+            this.innerHTML = originalHTML;
+            this.disabled = false;
+            
+            // Add success state
+            this.style.background = 'linear-gradient(135deg, rgba(34, 197, 94, 0.4), rgba(5, 150, 105, 0.3))';
+            this.style.borderColor = 'rgba(34, 197, 94, 0.5)';
+            
+            setTimeout(() => {
+                this.style.background = 'linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(5, 150, 105, 0.3))';
+                this.style.borderColor = 'rgba(16, 185, 129, 0.5)';
+            }, 1000);
+        }, 2000);
+    });
+});
+
+function createLeafParticle(element) {
+    const leaf = document.createElement('div');
+    leaf.style.cssText = \`
+        position: absolute;
+        font-size: 0.8rem;
+        pointer-events: none;
+        animation: leafFloat 1s ease-out forwards;
+    \`;
+    leaf.textContent = '🍃';
+    
+    const rect = element.getBoundingClientRect();
+    leaf.style.left = (Math.random() * rect.width) + 'px';
+    leaf.style.top = (Math.random() * rect.height) + 'px';
+    
+    element.style.position = 'relative';
+    element.appendChild(leaf);
+    
+    setTimeout(() => leaf.remove(), 1000);
+}
+
+// Add hover effects to opportunity icons
+document.querySelectorAll('.opportunity-icon').forEach(icon => {
+    icon.addEventListener('mouseenter', function() {
+        this.style.animation = 'leafFloat 0.6s ease-in-out';
+    });
+});`
+},
+
+// ====================================================================
+// PREMIUM TEMPLATE 60: SAPPHIRE ANALYTICS
+// ====================================================================
+premium10: {
+    html: `<div class="sapphire-analytics">
+    <div class="sapphire-header">
+        <div class="crystal-background">
+            <div class="crystal-shard"></div>
+            <div class="crystal-shard"></div>
+            <div class="crystal-shard"></div>
+        </div>
+        <div class="header-content">
+            <h1 class="sapphire-title">
+                <span class="title-icon">🔷</span>
+                Sapphire Analytics Suite
+            </h1>
+            <p class="sapphire-subtitle">Deep Insights with Crystal Clear Precision</p>
+        </div>
+        <div class="analytics-controls">
+            <div class="control-panel">
+                <button class="control-btn active">Real-time</button>
+                <button class="control-btn">Historical</button>
+                <button class="control-btn">Predictive</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="sapphire-dashboard">
+        <div class="analytics-overview">
+            <div class="overview-sapphire">
+                <div class="overview-crystal blue"></div>
+                <div class="overview-data">
+                    <div class="data-value">94.5%</div>
+                    <div class="data-label">Accuracy Score</div>
+                    <div class="data-trend positive">+2.3%</div>
+                </div>
+            </div>
+            <div class="overview-sapphire">
+                <div class="overview-crystal purple"></div>
+                <div class="overview-data">
+                    <div class="data-value">12.8M</div>
+                    <div class="data-label">Data Points</div>
+                    <div class="data-trend positive">+1.5K/sec</div>
+                </div>
+            </div>
+            <div class="overview-sapphire">
+                <div class="overview-crystal teal"></div>
+                <div class="overview-data">
+                    <div class="data-value">99.9%</div>
+                    <div class="data-label">Uptime</div>
+                    <div class="data-trend stable">Reliable</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="insights-grid">
+            <div class="insight-card">
+                <div class="insight-header">
+                    <h3>Market Trends</h3>
+                    <div class="insight-badge trending">Trending</div>
+                </div>
+                <div class="insight-visual">
+                    <div class="trend-sparkline" style="--trend-data: 30,45,60,40,75,90,110"></div>
+                </div>
+                <div class="insight-stats">
+                    <div class="stat">
+                        <span class="stat-label">Correlation</span>
+                        <span class="stat-value">0.87</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Volatility</span>
+                        <span class="stat-value">12.3%</span>
+                    </div>
+                </div>
+                <button class="sapphire-action-btn analyze">
+                    <span class="btn-crystal">💎</span>
+                    Deep Analyze
+                </button>
+            </div>
+
+            <div class="insight-card">
+                <div class="insight-header">
+                    <h3>Risk Assessment</h3>
+                    <div class="insight-badge stable">Stable</div>
+                </div>
+                <div class="insight-visual">
+                    <div class="risk-radar" style="--risk-level: 65%">
+                        <div class="radar-fill"></div>
+                        <div class="radar-value">65%</div>
+                    </div>
+                </div>
+                <div class="insight-stats">
+                    <div class="stat">
+                        <span class="stat-label">VAR</span>
+                        <span class="stat-value">4.2%</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Stress Test</span>
+                        <span class="stat-value">Pass</span>
+                    </div>
+                </div>
+                <button class="sapphire-action-btn assess">
+                    <span class="btn-crystal">💎</span>
+                    Assess Risk
+                </button>
+            </div>
+
+            <div class="insight-card">
+                <div class="insight-header">
+                    <h3>Performance Metrics</h3>
+                    <div class="insight-badge optimal">Optimal</div>
+                </div>
+                <div class="insight-visual">
+                    <div class="performance-gauge" style="--performance: 82%">
+                        <div class="gauge-fill"></div>
+                        <div class="gauge-value">82%</div>
+                    </div>
+                </div>
+                <div class="insight-stats">
+                    <div class="stat">
+                        <span class="stat-label">Alpha</span>
+                        <span class="stat-value">1.25</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Beta</span>
+                        <span class="stat-value">0.89</span>
+                    </div>
+                </div>
+                <button class="sapphire-action-btn optimize">
+                    <span class="btn-crystal">💎</span>
+                    Optimize
+                </button>
+            </div>
+        </div>
+
+        <div class="sapphire-table-section">
+            <table class="sapphire-table">
+                <thead>
+                    <tr>
+                        <th>Analytic Metric</th>
+                        <th>Current Value</th>
+                        <th>Benchmark</th>
+                        <th>Trend</th>
+                        <th>Confidence</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="sapphire-row">
+                        <td>
+                            <div class="metric-display">
+                                <div class="metric-crystal blue"></div>
+                                <div class="metric-info">
+                                    <div class="metric-name">Price to Earnings Ratio</div>
+                                    <div class="metric-category">Valuation</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="current-reading">18.3x</div>
+                        </td>
+                        <td>
+                            <div class="benchmark-value">20.0x</div>
+                        </td>
+                        <td>
+                            <div class="trend-direction positive">
+                                <span class="trend-arrow">↗</span>
+                                Improving
+                            </div>
+                        </td>
+                        <td>
+                            <div class="confidence-level high">
+                                <div class="confidence-bars">
+                                    <div class="confidence-bar"></div>
+                                    <div class="confidence-bar"></div>
+                                    <div class="confidence-bar"></div>
+                                    <div class="confidence-bar"></div>
+                                    <div class="confidence-bar"></div>
+                                </div>
+                                95%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sapphire-actions">
+                                <button class="action-sapphire chart">
+                                    <span class="action-icon">📊</span>
+                                </button>
+                                <button class="action-sapphire forecast">
+                                    <span class="action-icon">🔮</span>
+                                </button>
+                                <button class="action-sapphire export">
+                                    <span class="action-icon">📤</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="sapphire-row">
+                        <td>
+                            <div class="metric-display">
+                                <div class="metric-crystal purple"></div>
+                                <div class="metric-info">
+                                    <div class="metric-name">Return on Equity</div>
+                                    <div class="metric-category">Profitability</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="current-reading">22.8%</div>
+                        </td>
+                        <td>
+                            <div class="benchmark-value">18.0%</div>
+                        </td>
+                        <td>
+                            <div class="trend-direction positive">
+                                <span class="trend-arrow">↗</span>
+                                Strong
+                            </div>
+                        </td>
+                        <td>
+                            <div class="confidence-level high">
+                                <div class="confidence-bars">
+                                    <div class="confidence-bar"></div>
+                                    <div class="confidence-bar"></div>
+                                    <div class="confidence-bar"></div>
+                                    <div class="confidence-bar"></div>
+                                    <div class="confidence-bar"></div>
+                                </div>
+                                98%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sapphire-actions">
+                                <button class="action-sapphire chart">
+                                    <span class="action-icon">📊</span>
+                                </button>
+                                <button class="action-sapphire forecast">
+                                    <span class="action-icon">🔮</span>
+                                </button>
+                                <button class="action-sapphire export">
+                                    <span class="action-icon">📤</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="sapphire-row">
+                        <td>
+                            <div class="metric-display">
+                                <div class="metric-crystal teal"></div>
+                                <div class="metric-info">
+                                    <div class="metric-name">Debt to Equity</div>
+                                    <div class="metric-category">Leverage</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="current-reading">0.45</div>
+                        </td>
+                        <td>
+                            <div class="benchmark-value">0.60</div>
+                        </td>
+                        <td>
+                            <div class="trend-direction stable">
+                                <span class="trend-icon">⚖️</span>
+                                Stable
+                            </div>
+                        </td>
+                        <td>
+                            <div class="confidence-level medium">
+                                <div class="confidence-bars">
+                                    <div class="confidence-bar"></div>
+                                    <div class="confidence-bar"></div>
+                                    <div class="confidence-bar"></div>
+                                    <div class="confidence-bar"></div>
+                                    <div class="confidence-bar"></div>
+                                </div>
+                                85%
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sapphire-actions">
+                                <button class="action-sapphire chart">
+                                    <span class="action-icon">📊</span>
+                                </button>
+                                <button class="action-sapphire forecast">
+                                    <span class="action-icon">🔮</span>
+                                </button>
+                                <button class="action-sapphire export">
+                                    <span class="action-icon">📤</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>`,
+    css: `@keyframes crystalReflect {
+    0%, 100% { 
+        background-position: 0% 50%;
+        filter: brightness(1) hue-rotate(0deg);
+    }
+    50% { 
+        background-position: 100% 50%;
+        filter: brightness(1.2) hue-rotate(20deg);
+    }
+}
+
+@keyframes sapphireGlow {
+    0%, 100% { 
+        box-shadow: 
+            0 0 20px rgba(37, 99, 235, 0.4),
+            inset 0 0 20px rgba(37, 99, 235, 0.1);
+    }
+    50% { 
+        box-shadow: 
+            0 0 40px rgba(37, 99, 235, 0.6),
+            inset 0 0 30px rgba(37, 99, 235, 0.2);
+    }
+}
+
+.sapphire-analytics {
+    background: 
+        linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%),
+        radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(37, 99, 235, 0.5);
+    animation: sapphireGlow 4s ease-in-out infinite;
+}
+
+.sapphire-header {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.2), 
+        rgba(139, 92, 246, 0.2)
+    );
+    padding: 3rem 2rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.crystal-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+}
+
+.crystal-shard {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, transparent 48%, rgba(37, 99, 235, 0.3) 50%, transparent 52%);
+    animation: crystalReflect 6s ease-in-out infinite;
+}
+
+.crystal-shard:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.crystal-shard:nth-child(2) {
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.crystal-shard:nth-child(3) {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.sapphire-title {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2563eb, #8b5cf6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.title-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.5));
+}
+
+.sapphire-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+.analytics-controls {
+    display: flex;
+    justify-content: center;
+}
+
+.control-panel {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 0.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-btn.active,
+.control-btn:hover {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(139, 92, 246, 0.3));
+    color: white;
+}
+
+.sapphire-dashboard {
+    padding: 2rem;
+}
+
+.analytics-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.overview-sapphire {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.overview-sapphire:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    transform: translateY(-5px);
+}
+
+.overview-crystal {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    transform: rotate(45deg);
+    position: relative;
+    animation: crystalReflect 3s ease-in-out infinite;
+}
+
+.overview-crystal.blue {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+}
+
+.overview-crystal.purple {
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+.overview-crystal.teal {
+    background: linear-gradient(135deg, #06b6d4, #22d3ee);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+}
+
+.overview-data {
+    flex: 1;
+}
+
+.data-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.data-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.data-trend {
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.data-trend.positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.data-trend.stable {
+    background: rgba(37, 99, 235, 0.2);
+    color: #2563eb;
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.insight-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.insight-card:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
+}
+
+.insight-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.insight-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+}
+
+.insight-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid;
+}
+
+.insight-badge.trending {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.insight-badge.stable {
+    background: rgba(37, 99, 235, 0.2);
+    color: #2563eb;
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.insight-badge.optimal {
+    background: rgba(139, 92, 246, 0.2);
+    color: #8b5cf6;
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.insight-visual {
+    height: 100px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trend-sparkline {
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(90deg, 
+        rgba(37, 99, 235, 0.3), 
+        rgba(139, 92, 246, 0.3)
+    );
+    clip-path: polygon(
+        0% 100%,
+        calc(100% / 6 * 1) calc(100% - var(--trend-data, 0) * 0.5%),
+        calc(100% / 6 * 2) calc(100% - var(--trend-data, 0) * 0.5%),
+        calc(100% / 6 * 3) calc(100% - var(--trend-data, 0) * 0.5%),
+        calc(100% / 6 * 4) calc(100% - var(--trend-data, 0) * 0.5%),
+        calc(100% / 6 * 5) calc(100% - var(--trend-data, 0) * 0.5%),
+        100% calc(100% - var(--trend-data, 0) * 0.5%),
+        100% 100%
+    );
+}
+
+.risk-radar,
+.performance-gauge {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radar-fill,
+.gauge-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#2563eb 0% var(--risk-level), transparent var(--risk-level) 100%);
+    mask: radial-gradient(transparent 60%, black 61%);
+}
+
+.gauge-fill {
+    background: conic-gradient(#8b5cf6 0% var(--performance), transparent var(--performance) 100%);
+}
+
+.radar-value,
+.gauge-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #2563eb;
+    z-index: 2;
+}
+
+.gauge-value {
+    color: #8b5cf6;
+}
+
+.insight-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.sapphire-action-btn {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(139, 92, 246, 0.3));
+    border: 1px solid rgba(37, 99, 235, 0.5);
+    color: #2563eb;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.sapphire-action-btn:hover {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.4), rgba(139, 92, 246, 0.4));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.btn-crystal {
+    animation: crystalReflect 2s ease-in-out infinite;
+}
+
+.sapphire-table-section {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.sapphire-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sapphire-table th {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.1), 
+        rgba(139, 92, 246, 0.1)
+    );
+    padding: 1.5rem 2rem;
+    text-align: left;
+    font-weight: 600;
+    color: #2563eb;
+    border-bottom: 2px solid rgba(37, 99, 235, 0.3);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sapphire-table td {
+    padding: 1.5rem 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.sapphire-row:hover td {
+    background: rgba(37, 99, 235, 0.05);
+}
+
+.metric-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.metric-crystal {
+    width: 8px;
+    height: 24px;
+    border-radius: 2px;
+    transform: skew(-20deg);
+    animation: crystalReflect 3s ease-in-out infinite;
+}
+
+.metric-crystal.blue {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+.metric-crystal.purple {
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+}
+
+.metric-crystal.teal {
+    background: linear-gradient(135deg, #06b6d4, #22d3ee);
+}
+
+.metric-info .metric-name {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.metric-info .metric-category {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.current-reading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+}
+
+.benchmark-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.trend-direction {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    width: fit-content;
+}
+
+.trend-direction.positive {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.trend-direction.stable {
+    background: rgba(37, 99, 235, 0.2);
+    color: #2563eb;
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.confidence-level {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.confidence-bars {
+    display: flex;
+    gap: 2px;
+}
+
+.confidence-bar {
+    width: 4px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
+}
+
+.confidence-level.high .confidence-bar {
+    background: #4ade80;
+}
+
+.confidence-level.medium .confidence-bar:nth-child(4):nth-child(5) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.sapphire-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-sapphire {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.action-sapphire:hover {
+    background: rgba(37, 99, 235, 0.2);
+    border-color: rgba(37, 99, 235, 0.5);
+    color: #2563eb;
+    transform: scale(1.1);
+}`,
+    js: `// Sapphire analytics interactions
+document.querySelectorAll('.control-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.control-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Add crystal reflection effect
+        this.style.background = 'linear-gradient(135deg, rgba(37, 99, 235, 0.4), rgba(139, 92, 246, 0.4))';
+        setTimeout(() => {
+            this.style.background = 'linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(139, 92, 246, 0.3))';
+        }, 300);
+    });
+});
+
+// Animate insight visuals
+document.querySelectorAll('.insight-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        const visual = this.querySelector('.insight-visual > div');
+        if (visual) {
+            visual.style.animation = 'crystalReflect 1s ease-in-out';
+        }
+    });
+});
+
+// Sapphire action buttons
+document.querySelectorAll('.sapphire-action-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const type = this.classList[1];
+        let message = '';
+        
+        switch(type) {
+            case 'analyze':
+                message = 'Running deep analysis...';
+                break;
+            case 'assess':
+                message = 'Assessing risk factors...';
+                break;
+            case 'optimize':
+                message = 'Optimizing parameters...';
+                break;
+        }
+        
+        const originalHTML = this.innerHTML;
+        this.innerHTML = '<span class="btn-crystal">💠</span> Processing...';
+        this.disabled = true;
+        
+        // Create crystal particle effect
+        for (let i = 0; i < 6; i++) {
+            createCrystalParticle(this);
+        }
+        
+        setTimeout(() => {
+            this.innerHTML = originalHTML;
+            this.disabled = false;
+            
+            // Add success state
+            this.style.background = 'linear-gradient(135deg, rgba(34, 197, 94, 0.4), rgba(139, 92, 246, 0.3))';
+            this.style.borderColor = 'rgba(34, 197, 94, 0.5)';
+            
+            setTimeout(() => {
+                this.style.background = 'linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(139, 92, 246, 0.3))';
+                this.style.borderColor = 'rgba(37, 99, 235, 0.5)';
+            }, 1000);
+        }, 2000);
+    });
+});
+
+function createCrystalParticle(element) {
+    const crystal = document.createElement('div');
+    crystal.style.cssText = \`
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: linear-gradient(45deg, #2563eb, #8b5cf6);
+        transform: rotate(45deg);
+        pointer-events: none;
+        animation: crystalParticle 1s ease-out forwards;
+    \`;
+    
+    const rect = element.getBoundingClientRect();
+    crystal.style.left = (Math.random() * rect.width) + 'px';
+    crystal.style.top = (Math.random() * rect.height) + 'px';
+    
+    element.style.position = 'relative';
+    element.appendChild(crystal);
+    
+    setTimeout(() => crystal.remove(), 1000);
+}
+
+// Add CSS for crystal particle animation
+const style = document.createElement('style');
+style.textContent = \`
+    @keyframes crystalParticle {
+        0% {
+            opacity: 1;
+            transform: rotate(45deg) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: rotate(45deg) scale(0) translate(\${Math.random() * 100 - 50}px, \${Math.random() * 100 - 50}px);
+        }
+    }
+\`;
+document.head.appendChild(style);
+
+// Add hover effects to metric crystals
+document.querySelectorAll('.metric-crystal').forEach(crystal => {
+    crystal.addEventListener('mouseenter', function() {
+        this.style.animation = 'crystalReflect 0.6s ease-in-out';
+    });
+});`
+},
+
 
     
 
