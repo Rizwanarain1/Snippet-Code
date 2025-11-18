@@ -3363,7 +3363,817 @@ textRevealBtn.addEventListener('click', function() {
     }, 150);
 });`
 },
+// ====================================================================
+// TEMPLATE 37: ANIMATED BORDER CUT
+// ====================================================================
+btn37: {
+    name: "Animated Border Cut",
+    category: "animated",
+    html: `<a href="#" class="btn-animated-cut">
+    <span>Hover Me</span>
+</a>`,
+    css: `.btn-animated-cut {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #fefefe;
+    text-transform: uppercase;
+    color: #fefefe;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    background: #212121;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
 
+.btn-animated-cut::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 12px);
+    background-color: #212121;
+    transition: 0.3s ease-in-out;
+    transform: scaleY(1);
+    border-radius: 2px;
+}
+
+.btn-animated-cut:hover::before {
+    transform: scaleY(0);
+}
+
+.btn-animated-cut::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% - 12px);
+    background-color: #212121;
+    transition: 0.3s ease-in-out;
+    transform: scaleX(1);
+    transition-delay: 0.3s;
+    border-radius: 2px;
+}
+
+.btn-animated-cut:hover::after {
+    transform: scaleX(0);
+}
+
+.btn-animated-cut span {
+    position: relative;
+    z-index: 3;
+}
+
+.btn-animated-cut:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}`,
+    js: `// Animated border cut button
+const cutBtn = document.querySelector('.btn-animated-cut');
+
+cutBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    console.log('Animated border cut button clicked!');
+});`
+},
+
+// ====================================================================
+// TEMPLATE 38: LEARN MORE BUTTON
+// ====================================================================
+btn38: {
+    name: "Learn More Button",
+    category: "animated",
+    html: `<button class="btn-learn-more">
+    <span class="circle">
+        <span class="icon arrow"></span>
+    </span>
+    <span class="button-text">Learn More</span>
+</button>`,
+    css: `button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.btn-learn-more {
+    width: 12rem;
+    height: auto;
+}
+
+.btn-learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #282936;
+    border-radius: 1.625rem;
+}
+
+.btn-learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+.btn-learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+
+.btn-learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+.btn-learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #282936;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.btn-learn-more:hover .circle {
+    width: 100%;
+}
+
+.btn-learn-more:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+}
+
+.btn-learn-more:hover .button-text {
+    color: #fff;
+}`,
+    js: `// Learn more button functionality
+const learnBtn = document.querySelector('.btn-learn-more');
+
+learnBtn.addEventListener('click', function() {
+    console.log('Learn more button clicked!');
+    // Add your learn more functionality here
+});`
+},
+
+// ====================================================================
+// TEMPLATE 39: SLIDING FILL BUTTON
+// ====================================================================
+btn39: {
+    name: "Sliding Fill Button",
+    category: "animated",
+    html: `<button class="btn-sliding-fill">
+    <span></span>
+    Hover Me
+</button>`,
+    css: `.btn-sliding-fill {
+    border: none;
+    display: block;
+    position: relative;
+    padding: 0.7em 2.4em;
+    font-size: 18px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: royalblue;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+}
+
+.btn-sliding-fill span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 4px solid royalblue;
+}
+
+.btn-sliding-fill span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+}
+
+.btn-sliding-fill:hover span::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: royalblue;
+}
+
+.btn-sliding-fill:hover {
+    color: white;
+}
+
+.btn-sliding-fill:active span::before {
+    background: #2751cd;
+}`,
+    js: `// Sliding fill button functionality
+const slidingBtn = document.querySelector('.btn-sliding-fill');
+
+slidingBtn.addEventListener('click', function() {
+    console.log('Sliding fill button clicked!');
+});`
+},
+
+// ====================================================================
+// TEMPLATE 40: ICON HOVER BUTTON
+// ====================================================================
+btn40: {
+    name: "Icon Hover Button",
+    category: "animated",
+    html: `<button class="btn-icon-hover">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 4V20M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    Hover Me
+</button>`,
+    css: `.btn-icon-hover {
+    display: flex;
+    height: 3em;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee4b;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: none;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.btn-icon-hover > svg {
+    margin-right: 5px;
+    margin-left: 5px;
+    transition: all 0.4s ease-in;
+}
+
+.btn-icon-hover:hover > svg {
+    transform: translateX(-5px);
+}
+
+.btn-icon-hover:hover {
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
+}`,
+    js: `// Icon hover button functionality
+const iconHoverBtn = document.querySelector('.btn-icon-hover');
+
+iconHoverBtn.addEventListener('click', function() {
+    console.log('Icon hover button clicked!');
+    
+    // Add click animation
+    this.style.transform = 'translateY(0px)';
+    setTimeout(() => {
+        this.style.transform = 'translateY(-2px)';
+    }, 150);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 41: 3D CUBE BUTTON
+// ====================================================================
+btn41: {
+    name: "3D Cube Button",
+    category: "animated",
+    html: `<div class="scene">
+    <div class="cube">
+        <div class="side front">Hover Me</div>
+        <div class="side top">Hello!</div>
+    </div>
+</div>`,
+    css: `.scene {
+    width: 10em;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cube {
+    color: #ccc;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.85s cubic-bezier(.17,.67,.14,.93);
+    transform-style: preserve-3d;
+    transform-origin: 100% 50%;
+    width: 10em;
+    height: 4em;
+}
+
+.cube:hover {
+    transform: rotateX(-90deg);
+}
+
+.side {
+    box-sizing: border-box;
+    position: absolute;
+    display: inline-block;
+    height: 4em;
+    width: 10em;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 1.5em;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.top {
+    background: wheat;
+    color: #222229;
+    transform: rotateX(90deg) translate3d(0, 0, 2em);
+    box-shadow: inset 0 0 0 5px #fff;
+}
+
+.front {
+    background: #222229;
+    color: #fff;
+    box-shadow: inset 0 0 0 5px #fff;
+    transform: translate3d(0, 0, 2em);
+}`,
+    js: `// 3D Cube button functionality
+const cube = document.querySelector('.cube');
+
+cube.addEventListener('click', function() {
+    console.log('3D Cube button clicked!');
+    
+    // Add click feedback
+    this.style.transform = 'rotateX(-90deg) scale(0.95)';
+    setTimeout(() => {
+        this.style.transform = 'rotateX(-90deg)';
+    }, 150);
+});
+
+// Reset on mouse leave
+cube.addEventListener('mouseleave', function() {
+    this.style.transform = 'rotateX(0deg)';
+});`
+},
+// ====================================================================
+// TEMPLATE 42: 3D FLIP BUTTON
+// ====================================================================
+btn42: {
+    name: "3D Flip Button",
+    category: "3d",
+    html: `<button class="btn-3d-flip">
+    <span class="front">Click Me</span>
+    <span class="back">Hello!</span>
+</button>`,
+    css: `.btn-3d-flip {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    perspective: 500px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-3d-flip .front,
+.btn-3d-flip .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-3d-flip .front {
+    background: linear-gradient(145deg, #7c3aed, #6d28d9);
+    color: white;
+    transform: rotateX(0deg);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+.btn-3d-flip .back {
+    background: linear-gradient(145deg, #ec4899, #db2777);
+    color: white;
+    transform: rotateX(180deg);
+    box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+}
+
+.btn-3d-flip:hover .front {
+    transform: rotateX(-180deg);
+}
+
+.btn-3d-flip:hover .back {
+    transform: rotateX(0deg);
+}`,
+    js: `// 3D Flip button functionality
+const flipBtn = document.querySelector('.btn-3d-flip');
+
+flipBtn.addEventListener('click', function() {
+    console.log('3D Flip button clicked!');
+    
+    // Add click animation
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        this.style.transform = '';
+    }, 150);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 43: 3D PRESS BUTTON
+// ====================================================================
+btn43: {
+    name: "3D Press Button",
+    category: "3d",
+    html: `<button class="btn-3d-press">
+    Press Me
+</button>`,
+    css: `.btn-3d-press {
+    position: relative;
+    padding: 15px 30px;
+    background: linear-gradient(145deg, #3b82f6, #2563eb);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 10px 0 #1d4ed8,
+        0 15px 20px rgba(59, 130, 246, 0.4);
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-3d-press:hover {
+    transform: translateY(5px);
+    box-shadow: 
+        0 5px 0 #1d4ed8,
+        0 8px 10px rgba(59, 130, 246, 0.3);
+}
+
+.btn-3d-press:active {
+    transform: translateY(8px);
+    box-shadow: 
+        0 2px 0 #1d4ed8,
+        0 3px 5px rgba(59, 130, 246, 0.2);
+}`,
+    js: `// 3D Press button functionality
+const pressBtn = document.querySelector('.btn-3d-press');
+
+pressBtn.addEventListener('mousedown', function() {
+    this.style.transform = 'translateY(8px)';
+    this.style.boxShadow = '0 2px 0 #1d4ed8, 0 3px 5px rgba(59, 130, 246, 0.2)';
+});
+
+pressBtn.addEventListener('mouseup', function() {
+    this.style.transform = 'translateY(5px)';
+    this.style.boxShadow = '0 5px 0 #1d4ed8, 0 8px 10px rgba(59, 130, 246, 0.3)';
+});
+
+pressBtn.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0)';
+    this.style.boxShadow = '0 10px 0 #1d4ed8, 0 15px 20px rgba(59, 130, 246, 0.4)';
+});`
+},
+
+// ====================================================================
+// TEMPLATE 44: 3D GRADIENT ROTATE
+// ====================================================================
+btn44: {
+    name: "3D Gradient Rotate",
+    category: "3d",
+    html: `<button class="btn-3d-gradient">
+    Hover Me
+</button>`,
+    css: `.btn-3d-gradient {
+    position: relative;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #7c3aed, #ec4899, #3b82f6);
+    background-size: 300% 300%;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    animation: gradientShift 3s ease infinite;
+    box-shadow: 
+        0 8px 0 #6d28d9,
+        0 12px 25px rgba(124, 58, 237, 0.5);
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-3d-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+    border-radius: 12px;
+    transform: translateZ(-8px);
+    transition: all 0.5s ease;
+}
+
+.btn-3d-gradient:hover {
+    transform: translateY(-4px) rotateX(15deg);
+    box-shadow: 
+        0 12px 0 #6d28d9,
+        0 18px 35px rgba(124, 58, 237, 0.7);
+}
+
+.btn-3d-gradient:hover::before {
+    transform: translateZ(-3px);
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}`,
+    js: `// 3D Gradient Rotate button functionality
+const gradientBtn = document.querySelector('.btn-3d-gradient');
+
+gradientBtn.addEventListener('click', function() {
+    console.log('3D Gradient button clicked!');
+    
+    // Add bounce effect
+    this.style.transform = 'translateY(-2px) rotateX(15deg) scale(0.98)';
+    setTimeout(() => {
+        this.style.transform = 'translateY(-4px) rotateX(15deg)';
+    }, 100);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 45: 3D LIQUID RISE
+// ====================================================================
+btn45: {
+    name: "3D Liquid Rise",
+    category: "3d",
+    html: `<button class="btn-3d-liquid">
+    <span>Liquid Rise</span>
+</button>`,
+    css: `.btn-3d-liquid {
+    position: relative;
+    padding: 15px 30px;
+    background: #10b981;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 8px 0 #059669,
+        0 12px 20px rgba(16, 185, 129, 0.4);
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-3d-liquid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-3d-liquid:hover::before {
+    left: 100%;
+}
+
+.btn-3d-liquid:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 11px 0 #059669,
+        0 16px 30px rgba(16, 185, 129, 0.6);
+}
+
+.btn-3d-liquid:active {
+    transform: translateY(6px) scale(1);
+    box-shadow: 
+        0 2px 0 #059669,
+        0 6px 12px rgba(16, 185, 129, 0.3);
+}`,
+    js: `// 3D Liquid Rise button functionality
+const liquid3DBtn = document.querySelector('.btn-3d-liquid');
+
+liquid3DBtn.addEventListener('click', function() {
+    console.log('3D Liquid Rise button clicked!');
+    
+    // Create ripple effect
+    const ripple = document.createElement('span');
+    ripple.style.cssText = \`
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+    \`;
+    
+    this.appendChild(ripple);
+    
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = '0px';
+    ripple.style.top = '0px';
+    
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+});
+
+// Add ripple animation
+const rippleStyle = document.createElement('style');
+rippleStyle.textContent = \`
+    @keyframes ripple {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+\`;
+document.head.appendChild(rippleStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 46: 3D HOLOGRAM
+// ====================================================================
+btn46: {
+    name: "3D Hologram Button",
+    category: "3d",
+    html: `<button class="btn-3d-hologram">
+    Hologram
+</button>`,
+    css: `.btn-3d-hologram {
+    position: relative;
+    padding: 15px 30px;
+    background: transparent;
+    border: 2px solid #00ff88;
+    border-radius: 10px;
+    color: #00ff88;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transform-style: preserve-3d;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    text-shadow: 0 0 8px #00ff88;
+    box-shadow: 
+        0 0 15px #00ff88,
+        inset 0 0 8px #00ff88;
+    font-family: inherit;
+}
+
+.btn-3d-hologram::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.btn-3d-hologram::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-3d-hologram:hover::before {
+    transform: rotate(45deg) translate(20px, 20px);
+}
+
+.btn-3d-hologram:hover::after {
+    left: 100%;
+}
+
+.btn-3d-hologram:hover {
+    background: rgba(0, 255, 136, 0.1);
+    transform: translateY(-4px) translateZ(15px);
+    box-shadow: 
+        0 0 25px #00ff88,
+        inset 0 0 15px #00ff88,
+        0 8px 20px rgba(0, 255, 136, 0.5);
+}
+
+.btn-3d-hologram:active {
+    transform: translateY(-2px) translateZ(10px);
+    box-shadow: 
+        0 0 20px #00ff88,
+        inset 0 0 10px #00ff88,
+        0 4px 10px rgba(0, 255, 136, 0.4);
+}`,
+    js: `// 3D Hologram button functionality
+const hologramBtn = document.querySelector('.btn-3d-hologram');
+
+hologramBtn.addEventListener('click', function() {
+    console.log('3D Hologram button clicked!');
+    
+    // Add pulse effect
+    this.style.animation = 'hologramPulse 0.3s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 300);
+});
+
+// Add pulse animation
+const hologramStyle = document.createElement('style');
+hologramStyle.textContent = \`
+    @keyframes hologramPulse {
+        0%, 100% { 
+            box-shadow: 
+                0 0 25px #00ff88,
+                inset 0 0 15px #00ff88,
+                0 8px 20px rgba(0, 255, 136, 0.5);
+        }
+        50% { 
+            box-shadow: 
+                0 0 35px #00ff88,
+                inset 0 0 20px #00ff88,
+                0 12px 30px rgba(0, 255, 136, 0.7);
+        }
+    }
+\`;
+document.head.appendChild(hologramStyle);`
+}
 
 };
 
