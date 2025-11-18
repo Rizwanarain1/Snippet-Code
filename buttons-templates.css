@@ -3380,3 +3380,2476 @@
         inset 0 0 10px #00ff88,
         0 5px 15px rgba(0, 255, 136, 0.4);
 }
+/* Template 47 - Bounce Animation */
+.btn-bounce {
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-bounce:hover {
+    animation: bounce 0.5s ease infinite alternate;
+    transform: translateY(-3px);
+}
+
+@keyframes bounce {
+    from { transform: translateY(-3px); }
+    to { transform: translateY(-6px); }
+}
+
+/* Template 48 - Wave Animation */
+.btn-wave {
+    position: relative;
+    padding: 8px 20px;
+    background: #10b981;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-wave::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: all 0.6s ease;
+}
+
+.btn-wave:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-wave:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+/* Template 49 - Neon Pulse */
+.btn-neon-pulse {
+    padding: 8px 20px;
+    background: transparent;
+    border: 2px solid #ff0080;
+    border-radius: 8px;
+    color: #ff0080;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: neonPulse 2s infinite;
+    text-shadow: 0 0 5px #ff0080;
+    box-shadow: 
+        0 0 10px #ff0080,
+        inset 0 0 5px #ff0080;
+}
+
+@keyframes neonPulse {
+    0%, 100% { 
+        box-shadow: 
+            0 0 10px #ff0080,
+            inset 0 0 5px #ff0080;
+    }
+    50% { 
+        box-shadow: 
+            0 0 20px #ff0080,
+            inset 0 0 10px #ff0080;
+    }
+}
+
+.btn-neon-pulse:hover {
+    background: #ff0080;
+    color: white;
+    animation: none;
+}
+
+/* Template 50 - Magnetic 2D */
+.btn-magnetic-2d {
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-magnetic-2d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-magnetic-2d:hover::before {
+    left: 100%;
+}
+
+/* Template 51 - Shake Animation */
+.btn-shake {
+    padding: 8px 20px;
+    background: #f59e0b;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-shake:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Template 52 - Rotate 3D */
+.btn-rotate-3d {
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.btn-rotate-3d:hover {
+    transform: rotateX(15deg) rotateY(15deg) scale(1.1);
+    box-shadow: 
+        0 15px 30px rgba(79, 172, 254, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Template 53 - Glitch Effect */
+.btn-glitch {
+    padding: 8px 20px;
+    background: #000;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    color: #00ffff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.btn-glitch:hover {
+    animation: glitch 0.3s linear;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* Template 54 - Particle Explosion */
+.btn-particle {
+    position: relative;
+    padding: 8px 20px;
+    background: #8b5cf6;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-particle::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+}
+
+.btn-particle:hover::before {
+    transform: translate(-50%, -50%) scale(10);
+    opacity: 0;
+}
+
+.btn-particle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+/* Template 55 - Morph Shape */
+.btn-morph {
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #ff6b6b, #ffa8a8);
+    border: none;
+    border-radius: 25px 8px 25px 8px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.btn-morph:hover {
+    border-radius: 8px 25px 8px 25px;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+}
+
+/* Template 56 - Infinite Spin */
+.btn-spin {
+    position: relative;
+    padding: 8px 20px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: #6366f1;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.btn-spin::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: conic-gradient(from 0deg, #6366f1, #8b5cf6, #ec4899, #6366f1);
+    border-radius: 10px;
+    animation: spin 2s linear infinite;
+    z-index: -1;
+}
+
+.btn-spin::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    background: white;
+    border-radius: 7px;
+    z-index: -1;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn-spin:hover::before {
+    animation-duration: 0.5s;
+}
+/* Base Button Structure */
+.btn-slide-fill,
+.btn-gradient-slide,
+.btn-dual-fill,
+.btn-bounce-fill,
+.btn-wave-fill,
+.btn-diagonal-slide,
+.btn-circular-expand,
+.btn-double-slide,
+.btn-neon-slide,
+.btn-3d-slide {
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 6px 6px 12px rgba(0,0,0,.05);
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.btn-decor {
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr);
+    transform: translateX(-100%);
+    transition: transform .3s;
+    z-index: 0;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-icon {
+    width: 32px;
+    height: 28px;
+    background-color: var(--clr);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 4px 12px 4px;
+    padding-left: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 80px;
+}
+
+/* Template 57 - Slide Fill Animation */
+.btn-slide-fill:hover .btn-text {
+    color: #fff;
+}
+
+.btn-slide-fill:hover .btn-decor {
+    transform: translate(0);
+}
+
+/* Template 58 - Gradient Slide */
+.btn-gradient-slide .btn-decor {
+    background: var(--clr);
+}
+
+.btn-gradient-slide:hover .btn-text {
+    color: #fff;
+}
+
+.btn-gradient-slide:hover .btn-decor {
+    transform: translate(0);
+}
+
+.btn-gradient-slide:hover .btn-icon {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Template 59 - Dual Color Fill */
+.btn-dual-fill .btn-decor {
+    background: linear-gradient(90deg, var(--clr1) 0%, var(--clr2) 100%);
+    transform: translateX(-100%) scaleX(1.5);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-dual-fill:hover .btn-text {
+    color: #fff;
+}
+
+.btn-dual-fill:hover .btn-decor {
+    transform: translate(0) scaleX(1);
+}
+
+.btn-dual-fill:hover .btn-icon {
+    background: linear-gradient(90deg, var(--clr1) 0%, var(--clr2) 100%);
+}
+
+/* Template 60 - Bounce Fill */
+.btn-bounce-fill .btn-decor {
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.btn-bounce-fill:hover .btn-text {
+    color: #fff;
+}
+
+.btn-bounce-fill:hover .btn-decor {
+    transform: translate(0);
+}
+
+.btn-bounce-fill:hover {
+    animation: bounceButton 0.5s ease;
+}
+
+@keyframes bounceButton {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Template 61 - Wave Fill */
+.btn-wave-fill .btn-decor {
+    transform: translateX(-100%) skewX(-15deg);
+    transition: transform 0.4s ease;
+}
+
+.btn-wave-fill:hover .btn-text {
+    color: #fff;
+}
+
+.btn-wave-fill:hover .btn-decor {
+    transform: translate(0) skewX(-15deg);
+}
+
+.btn-wave-fill:hover .btn-icon {
+    animation: waveIcon 0.6s ease;
+}
+
+@keyframes waveIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Template 62 - Diagonal Slide */
+.btn-diagonal-slide .btn-decor {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    transform-origin: top left;
+    transition: transform 0.4s ease;
+}
+
+.btn-diagonal-slide:hover .btn-text {
+    color: #fff;
+}
+
+.btn-diagonal-slide:hover .btn-decor {
+    transform: translate(0) rotate(45deg);
+}
+
+/* Template 63 - Circular Expand */
+.btn-circular-expand .btn-decor {
+    transform: scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+    transform-origin: center;
+}
+
+.btn-circular-expand:hover .btn-text {
+    color: #fff;
+}
+
+.btn-circular-expand:hover .btn-decor {
+    transform: scale(2);
+}
+
+/* Template 64 - Double Slide */
+.btn-double-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-double-slide .btn-decor-top,
+.btn-double-slide .btn-decor-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: var(--clr1);
+    transition: transform 0.4s ease;
+    z-index: 0;
+}
+
+.btn-double-slide .btn-decor-top {
+    top: 0;
+    background: var(--clr1);
+    transform: translateX(-100%);
+}
+
+.btn-double-slide .btn-decor-bottom {
+    bottom: 0;
+    background: var(--clr2);
+    transform: translateX(100%);
+}
+
+.btn-double-slide:hover .btn-text {
+    color: #fff;
+}
+
+.btn-double-slide:hover .btn-decor-top {
+    transform: translateX(0);
+}
+
+.btn-double-slide:hover .btn-decor-bottom {
+    transform: translateX(0);
+}
+
+.btn-double-slide:hover .btn-icon {
+    background: linear-gradient(135deg, var(--clr1), var(--clr2));
+}
+
+/* Template 65 - Neon Slide */
+.btn-neon-slide {
+    background: #000;
+    color: var(--clr);
+    box-shadow: 
+        0 0 10px var(--clr),
+        inset 0 0 5px var(--clr);
+}
+
+.btn-neon-slide .btn-decor {
+    background: var(--clr);
+    transform: translateX(-100%);
+}
+
+.btn-neon-slide .btn-icon {
+    background: var(--clr);
+}
+
+.btn-neon-slide:hover .btn-text {
+    color: #000;
+    text-shadow: none;
+}
+
+.btn-neon-slide:hover .btn-decor {
+    transform: translate(0);
+}
+
+.btn-neon-slide:hover {
+    box-shadow: 
+        0 0 20px var(--clr),
+        inset 0 0 10px var(--clr);
+}
+
+/* Template 66 - 3D Slide Fill */
+.btn-3d-slide {
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.btn-3d-slide .btn-decor {
+    transform: translateX(-100%) rotateY(45deg);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-3d-slide:hover .btn-text {
+    color: #fff;
+}
+
+.btn-3d-slide:hover .btn-decor {
+    transform: translate(0) rotateY(0);
+}
+
+.btn-3d-slide:hover {
+    transform: translateY(-2px) rotateX(5deg);
+    box-shadow: 
+        0 8px 20px rgba(6, 182, 212, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Template 77 - Dark Neon Glow */
+.btn-dark-neon {
+    background: transparent;
+    color: #00ff88;
+    border: 2px solid #00ff88;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px #00ff88;
+    box-shadow: 
+        0 0 5px #00ff88,
+        inset 0 0 5px #00ff88;
+}
+
+.btn-dark-neon:hover {
+    background: #00ff88;
+    color: #000;
+    text-shadow: none;
+    box-shadow: 
+        0 0 20px #00ff88,
+        0 0 40px #00ff88,
+        inset 0 0 10px #00ff88;
+    transform: translateY(-2px);
+}
+
+/* Template 78 - Cyberpunk Button */
+.btn-cyberpunk {
+    background: linear-gradient(45deg, #ff0080, #8000ff);
+    color: #00ffff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #00ffff;
+    clip-path: polygon(
+        0 0, 
+        calc(100% - 10px) 0, 
+        100% 10px, 
+        100% 100%, 
+        10px 100%, 
+        0 calc(100% - 10px)
+    );
+    transition: all 0.3s ease;
+}
+
+.btn-cyberpunk::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #000;
+    clip-path: polygon(
+        0 0, 
+        calc(100% - 10px) 0, 
+        100% 10px, 
+        100% 100%, 
+        10px 100%, 
+        0 calc(100% - 10px)
+    );
+    z-index: -1;
+}
+
+.btn-cyberpunk:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 0 20px #ff0080,
+        0 0 40px #8000ff;
+}
+
+/* Template 79 - Matrix Rain */
+.btn-matrix {
+    background: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.btn-matrix::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom,
+        transparent 30%,
+        rgba(0, 255, 0, 0.1) 50%,
+        transparent 70%
+    );
+    animation: matrixRain 2s linear infinite;
+    transform: rotate(30deg);
+}
+
+@keyframes matrixRain {
+    0% { transform: translateY(-100%) rotate(30deg); }
+    100% { transform: translateY(100%) rotate(30deg); }
+}
+
+.btn-matrix:hover {
+    box-shadow: 
+        0 0 10px #00ff00,
+        0 0 20px #00ff00;
+    background: #001100;
+}
+
+/* Template 80 - Hologram Button */
+.btn-hologram {
+    background: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px #00ffff;
+    backdrop-filter: blur(10px);
+}
+
+.btn-hologram::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 255, 0.4),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.btn-hologram:hover::before {
+    left: 100%;
+}
+
+.btn-hologram:hover {
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 
+        0 0 15px #00ffff,
+        inset 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+/* Template 81 - Dark Gradient Pulse */
+.btn-gradient-pulse {
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+    background-size: 300% 300%;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.btn-gradient-pulse::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-gradient-pulse:hover::before {
+    left: 100%;
+}
+
+.btn-gradient-pulse:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Template 82 - Dark Glass Morphism */
+.btn-dark-glass {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-dark-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-dark-glass:hover::before {
+    left: 100%;
+}
+
+.btn-dark-glass:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Template 83 - Dark Particle Effect */
+.btn-particle {
+    background: #1a1a1a;
+    color: #ff6b6b;
+    border: 2px solid #ff6b6b;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-particle::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    animation: particleFloat 3s infinite linear;
+    opacity: 0;
+}
+
+.btn-particle::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #4ecdc4;
+    border-radius: 50%;
+    animation: particleFloat 2s infinite linear 1s;
+    opacity: 0;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(100%) translateX(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%) translateX(10px);
+        opacity: 0;
+    }
+}
+
+.btn-particle:hover::before,
+.btn-particle:hover::after {
+    animation-play-state: running;
+}
+
+.btn-particle:hover {
+    box-shadow: 
+        0 0 10px #ff6b6b,
+        inset 0 0 10px rgba(255, 107, 107, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Template 84 - Dark Liquid Fill */
+.btn-liquid-dark {
+    background: transparent;
+    color: #8b5cf6;
+    border: 2px solid #8b5cf6;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.btn-liquid-dark::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(45deg, #8b5cf6, #6366f1);
+    transition: height 0.5s ease;
+    z-index: -1;
+    border-radius: 0 0 50% 50%;
+}
+
+.btn-liquid-dark:hover::before {
+    height: 100%;
+    border-radius: 0;
+}
+
+.btn-liquid-dark:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Template 85 - Dark Glitch Text */
+.btn-glitch {
+    background: #000;
+    color: #fff;
+    border: 2px solid #ff0080;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-glitch:hover {
+    animation: glitch 0.3s linear;
+    background: #ff0080;
+    color: #000;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* Template 86 - Dark Space Theme */
+.btn-space {
+    background: #000;
+    color: #fff;
+    border: 1px solid #6366f1;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-space::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
+    animation: spaceTwinkle 4s infinite;
+}
+
+@keyframes spaceTwinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.btn-space:hover {
+    background: #111;
+    box-shadow: 
+        0 0 20px #6366f1,
+        inset 0 0 20px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+}
+/* Template 87 - Dark Cyber Grid */
+.btn-cyber-grid {
+    background: #000;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Courier New', monospace;
+}
+
+.btn-cyber-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(90deg, transparent 49%, #00ff88 50%, transparent 51%),
+        linear-gradient(0deg, transparent 49%, #00ff88 50%, transparent 51%);
+    background-size: 10px 10px;
+    opacity: 0.3;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+.btn-cyber-grid:hover {
+    background: #001100;
+    box-shadow: 
+        0 0 15px #00ff88,
+        inset 0 0 10px #00ff88;
+    text-shadow: 0 0 10px #00ff88;
+}
+
+/* Template 88 - Dark Binary Rain */
+.btn-binary {
+    background: #000;
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-binary::before {
+    content: '0101010101010101';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    color: #00ffff;
+    font-size: 8px;
+    opacity: 0.3;
+    animation: binaryFall 3s linear infinite;
+}
+
+@keyframes binaryFall {
+    0% { top: -100%; }
+    100% { top: 100%; }
+}
+
+.btn-binary:hover::before {
+    animation-duration: 1s;
+    opacity: 0.6;
+}
+
+.btn-binary:hover {
+    background: #001133;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+/* Template 89 - Dark Plasma Ball */
+.btn-plasma {
+    background: radial-gradient(circle at center, #8b5cf6, #000);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-plasma::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, #8b5cf6, #ec4899, #f59e0b, #10b981, #3b82f6, #8b5cf6);
+    animation: plasmaRotate 4s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes plasmaRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn-plasma:hover {
+    transform: scale(1.1);
+    box-shadow: 
+        0 0 30px #8b5cf6,
+        0 0 60px #ec4899;
+}
+
+/* Template 90 - Dark Data Stream */
+.btn-data-stream {
+    background: #000;
+    color: #ff0080;
+    border: 1px solid #ff0080;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Courier New', monospace;
+}
+
+.btn-data-stream::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff0080, transparent);
+    animation: dataStream 2s linear infinite;
+}
+
+@keyframes dataStream {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.btn-data-stream:hover {
+    background: #1a001a;
+    box-shadow: 
+        0 0 15px #ff0080,
+        inset 0 0 10px rgba(255, 0, 128, 0.2);
+}
+
+/* Template 91 - Dark Neon Sign */
+.btn-neon-sign {
+    background: #000;
+    color: #ff0080;
+    border: 2px solid #ff0080;
+    padding: 8px 20px;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Arial Black', sans-serif;
+    animation: neonFlicker 2s infinite alternate;
+}
+
+@keyframes neonFlicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 
+            0 0 5px #ff0080,
+            0 0 10px #ff0080,
+            0 0 15px #ff0080;
+        box-shadow: 
+            0 0 5px #ff0080,
+            inset 0 0 5px #ff0080;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+        box-shadow: none;
+    }
+}
+
+.btn-neon-sign:hover {
+    animation-duration: 0.5s;
+    background: #ff0080;
+    color: #000;
+}
+
+/* Template 92 - Dark Circuit Board */
+.btn-circuit {
+    background: #000;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-circuit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 30%, #00ff88 1px, transparent 1px),
+        radial-gradient(circle at 70% 70%, #00ff88 1px, transparent 1px);
+    background-size: 10px 10px;
+    opacity: 0.3;
+    animation: circuitPulse 2s infinite;
+}
+
+@keyframes circuitPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+.btn-circuit:hover {
+    background: #001100;
+    box-shadow: 0 0 20px #00ff88;
+}
+
+/* Template 93 - Dark Digital Clock */
+.btn-digital-clock {
+    background: #000;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #00ffff;
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.btn-digital-clock:hover {
+    background: #001133;
+    box-shadow: 
+        0 0 15px #00ffff,
+        inset 0 0 15px rgba(0, 255, 255, 0.3);
+    animation: digitalBlink 0.5s infinite alternate;
+}
+
+@keyframes digitalBlink {
+    0% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+/* Template 94 - Dark Wormhole */
+.btn-wormhole {
+    background: radial-gradient(circle at center, #000 0%, #4a00e0 50%, #000 100%);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-wormhole::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, #8b5cf6, transparent, #ec4899, transparent);
+    animation: wormholeSpin 3s linear infinite;
+}
+
+@keyframes wormholeSpin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.btn-wormhole:hover::before {
+    animation-duration: 1s;
+}
+
+.btn-wormhole:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px #8b5cf6;
+}
+
+/* Template 95 - Dark Laser Grid */
+.btn-laser-grid {
+    background: #000;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.btn-laser-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, transparent 49%, #ff0000 50%, transparent 51%) 0 0 / 10px 10px,
+        linear-gradient(0deg, transparent 49%, #ff0000 50%, transparent 51%) 0 0 / 10px 10px;
+    animation: laserScan 1s linear infinite;
+}
+
+@keyframes laserScan {
+    0% { background-position: 0 0; }
+    100% { background-position: 10px 10px; }
+}
+
+.btn-laser-grid:hover {
+    background: #330000;
+    box-shadow: 
+        0 0 20px #ff0000,
+        inset 0 0 10px #ff0000;
+}
+
+/* Template 96 - Dark Quantum */
+.btn-quantum {
+    background: #000;
+    color: #bb86fc;
+    border: 1px solid #bb86fc;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-quantum::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(187, 134, 252, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-quantum:hover::before {
+    left: 100%;
+}
+
+.btn-quantum:hover {
+    background: #1a1a1a;
+    box-shadow: 
+        0 0 20px #bb86fc,
+        0 0 40px rgba(187, 134, 252, 0.3);
+    animation: quantumSuperposition 0.5s infinite alternate;
+}
+
+@keyframes quantumSuperposition {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(2px); }
+}
+/* Template 97 - Dark Morse Code */
+.btn-morse-code {
+    background: #000;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 3px;
+    animation: morseBlink 2s infinite;
+}
+
+@keyframes morseBlink {
+    0%, 20% { opacity: 1; }
+    21%, 40% { opacity: 0.3; }
+    41%, 60% { opacity: 1; }
+    61%, 80% { opacity: 0.3; }
+    81%, 100% { opacity: 1; }
+}
+
+.btn-morse-code:hover {
+    background: #001100;
+    box-shadow: 0 0 20px #00ff88;
+    animation-duration: 1s;
+}
+
+/* Template 98 - Dark DNA Helix */
+.btn-dna-helix {
+    background: #000;
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-dna-helix::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(45deg, transparent 45%, #ff6b6b 50%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, #4ecdc4 50%, transparent 55%);
+    background-size: 20px 20px;
+    animation: dnaRotate 3s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes dnaRotate {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
+}
+
+.btn-dna-helix:hover {
+    background: #1a0000;
+    box-shadow: 0 0 20px #ff6b6b;
+}
+
+/* Template 99 - Dark Solar System */
+.btn-solar-system {
+    background: #000;
+    color: #ffd700;
+    border: 1px solid #ffd700;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-solar-system::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: #ffd700;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+        15px 0 0 2px #ff6b6b,
+        30px 0 0 1px #4ecdc4,
+        -15px 0 0 2px #ff6b6b,
+        -30px 0 0 1px #4ecdc4;
+    animation: planetOrbit 4s linear infinite;
+}
+
+@keyframes planetOrbit {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.btn-solar-system:hover::before {
+    animation-duration: 2s;
+}
+
+.btn-solar-system:hover {
+    background: #1a1a00;
+    box-shadow: 0 0 20px #ffd700;
+}
+
+/* Template 100 - Dark Chess Board */
+.btn-chess-board {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Times New Roman', serif;
+}
+
+.btn-chess-board::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, transparent 49%, #fff 50%, transparent 51%),
+        linear-gradient(0deg, transparent 49%, #fff 50%, transparent 51%);
+    background-size: 10px 10px;
+    opacity: 0.2;
+    animation: chessMove 10s linear infinite;
+}
+
+@keyframes chessMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 10px 10px; }
+}
+
+.btn-chess-board:hover {
+    background: #1a1a1a;
+    box-shadow: 0 0 20px #fff;
+}
+
+/* Template 101 - Dark Audio Wave */
+.btn-audio-wave {
+    background: #000;
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-audio-wave::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, 
+            transparent 10%, #00ffff 12%, transparent 14%,
+            transparent 20%, #00ffff 22%, transparent 24%,
+            transparent 30%, #00ffff 32%, transparent 34%,
+            transparent 40%, #00ffff 42%, transparent 44%,
+            transparent 50%, #00ffff 52%, transparent 54%,
+            transparent 60%, #00ffff 62%, transparent 64%,
+            transparent 70%, #00ffff 72%, transparent 74%,
+            transparent 80%, #00ffff 82%, transparent 84%,
+            transparent 90%, #00ffff 92%, transparent 94%
+        );
+    animation: audioPulse 0.5s ease-in-out infinite alternate;
+    opacity: 0.3;
+}
+
+@keyframes audioPulse {
+    0% { height: 30%; }
+    100% { height: 80%; }
+}
+
+.btn-audio-wave:hover {
+    background: #001133;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+/* Template 102 - Dark Radar Scan */
+.btn-radar-scan {
+    background: #000;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-radar-scan::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(from 0deg, transparent, #00ff88, transparent);
+    animation: radarRotate 2s linear infinite;
+    border-radius: 50px;
+}
+
+@keyframes radarRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn-radar-scan:hover::before {
+    animation-duration: 1s;
+}
+
+.btn-radar-scan:hover {
+    background: #001100;
+    box-shadow: 0 0 20px #00ff88;
+}
+
+/* Template 103 - Dark Barcode */
+.btn-barcode {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-size: 8px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+.btn-barcode::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+    animation: barcodeScan 2s linear infinite;
+}
+
+@keyframes barcodeScan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.btn-barcode:hover {
+    background: #1a1a1a;
+    box-shadow: 0 0 20px #fff;
+}
+
+/* Template 104 - Dark Fractal */
+.btn-fractal {
+    background: #000;
+    color: #bb86fc;
+    border: 1px solid #bb86fc;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-fractal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 30%, #bb86fc 1px, transparent 1px),
+        radial-gradient(circle at 70% 70%, #bb86fc 1px, transparent 1px),
+        radial-gradient(circle at 30% 70%, #bb86fc 1px, transparent 1px),
+        radial-gradient(circle at 70% 30%, #bb86fc 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: fractalGrow 3s ease-in-out infinite alternate;
+    opacity: 0.3;
+}
+
+@keyframes fractalGrow {
+    0% { background-size: 20px 20px; }
+    100% { background-size: 25px 25px; }
+}
+
+.btn-fractal:hover {
+    background: #1a1a1a;
+    box-shadow: 0 0 20px #bb86fc;
+}
+
+/* Template 105 - Dark QR Code */
+.btn-qr-code {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.btn-qr-code::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, 
+            #fff 10%, transparent 12%, #fff 14%, transparent 16%,
+            #fff 20%, transparent 22%, #fff 24%, transparent 26%,
+            #fff 30%, transparent 32%, #fff 34%, transparent 36%,
+            #fff 40%, transparent 42%, #fff 44%, transparent 46%,
+            #fff 50%, transparent 52%, #fff 54%, transparent 56%,
+            #fff 60%, transparent 62%, #fff 64%, transparent 66%,
+            #fff 70%, transparent 72%, #fff 74%, transparent 76%,
+            #fff 80%, transparent 82%, #fff 84%, transparent 86%,
+            #fff 90%, transparent 92%, #fff 94%, transparent 96%
+        ),
+        linear-gradient(0deg, 
+            #fff 10%, transparent 12%, #fff 14%, transparent 16%,
+            #fff 20%, transparent 22%, #fff 24%, transparent 26%,
+            #fff 30%, transparent 32%, #fff 34%, transparent 36%,
+            #fff 40%, transparent 42%, #fff 44%, transparent 46%,
+            #fff 50%, transparent 52%, #fff 54%, transparent 56%,
+            #fff 60%, transparent 62%, #fff 64%, transparent 66%,
+            #fff 70%, transparent 72%, #fff 74%, transparent 76%,
+            #fff 80%, transparent 82%, #fff 84%, transparent 86%,
+            #fff 90%, transparent 92%, #fff 94%, transparent 96%
+        );
+    opacity: 0.2;
+    animation: qrScan 3s linear infinite;
+}
+
+@keyframes qrScan {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
+}
+
+.btn-qr-code:hover {
+    background: #1a1a1a;
+    box-shadow: 0 0 20px #fff;
+}
+
+/* Template 106 - Dark Pixel Art */
+.btn-pixel-art {
+    background: #000;
+    color: #ff6b6b;
+    border: 2px solid #ff6b6b;
+    padding: 8px 20px;
+    border-radius: 0;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    image-rendering: pixelated;
+}
+
+.btn-pixel-art::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, transparent 49%, #ff6b6b 50%, transparent 51%) 0 0 / 5px 5px,
+        linear-gradient(0deg, transparent 49%, #ff6b6b 50%, transparent 51%) 0 0 / 5px 5px;
+    opacity: 0.3;
+    animation: pixelGlitch 0.5s steps(2) infinite;
+}
+
+@keyframes pixelGlitch {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(1px, 1px); }
+    50% { transform: translate(-1px, -1px); }
+    75% { transform: translate(1px, -1px); }
+}
+
+.btn-pixel-art:hover {
+    background: #1a0000;
+    box-shadow: 
+        0 0 10px #ff6b6b,
+        inset 0 0 10px rgba(255, 107, 107, 0.2);
+}
+/* Dark Twitter Button */
+.btn-dark-twitter {
+    background: #1da1f2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 15px rgba(29, 161, 242, 0.3);
+}
+
+.btn-dark-twitter:hover {
+    background: #1a91da;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(29, 161, 242, 0.5);
+}
+
+.btn-dark-twitter i {
+    font-size: 10px;
+}
+
+/* Dark Instagram Button */
+.btn-dark-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-dark-instagram::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-dark-instagram:hover::before {
+    left: 100%;
+}
+
+.btn-dark-instagram:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(220, 39, 67, 0.4);
+}
+
+/* Dark Facebook Button */
+.btn-dark-facebook {
+    background: #1877f2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-dark-facebook:hover {
+    background: #166fe5;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+}
+
+.btn-dark-facebook::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.btn-dark-facebook:active::after {
+    width: 100px;
+    height: 100px;
+}
+
+/* Dark LinkedIn Button */
+.btn-dark-linkedin {
+    background: #0077b5;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-dark-linkedin:hover {
+    background: #00669c;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
+}
+
+/* Dark GitHub Button */
+.btn-dark-github {
+    background: #6e5494;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-dark-github:hover {
+    background: #5d447c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(110, 84, 148, 0.5);
+}
+
+/* Dark YouTube Button */
+.btn-dark-youtube {
+    background: #ff0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-dark-youtube:hover {
+    background: #e60000;
+    animation: youtubePulse 1.5s infinite;
+}
+
+@keyframes youtubePulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(255, 0, 0, 0); }
+}
+
+/* Dark Discord Button */
+.btn-dark-discord {
+    background: #5865f2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-dark-discord:hover {
+    background: #4752c4;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+}
+
+/* Dark TikTok Button */
+.btn-dark-tiktok {
+    background: #000000;
+    color: #00f2ea;
+    border: 2px solid #00f2ea;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-dark-tiktok::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 242, 234, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-dark-tiktok:hover::before {
+    left: 100%;
+}
+
+.btn-dark-tiktok:hover {
+    background: #00f2ea;
+    color: #000000;
+    box-shadow: 0 0 15px #00f2ea;
+}
+
+/* Dark Reddit Button */
+.btn-dark-reddit {
+    background: #ff4500;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-dark-reddit:hover {
+    background: #e63e00;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.4);
+}
+
+/* Dark WhatsApp Button */
+.btn-dark-whatsapp {
+    background: #25d366;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-dark-whatsapp:hover {
+    background: #20bd5c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+/* 3D Hover Button */
+.btn-3d-hover {
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 8px 0 #5a67d8,
+        0 12px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 0;
+}
+
+.btn-3d-hover:hover {
+    top: 4px;
+    box-shadow: 
+        0 4px 0 #5a67d8,
+        0 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d-hover:active {
+    top: 8px;
+    box-shadow: 
+        0 0 0 #5a67d8,
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Liquid Fill Button */
+.btn-liquid-fill {
+    background: transparent;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-liquid-fill::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #3b82f6;
+    transition: height 0.4s ease;
+    z-index: -1;
+    border-radius: 0 0 6px 6px;
+}
+
+.btn-liquid-fill:hover::before {
+    height: 100%;
+}
+
+.btn-liquid-fill:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Magnetic Cursor Button */
+.btn-magnetic {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-magnetic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+/* Particle Explosion Button */
+.btn-particle {
+    background: #ec4899;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-particle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-particle:active::before {
+    width: 200px;
+    height: 200px;
+}
+
+/* Glitch Effect Button */
+.btn-glitch {
+    background: #000;
+    color: #00ff88;
+    border: 2px solid #00ff88;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: 'Courier New', monospace;
+}
+
+.btn-glitch:hover {
+    animation: glitch 0.3s linear;
+    text-shadow: 
+        2px 0 #ff0080,
+        -2px 0 #0080ff;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* Neon Sign Button */
+.btn-neon-sign {
+    background: transparent;
+    color: #ff0080;
+    border: 3px solid #ff0080;
+    padding: 8px 20px;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 0 0 5px #ff0080;
+    box-shadow: 
+        0 0 10px #ff0080,
+        inset 0 0 10px rgba(255, 0, 128, 0.1);
+}
+
+.btn-neon-sign:hover {
+    animation: neonFlicker 1s infinite alternate;
+    background: #ff0080;
+    color: #000;
+}
+
+@keyframes neonFlicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        box-shadow: 
+            0 0 10px #ff0080,
+            0 0 20px #ff0080,
+            inset 0 0 10px rgba(255, 0, 128, 0.1);
+    }
+    20%, 24%, 55% {
+        box-shadow: 
+            0 0 5px #ff0080,
+            0 0 10px #ff0080,
+            inset 0 0 5px rgba(255, 0, 128, 0.1);
+    }
+}
+
+/* Morphing Gradient Button */
+.btn-morph-gradient {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    animation: gradientShift 3s ease infinite;
+    transition: all 0.3s ease;
+}
+
+.btn-morph-gradient:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(35, 166, 213, 0.4);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glass Reflection Button */
+.btn-glass-reflection {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #7c3aed;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-glass-reflection::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.btn-glass-reflection:hover::before {
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+.btn-glass-reflection:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Holographic Button */
+.btn-holographic {
+    background: linear-gradient(45deg, 
+        #ff0000, #ff8000, #ffff00, #00ff00, 
+        #00ffff, #0000ff, #8000ff, #ff0080
+    );
+    background-size: 800% 800%;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    animation: holographic 4s linear infinite;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+@keyframes holographic {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
+
+.btn-holographic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 0, 128, 0.4);
+}
+
+/* Binary Code Button */
+.btn-binary {
+    background: #000;
+    color: #00ff41;
+    border: 1px solid #00ff41;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-binary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+    animation: binaryScan 2s linear infinite;
+}
+
+@keyframes binaryScan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.btn-binary:hover {
+    background: #00ff41;
+    color: #000;
+    box-shadow: 0 0 20px #00ff41;
+}

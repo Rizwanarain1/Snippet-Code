@@ -4173,7 +4173,5096 @@ hologramStyle.textContent = \`
     }
 \`;
 document.head.appendChild(hologramStyle);`
+},
+// ====================================================================
+// TEMPLATE 47: BOUNCE ANIMATION
+// ====================================================================
+btn47: {
+    name: "Bounce Animation",
+    category: "animated",
+    html: `<button class="btn-bounce">
+    Bounce Me
+</button>`,
+    css: `.btn-bounce {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    font-family: inherit;
 }
+
+.btn-bounce:hover {
+    animation: bounce 0.5s ease infinite alternate;
+    transform: translateY(-4px);
+}
+
+@keyframes bounce {
+    from { transform: translateY(-4px); }
+    to { transform: translateY(-8px); }
+}`,
+    js: `// Bounce button functionality
+const bounceBtn = document.querySelector('.btn-bounce');
+
+bounceBtn.addEventListener('click', function() {
+    console.log('Bounce button clicked!');
+    
+    // Add click effect
+    this.style.animation = 'none';
+    setTimeout(() => {
+        this.style.animation = 'bounce 0.5s ease infinite alternate';
+    }, 50);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 48: WAVE ANIMATION
+// ====================================================================
+btn48: {
+    name: "Wave Animation",
+    category: "animated",
+    html: `<button class="btn-wave">
+    Wave Effect
+</button>`,
+    css: `.btn-wave {
+    position: relative;
+    padding: 15px 30px;
+    background: #10b981;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-wave::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: all 0.6s ease;
+}
+
+.btn-wave:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+.btn-wave:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(16, 185, 129, 0.5);
+}`,
+    js: `// Wave button functionality
+const waveBtn = document.querySelector('.btn-wave');
+
+waveBtn.addEventListener('click', function(e) {
+    console.log('Wave button clicked!');
+    
+    // Create multiple waves
+    for(let i = 0; i < 3; i++) {
+        setTimeout(() => {
+            const wave = document.createElement('span');
+            wave.style.cssText = \`
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                transform: translate(-50%, -50%);
+                animation: waveExpand 0.6s ease-out;
+                pointer-events: none;
+            \`;
+            this.appendChild(wave);
+            
+            setTimeout(() => wave.remove(), 600);
+        }, i * 200);
+    }
+});
+
+// Add wave animation
+const waveStyle = document.createElement('style');
+waveStyle.textContent = \`
+    @keyframes waveExpand {
+        to {
+            width: 400px;
+            height: 400px;
+            opacity: 0;
+        }
+    }
+\`;
+document.head.appendChild(waveStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 49: NEON PULSE
+// ====================================================================
+btn49: {
+    name: "Neon Pulse",
+    category: "animated",
+    html: `<button class="btn-neon-pulse">
+    Neon Pulse
+</button>`,
+    css: `.btn-neon-pulse {
+    padding: 15px 30px;
+    background: transparent;
+    border: 2px solid #ff0080;
+    border-radius: 12px;
+    color: #ff0080;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: neonPulse 2s infinite;
+    text-shadow: 0 0 8px #ff0080;
+    box-shadow: 
+        0 0 15px #ff0080,
+        inset 0 0 8px #ff0080;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+@keyframes neonPulse {
+    0%, 100% { 
+        box-shadow: 
+            0 0 15px #ff0080,
+            inset 0 0 8px #ff0080;
+    }
+    50% { 
+        box-shadow: 
+            0 0 25px #ff0080,
+            inset 0 0 12px #ff0080;
+    }
+}
+
+.btn-neon-pulse:hover {
+    background: #ff0080;
+    color: white;
+    animation: none;
+    transform: translateY(-2px);
+}`,
+    js: `// Neon pulse button functionality
+const neonBtn = document.querySelector('.btn-neon-pulse');
+
+neonBtn.addEventListener('click', function() {
+    console.log('Neon pulse button clicked!');
+    
+    // Intensify pulse on click
+    this.style.animation = 'neonPulse 0.5s infinite';
+    setTimeout(() => {
+        this.style.animation = 'neonPulse 2s infinite';
+    }, 1000);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 50: MAGNETIC 2D
+// ====================================================================
+btn50: {
+    name: "Magnetic 2D",
+    category: "animated",
+    html: `<button class="btn-magnetic-2d">
+    Magnetic 2D
+</button>`,
+    css: `.btn-magnetic-2d {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: inherit;
+}
+
+.btn-magnetic-2d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-magnetic-2d:hover::before {
+    left: 100%;
+}
+
+.btn-magnetic-2d:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(240, 147, 251, 0.4);
+}`,
+    js: `// Magnetic 2D button functionality
+const magnetic2dBtn = document.querySelector('.btn-magnetic-2d');
+
+magnetic2dBtn.addEventListener('mousemove', function(e) {
+    const rect = this.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    const deltaX = (x - centerX) / centerX * 5;
+    const deltaY = (y - centerY) / centerY * 5;
+    
+    this.style.transform = \`translate(\${deltaX}px, \${deltaY - 3}px)\`;
+});
+
+magnetic2dBtn.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(-3px)';
+});`
+},
+
+// ====================================================================
+// TEMPLATE 51: SHAKE ANIMATION
+// ====================================================================
+btn51: {
+    name: "Shake Animation",
+    category: "animated",
+    html: `<button class="btn-shake">
+    Shake Me
+</button>`,
+    css: `.btn-shake {
+    padding: 15px 30px;
+    background: #f59e0b;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-shake:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}`,
+    js: `// Shake button functionality
+const shakeBtn = document.querySelector('.btn-shake');
+
+shakeBtn.addEventListener('click', function() {
+    console.log('Shake button clicked!');
+    
+    // Trigger shake animation
+    this.style.animation = 'shake 0.5s ease-in-out';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 500);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 52: ROTATE 3D
+// ====================================================================
+btn52: {
+    name: "Rotate 3D",
+    category: "animated",
+    html: `<button class="btn-rotate-3d">
+    Rotate 3D
+</button>`,
+    css: `.btn-rotate-3d {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    font-family: inherit;
+}
+
+.btn-rotate-3d:hover {
+    transform: rotateX(20deg) rotateY(20deg) scale(1.1);
+    box-shadow: 
+        0 20px 40px rgba(79, 172, 254, 0.5),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4);
+}`,
+    js: `// Rotate 3D button functionality
+const rotate3dBtn = document.querySelector('.btn-rotate-3d');
+
+rotate3dBtn.addEventListener('click', function() {
+    console.log('Rotate 3D button clicked!');
+    
+    // Add click rotation
+    this.style.transform = 'rotateX(30deg) rotateY(30deg) scale(1.05)';
+    setTimeout(() => {
+        this.style.transform = 'rotateX(20deg) rotateY(20deg) scale(1.1)';
+    }, 150);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 53: GLITCH EFFECT
+// ====================================================================
+btn53: {
+    name: "Glitch Effect",
+    category: "animated",
+    html: `<button class="btn-glitch">
+    Glitch Effect
+</button>`,
+    css: `.btn-glitch {
+    padding: 15px 30px;
+    background: #000;
+    border: 2px solid #00ffff;
+    border-radius: 12px;
+    color: #00ffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 0 8px #00ffff;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.btn-glitch:hover {
+    animation: glitch 0.3s linear;
+    background: rgba(0, 255, 255, 0.1);
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-3px, 3px); }
+    40% { transform: translate(-3px, -3px); }
+    60% { transform: translate(3px, 3px); }
+    80% { transform: translate(3px, -3px); }
+    100% { transform: translate(0); }
+}`,
+    js: `// Glitch button functionality
+const glitchBtn = document.querySelector('.btn-glitch');
+
+glitchBtn.addEventListener('click', function() {
+    console.log('Glitch button clicked!');
+    
+    // Multiple glitch effects on click
+    for(let i = 0; i < 2; i++) {
+        setTimeout(() => {
+            this.style.animation = 'glitch 0.2s linear';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 200);
+        }, i * 300);
+    }
+});`
+},
+
+// ====================================================================
+// TEMPLATE 54: PARTICLE EXPLOSION
+// ====================================================================
+btn54: {
+    name: "Particle Explosion",
+    category: "animated",
+    html: `<button class="btn-particle">
+    Particles
+</button>`,
+    css: `.btn-particle {
+    position: relative;
+    padding: 15px 30px;
+    background: #8b5cf6;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-particle::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+}
+
+.btn-particle:hover::before {
+    transform: translate(-50%, -50%) scale(15);
+    opacity: 0;
+}
+
+.btn-particle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(139, 92, 246, 0.5);
+}`,
+    js: `// Particle button functionality
+const particleBtn = document.querySelector('.btn-particle');
+
+particleBtn.addEventListener('click', function() {
+    console.log('Particle button clicked!');
+    
+    // Create multiple particles
+    for(let i = 0; i < 8; i++) {
+        const particle = document.createElement('div');
+        const angle = (i / 8) * Math.PI * 2;
+        const distance = 50;
+        
+        particle.style.cssText = \`
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            animation: particleMove 0.8s ease-out forwards;
+            pointer-events: none;
+        \`;
+        
+        document.body.appendChild(particle);
+        
+        const rect = this.getBoundingClientRect();
+        const startX = rect.left + rect.width / 2;
+        const startY = rect.top + rect.height / 2;
+        
+        particle.style.left = startX + 'px';
+        particle.style.top = startY + 'px';
+        
+        setTimeout(() => particle.remove(), 800);
+    }
+});
+
+// Add particle animation
+const particleStyle = document.createElement('style');
+particleStyle.textContent = \`
+    @keyframes particleMove {
+        to {
+            transform: translate(
+                \${Math.cos(0) * 50}px,
+                \${Math.sin(0) * 50}px
+            );
+            opacity: 0;
+        }
+    }
+\`;
+document.head.appendChild(particleStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 55: MORPH SHAPE
+// ====================================================================
+btn55: {
+    name: "Morph Shape",
+    category: "animated",
+    html: `<button class="btn-morph">
+    Morph Me
+</button>`,
+    css: `.btn-morph {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #ff6b6b, #ffa8a8);
+    border: none;
+    border-radius: 30px 10px 30px 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    font-family: inherit;
+}
+
+.btn-morph:hover {
+    border-radius: 10px 30px 10px 30px;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.5);
+}`,
+    js: `// Morph button functionality
+const morphBtn = document.querySelector('.btn-morph');
+
+morphBtn.addEventListener('click', function() {
+    console.log('Morph button clicked!');
+    
+    // Add extra morph on click
+    this.style.borderRadius = '15px 15px 15px 15px';
+    this.style.transform = 'scale(1.05) rotate(-5deg)';
+    
+    setTimeout(() => {
+        this.style.borderRadius = '10px 30px 10px 30px';
+        this.style.transform = 'scale(1.1) rotate(5deg)';
+    }, 300);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 56: INFINITE SPIN
+// ====================================================================
+btn56: {
+    name: "Infinite Spin",
+    category: "animated",
+    html: `<button class="btn-spin">
+    Spin Forever
+</button>`,
+    css: `.btn-spin {
+    position: relative;
+    padding: 15px 30px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    color: #6366f1;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    font-family: inherit;
+    transition: color 0.3s ease;
+}
+
+.btn-spin::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: conic-gradient(from 0deg, #6366f1, #8b5cf6, #ec4899, #6366f1);
+    border-radius: 15px;
+    animation: spin 2s linear infinite;
+    z-index: -1;
+}
+
+.btn-spin::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: white;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn-spin:hover::before {
+    animation-duration: 0.5s;
+}
+
+.btn-spin:hover {
+    color: #8b5cf6;
+}`,
+    js: `// Infinite spin button functionality
+const spinBtn = document.querySelector('.btn-spin');
+
+spinBtn.addEventListener('click', function() {
+    console.log('Spin button clicked!');
+    
+    // Speed up spin on click
+    this.style.setProperty('--spin-duration', '0.2s');
+    setTimeout(() => {
+        this.style.setProperty('--spin-duration', '2s');
+    }, 500);
+});`
+},
+// ====================================================================
+// TEMPLATE 57: SLIDE FILL ANIMATION
+// ====================================================================
+btn57: {
+    name: "Slide Fill Animation",
+    category: "animated",
+    html: `<button class="btn-slide-fill" style="--clr: #7c3aed">
+    <span class="btn-decor"></span>
+    <span class="btn-content">
+        <span class="btn-icon">
+            <i class="fas fa-rocket"></i>
+        </span>
+        <span class="btn-text">Slide Fill</span>
+    </span>
+</button>`,
+    css: `.btn-slide-fill {
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.btn-decor {
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr);
+    transform: translateX(-100%);
+    transition: transform .3s;
+    z-index: 0;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon {
+    width: 48px;
+    height: 40px;
+    background-color: var(--clr);
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.btn-slide-fill:hover .btn-text {
+    color: #fff;
+}
+
+.btn-slide-fill:hover .btn-decor {
+    transform: translate(0);
+}`,
+    js: `// Slide fill button functionality
+const slideFillBtn = document.querySelector('.btn-slide-fill');
+
+slideFillBtn.addEventListener('click', function() {
+    console.log('Slide fill button clicked!');
+    
+    // Add click feedback
+    this.style.transform = 'scale(0.98)';
+    setTimeout(() => {
+        this.style.transform = '';
+    }, 150);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 58: GRADIENT SLIDE
+// ====================================================================
+btn58: {
+    name: "Gradient Slide",
+    category: "animated",
+    html: `<button class="btn-gradient-slide" style="--clr: linear-gradient(135deg, #667eea, #764ba2)">
+    <span class="btn-decor"></span>
+    <span class="btn-content">
+        <span class="btn-icon">
+            <i class="fas fa-star"></i>
+        </span>
+        <span class="btn-text">Gradient Slide</span>
+    </span>
+</button>`,
+    css: `.btn-gradient-slide {
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.btn-decor {
+    position: absolute;
+    inset: 0;
+    background: var(--clr);
+    transform: translateX(-100%);
+    transition: transform .3s;
+    z-index: 0;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon {
+    width: 48px;
+    height: 40px;
+    background: var(--clr);
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.btn-gradient-slide:hover .btn-text {
+    color: #fff;
+}
+
+.btn-gradient-slide:hover .btn-decor {
+    transform: translate(0);
+}
+
+.btn-gradient-slide:hover .btn-icon {
+    background: rgba(255, 255, 255, 0.2);
+}`,
+    js: `// Gradient slide button functionality
+const gradientSlideBtn = document.querySelector('.btn-gradient-slide');
+
+gradientSlideBtn.addEventListener('click', function() {
+    console.log('Gradient slide button clicked!');
+    
+    // Add bounce effect
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        this.style.transform = '';
+    }, 200);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 59: DUAL COLOR FILL
+// ====================================================================
+btn59: {
+    name: "Dual Color Fill",
+    category: "animated",
+    html: `<button class="btn-dual-fill" style="--clr1: #ec4899; --clr2: #8b5cf6">
+    <span class="btn-decor"></span>
+    <span class="btn-content">
+        <span class="btn-icon">
+            <i class="fas fa-heart"></i>
+        </span>
+        <span class="btn-text">Dual Color</span>
+    </span>
+</button>`,
+    css: `.btn-dual-fill {
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.btn-decor {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--clr1) 0%, var(--clr2) 100%);
+    transform: translateX(-100%) scaleX(1.5);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon {
+    width: 48px;
+    height: 40px;
+    background: var(--clr1);
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.btn-dual-fill:hover .btn-text {
+    color: #fff;
+}
+
+.btn-dual-fill:hover .btn-decor {
+    transform: translate(0) scaleX(1);
+}
+
+.btn-dual-fill:hover .btn-icon {
+    background: linear-gradient(90deg, var(--clr1) 0%, var(--clr2) 100%);
+}`,
+    js: `// Dual color fill button functionality
+const dualFillBtn = document.querySelector('.btn-dual-fill');
+
+dualFillBtn.addEventListener('click', function() {
+    console.log('Dual color fill button clicked!');
+    
+    // Add pulse effect
+    this.style.animation = 'pulse 0.3s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 300);
+});
+
+// Add pulse animation
+const pulseStyle = document.createElement('style');
+pulseStyle.textContent = \`
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+    }
+\`;
+document.head.appendChild(pulseStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 60: BOUNCE FILL
+// ====================================================================
+btn60: {
+    name: "Bounce Fill",
+    category: "animated",
+    html: `<button class="btn-bounce-fill" style="--clr: #10b981">
+    <span class="btn-decor"></span>
+    <span class="btn-content">
+        <span class="btn-icon">
+            <i class="fas fa-check"></i>
+        </span>
+        <span class="btn-text">Bounce Fill</span>
+    </span>
+</button>`,
+    css: `.btn-bounce-fill {
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.btn-decor {
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr);
+    transform: translateX(-100%);
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 0;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon {
+    width: 48px;
+    height: 40px;
+    background-color: var(--clr);
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.btn-bounce-fill:hover .btn-text {
+    color: #fff;
+}
+
+.btn-bounce-fill:hover .btn-decor {
+    transform: translate(0);
+}
+
+.btn-bounce-fill:hover {
+    animation: bounceButton 0.5s ease;
+}
+
+@keyframes bounceButton {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}`,
+    js: `// Bounce fill button functionality
+const bounceFillBtn = document.querySelector('.btn-bounce-fill');
+
+bounceFillBtn.addEventListener('click', function() {
+    console.log('Bounce fill button clicked!');
+    
+    // Add extra bounce on click
+    this.style.animation = 'bounceButton 0.3s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 300);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 61: WAVE FILL
+// ====================================================================
+btn61: {
+    name: "Wave Fill",
+    category: "animated",
+    html: `<button class="btn-wave-fill" style="--clr: #3b82f6">
+    <span class="btn-decor"></span>
+    <span class="btn-content">
+        <span class="btn-icon">
+            <i class="fas fa-water"></i>
+        </span>
+        <span class="btn-text">Wave Fill</span>
+    </span>
+</button>`,
+    css: `.btn-wave-fill {
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.btn-decor {
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr);
+    transform: translateX(-100%) skewX(-15deg);
+    transition: transform 0.4s ease;
+    z-index: 0;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon {
+    width: 48px;
+    height: 40px;
+    background-color: var(--clr);
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.btn-wave-fill:hover .btn-text {
+    color: #fff;
+}
+
+.btn-wave-fill:hover .btn-decor {
+    transform: translate(0) skewX(-15deg);
+}
+
+.btn-wave-fill:hover .btn-icon {
+    animation: waveIcon 0.6s ease;
+}
+
+@keyframes waveIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}`,
+    js: `// Wave fill button functionality
+const waveFillBtn = document.querySelector('.btn-wave-fill');
+
+waveFillBtn.addEventListener('click', function() {
+    console.log('Wave fill button clicked!');
+    
+    // Create ripple effect
+    const ripple = document.createElement('span');
+    ripple.style.cssText = \`
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        transform: translate(-50%, -50%);
+        animation: ripple 0.6s ease-out;
+        pointer-events: none;
+        z-index: 2;
+    \`;
+    this.appendChild(ripple);
+    
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+});
+
+// Add ripple animation
+const rippleStyle = document.createElement('style');
+rippleStyle.textContent = \`
+    @keyframes ripple {
+        to {
+            width: 200px;
+            height: 200px;
+            opacity: 0;
+        }
+    }
+\`;
+document.head.appendChild(rippleStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 62: DIAGONAL SLIDE
+// ====================================================================
+btn62: {
+    name: "Diagonal Slide",
+    category: "animated",
+    html: `<button class="btn-diagonal-slide" style="--clr: #f59e0b">
+    <span class="btn-decor"></span>
+    <span class="btn-content">
+        <span class="btn-icon">
+            <i class="fas fa-bolt"></i>
+        </span>
+        <span class="btn-text">Diagonal Slide</span>
+    </span>
+</button>`,
+    css: `.btn-diagonal-slide {
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.btn-decor {
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr);
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    transform-origin: top left;
+    transition: transform 0.4s ease;
+    z-index: 0;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon {
+    width: 48px;
+    height: 40px;
+    background-color: var(--clr);
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.btn-diagonal-slide:hover .btn-text {
+    color: #fff;
+}
+
+.btn-diagonal-slide:hover .btn-decor {
+    transform: translate(0) rotate(45deg);
+}`,
+    js: `// Diagonal slide button functionality
+const diagonalSlideBtn = document.querySelector('.btn-diagonal-slide');
+
+diagonalSlideBtn.addEventListener('click', function() {
+    console.log('Diagonal slide button clicked!');
+    
+    // Add lightning effect
+    this.style.filter = 'brightness(1.2)';
+    setTimeout(() => {
+        this.style.filter = 'brightness(1)';
+    }, 200);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 63: CIRCULAR EXPAND
+// ====================================================================
+btn63: {
+    name: "Circular Expand",
+    category: "animated",
+    html: `<button class="btn-circular-expand" style="--clr: #ef4444">
+    <span class="btn-decor"></span>
+    <span class="btn-content">
+        <span class="btn-icon">
+            <i class="fas fa-fire"></i>
+        </span>
+        <span class="btn-text">Circular Expand</span>
+    </span>
+</button>`,
+    css: `.btn-circular-expand {
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.btn-decor {
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr);
+    transform: scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+    transform-origin: center;
+    z-index: 0;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon {
+    width: 48px;
+    height: 40px;
+    background-color: var(--clr);
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.btn-circular-expand:hover .btn-text {
+    color: #fff;
+}
+
+.btn-circular-expand:hover .btn-decor {
+    transform: scale(2);
+}`,
+    js: `// Circular expand button functionality
+const circularExpandBtn = document.querySelector('.btn-circular-expand');
+
+circularExpandBtn.addEventListener('click', function() {
+    console.log('Circular expand button clicked!');
+    
+    // Add fire effect
+    this.style.animation = 'firePulse 0.3s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 300);
+});
+
+// Add fire pulse animation
+const fireStyle = document.createElement('style');
+fireStyle.textContent = \`
+    @keyframes firePulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.02); filter: brightness(1.3); }
+    }
+\`;
+document.head.appendChild(fireStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 64: DOUBLE SLIDE
+// ====================================================================
+btn64: {
+    name: "Double Slide",
+    category: "animated",
+    html: `<button class="btn-double-slide" style="--clr1: #8b5cf6; --clr2: #ec4899">
+    <span class="btn-decor-top"></span>
+    <span class="btn-decor-bottom"></span>
+    <span class="btn-content">
+        <span class="btn-icon">
+            <i class="fas fa-gem"></i>
+        </span>
+        <span class="btn-text">Double Slide</span>
+    </span>
+</button>`,
+    css: `.btn-double-slide {
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.btn-decor-top,
+.btn-decor-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50%;
+    transition: transform 0.4s ease;
+    z-index: 0;
+}
+
+.btn-decor-top {
+    top: 0;
+    background: var(--clr1);
+    transform: translateX(-100%);
+}
+
+.btn-decor-bottom {
+    bottom: 0;
+    background: var(--clr2);
+    transform: translateX(100%);
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon {
+    width: 48px;
+    height: 40px;
+    background: var(--clr1);
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.btn-double-slide:hover .btn-text {
+    color: #fff;
+}
+
+.btn-double-slide:hover .btn-decor-top {
+    transform: translateX(0);
+}
+
+.btn-double-slide:hover .btn-decor-bottom {
+    transform: translateX(0);
+}
+
+.btn-double-slide:hover .btn-icon {
+    background: linear-gradient(135deg, var(--clr1), var(--clr2));
+}`,
+    js: `// Double slide button functionality
+const doubleSlideBtn = document.querySelector('.btn-double-slide');
+
+doubleSlideBtn.addEventListener('click', function() {
+    console.log('Double slide button clicked!');
+    
+    // Add sparkle effect
+    this.style.animation = 'sparkle 0.3s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 300);
+});
+
+// Add sparkle animation
+const sparkleStyle = document.createElement('style');
+sparkleStyle.textContent = \`
+    @keyframes sparkle {
+        0%, 100% { filter: brightness(1); }
+        50% { filter: brightness(1.3); }
+    }
+\`;
+document.head.appendChild(sparkleStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 65: NEON SLIDE
+// ====================================================================
+btn65: {
+    name: "Neon Slide",
+    category: "animated",
+    html: `<button class="btn-neon-slide" style="--clr: #00ff88">
+    <span class="btn-decor"></span>
+    <span class="btn-content">
+        <span class="btn-icon">
+            <i class="fas fa-gamepad"></i>
+        </span>
+        <span class="btn-text">Neon Slide</span>
+    </span>
+</button>`,
+    css: `.btn-neon-slide {
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    color: var(--clr);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-weight: 600;
+    box-shadow: 
+        0 0 15px var(--clr),
+        inset 0 0 8px var(--clr);
+    text-shadow: 0 0 5px var(--clr);
+    transition: all 0.3s ease;
+}
+
+.btn-decor {
+    position: absolute;
+    inset: 0;
+    background: var(--clr);
+    transform: translateX(-100%);
+    transition: transform .3s;
+    z-index: 0;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon {
+    width: 48px;
+    height: 40px;
+    background: var(--clr);
+    display: grid;
+    place-items: center;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.btn-text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.btn-neon-slide:hover .btn-text {
+    color: #000;
+    text-shadow: none;
+}
+
+.btn-neon-slide:hover .btn-decor {
+    transform: translate(0);
+}
+
+.btn-neon-slide:hover {
+    box-shadow: 
+        0 0 25px var(--clr),
+        inset 0 0 12px var(--clr);
+}`,
+    js: `// Neon slide button functionality
+const neonSlideBtn = document.querySelector('.btn-neon-slide');
+
+neonSlideBtn.addEventListener('click', function() {
+    console.log('Neon slide button clicked!');
+    
+    // Add gamepad vibration effect
+    this.style.animation = 'vibrate 0.1s ease 3';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 300);
+});
+
+// Add vibrate animation
+const vibrateStyle = document.createElement('style');
+vibrateStyle.textContent = \`
+    @keyframes vibrate {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(2px); }
+    }
+\`;
+document.head.appendChild(vibrateStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 66: 3D SLIDE FILL
+// ====================================================================
+btn66: {
+    name: "3D Slide Fill",
+    category: "animated",
+    html: `<button class="btn-3d-slide" style="--clr: #06b6d4">
+    <span class="btn-decor"></span>
+    <span class="btn-content">
+        <span class="btn-icon">
+            <i class="fas fa-cube"></i>
+        </span>
+        <span class="btn-text">3D Slide</span>
+    </span>
+</button>`,
+    css: `.btn-3d-slide {
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-weight: 600;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    transition: all 0.3s ease;
+}
+
+.btn-decor {
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr);
+    transform: translateX(-100%) rotateY(45deg);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon {
+    width: 48px;
+    height: 40px;
+    background-color: var(--clr);
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.btn-3d-slide:hover .btn-text {
+    color: #fff;
+}
+
+.btn-3d-slide:hover .btn-decor {
+    transform: translate(0) rotateY(0);
+}
+
+.btn-3d-slide:hover {
+    transform: translateY(-3px) rotateX(5deg);
+    box-shadow: 
+        0 12px 30px rgba(6, 182, 212, 0.4),
+        0 6px 15px rgba(0, 0, 0, 0.1);
+}`,
+    js: `// 3D slide button functionality
+const threeDSlideBtn = document.querySelector('.btn-3d-slide');
+
+threeDSlideBtn.addEventListener('click', function() {
+    console.log('3D slide button clicked!');
+    
+    // Add 3D click effect
+    this.style.transform = 'translateY(-1px) rotateX(10deg) scale(0.98)';
+    setTimeout(() => {
+        this.style.transform = 'translateY(-3px) rotateX(5deg)';
+    }, 150);
+});`
+},
+// ====================================================================
+// TEMPLATE 77: DARK NEON GLOW
+// ====================================================================
+btn77: {
+    name: "Dark Neon Glow",
+    category: "dark",
+    html: `<button class="btn-dark-neon">
+    Neon Glow
+</button>`,
+    css: `.btn-dark-neon {
+    background: transparent;
+    color: #00ff88;
+    border: 2px solid #00ff88;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #00ff88;
+    box-shadow: 
+        0 0 5px #00ff88,
+        inset 0 0 5px #00ff88;
+    font-family: inherit;
+}
+
+.btn-dark-neon:hover {
+    background: #00ff88;
+    color: #000;
+    text-shadow: none;
+    box-shadow: 
+        0 0 20px #00ff88,
+        0 0 40px #00ff88,
+        inset 0 0 10px #00ff88;
+    transform: translateY(-2px);
+}
+
+.btn-dark-neon:active {
+    transform: translateY(0);
+}`,
+    js: `// Dark neon glow button
+const neonBtn = document.querySelector('.btn-dark-neon');
+
+neonBtn.addEventListener('click', function() {
+    console.log('Neon glow button clicked!');
+    
+    // Add click animation
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        this.style.transform = 'translateY(-2px)';
+    }, 100);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 78: CYBERPUNK BUTTON
+// ====================================================================
+btn78: {
+    name: "Cyberpunk Button",
+    category: "dark",
+    html: `<button class="btn-cyberpunk">
+    CYBERPUNK
+</button>`,
+    css: `.btn-cyberpunk {
+    background: linear-gradient(45deg, #ff0080, #8000ff);
+    color: #00ffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #00ffff;
+    clip-path: polygon(
+        0 0, 
+        calc(100% - 10px) 0, 
+        100% 10px, 
+        100% 100%, 
+        10px 100%, 
+        0 calc(100% - 10px)
+    );
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-cyberpunk::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #000;
+    clip-path: polygon(
+        0 0, 
+        calc(100% - 10px) 0, 
+        100% 10px, 
+        100% 100%, 
+        10px 100%, 
+        0 calc(100% - 10px)
+    );
+    z-index: -1;
+}
+
+.btn-cyberpunk:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 0 20px #ff0080,
+        0 0 40px #8000ff;
+}
+
+.btn-cyberpunk:active {
+    transform: translateY(0);
+}`,
+    js: `// Cyberpunk button functionality
+const cyberBtn = document.querySelector('.btn-cyberpunk');
+
+cyberBtn.addEventListener('click', function() {
+    console.log('Cyberpunk button activated!');
+    
+    // Add glitch effect on click
+    this.style.animation = 'glitch 0.2s linear';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 200);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 79: MATRIX RAIN
+// ====================================================================
+btn79: {
+    name: "Matrix Rain",
+    category: "dark",
+    html: `<button class="btn-matrix">
+    MATRIX
+</button>`,
+    css: `.btn-matrix {
+    background: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px #00ff00;
+    transition: all 0.3s ease;
+}
+
+.btn-matrix::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom,
+        transparent 30%,
+        rgba(0, 255, 0, 0.1) 50%,
+        transparent 70%
+    );
+    animation: matrixRain 2s linear infinite;
+    transform: rotate(30deg);
+}
+
+@keyframes matrixRain {
+    0% { transform: translateY(-100%) rotate(30deg); }
+    100% { transform: translateY(100%) rotate(30deg); }
+}
+
+.btn-matrix:hover {
+    box-shadow: 
+        0 0 10px #00ff00,
+        0 0 20px #00ff00;
+    background: #001100;
+    transform: translateY(-2px);
+}
+
+.btn-matrix:active {
+    transform: translateY(0);
+}`,
+    js: `// Matrix rain button
+const matrixBtn = document.querySelector('.btn-matrix');
+
+matrixBtn.addEventListener('click', function() {
+    console.log('Matrix button clicked!');
+    
+    // Add digital sound effect simulation
+    this.style.background = '#002200';
+    setTimeout(() => {
+        this.style.background = '#000';
+    }, 150);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 80: HOLOGRAM BUTTON
+// ====================================================================
+btn80: {
+    name: "Hologram Button",
+    category: "dark",
+    html: `<button class="btn-hologram">
+    HOLOGRAM
+</button>`,
+    css: `.btn-hologram {
+    background: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #00ffff;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-hologram::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 255, 0.4),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.btn-hologram:hover::before {
+    left: 100%;
+}
+
+.btn-hologram:hover {
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 
+        0 0 15px #00ffff,
+        inset 0 0 15px rgba(0, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-hologram:active {
+    transform: translateY(0);
+}`,
+    js: `// Hologram button functionality
+const hologramBtn = document.querySelector('.btn-hologram');
+
+hologramBtn.addEventListener('click', function() {
+    console.log('Hologram button activated!');
+    
+    // Add scan effect
+    this.style.animation = 'scan 0.5s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 500);
+});
+
+// Add scan animation
+const style = document.createElement('style');
+style.textContent = \`
+    @keyframes scan {
+        0% { background-position: -100% 0; }
+        100% { background-position: 100% 0; }
+    }
+\`;
+document.head.appendChild(style);`
+},
+
+// ====================================================================
+// TEMPLATE 81: DARK GRADIENT PULSE
+// ====================================================================
+btn81: {
+    name: "Dark Gradient Pulse",
+    category: "dark",
+    html: `<button class="btn-gradient-pulse">
+    Gradient Pulse
+</button>`,
+    css: `.btn-gradient-pulse {
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+    background-size: 300% 300%;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    animation: gradientShift 3s ease infinite;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.btn-gradient-pulse::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-gradient-pulse:hover::before {
+    left: 100%;
+}
+
+.btn-gradient-pulse:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-gradient-pulse:active {
+    transform: translateY(0);
+}`,
+    js: `// Gradient pulse button
+const gradientPulseBtn = document.querySelector('.btn-gradient-pulse');
+
+gradientPulseBtn.addEventListener('click', function() {
+    console.log('Gradient pulse button clicked!');
+    
+    // Speed up animation on click
+    this.style.animationDuration = '1s';
+    setTimeout(() => {
+        this.style.animationDuration = '3s';
+    }, 1000);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 82: DARK GLASS MORPHISM
+// ====================================================================
+btn82: {
+    name: "Dark Glass Morphism",
+    category: "dark",
+    html: `<button class="btn-dark-glass">
+    Glass Effect
+</button>`,
+    css: `.btn-dark-glass {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: inherit;
+}
+
+.btn-dark-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-dark-glass:hover::before {
+    left: 100%;
+}
+
+.btn-dark-glass:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.btn-dark-glass:active {
+    transform: translateY(0);
+}`,
+    js: `// Dark glass morphism button
+const glassBtn = document.querySelector('.btn-dark-glass');
+
+glassBtn.addEventListener('click', function() {
+    console.log('Glass morphism button clicked!');
+    
+    // Add ripple effect
+    const ripple = document.createElement('span');
+    ripple.style.cssText = \`
+        position: absolute;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+    \`;
+    
+    this.appendChild(ripple);
+    
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 83: DARK PARTICLE EFFECT
+// ====================================================================
+btn83: {
+    name: "Dark Particle Effect",
+    category: "dark",
+    html: `<button class="btn-particle">
+    Particles
+</button>`,
+    css: `.btn-particle {
+    background: #1a1a1a;
+    color: #ff6b6b;
+    border: 2px solid #ff6b6b;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-particle::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    animation: particleFloat 3s infinite linear;
+    opacity: 0;
+}
+
+.btn-particle::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #4ecdc4;
+    border-radius: 50%;
+    animation: particleFloat 2s infinite linear 1s;
+    opacity: 0;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(100%) translateX(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%) translateX(10px);
+        opacity: 0;
+    }
+}
+
+.btn-particle:hover::before,
+.btn-particle:hover::after {
+    animation-play-state: running;
+}
+
+.btn-particle:hover {
+    box-shadow: 
+        0 0 10px #ff6b6b,
+        inset 0 0 10px rgba(255, 107, 107, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-particle:active {
+    transform: translateY(0);
+}`,
+    js: `// Particle effect button
+const particleBtn = document.querySelector('.btn-particle');
+
+particleBtn.addEventListener('mouseenter', function() {
+    // Start particle animation
+    this.style.setProperty('--particle-1', 'running');
+    this.style.setProperty('--particle-2', 'running');
+});
+
+particleBtn.addEventListener('click', function() {
+    console.log('Particle button clicked!');
+    
+    // Create burst effect
+    for(let i = 0; i < 5; i++) {
+        setTimeout(() => {
+            const particle = document.createElement('div');
+            particle.style.cssText = \`
+                position: absolute;
+                width: 3px;
+                height: 3px;
+                background: #ff6b6b;
+                border-radius: 50%;
+                pointer-events: none;
+                animation: burst 0.6s ease-out forwards;
+            \`;
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            this.appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 600);
+        }, i * 100);
+    }
+});
+
+// Add burst animation
+const burstStyle = document.createElement('style');
+burstStyle.textContent = \`
+    @keyframes burst {
+        0% {
+            transform: scale(0) translate(0, 0);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1) translate(\${Math.random() * 40 - 20}px, \${Math.random() * 40 - 20}px);
+            opacity: 0;
+        }
+    }
+\`;
+document.head.appendChild(burstStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 84: DARK LIQUID FILL
+// ====================================================================
+btn84: {
+    name: "Dark Liquid Fill",
+    category: "dark",
+    html: `<button class="btn-liquid-dark">
+    Liquid Dark
+</button>`,
+    css: `.btn-liquid-dark {
+    background: transparent;
+    color: #8b5cf6;
+    border: 2px solid #8b5cf6;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-liquid-dark::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(45deg, #8b5cf6, #6366f1);
+    transition: height 0.5s ease;
+    z-index: -1;
+    border-radius: 0 0 50% 50%;
+}
+
+.btn-liquid-dark:hover::before {
+    height: 100%;
+    border-radius: 0;
+}
+
+.btn-liquid-dark:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+.btn-liquid-dark:active {
+    transform: translateY(0);
+}`,
+    js: `// Dark liquid fill button
+const liquidDarkBtn = document.querySelector('.btn-liquid-dark');
+
+liquidDarkBtn.addEventListener('click', function() {
+    console.log('Liquid dark button clicked!');
+    
+    // Add wave effect
+    this.style.animation = 'liquidWave 0.6s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 600);
+});
+
+// Add wave animation
+const waveStyle = document.createElement('style');
+waveStyle.textContent = \`
+    @keyframes liquidWave {
+        0% { transform: translateY(-2px) scale(1); }
+        50% { transform: translateY(-2px) scale(1.02); }
+        100% { transform: translateY(-2px) scale(1); }
+    }
+\`;
+document.head.appendChild(waveStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 85: DARK GLITCH TEXT
+// ====================================================================
+btn85: {
+    name: "Dark Glitch Text",
+    category: "dark",
+    html: `<button class="btn-glitch">
+    GLITCH MODE
+</button>`,
+    css: `.btn-glitch {
+    background: #000;
+    color: #fff;
+    border: 2px solid #ff0080;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    overflow: hidden;
+}
+
+.btn-glitch:hover {
+    animation: glitch 0.3s linear;
+    background: #ff0080;
+    color: #000;
+    box-shadow: 0 0 20px #ff0080;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.btn-glitch:active {
+    transform: scale(0.95);
+}`,
+    js: `// Glitch text button
+const glitchBtn = document.querySelector('.btn-glitch');
+
+glitchBtn.addEventListener('click', function() {
+    console.log('Glitch mode activated!');
+    
+    // Extended glitch effect on click
+    this.style.animation = 'glitch 0.5s linear';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 500);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 86: DARK SPACE THEME
+// ====================================================================
+btn86: {
+    name: "Dark Space Theme",
+    category: "dark",
+    html: `<button class="btn-space">
+    EXPLORE SPACE
+</button>`,
+    css: `.btn-space {
+    background: #000;
+    color: #fff;
+    border: 1px solid #6366f1;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-space::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
+    animation: spaceTwinkle 4s infinite;
+}
+
+@keyframes spaceTwinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.btn-space:hover {
+    background: #111;
+    box-shadow: 
+        0 0 20px #6366f1,
+        inset 0 0 20px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-space:active {
+    transform: translateY(0);
+}`,
+    js: `// Space theme button
+const spaceBtn = document.querySelector('.btn-space');
+
+spaceBtn.addEventListener('click', function() {
+    console.log('Space exploration initiated!');
+    
+    // Add star burst effect
+    this.style.animation = 'starBurst 0.6s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 600);
+});
+
+// Add star burst animation
+const starStyle = document.createElement('style');
+starStyle.textContent = \`
+    @keyframes starBurst {
+        0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7); }
+        70% { box-shadow: 0 0 0 20px rgba(99, 102, 241, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+    }
+\`;
+document.head.appendChild(starStyle);`
+},
+// ====================================================================
+// TEMPLATE 87: DARK CYBER GRID
+// ====================================================================
+btn87: {
+    name: "Dark Cyber Grid",
+    category: "dark",
+    html: `<button class="btn-cyber-grid">
+    CYBER GRID
+</button>`,
+    css: `.btn-cyber-grid {
+    background: #000;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 12px 24px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+}
+
+.btn-cyber-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(90deg, transparent 49%, #00ff88 50%, transparent 51%),
+        linear-gradient(0deg, transparent 49%, #00ff88 50%, transparent 51%);
+    background-size: 15px 15px;
+    opacity: 0.3;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+.btn-cyber-grid:hover {
+    background: #001100;
+    box-shadow: 
+        0 0 20px #00ff88,
+        inset 0 0 15px #00ff88;
+    text-shadow: 0 0 10px #00ff88;
+}
+
+.btn-cyber-grid:active {
+    transform: scale(0.98);
+}`,
+    js: `// Cyber grid button
+const cyberGridBtn = document.querySelector('.btn-cyber-grid');
+
+cyberGridBtn.addEventListener('click', function() {
+    console.log('Cyber grid activated!');
+    
+    // Add scan effect
+    this.style.animation = 'gridScan 0.5s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 500);
+});
+
+// Add grid scan animation
+const gridStyle = document.createElement('style');
+gridStyle.textContent = \`
+    @keyframes gridScan {
+        0% { background-size: 15px 15px; }
+        50% { background-size: 20px 20px; }
+        100% { background-size: 15px 15px; }
+    }
+\`;
+document.head.appendChild(gridStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 88: DARK BINARY RAIN
+// ====================================================================
+btn88: {
+    name: "Dark Binary Rain",
+    category: "dark",
+    html: `<button class="btn-binary">
+    BINARY CODE
+</button>`,
+    css: `.btn-binary {
+    background: #000;
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+}
+
+.btn-binary::before {
+    content: '01010101010101011010101010101010';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    color: #00ffff;
+    font-size: 12px;
+    opacity: 0.3;
+    animation: binaryFall 3s linear infinite;
+}
+
+@keyframes binaryFall {
+    0% { top: -100%; }
+    100% { top: 100%; }
+}
+
+.btn-binary:hover::before {
+    animation-duration: 1s;
+    opacity: 0.6;
+}
+
+.btn-binary:hover {
+    background: #001133;
+    box-shadow: 0 0 25px #00ffff;
+}
+
+.btn-binary:active {
+    transform: scale(0.98);
+}`,
+    js: `// Binary rain button
+const binaryBtn = document.querySelector('.btn-binary');
+
+binaryBtn.addEventListener('click', function() {
+    console.log('Binary system engaged!');
+    
+    // Speed up binary rain
+    const before = this.querySelector('::before');
+    this.style.setProperty('--binary-speed', '0.5s');
+    
+    setTimeout(() => {
+        this.style.setProperty('--binary-speed', '3s');
+    }, 1000);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 89: DARK PLASMA BALL
+// ====================================================================
+btn89: {
+    name: "Dark Plasma Ball",
+    category: "dark",
+    html: `<button class="btn-plasma">
+    PLASMA
+</button>`,
+    css: `.btn-plasma {
+    background: radial-gradient(circle at center, #8b5cf6, #000);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-plasma::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, #8b5cf6, #ec4899, #f59e0b, #10b981, #3b82f6, #8b5cf6);
+    animation: plasmaRotate 4s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes plasmaRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn-plasma:hover {
+    transform: scale(1.1);
+    box-shadow: 
+        0 0 40px #8b5cf6,
+        0 0 80px #ec4899;
+}
+
+.btn-plasma:active {
+    transform: scale(1.05);
+}`,
+    js: `// Plasma ball button
+const plasmaBtn = document.querySelector('.btn-plasma');
+
+plasmaBtn.addEventListener('click', function() {
+    console.log('Plasma energy activated!');
+    
+    // Add electric arc effect
+    this.style.animation = 'plasmaPulse 0.3s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 300);
+});
+
+// Add plasma pulse animation
+const plasmaStyle = document.createElement('style');
+plasmaStyle.textContent = \`
+    @keyframes plasmaPulse {
+        0%, 100% { box-shadow: 0 0 40px #8b5cf6, 0 0 80px #ec4899; }
+        50% { box-shadow: 0 0 60px #8b5cf6, 0 0 120px #ec4899; }
+    }
+\`;
+document.head.appendChild(plasmaStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 90: DARK DATA STREAM
+// ====================================================================
+btn90: {
+    name: "Dark Data Stream",
+    category: "dark",
+    html: `<button class="btn-data-stream">
+    DATA FLOW
+</button>`,
+    css: `.btn-data-stream {
+    background: #000;
+    color: #ff0080;
+    border: 1px solid #ff0080;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+}
+
+.btn-data-stream::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff0080, transparent);
+    animation: dataStream 2s linear infinite;
+}
+
+@keyframes dataStream {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.btn-data-stream:hover {
+    background: #1a001a;
+    box-shadow: 
+        0 0 20px #ff0080,
+        inset 0 0 15px rgba(255, 0, 128, 0.2);
+}
+
+.btn-data-stream:active {
+    transform: scale(0.98);
+}`,
+    js: `// Data stream button
+const dataStreamBtn = document.querySelector('.btn-data-stream');
+
+dataStreamBtn.addEventListener('click', function() {
+    console.log('Data stream initiated!');
+    
+    // Add multiple data streams
+    for(let i = 0; i < 3; i++) {
+        setTimeout(() => {
+            const stream = document.createElement('div');
+            stream.style.cssText = \`
+                position: absolute;
+                top: \${i * 33}%;
+                left: -100%;
+                width: 100%;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, #ff0080, transparent);
+                animation: dataStream 1s linear;
+            \`;
+            this.appendChild(stream);
+            
+            setTimeout(() => stream.remove(), 1000);
+        }, i * 200);
+    }
+});`
+},
+
+// ====================================================================
+// TEMPLATE 91: DARK NEON SIGN
+// ====================================================================
+btn91: {
+    name: "Dark Neon Sign",
+    category: "dark",
+    html: `<button class="btn-neon-sign">
+    OPEN 24/7
+</button>`,
+    css: `.btn-neon-sign {
+    background: #000;
+    color: #ff0080;
+    border: 2px solid #ff0080;
+    padding: 12px 24px;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-family: 'Arial Black', sans-serif;
+    animation: neonFlicker 2s infinite alternate;
+    transition: all 0.3s ease;
+}
+
+@keyframes neonFlicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 
+            0 0 5px #ff0080,
+            0 0 10px #ff0080,
+            0 0 15px #ff0080;
+        box-shadow: 
+            0 0 5px #ff0080,
+            inset 0 0 5px #ff0080;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+        box-shadow: none;
+    }
+}
+
+.btn-neon-sign:hover {
+    animation-duration: 0.5s;
+    background: #ff0080;
+    color: #000;
+}
+
+.btn-neon-sign:active {
+    transform: scale(0.95);
+}`,
+    js: `// Neon sign button
+const neonSignBtn = document.querySelector('.btn-neon-sign');
+
+neonSignBtn.addEventListener('click', function() {
+    console.log('Neon sign activated!');
+    
+    // Add power on effect
+    this.style.animation = 'powerOn 1s ease';
+    setTimeout(() => {
+        this.style.animation = 'neonFlicker 2s infinite alternate';
+    }, 1000);
+});
+
+// Add power on animation
+const powerStyle = document.createElement('style');
+powerStyle.textContent = \`
+    @keyframes powerOn {
+        0% { opacity: 0; transform: scale(0.8); }
+        100% { opacity: 1; transform: scale(1); }
+    }
+\`;
+document.head.appendChild(powerStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 92: DARK CIRCUIT BOARD
+// ====================================================================
+btn92: {
+    name: "Dark Circuit Board",
+    category: "dark",
+    html: `<button class="btn-circuit">
+    CIRCUIT
+</button>`,
+    css: `.btn-circuit {
+    background: #000;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-circuit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 30%, #00ff88 1px, transparent 1px),
+        radial-gradient(circle at 70% 70%, #00ff88 1px, transparent 1px);
+    background-size: 15px 15px;
+    opacity: 0.3;
+    animation: circuitPulse 2s infinite;
+}
+
+@keyframes circuitPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+.btn-circuit:hover {
+    background: #001100;
+    box-shadow: 0 0 25px #00ff88;
+}
+
+.btn-circuit:active {
+    transform: scale(0.98);
+}`,
+    js: `// Circuit board button
+const circuitBtn = document.querySelector('.btn-circuit');
+
+circuitBtn.addEventListener('click', function() {
+    console.log('Circuit activated!');
+    
+    // Add electricity flow effect
+    this.style.animation = 'electricFlow 0.5s ease';
+    setTimeout(() => {
+        this.style.animation = 'circuitPulse 2s infinite';
+    }, 500);
+});
+
+// Add electric flow animation
+const electricStyle = document.createElement('style');
+electricStyle.textContent = \`
+    @keyframes electricFlow {
+        0% { background-size: 15px 15px; }
+        50% { background-size: 20px 20px; }
+        100% { background-size: 15px 15px; }
+    }
+\`;
+document.head.appendChild(electricStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 93: DARK DIGITAL CLOCK
+// ====================================================================
+btn93: {
+    name: "Dark Digital Clock",
+    category: "dark",
+    html: `<button class="btn-digital-clock">
+    00:00:00
+</button>`,
+    css: `.btn-digital-clock {
+    background: #000;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px #00ffff;
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-digital-clock:hover {
+    background: #001133;
+    box-shadow: 
+        0 0 20px #00ffff,
+        inset 0 0 15px rgba(0, 255, 255, 0.3);
+    animation: digitalBlink 0.5s infinite alternate;
+}
+
+@keyframes digitalBlink {
+    0% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+.btn-digital-clock:active {
+    transform: scale(0.98);
+}`,
+    js: `// Digital clock button
+const digitalClockBtn = document.querySelector('.btn-digital-clock');
+
+// Update time function
+function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('en-US', { 
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+    digitalClockBtn.textContent = timeString;
+}
+
+// Update time every second
+setInterval(updateTime, 1000);
+updateTime(); // Initial call
+
+digitalClockBtn.addEventListener('click', function() {
+    console.log('Digital clock clicked! Current time: ' + this.textContent);
+    
+    // Add time freeze effect
+    const originalText = this.textContent;
+    this.textContent = '--:--:--';
+    
+    setTimeout(() => {
+        this.textContent = originalText;
+    }, 500);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 94: DARK WORMHOLE
+// ====================================================================
+btn94: {
+    name: "Dark Wormhole",
+    category: "dark",
+    html: `<button class="btn-wormhole">
+    WORMHOLE
+</button>`,
+    css: `.btn-wormhole {
+    background: radial-gradient(circle at center, #000 0%, #4a00e0 50%, #000 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-wormhole::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, #8b5cf6, transparent, #ec4899, transparent);
+    animation: wormholeSpin 3s linear infinite;
+}
+
+@keyframes wormholeSpin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.btn-wormhole:hover::before {
+    animation-duration: 1s;
+}
+
+.btn-wormhole:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px #8b5cf6;
+}
+
+.btn-wormhole:active {
+    transform: scale(1.05);
+}`,
+    js: `// Wormhole button
+const wormholeBtn = document.querySelector('.btn-wormhole');
+
+wormholeBtn.addEventListener('click', function() {
+    console.log('Wormhole engaged!');
+    
+    // Add warp effect
+    this.style.animation = 'warpDrive 1s ease';
+    setTimeout(() => {
+        this.style.animation = 'wormholeSpin 3s linear infinite';
+    }, 1000);
+});
+
+// Add warp drive animation
+const warpStyle = document.createElement('style');
+warpStyle.textContent = \`
+    @keyframes warpDrive {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1.1); }
+    }
+\`;
+document.head.appendChild(warpStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 95: DARK LASER GRID
+// ====================================================================
+btn95: {
+    name: "Dark Laser Grid",
+    category: "dark",
+    html: `<button class="btn-laser-grid">
+    LASER GRID
+</button>`,
+    css: `.btn-laser-grid {
+    background: #000;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    padding: 12px 24px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Arial Black', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.btn-laser-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, transparent 49%, #ff0000 50%, transparent 51%) 0 0 / 15px 15px,
+        linear-gradient(0deg, transparent 49%, #ff0000 50%, transparent 51%) 0 0 / 15px 15px;
+    animation: laserScan 1s linear infinite;
+}
+
+@keyframes laserScan {
+    0% { background-position: 0 0; }
+    100% { background-position: 15px 15px; }
+}
+
+.btn-laser-grid:hover {
+    background: #330000;
+    box-shadow: 
+        0 0 25px #ff0000,
+        inset 0 0 15px #ff0000;
+}
+
+.btn-laser-grid:active {
+    transform: scale(0.98);
+}`,
+    js: `// Laser grid button
+const laserGridBtn = document.querySelector('.btn-laser-grid');
+
+laserGridBtn.addEventListener('click', function() {
+    console.log('Laser grid activated! Security breach!');
+    
+    // Add alarm effect
+    this.style.animation = 'alarmFlash 0.2s ease 3';
+    setTimeout(() => {
+        this.style.animation = 'laserScan 1s linear infinite';
+    }, 600);
+});
+
+// Add alarm flash animation
+const alarmStyle = document.createElement('style');
+alarmStyle.textContent = \`
+    @keyframes alarmFlash {
+        0%, 100% { background-color: #000; }
+        50% { background-color: #ff0000; }
+    }
+\`;
+document.head.appendChild(alarmStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 96: DARK QUANTUM
+// ====================================================================
+btn96: {
+    name: "Dark Quantum",
+    category: "dark",
+    html: `<button class="btn-quantum">
+    QUANTUM
+</button>`,
+    css: `.btn-quantum {
+    background: #000;
+    color: #bb86fc;
+    border: 1px solid #bb86fc;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-quantum::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(187, 134, 252, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-quantum:hover::before {
+    left: 100%;
+}
+
+.btn-quantum:hover {
+    background: #1a1a1a;
+    box-shadow: 
+        0 0 25px #bb86fc,
+        0 0 50px rgba(187, 134, 252, 0.3);
+    animation: quantumSuperposition 0.5s infinite alternate;
+}
+
+@keyframes quantumSuperposition {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(3px); }
+}
+
+.btn-quantum:active {
+    transform: scale(0.98);
+}`,
+    js: `// Quantum button
+const quantumBtn = document.querySelector('.btn-quantum');
+
+quantumBtn.addEventListener('click', function() {
+    console.log('Quantum state observed!');
+    
+    // Add quantum collapse effect
+    this.style.animation = 'quantumCollapse 0.3s ease';
+    setTimeout(() => {
+        this.style.animation = 'quantumSuperposition 0.5s infinite alternate';
+    }, 300);
+});
+
+// Add quantum collapse animation
+const quantumStyle = document.createElement('style');
+quantumStyle.textContent = \`
+    @keyframes quantumCollapse {
+        0% { transform: scale(1) translateX(0); }
+        50% { transform: scale(0.9) translateX(5px); }
+        100% { transform: scale(1) translateX(3px); }
+    }
+\`;
+document.head.appendChild(quantumStyle);`
+},
+// ====================================================================
+// TEMPLATE 97: DARK MORSE CODE
+// ====================================================================
+btn97: {
+    name: "Dark Morse Code",
+    category: "dark",
+    html: `<button class="btn-morse-code">
+    ••• --- •••
+</button>`,
+    css: `.btn-morse-code {
+    background: #000;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 4px;
+    animation: morseBlink 2s infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes morseBlink {
+    0%, 20% { opacity: 1; }
+    21%, 40% { opacity: 0.3; }
+    41%, 60% { opacity: 1; }
+    61%, 80% { opacity: 0.3; }
+    81%, 100% { opacity: 1; }
+}
+
+.btn-morse-code:hover {
+    background: #001100;
+    box-shadow: 0 0 25px #00ff88;
+    animation-duration: 1s;
+}
+
+.btn-morse-code:active {
+    transform: scale(0.98);
+}`,
+    js: `// Morse code button
+const morseBtn = document.querySelector('.btn-morse-code');
+
+morseBtn.addEventListener('click', function() {
+    console.log('Morse code transmitted: SOS');
+    
+    // Decode animation
+    const originalText = this.textContent;
+    this.textContent = 'S O S';
+    
+    setTimeout(() => {
+        this.textContent = originalText;
+    }, 1000);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 98: DARK DNA HELIX
+// ====================================================================
+btn98: {
+    name: "Dark DNA Helix",
+    category: "dark",
+    html: `<button class="btn-dna-helix">
+    DNA SEQUENCE
+</button>`,
+    css: `.btn-dna-helix {
+    background: #000;
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-dna-helix::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(45deg, transparent 45%, #ff6b6b 50%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, #4ecdc4 50%, transparent 55%);
+    background-size: 25px 25px;
+    animation: dnaRotate 3s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes dnaRotate {
+    0% { background-position: 0 0; }
+    100% { background-position: 25px 25px; }
+}
+
+.btn-dna-helix:hover {
+    background: #1a0000;
+    box-shadow: 0 0 25px #ff6b6b;
+}
+
+.btn-dna-helix:active {
+    transform: scale(0.98);
+}`,
+    js: `// DNA helix button
+const dnaBtn = document.querySelector('.btn-dna-helix');
+
+dnaBtn.addEventListener('click', function() {
+    console.log('DNA sequence analyzed!');
+    
+    // Add genetic mutation effect
+    this.style.animation = 'dnaMutate 0.5s ease';
+    setTimeout(() => {
+        this.style.animation = 'dnaRotate 3s linear infinite';
+    }, 500);
+});
+
+// Add DNA mutation animation
+const dnaStyle = document.createElement('style');
+dnaStyle.textContent = \`
+    @keyframes dnaMutate {
+        0% { filter: hue-rotate(0deg); }
+        50% { filter: hue-rotate(180deg); }
+        100% { filter: hue-rotate(360deg); }
+    }
+\`;
+document.head.appendChild(dnaStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 99: DARK SOLAR SYSTEM
+// ====================================================================
+btn99: {
+    name: "Dark Solar System",
+    category: "dark",
+    html: `<button class="btn-solar-system">
+    SOLAR SYSTEM
+</button>`,
+    css: `.btn-solar-system {
+    background: #000;
+    color: #ffd700;
+    border: 1px solid #ffd700;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-solar-system::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #ffd700;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+        20px 0 0 3px #ff6b6b,
+        40px 0 0 2px #4ecdc4,
+        -20px 0 0 3px #ff6b6b,
+        -40px 0 0 2px #4ecdc4;
+    animation: planetOrbit 4s linear infinite;
+}
+
+@keyframes planetOrbit {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.btn-solar-system:hover::before {
+    animation-duration: 2s;
+}
+
+.btn-solar-system:hover {
+    background: #1a1a00;
+    box-shadow: 0 0 25px #ffd700;
+}
+
+.btn-solar-system:active {
+    transform: scale(0.98);
+}`,
+    js: `// Solar system button
+const solarBtn = document.querySelector('.btn-solar-system');
+
+solarBtn.addEventListener('click', function() {
+    console.log('Solar system exploration initiated!');
+    
+    // Add supernova effect
+    this.style.animation = 'supernova 0.5s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 500);
+});
+
+// Add supernova animation
+const supernovaStyle = document.createElement('style');
+supernovaStyle.textContent = \`
+    @keyframes supernova {
+        0% { box-shadow: 0 0 25px #ffd700; }
+        50% { box-shadow: 0 0 50px #ff6b6b, 0 0 100px #ffd700; }
+        100% { box-shadow: 0 0 25px #ffd700; }
+    }
+\`;
+document.head.appendChild(supernovaStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 100: DARK CHESS BOARD
+// ====================================================================
+btn100: {
+    name: "Dark Chess Board",
+    category: "dark",
+    html: `<button class="btn-chess-board">
+    ♛ CHESS ♛
+</button>`,
+    css: `.btn-chess-board {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Times New Roman', serif;
+    transition: all 0.3s ease;
+}
+
+.btn-chess-board::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, transparent 49%, #fff 50%, transparent 51%),
+        linear-gradient(0deg, transparent 49%, #fff 50%, transparent 51%);
+    background-size: 15px 15px;
+    opacity: 0.2;
+    animation: chessMove 10s linear infinite;
+}
+
+@keyframes chessMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 15px 15px; }
+}
+
+.btn-chess-board:hover {
+    background: #1a1a1a;
+    box-shadow: 0 0 25px #fff;
+}
+
+.btn-chess-board:active {
+    transform: scale(0.98);
+}`,
+    js: `// Chess board button
+const chessBtn = document.querySelector('.btn-chess-board');
+
+chessBtn.addEventListener('click', function() {
+    console.log('Chess match started!');
+    
+    // Add piece move effect
+    const pieces = ['♛', '♚', '♜', '♝', '♞', '♟'];
+    const originalText = this.textContent;
+    
+    let count = 0;
+    const moveInterval = setInterval(() => {
+        this.textContent = pieces[count % pieces.length] + ' CHESS ' + pieces[(count + 1) % pieces.length];
+        count++;
+        if (count > 6) {
+            clearInterval(moveInterval);
+            this.textContent = originalText;
+        }
+    }, 200);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 101: DARK AUDIO WAVE
+// ====================================================================
+btn101: {
+    name: "Dark Audio Wave",
+    category: "dark",
+    html: `<button class="btn-audio-wave">
+    AUDIO WAVE
+</button>`,
+    css: `.btn-audio-wave {
+    background: #000;
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-audio-wave::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, 
+            transparent 10%, #00ffff 12%, transparent 14%,
+            transparent 20%, #00ffff 22%, transparent 24%,
+            transparent 30%, #00ffff 32%, transparent 34%,
+            transparent 40%, #00ffff 42%, transparent 44%,
+            transparent 50%, #00ffff 52%, transparent 54%,
+            transparent 60%, #00ffff 62%, transparent 64%,
+            transparent 70%, #00ffff 72%, transparent 74%,
+            transparent 80%, #00ffff 82%, transparent 84%,
+            transparent 90%, #00ffff 92%, transparent 94%
+        );
+    animation: audioPulse 0.5s ease-in-out infinite alternate;
+    opacity: 0.3;
+}
+
+@keyframes audioPulse {
+    0% { height: 30%; }
+    100% { height: 80%; }
+}
+
+.btn-audio-wave:hover {
+    background: #001133;
+    box-shadow: 0 0 25px #00ffff;
+}
+
+.btn-audio-wave:active {
+    transform: scale(0.98);
+}`,
+    js: `// Audio wave button
+const audioBtn = document.querySelector('.btn-audio-wave');
+
+audioBtn.addEventListener('click', function() {
+    console.log('Audio wave activated!');
+    
+    // Add sound peak effect
+    this.style.animation = 'audioPeak 0.3s ease';
+    setTimeout(() => {
+        this.style.animation = 'audioPulse 0.5s ease-in-out infinite alternate';
+    }, 300);
+});
+
+// Add audio peak animation
+const audioStyle = document.createElement('style');
+audioStyle.textContent = \`
+    @keyframes audioPeak {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+\`;
+document.head.appendChild(audioStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 102: DARK RADAR SCAN
+// ====================================================================
+btn102: {
+    name: "Dark Radar Scan",
+    category: "dark",
+    html: `<button class="btn-radar-scan">
+    RADAR SCAN
+</button>`,
+    css: `.btn-radar-scan {
+    background: #000;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-radar-scan::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(from 0deg, transparent, #00ff88, transparent);
+    animation: radarRotate 2s linear infinite;
+    border-radius: 50px;
+}
+
+@keyframes radarRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn-radar-scan:hover::before {
+    animation-duration: 1s;
+}
+
+.btn-radar-scan:hover {
+    background: #001100;
+    box-shadow: 0 0 25px #00ff88;
+}
+
+.btn-radar-scan:active {
+    transform: scale(0.98);
+}`,
+    js: `// Radar scan button
+const radarBtn = document.querySelector('.btn-radar-scan');
+
+radarBtn.addEventListener('click', function() {
+    console.log('Radar scan initiated!');
+    
+    // Add target lock effect
+    this.style.animation = 'targetLock 0.5s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 500);
+});
+
+// Add target lock animation
+const radarStyle = document.createElement('style');
+radarStyle.textContent = \`
+    @keyframes targetLock {
+        0% { box-shadow: 0 0 25px #00ff88; }
+        50% { box-shadow: 0 0 50px #00ff88, 0 0 0 5px rgba(0, 255, 136, 0.5); }
+        100% { box-shadow: 0 0 25px #00ff88; }
+    }
+\`;
+document.head.appendChild(radarStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 103: DARK BARCODE
+// ====================================================================
+btn103: {
+    name: "Dark Barcode",
+    category: "dark",
+    html: `<button class="btn-barcode">
+    ⎸▌⎹⎸⎹▌⎸⎹⎸▌⎹
+</button>`,
+    css: `.btn-barcode {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 24px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 900;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-barcode::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+    animation: barcodeScan 2s linear infinite;
+}
+
+@keyframes barcodeScan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.btn-barcode:hover {
+    background: #1a1a1a;
+    box-shadow: 0 0 25px #fff;
+}
+
+.btn-barcode:active {
+    transform: scale(0.98);
+}`,
+    js: `// Barcode button
+const barcodeBtn = document.querySelector('.btn-barcode');
+
+barcodeBtn.addEventListener('click', function() {
+    console.log('Barcode scanned!');
+    
+    // Add successful scan effect
+    const originalText = this.textContent;
+    this.textContent = 'SCANNED ✓';
+    this.style.color = '#00ff88';
+    
+    setTimeout(() => {
+        this.textContent = originalText;
+        this.style.color = '#fff';
+    }, 1000);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 104: DARK FRACTAL
+// ====================================================================
+btn104: {
+    name: "Dark Fractal",
+    category: "dark",
+    html: `<button class="btn-fractal">
+    FRACTAL
+</button>`,
+    css: `.btn-fractal {
+    background: #000;
+    color: #bb86fc;
+    border: 1px solid #bb86fc;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-fractal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 30%, #bb86fc 1px, transparent 1px),
+        radial-gradient(circle at 70% 70%, #bb86fc 1px, transparent 1px),
+        radial-gradient(circle at 30% 70%, #bb86fc 1px, transparent 1px),
+        radial-gradient(circle at 70% 30%, #bb86fc 1px, transparent 1px);
+    background-size: 25px 25px;
+    animation: fractalGrow 3s ease-in-out infinite alternate;
+    opacity: 0.3;
+}
+
+@keyframes fractalGrow {
+    0% { background-size: 25px 25px; }
+    100% { background-size: 30px 30px; }
+}
+
+.btn-fractal:hover {
+    background: #1a1a1a;
+    box-shadow: 0 0 25px #bb86fc;
+}
+
+.btn-fractal:active {
+    transform: scale(0.98);
+}`,
+    js: `// Fractal button
+const fractalBtn = document.querySelector('.btn-fractal');
+
+fractalBtn.addEventListener('click', function() {
+    console.log('Fractal pattern generated!');
+    
+    // Add infinite recursion effect
+    this.style.animation = 'fractalInfinity 1s ease-in-out infinite alternate';
+    setTimeout(() => {
+        this.style.animation = 'fractalGrow 3s ease-in-out infinite alternate';
+    }, 2000);
+});
+
+// Add fractal infinity animation
+const fractalStyle = document.createElement('style');
+fractalStyle.textContent = \`
+    @keyframes fractalInfinity {
+        0% { background-size: 25px 25px; }
+        50% { background-size: 35px 35px; }
+        100% { background-size: 25px 25px; }
+    }
+\`;
+document.head.appendChild(fractalStyle);`
+},
+
+// ====================================================================
+// TEMPLATE 105: DARK QR CODE
+// ====================================================================
+btn105: {
+    name: "Dark QR Code",
+    category: "dark",
+    html: `<button class="btn-qr-code">
+    ⎕ QR CODE ⎕
+</button>`,
+    css: `.btn-qr-code {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+}
+
+.btn-qr-code::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, 
+            #fff 10%, transparent 12%, #fff 14%, transparent 16%,
+            #fff 20%, transparent 22%, #fff 24%, transparent 26%,
+            #fff 30%, transparent 32%, #fff 34%, transparent 36%,
+            #fff 40%, transparent 42%, #fff 44%, transparent 46%,
+            #fff 50%, transparent 52%, #fff 54%, transparent 56%,
+            #fff 60%, transparent 62%, #fff 64%, transparent 66%,
+            #fff 70%, transparent 72%, #fff 74%, transparent 76%,
+            #fff 80%, transparent 82%, #fff 84%, transparent 86%,
+            #fff 90%, transparent 92%, #fff 94%, transparent 96%
+        ),
+        linear-gradient(0deg, 
+            #fff 10%, transparent 12%, #fff 14%, transparent 16%,
+            #fff 20%, transparent 22%, #fff 24%, transparent 26%,
+            #fff 30%, transparent 32%, #fff 34%, transparent 36%,
+            #fff 40%, transparent 42%, #fff 44%, transparent 46%,
+            #fff 50%, transparent 52%, #fff 54%, transparent 56%,
+            #fff 60%, transparent 62%, #fff 64%, transparent 66%,
+            #fff 70%, transparent 72%, #fff 74%, transparent 76%,
+            #fff 80%, transparent 82%, #fff 84%, transparent 86%,
+            #fff 90%, transparent 92%, #fff 94%, transparent 96%
+        );
+    opacity: 0.2;
+    animation: qrScan 3s linear infinite;
+}
+
+@keyframes qrScan {
+    0% { background-position: 0 0; }
+    100% { background-position: 25px 25px; }
+}
+
+.btn-qr-code:hover {
+    background: #1a1a1a;
+    box-shadow: 0 0 25px #fff;
+}
+
+.btn-qr-code:active {
+    transform: scale(0.98);
+}`,
+    js: `// QR code button
+const qrBtn = document.querySelector('.btn-qr-code');
+
+qrBtn.addEventListener('click', function() {
+    console.log('QR code scanned!');
+    
+    // Add successful decode effect
+    const originalText = this.textContent;
+    this.textContent = 'DECODED ✓';
+    this.style.color = '#00ff88';
+    
+    setTimeout(() => {
+        this.textContent = originalText;
+        this.style.color = '#fff';
+    }, 1000);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 106: DARK PIXEL ART
+// ====================================================================
+btn106: {
+    name: "Dark Pixel Art",
+    category: "dark",
+    html: `<button class="btn-pixel-art">
+    PIXEL ART
+</button>`,
+    css: `.btn-pixel-art {
+    background: #000;
+    color: #ff6b6b;
+    border: 2px solid #ff6b6b;
+    padding: 12px 24px;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    image-rendering: pixelated;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
+}
+
+.btn-pixel-art::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, transparent 49%, #ff6b6b 50%, transparent 51%) 0 0 / 8px 8px,
+        linear-gradient(0deg, transparent 49%, #ff6b6b 50%, transparent 51%) 0 0 / 8px 8px;
+    opacity: 0.3;
+    animation: pixelGlitch 0.5s steps(2) infinite;
+}
+
+@keyframes pixelGlitch {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(1px, 1px); }
+    50% { transform: translate(-1px, -1px); }
+    75% { transform: translate(1px, -1px); }
+}
+
+.btn-pixel-art:hover {
+    background: #1a0000;
+    box-shadow: 
+        0 0 15px #ff6b6b,
+        inset 0 0 15px rgba(255, 107, 107, 0.2);
+}
+
+.btn-pixel-art:active {
+    transform: scale(0.98);
+}`,
+    js: `// Pixel art button
+const pixelBtn = document.querySelector('.btn-pixel-art');
+
+pixelBtn.addEventListener('click', function() {
+    console.log('Pixel art created!');
+    
+    // Add 8-bit game effect
+    this.style.animation = 'pixelJump 0.3s steps(2)';
+    setTimeout(() => {
+        this.style.animation = 'pixelGlitch 0.5s steps(2) infinite';
+    }, 300);
+});
+
+// Add pixel jump animation
+const pixelStyle = document.createElement('style');
+pixelStyle.textContent = \`
+    @keyframes pixelJump {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+        100% { transform: translateY(0); }
+    }
+\`;
+document.head.appendChild(pixelStyle);`
+},
+// ====================================================================
+// TEMPLATE 107: DARK TWITTER BUTTON
+// ====================================================================
+btn107: {
+    name: "Dark Twitter Button",
+    category: "dark",
+    html: `<button class="btn-dark-twitter">
+    <i class="fab fa-twitter"></i>
+    Follow
+</button>`,
+    css: `.btn-dark-twitter {
+    background: #1da1f2;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+    box-shadow: 0 4px 15px rgba(29, 161, 242, 0.3);
+}
+
+.btn-dark-twitter:hover {
+    background: #1a91da;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(29, 161, 242, 0.5);
+}
+
+.btn-dark-twitter i {
+    font-size: 16px;
+}`,
+    js: `// Twitter button with click animation
+const twitterBtn = document.querySelector('.btn-dark-twitter');
+
+twitterBtn.addEventListener('click', function() {
+    this.style.transform = 'scale(0.95) translateY(-2px)';
+    setTimeout(() => {
+        this.style.transform = 'translateY(-2px)';
+    }, 150);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 108: DARK INSTAGRAM BUTTON
+// ====================================================================
+btn108: {
+    name: "Dark Instagram Button",
+    category: "dark",
+    html: `<button class="btn-dark-instagram">
+    <i class="fab fa-instagram"></i>
+    Follow
+</button>`,
+    css: `.btn-dark-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-dark-instagram::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-dark-instagram:hover::before {
+    left: 100%;
+}
+
+.btn-dark-instagram:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(220, 39, 67, 0.4);
+}
+
+.btn-dark-instagram i {
+    font-size: 16px;
+}`,
+    js: `// Instagram button with gradient animation
+const instagramBtn = document.querySelector('.btn-dark-instagram');
+
+instagramBtn.addEventListener('click', function() {
+    this.style.background = 'linear-gradient(45deg, #bc1888, #cc2366, #dc2743, #e6683c, #f09433)';
+    setTimeout(() => {
+        this.style.background = 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)';
+    }, 300);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 109: DARK FACEBOOK BUTTON
+// ====================================================================
+btn109: {
+    name: "Dark Facebook Button",
+    category: "dark",
+    html: `<button class="btn-dark-facebook">
+    <i class="fab fa-facebook-f"></i>
+    Like
+</button>`,
+    css: `.btn-dark-facebook {
+    background: #1877f2;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-dark-facebook:hover {
+    background: #166fe5;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+}
+
+.btn-dark-facebook::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.btn-dark-facebook:active::after {
+    width: 100px;
+    height: 100px;
+}
+
+.btn-dark-facebook i {
+    font-size: 16px;
+}`,
+    js: `// Facebook button with ripple effect
+const facebookBtn = document.querySelector('.btn-dark-facebook');
+
+facebookBtn.addEventListener('click', function(e) {
+    // Ripple effect is handled in CSS
+    console.log('Facebook button clicked!');
+});`
+},
+
+// ====================================================================
+// TEMPLATE 110: DARK LINKEDIN BUTTON
+// ====================================================================
+btn110: {
+    name: "Dark LinkedIn Button",
+    category: "dark",
+    html: `<button class="btn-dark-linkedin">
+    <i class="fab fa-linkedin-in"></i>
+    Connect
+</button>`,
+    css: `.btn-dark-linkedin {
+    background: #0077b5;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+}
+
+.btn-dark-linkedin:hover {
+    background: #00669c;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
+}
+
+.btn-dark-linkedin i {
+    font-size: 16px;
+}`,
+    js: `// LinkedIn button with professional animation
+const linkedinBtn = document.querySelector('.btn-dark-linkedin');
+
+linkedinBtn.addEventListener('click', function() {
+    this.style.transform = 'scale(1.02)';
+    setTimeout(() => {
+        this.style.transform = 'scale(1.05)';
+    }, 100);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 111: DARK GITHUB BUTTON
+// ====================================================================
+btn111: {
+    name: "Dark GitHub Button",
+    category: "dark",
+    html: `<button class="btn-dark-github">
+    <i class="fab fa-github"></i>
+    Star
+</button>`,
+    css: `.btn-dark-github {
+    background: #6e5494;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+}
+
+.btn-dark-github:hover {
+    background: #5d447c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(110, 84, 148, 0.5);
+}
+
+.btn-dark-github i {
+    font-size: 16px;
+}`,
+    js: `// GitHub button with star animation
+const githubBtn = document.querySelector('.btn-dark-github');
+
+githubBtn.addEventListener('click', function() {
+    const icon = this.querySelector('i');
+    icon.style.transform = 'scale(1.3)';
+    setTimeout(() => {
+        icon.style.transform = 'scale(1)';
+    }, 300);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 112: DARK YOUTUBE BUTTON
+// ====================================================================
+btn112: {
+    name: "Dark YouTube Button",
+    category: "dark",
+    html: `<button class="btn-dark-youtube">
+    <i class="fab fa-youtube"></i>
+    Subscribe
+</button>`,
+    css: `.btn-dark-youtube {
+    background: #ff0000;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-dark-youtube:hover {
+    background: #e60000;
+    animation: youtubePulse 1.5s infinite;
+}
+
+@keyframes youtubePulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+}
+
+.btn-dark-youtube i {
+    font-size: 16px;
+}`,
+    js: `// YouTube button with pulse animation
+const youtubeBtn = document.querySelector('.btn-dark-youtube');
+
+youtubeBtn.addEventListener('mouseenter', function() {
+    this.style.animation = 'youtubePulse 1.5s infinite';
+});
+
+youtubeBtn.addEventListener('mouseleave', function() {
+    this.style.animation = 'none';
+});`
+},
+
+// ====================================================================
+// TEMPLATE 113: DARK DISCORD BUTTON
+// ====================================================================
+btn113: {
+    name: "Dark Discord Button",
+    category: "dark",
+    html: `<button class="btn-dark-discord">
+    <i class="fab fa-discord"></i>
+    Join Server
+</button>`,
+    css: `.btn-dark-discord {
+    background: #5865f2;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+}
+
+.btn-dark-discord:hover {
+    background: #4752c4;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+}
+
+.btn-dark-discord i {
+    font-size: 16px;
+}`,
+    js: `// Discord button with hover effects
+const discordBtn = document.querySelector('.btn-dark-discord');
+
+discordBtn.addEventListener('click', function() {
+    this.style.background = '#7289da';
+    setTimeout(() => {
+        this.style.background = '#5865f2';
+    }, 300);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 114: DARK TIKTOK BUTTON
+// ====================================================================
+btn114: {
+    name: "Dark TikTok Button",
+    category: "dark",
+    html: `<button class="btn-dark-tiktok">
+    <i class="fab fa-tiktok"></i>
+    Follow
+</button>`,
+    css: `.btn-dark-tiktok {
+    background: #000000;
+    color: #00f2ea;
+    border: 2px solid #00f2ea;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-dark-tiktok::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 242, 234, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-dark-tiktok:hover::before {
+    left: 100%;
+}
+
+.btn-dark-tiktok:hover {
+    background: #00f2ea;
+    color: #000000;
+    box-shadow: 0 0 20px #00f2ea;
+}
+
+.btn-dark-tiktok i {
+    font-size: 16px;
+}`,
+    js: `// TikTok button with neon effect
+const tiktokBtn = document.querySelector('.btn-dark-tiktok');
+
+tiktokBtn.addEventListener('click', function() {
+    this.style.boxShadow = '0 0 30px #00f2ea, 0 0 40px #00f2ea';
+    setTimeout(() => {
+        this.style.boxShadow = '0 0 20px #00f2ea';
+    }, 200);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 115: DARK REDDIT BUTTON
+// ====================================================================
+btn115: {
+    name: "Dark Reddit Button",
+    category: "dark",
+    html: `<button class="btn-dark-reddit">
+    <i class="fab fa-reddit-alien"></i>
+    Join
+</button>`,
+    css: `.btn-dark-reddit {
+    background: #ff4500;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+}
+
+.btn-dark-reddit:hover {
+    background: #e63e00;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 69, 0, 0.4);
+}
+
+.btn-dark-reddit i {
+    font-size: 16px;
+}`,
+    js: `// Reddit button with upvote animation
+const redditBtn = document.querySelector('.btn-dark-reddit');
+
+redditBtn.addEventListener('click', function() {
+    const icon = this.querySelector('i');
+    icon.style.transform = 'translateY(-5px)';
+    setTimeout(() => {
+        icon.style.transform = 'translateY(0)';
+    }, 300);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 116: DARK WHATSAPP BUTTON
+// ====================================================================
+btn116: {
+    name: "Dark WhatsApp Button",
+    category: "dark",
+    html: `<button class="btn-dark-whatsapp">
+    <i class="fab fa-whatsapp"></i>
+    Message
+</button>`,
+    css: `.btn-dark-whatsapp {
+    background: #25d366;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+}
+
+.btn-dark-whatsapp:hover {
+    background: #20bd5c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+.btn-dark-whatsapp i {
+    font-size: 16px;
+}`,
+    js: `// WhatsApp button with message animation
+const whatsappBtn = document.querySelector('.btn-dark-whatsapp');
+
+whatsappBtn.addEventListener('click', function() {
+    this.style.transform = 'scale(0.95) translateY(-2px)';
+    setTimeout(() => {
+        this.style.transform = 'translateY(-2px)';
+    }, 150);
+});`
+},
+// ====================================================================
+// TEMPLATE 117: 3D HOVER BUTTON
+// ====================================================================
+btn117: {
+    name: "3D Hover Button",
+    category: "animated",
+    html: `<button class="btn-3d-hover">
+    3D Hover Effect
+</button>`,
+    css: `.btn-3d-hover {
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    box-shadow: 
+        0 8px 0 #5a67d8,
+        0 12px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 0;
+}
+
+.btn-3d-hover:hover {
+    top: 4px;
+    box-shadow: 
+        0 4px 0 #5a67d8,
+        0 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d-hover:active {
+    top: 8px;
+    box-shadow: 
+        0 0 0 #5a67d8,
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}`,
+    js: `// 3D button with depth effect
+const btn3d = document.querySelector('.btn-3d-hover');
+
+btn3d.addEventListener('click', function() {
+    this.style.background = 'linear-gradient(145deg, #764ba2, #667eea)';
+    setTimeout(() => {
+        this.style.background = 'linear-gradient(145deg, #667eea, #764ba2)';
+    }, 150);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 118: LIQUID FILL BUTTON
+// ====================================================================
+btn118: {
+    name: "Liquid Fill Button",
+    category: "animated",
+    html: `<button class="btn-liquid-fill">
+    Liquid Fill
+</button>`,
+    css: `.btn-liquid-fill {
+    background: transparent;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+}
+
+.btn-liquid-fill::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #3b82f6;
+    transition: height 0.4s ease;
+    z-index: -1;
+    border-radius: 0 0 6px 6px;
+}
+
+.btn-liquid-fill:hover::before {
+    height: 100%;
+}
+
+.btn-liquid-fill:hover {
+    color: white;
+    transform: translateY(-2px);
+}`,
+    js: `// Liquid fill button
+const liquidBtn = document.querySelector('.btn-liquid-fill');
+
+liquidBtn.addEventListener('click', function() {
+    this.style.transform = 'translateY(-1px)';
+    setTimeout(() => {
+        this.style.transform = 'translateY(-2px)';
+    }, 100);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 119: MAGNETIC CURSOR BUTTON
+// ====================================================================
+btn119: {
+    name: "Magnetic Cursor Button",
+    category: "animated",
+    html: `<button class="btn-magnetic">
+    Magnetic Cursor
+</button>`,
+    css: `.btn-magnetic {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-magnetic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}`,
+    js: `// Magnetic cursor effect
+const magneticBtn = document.querySelector('.btn-magnetic');
+
+document.addEventListener('mousemove', function(e) {
+    const rect = magneticBtn.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    const distanceX = e.clientX - centerX;
+    const distanceY = e.clientY - centerY;
+    
+    const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+    
+    if (distance < 100) {
+        const moveX = distanceX * 0.1;
+        const moveY = distanceY * 0.1;
+        magneticBtn.style.transform = \`translate(\${moveX}px, \${moveY}px) scale(1.1)\`;
+    } else {
+        magneticBtn.style.transform = 'scale(1)';
+    }
+});`
+},
+
+// ====================================================================
+// TEMPLATE 120: PARTICLE EXPLOSION BUTTON
+// ====================================================================
+btn120: {
+    name: "Particle Explosion Button",
+    category: "animated",
+    html: `<button class="btn-particle">
+    Particle Effect
+</button>`,
+    css: `.btn-particle {
+    background: #ec4899;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-particle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-particle:active::before {
+    width: 200px;
+    height: 200px;
+}`,
+    js: `// Particle explosion effect
+const particleBtn = document.querySelector('.btn-particle');
+
+particleBtn.addEventListener('click', function(e) {
+    // Create particles
+    for (let i = 0; i < 10; i++) {
+        createParticle(e.clientX, e.clientY);
+    }
+});
+
+function createParticle(x, y) {
+    const particle = document.createElement('div');
+    particle.style.cssText = \`
+        position: fixed;
+        top: \${y}px;
+        left: \${x}px;
+        width: 4px;
+        height: 4px;
+        background: #ec4899;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 1000;
+    \`;
+    document.body.appendChild(particle);
+    
+    // Animate particle
+    const angle = Math.random() * Math.PI * 2;
+    const speed = 2 + Math.random() * 2;
+    const vx = Math.cos(angle) * speed;
+    const vy = Math.sin(angle) * speed;
+    
+    let opacity = 1;
+    const animate = () => {
+        particle.style.transform = \`translate(\${vx * 10}px, \${vy * 10}px)\`;
+        particle.style.opacity = opacity;
+        opacity -= 0.02;
+        
+        if (opacity > 0) {
+            requestAnimationFrame(animate);
+        } else {
+            particle.remove();
+        }
+    };
+    animate();
+}`
+},
+
+// ====================================================================
+// TEMPLATE 121: GLITCH EFFECT BUTTON
+// ====================================================================
+btn121: {
+    name: "Glitch Effect Button",
+    category: "dark",
+    html: `<button class="btn-glitch">
+    Glitch Effect
+</button>`,
+    css: `.btn-glitch {
+    background: #000;
+    color: #00ff88;
+    border: 2px solid #00ff88;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
+    position: relative;
+}
+
+.btn-glitch:hover {
+    animation: glitch 0.3s linear;
+    text-shadow: 
+        2px 0 #ff0080,
+        -2px 0 #0080ff;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}`,
+    js: `// Glitch effect button
+const glitchBtn = document.querySelector('.btn-glitch');
+
+glitchBtn.addEventListener('mouseenter', function() {
+    this.style.animation = 'glitch 0.3s linear';
+});
+
+glitchBtn.addEventListener('animationend', function() {
+    this.style.animation = '';
+});`
+},
+
+// ====================================================================
+// TEMPLATE 122: NEON SIGN BUTTON
+// ====================================================================
+btn122: {
+    name: "Neon Sign Button",
+    category: "dark",
+    html: `<button class="btn-neon-sign">
+    Neon Sign
+</button>`,
+    css: `.btn-neon-sign {
+    background: transparent;
+    color: #ff0080;
+    border: 3px solid #ff0080;
+    padding: 12px 24px;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 0 0 5px #ff0080;
+    box-shadow: 
+        0 0 10px #ff0080,
+        inset 0 0 10px rgba(255, 0, 128, 0.1);
+}
+
+.btn-neon-sign:hover {
+    animation: neonFlicker 1s infinite alternate;
+    background: #ff0080;
+    color: #000;
+}
+
+@keyframes neonFlicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        box-shadow: 
+            0 0 10px #ff0080,
+            0 0 20px #ff0080,
+            inset 0 0 10px rgba(255, 0, 128, 0.1);
+    }
+    20%, 24%, 55% {
+        box-shadow: 
+            0 0 5px #ff0080,
+            0 0 10px #ff0080,
+            inset 0 0 5px rgba(255, 0, 128, 0.1);
+    }
+}`,
+    js: `// Neon sign button with flicker
+const neonBtn = document.querySelector('.btn-neon-sign');
+
+neonBtn.addEventListener('click', function() {
+    this.style.animation = 'neonFlicker 0.5s infinite alternate';
+    setTimeout(() => {
+        this.style.animation = 'neonFlicker 1s infinite alternate';
+    }, 500);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 123: MORPHING GRADIENT BUTTON
+// ====================================================================
+btn123: {
+    name: "Morphing Gradient Button",
+    category: "gradient",
+    html: `<button class="btn-morph-gradient">
+    Morph Gradient
+</button>`,
+    css: `.btn-morph-gradient {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    animation: gradientShift 3s ease infinite;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-morph-gradient:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(35, 166, 213, 0.4);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}`,
+    js: `// Morphing gradient button
+const morphGradientBtn = document.querySelector('.btn-morph-gradient');
+
+morphGradientBtn.addEventListener('click', function() {
+    this.style.animationDuration = '1s';
+    setTimeout(() => {
+        this.style.animationDuration = '3s';
+    }, 1000);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 124: GLASS REFLECTION BUTTON
+// ====================================================================
+btn124: {
+    name: "Glass Reflection Button",
+    category: "glassmorphism",
+    html: `<button class="btn-glass-reflection">
+    Glass Reflection
+</button>`,
+    css: `.btn-glass-reflection {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #7c3aed;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-glass-reflection::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.btn-glass-reflection:hover::before {
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+.btn-glass-reflection:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}`,
+    js: `// Glass reflection button
+const glassReflectionBtn = document.querySelector('.btn-glass-reflection');
+
+glassReflectionBtn.addEventListener('click', function() {
+    this.style.backdropFilter = 'blur(15px)';
+    setTimeout(() => {
+        this.style.backdropFilter = 'blur(10px)';
+    }, 300);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 125: HOLOGRAPHIC BUTTON
+// ====================================================================
+btn125: {
+    name: "Holographic Button",
+    category: "animated",
+    html: `<button class="btn-holographic">
+    Holographic
+</button>`,
+    css: `.btn-holographic {
+    background: linear-gradient(45deg, 
+        #ff0000, #ff8000, #ffff00, #00ff00, 
+        #00ffff, #0000ff, #8000ff, #ff0080
+    );
+    background-size: 800% 800%;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    animation: holographic 4s linear infinite;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+@keyframes holographic {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
+
+.btn-holographic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 0, 128, 0.4);
+}`,
+    js: `// Holographic button
+const holographicBtn = document.querySelector('.btn-holographic');
+
+holographicBtn.addEventListener('click', function() {
+    this.style.animationDuration = '2s';
+    setTimeout(() => {
+        this.style.animationDuration = '4s';
+    }, 2000);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 126: BINARY CODE BUTTON
+// ====================================================================
+btn126: {
+    name: "Binary Code Button",
+    category: "dark",
+    html: `<button class="btn-binary">
+    01001101 01100101
+</button>`,
+    css: `.btn-binary {
+    background: #000;
+    color: #00ff41;
+    border: 1px solid #00ff41;
+    padding: 12px 24px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-binary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+    animation: binaryScan 2s linear infinite;
+}
+
+@keyframes binaryScan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.btn-binary:hover {
+    background: #00ff41;
+    color: #000;
+    box-shadow: 0 0 20px #00ff41;
+}`,
+    js: `// Binary code button
+const binaryBtn = document.querySelector('.btn-binary');
+
+binaryBtn.addEventListener('click', function() {
+    const originalText = this.textContent;
+    // Create binary flicker effect
+    let count = 0;
+    const interval = setInterval(() => {
+        this.textContent = this.textContent.split('').map(char => 
+            Math.random() > 0.5 ? (char === '0' ? '1' : '0') : char
+        ).join('');
+        count++;
+        if (count > 10) {
+            clearInterval(interval);
+            this.textContent = originalText;
+        }
+    }, 50);
+});`
+},
 
 };
 
