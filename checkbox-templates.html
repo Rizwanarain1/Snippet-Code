@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkbox Templates - SnippetCodeHub</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="nav-templates.css" />
+  </head>
+  <body>
+    <!-- Header with Navigation -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <i class="fas fa-cube"></i>
+            SnippetCodeHub
+          </div>
+          <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Resources</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Checkbox SnippetCode</h1>
+        <p>
+          Modern and responsive navigation designs for any website. Preview and
+          copy code with a single click.
+        </p>
+        <div class="hero-buttons">
+          <a href="nav-templates.html" class="btn">Navigation SnippetCodes</a>
+          <a href="footer-templates.html" class="btn">Footer SnippetCode</a>
+          <a href="table-templates.html" class="btn">Table SnippetCode</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Templates Section -->
+    <section id="nav-templates">
+      <div class="container">
+        <div class="section-title">
+          <h2>Navigation SnippetCode</h2>
+          <p>Choose from our collection of modern navigation designs</p>
+        </div>
+
+        <div class="categories">
+          <button class="category-btn active" data-category="all">All</button>
+          <button class="category-btn" data-category="glassmorphism">
+            Glassmorphism
+          </button>
+          <button class="category-btn" data-category="minimal">Minimal</button>
+          <button class="category-btn" data-category="sidebar">Sidebar</button>
+          <button class="category-btn" data-category="dark">Dark Mode</button>
+          <button class="category-btn" data-category="modern">Modern</button>
+        </div>
+
+        <div class="template-grid">
+          <!-- Template 1 - Glassmorphism Nav -->
+          <div class="template-card" data-category="glassmorphism">
+            <div class="template-preview">
+              <div class="live-preview-mini">
+                <div class="preview-nav-mini glassmorphism">
+                  <div class="nav-container-mini">
+                    <div class="nav-logo-mini">Brand</div>
+                    <div class="nav-menu-mini">
+                      <a href="#">Home</a>
+                      <a href="#">Features</a>
+                      <a href="#">Pricing</a>
+                    </div>
+                    <button class="nav-btn-mini">Get Started</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="template-info">
+              <h3>Glassmorphism Navigation</h3>
+              <p>
+                Modern glassmorphism design with blur effect and gradient
+                accents.
+              </p>
+              <div class="template-actions">
+                <button class="btn code-btn" data-template="nav1">
+                  Get Code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Modal -->
+    <div class="modal" id="codeModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Template Code</h3>
+          <span class="close-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="code-tabs">
+            <button class="code-tab active" data-tab="html">HTML</button>
+            <button class="code-tab" data-tab="css">CSS</button>
+            <button class="code-tab" data-tab="js">JavaScript</button>
+          </div>
+          <div class="code-content">
+            <button class="copy-btn" id="copyButton">Copy Code</button>
+            <pre
+              id="html-code"
+            ><code class="language-html">&lt;!-- Select a template to view code --&gt;</code></pre>
+            <pre
+              id="css-code"
+              style="display: none"
+            ><code class="language-css">/* Select a template to view code */</code></pre>
+            <pre
+              id="js-code"
+              style="display: none"
+            ><code class="language-js">// Select a template to view code</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copy Notification -->
+    <div class="copy-notification" id="copyNotification">
+      Code copied to clipboard!
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h4>SnippetCodeHub</h4>
+            <p>
+              Providing modern, high-quality web SnippetCode for developers and
+              designers. Build beautiful websites faster.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-dribbble"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="nav-templates.html">Navigation Templates</a></li>
+              <li><a href="footer-templates.html">Footer Templates</a></li>
+              <li><a href="table-templates.html">Table Templates</a></li>
+              <li><a href="#about">About Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">License</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact Us</h4>
+            <ul>
+              <li><i class="fas fa-envelope"></i> hello@snippetcodehub.com</li>
+              <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+              <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 SnippetCodeHub. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="nav-templates.js"></script>
+  </body>
+</html>

@@ -9263,6 +9263,572 @@ binaryBtn.addEventListener('click', function() {
     }, 50);
 });`
 },
+// ====================================================================
+// TEMPLATE 127: OUTLINE DOUBLE BORDER
+// ====================================================================
+btn127: {
+    name: "Outline Double Border",
+    category: "outline",
+    html: `<button class="btn-outline-double">
+    Double Border
+</button>`,
+    css: `.btn-outline-double {
+    background: transparent;
+    color: #8b5cf6;
+    border: 2px solid #8b5cf6;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: inherit;
+}
+
+.btn-outline-double::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid #ec4899;
+    border-radius: 12px;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.btn-outline-double:hover::before {
+    opacity: 1;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+}
+
+.btn-outline-double:hover {
+    background: linear-gradient(45deg, #8b5cf6, #ec4899);
+    color: white;
+    transform: translateY(-2px);
+}`,
+    js: `// Double border outline button
+const doubleBorderBtn = document.querySelector('.btn-outline-double');
+
+doubleBorderBtn.addEventListener('click', function() {
+    this.style.transform = 'translateY(-1px) scale(0.98)';
+    setTimeout(() => {
+        this.style.transform = 'translateY(-2px)';
+    }, 150);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 128: OUTLINE CORNER GROW
+// ====================================================================
+btn128: {
+    name: "Outline Corner Grow",
+    category: "outline",
+    html: `<button class="btn-outline-corner">
+    <span>Corner Grow</span>
+</button>`,
+    css: `.btn-outline-corner {
+    background: transparent;
+    color: #10b981;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    font-family: inherit;
+}
+
+.btn-outline-corner::before,
+.btn-outline-corner::after {
+    content: '';
+    position: absolute;
+    background: #10b981;
+    transition: all 0.4s ease;
+}
+
+.btn-outline-corner::before {
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+}
+
+.btn-outline-corner::after {
+    bottom: 0;
+    right: 0;
+    width: 2px;
+    height: 0;
+}
+
+.btn-outline-corner:hover::before,
+.btn-outline-corner:hover::after {
+    height: 100%;
+}
+
+.btn-outline-corner span::before,
+.btn-outline-corner span::after {
+    content: '';
+    position: absolute;
+    background: #10b981;
+    transition: all 0.4s ease;
+}
+
+.btn-outline-corner span::before {
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+}
+
+.btn-outline-corner span::after {
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+}
+
+.btn-outline-corner:hover span::before,
+.btn-outline-corner:hover span::after {
+    width: 100%;
+}
+
+.btn-outline-corner:hover {
+    color: #10b981;
+    transform: translateY(-2px);
+}`,
+    js: `// Corner grow outline button
+const cornerGrowBtn = document.querySelector('.btn-outline-corner');
+
+cornerGrowBtn.addEventListener('click', function() {
+    this.style.color = '#059669';
+    setTimeout(() => {
+        this.style.color = '#10b981';
+    }, 300);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 129: OUTLINE DOTTED SPIN
+// ====================================================================
+btn129: {
+    name: "Outline Dotted Spin",
+    category: "outline",
+    html: `<button class="btn-outline-dotted">
+    Dotted Spin
+</button>`,
+    css: `.btn-outline-dotted {
+    background: transparent;
+    color: #f59e0b;
+    border: 2px dotted #f59e0b;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: inherit;
+}
+
+.btn-outline-dotted:hover {
+    border-style: solid;
+    border-color: #d97706;
+    color: #d97706;
+    transform: rotate(5deg) scale(1.05);
+    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+}`,
+    js: `// Dotted spin outline button
+const dottedSpinBtn = document.querySelector('.btn-outline-dotted');
+
+dottedSpinBtn.addEventListener('click', function() {
+    this.style.transform = 'rotate(-5deg) scale(1.02)';
+    setTimeout(() => {
+        this.style.transform = 'rotate(5deg) scale(1.05)';
+    }, 150);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 130: OUTLINE SHAKE
+// ====================================================================
+btn130: {
+    name: "Outline Shake",
+    category: "outline",
+    html: `<button class="btn-outline-shake">
+    Outline Shake
+</button>`,
+    css: `.btn-outline-shake {
+    background: transparent;
+    color: #ef4444;
+    border: 2px solid #ef4444;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-outline-shake:hover {
+    animation: outlineShake 0.5s ease;
+    background: #ef4444;
+    color: white;
+}
+
+@keyframes outlineShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-3px); }
+}`,
+    js: `// Shake outline button
+const shakeBtn = document.querySelector('.btn-outline-shake');
+
+shakeBtn.addEventListener('click', function() {
+    this.style.animation = 'outlineShake 0.3s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 300);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 131: OUTLINE GRADIENT BORDER
+// ====================================================================
+btn131: {
+    name: "Outline Gradient Border",
+    category: "outline",
+    html: `<button class="btn-outline-gradient-border">
+    Gradient Border
+</button>`,
+    css: `.btn-outline-gradient-border {
+    background: transparent;
+    color: #6366f1;
+    border: 2px solid transparent;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    background-clip: padding-box;
+    font-family: inherit;
+}
+
+.btn-outline-gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #6366f1, #ec4899, #f59e0b, #10b981);
+    background-size: 400% 400%;
+    border-radius: 10px;
+    z-index: -1;
+    animation: gradientRotate 3s linear infinite;
+}
+
+.btn-outline-gradient-border:hover {
+    color: white;
+    background: #6366f1;
+}
+
+@keyframes gradientRotate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}`,
+    js: `// Gradient border outline button
+const gradientBorderBtn = document.querySelector('.btn-outline-gradient-border');
+
+gradientBorderBtn.addEventListener('click', function() {
+    this.style.animationDuration = '1s';
+    setTimeout(() => {
+        this.style.animationDuration = '3s';
+    }, 1000);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 132: OUTLINE SPLIT
+// ====================================================================
+btn132: {
+    name: "Outline Split",
+    category: "outline",
+    html: `<button class="btn-outline-split">
+    Outline Split
+</button>`,
+    css: `.btn-outline-split {
+    background: transparent;
+    color: #8b5cf6;
+    border: 2px solid #8b5cf6;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: inherit;
+}
+
+.btn-outline-split::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-outline-split:hover::before {
+    left: 100%;
+}
+
+.btn-outline-split:hover {
+    border-color: #7c3aed;
+    color: #7c3aed;
+    box-shadow: 
+        0 0 0 1px #8b5cf6,
+        0 0 0 3px #7c3aed;
+}`,
+    js: `// Split outline button
+const splitBtn = document.querySelector('.btn-outline-split');
+
+splitBtn.addEventListener('click', function() {
+    this.style.boxShadow = '0 0 0 2px #8b5cf6, 0 0 0 4px #7c3aed';
+    setTimeout(() => {
+        this.style.boxShadow = '0 0 0 1px #8b5cf6, 0 0 0 3px #7c3aed';
+    }, 100);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 133: OUTLINE BOUNCE
+// ====================================================================
+btn133: {
+    name: "Outline Bounce",
+    category: "outline",
+    html: `<button class="btn-outline-bounce">
+    Outline Bounce
+</button>`,
+    css: `.btn-outline-bounce {
+    background: transparent;
+    color: #06b6d4;
+    border: 2px solid #06b6d4;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    font-family: inherit;
+}
+
+.btn-outline-bounce:hover {
+    animation: outlineBounce 0.6s ease;
+    background: #06b6d4;
+    color: white;
+    transform: translateY(-4px);
+}
+
+@keyframes outlineBounce {
+    0%, 20%, 60%, 100% { transform: translateY(-4px); }
+    40% { transform: translateY(-8px); }
+    80% { transform: translateY(-6px); }
+}`,
+    js: `// Bounce outline button
+const bounceBtn = document.querySelector('.btn-outline-bounce');
+
+bounceBtn.addEventListener('click', function() {
+    this.style.animation = 'outlineBounce 0.4s ease';
+    setTimeout(() => {
+        this.style.animation = '';
+    }, 400);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 134: OUTLINE WAVE
+// ====================================================================
+btn134: {
+    name: "Outline Wave",
+    category: "outline",
+    html: `<button class="btn-outline-wave">
+    Outline Wave
+</button>`,
+    css: `.btn-outline-wave {
+    background: transparent;
+    color: #ec4899;
+    border: 2px solid #ec4899;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: inherit;
+}
+
+.btn-outline-wave::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-outline-wave:hover::before {
+    left: 100%;
+}
+
+.btn-outline-wave:hover {
+    border-color: #db2777;
+    color: #db2777;
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.3);
+}`,
+    js: `// Wave outline button
+const waveBtn = document.querySelector('.btn-outline-wave');
+
+waveBtn.addEventListener('click', function() {
+    this.style.borderColor = '#be185d';
+    setTimeout(() => {
+        this.style.borderColor = '#ec4899';
+    }, 300);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 135: OUTLINE NEON PULSE
+// ====================================================================
+btn135: {
+    name: "Outline Neon Pulse",
+    category: "outline",
+    html: `<button class="btn-outline-neon-pulse">
+    Neon Pulse
+</button>`,
+    css: `.btn-outline-neon-pulse {
+    background: transparent;
+    color: #00ff88;
+    border: 2px solid #00ff88;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-family: inherit;
+    text-shadow: 0 0 5px #00ff88;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.btn-outline-neon-pulse:hover {
+    animation: neonPulse 1s infinite alternate;
+    background: #00ff88;
+    color: #000;
+    border-color: #00ff88;
+}
+
+@keyframes neonPulse {
+    0% {
+        box-shadow: 
+            0 0 10px #00ff88,
+            0 0 20px #00ff88,
+            0 0 30px #00ff88;
+    }
+    100% {
+        box-shadow: 
+            0 0 5px #00ff88,
+            0 0 10px #00ff88,
+            0 0 15px #00ff88;
+    }
+}`,
+    js: `// Neon pulse outline button
+const neonPulseBtn = document.querySelector('.btn-outline-neon-pulse');
+
+neonPulseBtn.addEventListener('click', function() {
+    this.style.animation = 'neonPulse 0.5s infinite alternate';
+    setTimeout(() => {
+        this.style.animation = 'neonPulse 1s infinite alternate';
+    }, 500);
+});`
+},
+
+// ====================================================================
+// TEMPLATE 136: OUTLINE REVEAL
+// ====================================================================
+btn136: {
+    name: "Outline Reveal",
+    category: "outline",
+    html: `<button class="btn-outline-reveal">
+    Outline Reveal
+</button>`,
+    css: `.btn-outline-reveal {
+    background: transparent;
+    color: #3b82f6;
+    border: 2px solid transparent;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    font-family: inherit;
+}
+
+.btn-outline-reveal::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transition: clip-path 0.6s ease;
+}
+
+.btn-outline-reveal:hover::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.btn-outline-reveal:hover {
+    color: #3b82f6;
+    transform: translateY(-2px);
+}`,
+    js: `// Reveal outline button
+const revealBtn = document.querySelector('.btn-outline-reveal');
+
+revealBtn.addEventListener('click', function() {
+    this.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0 100%)';
+    setTimeout(() => {
+        this.style.clipPath = '';
+    }, 600);
+});`
+},
 
 };
 
