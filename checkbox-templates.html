@@ -7,9 +7,9 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+      />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="nav-templates.css" />
+    <link rel="stylesheet" href="checkbox-templates.css" />
   </head>
   <body>
     <!-- Header with Navigation -->
@@ -44,69 +44,80 @@
       <div class="container">
         <h1>Checkbox SnippetCode</h1>
         <p>
-          Modern and responsive navigation designs for any website. Preview and
+          Modern and responsive Checkbox designs for any website. Preview and
           copy code with a single click.
         </p>
         <div class="hero-buttons">
           <a href="nav-templates.html" class="btn">Navigation SnippetCodes</a>
           <a href="footer-templates.html" class="btn">Footer SnippetCode</a>
           <a href="table-templates.html" class="btn">Table SnippetCode</a>
-        </div>
+      </div><br>
+      <div class="hero-buttons">
+          <a href="buttons-templates.html" class="btn">Button SnippetCodes</a>
+          <a href="checkbox-templates.html" class="btn">Checkbox SnippetCode</a>
+          <a href="#" class="btn"> -- SnippetCode</a>
+      </div>
       </div>
     </section>
 
-    <!-- Navigation Templates Section -->
-    <section id="nav-templates">
+    <!-- Checkbox Templates Section -->
+    <section id="checkbox-templates">
       <div class="container">
         <div class="section-title">
-          <h2>Navigation SnippetCode</h2>
-          <p>Choose from our collection of modern navigation designs</p>
+          <h2>Checkbox SnippetCode</h2>
+          <p>Choose from our collection of modern Checkbox designs</p>
         </div>
 
         <div class="categories">
           <button class="category-btn active" data-category="all">All</button>
-          <button class="category-btn" data-category="glassmorphism">
-            Glassmorphism
-          </button>
-          <button class="category-btn" data-category="minimal">Minimal</button>
-          <button class="category-btn" data-category="sidebar">Sidebar</button>
-          <button class="category-btn" data-category="dark">Dark Mode</button>
           <button class="category-btn" data-category="modern">Modern</button>
+          <button class="category-btn" data-category="dark">Dark Mode</button>
+          <button class="category-btn" data-category="animated">Animated</button>
         </div>
 
         <div class="template-grid">
-          <!-- Template 1 - Glassmorphism Nav -->
-          <div class="template-card" data-category="glassmorphism">
+          <!-- Template 1 - Modern Checkbox -->
+          <div class="template-card" data-category="modern">
             <div class="template-preview">
               <div class="live-preview-mini">
-                <div class="preview-nav-mini glassmorphism">
-                  <div class="nav-container-mini">
-                    <div class="nav-logo-mini">Brand</div>
-                    <div class="nav-menu-mini">
-                      <a href="#">Home</a>
-                      <a href="#">Features</a>
-                      <a href="#">Pricing</a>
-                    </div>
-                    <button class="nav-btn-mini">Get Started</button>
-                  </div>
+                <div class="checkbox-container">
+                  <label class="checkbox-modern">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                    Modern Checkbox
+                  </label>
                 </div>
               </div>
             </div>
             <div class="template-info">
-              <h3>Glassmorphism Navigation</h3>
-              <p>
-                Modern glassmorphism design with blur effect and gradient
-                accents.
-              </p>
+              <h3>Modern Checkbox</h3>
+              <p>Clean modern checkbox with smooth animations and gradient effects.</p>
               <div class="template-actions">
-                <button class="btn code-btn" data-template="nav1">
-                  Get Code
-                </button>
+                <button class="btn code-btn" data-template="checkbox1">Get Code</button>
               </div>
             </div>
           </div>
-
-          
+          <!-- Template 2 - Gradient Checkbox -->
+          <div class="template-card" data-category="modern">
+            <div class="template-preview">
+              <div class="live-preview-mini">
+                <div class="checkbox-container">
+                  <label class="checkbox-gradient">
+                    <input type="checkbox" checked>
+                    <span class="gradient-checkmark"></span>
+                    Gradient Style
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="template-info">
+              <h3>Gradient Checkbox</h3>
+              <p>Beautiful gradient background checkbox with icon animation.</p>
+              <div class="template-actions">
+                <button class="btn code-btn" data-template="checkbox2">Get Code</button>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -201,6 +212,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="nav-templates.js"></script>
+    <script src="checkbox-templates.js"></script>
   </body>
 </html>
