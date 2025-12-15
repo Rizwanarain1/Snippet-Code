@@ -8464,6 +8464,1099 @@ document.querySelectorAll('.checkbox-fire input').forEach(checkbox => {
     }
 });`
 },
+// ====================================================================
+// TEMPLATE 43: Neural Network Checkbox
+// ====================================================================
+checkbox43: {
+    name: "Neural Network Checkbox",
+    category: "animated",
+    html: `<div class="neural-network-container">
+    <label class="checkbox-neural">
+        <input type="checkbox">
+        <span class="neural-checkmark">
+            <span class="neuron"></span>
+            <span class="synapse"></span>
+        </span>
+        <span class="neural-label">AI Processor</span>
+    </label>
+    <label class="checkbox-neural">
+        <input type="checkbox" checked>
+        <span class="neural-checkmark">
+            <span class="neuron"></span>
+            <span class="synapse"></span>
+            <span class="synapse" style="width: 40px; height: 40px;"></span>
+        </span>
+        <span class="neural-label">Deep Learning</span>
+    </label>
+    <label class="checkbox-neural">
+        <input type="checkbox">
+        <span class="neural-checkmark">
+            <span class="neuron"></span>
+            <span class="synapse"></span>
+        </span>
+        <span class="neural-label">Neural Mesh</span>
+    </label>
+</div>`,
+    css: `.neural-network-container {
+    background: #0a0e17;
+    padding: 50px;
+    border-radius: 30px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 30px 60px rgba(102, 51, 153, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.neural-network-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(102, 51, 153, 0.3), transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(0, 204, 204, 0.3), transparent 50%);
+    animation: neuralNetwork 15s ease infinite alternate;
+    z-index: 1;
+}
+
+@keyframes neuralNetwork {
+    0% { 
+        transform: translate(0, 0) scale(1);
+        filter: blur(20px);
+    }
+    33% { 
+        transform: translate(20px, -20px) scale(1.1);
+        filter: blur(25px);
+    }
+    66% { 
+        transform: translate(-20px, 20px) scale(0.9);
+        filter: blur(15px);
+    }
+    100% { 
+        transform: translate(0, 0) scale(1);
+        filter: blur(20px);
+    }
+}
+
+/* Neural connections animation */
+.neural-network-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(90deg, transparent 49%, rgba(0, 204, 204, 0.1) 50%, transparent 51%),
+        linear-gradient(transparent 49%, rgba(0, 204, 204, 0.1) 50%, transparent 51%);
+    background-size: 50px 50px;
+    animation: neuralGrid 20s linear infinite;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+@keyframes neuralGrid {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+}
+
+.checkbox-neural {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 30px 40px;
+    background: rgba(16, 24, 40, 0.9);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 2px solid rgba(102, 51, 153, 0.4);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    min-width: 350px;
+    max-width: 400px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.checkbox-neural:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 30px 60px rgba(102, 51, 153, 0.6),
+        0 0 0 3px rgba(0, 204, 204, 0.2);
+    border-color: rgba(0, 204, 204, 0.6);
+}
+
+.checkbox-neural::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 204, 204, 0.2), transparent);
+    transition: left 0.8s ease;
+}
+
+.checkbox-neural:hover::before {
+    left: 100%;
+}
+
+.checkbox-neural input {
+    display: none;
+}
+
+.neural-checkmark {
+    width: 70px;
+    height: 70px;
+    border: 3px solid rgba(102, 51, 153, 0.6);
+    border-radius: 50%;
+    margin-right: 30px;
+    position: relative;
+    overflow: visible;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: rgba(16, 24, 40, 0.95);
+    box-shadow: 
+        inset 0 0 30px rgba(102, 51, 153, 0.4),
+        0 10px 30px rgba(0, 0, 0, 0.6);
+    flex-shrink: 0;
+}
+
+.neural-checkmark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(102, 51, 153, 0.3), transparent 70%);
+    border-radius: 50%;
+}
+
+.neuron {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: #663399;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 15px #663399,
+        inset 0 0 5px rgba(255, 255, 255, 0.3);
+    z-index: 2;
+}
+
+.synapse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(0, 204, 204, 0.3);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.synapse:nth-child(3) {
+    width: 70px;
+    height: 70px;
+    border-width: 1px;
+}
+
+.neural-label {
+    font-size: 22px;
+    color: #00cccc;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 
+        0 0 20px rgba(0, 204, 204, 0.6),
+        0 0 40px rgba(102, 51, 153, 0.3);
+    flex: 1;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
+}
+
+/* Different neural patterns */
+.checkbox-neural:nth-child(1) .neural-checkmark {
+    border-color: rgba(102, 51, 153, 0.6);
+}
+
+.checkbox-neural:nth-child(2) .neural-checkmark {
+    border-color: rgba(0, 204, 204, 0.6);
+}
+
+.checkbox-neural:nth-child(3) .neural-checkmark {
+    border-color: rgba(153, 50, 204, 0.6);
+}
+
+.checkbox-neural:nth-child(1) .neuron {
+    background: #663399;
+}
+
+.checkbox-neural:nth-child(2) .neuron {
+    background: #00cccc;
+}
+
+.checkbox-neural:nth-child(3) .neuron {
+    background: #9932cc;
+}
+
+.checkbox-neural input:checked + .neural-checkmark {
+    border-color: transparent;
+    background: radial-gradient(circle, #663399, #0a0e17);
+    transform: scale(1.15);
+    animation: neuralActivate 2s ease infinite alternate;
+    box-shadow: 
+        0 0 60px currentColor,
+        inset 0 0 40px rgba(0, 204, 204, 0.4),
+        0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+.checkbox-neural:nth-child(1) input:checked + .neural-checkmark {
+    background: radial-gradient(circle, #663399, #0a0e17);
+}
+
+.checkbox-neural:nth-child(2) input:checked + .neural-checkmark {
+    background: radial-gradient(circle, #00cccc, #0a0e17);
+}
+
+.checkbox-neural:nth-child(3) input:checked + .neural-checkmark {
+    background: radial-gradient(circle, #9932cc, #0a0e17);
+}
+
+@keyframes neuralActivate {
+    0% { 
+        transform: scale(1.15);
+        box-shadow: 
+            0 0 50px currentColor,
+            inset 0 0 30px rgba(0, 204, 204, 0.4);
+    }
+    100% { 
+        transform: scale(1.2);
+        box-shadow: 
+            0 0 80px currentColor,
+            inset 0 0 50px rgba(0, 204, 204, 0.6);
+    }
+}
+
+.checkbox-neural input:checked + .neural-checkmark .neuron {
+    background: #00cccc;
+    box-shadow: 
+        0 0 30px #00cccc,
+        inset 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: neuronFire 0.5s infinite alternate;
+}
+
+@keyframes neuronFire {
+    0% { 
+        transform: translate(-50%, -50%) scale(1);
+        filter: brightness(1);
+    }
+    100% { 
+        transform: translate(-50%, -50%) scale(1.4);
+        filter: brightness(1.5);
+    }
+}
+
+.checkbox-neural input:checked + .neural-checkmark .synapse {
+    border-color: #00cccc;
+    animation: synapseOrbit 4s linear infinite;
+}
+
+.checkbox-neural input:checked + .neural-checkmark .synapse:nth-child(3) {
+    animation: synapseOrbit 6s linear infinite reverse;
+}
+
+@keyframes synapseOrbit {
+    0% { 
+        transform: translate(-50%, -50%) rotate(0deg);
+        border-color: #00cccc;
+    }
+    25% { 
+        transform: translate(-50%, -50%) rotate(90deg);
+        border-color: #663399;
+    }
+    50% { 
+        transform: translate(-50%, -50%) rotate(180deg);
+        border-color: #9932cc;
+    }
+    75% { 
+        transform: translate(-50%, -50%) rotate(270deg);
+        border-color: #00cccc;
+    }
+    100% { 
+        transform: translate(-50%, -50%) rotate(360deg);
+        border-color: #00cccc;
+    }
+}
+
+.checkbox-neural input:checked ~ .neural-label {
+    color: #ffffff;
+    text-shadow: 
+        0 0 40px currentColor,
+        0 0 80px rgba(255, 255, 255, 0.3);
+    animation: neuralText 2s ease infinite alternate;
+}
+
+.checkbox-neural:nth-child(1) input:checked ~ .neural-label {
+    color: #00cccc;
+}
+
+.checkbox-neural:nth-child(2) input:checked ~ .neural-label {
+    color: #663399;
+}
+
+.checkbox-neural:nth-child(3) input:checked ~ .neural-label {
+    color: #9932cc;
+}
+
+@keyframes neuralText {
+    0% { 
+        letter-spacing: 1.5px;
+        transform: translateX(0);
+    }
+    100% { 
+        letter-spacing: 3px;
+        transform: translateX(10px);
+    }
+}
+
+/* Create neural connections between checkboxes */
+.neural-connection {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00cccc, transparent);
+    transform-origin: left center;
+    opacity: 0;
+    filter: blur(1px);
+    z-index: 1;
+}
+
+.checkbox-neural input:checked ~ .neural-connection {
+    opacity: 0.3;
+    animation: neuralFlow 2s linear infinite;
+}
+
+@keyframes neuralFlow {
+    0% { 
+        background-position: 0% 50%;
+        opacity: 0.3;
+    }
+    50% { 
+        background-position: 100% 50%;
+        opacity: 0.6;
+    }
+    100% { 
+        background-position: 0% 50%;
+        opacity: 0.3;
+    }
+}`,
+    js: `// Neural Network checkbox functionality
+document.querySelectorAll('.checkbox-neural input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const label = this.closest('.checkbox-neural').querySelector('.neural-label').textContent;
+        
+        // Create neural network effect
+        const checkmark = this.nextElementSibling;
+        if(this.checked) {
+            createNeuralParticles(checkmark);
+            createNeuralConnections();
+        } else {
+            removeNeuralConnections();
+        }
+        
+        console.log(\`Neural Network: "\${label}" - \${this.checked ? 'ACTIVATED' : 'DEACTIVATED'}\`);
+        
+        // Simulate neural sound
+        if(this.checked) {
+            console.log('🔊 *NEURAL BEEP* Synapses firing');
+        }
+    });
+    
+    // Create neural connections between activated checkboxes
+    function createNeuralConnections() {
+        const checkboxes = document.querySelectorAll('.checkbox-neural input:checked');
+        const container = document.querySelector('.neural-network-container');
+        
+        // Remove existing connections
+        removeNeuralConnections();
+        
+        if(checkboxes.length > 1) {
+            const positions = [];
+            checkboxes.forEach(cb => {
+                const rect = cb.nextElementSibling.getBoundingClientRect();
+                const containerRect = container.getBoundingClientRect();
+                positions.push({
+                    x: rect.left + rect.width/2 - containerRect.left,
+                    y: rect.top + rect.height/2 - containerRect.top
+                });
+            });
+            
+            // Create connections between all activated neurons
+            for(let i = 0; i < positions.length - 1; i++) {
+                for(let j = i + 1; j < positions.length; j++) {
+                    const connection = document.createElement('div');
+                    const dx = positions[j].x - positions[i].x;
+                    const dy = positions[j].y - positions[i].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+                    
+                    connection.className = 'neural-connection';
+                    connection.style.cssText = \`
+                        position: absolute;
+                        top: \${positions[i].y}px;
+                        left: \${positions[i].x}px;
+                        width: \${distance}px;
+                        transform: rotate(\${angle}deg);
+                        z-index: 1;
+                    \`;
+                    
+                    container.appendChild(connection);
+                }
+            }
+        }
+    }
+    
+    function removeNeuralConnections() {
+        const connections = document.querySelectorAll('.neural-connection');
+        connections.forEach(conn => conn.remove());
+    }
+    
+    function createNeuralParticles(element) {
+        const rect = element.getBoundingClientRect();
+        const colors = ['#663399', '#00cccc', '#9932cc', '#ffffff'];
+        
+        for(let i = 0; i < 12; i++) {
+            setTimeout(() => {
+                const particle = document.createElement('span');
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const size = Math.random() * 6 + 3;
+                
+                particle.style.cssText = \`
+                    position: fixed;
+                    width: \${size}px;
+                    height: \${size}px;
+                    background: \${color};
+                    border-radius: 50%;
+                    top: \${rect.top + rect.height/2}px;
+                    left: \${rect.left + rect.width/2}px;
+                    pointer-events: none;
+                    z-index: 1000;
+                    opacity: 0.9;
+                    box-shadow: 0 0 15px \${color};
+                \`;
+                
+                document.body.appendChild(particle);
+                
+                // Neural-like movement (random with some intelligence)
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 100 + 50;
+                const duration = Math.random() * 1000 + 500;
+                
+                // Create a "smart" path (not completely random)
+                const controlX = Math.cos(angle + Math.PI/4) * distance/2;
+                const controlY = Math.sin(angle + Math.PI/4) * distance/2;
+                
+                const keyframes = [
+                    { 
+                        transform: \`translate(0, 0) scale(1)\`,
+                        opacity: 0.9 
+                    },
+                    { 
+                        transform: \`translate(\${controlX}px, \${controlY}px) scale(1.2)\`,
+                        opacity: 0.7 
+                    },
+                    { 
+                        transform: \`translate(\${Math.cos(angle) * distance}px, \${Math.sin(angle) * distance}px) scale(0)\`,
+                        opacity: 0 
+                    }
+                ];
+                
+                particle.animate(keyframes, {
+                    duration: duration,
+                    easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
+                });
+                
+                setTimeout(() => {
+                    particle.remove();
+                }, duration);
+            }, i * 100);
+        }
+    }
+    
+    // Update connections when any checkbox changes
+    document.querySelectorAll('.checkbox-neural input').forEach(cb => {
+        cb.addEventListener('change', createNeuralConnections);
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 44: Quantum Particle Checkbox
+// ====================================================================
+checkbox44: {
+    name: "Quantum Particle Checkbox",
+    category: "animated",
+    html: `<div class="quantum-particle-container">
+    <label class="checkbox-quantum">
+        <input type="checkbox">
+        <span class="quantum-checkmark">
+            <span class="particle">⚛️</span>
+        </span>
+        <span class="quantum-label">Superposition</span>
+    </label>
+    <label class="checkbox-quantum">
+        <input type="checkbox" checked>
+        <span class="quantum-checkmark">
+            <span class="particle">⚛️</span>
+        </span>
+        <span class="quantum-label">Entanglement</span>
+    </label>
+    <label class="checkbox-quantum">
+        <input type="checkbox">
+        <span class="quantum-checkmark">
+            <span class="particle">⚛️</span>
+        </span>
+        <span class="quantum-label">Wave Function</span>
+    </label>
+</div>`,
+    css: `.quantum-particle-container {
+    background: linear-gradient(135deg, #0b3d91 0%, #1a237e 100%);
+    padding: 50px;
+    border-radius: 30px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 30px 60px rgba(66, 165, 245, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.quantum-particle-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(66, 165, 245, 0.4), transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(171, 71, 188, 0.4), transparent 50%);
+    animation: quantumUniverse 20s ease infinite alternate;
+    filter: blur(50px);
+    z-index: 1;
+}
+
+@keyframes quantumUniverse {
+    0% { 
+        transform: translate(0, 0) scale(1);
+        filter: blur(50px) hue-rotate(0deg);
+    }
+    25% { 
+        transform: translate(20px, -20px) scale(1.1);
+        filter: blur(60px) hue-rotate(90deg);
+    }
+    50% { 
+        transform: translate(-20px, 20px) scale(0.9);
+        filter: blur(40px) hue-rotate(180deg);
+    }
+    75% { 
+        transform: translate(20px, 20px) scale(1.05);
+        filter: blur(55px) hue-rotate(270deg);
+    }
+    100% { 
+        transform: translate(0, 0) scale(1);
+        filter: blur(50px) hue-rotate(360deg);
+    }
+}
+
+/* Quantum probability waves */
+.quantum-particle-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 1px, transparent 2px),
+        radial-gradient(circle at 60% 60%, rgba(255, 255, 255, 0.05) 1px, transparent 2px);
+    background-size: 100px 100px;
+    animation: quantumWaves 10s linear infinite;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+@keyframes quantumWaves {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+.checkbox-quantum {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 30px 40px;
+    background: rgba(13, 27, 42, 0.9);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 2px solid rgba(66, 165, 245, 0.4);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    min-width: 350px;
+    max-width: 400px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.checkbox-quantum:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 30px 60px rgba(66, 165, 245, 0.6),
+        0 0 0 3px rgba(171, 71, 188, 0.2);
+    border-color: rgba(171, 71, 188, 0.6);
+}
+
+.checkbox-quantum::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(171, 71, 188, 0.3), transparent);
+    transition: left 0.8s ease;
+}
+
+.checkbox-quantum:hover::before {
+    left: 100%;
+}
+
+.checkbox-quantum input {
+    display: none;
+}
+
+.quantum-checkmark {
+    width: 70px;
+    height: 70px;
+    border: 3px solid rgba(66, 165, 245, 0.6);
+    border-radius: 15px;
+    margin-right: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: rgba(13, 27, 42, 0.95);
+    box-shadow: 
+        inset 0 0 30px rgba(66, 165, 245, 0.4),
+        0 10px 30px rgba(0, 0, 0, 0.6);
+    flex-shrink: 0;
+}
+
+.quantum-checkmark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(66, 165, 245, 0.2) 0%, 
+        rgba(171, 71, 188, 0.2) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    transition: all 0.3s ease;
+    filter: 
+        drop-shadow(0 0 15px #42a5f5)
+        drop-shadow(0 0 30px #ab47bc);
+    z-index: 2;
+}
+
+.quantum-label {
+    font-size: 22px;
+    color: #42a5f5;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 
+        0 0 20px rgba(66, 165, 245, 0.6),
+        0 0 40px rgba(171, 71, 188, 0.3);
+    flex: 1;
+    transition: all 0.3s ease;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Different quantum states */
+.checkbox-quantum:nth-child(1) .quantum-checkmark {
+    border-color: rgba(66, 165, 245, 0.6);
+}
+
+.checkbox-quantum:nth-child(2) .quantum-checkmark {
+    border-color: rgba(171, 71, 188, 0.6);
+}
+
+.checkbox-quantum:nth-child(3) .quantum-checkmark {
+    border-color: rgba(0, 188, 212, 0.6);
+}
+
+.checkbox-quantum:nth-child(1) input:checked + .quantum-checkmark {
+    background: linear-gradient(135deg, #42a5f5, #2196f3);
+}
+
+.checkbox-quantum:nth-child(2) input:checked + .quantum-checkmark {
+    background: linear-gradient(135deg, #ab47bc, #7b1fa2);
+}
+
+.checkbox-quantum:nth-child(3) input:checked + .quantum-checkmark {
+    background: linear-gradient(135deg, #00bcd4, #0097a7);
+}
+
+.checkbox-quantum input:checked + .quantum-checkmark {
+    border-color: transparent;
+    transform: scale(1.15);
+    animation: quantumSuperposition 3s ease infinite alternate;
+    box-shadow: 
+        0 0 60px currentColor,
+        inset 0 0 40px rgba(255, 255, 255, 0.4),
+        0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes quantumSuperposition {
+    0% { 
+        transform: scale(1.15);
+        filter: hue-rotate(0deg);
+        box-shadow: 
+            0 0 50px currentColor,
+            inset 0 0 30px rgba(255, 255, 255, 0.4);
+    }
+    33% { 
+        transform: scale(1.2);
+        filter: hue-rotate(120deg);
+        box-shadow: 
+            0 0 70px currentColor,
+            inset 0 0 45px rgba(255, 255, 255, 0.5);
+    }
+    66% { 
+        transform: scale(1.18);
+        filter: hue-rotate(240deg);
+        box-shadow: 
+            0 0 60px currentColor,
+            inset 0 0 35px rgba(255, 255, 255, 0.45);
+    }
+    100% { 
+        transform: scale(1.15);
+        filter: hue-rotate(360deg);
+        box-shadow: 
+            0 0 50px currentColor,
+            inset 0 0 30px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.checkbox-quantum input:checked + .quantum-checkmark::before {
+    opacity: 1;
+    animation: quantumWave 2s linear infinite;
+}
+
+@keyframes quantumWave {
+    0% { 
+        background-position: 0% 50%;
+        transform: rotate(0deg);
+    }
+    50% { 
+        background-position: 100% 50%;
+        transform: rotate(180deg);
+    }
+    100% { 
+        background-position: 0% 50%;
+        transform: rotate(360deg);
+    }
+}
+
+.checkbox-quantum input:checked + .quantum-checkmark .particle {
+    animation: quantumDuality 4s linear infinite;
+    filter: 
+        drop-shadow(0 0 25px currentColor)
+        drop-shadow(0 0 50px rgba(255, 255, 255, 0.3));
+}
+
+@keyframes quantumDuality {
+    0% { 
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        filter: 
+            drop-shadow(0 0 20px #42a5f5)
+            drop-shadow(0 0 40px #ab47bc);
+    }
+    25% { 
+        transform: translate(-50%, -50%) rotate(90deg) scale(1.3);
+        filter: 
+            drop-shadow(0 0 25px #ab47bc)
+            drop-shadow(0 0 50px #42a5f5);
+    }
+    50% { 
+        transform: translate(-50%, -50%) rotate(180deg) scale(1);
+        filter: 
+            drop-shadow(0 0 20px #00bcd4)
+            drop-shadow(0 0 40px #ab47bc);
+    }
+    75% { 
+        transform: translate(-50%, -50%) rotate(270deg) scale(1.3);
+        filter: 
+            drop-shadow(0 0 25px #42a5f5)
+            drop-shadow(0 0 50px #00bcd4);
+    }
+    100% { 
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+        filter: 
+            drop-shadow(0 0 20px #42a5f5)
+            drop-shadow(0 0 40px #ab47bc);
+    }
+}
+
+.checkbox-quantum input:checked ~ .quantum-label {
+    color: #ffffff;
+    text-shadow: 
+        0 0 40px currentColor,
+        0 0 80px rgba(255, 255, 255, 0.3);
+    animation: quantumText 2s ease infinite alternate;
+}
+
+.checkbox-quantum:nth-child(1) input:checked ~ .quantum-label {
+    color: #42a5f5;
+}
+
+.checkbox-quantum:nth-child(2) input:checked ~ .quantum-label {
+    color: #ab47bc;
+}
+
+.checkbox-quantum:nth-child(3) input:checked ~ .quantum-label {
+    color: #00bcd4;
+}
+
+@keyframes quantumText {
+    0% { 
+        letter-spacing: 1.5px;
+        transform: translateX(0);
+        opacity: 1;
+    }
+    50% { 
+        letter-spacing: 3px;
+        transform: translateX(5px);
+        opacity: 0.8;
+    }
+    100% { 
+        letter-spacing: 1.5px;
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Quantum entanglement effect */
+.quantum-entanglement {
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, currentColor, transparent);
+    opacity: 0;
+    filter: blur(2px);
+    z-index: 1;
+}
+
+.checkbox-quantum input:checked ~ .quantum-entanglement {
+    opacity: 0.4;
+    animation: entanglement 2s linear infinite;
+}
+
+@keyframes entanglement {
+    0% { 
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% { 
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    100% { 
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}`,
+    js: `// Quantum Particle checkbox functionality
+document.querySelectorAll('.checkbox-quantum input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const label = this.closest('.checkbox-quantum').querySelector('.quantum-label').textContent;
+        
+        // Create quantum particle effect
+        const checkmark = this.nextElementSibling;
+        if(this.checked) {
+            createQuantumParticles(checkmark);
+            
+            // Add entanglement effect
+            for(let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    const entanglement = document.createElement('div');
+                    entanglement.className = 'quantum-entanglement';
+                    entanglement.style.left = \`\${Math.random() * 100}%\`;
+                    entanglement.style.animationDelay = \`\${i * 0.3}s\`;
+                    this.closest('.checkbox-quantum').appendChild(entanglement);
+                    
+                    setTimeout(() => {
+                        entanglement.remove();
+                    }, 2000);
+                }, i * 300);
+            }
+        }
+        
+        console.log(\`Quantum State: "\${label}" - \${this.checked ? 'OBSERVED' : 'UNOBSERVED'}\`);
+        
+        // Quantum observation effect
+        if(this.checked) {
+            // Create wave function collapse effect
+            const container = this.closest('.checkbox-quantum');
+            container.style.animation = 'none';
+            setTimeout(() => {
+                container.style.animation = '';
+            }, 100);
+            
+            console.log('🔊 *QUANTUM COLLAPSE* Wave function collapsed');
+        }
+    });
+    
+    // Add quantum uncertainty on hover
+    checkbox.addEventListener('mouseenter', function() {
+        const checkmark = this.nextElementSibling;
+        const particle = checkmark.querySelector('.particle');
+        
+        // Create uncertainty effect (particle appears in multiple places)
+        const uncertaintyInterval = setInterval(() => {
+            const x = Math.random() * 20 - 10;
+            const y = Math.random() * 20 - 10;
+            particle.style.transform = \`translate(\${x}px, \${y}px)\`;
+        }, 100);
+        
+        setTimeout(() => {
+            clearInterval(uncertaintyInterval);
+            if(!this.checked) {
+                particle.style.transform = 'translate(-50%, -50%)';
+            }
+        }, 500);
+    });
+    
+    function createQuantumParticles(element) {
+        const rect = element.getBoundingClientRect();
+        const colors = ['#42a5f5', '#ab47bc', '#00bcd4', '#ffffff'];
+        
+        for(let i = 0; i < 10; i++) {
+            setTimeout(() => {
+                // Create particle and anti-particle pairs
+                for(let j = 0; j < 2; j++) {
+                    const particle = document.createElement('span');
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    const size = Math.random() * 8 + 4;
+                    const isAnti = j === 1;
+                    
+                    particle.style.cssText = \`
+                        position: fixed;
+                        width: \${size}px;
+                        height: \${size}px;
+                        background: \${color};
+                        border-radius: 50%;
+                        top: \${rect.top + rect.height/2}px;
+                        left: \${rect.left + rect.width/2}px;
+                        pointer-events: none;
+                        z-index: 1000;
+                        opacity: 0.9;
+                        box-shadow: 0 0 20px \${color};
+                        filter: blur(\${isAnti ? '2px' : '1px'});
+                    \`;
+                    
+                    if(isAnti) {
+                        particle.style.background = 'conic-gradient(from 0deg, transparent, white, transparent)';
+                        particle.style.mixBlendMode = 'screen';
+                    }
+                    
+                    document.body.appendChild(particle);
+                    
+                    // Quantum-like movement (uncertain position)
+                    const angle = Math.random() * Math.PI * 2;
+                    const distance = Math.random() * 120 + 60;
+                    const duration = Math.random() * 1200 + 600;
+                    
+                    // Quantum tunneling effect (teleportation)
+                    const keyframes = [
+                        { 
+                            transform: \`translate(0, 0) scale(1)\`,
+                            opacity: 0.9 
+                        },
+                        { 
+                            transform: \`translate(\${Math.cos(angle) * distance/2}px, \${Math.sin(angle) * distance/2}px) scale(0.5)\`,
+                            opacity: 0.5 
+                        },
+                        { 
+                            transform: \`translate(\${Math.cos(angle) * distance}px, \${Math.sin(angle) * distance}px) scale(0)\`,
+                            opacity: 0 
+                        }
+                    ];
+                    
+                    particle.animate(keyframes, {
+                        duration: duration,
+                        easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
+                    });
+                    
+                    setTimeout(() => {
+                        particle.remove();
+                    }, duration);
+                }
+            }, i * 150);
+        }
+    }
+    
+    // Quantum entanglement between checkboxes
+    const checkboxes = document.querySelectorAll('.checkbox-quantum input');
+    checkboxes.forEach(cb1 => {
+        cb1.addEventListener('change', function() {
+            if(this.checked) {
+                // When one quantum checkbox is checked, others might get affected
+                const probability = 0.3; // 30% chance of entanglement
+                if(Math.random() < probability) {
+                    checkboxes.forEach(cb2 => {
+                        if(cb2 !== this && !cb2.checked && Math.random() < 0.5) {
+                            setTimeout(() => {
+                                cb2.click();
+                                console.log('⚛️ Quantum entanglement detected!');
+                            }, 300);
+                        }
+                    });
+                }
+            }
+        });
+    });
+});`
+},
+
 };
 
 // Main functionality for checkbox templates
