@@ -9556,7 +9556,8517 @@ document.querySelectorAll('.checkbox-quantum input').forEach(checkbox => {
     });
 });`
 },
+// ====================================================================
+// TEMPLATE 45: Professional Glass Checkbox
+// ====================================================================
+checkbox45: {
+    name: "Glass Morphism Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <label class="checkbox-glass">
+        <input type="checkbox">
+        <span class="glass-checkmark">
+            <i class="fas fa-check"></i>
+        </span>
+        Glass Design Option
+    </label>
+    <label class="checkbox-glass">
+        <input type="checkbox" checked>
+        <span class="glass-checkmark">
+            <i class="fas fa-check"></i>
+        </span>
+        Glass Design Checked
+    </label>
+    <label class="checkbox-glass">
+        <input type="checkbox">
+        <span class="glass-checkmark">
+            <i class="fas fa-check"></i>
+        </span>
+        Glass Design Option 3
+    </label>
+</div>`,
+    css: `.checkbox-glass {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
 
+.checkbox-glass:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-glass input {
+    display: none;
+}
+
+.glass-checkmark {
+    width: 22px;
+    height: 22px;
+    margin-right: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(124, 58, 237, 0.3);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-checkmark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(236, 72, 153, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.glass-checkmark i {
+    font-size: 10px;
+    color: transparent;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.checkbox-glass input:checked + .glass-checkmark {
+    border-color: #7c3aed;
+    background: rgba(124, 58, 237, 0.1);
+}
+
+.checkbox-glass input:checked + .glass-checkmark::before {
+    opacity: 1;
+}
+
+.checkbox-glass input:checked + .glass-checkmark i {
+    color: #7c3aed;
+    animation: glassCheck 0.4s ease;
+}
+
+@keyframes glassCheck {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}`,
+    js: `// Glass checkbox functionality
+document.querySelectorAll('.checkbox-glass input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const parent = this.closest('.checkbox-glass');
+        if (this.checked) {
+            parent.style.background = 'rgba(124, 58, 237, 0.05)';
+            parent.style.borderColor = 'rgba(124, 58, 237, 0.3)';
+        } else {
+            parent.style.background = 'rgba(255, 255, 255, 0.7)';
+            parent.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+        }
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 46: Professional Toggle Switch
+// ====================================================================
+checkbox46: {
+    name: "Toggle Switch",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <label class="toggle-switch">
+        <input type="checkbox">
+        <span class="toggle-slider">
+            <span class="toggle-knob"></span>
+        </span>
+        <span class="toggle-label">Toggle Switch</span>
+    </label>
+    <label class="toggle-switch">
+        <input type="checkbox" checked>
+        <span class="toggle-slider">
+            <span class="toggle-knob"></span>
+        </span>
+        <span class="toggle-label">Active Toggle</span>
+    </label>
+</div>`,
+    css: `.toggle-switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+    border-radius: 30px;
+    margin-right: 15px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.1),
+        0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.toggle-knob {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 
+        0 2px 6px rgba(0, 0, 0, 0.15),
+        0 0 0 2px rgba(124, 58, 237, 0);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(124, 58, 237, 0.3);
+}
+
+.toggle-switch input:checked + .toggle-slider .toggle-knob {
+    transform: translateX(30px);
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.2),
+        0 0 0 2px rgba(255, 255, 255, 0.5);
+    animation: knobGlow 0.4s ease;
+}
+
+@keyframes knobGlow {
+    0% { box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); }
+    50% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
+    100% { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.5); }
+}
+
+.toggle-label {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.toggle-switch input:checked ~ .toggle-label {
+    color: #7c3aed;
+    font-weight: 600;
+}`,
+    js: `// Toggle switch functionality
+document.querySelectorAll('.toggle-switch input').forEach(toggle => {
+    toggle.addEventListener('change', function() {
+        console.log('Toggle switch:', this.checked ? 'ON' : 'OFF');
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 47: Professional Radio Checkbox
+// ====================================================================
+checkbox47: {
+    name: "Radio Style Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <label class="checkbox-radio">
+        <input type="checkbox">
+        <span class="radio-circle">
+            <span class="radio-dot"></span>
+        </span>
+        <span class="radio-content">
+            <span class="radio-title">Premium Plan</span>
+            <span class="radio-description">All features included</span>
+        </span>
+    </label>
+    <label class="checkbox-radio">
+        <input type="checkbox" checked>
+        <span class="radio-circle">
+            <span class="radio-dot"></span>
+        </span>
+        <span class="radio-content">
+            <span class="radio-title">Pro Plan</span>
+            <span class="radio-description">Recommended for teams</span>
+        </span>
+    </label>
+</div>`,
+    css: `.checkbox-radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-radio:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.checkbox-radio input {
+    display: none;
+}
+
+.radio-circle {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #cbd5e1;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.radio-dot {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.radio-content {
+    flex: 1;
+}
+
+.radio-title {
+    display: block;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.radio-description {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.checkbox-radio input:checked + .radio-circle {
+    border-color: #7c3aed;
+    background: #7c3aed;
+    animation: radioPulse 0.6s ease;
+}
+
+.checkbox-radio input:checked + .radio-circle .radio-dot {
+    transform: scale(1);
+    background: white;
+}
+
+.checkbox-radio input:checked ~ .radio-content .radio-title {
+    color: #7c3aed;
+}
+
+.checkbox-radio input:checked {
+    border-color: #7c3aed;
+    background: rgba(124, 58, 237, 0.03);
+}
+
+@keyframes radioPulse {
+    0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(124, 58, 237, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+}`,
+    js: `// Radio checkbox functionality
+document.querySelectorAll('.checkbox-radio input').forEach(radio => {
+    radio.addEventListener('change', function() {
+        // Uncheck other radio checkboxes in same container
+        const container = this.closest('.checkbox-container');
+        if (container) {
+            container.querySelectorAll('.checkbox-radio input').forEach(otherRadio => {
+                if (otherRadio !== this) {
+                    otherRadio.checked = false;
+                }
+            });
+        }
+        console.log('Radio selected:', this.checked);
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 48: Professional Card Checkbox
+// ====================================================================
+checkbox48: {
+    name: "Card Style Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <label class="checkbox-card">
+        <input type="checkbox">
+        <div class="card-content">
+            <div class="card-icon">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="card-text">
+                <h4>Premium Feature</h4>
+                <p>Access all premium features with this option</p>
+            </div>
+            <div class="card-check">
+                <i class="fas fa-check-circle"></i>
+            </div>
+        </div>
+    </label>
+    <label class="checkbox-card">
+        <input type="checkbox" checked>
+        <div class="card-content">
+            <div class="card-icon">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <div class="card-text">
+                <h4>Pro Feature</h4>
+                <p>Enhanced performance and priority support</p>
+            </div>
+            <div class="card-check">
+                <i class="fas fa-check-circle"></i>
+            </div>
+        </div>
+    </label>
+</div>`,
+    css: `.checkbox-card {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.checkbox-card input {
+    display: none;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.card-icon i {
+    font-size: 20px;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.card-text {
+    flex: 1;
+}
+
+.card-text h4 {
+    margin: 0 0 8px 0;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card-text p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.card-check {
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.card-check i {
+    font-size: 24px;
+    color: #7c3aed;
+}
+
+.checkbox-card:hover .card-content {
+    border-color: #7c3aed;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
+}
+
+.checkbox-card input:checked + .card-content {
+    border-color: #7c3aed;
+    background: rgba(124, 58, 237, 0.02);
+}
+
+.checkbox-card input:checked + .card-content::before {
+    transform: scaleX(1);
+}
+
+.checkbox-card input:checked + .card-content .card-icon {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+}
+
+.checkbox-card input:checked + .card-content .card-icon i {
+    color: white;
+}
+
+.checkbox-card input:checked + .card-content .card-text h4 {
+    color: #7c3aed;
+}
+
+.checkbox-card input:checked + .card-content .card-check {
+    opacity: 1;
+    transform: scale(1);
+    animation: cardCheckBounce 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes cardCheckBounce {
+    0% { transform: scale(0) rotate(-180deg); }
+    70% { transform: scale(1.2) rotate(10deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}`,
+    js: `// Card checkbox functionality
+document.querySelectorAll('.checkbox-card input').forEach(card => {
+    card.addEventListener('change', function() {
+        console.log('Card checkbox:', this.checked ? 'Selected' : 'Deselected');
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 49: Professional Multi-step Checkbox
+// ====================================================================
+checkbox49: {
+    name: "Multi-step Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <label class="checkbox-multistep">
+        <input type="checkbox">
+        <div class="step-indicator">
+            <span class="step-number">1</span>
+            <span class="step-line"></span>
+        </div>
+        <div class="step-content">
+            <h4>Basic Configuration</h4>
+            <p>Set up your basic preferences</p>
+        </div>
+        <span class="step-status"></span>
+    </label>
+    <label class="checkbox-multistep">
+        <input type="checkbox" checked>
+        <div class="step-indicator">
+            <span class="step-number">2</span>
+            <span class="step-line"></span>
+        </div>
+        <div class="step-content">
+            <h4>Advanced Settings</h4>
+            <p>Configure advanced options</p>
+        </div>
+        <span class="step-status"></span>
+    </label>
+    <label class="checkbox-multistep">
+        <input type="checkbox">
+        <div class="step-indicator">
+            <span class="step-number">3</span>
+            <span class="step-line"></span>
+        </div>
+        <div class="step-content">
+            <h4>Final Review</h4>
+            <p>Review and confirm settings</p>
+        </div>
+        <span class="step-status"></span>
+    </label>
+</div>`,
+    css: `.checkbox-multistep {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    border: 2px solid #f1f5f9;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+}
+
+.checkbox-multistep:hover {
+    border-color: #e2e8f0;
+    transform: translateX(5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.checkbox-multistep input {
+    display: none;
+}
+
+.step-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    position: relative;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 16px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    z-index: 2;
+}
+
+.step-line {
+    position: absolute;
+    top: 40px;
+    width: 2px;
+    height: calc(100% - 40px);
+    background: #e2e8f0;
+    transition: all 0.4s ease;
+}
+
+.checkbox-multistep:last-child .step-line {
+    display: none;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h4 {
+    margin: 0 0 6px 0;
+    color: #1e293b;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.step-content p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.step-status {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.step-status::before {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.checkbox-multistep input:checked + .step-indicator .step-number {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    color: white;
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3);
+    animation: stepPulse 0.6s ease;
+}
+
+.checkbox-multistep input:checked + .step-indicator .step-line {
+    background: linear-gradient(to bottom, #7c3aed, #e2e8f0);
+}
+
+.checkbox-multistep input:checked ~ .step-content h4 {
+    color: #7c3aed;
+}
+
+.checkbox-multistep input:checked ~ .step-status {
+    background: #10b981;
+    opacity: 1;
+    transform: scale(1);
+    animation: statusBounce 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes stepPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+@keyframes statusBounce {
+    0% { transform: scale(0) rotate(-180deg); }
+    70% { transform: scale(1.2) rotate(10deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}`,
+    js: `// Multi-step checkbox functionality
+document.querySelectorAll('.checkbox-multistep input').forEach(step => {
+    step.addEventListener('change', function() {
+        console.log('Step ' + this.closest('.checkbox-multistep').querySelector('.step-number').textContent + ':', 
+                    this.checked ? 'Completed' : 'Incomplete');
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 50: Professional Enterprise Toggle
+// ====================================================================
+checkbox50: {
+    name: "Enterprise Toggle",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <label class="enterprise-toggle">
+        <input type="checkbox">
+        <span class="toggle-wrapper">
+            <span class="toggle-track">
+                <span class="toggle-thumb">
+                    <span class="thumb-icon">
+                        <svg viewBox="0 0 24 24" width="12" height="12">
+                            <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                    </span>
+                </span>
+            </span>
+            <span class="toggle-labels">
+                <span class="label-off">OFF</span>
+                <span class="label-on">ON</span>
+            </span>
+        </span>
+        <span class="toggle-text">Enterprise Feature</span>
+        <span class="toggle-badge">PRO</span>
+    </label>
+</div>`,
+    css: `.enterprise-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.enterprise-toggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.enterprise-toggle:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.enterprise-toggle input {
+    display: none;
+}
+
+.toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 20px;
+}
+
+.toggle-track {
+    position: relative;
+    width: 60px;
+    height: 32px;
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-thumb {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.thumb-icon {
+    color: #94a3b8;
+    transition: all 0.3s ease;
+}
+
+.toggle-labels {
+    display: flex;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.label-off, .label-on {
+    padding: 2px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.label-off {
+    background: #f1f5f9;
+}
+
+.toggle-text {
+    flex: 1;
+    font-weight: 500;
+    color: #1e293b;
+    font-size: 15px;
+}
+
+.toggle-badge {
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Checked state */
+.enterprise-toggle input:checked + .toggle-wrapper .toggle-track {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.enterprise-toggle input:checked + .toggle-wrapper .toggle-thumb {
+    transform: translateX(28px);
+    box-shadow: 0 2px 12px rgba(16, 185, 129, 0.3);
+}
+
+.enterprise-toggle input:checked + .toggle-wrapper .thumb-icon {
+    color: #10b981;
+}
+
+.enterprise-toggle input:checked + .toggle-wrapper .toggle-labels .label-off {
+    opacity: 0.5;
+}
+
+.enterprise-toggle input:checked + .toggle-wrapper .toggle-labels .label-on {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.enterprise-toggle input:checked ~ .toggle-text {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.enterprise-toggle input:checked::before {
+    opacity: 1;
+}`,
+    js: `// Enterprise toggle functionality
+document.querySelectorAll('.enterprise-toggle input').forEach(toggle => {
+    toggle.addEventListener('change', function() {
+        const label = this.closest('.enterprise-toggle').querySelector('.toggle-text');
+        label.textContent = this.checked ? 'Enterprise Feature (Enabled)' : 'Enterprise Feature';
+        console.log('Enterprise toggle:', this.checked ? 'ENABLED' : 'DISABLED');
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 51: Official Dashboard Checkbox
+// ====================================================================
+checkbox51: {
+    name: "Dashboard Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="dashboard-card">
+        <label class="dashboard-checkbox">
+            <input type="checkbox">
+            <span class="dashboard-checkmark">
+                <svg class="check-icon" viewBox="0 0 20 20">
+                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+                </svg>
+            </span>
+            <div class="dashboard-content">
+                <div class="dashboard-header">
+                    <h4>Performance Metrics</h4>
+                    <span class="dashboard-status">Inactive</span>
+                </div>
+                <p class="dashboard-description">Track real-time performance metrics and analytics</p>
+                <div class="dashboard-meta">
+                    <span class="meta-item">
+                        <i class="fas fa-chart-line"></i>
+                        Advanced Analytics
+                    </span>
+                    <span class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        Real-time Updates
+                    </span>
+                </div>
+            </div>
+            <div class="dashboard-actions">
+                <button class="dashboard-btn configure">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </label>
+    </div>
+</div>`,
+    css: `.dashboard-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-checkbox {
+    display: flex;
+    align-items: flex-start;
+    padding: 24px;
+    cursor: pointer;
+    position: relative;
+}
+
+.dashboard-checkbox input {
+    display: none;
+}
+
+.dashboard-checkmark {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.check-icon {
+    width: 14px;
+    height: 14px;
+    fill: transparent;
+    transition: fill 0.3s ease;
+}
+
+.dashboard-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.dashboard-header h4 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.dashboard-status {
+    padding: 4px 12px;
+    background: #f1f5f9;
+    color: #64748b;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.dashboard-description {
+    margin: 0 0 16px 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.dashboard-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.meta-item i {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.dashboard-actions {
+    margin-left: 16px;
+    display: flex;
+    gap: 8px;
+}
+
+.dashboard-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #64748b;
+}
+
+.dashboard-btn:hover {
+    background: #f8fafc;
+    color: #3b82f6;
+}
+
+/* Checked state */
+.dashboard-checkbox input:checked + .dashboard-checkmark {
+    border-color: #3b82f6;
+    background: #3b82f6;
+    animation: checkPulse 0.6s ease;
+}
+
+.dashboard-checkbox input:checked + .dashboard-checkmark .check-icon {
+    fill: white;
+}
+
+.dashboard-checkbox input:checked ~ .dashboard-content .dashboard-header h4 {
+    color: #3b82f6;
+}
+
+.dashboard-checkbox input:checked ~ .dashboard-content .dashboard-status {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+.dashboard-card input:checked ~ .dashboard-checkbox {
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.02) 0%, transparent 100%);
+}
+
+.dashboard-card {
+    transition: all 0.3s ease;
+}
+
+.dashboard-checkbox:hover ~ .dashboard-card {
+    border-color: #cbd5e1;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes checkPulse {
+    0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}`,
+    js: `// Dashboard checkbox functionality
+document.querySelectorAll('.dashboard-checkbox input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const status = this.closest('.dashboard-checkbox').querySelector('.dashboard-status');
+        status.textContent = this.checked ? 'Active' : 'Inactive';
+        status.style.background = this.checked ? 'rgba(59, 130, 246, 0.1)' : '#f1f5f9';
+        status.style.color = this.checked ? '#3b82f6' : '#64748b';
+        console.log('Dashboard feature:', this.checked ? 'ACTIVATED' : 'DEACTIVATED');
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 52: Data Grid Checkbox
+// ====================================================================
+checkbox52: {
+    name: "Data Grid Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="data-grid">
+        <div class="grid-header">
+            <label class="grid-master-checkbox">
+                <input type="checkbox" id="masterCheckbox">
+                <span class="grid-checkmark"></span>
+                <span class="grid-select-all">Select All</span>
+            </label>
+            <div class="grid-actions">
+                <button class="grid-action-btn" data-action="export">
+                    <i class="fas fa-download"></i>
+                </button>
+                <button class="grid-action-btn" data-action="delete">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="grid-items">
+            <label class="grid-item">
+                <input type="checkbox" class="grid-item-checkbox">
+                <span class="grid-item-checkmark"></span>
+                <div class="grid-item-content">
+                    <span class="item-name">User Profile Data</span>
+                    <span class="item-meta">Updated 2 hours ago • 245 KB</span>
+                </div>
+                <span class="item-type">CSV</span>
+            </label>
+            
+            <label class="grid-item">
+                <input type="checkbox" class="grid-item-checkbox" checked>
+                <span class="grid-item-checkmark"></span>
+                <div class="grid-item-content">
+                    <span class="item-name">Transaction Logs</span>
+                    <span class="item-meta">Updated yesterday • 1.2 MB</span>
+                </div>
+                <span class="item-type">JSON</span>
+            </label>
+            
+            <label class="grid-item">
+                <input type="checkbox" class="grid-item-checkbox">
+                <span class="grid-item-checkmark"></span>
+                <div class="grid-item-content">
+                    <span class="item-name">API Analytics</span>
+                    <span class="item-meta">Updated 5 minutes ago • 45 KB</span>
+                </div>
+                <span class="item-type">XML</span>
+            </label>
+        </div>
+    </div>
+</div>`,
+    css: `.data-grid {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.grid-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.grid-master-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 12px;
+}
+
+.grid-master-checkbox input {
+    display: none;
+}
+
+.grid-checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #94a3b8;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.grid-checkmark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 10px;
+    height: 10px;
+    background: #3b82f6;
+    border-radius: 2px;
+    transition: transform 0.2s ease;
+}
+
+.grid-select-all {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 14px;
+}
+
+.grid-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.grid-action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s ease;
+}
+
+.grid-action-btn:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.grid-action-btn[data-action="export"]:hover {
+    color: #10b981;
+}
+
+.grid-action-btn[data-action="delete"]:hover {
+    color: #ef4444;
+}
+
+.grid-items {
+    padding: 8px 0;
+}
+
+.grid-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f5f9;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.grid-item:last-child {
+    border-bottom: none;
+}
+
+.grid-item:hover {
+    background: #f8fafc;
+}
+
+.grid-item-checkbox {
+    display: none;
+}
+
+.grid-item-checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #cbd5e1;
+    border-radius: 4px;
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.grid-item-checkmark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 10px;
+    height: 10px;
+    background: #3b82f6;
+    border-radius: 2px;
+    transition: transform 0.2s ease;
+}
+
+.grid-item-content {
+    flex: 1;
+    min-width: 0;
+    margin-right: 16px;
+}
+
+.item-name {
+    display: block;
+    font-weight: 500;
+    color: #1e293b;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.item-meta {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.item-type {
+    padding: 4px 12px;
+    background: #f1f5f9;
+    color: #64748b;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Checked states */
+.grid-master-checkbox input:checked + .grid-checkmark {
+    border-color: #3b82f6;
+    background: #3b82f6;
+}
+
+.grid-master-checkbox input:checked + .grid-checkmark::after {
+    transform: translate(-50%, -50%) scale(1);
+    background: white;
+}
+
+.grid-item-checkbox:checked + .grid-item-checkmark {
+    border-color: #3b82f6;
+    background: #3b82f6;
+}
+
+.grid-item-checkbox:checked + .grid-item-checkmark::after {
+    transform: translate(-50%, -50%) scale(1);
+    background: white;
+}
+
+.grid-item-checkbox:checked ~ .grid-item-content .item-name {
+    color: #3b82f6;
+}
+
+.grid-item-checkbox:checked ~ .item-type {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}`,
+    js: `// Data grid functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const masterCheckbox = document.getElementById('masterCheckbox');
+    const itemCheckboxes = document.querySelectorAll('.grid-item-checkbox');
+    const actionButtons = document.querySelectorAll('.grid-action-btn');
+    
+    // Master checkbox functionality
+    if (masterCheckbox) {
+        masterCheckbox.addEventListener('change', function() {
+            itemCheckboxes.forEach(checkbox => {
+                checkbox.checked = this.checked;
+                checkbox.dispatchEvent(new Event('change'));
+            });
+        });
+    }
+    
+    // Individual checkbox functionality
+    itemCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            updateMasterCheckbox();
+        });
+    });
+    
+    // Action buttons
+    actionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const action = this.getAttribute('data-action');
+            const selectedItems = Array.from(itemCheckboxes).filter(cb => cb.checked);
+            
+            if (action === 'export' && selectedItems.length > 0) {
+                alert(\`Exporting \${selectedItems.length} selected items\`);
+            } else if (action === 'delete' && selectedItems.length > 0) {
+                if (confirm(\`Delete \${selectedItems.length} selected items?\`)) {
+                    alert('Items deleted');
+                }
+            }
+        });
+    });
+    
+    function updateMasterCheckbox() {
+        if (!masterCheckbox) return;
+        
+        const allChecked = Array.from(itemCheckboxes).every(cb => cb.checked);
+        const anyChecked = Array.from(itemCheckboxes).some(cb => cb.checked);
+        
+        masterCheckbox.checked = allChecked;
+        masterCheckbox.indeterminate = anyChecked && !allChecked;
+    }
+});`
+},
+// ====================================================================
+// TEMPLATE 53: Settings Toggle
+// ====================================================================
+checkbox53: {
+    name: "Settings Toggle",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="settings-panel">
+        <div class="settings-section">
+            <div class="section-header">
+                <h4>Notification Settings</h4>
+                <span class="section-badge">3 Active</span>
+            </div>
+            
+            <div class="settings-group">
+                <label class="setting-toggle">
+                    <input type="checkbox" checked>
+                    <span class="setting-info">
+                        <i class="setting-icon fas fa-envelope"></i>
+                        <div class="setting-text">
+                            <span class="setting-title">Email Notifications</span>
+                            <span class="setting-desc">Receive updates via email</span>
+                        </div>
+                    </span>
+                    <span class="setting-switch">
+                        <span class="switch-slider"></span>
+                    </span>
+                </label>
+                
+                <label class="setting-toggle">
+                    <input type="checkbox">
+                    <span class="setting-info">
+                        <i class="setting-icon fas fa-bell"></i>
+                        <div class="setting-text">
+                            <span class="setting-title">Push Notifications</span>
+                            <span class="setting-desc">Desktop and mobile alerts</span>
+                        </div>
+                    </span>
+                    <span class="setting-switch">
+                        <span class="switch-slider"></span>
+                    </span>
+                </label>
+                
+                <label class="setting-toggle">
+                    <input type="checkbox" checked>
+                    <span class="setting-info">
+                        <i class="setting-icon fas fa-sms"></i>
+                        <div class="setting-text">
+                            <span class="setting-title">SMS Alerts</span>
+                            <span class="setting-desc">Critical alerts via SMS</span>
+                        </div>
+                    </span>
+                    <span class="setting-switch">
+                        <span class="switch-slider"></span>
+                    </span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="settings-divider"></div>
+        
+        <div class="settings-section">
+            <div class="section-header">
+                <h4>Privacy Settings</h4>
+            </div>
+            
+            <div class="settings-group">
+                <label class="setting-toggle">
+                    <input type="checkbox" checked>
+                    <span class="setting-info">
+                        <i class="setting-icon fas fa-user-shield"></i>
+                        <div class="setting-text">
+                            <span class="setting-title">Two-Factor Auth</span>
+                            <span class="setting-desc">Extra security layer</span>
+                        </div>
+                    </span>
+                    <span class="setting-switch">
+                        <span class="switch-slider"></span>
+                    </span>
+                </label>
+                
+                <label class="setting-toggle">
+                    <input type="checkbox">
+                    <span class="setting-info">
+                        <i class="setting-icon fas fa-history"></i>
+                        <div class="setting-text">
+                            <span class="setting-title">Activity Logging</span>
+                            <span class="setting-desc">Track account activity</span>
+                        </div>
+                    </span>
+                    <span class="setting-switch">
+                        <span class="switch-slider"></span>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>`,
+    css: `.settings-panel {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.settings-section {
+    padding: 24px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-header h4 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.section-badge {
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.settings-divider {
+    height: 1px;
+    background: #f1f5f9;
+    margin: 0;
+}
+
+.settings-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.setting-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.setting-toggle:hover {
+    background: white;
+    border-color: #e2e8f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.setting-toggle input {
+    display: none;
+}
+
+.setting-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.setting-icon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    border: 1px solid #e2e8f0;
+}
+
+.setting-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.setting-title {
+    display: block;
+    font-weight: 500;
+    color: #1e293b;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.setting-desc {
+    display: block;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.setting-switch {
+    width: 52px;
+    height: 28px;
+    position: relative;
+    margin-left: 16px;
+}
+
+.switch-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+    border-radius: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.switch-slider::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Checked state */
+.setting-toggle input:checked ~ .setting-switch .switch-slider {
+    background: linear-gradient(135deg, #10b981, #059669);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.setting-toggle input:checked ~ .setting-switch .switch-slider::before {
+    transform: translateX(24px);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.setting-toggle input:checked ~ .setting-info .setting-icon {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.setting-toggle input:checked ~ .setting-info .setting-title {
+    color: #10b981;
+    font-weight: 600;
+}
+
+/* Specific colors for different settings */
+.setting-toggle:nth-child(1) input:checked ~ .setting-info .setting-icon {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.setting-toggle:nth-child(2) input:checked ~ .setting-info .setting-icon {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.setting-toggle:nth-child(3) input:checked ~ .setting-info .setting-icon {
+    background: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+    border-color: rgba(139, 92, 246, 0.3);
+}`,
+    js: `// Settings toggle functionality
+document.querySelectorAll('.setting-toggle input').forEach(toggle => {
+    toggle.addEventListener('change', function() {
+        const settingTitle = this.closest('.setting-toggle').querySelector('.setting-title');
+        const icon = this.closest('.setting-toggle').querySelector('.setting-icon');
+        
+        if (this.checked) {
+            console.log('Setting enabled:', settingTitle.textContent);
+            icon.classList.add('fa-spin');
+            setTimeout(() => icon.classList.remove('fa-spin'), 300);
+        } else {
+            console.log('Setting disabled:', settingTitle.textContent);
+        }
+        
+        // Update active badge count
+        updateActiveSettingsCount();
+    });
+});
+
+function updateActiveSettingsCount() {
+    const activeToggles = document.querySelectorAll('.setting-toggle input:checked').length;
+    const badge = document.querySelector('.section-badge');
+    if (badge) {
+        badge.textContent = \`\${activeToggles} Active\`;
+    }
+}
+
+// Initialize badge count
+updateActiveSettingsCount();`
+},
+// ====================================================================
+// TEMPLATE 54: Selection Card
+// ====================================================================
+checkbox54: {
+    name: "Selection Card",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="selection-grid">
+        <label class="selection-card">
+            <input type="checkbox" name="plan">
+            <div class="card-border"></div>
+            <div class="card-content">
+                <div class="card-header">
+                    <span class="card-badge">Popular</span>
+                    <span class="card-radio">
+                        <span class="radio-indicator"></span>
+                    </span>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Professional Plan</h4>
+                    <div class="card-price">
+                        <span class="price-amount">$29</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> 10 Projects</li>
+                        <li><i class="fas fa-check"></i> 50 GB Storage</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
+                        <li><i class="fas fa-check"></i> Advanced Analytics</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="card-recommended">Recommended for teams</span>
+                </div>
+            </div>
+        </label>
+        
+        <label class="selection-card">
+            <input type="checkbox" name="plan" checked>
+            <div class="card-border"></div>
+            <div class="card-content">
+                <div class="card-header">
+                    <span class="card-badge enterprise">Enterprise</span>
+                    <span class="card-radio">
+                        <span class="radio-indicator"></span>
+                    </span>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Enterprise Plan</h4>
+                    <div class="card-price">
+                        <span class="price-amount">$99</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Unlimited Projects</li>
+                        <li><i class="fas fa-check"></i> 500 GB Storage</li>
+                        <li><i class="fas fa-check"></i> 24/7 Support</li>
+                        <li><i class="fas fa-check"></i> Custom Solutions</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="card-recommended">For large organizations</span>
+                </div>
+            </div>
+        </label>
+    </div>
+</div>`,
+    css: `.selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.selection-card {
+    display: block;
+    cursor: pointer;
+    position: relative;
+}
+
+.selection-card input {
+    display: none;
+}
+
+.card-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #e2e8f0;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.card-content {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.card-badge {
+    padding: 6px 16px;
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.card-badge.enterprise {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.card-radio {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.radio-indicator {
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.card-body {
+    margin-bottom: 24px;
+}
+
+.card-title {
+    margin: 0 0 16px 0;
+    color: #1e293b;
+    font-size: 24px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.card-price {
+    margin-bottom: 24px;
+}
+
+.price-amount {
+    font-size: 48px;
+    font-weight: 800;
+    color: #1e293b;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.price-period {
+    color: #64748b;
+    font-size: 16px;
+    margin-left: 4px;
+}
+
+.card-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #64748b;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.card-features i {
+    color: #10b981;
+    font-size: 12px;
+}
+
+.card-footer {
+    padding-top: 20px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.card-recommended {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Hover state */
+.selection-card:hover .card-border {
+    border-color: #cbd5e1;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.selection-card:hover .card-radio {
+    border-color: #94a3b8;
+}
+
+/* Selected state */
+.selection-card input:checked ~ .card-border {
+    border-color: #3b82f6;
+    border-width: 3px;
+    transform: translateY(-4px);
+    box-shadow: 
+        0 20px 40px rgba(59, 130, 246, 0.15),
+        0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+.selection-card input:checked ~ .card-content .card-radio {
+    border-color: #3b82f6;
+    background: #3b82f6;
+}
+
+.selection-card input:checked ~ .card-content .radio-indicator {
+    background: white;
+    width: 8px;
+    height: 8px;
+}
+
+.selection-card input:checked ~ .card-content .card-title {
+    color: #3b82f6;
+}
+
+.selection-card input:checked ~ .card-content .price-amount {
+    color: #3b82f6;
+}
+
+.selection-card input:checked ~ .card-content {
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.02) 0%, transparent 100%);
+}
+
+/* Make cards exclusive (radio behavior) */
+.selection-card input:checked ~ .card-border::before {
+    content: '✓ SELECTED';
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #3b82f6;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}`,
+    js: `// Selection card functionality
+document.querySelectorAll('.selection-card input[name="plan"]').forEach(card => {
+    card.addEventListener('change', function() {
+        // Uncheck other cards in the same group
+        if (this.checked) {
+            document.querySelectorAll('.selection-card input[name="plan"]').forEach(otherCard => {
+                if (otherCard !== this) {
+                    otherCard.checked = false;
+                    otherCard.dispatchEvent(new Event('change'));
+                }
+            });
+        }
+        
+        const cardTitle = this.closest('.selection-card').querySelector('.card-title');
+        console.log('Selected plan:', this.checked ? cardTitle.textContent : 'None');
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 55: Wizard Step Checkbox
+// ====================================================================
+checkbox55: {
+    name: "Wizard Step Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="wizard-steps">
+        <label class="wizard-step">
+            <input type="checkbox">
+            <div class="step-progress">
+                <span class="step-number">1</span>
+                <span class="step-connector"></span>
+            </div>
+            <div class="step-content">
+                <div class="step-header">
+                    <h4>Account Setup</h4>
+                    <span class="step-status">Pending</span>
+                </div>
+                <p>Configure your account settings and preferences</p>
+                <div class="step-actions">
+                    <button class="step-btn configure">Configure</button>
+                </div>
+            </div>
+            <div class="step-check">
+                <svg class="check-icon" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+            </div>
+        </label>
+        
+        <label class="wizard-step">
+            <input type="checkbox" checked>
+            <div class="step-progress">
+                <span class="step-number">2</span>
+                <span class="step-connector"></span>
+            </div>
+            <div class="step-content">
+                <div class="step-header">
+                    <h4>Integration Setup</h4>
+                    <span class="step-status">Completed</span>
+                </div>
+                <p>Connect with your existing tools and services</p>
+                <div class="step-actions">
+                    <button class="step-btn manage">Manage</button>
+                </div>
+            </div>
+            <div class="step-check">
+                <svg class="check-icon" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+            </div>
+        </label>
+        
+        <label class="wizard-step">
+            <input type="checkbox">
+            <div class="step-progress">
+                <span class="step-number">3</span>
+                <span class="step-connector"></span>
+            </div>
+            <div class="step-content">
+                <div class="step-header">
+                    <h4>Team Setup</h4>
+                    <span class="step-status">Not Started</span>
+                </div>
+                <p>Invite team members and set permissions</p>
+                <div class="step-actions">
+                    <button class="step-btn invite">Invite Team</button>
+                </div>
+            </div>
+            <div class="step-check">
+                <svg class="check-icon" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+            </div>
+        </label>
+    </div>
+</div>`,
+    css: `.wizard-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.wizard-step {
+    display: flex;
+    align-items: flex-start;
+    padding: 24px;
+    cursor: pointer;
+    position: relative;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-bottom: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wizard-step:first-child {
+    border-radius: 12px 12px 0 0;
+}
+
+.wizard-step:last-child {
+    border-bottom: 1px solid #e2e8f0;
+    border-radius: 0 0 12px 12px;
+}
+
+.wizard-step:hover {
+    background: #f8fafc;
+    z-index: 2;
+    transform: translateX(4px);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.wizard-step input {
+    display: none;
+}
+
+.step-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    position: relative;
+}
+
+.step-number {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    position: relative;
+    z-index: 2;
+}
+
+.step-connector {
+    position: absolute;
+    top: 36px;
+    width: 2px;
+    height: calc(100% - 36px);
+    background: #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.wizard-step:last-child .step-connector {
+    display: none;
+}
+
+.step-content {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.step-header h4 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.step-status {
+    padding: 4px 12px;
+    background: #f1f5f9;
+    color: #64748b;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.step-content p {
+    margin: 0 0 16px 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.step-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.step-btn {
+    padding: 6px 16px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.step-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.step-btn.configure:hover {
+    color: #3b82f6;
+}
+
+.step-btn.manage:hover {
+    color: #10b981;
+}
+
+.step-btn.invite:hover {
+    color: #8b5cf6;
+}
+
+.step-check {
+    width: 32px;
+    height: 32px;
+    background: #f1f5f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.check-icon {
+    width: 16px;
+    height: 16px;
+    fill: transparent;
+    transition: fill 0.3s ease;
+}
+
+/* Checked state */
+.wizard-step input:checked + .step-progress .step-number {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border-color: #3b82f6;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    animation: stepPulse 0.6s ease;
+}
+
+.wizard-step input:checked + .step-progress .step-connector {
+    background: linear-gradient(to bottom, #3b82f6, #e2e8f0);
+}
+
+.wizard-step input:checked ~ .step-content .step-header h4 {
+    color: #3b82f6;
+}
+
+.wizard-step input:checked ~ .step-content .step-status {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+.wizard-step input:checked ~ .step-check {
+    background: #10b981;
+    opacity: 1;
+    transform: scale(1);
+    animation: checkBounce 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wizard-step input:checked ~ .step-check .check-icon {
+    fill: white;
+}
+
+/* Progress states */
+.wizard-step:nth-child(1) input:checked + .step-progress .step-number {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.wizard-step:nth-child(2) input:checked + .step-progress .step-number {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.wizard-step:nth-child(3) input:checked + .step-progress .step-number {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+@keyframes stepPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+@keyframes checkBounce {
+    0% { transform: scale(0) rotate(-180deg); }
+    70% { transform: scale(1.2) rotate(10deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}`,
+    js: `// Wizard step functionality
+document.querySelectorAll('.wizard-step input').forEach(step => {
+    step.addEventListener('change', function() {
+        const stepNumber = this.closest('.wizard-step').querySelector('.step-number').textContent;
+        const stepTitle = this.closest('.wizard-step').querySelector('h4').textContent;
+        const status = this.closest('.wizard-step').querySelector('.step-status');
+        
+        if (this.checked) {
+            status.textContent = 'Completed';
+            status.style.background = 'rgba(16, 185, 129, 0.1)';
+            status.style.color = '#10b981';
+            console.log(\`Step \${stepNumber} completed: \${stepTitle}\`);
+            
+            // Auto-check previous steps
+            const allSteps = Array.from(document.querySelectorAll('.wizard-step'));
+            const currentIndex = allSteps.indexOf(this.closest('.wizard-step'));
+            
+            for (let i = 0; i < currentIndex; i++) {
+                allSteps[i].querySelector('input').checked = true;
+                allSteps[i].querySelector('.step-status').textContent = 'Completed';
+                allSteps[i].querySelector('.step-status').style.background = 'rgba(16, 185, 129, 0.1)';
+                allSteps[i].querySelector('.step-status').style.color = '#10b981';
+            }
+        } else {
+            status.textContent = 'Pending';
+            status.style.background = '#f1f5f9';
+            status.style.color = '#64748b';
+            console.log(\`Step \${stepNumber} reset: \${stepTitle}\`);
+            
+            // Uncheck following steps
+            const allSteps = Array.from(document.querySelectorAll('.wizard-step'));
+            const currentIndex = allSteps.indexOf(this.closest('.wizard-step'));
+            
+            for (let i = currentIndex + 1; i < allSteps.length; i++) {
+                allSteps[i].querySelector('input').checked = false;
+                allSteps[i].querySelector('.step-status').textContent = 'Not Started';
+                allSteps[i].querySelector('.step-status').style.background = '#f1f5f9';
+                allSteps[i].querySelector('.step-status').style.color = '#64748b';
+            }
+        }
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 56: Feature Card Checkbox
+// ====================================================================
+checkbox56: {
+    name: "Feature Card Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="features-grid">
+        <label class="feature-card">
+            <input type="checkbox">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h4>Advanced Analytics</h4>
+                <p>Real-time analytics dashboard with custom reports</p>
+                <div class="feature-meta">
+                    <span class="meta-tag">Premium</span>
+                    <span class="meta-storage">2 GB</span>
+                </div>
+            </div>
+            <div class="feature-selector">
+                <span class="selector-dot"></span>
+            </div>
+        </label>
+        
+        <label class="feature-card">
+            <input type="checkbox" checked>
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h4>API Access</h4>
+                <p>Full REST API access with documentation</p>
+                <div class="feature-meta">
+                    <span class="meta-tag">Enterprise</span>
+                    <span class="meta-storage">Unlimited</span>
+                </div>
+            </div>
+            <div class="feature-selector">
+                <span class="selector-dot"></span>
+            </div>
+        </label>
+        
+        <label class="feature-card">
+            <input type="checkbox">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                </svg>
+            </div>
+            <div class="feature-content">
+                <h4>Team Collaboration</h4>
+                <p>Unlimited team members with role-based access</p>
+                <div class="feature-meta">
+                    <span class="meta-tag">Business</span>
+                    <span class="meta-storage">5 GB</span>
+                </div>
+            </div>
+            <div class="feature-selector">
+                <span class="selector-dot"></span>
+            </div>
+        </label>
+    </div>
+</div>`,
+    css: `.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #7c3aed, #ec4899, #f59e0b);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card input {
+    display: none;
+}
+
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.feature-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #64748b;
+    transition: all 0.3s ease;
+}
+
+.feature-content {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.feature-content h4 {
+    margin: 0 0 12px 0;
+    color: #1e293b;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.feature-content p {
+    margin: 0 0 16px 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.feature-meta {
+    display: flex;
+    gap: 8px;
+}
+
+.meta-tag {
+    padding: 4px 12px;
+    background: #f1f5f9;
+    color: #64748b;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.meta-storage {
+    padding: 4px 12px;
+    background: #f1f5f9;
+    color: #64748b;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.feature-selector {
+    align-self: flex-end;
+}
+
+.selector-dot {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.selector-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 12px;
+    height: 12px;
+    background: #3b82f6;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Checked state */
+.feature-card input:checked {
+    border-color: #3b82f6;
+}
+
+.feature-card input:checked::before {
+    opacity: 1;
+}
+
+.feature-card input:checked ~ .feature-icon {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.feature-card input:checked ~ .feature-icon svg {
+    fill: white;
+}
+
+.feature-card input:checked ~ .feature-content h4 {
+    color: #3b82f6;
+}
+
+.feature-card input:checked ~ .feature-content .meta-tag {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+.feature-card input:checked ~ .feature-content .meta-storage {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.feature-card input:checked ~ .feature-selector .selector-dot {
+    border-color: #3b82f6;
+    background: #3b82f6;
+    animation: dotPulse 0.6s ease;
+}
+
+.feature-card input:checked ~ .feature-selector .selector-dot::before {
+    transform: translate(-50%, -50%) scale(1);
+    background: white;
+}
+
+/* Different colors for different features */
+.feature-card:nth-child(1) input:checked ~ .feature-icon {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.feature-card:nth-child(2) input:checked ~ .feature-icon {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.feature-card:nth-child(3) input:checked ~ .feature-icon {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+@keyframes dotPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}`,
+    js: `// Feature card functionality
+document.querySelectorAll('.feature-card input').forEach(feature => {
+    feature.addEventListener('change', function() {
+        const featureTitle = this.closest('.feature-card').querySelector('h4').textContent;
+        const featureTag = this.closest('.feature-card').querySelector('.meta-tag').textContent;
+        
+        if (this.checked) {
+            console.log(\`\${featureTitle} (\${featureTag}) selected\`);
+            
+            // Add selected class for visual feedback
+            this.closest('.feature-card').classList.add('selected');
+            
+            // Update total storage
+            updateStorageTotal();
+        } else {
+            console.log(\`\${featureTitle} (\${featureTag}) deselected\`);
+            this.closest('.feature-card').classList.remove('selected');
+            updateStorageTotal();
+        }
+    });
+});
+
+function updateStorageTotal() {
+    const selectedCards = document.querySelectorAll('.feature-card input:checked');
+    let totalStorage = 0;
+    
+    selectedCards.forEach(card => {
+        const storageText = card.closest('.feature-card').querySelector('.meta-storage').textContent;
+        if (storageText === 'Unlimited') {
+            totalStorage = Infinity;
+        } else if (storageText.includes('GB')) {
+            totalStorage += parseInt(storageText);
+        }
+    });
+    
+    console.log('Total selected storage:', totalStorage === Infinity ? 'Unlimited' : totalStorage + ' GB');
+}`
+},
+// ====================================================================
+// TEMPLATE 57: Timeline Checkbox
+// ====================================================================
+checkbox57: {
+    name: "Timeline Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="timeline">
+        <label class="timeline-item">
+            <input type="checkbox">
+            <div class="timeline-marker">
+                <span class="marker-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </span>
+                <span class="marker-line"></span>
+            </div>
+            <div class="timeline-content">
+                <div class="timeline-header">
+                    <h4>Project Kickoff</h4>
+                    <span class="timeline-date">Jan 15, 2024</span>
+                </div>
+                <p>Initial project meeting and requirements gathering</p>
+                <div class="timeline-actions">
+                    <button class="timeline-btn view">
+                        <i class="fas fa-eye"></i>
+                        View Details
+                    </button>
+                    <button class="timeline-btn complete">
+                        <i class="fas fa-check"></i>
+                        Mark Complete
+                    </button>
+                </div>
+            </div>
+            <div class="timeline-status">
+                <span class="status-badge pending">Pending</span>
+            </div>
+        </label>
+        
+        <label class="timeline-item">
+            <input type="checkbox" checked>
+            <div class="timeline-marker">
+                <span class="marker-icon">
+                    <i class="fas fa-code"></i>
+                </span>
+                <span class="marker-line"></span>
+            </div>
+            <div class="timeline-content">
+                <div class="timeline-header">
+                    <h4>Development Phase</h4>
+                    <span class="timeline-date">Feb 1, 2024</span>
+                </div>
+                <p>Core development and feature implementation</p>
+                <div class="timeline-actions">
+                    <button class="timeline-btn view">
+                        <i class="fas fa-eye"></i>
+                        View Details
+                    </button>
+                    <button class="timeline-btn complete">
+                        <i class="fas fa-check"></i>
+                        Mark Complete
+                    </button>
+                </div>
+            </div>
+            <div class="timeline-status">
+                <span class="status-badge completed">Completed</span>
+            </div>
+        </label>
+        
+        <label class="timeline-item">
+            <input type="checkbox">
+            <div class="timeline-marker">
+                <span class="marker-icon">
+                    <i class="fas fa-rocket"></i>
+                </span>
+                <span class="marker-line"></span>
+            </div>
+            <div class="timeline-content">
+                <div class="timeline-header">
+                    <h4>Launch</h4>
+                    <span class="timeline-date">Mar 1, 2024</span>
+                </div>
+                <p>Production deployment and launch activities</p>
+                <div class="timeline-actions">
+                    <button class="timeline-btn view">
+                        <i class="fas fa-eye"></i>
+                        View Details
+                    </button>
+                    <button class="timeline-btn complete">
+                        <i class="fas fa-check"></i>
+                        Mark Complete
+                    </button>
+                </div>
+            </div>
+            <div class="timeline-status">
+                <span class="status-badge upcoming">Upcoming</span>
+            </div>
+        </label>
+    </div>
+</div>`,
+    css: `.timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e2e8f0;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    position: relative;
+    cursor: pointer;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item:hover .timeline-marker .marker-icon {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-item input {
+    display: none;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.marker-icon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.marker-line {
+    position: absolute;
+    top: 40px;
+    width: 2px;
+    height: calc(100% + 32px);
+    background: #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:last-child .marker-line {
+    display: none;
+}
+
+.timeline-content {
+    flex: 1;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: #cbd5e1;
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.timeline-header h4 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.timeline-date {
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.timeline-content p {
+    margin: 0 0 16px 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.timeline-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.timeline-btn {
+    padding: 6px 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.timeline-btn:hover {
+    background: white;
+    border-color: #cbd5e1;
+}
+
+.timeline-btn.view:hover {
+    color: #3b82f6;
+}
+
+.timeline-btn.complete:hover {
+    color: #10b981;
+}
+
+.timeline-status {
+    margin-left: 20px;
+    align-self: center;
+}
+
+.status-badge {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.status-badge.pending {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.status-badge.completed {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.status-badge.upcoming {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+/* Checked state */
+.timeline-item input:checked + .timeline-marker .marker-icon {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-color: #10b981;
+    color: white;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    animation: markerPulse 0.6s ease;
+}
+
+.timeline-item input:checked + .timeline-marker .marker-line {
+    background: linear-gradient(to bottom, #10b981, #e2e8f0);
+}
+
+.timeline-item input:checked ~ .timeline-content {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.02);
+}
+
+.timeline-item input:checked ~ .timeline-content .timeline-header h4 {
+    color: #10b981;
+}
+
+.timeline-item input:checked ~ .timeline-status .status-badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+/* Different colors for different timeline items */
+.timeline-item:nth-child(1) input:checked + .timeline-marker .marker-icon {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border-color: #ef4444;
+}
+
+.timeline-item:nth-child(3) input:checked + .timeline-marker .marker-icon {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    border-color: #8b5cf6;
+}
+
+@keyframes markerPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}`,
+    js: `// Timeline functionality
+document.querySelectorAll('.timeline-item input').forEach(item => {
+    item.addEventListener('change', function() {
+        const timelineTitle = this.closest('.timeline-item').querySelector('h4').textContent;
+        const statusBadge = this.closest('.timeline-item').querySelector('.status-badge');
+        
+        if (this.checked) {
+            statusBadge.textContent = 'Completed';
+            statusBadge.className = 'status-badge completed';
+            console.log(\`Timeline item completed: \${timelineTitle}\`);
+            
+            // Auto-complete previous items
+            const allItems = Array.from(document.querySelectorAll('.timeline-item'));
+            const currentIndex = allItems.indexOf(this.closest('.timeline-item'));
+            
+            for (let i = 0; i < currentIndex; i++) {
+                allItems[i].querySelector('input').checked = true;
+                allItems[i].querySelector('.status-badge').textContent = 'Completed';
+                allItems[i].querySelector('.status-badge').className = 'status-badge completed';
+            }
+        } else {
+            statusBadge.textContent = 'Pending';
+            statusBadge.className = 'status-badge pending';
+            console.log(\`Timeline item reset: \${timelineTitle}\`);
+            
+            // Reset following items
+            const allItems = Array.from(document.querySelectorAll('.timeline-item'));
+            const currentIndex = allItems.indexOf(this.closest('.timeline-item'));
+            
+            for (let i = currentIndex + 1; i < allItems.length; i++) {
+                allItems[i].querySelector('input').checked = false;
+                allItems[i].querySelector('.status-badge').textContent = 'Upcoming';
+                allItems[i].querySelector('.status-badge').className = 'status-badge upcoming';
+            }
+        }
+    });
+});
+
+// Button functionality
+document.querySelectorAll('.timeline-btn.complete').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const checkbox = this.closest('.timeline-item').querySelector('input');
+        checkbox.checked = !checkbox.checked;
+        checkbox.dispatchEvent(new Event('change'));
+    });
+});
+
+document.querySelectorAll('.timeline-btn.view').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const title = this.closest('.timeline-item').querySelector('h4').textContent;
+        alert(\`Viewing details for: \${title}\`);
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 58: Comparison Table Checkbox
+// ====================================================================
+checkbox58: {
+    name: "Comparison Table",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="comparison-table">
+        <div class="table-header">
+            <div class="header-feature">Features</div>
+            <div class="header-plan">
+                <label class="plan-selector">
+                    <input type="checkbox">
+                    <div class="plan-card">
+                        <h4>Basic</h4>
+                        <div class="plan-price">$9<span>/month</span></div>
+                    </div>
+                </label>
+            </div>
+            <div class="header-plan">
+                <label class="plan-selector">
+                    <input type="checkbox" checked>
+                    <div class="plan-card">
+                        <h4>Pro</h4>
+                        <div class="plan-price">$29<span>/month</span></div>
+                        <span class="plan-badge">Popular</span>
+                    </div>
+                </label>
+            </div>
+            <div class="header-plan">
+                <label class="plan-selector">
+                    <input type="checkbox">
+                    <div class="plan-card">
+                        <h4>Enterprise</h4>
+                        <div class="plan-price">$99<span>/month</span></div>
+                    </div>
+                </label>
+            </div>
+        </div>
+        
+        <div class="table-body">
+            <div class="table-row">
+                <div class="row-feature">Storage</div>
+                <div class="row-value">10 GB</div>
+                <div class="row-value">100 GB</div>
+                <div class="row-value">Unlimited</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-feature">Users</div>
+                <div class="row-value">1 User</div>
+                <div class="row-value">10 Users</div>
+                <div class="row-value">Unlimited</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-feature">Support</div>
+                <div class="row-value">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="row-value">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="row-value">
+                    <i class="fas fa-check"></i>
+                    <span class="value-note">24/7</span>
+                </div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-feature">API Access</div>
+                <div class="row-value">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="row-value">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="row-value">
+                    <i class="fas fa-check"></i>
+                    <span class="value-note">Full</span>
+                </div>
+            </div>
+            
+            <div class="table-row">
+                <div class="row-feature">Analytics</div>
+                <div class="row-value">Basic</div>
+                <div class="row-value">Advanced</div>
+                <div class="row-value">Enterprise</div>
+            </div>
+        </div>
+        
+        <div class="table-footer">
+            <div class="footer-feature"></div>
+            <div class="footer-plan">
+                <button class="plan-btn">Get Started</button>
+            </div>
+            <div class="footer-plan">
+                <button class="plan-btn primary">Choose Pro</button>
+            </div>
+            <div class="footer-plan">
+                <button class="plan-btn">Contact Sales</button>
+            </div>
+        </div>
+    </div>
+</div>`,
+    css: `.comparison-table {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 1fr);
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.header-feature {
+    padding: 24px;
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 16px;
+}
+
+.header-plan {
+    padding: 16px;
+    border-left: 1px solid #e2e8f0;
+}
+
+.plan-selector {
+    display: block;
+    cursor: pointer;
+}
+
+.plan-selector input {
+    display: none;
+}
+
+.plan-card {
+    padding: 20px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.plan-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.plan-card h4 {
+    margin: 0 0 12px 0;
+    color: #1e293b;
+    font-size: 18px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.plan-price {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.plan-price span {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 400;
+}
+
+.plan-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Checked state for plan selector */
+.plan-selector input:checked + .plan-card {
+    border-color: #3b82f6;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+}
+
+.plan-selector input:checked + .plan-card::before {
+    opacity: 1;
+}
+
+.plan-selector input:checked + .plan-card h4 {
+    color: #3b82f6;
+}
+
+.plan-selector input:checked + .plan-card .plan-price {
+    color: #3b82f6;
+}
+
+/* Different colors for different plans */
+.plan-selector:nth-child(1) input:checked + .plan-card::before {
+    background: linear-gradient(90deg, #6b7280, #4b5563);
+}
+
+.plan-selector:nth-child(2) input:checked + .plan-card::before {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+}
+
+.plan-selector:nth-child(3) input:checked + .plan-card::before {
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+/* Table body */
+.table-body {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 1fr);
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.row-feature {
+    padding: 16px 24px;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+    border-right: 1px solid #e2e8f0;
+}
+
+.row-value {
+    padding: 16px;
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-left: 1px solid #e2e8f0;
+}
+
+.row-value i {
+    font-size: 16px;
+}
+
+.row-value i.fa-check {
+    color: #10b981;
+}
+
+.row-value i.fa-times {
+    color: #ef4444;
+}
+
+.value-note {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* Highlight selected column */
+.plan-selector input:checked ~ .table-row .row-value {
+    background: rgba(59, 130, 246, 0.02);
+}
+
+/* Table footer */
+.table-footer {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 1fr);
+    padding: 24px;
+    gap: 16px;
+}
+
+.footer-feature {
+    /* Empty cell */
+}
+
+.footer-plan {
+    padding: 0 16px;
+}
+
+.plan-btn {
+    width: 100%;
+    padding: 12px 24px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.plan-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.plan-btn.primary {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.plan-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .table-header,
+    .table-row,
+    .table-footer {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-feature,
+    .row-feature,
+    .footer-feature {
+        display: none;
+    }
+    
+    .header-plan,
+    .row-value,
+    .footer-plan {
+        border-left: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .header-plan:last-child,
+    .row-value:last-child,
+    .footer-plan:last-child {
+        border-bottom: none;
+    }
+}`,
+    js: `// Comparison table functionality
+document.querySelectorAll('.plan-selector input').forEach(plan => {
+    plan.addEventListener('change', function() {
+        // Make selection exclusive (radio behavior)
+        if (this.checked) {
+            document.querySelectorAll('.plan-selector input').forEach(otherPlan => {
+                if (otherPlan !== this) {
+                    otherPlan.checked = false;
+                    otherPlan.dispatchEvent(new Event('change'));
+                }
+            });
+        }
+        
+        const planName = this.closest('.plan-selector').querySelector('h4').textContent;
+        const planPrice = this.closest('.plan-selector').querySelector('.plan-price').textContent;
+        
+        if (this.checked) {
+            console.log(\`Selected plan: \${planName} - \${planPrice}\`);
+            
+            // Update primary button text
+            const primaryBtn = document.querySelector('.plan-btn.primary');
+            if (primaryBtn) {
+                primaryBtn.textContent = \`Choose \${planName}\`;
+            }
+        }
+    });
+});
+
+// Plan button functionality
+document.querySelectorAll('.plan-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const planCard = this.closest('.footer-plan').previousElementSibling.previousElementSibling.previousElementSibling;
+        const planSelector = planCard.querySelector('.plan-selector input');
+        const planName = planCard.querySelector('h4').textContent;
+        
+        if (planSelector) {
+            planSelector.checked = true;
+            planSelector.dispatchEvent(new Event('change'));
+            alert(\`Selected \${planName} plan!\`);
+        }
+    });
+});
+
+// Initialize with Pro plan selected
+document.addEventListener('DOMContentLoaded', function() {
+    const proPlan = document.querySelector('.plan-selector:nth-child(2) input');
+    if (proPlan) {
+        proPlan.checked = true;
+        proPlan.dispatchEvent(new Event('change'));
+    }
+});`
+},
+// ====================================================================
+// TEMPLATE 59: Task Manager Checkbox
+// ====================================================================
+checkbox59: {
+    name: "Task Manager",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="task-manager">
+        <div class="task-header">
+            <h3>Project Tasks</h3>
+            <div class="task-stats">
+                <span class="stat-item">
+                    <span class="stat-count">2</span>
+                    <span class="stat-label">Completed</span>
+                </span>
+                <span class="stat-item">
+                    <span class="stat-count">3</span>
+                    <span class="stat-label">Total</span>
+                </span>
+            </div>
+        </div>
+        
+        <div class="task-list">
+            <label class="task-item">
+                <input type="checkbox">
+                <div class="task-checkbox">
+                    <span class="check-icon">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+                <div class="task-content">
+                    <div class="task-main">
+                        <h4>Design System Setup</h4>
+                        <p>Create design tokens and component library</p>
+                    </div>
+                    <div class="task-meta">
+                        <span class="task-priority high">High</span>
+                        <span class="task-due">Due Today</span>
+                    </div>
+                </div>
+                <div class="task-actions">
+                    <button class="task-action-btn edit">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="task-action-btn delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </label>
+            
+            <label class="task-item">
+                <input type="checkbox" checked>
+                <div class="task-checkbox">
+                    <span class="check-icon">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+                <div class="task-content">
+                    <div class="task-main">
+                        <h4>API Integration</h4>
+                        <p>Connect backend services with frontend</p>
+                    </div>
+                    <div class="task-meta">
+                        <span class="task-priority medium">Medium</span>
+                        <span class="task-due completed">Completed</span>
+                    </div>
+                </div>
+                <div class="task-actions">
+                    <button class="task-action-btn edit">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="task-action-btn delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </label>
+            
+            <label class="task-item">
+                <input type="checkbox" checked>
+                <div class="task-checkbox">
+                    <span class="check-icon">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+                <div class="task-content">
+                    <div class="task-main">
+                        <h4>Documentation</h4>
+                        <p>Write comprehensive API documentation</p>
+                    </div>
+                    <div class="task-meta">
+                        <span class="task-priority low">Low</span>
+                        <span class="task-due completed">Completed</span>
+                    </div>
+                </div>
+                <div class="task-actions">
+                    <button class="task-action-btn edit">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="task-action-btn delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </label>
+        </div>
+        
+        <div class="task-add">
+            <input type="text" class="task-input" placeholder="Add a new task...">
+            <button class="add-btn">
+                <i class="fas fa-plus"></i>
+                Add Task
+            </button>
+        </div>
+    </div>
+</div>`,
+    css: `.task-manager {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.task-header {
+    padding: 24px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-header h3 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.task-stats {
+    display: flex;
+    gap: 24px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-count {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3b82f6;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.task-list {
+    padding: 8px 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f5f9;
+    transition: all 0.2s ease;
+}
+
+.task-item:hover {
+    background: #f8fafc;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-item input {
+    display: none;
+}
+
+.task-checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.check-icon {
+    color: transparent;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.task-content {
+    flex: 1;
+    margin-right: 16px;
+}
+
+.task-main {
+    margin-bottom: 8px;
+}
+
+.task-main h4 {
+    margin: 0 0 4px 0;
+    color: #1e293b;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.task-main p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.task-meta {
+    display: flex;
+    gap: 12px;
+}
+
+.task-priority {
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.task-priority.high {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.task-priority.medium {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.task-priority.low {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.task-due {
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+.task-due.completed {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+}
+
+.task-item:hover .task-actions {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.task-action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #64748b;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.task-action-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.task-action-btn.edit:hover {
+    color: #3b82f6;
+}
+
+.task-action-btn.delete:hover {
+    color: #ef4444;
+}
+
+/* Checked state */
+.task-item input:checked + .task-checkbox {
+    background: #10b981;
+    border-color: #10b981;
+    animation: taskCheck 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.task-item input:checked + .task-checkbox .check-icon {
+    color: white;
+    animation: iconCheck 0.4s ease;
+}
+
+.task-item input:checked ~ .task-content .task-main h4 {
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.task-item input:checked ~ .task-content .task-main p {
+    color: #cbd5e1;
+}
+
+.task-item input:checked ~ .task-content .task-meta .task-priority {
+    opacity: 0.5;
+}
+
+/* Task add section */
+.task-add {
+    padding: 24px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    gap: 12px;
+}
+
+.task-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #1e293b;
+    transition: all 0.2s ease;
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.add-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+@keyframes taskCheck {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes iconCheck {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}`,
+    js: `// Task manager functionality
+let taskCount = 2;
+let completedCount = 2;
+
+// Initialize task stats
+updateTaskStats();
+
+document.querySelectorAll('.task-item input').forEach(task => {
+    task.addEventListener('change', function() {
+        const taskTitle = this.closest('.task-item').querySelector('h4').textContent;
+        const dueDate = this.closest('.task-item').querySelector('.task-due');
+        
+        if (this.checked) {
+            dueDate.textContent = 'Completed';
+            dueDate.className = 'task-due completed';
+            completedCount++;
+            console.log(\`Task completed: \${taskTitle}\`);
+        } else {
+            dueDate.textContent = 'Due Today';
+            dueDate.className = 'task-due';
+            completedCount--;
+            console.log(\`Task reopened: \${taskTitle}\`);
+        }
+        
+        updateTaskStats();
+    });
+});
+
+// Action buttons
+document.querySelectorAll('.task-action-btn.edit').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const taskTitle = this.closest('.task-item').querySelector('h4').textContent;
+        alert(\`Editing task: \${taskTitle}\`);
+    });
+});
+
+document.querySelectorAll('.task-action-btn.delete').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const taskItem = this.closest('.task-item');
+        const taskTitle = taskItem.querySelector('h4').textContent;
+        
+        if (confirm(\`Delete task: \${taskTitle}?\`)) {
+            taskItem.style.opacity = '0';
+            taskItem.style.transform = 'translateX(-100%)';
+            taskItem.style.height = '0';
+            taskItem.style.padding = '0';
+            taskItem.style.margin = '0';
+            taskItem.style.border = 'none';
+            
+            setTimeout(() => {
+                taskItem.remove();
+                taskCount--;
+                if (taskItem.querySelector('input').checked) {
+                    completedCount--;
+                }
+                updateTaskStats();
+            }, 300);
+        }
+    });
+});
+
+// Add new task
+const taskInput = document.querySelector('.task-input');
+const addBtn = document.querySelector('.add-btn');
+
+addBtn.addEventListener('click', addNewTask);
+taskInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        addNewTask();
+    }
+});
+
+function addNewTask() {
+    const taskText = taskInput.value.trim();
+    if (!taskText) return;
+    
+    const newTask = document.createElement('label');
+    newTask.className = 'task-item';
+    newTask.innerHTML = \`
+        <input type="checkbox">
+        <div class="task-checkbox">
+            <span class="check-icon">
+                <i class="fas fa-check"></i>
+            </span>
+        </div>
+        <div class="task-content">
+            <div class="task-main">
+                <h4>\${taskText}</h4>
+                <p>New task added just now</p>
+            </div>
+            <div class="task-meta">
+                <span class="task-priority medium">Medium</span>
+                <span class="task-due">Due Today</span>
+            </div>
+        </div>
+        <div class="task-actions">
+            <button class="task-action-btn edit">
+                <i class="fas fa-edit"></i>
+            </button>
+            <button class="task-action-btn delete">
+                <i class="fas fa-trash"></i>
+            </button>
+        </div>
+    \`;
+    
+    // Insert before the add section
+    const taskList = document.querySelector('.task-list');
+    const taskAdd = document.querySelector('.task-add');
+    taskList.insertBefore(newTask, taskAdd);
+    
+    // Add functionality to new task
+    const newCheckbox = newTask.querySelector('input');
+    const newEditBtn = newTask.querySelector('.task-action-btn.edit');
+    const newDeleteBtn = newTask.querySelector('.task-action-btn.delete');
+    
+    newCheckbox.addEventListener('change', function() {
+        const dueDate = this.closest('.task-item').querySelector('.task-due');
+        if (this.checked) {
+            dueDate.textContent = 'Completed';
+            dueDate.className = 'task-due completed';
+            completedCount++;
+        } else {
+            dueDate.textContent = 'Due Today';
+            dueDate.className = 'task-due';
+            completedCount--;
+        }
+        updateTaskStats();
+    });
+    
+    newEditBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        alert(\`Editing task: \${taskText}\`);
+    });
+    
+    newDeleteBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (confirm(\`Delete task: \${taskText}?\`)) {
+            const taskItem = this.closest('.task-item');
+            taskItem.style.opacity = '0';
+            taskItem.style.transform = 'translateX(-100%)';
+            taskItem.style.height = '0';
+            taskItem.style.padding = '0';
+            taskItem.style.margin = '0';
+            taskItem.style.border = 'none';
+            
+            setTimeout(() => {
+                taskItem.remove();
+                taskCount--;
+                if (taskItem.querySelector('input').checked) {
+                    completedCount--;
+                }
+                updateTaskStats();
+            }, 300);
+        }
+    });
+    
+    // Clear input and update stats
+    taskInput.value = '';
+    taskCount++;
+    updateTaskStats();
+    console.log(\`New task added: \${taskText}\`);
+}
+
+function updateTaskStats() {
+    const statCount = document.querySelectorAll('.stat-count');
+    if (statCount.length >= 2) {
+        statCount[0].textContent = completedCount;
+        statCount[1].textContent = taskCount;
+    }
+}`
+},
+// ====================================================================
+// TEMPLATE 60: Neumorphic Checkbox
+// ====================================================================
+checkbox60: {
+    name: "Neumorphic Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <label class="neumorphic-checkbox">
+        <input type="checkbox">
+        <span class="neumorphic-box">
+            <span class="neumorphic-inner"></span>
+        </span>
+        <span class="label-text">Neumorphic Style</span>
+    </label>
+    <label class="neumorphic-checkbox">
+        <input type="checkbox" checked>
+        <span class="neumorphic-box">
+            <span class="neumorphic-inner"></span>
+        </span>
+        <span class="label-text">Checked State</span>
+    </label>
+    <label class="neumorphic-checkbox">
+        <input type="checkbox">
+        <span class="neumorphic-box">
+            <span class="neumorphic-inner"></span>
+        </span>
+        <span class="label-text">Disabled Option</span>
+    </label>
+</div>`,
+    css: `.neumorphic-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    background: #f0f0f3;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.neumorphic-checkbox::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(145deg, #ffffff, #d7d7dc);
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.neumorphic-checkbox:hover::before {
+    opacity: 1;
+}
+
+.neumorphic-checkbox:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        9px 9px 16px rgba(163, 177, 198, 0.6),
+        -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+
+.neumorphic-checkbox input {
+    display: none;
+}
+
+.neumorphic-box {
+    width: 28px;
+    height: 28px;
+    margin-right: 16px;
+    border-radius: 10px;
+    background: #f0f0f3;
+    box-shadow: 
+        inset 4px 4px 8px rgba(163, 177, 198, 0.6),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+}
+
+.neumorphic-inner {
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(145deg, #4f46e5, #7c3aed);
+    border-radius: 6px;
+    transform: scale(0);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 
+        3px 3px 6px rgba(79, 70, 229, 0.3),
+        -3px -3px 6px rgba(124, 58, 237, 0.2);
+}
+
+.label-text {
+    font-weight: 500;
+    color: #4b5563;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Checked state */
+.neumorphic-checkbox input:checked + .neumorphic-box {
+    box-shadow: 
+        4px 4px 8px rgba(163, 177, 198, 0.6),
+        -4px -4px 8px rgba(255, 255, 255, 0.8);
+}
+
+.neumorphic-checkbox input:checked + .neumorphic-box .neumorphic-inner {
+    transform: scale(1);
+    animation: neumorphicPop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.neumorphic-checkbox input:checked ~ .label-text {
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+/* Glow effect on check */
+.neumorphic-checkbox input:checked + .neumorphic-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(79, 70, 229, 0.2), transparent);
+    border-radius: 10px;
+    animation: neumorphicGlow 0.6s ease;
+}
+
+@keyframes neumorphicPop {
+    0% { transform: scale(0) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(10deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes neumorphicGlow {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .neumorphic-checkbox {
+        background: #2d3748;
+    }
+    
+    .neumorphic-checkbox::before {
+        background: linear-gradient(145deg, #4a5568, #1a202c);
+    }
+    
+    .neumorphic-box {
+        background: #2d3748;
+        box-shadow: 
+            inset 4px 4px 8px rgba(0, 0, 0, 0.3),
+            inset -4px -4px 8px rgba(74, 85, 104, 0.2);
+    }
+    
+    .label-text {
+        color: #e2e8f0;
+    }
+    
+    .neumorphic-checkbox:hover {
+        box-shadow: 
+            9px 9px 16px rgba(0, 0, 0, 0.4),
+            -9px -9px 16px rgba(74, 85, 104, 0.3);
+    }
+}`,
+    js: `// Neumorphic checkbox functionality
+document.querySelectorAll('.neumorphic-checkbox input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const label = this.closest('.neumorphic-checkbox').querySelector('.label-text');
+        console.log('Neumorphic checkbox:', this.checked ? 'checked' : 'unchecked');
+        
+        if (this.checked) {
+            label.style.textShadow = '0 0 10px rgba(79, 70, 229, 0.3)';
+        } else {
+            label.style.textShadow = 'none';
+        }
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 61: Gradient Glow Checkbox
+// ====================================================================
+checkbox61: {
+    name: "Gradient Glow Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <label class="glow-checkbox">
+        <input type="checkbox">
+        <span class="glow-orb">
+            <span class="glow-core"></span>
+            <span class="glow-ring"></span>
+            <span class="glow-sparkle">
+                <i class="fas fa-star"></i>
+            </span>
+        </span>
+        <span class="glow-text">Premium Feature</span>
+        <span class="glow-badge">NEW</span>
+    </label>
+    <label class="glow-checkbox">
+        <input type="checkbox" checked>
+        <span class="glow-orb">
+            <span class="glow-core"></span>
+            <span class="glow-ring"></span>
+            <span class="glow-sparkle">
+                <i class="fas fa-star"></i>
+            </span>
+        </span>
+        <span class="glow-text">Active Feature</span>
+        <span class="glow-badge">HOT</span>
+    </label>
+    <label class="glow-checkbox">
+        <input type="checkbox">
+        <span class="glow-orb">
+            <span class="glow-core"></span>
+            <span class="glow-ring"></span>
+            <span class="glow-sparkle">
+                <i class="fas fa-star"></i>
+            </span>
+        </span>
+        <span class="glow-text">Coming Soon</span>
+        <span class="glow-badge">SOON</span>
+    </label>
+</div>`,
+    css: `.glow-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.glow-checkbox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(124, 58, 237, 0.1), 
+        rgba(236, 72, 153, 0.1),
+        rgba(245, 158, 11, 0.1));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.glow-checkbox:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 30px rgba(124, 58, 237, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.glow-checkbox:hover::before {
+    opacity: 1;
+}
+
+.glow-checkbox input {
+    display: none;
+}
+
+.glow-orb {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glow-core {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #64748b, #475569);
+    border-radius: 50%;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    z-index: 2;
+}
+
+.glow-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(124, 58, 237, 0.3);
+    border-radius: 50%;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: ringPulse 2s ease-in-out infinite;
+}
+
+.glow-sparkle {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f59e0b;
+    font-size: 10px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.glow-text {
+    flex: 1;
+    font-weight: 500;
+    color: #1e293b;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.glow-badge {
+    padding: 6px 14px;
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-left: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Different badge colors */
+.glow-checkbox:nth-child(1) .glow-badge {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.glow-checkbox:nth-child(2) .glow-badge {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.glow-checkbox:nth-child(3) .glow-badge {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* Checked state */
+.glow-checkbox input:checked + .glow-orb .glow-core {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    transform: scale(1.2);
+    box-shadow: 
+        0 0 20px rgba(124, 58, 237, 0.6),
+        0 0 40px rgba(236, 72, 153, 0.4);
+    animation: coreGlow 1.5s ease-in-out infinite alternate;
+}
+
+.glow-checkbox input:checked + .glow-orb .glow-ring {
+    border-color: rgba(124, 58, 237, 0.6);
+    border-width: 3px;
+    animation: ringSpin 2s linear infinite;
+}
+
+.glow-checkbox input:checked + .glow-orb .glow-sparkle {
+    opacity: 1;
+    transform: scale(1);
+    animation: sparkleTwinkle 1s ease-in-out infinite alternate;
+}
+
+.glow-checkbox input:checked ~ .glow-text {
+    color: #7c3aed;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(124, 58, 237, 0.2);
+}
+
+.glow-checkbox input:checked ~ .glow-badge {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+/* Different colors for different checkboxes */
+.glow-checkbox:nth-child(1) input:checked + .glow-orb .glow-core {
+    background: linear-gradient(135deg, #10b981, #059669);
+    box-shadow: 
+        0 0 20px rgba(16, 185, 129, 0.6),
+        0 0 40px rgba(5, 150, 105, 0.4);
+}
+
+.glow-checkbox:nth-child(3) input:checked + .glow-orb .glow-core {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    box-shadow: 
+        0 0 20px rgba(59, 130, 246, 0.6),
+        0 0 40px rgba(37, 99, 235, 0.4);
+}
+
+@keyframes ringPulse {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.1); opacity: 0.6; }
+}
+
+@keyframes ringSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes coreGlow {
+    from { box-shadow: 0 0 20px rgba(124, 58, 237, 0.6), 0 0 40px rgba(236, 72, 153, 0.4); }
+    to { box-shadow: 0 0 30px rgba(124, 58, 237, 0.8), 0 0 60px rgba(236, 72, 153, 0.6); }
+}
+
+@keyframes sparkleTwinkle {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1.2) rotate(180deg); }
+}`,
+    js: `// Glow checkbox functionality
+document.querySelectorAll('.glow-checkbox input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const text = this.closest('.glow-checkbox').querySelector('.glow-text');
+        const badge = this.closest('.glow-checkbox').querySelector('.glow-badge');
+        
+        if (this.checked) {
+            text.style.transform = 'translateX(5px)';
+            badge.style.transform = 'scale(1.1)';
+            console.log('Premium feature activated');
+            
+            // Add glow effect to parent
+            this.closest('.glow-checkbox').style.boxShadow = 
+                '0 0 30px rgba(124, 58, 237, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.4)';
+        } else {
+            text.style.transform = 'translateX(0)';
+            badge.style.transform = 'scale(1)';
+            console.log('Premium feature deactivated');
+            this.closest('.glow-checkbox').style.boxShadow = '';
+        }
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 62: Liquid Checkbox
+// ====================================================================
+checkbox62: {
+    name: "Liquid Checkbox",
+    category: "animated",
+    html: `<div class="checkbox-container">
+    <label class="liquid-checkbox">
+        <input type="checkbox">
+        <span class="liquid-container">
+            <span class="liquid-wave"></span>
+            <span class="liquid-fill"></span>
+            <span class="liquid-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+            </span>
+        </span>
+        <span class="liquid-label">Liquid Animation</span>
+    </label>
+    <label class="liquid-checkbox">
+        <input type="checkbox" checked>
+        <span class="liquid-container">
+            <span class="liquid-wave"></span>
+            <span class="liquid-fill"></span>
+            <span class="liquid-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+            </span>
+        </span>
+        <span class="liquid-label">Filled State</span>
+    </label>
+    <label class="liquid-checkbox">
+        <input type="checkbox">
+        <span class="liquid-container">
+            <span class="liquid-wave"></span>
+            <span class="liquid-fill"></span>
+            <span class="liquid-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+            </span>
+        </span>
+        <span class="liquid-label">Wave Effect</span>
+    </label>
+</div>`,
+    css: `.liquid-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 24px;
+    padding: 16px;
+    background: white;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.liquid-checkbox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.liquid-checkbox:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(165, 180, 252, 0.2);
+}
+
+.liquid-checkbox:hover::before {
+    opacity: 0.1;
+}
+
+.liquid-checkbox input {
+    display: none;
+}
+
+.liquid-container {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 16px;
+    background: #f1f5f9;
+    border: 2px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.liquid-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+    border-radius: 50% 50% 0 0;
+    transform: translateY(100%);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.9;
+}
+
+.liquid-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.liquid-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 2;
+}
+
+.liquid-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.liquid-label {
+    font-weight: 500;
+    color: #1e293b;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Checked state */
+.liquid-checkbox input:checked + .liquid-container {
+    border-color: #7c3aed;
+    background: rgba(124, 58, 237, 0.1);
+    animation: containerPulse 0.6s ease;
+}
+
+.liquid-checkbox input:checked + .liquid-container .liquid-wave {
+    transform: translateY(0);
+    animation: waveRipple 1.2s ease-in-out infinite alternate;
+}
+
+.liquid-checkbox input:checked + .liquid-container .liquid-fill {
+    transform: scaleY(1);
+    animation: fillRipple 0.8s ease;
+}
+
+.liquid-checkbox input:checked + .liquid-container .liquid-icon {
+    transform: translate(-50%, -50%) scale(1);
+    animation: iconBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.liquid-checkbox input:checked ~ .liquid-label {
+    color: #7c3aed;
+    font-weight: 600;
+}
+
+/* Different colors for different checkboxes */
+.liquid-checkbox:nth-child(1) input:checked + .liquid-container .liquid-wave,
+.liquid-checkbox:nth-child(1) input:checked + .liquid-container .liquid-fill {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.liquid-checkbox:nth-child(2) input:checked + .liquid-container .liquid-wave,
+.liquid-checkbox:nth-child(2) input:checked + .liquid-container .liquid-fill {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.liquid-checkbox:nth-child(3) input:checked + .liquid-container .liquid-wave,
+.liquid-checkbox:nth-child(3) input:checked + .liquid-container .liquid-fill {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+@keyframes containerPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes waveRipple {
+    0% { 
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        transform: translateY(0) rotate(0deg);
+    }
+    100% { 
+        border-radius: 50% 50% 60% 40% / 60% 30% 70% 40%;
+        transform: translateY(-5px) rotate(180deg);
+    }
+}
+
+@keyframes fillRipple {
+    0% { transform: scaleY(0); }
+    50% { transform: scaleY(1.1); }
+    100% { transform: scaleY(1); }
+}
+
+@keyframes iconBounce {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    70% { transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}`,
+    js: `// Liquid checkbox functionality
+document.querySelectorAll('.liquid-checkbox input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const container = this.closest('.liquid-checkbox').querySelector('.liquid-container');
+        
+        if (this.checked) {
+            console.log('Liquid checkbox filled');
+            
+            // Add extra animation
+            container.style.animation = 'none';
+            setTimeout(() => {
+                container.style.animation = 'containerPulse 0.6s ease';
+            }, 10);
+        } else {
+            console.log('Liquid checkbox emptied');
+            
+            // Reset animation
+            container.style.animation = 'none';
+        }
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 63: Cyberpunk Checkbox
+// ====================================================================
+checkbox63: {
+    name: "Cyberpunk Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container dark-bg">
+    <label class="cyberpunk-checkbox">
+        <input type="checkbox">
+        <span class="cyber-frame">
+            <span class="cyber-grid"></span>
+            <span class="cyber-glow"></span>
+            <span class="cyber-core">
+                <span class="core-pulse"></span>
+            </span>
+            <span class="cyber-bars">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </span>
+        </span>
+        <span class="cyber-text">SYSTEM_ACTIVATE</span>
+        <span class="cyber-status">[OFFLINE]</span>
+    </label>
+    <label class="cyberpunk-checkbox">
+        <input type="checkbox" checked>
+        <span class="cyber-frame">
+            <span class="cyber-grid"></span>
+            <span class="cyber-glow"></span>
+            <span class="cyber-core">
+                <span class="core-pulse"></span>
+            </span>
+            <span class="cyber-bars">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </span>
+        </span>
+        <span class="cyber-text">NEURAL_LINK</span>
+        <span class="cyber-status">[ACTIVE]</span>
+    </label>
+    <label class="cyberpunk-checkbox">
+        <input type="checkbox">
+        <span class="cyber-frame">
+            <span class="cyber-grid"></span>
+            <span class="cyber-glow"></span>
+            <span class="cyber-core">
+                <span class="core-pulse"></span>
+            </span>
+            <span class="cyber-bars">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </span>
+        </span>
+        <span class="cyber-text">AUGMENTATION</span>
+        <span class="cyber-status">[STANDBY]</span>
+    </label>
+</div>`,
+    css: `.cyberpunk-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+    margin-bottom: 16px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cyberpunk-checkbox::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        #0ea5e9, 
+        #3b82f6, 
+        #8b5cf6, 
+        #ec4899);
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.cyberpunk-checkbox:hover {
+    border-color: rgba(56, 189, 248, 0.6);
+    box-shadow: 
+        0 0 20px rgba(56, 189, 248, 0.2),
+        inset 0 0 20px rgba(56, 189, 248, 0.1);
+}
+
+.cyberpunk-checkbox:hover::before {
+    opacity: 0.3;
+}
+
+.cyberpunk-checkbox input {
+    display: none;
+}
+
+.cyber-frame {
+    width: 60px;
+    height: 60px;
+    margin-right: 24px;
+    border: 2px solid rgba(56, 189, 248, 0.4);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.cyber-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.1) 1px, transparent 1px);
+    background-size: 10px 10px;
+    opacity: 0.3;
+}
+
+.cyber-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(56, 189, 248, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.cyber-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.core-pulse {
+    width: 8px;
+    height: 8px;
+    background: #f87171;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: cyberPulse 2s ease-in-out infinite;
+}
+
+.cyber-bars {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: space-between;
+    gap: 2px;
+}
+
+.cyber-bars .bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(56, 189, 248, 0.2);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.cyber-text {
+    flex: 1;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #e2e8f0;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.cyber-status {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #f87171;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Checked state */
+.cyberpunk-checkbox input:checked + .cyber-frame {
+    border-color: #0ea5e9;
+    box-shadow: 
+        inset 0 0 20px rgba(14, 165, 233, 0.3),
+        0 0 20px rgba(14, 165, 233, 0.4);
+}
+
+.cyberpunk-checkbox input:checked + .cyber-frame .cyber-glow {
+    opacity: 1;
+    animation: cyberGlow 1.5s ease-in-out infinite alternate;
+}
+
+.cyberpunk-checkbox input:checked + .cyber-frame .cyber-core {
+    background: rgba(14, 165, 233, 0.2);
+    border-color: #0ea5e9;
+}
+
+.cyberpunk-checkbox input:checked + .cyber-frame .core-pulse {
+    background: #0ea5e9;
+    opacity: 1;
+    animation: cyberPulseActive 1s ease-in-out infinite;
+}
+
+.cyberpunk-checkbox input:checked + .cyber-frame .cyber-bars .bar {
+    background: linear-gradient(to top, #0ea5e9, #3b82f6);
+    animation: barScan 1.5s ease-in-out infinite;
+}
+
+.cyberpunk-checkbox input:checked + .cyber-frame .cyber-bars .bar:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.cyberpunk-checkbox input:checked + .cyber-frame .cyber-bars .bar:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.cyberpunk-checkbox input:checked + .cyber-frame .cyber-bars .bar:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.cyberpunk-checkbox input:checked ~ .cyber-text {
+    color: #0ea5e9;
+    text-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+}
+
+.cyberpunk-checkbox input:checked ~ .cyber-status {
+    color: #0ea5e9;
+    background: rgba(14, 165, 233, 0.1);
+    border-color: #0ea5e9;
+}
+
+/* Different colors for different systems */
+.cyberpunk-checkbox:nth-child(1) input:checked + .cyber-frame {
+    border-color: #10b981;
+    box-shadow: 
+        inset 0 0 20px rgba(16, 185, 129, 0.3),
+        0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+.cyberpunk-checkbox:nth-child(3) input:checked + .cyber-frame {
+    border-color: #8b5cf6;
+    box-shadow: 
+        inset 0 0 20px rgba(139, 92, 246, 0.3),
+        0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+@keyframes cyberPulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+@keyframes cyberPulseActive {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 10px #0ea5e9; }
+    50% { transform: scale(1.5); box-shadow: 0 0 20px #0ea5e9; }
+}
+
+@keyframes cyberGlow {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+@keyframes barScan {
+    0%, 100% { height: 4px; opacity: 0.5; }
+    50% { height: 12px; opacity: 1; }
+}`,
+    js: `// Cyberpunk checkbox functionality
+document.querySelectorAll('.cyberpunk-checkbox input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const status = this.closest('.cyberpunk-checkbox').querySelector('.cyber-status');
+        const text = this.closest('.cyberpunk-checkbox').querySelector('.cyber-text');
+        
+        if (this.checked) {
+            status.textContent = '[ACTIVE]';
+            status.style.color = '#0ea5e9';
+            status.style.borderColor = '#0ea5e9';
+            text.style.animation = 'textFlicker 0.5s ease';
+            console.log('System activated:', text.textContent);
+            
+            setTimeout(() => {
+                text.style.animation = '';
+            }, 500);
+        } else {
+            status.textContent = '[OFFLINE]';
+            status.style.color = '#f87171';
+            status.style.borderColor = '#f87171';
+            console.log('System deactivated:', text.textContent);
+        }
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 64: Floating Island Checkbox
+// ====================================================================
+checkbox64: {
+    name: "Floating Island Checkbox",
+    category: "animated",
+    html: `<div class="checkbox-container">
+    <label class="island-checkbox">
+        <input type="checkbox">
+        <div class="island-wrapper">
+            <div class="island-base">
+                <div class="island-terrain"></div>
+                <div class="island-trees">
+                    <span class="tree"></span>
+                    <span class="tree"></span>
+                    <span class="tree"></span>
+                </div>
+                <div class="island-flag">
+                    <span class="flag-pole"></span>
+                    <span class="flag-cloth"></span>
+                </div>
+            </div>
+            <div class="island-clouds">
+                <span class="cloud"></span>
+                <span class="cloud"></span>
+            </div>
+            <div class="island-sun"></div>
+        </div>
+        <span class="island-label">Discover Island</span>
+        <span class="island-badge">🌴</span>
+    </label>
+    <label class="island-checkbox">
+        <input type="checkbox" checked>
+        <div class="island-wrapper">
+            <div class="island-base">
+                <div class="island-terrain"></div>
+                <div class="island-trees">
+                    <span class="tree"></span>
+                    <span class="tree"></span>
+                    <span class="tree"></span>
+                </div>
+                <div class="island-flag">
+                    <span class="flag-pole"></span>
+                    <span class="flag-cloth"></span>
+                </div>
+            </div>
+            <div class="island-clouds">
+                <span class="cloud"></span>
+                <span class="cloud"></span>
+            </div>
+            <div class="island-sun"></div>
+        </div>
+        <span class="island-label">Explored Island</span>
+        <span class="island-badge">🏝️</span>
+    </label>
+    <label class="island-checkbox">
+        <input type="checkbox">
+        <div class="island-wrapper">
+            <div class="island-base">
+                <div class="island-terrain"></div>
+                <div class="island-trees">
+                    <span class="tree"></span>
+                    <span class="tree"></span>
+                    <span class="tree"></span>
+                </div>
+                <div class="island-flag">
+                    <span class="flag-pole"></span>
+                    <span class="flag-cloth"></span>
+                </div>
+            </div>
+            <div class="island-clouds">
+                <span class="cloud"></span>
+                    <span class="cloud"></span>
+            </div>
+            <div class="island-sun"></div>
+        </div>
+        <span class="island-label">Hidden Island</span>
+        <span class="island-badge">🗺️</span>
+    </label>
+</div>`,
+    css: `.island-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+    border-radius: 24px;
+    border: 2px solid transparent;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.island-checkbox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(96, 165, 250, 0.1));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.island-checkbox:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 20px 40px rgba(56, 189, 248, 0.2),
+        0 0 0 1px rgba(96, 165, 250, 0.3);
+}
+
+.island-checkbox:hover::before {
+    opacity: 1;
+}
+
+.island-checkbox input {
+    display: none;
+}
+
+.island-wrapper {
+    width: 80px;
+    height: 60px;
+    margin-right: 20px;
+    position: relative;
+}
+
+.island-base {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    height: 30px;
+    background: linear-gradient(to top, #10b981, #34d399);
+    border-radius: 50% 50% 20% 20%;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.island-terrain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #059669, #065f46);
+    border-radius: inherit;
+    opacity: 0.7;
+}
+
+.island-trees {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 15px;
+}
+
+.tree {
+    width: 8px;
+    height: 15px;
+    background: linear-gradient(to top, #065f46, #047857);
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tree::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -6px;
+    width: 20px;
+    height: 12px;
+    background: #059669;
+    border-radius: 50%;
+}
+
+.island-flag {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.flag-pole {
+    display: block;
+    width: 2px;
+    height: 20px;
+    background: #92400e;
+    margin: 0 auto;
+}
+
+.flag-cloth {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    width: 12px;
+    height: 8px;
+    background: linear-gradient(45deg, #ef4444, #f87171);
+    border-radius: 2px 4px 4px 0;
+    transform: rotate(10deg);
+}
+
+.island-clouds {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+}
+
+.cloud {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    animation: cloudFloat 6s ease-in-out infinite;
+}
+
+.cloud:nth-child(1) {
+    left: 5px;
+    top: 5px;
+    animation-delay: 0s;
+}
+
+.cloud:nth-child(2) {
+    right: 10px;
+    top: 15px;
+    animation-delay: 3s;
+}
+
+.island-sun {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+    animation: sunGlow 4s ease-in-out infinite alternate;
+}
+
+.island-label {
+    flex: 1;
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.island-badge {
+    font-size: 20px;
+    margin-left: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Checked state */
+.island-checkbox input:checked + .island-wrapper .island-base {
+    transform: translateY(-5px);
+    animation: islandFloat 3s ease-in-out infinite;
+}
+
+.island-checkbox input:checked + .island-wrapper .island-terrain {
+    background: linear-gradient(45deg, #f59e0b, #d97706);
+    animation: terrainShift 4s ease-in-out infinite alternate;
+}
+
+.island-checkbox input:checked + .island-wrapper .tree {
+    background: linear-gradient(to top, #92400e, #78350f);
+    transform: scale(1.2);
+    animation: treeSway 2s ease-in-out infinite;
+}
+
+.island-checkbox input:checked + .island-wrapper .tree::before {
+    background: #ca8a04;
+}
+
+.island-checkbox input:checked + .island-wrapper .island-flag {
+    opacity: 1;
+    animation: flagWave 1s ease-in-out infinite alternate;
+}
+
+.island-checkbox input:checked + .island-wrapper .island-sun {
+    animation: sunRise 3s ease-in-out infinite alternate;
+}
+
+.island-checkbox input:checked ~ .island-label {
+    color: #059669;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(5, 150, 105, 0.2);
+}
+
+.island-checkbox input:checked ~ .island-badge {
+    transform: scale(1.2) rotate(10deg);
+    animation: badgeBounce 0.5s ease;
+}
+
+/* Different island types */
+.island-checkbox:nth-child(1) input:checked + .island-wrapper .island-terrain {
+    background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+}
+
+.island-checkbox:nth-child(3) input:checked + .island-wrapper .island-terrain {
+    background: linear-gradient(45deg, #8b5cf6, #7c3aed);
+}
+
+@keyframes islandFloat {
+    0%, 100% { transform: translateY(-5px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes terrainShift {
+    0% { opacity: 0.7; }
+    100% { opacity: 0.9; }
+}
+
+@keyframes treeSway {
+    0%, 100% { transform: scale(1.2) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(5deg); }
+}
+
+@keyframes flagWave {
+    0% { transform: translateX(-50%) rotate(-5deg); }
+    100% { transform: translateX(-50%) rotate(5deg); }
+}
+
+@keyframes cloudFloat {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+}
+
+@keyframes sunGlow {
+    0% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.5); }
+    100% { box-shadow: 0 0 30px rgba(251, 191, 36, 0.8); }
+}
+
+@keyframes sunRise {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+@keyframes badgeBounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1.2) rotate(10deg); }
+}`,
+    js: `// Island checkbox functionality
+document.querySelectorAll('.island-checkbox input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const label = this.closest('.island-checkbox').querySelector('.island-label');
+        const badge = this.closest('.island-checkbox').querySelector('.island-badge');
+        
+        if (this.checked) {
+            console.log('Island discovered!');
+            label.style.color = '#059669';
+            badge.style.animation = 'badgeBounce 0.5s ease';
+            
+            // Add celebration effect
+            const island = this.closest('.island-checkbox');
+            island.style.background = 'linear-gradient(135deg, #d1fae5, #a7f3d0)';
+            setTimeout(() => {
+                island.style.background = 'linear-gradient(135deg, #e0f2fe, #dbeafe)';
+            }, 500);
+        } else {
+            console.log('Island hidden');
+            label.style.color = '#1e293b';
+            badge.style.animation = '';
+        }
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 65: Status Indicator Checkbox
+// ====================================================================
+checkbox65: {
+    name: "Status Indicator",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="status-indicators">
+        <label class="status-item">
+            <input type="checkbox" name="status">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <div class="status-pulse"></div>
+            </div>
+            <div class="status-content">
+                <div class="status-header">
+                    <h4>Server Status</h4>
+                    <span class="status-badge offline">OFFLINE</span>
+                </div>
+                <p>Primary server cluster</p>
+                <div class="status-meta">
+                    <span class="meta-item">
+                        <i class="fas fa-server"></i>
+                        12 Cores
+                    </span>
+                    <span class="meta-item">
+                        <i class="fas fa-memory"></i>
+                        64 GB RAM
+                    </span>
+                </div>
+            </div>
+            <div class="status-actions">
+                <button class="status-btn restart">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+        </label>
+        
+        <label class="status-item">
+            <input type="checkbox" name="status" checked>
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <div class="status-pulse"></div>
+            </div>
+            <div class="status-content">
+                <div class="status-header">
+                    <h4>Database Cluster</h4>
+                    <span class="status-badge online">ONLINE</span>
+                </div>
+                <p>Primary database with replication</p>
+                <div class="status-meta">
+                    <span class="meta-item">
+                        <i class="fas fa-database"></i>
+                        500 GB
+                    </span>
+                    <span class="meta-item">
+                        <i class="fas fa-bolt"></i>
+                        99.9% Uptime
+                    </span>
+                </div>
+            </div>
+            <div class="status-actions">
+                <button class="status-btn restart">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+        </label>
+        
+        <label class="status-item">
+            <input type="checkbox" name="status">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <div class="status-pulse"></div>
+            </div>
+            <div class="status-content">
+                <div class="status-header">
+                    <h4>Load Balancer</h4>
+                    <span class="status-badge warning">WARNING</span>
+                </div>
+                <p>Traffic distribution system</p>
+                <div class="status-meta">
+                    <span class="meta-item">
+                        <i class="fas fa-chart-line"></i>
+                        75% Load
+                    </span>
+                    <span class="meta-item">
+                        <i class="fas fa-users"></i>
+                        10K RPM
+                    </span>
+                </div>
+            </div>
+            <div class="status-actions">
+                <button class="status-btn restart">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+        </label>
+    </div>
+</div>`,
+    css: `.status-indicators {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f5f9;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.status-item:last-child {
+    border-bottom: none;
+}
+
+.status-item:hover {
+    background: #f8fafc;
+}
+
+.status-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background: transparent;
+    transition: background 0.3s ease;
+}
+
+.status-item input {
+    display: none;
+}
+
+.status-indicator {
+    width: 48px;
+    height: 48px;
+    margin-right: 20px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.status-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: #94a3b8;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.status-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background: #94a3b8;
+    border-radius: 50%;
+    opacity: 0.2;
+    transition: all 0.3s ease;
+}
+
+.status-content {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.status-header h4 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.status-badge.offline {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.status-badge.online {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.status-badge.warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.status-content p {
+    margin: 0 0 12px 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.status-meta {
+    display: flex;
+    gap: 16px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.meta-item i {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.status-actions {
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+}
+
+.status-item:hover .status-actions {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.status-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #64748b;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.status-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.status-btn.restart:hover {
+    color: #3b82f6;
+}
+
+/* Checked state */
+.status-item input:checked + .status-indicator .status-dot {
+    width: 16px;
+    height: 16px;
+    background: #10b981;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+.status-item input:checked + .status-indicator .status-pulse {
+    width: 48px;
+    height: 48px;
+    background: #10b981;
+    opacity: 0.1;
+    animation: statusPulse 2s ease-in-out infinite;
+}
+
+.status-item input:checked ~ .status-content .status-header h4 {
+    color: #10b981;
+}
+
+.status-item input:checked ~ .status-content .status-badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.status-item input:checked::before {
+    background: #10b981;
+}
+
+/* Different status colors */
+.status-item:nth-child(1) input:checked + .status-indicator .status-dot,
+.status-item:nth-child(1) input:checked + .status-indicator .status-pulse {
+    background: #ef4444;
+}
+
+.status-item:nth-child(3) input:checked + .status-indicator .status-dot,
+.status-item:nth-child(3) input:checked + .status-indicator .status-pulse {
+    background: #f59e0b;
+}
+
+@keyframes statusPulse {
+    0%, 100% { 
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.1;
+    }
+    50% { 
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.2;
+    }
+}
+
+/* Statistics */
+.status-stats {
+    padding: 20px 24px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+}`,
+    js: `// Status indicator functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const statusItems = document.querySelectorAll('.status-item input[name="status"]');
+    const restartButtons = document.querySelectorAll('.status-btn.restart');
+    
+    // Update statistics
+    function updateStatusStats() {
+        const totalItems = statusItems.length;
+        const onlineItems = Array.from(statusItems).filter(item => item.checked).length;
+        
+        // Update stats display if exists
+        const statsContainer = document.querySelector('.status-stats');
+        if (statsContainer) {
+            statsContainer.innerHTML = \`
+                <div class="stat-item">
+                    <span class="stat-value">\${onlineItems}</span>
+                    <span class="stat-label">Online</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">\${totalItems - onlineItems}</span>
+                    <span class="stat-label">Offline</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">\${Math.round((onlineItems / totalItems) * 100)}%</span>
+                    <span class="stat-label">Uptime</span>
+                </div>
+            \`;
+        }
+        
+        console.log(\`Status: \${onlineItems}/\${totalItems} systems online\`);
+    }
+    
+    // Status toggle functionality
+    statusItems.forEach(item => {
+        item.addEventListener('change', function() {
+            const badge = this.closest('.status-item').querySelector('.status-badge');
+            const header = this.closest('.status-item').querySelector('h4');
+            
+            if (this.checked) {
+                badge.textContent = 'ONLINE';
+                badge.className = 'status-badge online';
+                console.log(\`\${header.textContent} is now ONLINE\`);
+            } else {
+                badge.textContent = 'OFFLINE';
+                badge.className = 'status-badge offline';
+                console.log(\`\${header.textContent} is now OFFLINE\`);
+            }
+            
+            updateStatusStats();
+        });
+    });
+    
+    // Restart button functionality
+    restartButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const statusItem = this.closest('.status-item');
+            const checkbox = statusItem.querySelector('input');
+            const header = statusItem.querySelector('h4');
+            
+            // Show restarting animation
+            const badge = statusItem.querySelector('.status-badge');
+            badge.textContent = 'RESTARTING';
+            badge.className = 'status-badge warning';
+            
+            // Simulate restart process
+            setTimeout(() => {
+                checkbox.checked = true;
+                checkbox.dispatchEvent(new Event('change'));
+                console.log(\`\${header.textContent} restarted successfully\`);
+            }, 2000);
+        });
+    });
+    
+    // Initialize stats
+    updateStatusStats();
+});`
+},
+// ====================================================================
+// TEMPLATE 66: Compliance Toggle
+// ====================================================================
+checkbox66: {
+    name: "Compliance Toggle",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="compliance-panel">
+        <div class="compliance-header">
+            <h3>Security Compliance</h3>
+            <div class="compliance-score">
+                <div class="score-circle">
+                    <svg class="score-svg" width="80" height="80">
+                        <circle class="score-bg" cx="40" cy="40" r="36"></circle>
+                        <circle class="score-progress" cx="40" cy="40" r="36"></circle>
+                    </svg>
+                    <span class="score-value">75%</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="compliance-list">
+            <label class="compliance-item">
+                <input type="checkbox" checked>
+                <div class="compliance-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="compliance-content">
+                    <h4>Data Encryption</h4>
+                    <p>Encrypt all data at rest and in transit</p>
+                    <div class="compliance-standards">
+                        <span class="standard-tag">GDPR</span>
+                        <span class="standard-tag">HIPAA</span>
+                        <span class="standard-tag">SOC2</span>
+                    </div>
+                </div>
+                <div class="compliance-toggle">
+                    <span class="toggle-switch"></span>
+                </div>
+            </label>
+            
+            <label class="compliance-item">
+                <input type="checkbox">
+                <div class="compliance-icon">
+                    <i class="fas fa-user-lock"></i>
+                </div>
+                <div class="compliance-content">
+                    <h4>Access Control</h4>
+                    <p>Role-based access control implementation</p>
+                    <div class="compliance-standards">
+                        <span class="standard-tag">ISO27001</span>
+                        <span class="standard-tag">NIST</span>
+                    </div>
+                </div>
+                <div class="compliance-toggle">
+                    <span class="toggle-switch"></span>
+                </div>
+            </label>
+            
+            <label class="compliance-item">
+                <input type="checkbox" checked>
+                <div class="compliance-icon">
+                    <i class="fas fa-history"></i>
+                </div>
+                <div class="compliance-content">
+                    <h4>Audit Logging</h4>
+                    <p>Comprehensive audit trail for all actions</p>
+                    <div class="compliance-standards">
+                        <span class="standard-tag">PCI-DSS</span>
+                        <span class="standard-tag">SOX</span>
+                    </div>
+                </div>
+                <div class="compliance-toggle">
+                    <span class="toggle-switch"></span>
+                </div>
+            </label>
+        </div>
+        
+        <div class="compliance-footer">
+            <button class="compliance-btn generate">
+                <i class="fas fa-file-pdf"></i>
+                Generate Report
+            </button>
+            <button class="compliance-btn export">
+                <i class="fas fa-download"></i>
+                Export Compliance
+            </button>
+        </div>
+    </div>
+</div>`,
+    css: `.compliance-panel {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.compliance-header {
+    padding: 32px;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.compliance-header h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.compliance-score {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.score-circle {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.score-svg {
+    transform: rotate(-90deg);
+}
+
+.score-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 8;
+}
+
+.score-progress {
+    fill: none;
+    stroke: #10b981;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 226.2;
+    stroke-dashoffset: 56.55;
+    transition: stroke-dashoffset 1s ease;
+}
+
+.score-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+.compliance-list {
+    padding: 24px;
+}
+
+.compliance-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 16px;
+    background: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.compliance-item:hover {
+    background: white;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.compliance-item:last-child {
+    margin-bottom: 0;
+}
+
+.compliance-item input {
+    display: none;
+}
+
+.compliance-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.compliance-content {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.compliance-content h4 {
+    margin: 0 0 8px 0;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.compliance-content p {
+    margin: 0 0 12px 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.compliance-standards {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.standard-tag {
+    padding: 4px 10px;
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.compliance-toggle {
+    margin-left: auto;
+}
+
+.toggle-switch {
+    display: block;
+    width: 52px;
+    height: 28px;
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+    border-radius: 14px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-switch::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Checked state */
+.compliance-item input:checked + .compliance-icon {
+    background: linear-gradient(135deg, #10b981, #059669);
+    animation: iconBounce 0.6s ease;
+}
+
+.compliance-item input:checked ~ .compliance-content h4 {
+    color: #10b981;
+}
+
+.compliance-item input:checked ~ .compliance-content .standard-tag {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.compliance-item input:checked ~ .compliance-toggle .toggle-switch {
+    background: linear-gradient(135deg, #10b981, #059669);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.compliance-item input:checked ~ .compliance-toggle .toggle-switch::before {
+    transform: translateX(24px);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+/* Different icon colors */
+.compliance-item:nth-child(2) .compliance-icon {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.compliance-item:nth-child(3) .compliance-icon {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+@keyframes iconBounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* Footer */
+.compliance-footer {
+    padding: 24px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.compliance-btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.compliance-btn.generate {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+}
+
+.compliance-btn.export {
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #1e293b;
+}
+
+.compliance-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.compliance-btn.export:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+}`,
+    js: `// Compliance toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const complianceItems = document.querySelectorAll('.compliance-item input');
+    const scoreProgress = document.querySelector('.score-progress');
+    const scoreValue = document.querySelector('.score-value');
+    const generateBtn = document.querySelector('.compliance-btn.generate');
+    const exportBtn = document.querySelector('.compliance-btn.export');
+    
+    // Calculate and update compliance score
+    function updateComplianceScore() {
+        const totalItems = complianceItems.length;
+        const compliantItems = Array.from(complianceItems).filter(item => item.checked).length;
+        const percentage = Math.round((compliantItems / totalItems) * 100);
+        
+        // Update circular progress
+        const circumference = 2 * Math.PI * 36;
+        const offset = circumference - (percentage / 100) * circumference;
+        
+        if (scoreProgress) {
+            scoreProgress.style.strokeDashoffset = offset;
+        }
+        
+        if (scoreValue) {
+            scoreValue.textContent = \`\${percentage}%\`;
+            
+            // Update color based on percentage
+            if (percentage >= 90) {
+                scoreProgress.style.stroke = '#10b981';
+                scoreValue.style.color = '#10b981';
+            } else if (percentage >= 70) {
+                scoreProgress.style.stroke = '#f59e0b';
+                scoreValue.style.color = '#f59e0b';
+            } else {
+                scoreProgress.style.stroke = '#ef4444';
+                scoreValue.style.color = '#ef4444';
+            }
+        }
+        
+        console.log(\`Compliance Score: \${percentage}% (\${compliantItems}/\${totalItems})\`);
+    }
+    
+    // Compliance toggle functionality
+    complianceItems.forEach(item => {
+        item.addEventListener('change', function() {
+            const itemName = this.closest('.compliance-item').querySelector('h4').textContent;
+            
+            if (this.checked) {
+                console.log(\`Compliance enabled: \${itemName}\`);
+            } else {
+                console.log(\`Compliance disabled: \${itemName}\`);
+            }
+            
+            updateComplianceScore();
+        });
+    });
+    
+    // Button functionality
+    if (generateBtn) {
+        generateBtn.addEventListener('click', function() {
+            const compliantItems = Array.from(complianceItems).filter(item => item.checked);
+            alert(\`Generating compliance report for \${compliantItems.length} items\`);
+            
+            // Simulate report generation
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-file-pdf"></i> Report Generated';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-file-pdf"></i> Generate Report';
+                }, 2000);
+            }, 1500);
+        });
+    }
+    
+    if (exportBtn) {
+        exportBtn.addEventListener('click', function() {
+            alert('Exporting compliance configuration');
+            
+            // Simulate export
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Exporting...';
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-download"></i> Exported';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-download"></i> Export Compliance';
+                }, 2000);
+            }, 1500);
+        });
+    }
+    
+    // Initialize score
+    updateComplianceScore();
+});`
+},
+// ====================================================================
+// TEMPLATE 67: Resource Allocation
+// ====================================================================
+checkbox67: {
+    name: "Resource Allocation",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="resource-allocation">
+        <div class="resource-header">
+            <h3>Resource Allocation</h3>
+            <div class="resource-stats">
+                <div class="stat-card">
+                    <span class="stat-label">Allocated</span>
+                    <span class="stat-value">8/16</span>
+                    <div class="stat-bar">
+                        <div class="bar-fill" style="width: 50%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="resource-grid">
+            <label class="resource-card">
+                <input type="checkbox">
+                <div class="resource-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div class="resource-info">
+                    <h4>CPU Cores</h4>
+                    <div class="resource-meta">
+                        <span class="resource-usage">2/4 Cores</span>
+                        <span class="resource-status available">Available</span>
+                    </div>
+                    <div class="resource-bar">
+                        <div class="usage-fill cpu" style="width: 50%"></div>
+                    </div>
+                </div>
+                <div class="resource-selector">
+                    <span class="selector-check">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+            </label>
+            
+            <label class="resource-card">
+                <input type="checkbox" checked>
+                <div class="resource-icon">
+                    <i class="fas fa-memory"></i>
+                </div>
+                <div class="resource-info">
+                    <h4>Memory</h4>
+                    <div class="resource-meta">
+                        <span class="resource-usage">16/32 GB</span>
+                        <span class="resource-status allocated">Allocated</span>
+                    </div>
+                    <div class="resource-bar">
+                        <div class="usage-fill memory" style="width: 50%"></div>
+                    </div>
+                </div>
+                <div class="resource-selector">
+                    <span class="selector-check">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+            </label>
+            
+            <label class="resource-card">
+                <input type="checkbox">
+                <div class="resource-icon">
+                    <i class="fas fa-hdd"></i>
+                </div>
+                <div class="resource-info">
+                    <h4>Storage</h4>
+                    <div class="resource-meta">
+                        <span class="resource-usage">100/500 GB</span>
+                        <span class="resource-status available">Available</span>
+                    </div>
+                    <div class="resource-bar">
+                        <div class="usage-fill storage" style="width: 20%"></div>
+                    </div>
+                </div>
+                <div class="resource-selector">
+                    <span class="selector-check">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+            </label>
+            
+            <label class="resource-card">
+                <input type="checkbox" checked>
+                <div class="resource-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="resource-info">
+                    <h4>Bandwidth</h4>
+                    <div class="resource-meta">
+                        <span class="resource-usage">1/2 Gbps</span>
+                        <span class="resource-status allocated">Allocated</span>
+                    </div>
+                    <div class="resource-bar">
+                        <div class="usage-fill bandwidth" style="width: 50%"></div>
+                    </div>
+                </div>
+                <div class="resource-selector">
+                    <span class="selector-check">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+            </label>
+        </div>
+        
+        <div class="resource-summary">
+            <div class="summary-item">
+                <span class="summary-label">Total Allocation</span>
+                <span class="summary-value">$450/month</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Estimated Cost</span>
+                <span class="summary-value">$5,400/year</span>
+            </div>
+            <button class="resource-btn allocate">
+                <i class="fas fa-rocket"></i>
+                Deploy Resources
+            </button>
+        </div>
+    </div>
+</div>`,
+    css: `.resource-allocation {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.resource-header {
+    padding: 24px;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resource-header h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.resource-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    border-radius: 12px;
+    min-width: 180px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.stat-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 24px;
+}
+
+.resource-card {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.resource-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.resource-card input {
+    display: none;
+}
+
+.resource-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 24px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.resource-info {
+    margin-bottom: 20px;
+}
+
+.resource-info h4 {
+    margin: 0 0 12px 0;
+    color: #1e293b;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.resource-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.resource-usage {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.resource-status {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.resource-status.available {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.resource-status.allocated {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+.resource-bar {
+    height: 6px;
+    background: #f1f5f9;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.usage-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.usage-fill.cpu {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.usage-fill.memory {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.usage-fill.storage {
+    background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.usage-fill.bandwidth {
+    background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+}
+
+.resource-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.selector-check {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    font-size: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Checked state */
+.resource-card input:checked {
+    border-color: #3b82f6;
+}
+
+.resource-card input:checked::before {
+    opacity: 1;
+}
+
+.resource-card input:checked + .resource-icon {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+}
+
+.resource-card input:checked ~ .resource-info h4 {
+    color: #3b82f6;
+}
+
+.resource-card input:checked ~ .resource-selector .selector-check {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: white;
+    animation: checkPop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Different icon colors */
+.resource-card:nth-child(2) input:checked + .resource-icon {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.resource-card:nth-child(3) input:checked + .resource-icon {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.resource-card:nth-child(4) input:checked + .resource-icon {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+@keyframes checkPop {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Summary section */
+.resource-summary {
+    padding: 24px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-item {
+    text-align: center;
+}
+
+.summary-label {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.summary-value {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.resource-btn {
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.resource-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.3);
+}
+
+.resource-btn:active {
+    transform: translateY(0);
+}`,
+    js: `// Resource allocation functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const resourceCards = document.querySelectorAll('.resource-card input');
+    const allocateBtn = document.querySelector('.resource-btn.allocate');
+    const statValue = document.querySelector('.stat-value');
+    const barFill = document.querySelector('.bar-fill');
+    const summaryValues = document.querySelectorAll('.summary-value');
+    
+    // Resource costs (monthly)
+    const resourceCosts = {
+        'CPU Cores': 100,
+        'Memory': 200,
+        'Storage': 100,
+        'Bandwidth': 50
+    };
+    
+    // Update allocation statistics
+    function updateAllocationStats() {
+        const totalResources = resourceCards.length;
+        const allocatedResources = Array.from(resourceCards).filter(card => card.checked).length;
+        const percentage = Math.round((allocatedResources / totalResources) * 100);
+        
+        // Update stats
+        if (statValue) {
+            statValue.textContent = \`\${allocatedResources}/\${totalResources}\`;
+        }
+        
+        if (barFill) {
+            barFill.style.width = \`\${percentage}%\`;
+        }
+        
+        // Calculate total cost
+        let totalCost = 0;
+        resourceCards.forEach(card => {
+            if (card.checked) {
+                const resourceName = card.closest('.resource-card').querySelector('h4').textContent;
+                totalCost += resourceCosts[resourceName] || 0;
+            }
+        });
+        
+        // Update summary
+        if (summaryValues.length >= 2) {
+            summaryValues[0].textContent = \`$\${totalCost}/month\`;
+            summaryValues[1].textContent = \`$\${totalCost * 12}/year\`;
+        }
+        
+        console.log(\`Allocated: \${allocatedResources}/\${totalResources} resources (\${percentage}%)\`);
+        console.log(\`Total Cost: $\${totalCost}/month\`);
+    }
+    
+    // Resource card functionality
+    resourceCards.forEach(card => {
+        card.addEventListener('change', function() {
+            const resourceName = this.closest('.resource-card').querySelector('h4').textContent;
+            const status = this.closest('.resource-card').querySelector('.resource-status');
+            
+            if (this.checked) {
+                status.textContent = 'Allocated';
+                status.className = 'resource-status allocated';
+                console.log(\`Allocated: \${resourceName}\`);
+                
+                // Update usage visualization
+                const usageFill = this.closest('.resource-card').querySelector('.usage-fill');
+                const currentWidth = parseFloat(usageFill.style.width);
+                usageFill.style.width = Math.min(currentWidth + 25, 100) + '%';
+            } else {
+                status.textContent = 'Available';
+                status.className = 'resource-status available';
+                console.log(\`Released: \${resourceName}\`);
+                
+                // Update usage visualization
+                const usageFill = this.closest('.resource-card').querySelector('.usage-fill');
+                const currentWidth = parseFloat(usageFill.style.width);
+                usageFill.style.width = Math.max(currentWidth - 25, 0) + '%';
+            }
+            
+            updateAllocationStats();
+        });
+    });
+    
+    // Allocate button functionality
+    if (allocateBtn) {
+        allocateBtn.addEventListener('click', function() {
+            const allocatedCards = Array.from(resourceCards).filter(card => card.checked);
+            
+            if (allocatedCards.length === 0) {
+                alert('Please select at least one resource to allocate');
+                return;
+            }
+            
+            // Simulate allocation process
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Deploying...';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-check"></i> Deployed!';
+                alert(\`Successfully deployed \${allocatedCards.length} resources\`);
+                
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-rocket"></i> Deploy Resources';
+                    this.disabled = false;
+                }, 2000);
+            }, 2000);
+        });
+    }
+    
+    // Initialize stats
+    updateAllocationStats();
+});`
+},
+// ====================================================================
+// TEMPLATE 68: Approval Workflow
+// ====================================================================
+checkbox68: {
+    name: "Approval Workflow",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="approval-workflow">
+        <div class="workflow-header">
+            <h3>Document Approval</h3>
+            <div class="workflow-progress">
+                <div class="progress-steps">
+                    <span class="step" data-step="1">Review</span>
+                    <span class="step" data-step="2">Approve</span>
+                    <span class="step" data-step="3">Finalize</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33%"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="approval-list">
+            <label class="approval-item">
+                <input type="checkbox" data-role="reviewer">
+                <div class="approval-avatar">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=John" alt="John">
+                </div>
+                <div class="approval-content">
+                    <div class="approval-header">
+                        <h4>John Anderson</h4>
+                        <span class="approval-role">Technical Reviewer</span>
+                    </div>
+                    <p>Review technical specifications and implementation</p>
+                    <div class="approval-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            Pending
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-calendar"></i>
+                            Due: Today
+                        </span>
+                    </div>
+                </div>
+                <div class="approval-status">
+                    <span class="status-badge pending">Pending</span>
+                </div>
+            </label>
+            
+            <label class="approval-item">
+                <input type="checkbox" data-role="approver" checked>
+                <div class="approval-avatar">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="Sarah">
+                </div>
+                <div class="approval-content">
+                    <div class="approval-header">
+                        <h4>Sarah Johnson</h4>
+                        <span class="approval-role">Department Head</span>
+                    </div>
+                    <p>Approve budget allocation and resource planning</p>
+                    <div class="approval-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            Approved
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-calendar"></i>
+                            Completed: Yesterday
+                        </span>
+                    </div>
+                </div>
+                <div class="approval-status">
+                    <span class="status-badge approved">Approved</span>
+                </div>
+            </label>
+            
+            <label class="approval-item">
+                <input type="checkbox" data-role="finalizer">
+                <div class="approval-avatar">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Michael" alt="Michael">
+                </div>
+                <div class="approval-content">
+                    <div class="approval-header">
+                        <h4>Michael Chen</h4>
+                        <span class="approval-role">Legal Counsel</span>
+                    </div>
+                    <p>Final legal review and compliance check</p>
+                    <div class="approval-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            Waiting
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-calendar"></i>
+                            Due: Tomorrow
+                        </span>
+                    </div>
+                </div>
+                <div class="approval-status">
+                    <span class="status-badge waiting">Waiting</span>
+                </div>
+            </label>
+        </div>
+        
+        <div class="workflow-actions">
+            <div class="action-info">
+                <span class="info-text">2/3 approvals required</span>
+                <span class="info-deadline">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Deadline: 48 hours
+                </span>
+            </div>
+            <div class="action-buttons">
+                <button class="action-btn send">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Reminders
+                </button>
+                <button class="action-btn escalate">
+                    <i class="fas fa-flag"></i>
+                    Escalate
+                </button>
+            </div>
+        </div>
+    </div>
+</div>`,
+    css: `.approval-workflow {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.workflow-header {
+    padding: 24px;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+}
+
+.workflow-header h3 {
+    margin: 0 0 20px 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.workflow-progress {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.step {
+    font-size: 14px;
+    font-weight: 600;
+    color: #94a3b8;
+    position: relative;
+    z-index: 2;
+    background: rgba(15, 23, 42, 0.8);
+    padding: 0 8px;
+    transition: color 0.3s ease;
+}
+
+.step::before {
+    content: attr(data-step);
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: #334155;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.progress-bar {
+    height: 4px;
+    background: #334155;
+    border-radius: 2px;
+    position: relative;
+    margin-top: -18px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+
+.approval-list {
+    padding: 24px;
+}
+
+.approval-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 16px;
+    background: #f8fafc;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.approval-item:hover {
+    background: white;
+    border-color: #cbd5e1;
+    transform: translateX(4px);
+}
+
+.approval-item:last-child {
+    margin-bottom: 0;
+}
+
+.approval-item input {
+    display: none;
+}
+
+.approval-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    flex-shrink: 0;
+    border: 3px solid #e2e8f0;
+    transition: border-color 0.3s ease;
+}
+
+.approval-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.approval-content {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.approval-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.approval-header h4 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.approval-role {
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
+    background: rgba(100, 116, 139, 0.1);
+    padding: 2px 10px;
+    border-radius: 12px;
+}
+
+.approval-content p {
+    margin: 0 0 12px 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.approval-meta {
+    display: flex;
+    gap: 16px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.meta-item i {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.approval-status {
+    margin-left: auto;
+}
+
+.status-badge {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    min-width: 100px;
+    text-align: center;
+    display: block;
+}
+
+.status-badge.pending {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.status-badge.approved {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-badge.waiting {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Checked state */
+.approval-item input:checked + .approval-avatar {
+    border-color: #10b981;
+    animation: avatarPulse 0.6s ease;
+}
+
+.approval-item input:checked ~ .approval-content .approval-header h4 {
+    color: #10b981;
+}
+
+.approval-item input:checked ~ .approval-status .status-badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border-color: #10b981;
+}
+
+.approval-item input:checked ~ .approval-status .status-badge::after {
+    content: ' ✓';
+    font-weight: bold;
+}
+
+/* Workflow progress update */
+.approval-item input:checked ~ .step[data-step="1"]::before,
+.approval-item input:checked ~ .step[data-step="2"]::before {
+    background: #10b981;
+    color: white;
+}
+
+@keyframes avatarPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Actions */
+.workflow-actions {
+    padding: 20px 24px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-text {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 14px;
+}
+
+.info-deadline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #ef4444;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.action-btn.send {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+}
+
+.action-btn.escalate {
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #1e293b;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.action-btn.escalate:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+}`,
+    js: `// Approval workflow functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const approvalItems = document.querySelectorAll('.approval-item input');
+    const progressFill = document.querySelector('.progress-fill');
+    const progressSteps = document.querySelectorAll('.step');
+    const sendBtn = document.querySelector('.action-btn.send');
+    const escalateBtn = document.querySelector('.action-btn.escalate');
+    const infoText = document.querySelector('.info-text');
+    
+    // Update workflow progress
+    function updateWorkflowProgress() {
+        const totalItems = approvalItems.length;
+        const approvedItems = Array.from(approvalItems).filter(item => item.checked).length;
+        const percentage = Math.round((approvedItems / totalItems) * 100);
+        
+        // Update progress bar
+        if (progressFill) {
+            progressFill.style.width = \`\${percentage}%\`;
+        }
+        
+        // Update step indicators
+        progressSteps.forEach((step, index) => {
+            const stepNumber = parseInt(step.getAttribute('data-step'));
+            if (stepNumber <= approvedItems) {
+                step.style.color = 'white';
+                step.querySelector('::before').style.background = '#10b981';
+            }
+        });
+        
+        // Update info text
+        if (infoText) {
+            infoText.textContent = \`\${approvedItems}/\${totalItems} approvals completed\`;
+        }
+        
+        console.log(\`Approval Progress: \${approvedItems}/\${totalItems} (\${percentage}%)\`);
+        
+        // Check if workflow is complete
+        if (approvedItems === totalItems) {
+            console.log('Workflow complete!');
+            if (progressFill) {
+                progressFill.style.background = 'linear-gradient(90deg, #10b981, #059669)';
+            }
+        }
+    }
+    
+    // Approval item functionality
+    approvalItems.forEach(item => {
+        item.addEventListener('change', function() {
+            const personName = this.closest('.approval-item').querySelector('h4').textContent;
+            const personRole = this.closest('.approval-item').querySelector('.approval-role').textContent;
+            const statusBadge = this.closest('.approval-item').querySelector('.status-badge');
+            const metaItem = this.closest('.approval-item').querySelector('.meta-item');
+            
+            if (this.checked) {
+                statusBadge.textContent = 'Approved';
+                statusBadge.className = 'status-badge approved';
+                metaItem.innerHTML = '<i class="fas fa-check-circle"></i> Approved';
+                console.log(\`\${personName} (\${personRole}) approved\`);
+            } else {
+                statusBadge.textContent = 'Pending';
+                statusBadge.className = 'status-badge pending';
+                metaItem.innerHTML = '<i class="fas fa-clock"></i> Pending';
+                console.log(\`\${personName} (\${personRole}) approval revoked\`);
+            }
+            
+            updateWorkflowProgress();
+        });
+    });
+    
+    // Button functionality
+    if (sendBtn) {
+        sendBtn.addEventListener('click', function() {
+            const pendingItems = Array.from(approvalItems).filter(item => !item.checked);
+            
+            if (pendingItems.length === 0) {
+                alert('All approvals have been completed!');
+                return;
+            }
+            
+            // Simulate sending reminders
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-paper-plane"></i> Reminders Sent';
+                alert(\`Reminders sent to \${pendingItems.length} pending approvers\`);
+                
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-paper-plane"></i> Send Reminders';
+                }, 2000);
+            }, 1500);
+        });
+    }
+    
+    if (escalateBtn) {
+        escalateBtn.addEventListener('click', function() {
+            alert('Escalating to management for review');
+            
+            // Simulate escalation
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Escalating...';
+            
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-flag"></i> Escalated';
+                
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-flag"></i> Escalate';
+                }, 2000);
+            }, 1500);
+        });
+    }
+    
+    // Initialize progress
+    updateWorkflowProgress();
+});`
+},
+// ====================================================================
+// TEMPLATE 69: Analytics Dashboard
+// ====================================================================
+checkbox69: {
+    name: "Analytics Dashboard",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="analytics-dashboard">
+        <div class="dashboard-header">
+            <h3>Performance Analytics</h3>
+            <div class="dashboard-controls">
+                <select class="time-selector">
+                    <option>Last 7 days</option>
+                    <option selected>Last 30 days</option>
+                    <option>Last quarter</option>
+                </select>
+                <button class="export-btn">
+                    <i class="fas fa-download"></i>
+                    Export Data
+                </button>
+            </div>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h4>Conversion Rate</h4>
+                    <span class="metric-change positive">+12.5%</span>
+                </div>
+                <div class="metric-value">24.7%</div>
+                <div class="metric-chart">
+                    <div class="chart-bar" style="height: 70%"></div>
+                    <div class="chart-bar" style="height: 85%"></div>
+                    <div class="chart-bar" style="height: 60%"></div>
+                    <div class="chart-bar" style="height: 95%"></div>
+                    <div class="chart-bar" style="height: 75%"></div>
+                    <div class="chart-bar" style="height: 90%"></div>
+                    <div class="chart-bar" style="height: 80%"></div>
+                </div>
+                <label class="metric-toggle">
+                    <input type="checkbox" checked>
+                    <span class="toggle-label">Track Metric</span>
+                    <span class="toggle-switch"></span>
+                </label>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h4>User Engagement</h4>
+                    <span class="metric-change positive">+8.3%</span>
+                </div>
+                <div class="metric-value">3.2m</div>
+                <div class="metric-chart">
+                    <div class="chart-line"></div>
+                </div>
+                <label class="metric-toggle">
+                    <input type="checkbox" checked>
+                    <span class="toggle-label">Track Metric</span>
+                    <span class="toggle-switch"></span>
+                </label>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h4>Revenue Growth</h4>
+                    <span class="metric-change positive">+15.2%</span>
+                </div>
+                <div class="metric-value">$124.5k</div>
+                <div class="metric-chart">
+                    <div class="chart-area"></div>
+                </div>
+                <label class="metric-toggle">
+                    <input type="checkbox">
+                    <span class="toggle-label">Track Metric</span>
+                    <span class="toggle-switch"></span>
+                </label>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h4>Churn Rate</h4>
+                    <span class="metric-change negative">-4.1%</span>
+                </div>
+                <div class="metric-value">2.8%</div>
+                <div class="metric-chart">
+                    <div class="chart-donut">
+                        <div class="donut-segment" style="--percentage: 75"></div>
+                        <div class="donut-hole"></div>
+                    </div>
+                </div>
+                <label class="metric-toggle">
+                    <input type="checkbox" checked>
+                    <span class="toggle-label">Track Metric</span>
+                    <span class="toggle-switch"></span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="dashboard-footer">
+            <div class="insight-card">
+                <div class="insight-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="insight-content">
+                    <h4>Key Insight</h4>
+                    <p>Conversion rates peak during business hours (9AM-5PM)</p>
+                </div>
+            </div>
+            <button class="insight-btn">
+                <i class="fas fa-chart-line"></i>
+                View Detailed Analytics
+            </button>
+        </div>
+    </div>
+</div>`,
+    css: `.analytics-dashboard {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.dashboard-header {
+    padding: 24px;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-header h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.dashboard-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.time-selector {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.time-selector:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.export-btn {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.export-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 24px;
+}
+
+.metric-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.metric-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.metric-header h4 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.metric-change {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.metric-change.positive {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.metric-change.negative {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.metric-value {
+    font-size: 36px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 24px;
+    line-height: 1;
+}
+
+.metric-chart {
+    height: 80px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+/* Chart styles */
+.chart-bar {
+    width: 12px;
+    background: linear-gradient(to top, #3b82f6, #60a5fa);
+    border-radius: 6px 6px 0 0;
+    position: absolute;
+    bottom: 0;
+    animation: barRise 1s ease-out;
+}
+
+.chart-bar:nth-child(1) { left: 10%; }
+.chart-bar:nth-child(2) { left: 22%; animation-delay: 0.1s; }
+.chart-bar:nth-child(3) { left: 34%; animation-delay: 0.2s; }
+.chart-bar:nth-child(4) { left: 46%; animation-delay: 0.3s; }
+.chart-bar:nth-child(5) { left: 58%; animation-delay: 0.4s; }
+.chart-bar:nth-child(6) { left: 70%; animation-delay: 0.5s; }
+.chart-bar:nth-child(7) { left: 82%; animation-delay: 0.6s; }
+
+.chart-line {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(16, 185, 129, 0.3) 50%, 
+        transparent 100%);
+    position: relative;
+    animation: lineScan 2s ease-in-out infinite;
+}
+
+.chart-line::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #10b981;
+    transform: translateY(-50%);
+}
+
+.chart-area {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(245, 158, 11, 0.3), transparent);
+    border-bottom: 2px solid #f59e0b;
+    position: relative;
+    animation: areaFill 2s ease-out;
+}
+
+.chart-donut {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.donut-segment {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        #ef4444 calc(var(--percentage) * 1%),
+        #f1f5f9 calc(var(--percentage) * 1%)
+    );
+    animation: donutSpin 1s ease-out;
+}
+
+.donut-hole {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: white;
+    border-radius: 50%;
+}
+
+.metric-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.metric-toggle input {
+    display: none;
+}
+
+.toggle-label {
+    font-weight: 500;
+    color: #64748b;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.toggle-switch {
+    width: 44px;
+    height: 24px;
+    background: #e2e8f0;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-switch::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Checked state for metric toggle */
+.metric-toggle input:checked ~ .toggle-switch {
+    background: #10b981;
+}
+
+.metric-toggle input:checked ~ .toggle-switch::before {
+    transform: translateX(20px);
+}
+
+.metric-toggle input:checked ~ .toggle-label {
+    color: #10b981;
+    font-weight: 600;
+}
+
+/* Checked state for metric card */
+.metric-card input:checked::before {
+    opacity: 1;
+}
+
+@keyframes barRise {
+    from { height: 0; }
+    to { height: var(--height); }
+}
+
+@keyframes lineScan {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@keyframes areaFill {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes donutSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Dashboard footer */
+.dashboard-footer {
+    padding: 24px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.insight-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.insight-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+}
+
+.insight-content h4 {
+    margin: 0 0 4px 0;
+    color: #1e293b;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.insight-content p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.insight-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.insight-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}`,
+    js: `// Analytics dashboard functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const metricToggles = document.querySelectorAll('.metric-toggle input');
+    const timeSelector = document.querySelector('.time-selector');
+    const exportBtn = document.querySelector('.export-btn');
+    const insightBtn = document.querySelector('.insight-btn');
+    
+    // Metric data for different time periods
+    const metricData = {
+        'Last 7 days': {
+            'Conversion Rate': '28.3%',
+            'User Engagement': '2.8m',
+            'Revenue Growth': '$98.7k',
+            'Churn Rate': '3.2%'
+        },
+        'Last 30 days': {
+            'Conversion Rate': '24.7%',
+            'User Engagement': '3.2m',
+            'Revenue Growth': '$124.5k',
+            'Churn Rate': '2.8%'
+        },
+        'Last quarter': {
+            'Conversion Rate': '22.1%',
+            'User Engagement': '4.5m',
+            'Revenue Growth': '$385.2k',
+            'Churn Rate': '3.5%'
+        }
+    };
+    
+    // Chart heights for different time periods
+    const chartData = {
+        'Last 7 days': [60, 75, 50, 85, 65, 80, 70],
+        'Last 30 days': [70, 85, 60, 95, 75, 90, 80],
+        'Last quarter': [65, 80, 55, 90, 70, 85, 75]
+    };
+    
+    // Update metrics based on time selection
+    function updateMetrics(timePeriod) {
+        const data = metricData[timePeriod];
+        const chartHeights = chartData[timePeriod];
+        
+        // Update metric values
+        document.querySelectorAll('.metric-card').forEach(card => {
+            const metricName = card.querySelector('h4').textContent;
+            const metricValue = card.querySelector('.metric-value');
+            
+            if (metricValue && data[metricName]) {
+                metricValue.textContent = data[metricName];
+            }
+            
+            // Update chart bars if they exist
+            const chartBars = card.querySelectorAll('.chart-bar');
+            if (chartBars.length > 0 && chartHeights) {
+                chartBars.forEach((bar, index) => {
+                    if (chartHeights[index]) {
+                        bar.style.height = \`\${chartHeights[index]}%\`;
+                        bar.style.setProperty('--height', \`\${chartHeights[index]}%\`);
+                    }
+                });
+            }
+        });
+        
+        console.log(\`Metrics updated for: \${timePeriod}\`);
+    }
+    
+    // Metric toggle functionality
+    metricToggles.forEach(toggle => {
+        toggle.addEventListener('change', function() {
+            const metricName = this.closest('.metric-card').querySelector('h4').textContent;
+            const metricCard = this.closest('.metric-card');
+            
+            if (this.checked) {
+                console.log(\`Tracking metric: \${metricName}\`);
+                metricCard.style.opacity = '1';
+                metricCard.style.pointerEvents = 'auto';
+            } else {
+                console.log(\`Stopped tracking metric: \${metricName}\`);
+                metricCard.style.opacity = '0.5';
+                metricCard.style.pointerEvents = 'none';
+            }
+            
+            // Update active metrics count
+            const activeMetrics = Array.from(metricToggles).filter(t => t.checked).length;
+            console.log(\`Active metrics: \${activeMetrics}/\${metricToggles.length}\`);
+        });
+    });
+    
+    // Time selector functionality
+    if (timeSelector) {
+        timeSelector.addEventListener('change', function() {
+            updateMetrics(this.value);
+        });
+    }
+    
+    // Export button functionality
+    if (exportBtn) {
+        exportBtn.addEventListener('click', function() {
+            const timePeriod = timeSelector ? timeSelector.value : 'Last 30 days';
+            const activeMetrics = Array.from(metricToggles).filter(t => t.checked).length;
+            
+            // Simulate export
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Exporting...';
+            
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-check"></i> Exported';
+                alert(\`Exported \${activeMetrics} metrics data for \${timePeriod}\`);
+                
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-download"></i> Export Data';
+                }, 2000);
+            }, 1500);
+        });
+    }
+    
+    // Insight button functionality
+    if (insightBtn) {
+        insightBtn.addEventListener('click', function() {
+            const activeMetrics = Array.from(metricToggles).filter(t => t.checked);
+            
+            if (activeMetrics.length === 0) {
+                alert('Please enable at least one metric to view analytics');
+                return;
+            }
+            
+            // Simulate loading detailed analytics
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+            
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-chart-line"></i> View Detailed Analytics';
+                alert('Opening detailed analytics dashboard...');
+            }, 1500);
+        });
+    }
+    
+    // Initialize with default time period
+    updateMetrics('Last 30 days');
+});`
+},
+    // ====================================================================
+    // TEMPLATE 70: Dark Mode Checkbox
+    // ====================================================================
+    checkbox70: {
+        name: "Dark Mode Checkbox",
+        category: "dark",
+        html: `<div class="checkbox-container dark-bg">
+    <label class="checkbox-dark">
+        <input type="checkbox">
+        <span class="dark-checkmark"></span>
+        Dark Mode
+    </label>
+    <label class="checkbox-dark">
+        <input type="checkbox" checked>
+        <span class="dark-checkmark"></span>
+        Auto Night Mode
+    </label>
+    <label class="checkbox-dark">
+        <input type="checkbox">
+        <span class="dark-checkmark"></span>
+        Reduce Blue Light
+    </label>
+</div>`,
+        css: `.checkbox-dark {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #e2e8f0;
+    margin-bottom: 15px;
+}
+
+.checkbox-dark input {
+    display: none;
+}
+
+.dark-checkmark {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #475569;
+    border-radius: 6px;
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.4s ease;
+    background: #1e293b;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.checkbox-dark input:checked + .dark-checkmark {
+    background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+    border-color: #60a5fa;
+    box-shadow: 
+        0 0 15px rgba(14, 165, 233, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    animation: darkGlow 0.6s ease;
+}
+
+.checkbox-dark input:checked + .dark-checkmark::after {
+    content: '✓';
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes darkGlow {
+    0% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(14, 165, 233, 0); }
+    100% { box-shadow: 0 0 15px rgba(14, 165, 233, 0.5); }
+}
+
+.dark-bg {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 8px;
+}`,
+        js: `// Dark Mode checkbox functionality
+document.querySelectorAll('.checkbox-dark input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const isChecked = this.checked;
+        console.log('Dark mode checkbox changed:', isChecked);
+        
+        // You can add dark mode specific logic here
+        if (isChecked) {
+            // Add dark mode class to body or parent element
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+    });
+});`
+    },
+
+    // ====================================================================
+    // TEMPLATE 71: Animated Pulse Checkbox
+    // ====================================================================
+    checkbox71: {
+        name: "Pulse Checkbox",
+        category: "animated",
+        html: `<div class="checkbox-container">
+    <label class="checkbox-pulse">
+        <input type="checkbox" checked>
+        <span class="pulse-checkmark"></span>
+        Enable Notifications
+    </label>
+    <label class="checkbox-pulse">
+        <input type="checkbox">
+        <span class="pulse-checkmark"></span>
+        Auto-refresh
+    </label>
+    <label class="checkbox-pulse">
+        <input type="checkbox" checked>
+        <span class="pulse-checkmark"></span>
+        Live Updates
+    </label>
+</div>`,
+        css: `.checkbox-pulse {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.checkbox-pulse input {
+    display: none;
+}
+
+.pulse-checkmark {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #7c3aed;
+    border-radius: 50%;
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.pulse-checkmark::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    animation: pulseRing 2s infinite;
+}
+
+.checkbox-pulse input:checked + .pulse-checkmark {
+    background: #7c3aed;
+    border-color: #7c3aed;
+    animation: pulse 0.6s ease;
+}
+
+.checkbox-pulse input:checked + .pulse-checkmark::before {
+    border-color: #7c3aed;
+    animation: pulseRingChecked 2s infinite;
+}
+
+.checkbox-pulse input:checked + .pulse-checkmark::after {
+    content: '✓';
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulseRing {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes pulseRingChecked {
+    0% { transform: scale(0.8); opacity: 1; border-color: #7c3aed; }
+    100% { transform: scale(1.5); opacity: 0; border-color: #a78bfa; }
+}`,
+        js: `// Pulse checkbox functionality
+document.querySelectorAll('.checkbox-pulse input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const isChecked = this.checked;
+        console.log('Pulse checkbox changed:', isChecked);
+        
+        // Add or remove animation based on state
+        const checkmark = this.nextElementSibling;
+        if (isChecked) {
+            checkmark.style.animation = 'pulse 0.6s ease';
+        } else {
+            checkmark.style.animation = '';
+        }
+    });
+});`
+    },
+
+    // ====================================================================
+    // TEMPLATE 72: 3D Toggle Checkbox
+    // ====================================================================
+    checkbox72: {
+        name: "3D Toggle Switch",
+        category: "animated",
+        html: `<div class="checkbox-container">
+    <label class="checkbox-3d">
+        <input type="checkbox">
+        <span class="toggle-3d">
+            <span class="toggle-knob"></span>
+        </span>
+        Enable 3D Effects
+    </label>
+    <label class="checkbox-3d">
+        <input type="checkbox" checked>
+        <span class="toggle-3d">
+            <span class="toggle-knob"></span>
+        </span>
+        Show Shadows
+    </label>
+    <label class="checkbox-3d">
+        <input type="checkbox">
+        <span class="toggle-3d">
+            <span class="toggle-knob"></span>
+        </span>
+        Depth Perception
+    </label>
+</div>`,
+        css: `.checkbox-3d {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+.checkbox-3d input {
+    display: none;
+}
+
+.toggle-3d {
+    width: 50px;
+    height: 28px;
+    background: linear-gradient(to bottom, #e2e8f0, #cbd5e1);
+    border-radius: 14px;
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.1),
+        0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #94a3b8;
+}
+
+.toggle-knob {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(to bottom, #ffffff, #f1f5f9);
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.checkbox-3d input:checked + .toggle-3d {
+    background: linear-gradient(to bottom, #7c3aed, #6d28d9);
+    border-color: #7c3aed;
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.2),
+        0 4px 8px rgba(124, 58, 237, 0.3);
+}
+
+.checkbox-3d input:checked + .toggle-3d .toggle-knob {
+    transform: translateX(22px);
+    background: linear-gradient(to bottom, #ffffff, #f1f5f9);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}`,
+        js: `// 3D Toggle functionality
+document.querySelectorAll('.checkbox-3d input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const isChecked = this.checked;
+        console.log('3D Toggle changed:', isChecked);
+        
+        // You can add 3D specific functionality here
+        if (isChecked) {
+            console.log('3D effects enabled');
+            // Enable 3D effects on your page
+        } else {
+            console.log('3D effects disabled');
+            // Disable 3D effects on your page
+        }
+    });
+});`
+    },
+
+    // ====================================================================
+    // TEMPLATE 73: Neon Glow Checkbox
+    // ====================================================================
+    checkbox73: {
+        name: "Neon Glow Checkbox",
+        category: "modern",
+        html: `<div class="checkbox-container dark-bg">
+    <label class="checkbox-neon">
+        <input type="checkbox" checked>
+        <span class="neon-checkmark"></span>
+        Neon Effects
+    </label>
+    <label class="checkbox-neon">
+        <input type="checkbox">
+        <span class="neon-checkmark"></span>
+        Glow Mode
+    </label>
+    <label class="checkbox-neon">
+        <input type="checkbox" checked>
+        <span class="neon-checkmark"></span>
+        Electric Theme
+    </label>
+</div>`,
+        css: `.checkbox-neon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #e2e8f0;
+    margin-bottom: 15px;
+}
+
+.checkbox-neon input {
+    display: none;
+}
+
+.neon-checkmark {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #3b82f6;
+    border-radius: 6px;
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+    background: rgba(30, 41, 59, 0.8);
+    box-shadow: 
+        0 0 10px rgba(59, 130, 246, 0.3),
+        inset 0 0 10px rgba(59, 130, 246, 0.1);
+}
+
+.checkbox-neon input:checked + .neon-checkmark {
+    border-color: #ec4899;
+    background: rgba(30, 41, 59, 0.9);
+    box-shadow: 
+        0 0 20px rgba(236, 72, 153, 0.8),
+        0 0 40px rgba(236, 72, 153, 0.4),
+        inset 0 0 15px rgba(236, 72, 153, 0.2);
+    animation: neonPulse 1.5s infinite alternate;
+}
+
+.checkbox-neon input:checked + .neon-checkmark::after {
+    content: '✓';
+    color: #fbbf24;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #fbbf24;
+}
+
+@keyframes neonPulse {
+    from {
+        box-shadow: 
+            0 0 20px rgba(236, 72, 153, 0.8),
+            0 0 40px rgba(236, 72, 153, 0.4),
+            inset 0 0 15px rgba(236, 72, 153, 0.2);
+    }
+    to {
+        box-shadow: 
+            0 0 25px rgba(236, 72, 153, 1),
+            0 0 50px rgba(236, 72, 153, 0.6),
+            inset 0 0 20px rgba(236, 72, 153, 0.3);
+    }
+}
+
+.dark-bg {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 8px;
+}`,
+        js: `// Neon Glow checkbox functionality
+document.querySelectorAll('.checkbox-neon input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const isChecked = this.checked;
+        console.log('Neon checkbox changed:', isChecked);
+        
+        if (isChecked) {
+            console.log('Neon glow activated!');
+            // Add neon effects to your page
+        } else {
+            console.log('Neon glow deactivated');
+            // Remove neon effects from your page
+        }
+    });
+});`
+    },
+
+    // ====================================================================
+    // TEMPLATE 74: Material Design Checkbox
+    // ====================================================================
+    checkbox74: {
+        name: "Material Design Checkbox",
+        category: "modern",
+        html: `<div class="checkbox-container">
+    <label class="checkbox-material">
+        <input type="checkbox" checked>
+        <span class="material-checkmark"></span>
+        Material Theme
+    </label>
+    <label class="checkbox-material">
+        <input type="checkbox">
+        <span class="material-checkmark"></span>
+        Ripple Effects
+    </label>
+    <label class="checkbox-material">
+        <input type="checkbox" checked>
+        <span class="material-checkmark"></span>
+        Smooth Animations
+    </label>
+</div>`,
+        css: `.checkbox-material {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.checkbox-material input {
+    display: none;
+}
+
+.material-checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #94a3b8;
+    border-radius: 4px;
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.material-checkmark::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: #7c3aed;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.checkbox-material input:checked + .material-checkmark {
+    border-color: #7c3aed;
+    background: #7c3aed;
+}
+
+.checkbox-material input:checked + .material-checkmark::before {
+    animation: ripple 0.6s ease;
+}
+
+.checkbox-material input:checked + .material-checkmark::after {
+    content: '✓';
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}`,
+        js: `// Material Design checkbox functionality
+document.querySelectorAll('.checkbox-material input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const isChecked = this.checked;
+        console.log('Material checkbox changed:', isChecked);
+        
+        // Create ripple effect
+        const checkmark = this.nextElementSibling;
+        const ripple = checkmark.querySelector('.ripple') || document.createElement('span');
+        ripple.className = 'ripple';
+        checkmark.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(() => {
+            if (ripple.parentNode === checkmark) {
+                checkmark.removeChild(ripple);
+            }
+        }, 600);
+    });
+});`
+    },
+    
 };
 
 // Main functionality for checkbox templates
