@@ -9651,3 +9651,2233 @@
         opacity: 0;
     }
 }
+/* ==========================================================================
+   ADVANCED CHECKBOX STYLES (75-79)
+   ========================================================================== */
+
+/* Template 75: Holographic Checkbox */
+.checkbox-holographic {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+.checkbox-holographic input {
+    display: none;
+}
+
+.holographic-box {
+    width: 26px;
+    height: 26px;
+    margin-right: 12px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.05)
+    );
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(31, 38, 135, 0.37),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.holographic-shine {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 70%
+    );
+    transform: rotate(45deg);
+    transition: all 0.8s ease;
+    opacity: 0.5;
+}
+
+.holographic-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    z-index: 2;
+    transition: all 0.5s ease;
+}
+
+.checkbox-holographic input:checked + .holographic-box {
+    background: linear-gradient(
+        135deg,
+        rgba(124, 58, 237, 0.8),
+        rgba(236, 72, 153, 0.8)
+    );
+    border-color: rgba(255, 255, 255, 0.4);
+    animation: hologramGlow 2s infinite alternate;
+}
+
+.checkbox-holographic input:checked + .holographic-box .holographic-shine {
+    animation: shineMove 3s infinite linear;
+    opacity: 0.8;
+}
+
+.checkbox-holographic input:checked + .holographic-box .holographic-icon {
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+@keyframes hologramGlow {
+    0% { box-shadow: 0 8px 32px rgba(124, 58, 237, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+    100% { box-shadow: 0 8px 40px rgba(124, 58, 237, 0.6), 0 0 20px rgba(124, 58, 237, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3); }
+}
+
+@keyframes shineMove {
+    0% { transform: rotate(45deg) translateX(-100%); }
+    100% { transform: rotate(45deg) translateX(100%); }
+}
+
+/* Template 76: Cyberpunk Checkbox */
+.checkbox-cyberpunk {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    color: #00f3ff;
+    margin-bottom: 15px;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px #00f3ff;
+}
+
+.checkbox-cyberpunk input {
+    display: none;
+}
+
+.cyber-box {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    border: 2px solid #00f3ff;
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 
+        0 0 15px #00f3ff,
+        inset 0 0 10px rgba(0, 243, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+}
+
+.cyber-line {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: #00f3ff;
+    box-shadow: 0 0 10px #00f3ff;
+    transition: all 0.6s ease;
+}
+
+.cyber-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background: transparent;
+    border: 2px solid #00f3ff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.4s ease;
+    box-shadow: 0 0 10px #00f3ff;
+}
+
+.checkbox-cyberpunk input:checked + .cyber-box {
+    border-color: #ff00ff;
+    box-shadow: 
+        0 0 20px #ff00ff,
+        inset 0 0 15px rgba(255, 0, 255, 0.3);
+    animation: cyberFlicker 0.3s infinite alternate;
+}
+
+.checkbox-cyberpunk input:checked + .cyber-box .cyber-line {
+    left: 100%;
+    background: #ff00ff;
+    box-shadow: 0 0 15px #ff00ff;
+    animation: scanLine 1s infinite linear;
+}
+
+.checkbox-cyberpunk input:checked + .cyber-box .cyber-dot {
+    background: #ff00ff;
+    border-color: #ff00ff;
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+@keyframes cyberFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes scanLine {
+    0% { top: 0; left: -100%; }
+    50% { top: 100%; left: 100%; }
+    100% { top: 0; left: 100%; }
+}
+
+/* Template 77: Glass Morphism Checkbox */
+.checkbox-glass {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+.checkbox-glass input {
+    display: none;
+}
+
+.glass-box {
+    width: 26px;
+    height: 26px;
+    margin-right: 12px;
+    border-radius: 10px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(31, 38, 135, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.glass-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+    box-shadow: 
+        inset 0 2px 4px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.glass-reflection {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    filter: blur(1px);
+}
+
+.checkbox-glass input:checked + .glass-box {
+    background: rgba(124, 58, 237, 0.25);
+    border-color: rgba(124, 58, 237, 0.5);
+    box-shadow: 
+        0 8px 32px rgba(124, 58, 237, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-glass input:checked + .glass-box .glass-inner {
+    width: 18px;
+    height: 18px;
+    background: rgba(124, 58, 237, 0.8);
+    box-shadow: 
+        inset 0 2px 4px rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(124, 58, 237, 0.4);
+}
+
+.checkbox-glass input:checked + .glass-box .glass-inner::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* Template 78: Magnetic Field Checkbox */
+.checkbox-magnetic {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+.checkbox-magnetic input {
+    display: none;
+}
+
+.magnetic-field {
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+    border-radius: 50%;
+    position: relative;
+    background: white;
+    border: 2px solid #cbd5e1;
+    transition: all 0.5s ease;
+}
+
+.magnetic-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: #3b82f6;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.field-line {
+    position: absolute;
+    border: 1px solid #3b82f6;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.field-1 {
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-color: #3b82f6;
+    transform: translate(-50%, -50%);
+}
+
+.field-2 {
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    border-color: #60a5fa;
+    transform: translate(-50%, -50%);
+}
+
+.field-3 {
+    top: 50%;
+    left: 50%;
+    width: 28px;
+    height: 28px;
+    border-color: #93c5fd;
+    transform: translate(-50%, -50%);
+}
+
+.checkbox-magnetic input:checked + .magnetic-field {
+    border-color: #3b82f6;
+    background: #3b82f6;
+    animation: magneticPulse 2s infinite;
+}
+
+.checkbox-magnetic input:checked + .magnetic-field .magnetic-core {
+    background: white;
+    box-shadow: 0 0 10px white;
+    animation: coreSpin 4s infinite linear;
+}
+
+.checkbox-magnetic input:checked + .magnetic-field .field-line {
+    opacity: 0.6;
+    animation: fieldRotate 8s infinite linear;
+}
+
+.checkbox-magnetic input:checked + .magnetic-field .field-1 {
+    animation: fieldRotate 6s infinite linear reverse;
+}
+
+.checkbox-magnetic input:checked + .magnetic-field .field-2 {
+    animation: fieldRotate 8s infinite linear;
+}
+
+.checkbox-magnetic input:checked + .magnetic-field .field-3 {
+    animation: fieldRotate 10s infinite linear reverse;
+}
+
+@keyframes magneticPulse {
+    0%, 100% { box-shadow: 0 0 0 rgba(59, 130, 246, 0); }
+    50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+}
+
+@keyframes coreSpin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes fieldRotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Template 79: Solar System Checkbox */
+.checkbox-solar {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+.checkbox-solar input {
+    display: none;
+}
+
+.solar-system {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    position: relative;
+    border-radius: 50%;
+    background: #0f172a;
+    border: 2px solid #1e293b;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: #f59e0b;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px #f59e0b;
+    transition: all 0.5s ease;
+}
+
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    background: #94a3b8;
+    transition: all 0.8s ease;
+    opacity: 0.5;
+}
+
+.planet-1 {
+    top: 4px;
+    left: 4px;
+    width: 4px;
+    height: 4px;
+    background: #3b82f6;
+}
+
+.planet-2 {
+    top: 24px;
+    left: 4px;
+    width: 5px;
+    height: 5px;
+    background: #10b981;
+}
+
+.planet-3 {
+    top: 16px;
+    left: 24px;
+    width: 6px;
+    height: 6px;
+    background: #ec4899;
+}
+
+.checkbox-solar input:checked + .solar-system {
+    border-color: #f59e0b;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+    animation: solarGlow 3s infinite alternate;
+}
+
+.checkbox-solar input:checked + .solar-system .sun {
+    width: 12px;
+    height: 12px;
+    background: #fbbf24;
+    box-shadow: 0 0 20px #fbbf24;
+    animation: sunPulse 2s infinite alternate;
+}
+
+.checkbox-solar input:checked + .solar-system .planet {
+    opacity: 1;
+    animation: planetOrbit 10s infinite linear;
+}
+
+.checkbox-solar input:checked + .solar-system .planet-1 {
+    animation: planetOrbit 8s infinite linear;
+}
+
+.checkbox-solar input:checked + .solar-system .planet-2 {
+    animation: planetOrbit 12s infinite linear;
+}
+
+.checkbox-solar input:checked + .solar-system .planet-3 {
+    animation: planetOrbit 15s infinite linear;
+}
+
+@keyframes solarGlow {
+    0% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.3); }
+    100% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.5); }
+}
+
+@keyframes sunPulse {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    100% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+@keyframes planetOrbit {
+    0% { transform: rotate(0deg) translateX(12px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(12px) rotate(-360deg); }
+}
+/* ==========================================================================
+   DARK MODE PROFESSIONAL CHECKBOX STYLES (80-84)
+   ========================================================================== */
+
+/* Template 80: Dark Matrix Checkbox */
+.checkbox-matrix {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    color: #00ff88;
+    margin-bottom: 15px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.5px;
+}
+
+.checkbox-matrix input {
+    display: none;
+}
+
+.matrix-grid {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    padding: 2px;
+    transition: all 0.4s ease;
+}
+
+.matrix-cell {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.checkbox-matrix input:checked + .matrix-grid {
+    border-color: #00ff88;
+    box-shadow: 
+        0 0 15px rgba(0, 255, 136, 0.3),
+        inset 0 0 10px rgba(0, 255, 136, 0.1);
+}
+
+.checkbox-matrix input:checked + .matrix-grid .matrix-cell {
+    background: #00ff88;
+    border-color: #00ff88;
+    box-shadow: 0 0 5px #00ff88;
+    animation: matrixPulse 1.5s infinite;
+}
+
+.checkbox-matrix input:checked + .matrix-grid .matrix-cell:nth-child(1) { animation-delay: 0.1s; }
+.checkbox-matrix input:checked + .matrix-grid .matrix-cell:nth-child(2) { animation-delay: 0.2s; }
+.checkbox-matrix input:checked + .matrix-grid .matrix-cell:nth-child(3) { animation-delay: 0.3s; }
+.checkbox-matrix input:checked + .matrix-grid .matrix-cell:nth-child(4) { animation-delay: 0.4s; }
+.checkbox-matrix input:checked + .matrix-grid .matrix-cell:nth-child(5) { animation-delay: 0.5s; }
+.checkbox-matrix input:checked + .matrix-grid .matrix-cell:nth-child(6) { animation-delay: 0.6s; }
+.checkbox-matrix input:checked + .matrix-grid .matrix-cell:nth-child(7) { animation-delay: 0.7s; }
+.checkbox-matrix input:checked + .matrix-grid .matrix-cell:nth-child(8) { animation-delay: 0.8s; }
+.checkbox-matrix input:checked + .matrix-grid .matrix-cell:nth-child(9) { animation-delay: 0.9s; }
+
+@keyframes matrixPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Template 81: Dark Neon Glow Checkbox */
+.checkbox-neon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #8b5cf6;
+    margin-bottom: 15px;
+    font-weight: 500;
+    text-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+}
+
+.checkbox-neon input {
+    display: none;
+}
+
+.neon-ring {
+    width: 26px;
+    height: 26px;
+    margin-right: 12px;
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid #4c1d95;
+    background: #1e1b4b;
+    transition: all 0.4s ease;
+}
+
+.neon-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #4c1d95;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+}
+
+.checkbox-neon input:checked + .neon-ring {
+    border-color: #8b5cf6;
+    box-shadow: 
+        0 0 20px #8b5cf6,
+        0 0 40px rgba(139, 92, 246, 0.3),
+        inset 0 0 15px rgba(139, 92, 246, 0.2);
+    animation: neonPulse 2s infinite alternate;
+}
+
+.checkbox-neon input:checked + .neon-ring .neon-core {
+    background: #8b5cf6;
+    box-shadow: 
+        0 0 15px #8b5cf6,
+        0 0 30px rgba(139, 92, 246, 0.5);
+    animation: coreGlow 1.5s infinite alternate;
+}
+
+@keyframes neonPulse {
+    0% { 
+        box-shadow: 
+            0 0 15px #8b5cf6,
+            0 0 30px rgba(139, 92, 246, 0.3),
+            inset 0 0 10px rgba(139, 92, 246, 0.2);
+    }
+    100% { 
+        box-shadow: 
+            0 0 25px #8b5cf6,
+            0 0 50px rgba(139, 92, 246, 0.5),
+            inset 0 0 20px rgba(139, 92, 246, 0.3);
+    }
+}
+
+@keyframes coreGlow {
+    0% { 
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 10px #8b5cf6;
+    }
+    100% { 
+        transform: translate(-50%, -50%) scale(1.2);
+        box-shadow: 0 0 20px #8b5cf6, 0 0 40px rgba(139, 92, 246, 0.6);
+    }
+}
+
+/* Template 82: Dark Carbon Fiber Checkbox */
+.checkbox-carbon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #d1d5db;
+    margin-bottom: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.checkbox-carbon input {
+    display: none;
+}
+
+.carbon-plate {
+    width: 26px;
+    height: 26px;
+    margin-right: 12px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    background: 
+        linear-gradient(45deg, #111 25%, transparent 25%),
+        linear-gradient(-45deg, #111 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #111 75%),
+        linear-gradient(-45deg, transparent 75%, #111 75%);
+    background-size: 4px 4px;
+    background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+    border: 1px solid #333;
+    transition: all 0.4s ease;
+}
+
+.carbon-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
+}
+
+.carbon-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: #444;
+    border-radius: 2px;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+    box-shadow: 
+        inset 0 1px 2px rgba(255, 255, 255, 0.1),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.checkbox-carbon input:checked + .carbon-plate {
+    border-color: #3b82f6;
+    box-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.checkbox-carbon input:checked + .carbon-plate .carbon-indicator {
+    background: #3b82f6;
+    box-shadow: 
+        0 0 10px #3b82f6,
+        inset 0 1px 2px rgba(255, 255, 255, 0.3),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%) scale(1.2);
+    animation: carbonGlow 2s infinite alternate;
+}
+
+@keyframes carbonGlow {
+    0% { 
+        box-shadow: 
+            0 0 8px #3b82f6,
+            inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    }
+    100% { 
+        box-shadow: 
+            0 0 15px #3b82f6,
+            0 0 25px rgba(59, 130, 246, 0.4),
+            inset 0 1px 2px rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* Template 83: Dark Circuit Board Checkbox */
+.checkbox-circuit {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    color: #10b981;
+    margin-bottom: 15px;
+    font-family: 'Consolas', monospace;
+    letter-spacing: 0.5px;
+}
+
+.checkbox-circuit input {
+    display: none;
+}
+
+.circuit-board {
+    width: 26px;
+    height: 26px;
+    margin-right: 12px;
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.circuit-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #1e293b;
+    transform: translateY(-50%);
+    transition: all 0.6s ease;
+}
+
+.circuit-node {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #374151;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+.circuit-node:nth-child(2) { top: 6px; left: 6px; }
+.circuit-node:nth-child(3) { top: 6px; right: 6px; }
+.circuit-node:nth-child(4) { bottom: 6px; left: 6px; }
+
+.checkbox-circuit input:checked + .circuit-board {
+    border-color: #10b981;
+    box-shadow: 
+        0 0 15px rgba(16, 185, 129, 0.3),
+        inset 0 0 10px rgba(16, 185, 129, 0.1);
+}
+
+.checkbox-circuit input:checked + .circuit-board .circuit-line {
+    width: 100%;
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+    animation: currentFlow 1.5s infinite linear;
+}
+
+.checkbox-circuit input:checked + .circuit-board .circuit-node {
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+    animation: nodePulse 2s infinite;
+}
+
+.checkbox-circuit input:checked + .circuit-board .circuit-node:nth-child(2) { animation-delay: 0.1s; }
+.checkbox-circuit input:checked + .circuit-board .circuit-node:nth-child(3) { animation-delay: 0.3s; }
+.checkbox-circuit input:checked + .circuit-board .circuit-node:nth-child(4) { animation-delay: 0.5s; }
+
+@keyframes currentFlow {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes nodePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+/* Template 84: Dark Observatory Checkbox */
+.checkbox-observatory {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #c7d2fe;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.checkbox-observatory input {
+    display: none;
+}
+
+.telescope {
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+    position: relative;
+    border-radius: 4px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.telescope-base {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 6px;
+    height: 12px;
+    background: #475569;
+    transform: translateX(-50%);
+    border-radius: 2px 2px 0 0;
+    transition: all 0.4s ease;
+}
+
+.telescope-lens {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    width: 12px;
+    height: 6px;
+    background: #64748b;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: all 0.4s ease;
+}
+
+.star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: #64748b;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.star:nth-child(1) { top: 8px; left: 8px; }
+.star:nth-child(2) { top: 12px; right: 6px; }
+.star:nth-child(3) { bottom: 10px; left: 10px; }
+.star:nth-child(4) { bottom: 6px; right: 8px; }
+.star:nth-child(5) { top: 16px; left: 6px; }
+
+.checkbox-observatory input:checked + .telescope {
+    border-color: #818cf8;
+    box-shadow: 
+        0 0 20px rgba(129, 140, 248, 0.4),
+        inset 0 0 15px rgba(129, 140, 248, 0.1);
+}
+
+.checkbox-observatory input:checked + .telescope .telescope-base {
+    background: #818cf8;
+    box-shadow: 0 0 5px #818cf8;
+}
+
+.checkbox-observatory input:checked + .telescope .telescope-lens {
+    background: #c7d2fe;
+    box-shadow: 
+        0 0 10px #c7d2fe,
+        0 0 20px rgba(199, 210, 254, 0.5);
+    animation: lensGlow 2s infinite alternate;
+}
+
+.checkbox-observatory input:checked + .telescope .star {
+    background: #c7d2fe;
+    box-shadow: 0 0 3px #c7d2fe;
+    animation: starTwinkle 3s infinite;
+}
+
+.checkbox-observatory input:checked + .telescope .star:nth-child(1) { animation-delay: 0.1s; }
+.checkbox-observatory input:checked + .telescope .star:nth-child(2) { animation-delay: 0.5s; }
+.checkbox-observatory input:checked + .telescope .star:nth-child(3) { animation-delay: 0.9s; }
+.checkbox-observatory input:checked + .telescope .star:nth-child(4) { animation-delay: 1.3s; }
+.checkbox-observatory input:checked + .telescope .star:nth-child(5) { animation-delay: 1.7s; }
+
+@keyframes lensGlow {
+    0% { 
+        box-shadow: 
+            0 0 8px #c7d2fe,
+            0 0 15px rgba(199, 210, 254, 0.4);
+    }
+    100% { 
+        box-shadow: 
+            0 0 12px #c7d2fe,
+            0 0 25px rgba(199, 210, 254, 0.6),
+            0 0 35px rgba(199, 210, 254, 0.3);
+    }
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+/* ==========================================================================
+   GLOW EFFECT CHECKBOX STYLES (85-89) - Uiverse.io Style
+   ========================================================================== */
+
+/* Template 85: Rainbow Glow Checkbox */
+.checkbox-rainbow {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+.checkbox-rainbow input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.rainbow-checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.3em;
+    width: 1.3em;
+    margin-right: 12px;
+    background: #1e293b;
+    border-radius: 50%;
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --spread: 15px;
+}
+
+.checkbox-rainbow input:checked ~ .rainbow-checkmark {
+    background: #000;
+    box-shadow: 
+        -8px -8px var(--spread) 0px #FF0000,
+        0 -8px var(--spread) 0px #FF7F00,
+        8px -8px var(--spread) 0px #FFFF00,
+        8px 0 var(--spread) 0px #00FF00,
+        8px 8px var(--spread) 0px #0000FF,
+        0 8px var(--spread) 0px #4B0082,
+        -8px 8px var(--spread) 0px #9400D3;
+    animation: rainbowRotate 2s infinite linear;
+}
+
+.checkbox-rainbow input:checked ~ .rainbow-checkmark:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid white;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(40deg);
+}
+
+@keyframes rainbowRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Template 86: Neon Galaxy Checkbox */
+.checkbox-galaxy {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #c7d2fe;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+.checkbox-galaxy input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.galaxy-checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.3em;
+    width: 1.3em;
+    margin-right: 12px;
+    background: #0f172a;
+    border-radius: 50%;
+    border: 2px solid #334155;
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --spread: 18px;
+}
+
+.checkbox-galaxy input:checked ~ .galaxy-checkmark {
+    background: #000;
+    border-color: transparent;
+    box-shadow: 
+        -10px -10px var(--spread) 0px #00FFFF,
+        0 -10px var(--spread) 0px #0080FF,
+        10px -10px var(--spread) 0px #8000FF,
+        10px 0 var(--spread) 0px #FF00FF,
+        10px 10px var(--spread) 0px #FF0080,
+        0 10px var(--spread) 0px #FF0000,
+        -10px 10px var(--spread) 0px #FF8000;
+    animation: galaxyPulse 2s infinite alternate;
+}
+
+.checkbox-galaxy input:checked ~ .galaxy-checkmark:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid white;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(40deg);
+    filter: drop-shadow(0 0 2px white);
+}
+
+@keyframes galaxyPulse {
+    0% { 
+        transform: scale(1);
+        --spread: 15px;
+    }
+    100% { 
+        transform: scale(1.05);
+        --spread: 22px;
+    }
+}
+
+/* Template 87: Fire Glow Checkbox */
+.checkbox-fire {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+.checkbox-fire input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.fire-checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.3em;
+    width: 1.3em;
+    margin-right: 12px;
+    background: #1e293b;
+    border-radius: 50%;
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --spread: 16px;
+}
+
+.checkbox-fire input:checked ~ .fire-checkmark {
+    background: #000;
+    box-shadow: 
+        -9px -9px var(--spread) 0px #FFD700,
+        0 -9px var(--spread) 0px #FFA500,
+        9px -9px var(--spread) 0px #FF8C00,
+        9px 0 var(--spread) 0px #FF4500,
+        9px 9px var(--spread) 0px #FF0000,
+        0 9px var(--spread) 0px #DC143C,
+        -9px 9px var(--spread) 0px #8B0000;
+    animation: fireFlicker 0.5s infinite alternate;
+}
+
+.checkbox-fire input:checked ~ .fire-checkmark:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid white;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(40deg);
+    filter: drop-shadow(0 0 2px white);
+}
+
+@keyframes fireFlicker {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        --spread: 14px;
+    }
+    50% { 
+        transform: scale(1.02) rotate(1deg);
+        --spread: 18px;
+    }
+}
+
+/* Template 88: Ocean Wave Checkbox */
+.checkbox-ocean {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+.checkbox-ocean input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.ocean-checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.3em;
+    width: 1.3em;
+    margin-right: 12px;
+    background: #1e293b;
+    border-radius: 50%;
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --spread: 17px;
+}
+
+.checkbox-ocean input:checked ~ .ocean-checkmark {
+    background: #000;
+    box-shadow: 
+        -10px -10px var(--spread) 0px #00BFFF,
+        0 -10px var(--spread) 0px #1E90FF,
+        10px -10px var(--spread) 0px #4169E1,
+        10px 0 var(--spread) 0px #0000FF,
+        10px 10px var(--spread) 0px #00008B,
+        0 10px var(--spread) 0px #191970,
+        -10px 10px var(--spread) 0px #4682B4;
+    animation: waveMotion 3s infinite ease-in-out;
+}
+
+.checkbox-ocean input:checked ~ .ocean-checkmark:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid white;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(40deg);
+    filter: drop-shadow(0 0 2px white);
+}
+
+@keyframes waveMotion {
+    0%, 100% { 
+        transform: translateY(0);
+        --spread: 15px;
+    }
+    50% { 
+        transform: translateY(-3px);
+        --spread: 20px;
+    }
+}
+
+/* Template 89: Forest Glow Checkbox */
+.checkbox-forest {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+.checkbox-forest input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.forest-checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.3em;
+    width: 1.3em;
+    margin-right: 12px;
+    background: #1e293b;
+    border-radius: 50%;
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --spread: 16px;
+}
+
+.checkbox-forest input:checked ~ .forest-checkmark {
+    background: #000;
+    box-shadow: 
+        -9px -9px var(--spread) 0px #228B22,
+        0 -9px var(--spread) 0px #32CD32,
+        9px -9px var(--spread) 0px #00FF00,
+        9px 0 var(--spread) 0px #7CFC00,
+        9px 9px var(--spread) 0px #ADFF2F,
+        0 9px var(--spread) 0px #9ACD32,
+        -9px 9px var(--spread) 0px #006400;
+    animation: forestBreath 4s infinite ease-in-out;
+}
+
+.checkbox-forest input:checked ~ .forest-checkmark:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid white;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(40deg);
+    filter: drop-shadow(0 0 2px white);
+}
+
+@keyframes forestBreath {
+    0%, 100% { 
+        transform: scale(1);
+        --spread: 14px;
+    }
+    50% { 
+        transform: scale(1.03);
+        --spread: 18px;
+    }
+}
+/* ==========================================================================
+   PROFESSIONAL & OFFICIAL CHECKBOX STYLES (90-94)
+   ========================================================================== */
+
+/* Template 90: Premium Metallic Checkbox */
+.checkbox-metallic {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.checkbox-metallic input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.metallic-checkmark {
+    position: relative;
+    height: 22px;
+    width: 22px;
+    margin-right: 12px;
+    background: linear-gradient(135deg, 
+        #e5e7eb 0%, 
+        #d1d5db 25%, 
+        #9ca3af 50%, 
+        #6b7280 75%, 
+        #4b5563 100%
+    );
+    border-radius: 6px;
+    border: 1px solid #9ca3af;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.metal-shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, 
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 100%
+    );
+    border-radius: 6px 6px 0 0;
+}
+
+.metal-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #6b7280;
+    border-radius: 3px;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.checkbox-metallic input:checked ~ .metallic-checkmark {
+    background: linear-gradient(135deg, 
+        #fbbf24 0%, 
+        #f59e0b 25%, 
+        #d97706 50%, 
+        #b45309 75%, 
+        #92400e 100%
+    );
+    border-color: #d97706;
+    box-shadow: 
+        0 4px 20px rgba(245, 158, 11, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.checkbox-metallic input:checked ~ .metallic-checkmark .metal-indicator {
+    opacity: 1;
+    background: #ffffff;
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    animation: metallicGlow 2s infinite alternate;
+}
+
+@keyframes metallicGlow {
+    0% { 
+        box-shadow: 
+            0 0 8px rgba(255, 255, 255, 0.8),
+            inset 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+    100% { 
+        box-shadow: 
+            0 0 12px rgba(255, 255, 255, 1),
+            0 0 20px rgba(255, 255, 255, 0.6),
+            inset 0 1px 2px rgba(255, 255, 255, 1);
+    }
+}
+
+/* Template 91: Corporate Gradient Checkbox */
+.checkbox-corporate {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.checkbox-corporate input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.corporate-checkmark {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    margin-right: 12px;
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    border: 2px solid #d1d5db;
+    border-radius: 5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.corporate-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.checkbox-corporate input:checked ~ .corporate-checkmark {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border-color: #1d4ed8;
+    box-shadow: 
+        0 4px 12px rgba(59, 130, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.checkbox-corporate input:checked ~ .corporate-checkmark .corporate-icon {
+    background: #ffffff;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: translate(-50%, -50%) scale(1);
+    animation: corporateCheck 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes corporateCheck {
+    0% { transform: translate(-50%, -50%) scale(0) rotate(-90deg); }
+    50% { transform: translate(-50%, -50%) scale(1.2) rotate(10deg); }
+    100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+}
+
+/* Template 92: Executive Diamond Checkbox */
+.checkbox-diamond {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #111827;
+    margin-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.checkbox-diamond input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.diamond-checkmark {
+    position: relative;
+    height: 22px;
+    width: 22px;
+    margin-right: 12px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    transform: rotate(45deg);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.diamond-facet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #cbd5e1;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: all 0.4s ease;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.diamond-sparkle {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.checkbox-diamond input:checked ~ .diamond-checkmark {
+    background: linear-gradient(135deg, 
+        rgba(139, 92, 246, 0.1) 0%,
+        rgba(139, 92, 246, 0.3) 100%
+    );
+    border-color: #8b5cf6;
+    box-shadow: 
+        0 4px 20px rgba(139, 92, 246, 0.2),
+        0 0 0 1px rgba(139, 92, 246, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.checkbox-diamond input:checked ~ .diamond-checkmark .diamond-facet {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    box-shadow: 
+        0 0 15px rgba(139, 92, 246, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    animation: diamondShine 2s infinite alternate;
+}
+
+.checkbox-diamond input:checked ~ .diamond-checkmark .diamond-sparkle {
+    opacity: 1;
+    animation: sparkleTwinkle 1.5s infinite;
+}
+
+@keyframes diamondShine {
+    0% { 
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+        box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    }
+    100% { 
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+        box-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.3);
+    }
+}
+
+@keyframes sparkleTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* Template 93: Luxury Gold Checkbox */
+.checkbox-luxury {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1f2937;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-family: 'Georgia', serif;
+}
+
+.checkbox-luxury input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.luxury-checkmark {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    margin-right: 12px;
+    background: linear-gradient(135deg, 
+        #fef3c7 0%, 
+        #fde68a 25%, 
+        #fcd34d 50%, 
+        #fbbf24 75%, 
+        #f59e0b 100%
+    );
+    border-radius: 8px;
+    border: 1px solid #fbbf24;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    box-shadow: 
+        0 4px 15px rgba(245, 158, 11, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.gold-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 70%
+    );
+    transform: translateX(-100%);
+    transition: all 0.6s ease;
+}
+
+.luxury-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #92400e;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0;
+    transition: all 0.3s ease 0.1s;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-luxury input:checked ~ .luxury-checkmark {
+    border-color: #d97706;
+    box-shadow: 
+        0 6px 25px rgba(245, 158, 11, 0.3),
+        0 0 0 1px rgba(245, 158, 11, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    animation: luxuryGlow 2s infinite alternate;
+}
+
+.checkbox-luxury input:checked ~ .luxury-checkmark .gold-layer {
+    transform: translateX(100%);
+    animation: goldShine 3s infinite linear;
+}
+
+.checkbox-luxury input:checked ~ .luxury-checkmark .luxury-icon {
+    opacity: 1;
+    color: #78350f;
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.8),
+        0 1px 3px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+@keyframes luxuryGlow {
+    0% { box-shadow: 0 6px 20px rgba(245, 158, 11, 0.25); }
+    100% { box-shadow: 0 6px 30px rgba(245, 158, 11, 0.4), 0 0 15px rgba(245, 158, 11, 0.2); }
+}
+
+@keyframes goldShine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Template 94: Professional Minimal Checkbox */
+.checkbox-minimal {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+}
+
+.checkbox-minimal input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.minimal-checkmark {
+    position: relative;
+    height: 18px;
+    width: 18px;
+    margin-right: 12px;
+    background: #ffffff;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.minimal-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 9px;
+    border: solid #3b82f6;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-minimal input:checked ~ .minimal-checkmark {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    animation: minimalBounce 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.checkbox-minimal input:checked ~ .minimal-checkmark:after {
+    display: block;
+    border-color: white;
+    animation: minimalCheck 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes minimalBounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes minimalCheck {
+    0% { 
+        transform: rotate(45deg) scale(0);
+        opacity: 0;
+    }
+    50% { 
+        transform: rotate(45deg) scale(1.2);
+    }
+    100% { 
+        transform: rotate(45deg) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Hover effects for minimal design */
+.checkbox-minimal:hover .minimal-checkmark {
+    border-color: #9ca3af;
+    transform: translateY(-1px);
+}
+
+.checkbox-minimal input:checked ~ .minimal-checkmark:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+/* ==========================================================================
+   MULTI-SELECT CHECKBOX TEMPLATES (95-99)
+   ========================================================================== */
+
+/* Template 95: Multi-Select Grid Checkbox */
+.multi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.multi-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.multi-grid-item input {
+    display: none;
+}
+
+.grid-box {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-number {
+    font-size: 16px;
+    font-weight: 600;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.multi-label {
+    font-size: 12px;
+    color: #64748b;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.multi-grid-item input:checked + .grid-box {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+.multi-grid-item input:checked + .grid-box .grid-number {
+    color: white;
+    transform: scale(1.2);
+}
+
+.multi-grid-item input:checked + .grid-box::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 5px white;
+}
+
+.multi-grid-item:hover .grid-box {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+/* Template 96: Color Palette Checkbox */
+.color-palette {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.color-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    flex: 1;
+    min-width: 60px;
+}
+
+.color-option input {
+    display: none;
+}
+
+.color-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    border: 3px solid transparent;
+}
+
+.color-check {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #1e293b;
+}
+
+.color-name {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.palette-label {
+    font-size: 12px;
+    color: #64748b;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.color-option input:checked + .color-box {
+    border-color: white;
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        0 0 0 3px rgba(255, 255, 255, 0.3);
+    transform: scale(1.1) translateY(-5px);
+}
+
+.color-option input:checked + .color-box .color-check {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.color-option input:checked + .color-box .color-check::after {
+    content: '✓';
+    font-weight: bold;
+}
+
+.color-option:hover .color-box {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.color-option:hover .color-name {
+    color: #1e293b;
+}
+
+/* Template 97: Feature Toggle Checkbox */
+.feature-toggle {
+    width: 100%;
+}
+
+.feature-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.feature-header h4 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.toggle-all {
+    font-size: 12px;
+    color: #7c3aed;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.toggle-all:hover {
+    color: #6d28d9;
+    text-decoration: underline;
+}
+
+.feature-option {
+    display: block;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.feature-option input {
+    display: none;
+}
+
+.feature-box {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.feature-icon {
+    font-size: 20px;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 2px;
+}
+
+.feature-desc {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.feature-toggle-btn {
+    width: 40px;
+    height: 20px;
+    background: #cbd5e1;
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.feature-toggle-btn::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.feature-option input:checked + .feature-box {
+    background: rgba(124, 58, 237, 0.05);
+    border-color: #7c3aed;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
+}
+
+.feature-option input:checked + .feature-box .feature-icon {
+    transform: scale(1.1);
+}
+
+.feature-option input:checked + .feature-box .feature-toggle-btn {
+    background: #7c3aed;
+}
+
+.feature-option input:checked + .feature-box .feature-toggle-btn::after {
+    transform: translateX(20px);
+}
+
+.feature-option:hover .feature-box {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Template 98: Rating Stars Checkbox */
+.rating-stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.star-option {
+    cursor: pointer;
+}
+
+.star-option input {
+    display: none;
+}
+
+.star-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 20px;
+    color: #cbd5e1;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.rating-label {
+    font-size: 12px;
+    color: #64748b;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.star-option input:checked ~ .star-box,
+.star-option:hover .star-box {
+    color: #fbbf24;
+    border-color: #fbbf24;
+    background: rgba(251, 191, 36, 0.1);
+    transform: scale(1.1) translateY(-3px);
+}
+
+.star-option input:checked ~ .star-box {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
+    animation: starPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Make all previous stars glow when one is selected */
+.star-option input:checked ~ .star-box,
+.star-option input:checked ~ .star-box ~ .star-option .star-box {
+    color: #fbbf24;
+    border-color: #fbbf24;
+    background: rgba(251, 191, 36, 0.1);
+}
+
+.star-option:hover ~ .star-option .star-box {
+    color: #cbd5e1;
+    border-color: #e2e8f0;
+    background: #f8fafc;
+}
+
+@keyframes starPop {
+    0% { transform: scale(1) translateY(0); }
+    50% { transform: scale(1.3) translateY(-5px); }
+    100% { transform: scale(1.1) translateY(-3px); }
+}
+
+/* Template 99: Skill Selection Checkbox */
+.skill-selection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.skill-option {
+    cursor: pointer;
+}
+
+.skill-option input {
+    display: none;
+}
+
+.skill-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-align: center;
+}
+
+.skill-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.skill-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.skill-level {
+    font-size: 11px;
+    color: #64748b;
+    padding: 3px 8px;
+    background: rgba(100, 116, 139, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.skill-label {
+    font-size: 12px;
+    color: #64748b;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.skill-option input:checked + .skill-box {
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(236, 72, 153, 0.1));
+    border-color: #7c3aed;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.15);
+}
+
+.skill-option input:checked + .skill-box .skill-icon {
+    transform: scale(1.2);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.skill-option input:checked + .skill-box .skill-name {
+    color: #7c3aed;
+}
+
+.skill-option input:checked + .skill-box .skill-level {
+    background: rgba(124, 58, 237, 0.2);
+    color: #7c3aed;
+    font-weight: 600;
+}
+
+.skill-option:hover .skill-box {
+    border-color: #cbd5e1;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Different level colors */
+.skill-option:nth-child(1) .skill-level { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.skill-option:nth-child(2) .skill-level { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.skill-option:nth-child(3) .skill-level { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.skill-option:nth-child(4) .skill-level { background: rgba(236, 72, 153, 0.1); color: #ec4899; }
+
+.skill-option:nth-child(1):hover .skill-level { background: rgba(16, 185, 129, 0.2); }
+.skill-option:nth-child(2):hover .skill-level { background: rgba(59, 130, 246, 0.2); }
+.skill-option:nth-child(3):hover .skill-level { background: rgba(245, 158, 11, 0.2); }
+.skill-option:nth-child(4):hover .skill-level { background: rgba(236, 72, 153, 0.2); }
