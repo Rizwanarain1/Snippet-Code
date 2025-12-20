@@ -11881,3 +11881,510 @@
 .skill-option:nth-child(2):hover .skill-level { background: rgba(59, 130, 246, 0.2); }
 .skill-option:nth-child(3):hover .skill-level { background: rgba(245, 158, 11, 0.2); }
 .skill-option:nth-child(4):hover .skill-level { background: rgba(236, 72, 153, 0.2); }
+/* ==========================================================================
+   CASUAL & PROFESSIONAL CHECKBOX TEMPLATES (100-104)
+   ========================================================================== */
+
+/* Template 100: Casual Chat Bubble Checkbox */
+.checkbox-chat {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.checkbox-chat input {
+    display: none;
+}
+
+.chat-bubble {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 18px;
+    background: #f1f5f9;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    max-width: 250px;
+}
+
+.chat-text {
+    font-size: 14px;
+    color: #475569;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.chat-check {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    background: #cbd5e1;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.chat-check::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.checkbox-chat input:checked + .chat-bubble {
+    background: #3b82f6;
+    border-color: #1d4ed8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+
+.checkbox-chat input:checked + .chat-bubble .chat-text {
+    color: white;
+}
+
+.checkbox-chat input:checked + .chat-bubble .chat-check {
+    background: white;
+    transform: scale(1.1);
+}
+
+.checkbox-chat input:checked + .chat-bubble .chat-check::after {
+    background: #3b82f6;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.checkbox-chat:hover .chat-bubble {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-chat:hover .chat-check {
+    background: #94a3b8;
+}
+
+/* Template 101: Casual Badge Checkbox */
+.badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.badge-checkbox {
+    cursor: pointer;
+}
+
+.badge-checkbox input {
+    display: none;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #f1f5f9;
+    border: 2px solid #cbd5e1;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #475569;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.badge::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: #10b981;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.badge-checkbox input:checked + .badge {
+    background: #10b981;
+    border-color: #059669;
+    color: white;
+    padding-right: 40px;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.badge-checkbox input:checked + .badge::after {
+    right: 8px;
+    opacity: 1;
+}
+
+.badge-checkbox:hover .badge {
+    background: #e2e8f0;
+    border-color: #94a3b8;
+    transform: translateY(-2px);
+}
+
+/* Template 102: Casual Card Checkbox */
+.card-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.card-checkbox {
+    cursor: pointer;
+}
+
+.card-checkbox input {
+    display: none;
+}
+
+.card {
+    padding: 20px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.card-desc {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.card-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #7c3aed;
+    transition: all 0.3s ease;
+}
+
+.card-checkbox input:checked + .card {
+    background: rgba(124, 58, 237, 0.05);
+    border-color: #7c3aed;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
+}
+
+.card-checkbox input:checked + .card::before {
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+}
+
+.card-checkbox input:checked + .card .card-icon {
+    transform: scale(1.1);
+}
+
+.card-checkbox input:checked + .card .card-title {
+    color: #7c3aed;
+}
+
+.card-checkbox input:checked + .card .card-price {
+    color: #6d28d9;
+    text-shadow: 0 2px 4px rgba(109, 40, 217, 0.2);
+}
+
+.card-checkbox:hover .card {
+    border-color: #cbd5e1;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Template 103: Professional Radio Group Checkbox */
+.radio-group {
+    width: 100%;
+}
+
+.group-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.radio-option input {
+    display: none;
+}
+
+.radio-dot {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cbd5e1;
+    border-radius: 50%;
+    margin-right: 15px;
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.radio-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 10px;
+    height: 10px;
+    background: #3b82f6;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.radio-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.radio-icon {
+    font-size: 24px;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+}
+
+.radio-text {
+    flex: 1;
+}
+
+.radio-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.radio-desc {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.radio-option input:checked + .radio-dot {
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.radio-option input:checked + .radio-dot::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-option input:checked ~ .radio-content .radio-icon {
+    transform: scale(1.1);
+}
+
+.radio-option input:checked ~ .radio-content .radio-title {
+    color: #3b82f6;
+}
+
+.radio-option input:checked ~ .radio-option {
+    background: rgba(59, 130, 246, 0.05);
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+.radio-option:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Template 104: Professional Toggle Switch Group */
+.toggle-group {
+    width: 100%;
+}
+
+.toggle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.toggle-header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.toggle-status {
+    font-size: 12px;
+    color: #10b981;
+    font-weight: 600;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.toggle-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-item:last-child {
+    border-bottom: none;
+}
+
+.toggle-item input {
+    display: none;
+}
+
+.toggle-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.toggle-icon {
+    font-size: 20px;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+}
+
+.toggle-text {
+    flex: 1;
+}
+
+.toggle-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e293b;
+    margin-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.toggle-desc {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.toggle-switch {
+    width: 44px;
+    height: 24px;
+    background: #cbd5e1;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-item input:checked + .toggle-content .toggle-icon {
+    transform: scale(1.1);
+    color: #10b981;
+}
+
+.toggle-item input:checked + .toggle-content .toggle-title {
+    color: #10b981;
+}
+
+.toggle-item input:checked ~ .toggle-switch {
+    background: #10b981;
+}
+
+.toggle-item input:checked ~ .toggle-switch::after {
+    transform: translateX(20px);
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+
+.toggle-item:hover {
+    background: #f8fafc;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 8px;
+}
+
+.toggle-item:hover .toggle-switch {
+    background: #94a3b8;
+}
+
+.toggle-item input:checked:hover ~ .toggle-switch {
+    background: #059669;
+}

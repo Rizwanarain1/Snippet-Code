@@ -21135,6 +21135,748 @@ document.querySelectorAll('.skill-option input').forEach(checkbox => {
     });
 });`
 },
+// ====================================================================
+// TEMPLATE 100: Casual Chat Bubble Checkbox
+// ====================================================================
+checkbox100: {
+    name: "Chat Bubble Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <label class="checkbox-chat">
+        <input type="checkbox">
+        <span class="chat-bubble">
+            <span class="chat-text">👍 Like this option?</span>
+            <span class="chat-check"></span>
+        </span>
+    </label>
+    <label class="checkbox-chat">
+        <input type="checkbox" checked>
+        <span class="chat-bubble">
+            <span class="chat-text">✅ Already liked!</span>
+            <span class="chat-check"></span>
+        </span>
+    </label>
+</div>`,
+    css: `.checkbox-chat {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.checkbox-chat input {
+    display: none;
+}
+
+.chat-bubble {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 18px;
+    background: #f1f5f9;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    max-width: 250px;
+}
+
+.chat-text {
+    font-size: 14px;
+    color: #475569;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.chat-check {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    background: #cbd5e1;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.chat-check::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.checkbox-chat input:checked + .chat-bubble {
+    background: #3b82f6;
+    border-color: #1d4ed8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+
+.checkbox-chat input:checked + .chat-bubble .chat-text {
+    color: white;
+}
+
+.checkbox-chat input:checked + .chat-bubble .chat-check {
+    background: white;
+    transform: scale(1.1);
+}
+
+.checkbox-chat input:checked + .chat-bubble .chat-check::after {
+    background: #3b82f6;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.checkbox-chat:hover .chat-bubble {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-chat:hover .chat-check {
+    background: #94a3b8;
+}`,
+    js: `// Chat Bubble checkbox functionality
+document.querySelectorAll('.checkbox-chat input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        console.log('Chat Bubble checkbox changed:', this.checked);
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 101: Casual Badge Checkbox
+// ====================================================================
+checkbox101: {
+    name: "Badge Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="badge-group">
+        <label class="badge-checkbox">
+            <input type="checkbox" name="interest" value="sports">
+            <span class="badge">⚽ Sports</span>
+        </label>
+        <label class="badge-checkbox">
+            <input type="checkbox" name="interest" value="music" checked>
+            <span class="badge">🎵 Music</span>
+        </label>
+        <label class="badge-checkbox">
+            <input type="checkbox" name="interest" value="tech">
+            <span class="badge">💻 Tech</span>
+        </label>
+        <label class="badge-checkbox">
+            <input type="checkbox" name="interest" value="travel">
+            <span class="badge">✈️ Travel</span>
+        </label>
+    </div>
+</div>`,
+    css: `.badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.badge-checkbox {
+    cursor: pointer;
+}
+
+.badge-checkbox input {
+    display: none;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #f1f5f9;
+    border: 2px solid #cbd5e1;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #475569;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.badge::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: #10b981;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.badge-checkbox input:checked + .badge {
+    background: #10b981;
+    border-color: #059669;
+    color: white;
+    padding-right: 40px;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.badge-checkbox input:checked + .badge::after {
+    right: 8px;
+    opacity: 1;
+}
+
+.badge-checkbox:hover .badge {
+    background: #e2e8f0;
+    border-color: #94a3b8;
+    transform: translateY(-2px);
+}`,
+    js: `// Badge checkbox functionality
+document.querySelectorAll('.badge-checkbox input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const selectedInterests = Array.from(document.querySelectorAll('.badge-checkbox input:checked'))
+            .map(cb => cb.value);
+        console.log('Selected interests:', selectedInterests);
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 102: Casual Card Checkbox
+// ====================================================================
+checkbox102: {
+    name: "Card Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="card-group">
+        <label class="card-checkbox">
+            <input type="checkbox" name="plan" value="basic">
+            <div class="card">
+                <span class="card-icon">📱</span>
+                <h4 class="card-title">Basic Plan</h4>
+                <p class="card-desc">Essential features</p>
+                <span class="card-price">$9.99/mo</span>
+            </div>
+        </label>
+        <label class="card-checkbox">
+            <input type="checkbox" name="plan" value="pro" checked>
+            <div class="card">
+                <span class="card-icon">🚀</span>
+                <h4 class="card-title">Pro Plan</h4>
+                <p class="card-desc">Advanced features</p>
+                <span class="card-price">$19.99/mo</span>
+            </div>
+        </label>
+    </div>
+</div>`,
+    css: `.card-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.card-checkbox {
+    cursor: pointer;
+}
+
+.card-checkbox input {
+    display: none;
+}
+
+.card {
+    padding: 20px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.card-desc {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.card-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #7c3aed;
+    transition: all 0.3s ease;
+}
+
+.card-checkbox input:checked + .card {
+    background: rgba(124, 58, 237, 0.05);
+    border-color: #7c3aed;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
+}
+
+.card-checkbox input:checked + .card::before {
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+}
+
+.card-checkbox input:checked + .card .card-icon {
+    transform: scale(1.1);
+}
+
+.card-checkbox input:checked + .card .card-title {
+    color: #7c3aed;
+}
+
+.card-checkbox input:checked + .card .card-price {
+    color: #6d28d9;
+    text-shadow: 0 2px 4px rgba(109, 40, 217, 0.2);
+}
+
+.card-checkbox:hover .card {
+    border-color: #cbd5e1;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}`,
+    js: `// Card checkbox functionality
+document.querySelectorAll('.card-checkbox input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        console.log('Selected plan:', this.value, this.checked);
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 103: Professional Radio Group Checkbox
+// ====================================================================
+checkbox103: {
+    name: "Radio Group Checkbox",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="radio-group">
+        <h4 class="group-title">Select Payment Method</h4>
+        
+        <label class="radio-option">
+            <input type="checkbox" name="payment" value="credit">
+            <span class="radio-dot"></span>
+            <span class="radio-content">
+                <span class="radio-icon">💳</span>
+                <span class="radio-text">
+                    <span class="radio-title">Credit Card</span>
+                    <span class="radio-desc">Pay with Visa/Mastercard</span>
+                </span>
+            </span>
+        </label>
+        
+        <label class="radio-option">
+            <input type="checkbox" name="payment" value="paypal" checked>
+            <span class="radio-dot"></span>
+            <span class="radio-content">
+                <span class="radio-icon">🅿️</span>
+                <span class="radio-text">
+                    <span class="radio-title">PayPal</span>
+                    <span class="radio-desc">Fast and secure payment</span>
+                </span>
+            </span>
+        </label>
+        
+        <label class="radio-option">
+            <input type="checkbox" name="payment" value="bank">
+            <span class="radio-dot"></span>
+            <span class="radio-content">
+                <span class="radio-icon">🏦</span>
+                <span class="radio-text">
+                    <span class="radio-title">Bank Transfer</span>
+                    <span class="radio-desc">Direct bank transfer</span>
+                </span>
+            </span>
+        </label>
+    </div>
+</div>`,
+    css: `.radio-group {
+    width: 100%;
+}
+
+.group-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.radio-option input {
+    display: none;
+}
+
+.radio-dot {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cbd5e1;
+    border-radius: 50%;
+    margin-right: 15px;
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.radio-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 10px;
+    height: 10px;
+    background: #3b82f6;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.radio-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.radio-icon {
+    font-size: 24px;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+}
+
+.radio-text {
+    flex: 1;
+}
+
+.radio-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.radio-desc {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.radio-option input:checked + .radio-dot {
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.radio-option input:checked + .radio-dot::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-option input:checked ~ .radio-content .radio-icon {
+    transform: scale(1.1);
+}
+
+.radio-option input:checked ~ .radio-content .radio-title {
+    color: #3b82f6;
+}
+
+.radio-option input:checked ~ .radio-option {
+    background: rgba(59, 130, 246, 0.05);
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+.radio-option:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}`,
+    js: `// Radio Group functionality
+document.querySelectorAll('.radio-option input').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        // Make it behave like radio buttons - only one selected
+        if (this.checked) {
+            document.querySelectorAll('.radio-option input').forEach(cb => {
+                if (cb !== this) cb.checked = false;
+            });
+        }
+        const selectedPayment = document.querySelector('.radio-option input:checked')?.value;
+        console.log('Selected payment method:', selectedPayment);
+    });
+});`
+},
+// ====================================================================
+// TEMPLATE 104: Professional Toggle Switch Group
+// ====================================================================
+ checkbox104: {
+    name: "Toggle Switch Group",
+    category: "modern",
+    html: `<div class="checkbox-container">
+    <div class="toggle-group">
+        <div class="toggle-header">
+            <h4>Notification Settings</h4>
+            <span class="toggle-status">3/5 Active</span>
+        </div>
+        
+        <label class="toggle-item">
+            <input type="checkbox" name="notify" value="email" checked>
+            <span class="toggle-content">
+                <span class="toggle-icon">📧</span>
+                <span class="toggle-text">
+                    <span class="toggle-title">Email Notifications</span>
+                    <span class="toggle-desc">Receive email alerts</span>
+                </span>
+            </span>
+            <span class="toggle-switch"></span>
+        </label>
+        
+        <label class="toggle-item">
+            <input type="checkbox" name="notify" value="push" checked>
+            <span class="toggle-content">
+                <span class="toggle-icon">📱</span>
+                <span class="toggle-text">
+                    <span class="toggle-title">Push Notifications</span>
+                    <span class="toggle-desc">App push notifications</span>
+                </span>
+            </span>
+            <span class="toggle-switch"></span>
+        </label>
+        
+        <label class="toggle-item">
+            <input type="checkbox" name="notify" value="sms">
+            <span class="toggle-content">
+                <span class="toggle-icon">💬</span>
+                <span class="toggle-text">
+                    <span class="toggle-title">SMS Alerts</span>
+                    <span class="toggle-desc">Text message alerts</span>
+                </span>
+            </span>
+            <span class="toggle-switch"></span>
+        </label>
+    </div>
+</div>`,
+    css: `.toggle-group {
+    width: 100%;
+}
+
+.toggle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.toggle-header h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.toggle-status {
+    font-size: 12px;
+    color: #10b981;
+    font-weight: 600;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.toggle-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-item:last-child {
+    border-bottom: none;
+}
+
+.toggle-item input {
+    display: none;
+}
+
+.toggle-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.toggle-icon {
+    font-size: 20px;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+}
+
+.toggle-text {
+    flex: 1;
+}
+
+.toggle-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e293b;
+    margin-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.toggle-desc {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.toggle-switch {
+    width: 44px;
+    height: 24px;
+    background: #cbd5e1;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-item input:checked + .toggle-content .toggle-icon {
+    transform: scale(1.1);
+    color: #10b981;
+}
+
+.toggle-item input:checked + .toggle-content .toggle-title {
+    color: #10b981;
+}
+
+.toggle-item input:checked ~ .toggle-switch {
+    background: #10b981;
+}
+
+.toggle-item input:checked ~ .toggle-switch::after {
+    transform: translateX(20px);
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+
+.toggle-item:hover {
+    background: #f8fafc;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 8px;
+}
+
+.toggle-item:hover .toggle-switch {
+    background: #94a3b8;
+}
+
+.toggle-item input:checked:hover ~ .toggle-switch {
+    background: #059669;
+}`,
+    js: `// Toggle Switch Group functionality
+function initToggleGroup() {
+    const toggleCheckboxes = document.querySelectorAll('.toggle-item input');
+    const toggleStatus = document.querySelector('.toggle-status');
+    
+    if (!toggleStatus || toggleCheckboxes.length === 0) return;
+    
+    function updateToggleStatus() {
+        const checkedCount = Array.from(toggleCheckboxes).filter(cb => cb.checked).length;
+        const totalCount = toggleCheckboxes.length;
+        
+        if (toggleStatus) {
+            toggleStatus.textContent = \`\${checkedCount}/\${totalCount} Active\`;
+            toggleStatus.style.color = checkedCount > 0 ? '#10b981' : '#64748b';
+            toggleStatus.style.background = checkedCount > 0 ? 'rgba(16, 185, 129, 0.1)' : 'rgba(100, 116, 139, 0.1)';
+        }
+    }
+    
+    toggleCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            console.log(\`\${this.value} notifications:\`, this.checked ? 'ON' : 'OFF');
+            updateToggleStatus();
+        });
+    });
+    
+    // Initialize status
+    updateToggleStatus();
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initToggleGroup);
+} else {
+    initToggleGroup();
+}`
+},
+
+
 
 };
 
